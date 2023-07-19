@@ -1,0 +1,17 @@
+sample,concentration,use_in_fit,n_substitutions,n_variants,censored,probability escape
+LibB-230704-HENV32-0.3-1,0.3,True,0,6690,"censored to [0, 1]",0.5032
+LibB-230704-HENV32-0.3-1,0.3,True,1,29902,"censored to [0, 1]",0.419
+LibB-230704-HENV32-0.3-1,0.3,True,2,7349,"censored to [0, 1]",0.3631
+LibB-230704-HENV32-0.3-1,0.3,True,>2,988,"censored to [0, 1]",0.3615
+LibB-230704-HENV32-0.8-1,0.8,True,0,6701,"censored to [0, 1]",0.05165
+LibB-230704-HENV32-0.8-1,0.8,True,1,30011,"censored to [0, 1]",0.04891
+LibB-230704-HENV32-0.8-1,0.8,True,2,7388,"censored to [0, 1]",0.04599
+LibB-230704-HENV32-0.8-1,0.8,True,>2,996,"censored to [0, 1]",0.04708
+LibB-230704-HENV32-0.3-1,0.3,True,0,6690,not censored,0.5163
+LibB-230704-HENV32-0.3-1,0.3,True,1,29902,not censored,0.4327
+LibB-230704-HENV32-0.3-1,0.3,True,2,7349,not censored,0.3752
+LibB-230704-HENV32-0.3-1,0.3,True,>2,988,not censored,0.3689
+LibB-230704-HENV32-0.8-1,0.8,True,0,6701,not censored,0.05233
+LibB-230704-HENV32-0.8-1,0.8,True,1,30011,not censored,0.05355
+LibB-230704-HENV32-0.8-1,0.8,True,2,7388,not censored,0.05251
+LibB-230704-HENV32-0.8-1,0.8,True,>2,996,not censored,0.05765

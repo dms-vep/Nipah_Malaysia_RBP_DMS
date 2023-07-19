@@ -1,0 +1,3 @@
+library,run,fastq
+LibA,LibA-221107,/fh/fast/bloom_j/SR/ngs/pacbio/221102_Caelan_Brendan/Brendan_A-VSV/m64272e_221104_111914.hifi_reads.bc2012--bc2012.fastq.gz
+LibB,LibB-221107,/fh/fast/bloom_j/SR/ngs/pacbio/221102_Caelan_Brendan/Brendan_B-VSV/m64272e_221105_073107.hifi_reads.bc2013--bc2013.fastq.gz

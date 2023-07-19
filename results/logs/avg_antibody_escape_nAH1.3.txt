@@ -1,0 +1,123 @@
+Input Notebook:  dms-vep-pipeline-3/notebooks/avg_antibody_escape.ipynb
+Output Notebook: results/notebooks/avg_antibody_escape_nAH1.3.ipynb
+Executing:   0%|          | 0/22 [00:00<?, ?cell/s]0.01s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+Executing notebook with kernel: python3
+Executing:   5%|▍         | 1/22 [00:04<01:26,  4.13s/cell]Executing:   9%|▉         | 2/22 [00:07<01:12,  3.62s/cell]Executing:  32%|███▏      | 7/22 [00:07<00:11,  1.29cell/s]Executing:  41%|████      | 9/22 [00:08<00:07,  1.81cell/s]Executing:  50%|█████     | 11/22 [00:10<00:07,  1.45cell/s]Executing:  59%|█████▉    | 13/22 [00:10<00:04,  1.91cell/s]Executing:  68%|██████▊   | 15/22 [00:10<00:02,  2.56cell/s]Executing:  77%|███████▋  | 17/22 [00:11<00:02,  2.46cell/s]Executing:  77%|███████▋  | 17/22 [00:12<00:03,  1.39cell/s]
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+             ^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/papermill/execute.py", line 122, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/papermill/execute.py", line 234, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [9]":
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+Cell In[9], line 17
+      4     times_seen = 1
+      6 print(f"Making plots for {times_seen=}")
+      8 per_selection_site_escape = (
+      9     avg_model.mut_escape_site_summary_df_replicates(min_times_seen=times_seen)
+     10     .melt(
+     11         id_vars=["selection", "site", "wildtype", "epitope"],
+     12         value_vars=["mean", "total positive", "total negative"],
+     13         var_name="site statistic",
+     14         value_name="site escape",
+     15     )
+     16     .merge(
+---> 17         site_numbering_map[["site", "sequential_site"]].assign(
+     18             site=lambda x: x["site"].astype(type(avg_model.sites[0]))
+     19         ),
+     20         validate="many_to_one",
+     21     )
+     22 )
+     24 site_statistic_selection = alt.selection_point(
+     25     fields=["site statistic"],
+     26     bind=alt.binding_select(
+   (...)
+     30     value="mean",
+     31 )
+     33 per_selection_site_escape_chart = (
+     34     alt.Chart(per_selection_site_escape)
+     35     .encode(
+   (...)
+     56     .transform_filter(site_statistic_selection)
+     57 )
+
+File /fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/pandas/core/frame.py:4844, in DataFrame.assign(self, **kwargs)
+   4841 data = self.copy(deep=None)
+   4843 for k, v in kwargs.items():
+-> 4844     data[k] = com.apply_if_callable(v, data)
+   4845 return data
+
+File /fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/pandas/core/common.py:379, in apply_if_callable(maybe_callable, obj, **kwargs)
+    368 """
+    369 Evaluate possibly callable input using obj and kwargs if it is callable,
+    370 otherwise return as it is.
+   (...)
+    376 **kwargs
+    377 """
+    378 if callable(maybe_callable):
+--> 379     return maybe_callable(obj, **kwargs)
+    381 return maybe_callable
+
+Cell In[9], line 18, in <lambda>(x)
+      4     times_seen = 1
+      6 print(f"Making plots for {times_seen=}")
+      8 per_selection_site_escape = (
+      9     avg_model.mut_escape_site_summary_df_replicates(min_times_seen=times_seen)
+     10     .melt(
+     11         id_vars=["selection", "site", "wildtype", "epitope"],
+     12         value_vars=["mean", "total positive", "total negative"],
+     13         var_name="site statistic",
+     14         value_name="site escape",
+     15     )
+     16     .merge(
+     17         site_numbering_map[["site", "sequential_site"]].assign(
+---> 18             site=lambda x: x["site"].astype(type(avg_model.sites[0]))
+     19         ),
+     20         validate="many_to_one",
+     21     )
+     22 )
+     24 site_statistic_selection = alt.selection_point(
+     25     fields=["site statistic"],
+     26     bind=alt.binding_select(
+   (...)
+     30     value="mean",
+     31 )
+     33 per_selection_site_escape_chart = (
+     34     alt.Chart(per_selection_site_escape)
+     35     .encode(
+   (...)
+     56     .transform_filter(site_statistic_selection)
+     57 )
+
+AttributeError: 'PolyclonalAverage' object has no attribute 'sites'
+

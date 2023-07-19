@@ -1,0 +1,13 @@
+sample,library,date,fastq_R1,notes
+LibB-230704-293T-no_antibody-1,LibB,7/4/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230703_VH00319_373_AACV3JLM5/Unaligned/Project_blarsen/230630_LibB_NiV_293T_NO_ANTI_S8_R1_001.fastq.gz,
+LibB-230704-CHO_EFNB3_no_antibody-1,LibB,7/4/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230703_VH00319_373_AACV3JLM5/Unaligned/Project_blarsen/230630_LibB_NiV_C6_NO_ANTI_S7_R1_001.fastq.gz,
+LibB-230704-CHO_VSV,LibB,7/4/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230703_VH00319_373_AACV3JLM5/Unaligned/Project_blarsen/230630_LibB_VSV_CHO_S1_R1_001.fastq.gz,
+LibB-230704-nAH1-0.1-1,LibB,7/4/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230703_VH00319_373_AACV3JLM5/Unaligned/Project_blarsen/230630_LiBB_NiV_C6_nAH13_100_S2_R1_001.fastq.gz,
+LibB-230704-nAH1-0.3-1,LibB,7/4/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230703_VH00319_373_AACV3JLM5/Unaligned/Project_blarsen/230630_LiBB_NiV_C6_nAH13_300_S3_R1_001.fastq.gz,
+LibB-230704-HENV26-0.3-1,LibB,7/4/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230703_VH00319_373_AACV3JLM5/Unaligned/Project_blarsen/230630_LibB_NiV_C6_HENV26_300_S4_R1_001.fastq.gz,
+LibB-230704-HENV32-0.3-1,LibB,7/4/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230703_VH00319_373_AACV3JLM5/Unaligned/Project_blarsen/230630_LibB_NiV_C6_HENV32_300_S5_R1_001.fastq.gz,
+LibB-230704-HENV32-0.8-1,LibB,7/4/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230703_VH00319_373_AACV3JLM5/Unaligned/Project_blarsen/230630_LibB_NiV_C6_HENV32_800_S6_R1_001.fastq.gz,
+LibB-230621-CHO_EFNB3_no_antibody-1,LibB,6/21/23,/fh/fast/bloom_j/SR/ngs/illumina/tmcmahon/230621_VH01189_127_AACWWCMM5/Unaligned/Project_tmcmahon/TM_230615_CHO_C6_Wash_S7_R1_001.fastq.gz,
+LibB-230621-CHO-VSV,LibB,6/21/23,/fh/fast/bloom_j/SR/ngs/illumina/tmcmahon/230621_VH01189_127_AACWWCMM5/Unaligned/Project_tmcmahon/TM_230615_CHO_A2_Wash_VSV_S5_R1_001.fastq.gz,
+LibA-230509-CHO-VSV,LibA,5/9/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230508_VH00699_307_AACMMT2M5/Unaligned/Project_blarsen/230505_NiV_LibA_CHO_VSV_S7_R1_001.fastq.gz,
+LibA-230509-CHO-EFNB3_no_antibody-1,LibA,5/9/23,/fh/fast/bloom_j/SR/ngs/illumina/blarsen/230508_VH00699_307_AACMMT2M5/Unaligned/Project_blarsen/230505_NiV_LibA_CHO_E3_S10_R1_001.fastq.gz,

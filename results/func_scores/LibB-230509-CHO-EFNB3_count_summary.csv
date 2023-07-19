@@ -1,0 +1,2 @@
+selection,library,pre_selection_sample,post_selection_sample,pre_selection_date,post_selection_date,min_pre_selection_count,pre_count_median,pre_count_q1,pre_count_q3,pre_count_min,pre_count_max,post_count_median,post_count_q1,post_count_q3,post_count_min,post_count_max
+LibB-230509-CHO-EFNB3,LibA,LibA-230509-CHO-VSV,LibA-230509-CHO-EFNB3_no_antibody-1,2023-05-09,2023-05-09,50,208.0,90.0,444.0,0,12334,112.0,29.0,342.0,0,20504

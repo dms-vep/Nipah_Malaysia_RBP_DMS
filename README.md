@@ -35,13 +35,6 @@ In other words, the directory structure would look like this:
 
 For this to work, the top-level `config.yaml` needs specify details for your project (see more below).
 
-## Test example
-A test example use of the pipeline is in [./test_example](test_example).
-In order to make the example contained in the pipeline, the organization is a bit different for this [./test_example](test_example): it is contained as a subdirectory of the pipeline whereas for actual use of the repo you will make the pipeline a submodule of `<my_dms_repo>` as described above.
-Therefore, your `config.yaml` will have different values for `pipeline_path` and `docs` as indicated in the comments in [./test_example/config.yaml](test_example/config.yaml).
-
-Despite these differences, [./test_example](test_example) provides an example of how to set up your repo.
-Running the `Snakefile` in [./test_example](test_example) performs the whole analysis for the test example and creates the sphinx rendering in [./docs](docs) which can be displayed via GitHub pages as here: [https://dms-vep.github.io/dms-vep-pipeline-3](https://dms-vep.github.io/dms-vep-pipeline-3).
 
 ## Running the pipeline
 You can run the pipeline from the top-level directory using:
@@ -79,23 +72,6 @@ So if you want other files or outputs for any of your custom rules to be rendere
 Your top-level repo also needs to have an appropriate `.gitignore` file that specifies which results to include and which not to include (we don't include them all or it would be too much to track).
 A template `.gitignore` file is at [test_example/.gitignore](test_example/.gitignore).
 
-## Setting up the pipeline as a submodule
-To add [dms-vep-pipeline-3](https://github.com/dms-vep/dms-vep-pipeline-3) as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in your repo (`<my_dms_repo>`), do as follows.
-
-        git submodule add https://github.com/dms-vep/dms-vep-pipeline-3
-
-This adds the file [.gitmodules](.gitmodules) and the submodule `dms-vep-pipeline-3`, which can then be committed with:
-
-    git commit -m 'added `dms-vep-pipeline-3` as submodule'
-
-Note that if you want a specific commit or tag of [dms-vep-pipeline](https://github.com/dms-vep/dms-vep-pipeline), follow the [steps here](https://stackoverflow.com/a/10916398):
-
-    cd dms-vep-pipeline-3
-    git checkout <commit>
-
-and then `cd ../` back to the top-level directory of `<my_dms_repo>`, and add and commit the updated `dms-vep-pipeline-3` submodule.
-
-You can also make changes to the [dms-vep-pipeline-3](https://github.com/dms-vep/dms-vep-pipeline) submodule in `<my_dms_repo>` by going into that directory, making changes on a branch, and then pushing back to [dms-vep-pipeline](https://github.com/dms-vep/dms-vep-pipeline-3) and opening a pull request.
 
 ## Details on setup of this pipeline repository
 
@@ -104,25 +80,3 @@ You can also make changes to the [dms-vep-pipeline-3](https://github.com/dms-vep
 ### `conda` environment
 The [conda](https://docs.conda.io/) environment for the pipeline is in [environment.yml](environment.yml).
 
-### Code formatting and linting
-The Python code should be formatted with [black](https://black.readthedocs.io/) by running `black .`
-
-Comparable formatting is done for the `snakemake` file (`*.smk` files) with [snakefmt](https://github.com/snakemake/snakefmt) by running `snakefmt .`.
-The overall `snakemake` pipeline is linted by going to [./test_example](test_example) and running `snakemake -s ../Snakefile --lint`.
-
-The code and Jupyter notebooks are linted with [ruff](https://github.com/astral-sh/ruff) by running `ruff check .` and `nbqa ruff notebooks`.
-
-### Testing of pipeline with GitHub Actions
-The pipeline is tested with GitHub Actions by checking all the formatting and linting above, and then also running the pipeline on the example in [./test_example](test_example).
-See [.github/workflows/test.yaml](.github/workflows/test.yaml) for details.
-
-### Stripping of Jupyter notebook output
-The repo was configured to strip output from Jupyter notebooks as described [here](http://mateos.io/blog/jupyter-notebook-in-git/) by running:
-
-    nbstripout --install --attributes .gitattributes
-
-### Tracking of large files with `git lfs`
-The large data files for the test example in [./test_example/sequencing_data/](test_example/sequencing_data/) are tracked with [git lfs](http://arfc.github.io/manual/guides/git-lfs).
-Note the first time you set up the repo, you have to run:
-
-    git lfs install
