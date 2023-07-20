@@ -1,0 +1,9 @@
+sample,concentration,use_in_fit,n_substitutions,n_variants,censored,probability escape
+LibA-230331-293T-E2-m102-0.5,0.5,True,0,9039,"censored to [0, 1]",0.2076
+LibA-230331-293T-E2-m102-0.5,0.5,True,1,46733,"censored to [0, 1]",0.3044
+LibA-230331-293T-E2-m102-0.5,0.5,True,2,15543,"censored to [0, 1]",0.3598
+LibA-230331-293T-E2-m102-0.5,0.5,True,>2,2659,"censored to [0, 1]",0.3705
+LibA-230331-293T-E2-m102-0.5,0.5,True,0,9039,not censored,0.2212
+LibA-230331-293T-E2-m102-0.5,0.5,True,1,46733,not censored,0.34
+LibA-230331-293T-E2-m102-0.5,0.5,True,2,15543,not censored,0.4238
+LibA-230331-293T-E2-m102-0.5,0.5,True,>2,2659,not censored,0.4545

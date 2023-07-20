@@ -1,0 +1,2 @@
+selection,library,pre_selection_sample,post_selection_sample,pre_selection_date,post_selection_date,min_pre_selection_count,pre_count_median,pre_count_q1,pre_count_q3,pre_count_min,pre_count_max,post_count_median,post_count_q1,post_count_q3,post_count_min,post_count_max
+LibB-221115-293T,LibB,LibB-221115-293T-VSV,LibB-221115-293T-no_antibody,2022-11-15,2022-11-15,50,271.0,144.0,507.0,0,10966,364.0,100.0,955.0,0,171392

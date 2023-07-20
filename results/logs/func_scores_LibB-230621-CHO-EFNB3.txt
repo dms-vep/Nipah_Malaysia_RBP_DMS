@@ -4,7 +4,7 @@ These samples are for library='LibB'
 
 Getting pre_selection_sample barcode counts from results/barcode_counts/LibB-230621-CHO-VSV_counts.csv
 
-Getting post_selection_sample barcode counts from results/barcode_counts/LibB-230621-CHO_EFNB3_no_antibody-1_counts.csv
+Getting post_selection_sample barcode counts from results/barcode_counts/LibB-230621-CHO_EFNB3_no_antibody_counts.csv
 
 Using pseudocount 0.5
 Requiring at least 9068.982 total wildtype counts for pre_count, which is the greater of min_wt_count=1000 and min_wt_frac=0.001 of the 9068982 total counts.

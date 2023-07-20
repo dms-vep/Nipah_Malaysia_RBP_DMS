@@ -17,7 +17,7 @@ func_scores_params_default: &func_scores_params_default
   # or frequencies that may not have sufficient statistics for good estimates.
   min_pre_selection_count: 50  # drop variants < this many pre-selection counts
   # !!! Make min_pre_selection_frac LARGER for larger libraries, such 0.1 / (library size) !!!
-  min_pre_selection_frac: 0.000002  # drop variants that are < this fraction of all counts
+  min_pre_selection_frac: 0.0000001  # drop variants that are < this fraction of all counts
 
 # Define default parameters for fitting global epistasis models to each
 # individual selection to get mutationo effects.
@@ -41,31 +41,59 @@ global_epistasis_params: &global_epistasis_params
 #  - `func_score_params`: parameters for computing functional scores
 #  - `global_epistasis_params`: parameters for fitting global epistasis model
 func_scores:
-  LibB-230704-CHO-EFNB3:
-    post_selection_sample: LibB-230704-CHO_EFNB3_no_antibody-1
-    pre_selection_sample: LibB-230704-CHO_VSV
+  LibA-221115-293T:
+    post_selection_sample: LibA-221115-293T-no_antibody
+    pre_selection_sample: LibA-221115-293T-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
-  LibB-230704-293T:
-    post_selection_sample: LibB-230704-293T-no_antibody-1
-    pre_selection_sample: LibB-230704-CHO_VSV
+  LibB-221115-293T:
+    post_selection_sample: LibB-221115-293T-no_antibody
+    pre_selection_sample: LibB-221115-293T-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
-  LibB-230621-CHO-EFNB3:
-    post_selection_sample: LibB-230621-CHO_EFNB3_no_antibody-1
-    pre_selection_sample: LibB-230621-CHO-VSV
+  LibA-230331-293T:
+    post_selection_sample: LibA-230331-293T-no_antibody
+    pre_selection_sample: LibA-230331-293T-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+    
+  LibA-230331-293T_E2:
+    post_selection_sample: LibA-230331-293T_E2-no_antibody
+    pre_selection_sample: LibA-230331-293T-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+    
+  LibA-230405-293T_E2:
+    post_selection_sample: LibA-230405-293T-E2-no_antibody
+    pre_selection_sample: LibA-230405-293T-E2-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
   LibB-230509-CHO-EFNB3:
-    post_selection_sample: LibA-230509-CHO-EFNB3_no_antibody-1
+    post_selection_sample: LibA-230509-CHO-EFNB3_no_antibody
     pre_selection_sample: LibA-230509-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
-
+  LibB-230621-CHO-EFNB3:
+    post_selection_sample: LibB-230621-CHO_EFNB3_no_antibody
+    pre_selection_sample: LibB-230621-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+    
+  LibB-230704-293T:
+    post_selection_sample: LibB-230704-293T-no_antibody
+    pre_selection_sample: LibB-230704-CHO_VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+    
+  LibB-230704-CHO-EFNB3:
+    post_selection_sample: LibB-230704-CHO_EFNB3_no_antibody
+    pre_selection_sample: LibB-230704-CHO_VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
     
 
 
@@ -129,11 +157,26 @@ avg_func_effects_default: &avg_func_effects_default
 
 # Define the functional effect conditions to average
 avg_func_effects:
-  CHO_ENFB3:
+  NiV_CHO_ENFB3:
     <<: *avg_func_effects_default
-    title: Mutation effects on entry into CHO_EFNB3 cells
+    title: Median mutation effects on entry into CHO cells overexpressing EFNB3
     selections:
       - LibB-230621-CHO-EFNB3
       - LibB-230704-CHO-EFNB3
       - LibB-230509-CHO-EFNB3
-      
+
+  NiV_293T:
+    <<: *avg_func_effects_default
+    title: Median mutation effects on entry into WT 293T cells
+    selections:
+      - LibA-221115-293T
+      - LibB-221115-293T
+      - LibB-230704-293T
+      - LibA-230331-293T
+
+  NiV_293T_EFNB2:
+    <<: *avg_func_effects_default
+    title: Median mutation effects on entry into 293T cells overexpressing EFNB2
+    selections:
+      - LibA-230331-293T_E2
+      - LibA-230405-293T_E2

@@ -1,0 +1,261 @@
+<h1 id="deep-mutational-scanning-of-the-nipah-malaysian-strain-receptor-binding-protein-using-a-barcoded-lentiviral-vector">Deep mutational scanning of the Nipah Malaysian strain Receptor Binding Protein using a barcoded lentiviral vector</h1>
+<p>Analysis by Brendan Larsen and Jesse Bloom (2023)</p>
+<p>See <a href="https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS.git">https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS.git</a> for full code.</p>
+<div class="toc"><span class="toctitle">Contents</span><ul>
+<li><a href="#barcode-to-codon-variant-lookup-table">Barcode to codon-variant lookup table</a></li>
+<li><a href="#count-variants">Count variants</a></li>
+<li><a href="#functional-effects-of-mutations">Functional effects of mutations</a></li>
+<li><a href="#antibodyserum-escape">Antibody/serum escape</a></li>
+</ul>
+</div>
+<h2 id="barcode-to-codon-variant-lookup-table">Barcode to codon-variant lookup table</h2>
+<ul>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/gene_sequence/codon.fasta">parental codon sequence</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/gene_sequence/protein.fasta">parental protein sequence</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/variants/codon_variants.csv">barcode to codon-variant lookup table</a></li>
+<li><a href="notebooks/analyze_pacbio_ccs.html">Analysis of PacBio CCSs</a></li>
+<li><a href="notebooks/build_pacbio_consensus.html">Building of consensus sequences for barcoded variants</a></li>
+<li><a href="notebooks/build_codon_variants.html">Building of codon-variant table</a></li>
+</ul>
+<h2 id="count-variants">Count variants</h2>
+<ul>
+<li><details><summary>Barcode counts (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-221115-293T-no_antibody_counts.csv">LibA-221115-293T-no_antibody</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-221115-293T-VSV_counts.csv">LibA-221115-293T-VSV</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-221115-293T-m102-0.1_counts.csv">LibA-221115-293T-m102-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-221115-293T-m102-0.6_counts.csv">LibA-221115-293T-m102-0.6</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-221115-293T-no_antibody_counts.csv">LibB-221115-293T-no_antibody</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-221115-293T-VSV_counts.csv">LibB-221115-293T-VSV</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-221115-293T-m102-0.1_counts.csv">LibB-221115-293T-m102-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-221115-293T-m102-0.6_counts.csv">LibB-221115-293T-m102-0.6</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-no_antibody_counts.csv">LibA-230331-293T-no_antibody</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-VSV_counts.csv">LibA-230331-293T-VSV</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-Bat-E2-0.05_counts.csv">LibA-230331-293T-Bat-E2-0.05</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-Bat-E2-0.1_counts.csv">LibA-230331-293T-Bat-E2-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-Human-E2-2.2_counts.csv">LibA-230331-293T-Human-E2-2.2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-Bat-E3-0.1_counts.csv">LibA-230331-293T-Bat-E3-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T_E2-no_antibody_counts.csv">LibA-230331-293T_E2-no_antibody</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-E2-nAH1-0.05_counts.csv">LibA-230331-293T-E2-nAH1-0.05</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-E2-nAH1-0.1_counts.csv">LibA-230331-293T-E2-nAH1-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-E2-nAH1-0.2_counts.csv">LibA-230331-293T-E2-nAH1-0.2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-E2-m102-0.5_counts.csv">LibA-230331-293T-E2-m102-0.5</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-E2-HENV26-0.3_counts.csv">LibA-230331-293T-E2-HENV26-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-E2-Bat-E2-0.05_counts.csv">LibA-230331-293T-E2-Bat-E2-0.05</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230331-293T-E2-Bat-E2-0.1_counts.csv">LibA-230331-293T-E2-Bat-E2-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230405-293T-E2-no_antibody_counts.csv">LibA-230405-293T-E2-no_antibody</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230405-293T-E2-VSV_counts.csv">LibA-230405-293T-E2-VSV</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230509-CHO-VSV_counts.csv">LibA-230509-CHO-VSV</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibA-230509-CHO-EFNB3_no_antibody_counts.csv">LibA-230509-CHO-EFNB3_no_antibody</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230621-CHO_EFNB3_no_antibody_counts.csv">LibB-230621-CHO_EFNB3_no_antibody</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230621-CHO-VSV_counts.csv">LibB-230621-CHO-VSV</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230704-293T-no_antibody_counts.csv">LibB-230704-293T-no_antibody</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230704-CHO_EFNB3_no_antibody_counts.csv">LibB-230704-CHO_EFNB3_no_antibody</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230704-CHO_VSV_counts.csv">LibB-230704-CHO_VSV</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230704-nAH1-0.1_counts.csv">LibB-230704-nAH1-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230704-nAH1-0.3_counts.csv">LibB-230704-nAH1-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230704-HENV26-0.3_counts.csv">LibB-230704-HENV26-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230704-HENV32-0.3_counts.csv">LibB-230704-HENV32-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230704-HENV32-0.8_counts.csv">LibB-230704-HENV32-0.8</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-nAH1-0.3_counts.csv">LibB-230720-nAH1-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-nAH1-0.8_counts.csv">LibB-230720-nAH1-0.8</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-nAH1-1.2_counts.csv">LibB-230720-nAH1-1.2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-m102-0.3_counts.csv">LibB-230720-m102-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-m102-0.8_counts.csv">LibB-230720-m102-0.8</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-m102-1.2_counts.csv">LibB-230720-m102-1.2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-HENV32-0.3_counts.csv">LibB-230720-HENV32-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-HENV32-0.8_counts.csv">LibB-230720-HENV32-0.8</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-HENV32-1.2_counts.csv">LibB-230720-HENV32-1.2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-C6-low_cycles_VSV_counts.csv">LibB-230720-C6-low_cycles_VSV</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-C6_VSV_counts.csv">LibB-230720-C6_VSV</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/barcode_counts/LibB-230720-no_antibody_counts.csv">LibB-230720-no_antibody</a></li>
+</ul></details>
+
+</li>
+<li><a href="notebooks/analyze_variant_counts.html">Analysis of variant counts</a></li>
+</ul>
+<h2 id="functional-effects-of-mutations">Functional effects of mutations</h2>
+<ul>
+<li><details><summary>Per-variant functional scores (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_scores/LibA-221115-293T_func_scores.csv">LibA-221115-293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_scores/LibB-221115-293T_func_scores.csv">LibB-221115-293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_scores/LibA-230331-293T_func_scores.csv">LibA-230331-293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_scores/LibA-230331-293T_E2_func_scores.csv">LibA-230331-293T_E2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_scores/LibA-230405-293T_E2_func_scores.csv">LibA-230405-293T_E2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_scores/LibB-230509-CHO-EFNB3_func_scores.csv">LibB-230509-CHO-EFNB3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_scores/LibB-230621-CHO-EFNB3_func_scores.csv">LibB-230621-CHO-EFNB3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_scores/LibB-230704-293T_func_scores.csv">LibB-230704-293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_scores/LibB-230704-CHO-EFNB3_func_scores.csv">LibB-230704-CHO-EFNB3</a></li>
+</ul></details>
+
+</li>
+<li><a href="notebooks/analyze_func_scores.html">Analysis of functional scores</a></li>
+<li><details><summary>Per-selection global epistasis fitting (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/func_effects_global_epistasis_LibA-221115-293T.html">LibA-221115-293T</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-221115-293T.html">LibB-221115-293T</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibA-230331-293T.html">LibA-230331-293T</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibA-230331-293T_E2.html">LibA-230331-293T_E2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibA-230405-293T_E2.html">LibA-230405-293T_E2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-230509-CHO-EFNB3.html">LibB-230509-CHO-EFNB3</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-230621-CHO-EFNB3.html">LibB-230621-CHO-EFNB3</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-230704-293T.html">LibB-230704-293T</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-230704-CHO-EFNB3.html">LibB-230704-CHO-EFNB3</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Per-selection mutation functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/by_selection/LibA-221115-293T_func_effects.csv">LibA-221115-293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/by_selection/LibB-221115-293T_func_effects.csv">LibB-221115-293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/by_selection/LibA-230331-293T_func_effects.csv">LibA-230331-293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/by_selection/LibA-230331-293T_E2_func_effects.csv">LibA-230331-293T_E2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/by_selection/LibA-230405-293T_E2_func_effects.csv">LibA-230405-293T_E2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/by_selection/LibB-230509-CHO-EFNB3_func_effects.csv">LibB-230509-CHO-EFNB3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/by_selection/LibB-230621-CHO-EFNB3_func_effects.csv">LibB-230621-CHO-EFNB3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/by_selection/LibB-230704-293T_func_effects.csv">LibB-230704-293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/by_selection/LibB-230704-CHO-EFNB3_func_effects.csv">LibB-230704-CHO-EFNB3</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Notebooks averaging mutation functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/avg_func_effects_NiV_CHO_ENFB3.html">NiV_CHO_ENFB3</a></li>
+<li><a href="notebooks/avg_func_effects_NiV_293T.html">NiV_293T</a></li>
+<li><a href="notebooks/avg_func_effects_NiV_293T_EFNB2.html">NiV_293T_EFNB2</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Average mutation functional effects (CSV files) (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/averages/NiV_CHO_ENFB3_func_effects.csv">NiV_CHO_ENFB3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/averages/NiV_293T_func_effects.csv">NiV_293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/averages/NiV_293T_EFNB2_func_effects.csv">NiV_293T_EFNB2</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Average mutation latent-phenotype effects (CSV files) (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/averages/NiV_CHO_ENFB3_func_effects.csv">NiV_CHO_ENFB3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/averages/NiV_293T_func_effects.csv">NiV_293T</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/func_effects/averages/NiV_293T_EFNB2_func_effects.csv">NiV_293T_EFNB2</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Interactive plots of average mutation functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="htmls/NiV_CHO_ENFB3_func_effects.html">NiV_CHO_ENFB3</a></li>
+<li><a href="htmls/NiV_293T_func_effects.html">NiV_293T</a></li>
+<li><a href="htmls/NiV_293T_EFNB2_func_effects.html">NiV_293T_EFNB2</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Interactive plots of average mutation latent-phenotype effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="htmls/NiV_CHO_ENFB3_latent_effects.html">NiV_CHO_ENFB3</a></li>
+<li><a href="htmls/NiV_293T_latent_effects.html">NiV_293T</a></li>
+<li><a href="htmls/NiV_293T_EFNB2_latent_effects.html">NiV_293T_EFNB2</a></li>
+</ul></details>
+
+</li>
+</ul>
+<h2 id="antibodyserum-escape">Antibody/serum escape</h2>
+<ul>
+<li><details><summary>Probability (fraction) escape for each variant (CSVs) in each selection (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-221115-m102.4_LibA-221115-293T-m102-0.1_prob_escape.csv">LibA-221115-m102.4 LibA-221115-293T-m102-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-221115-m102.4_LibA-221115-293T-m102-0.6_prob_escape.csv">LibA-221115-m102.4 LibA-221115-293T-m102-0.6</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-221115-m102.4_LibB-221115-293T-m102-0.1_prob_escape.csv">LibB-221115-m102.4 LibB-221115-293T-m102-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-221115-m102.4_LibB-221115-293T-m102-0.6_prob_escape.csv">LibB-221115-m102.4 LibB-221115-293T-m102-0.6</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-230331-293T-Bat_E2_LibA-230331-293T-Bat-E2-0.05_prob_escape.csv">LibA-230331-293T-Bat_E2 LibA-230331-293T-Bat-E2-0.05</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-230331-293T-Bat_E2_LibA-230331-293T-Bat-E2-0.1_prob_escape.csv">LibA-230331-293T-Bat_E2 LibA-230331-293T-Bat-E2-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-230331-293T-Bat_E3_LibA-230331-293T-Bat-E3-0.1_prob_escape.csv">LibA-230331-293T-Bat_E3 LibA-230331-293T-Bat-E3-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-230331-nAH1.3_LibA-230331-293T-E2-nAH1-0.05_prob_escape.csv">LibA-230331-nAH1.3 LibA-230331-293T-E2-nAH1-0.05</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-230331-nAH1.3_LibA-230331-293T-E2-nAH1-0.1_prob_escape.csv">LibA-230331-nAH1.3 LibA-230331-293T-E2-nAH1-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-230331-nAH1.3_LibA-230331-293T-E2-nAH1-0.2_prob_escape.csv">LibA-230331-nAH1.3 LibA-230331-293T-E2-nAH1-0.2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-230331-m102.4_LibA-230331-293T-E2-m102-0.5_prob_escape.csv">LibA-230331-m102.4 LibA-230331-293T-E2-m102-0.5</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-230331-HENV26_LibA-230331-293T-E2-HENV26-0.3_prob_escape.csv">LibA-230331-HENV26 LibA-230331-293T-E2-HENV26-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibA-230331-293T_E2-Bat_E2_LibA-230331-293T-E2-Bat-E2-0.05_prob_escape.csv">LibA-230331-293T_E2-Bat_E2 LibA-230331-293T-E2-Bat-E2-0.05</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230704-nAH1.3_LibB-230704-nAH1-0.1_prob_escape.csv">LibB-230704-nAH1.3 LibB-230704-nAH1-0.1</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230704-nAH1.3_LibB-230704-nAH1-0.3_prob_escape.csv">LibB-230704-nAH1.3 LibB-230704-nAH1-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230704-HENV26_LibB-230704-HENV26-0.3_prob_escape.csv">LibB-230704-HENV26 LibB-230704-HENV26-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230704-HENV32_LibB-230704-HENV32-0.3_prob_escape.csv">LibB-230704-HENV32 LibB-230704-HENV32-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230704-HENV32_LibB-230704-HENV32-0.8_prob_escape.csv">LibB-230704-HENV32 LibB-230704-HENV32-0.8</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230720-nAH1.3_LibB-230720-nAH1-0.3_prob_escape.csv">LibB-230720-nAH1.3 LibB-230720-nAH1-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230720-nAH1.3_LibB-230720-nAH1-0.8_prob_escape.csv">LibB-230720-nAH1.3 LibB-230720-nAH1-0.8</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230720-nAH1.3_LibB-230720-nAH1-1.2_prob_escape.csv">LibB-230720-nAH1.3 LibB-230720-nAH1-1.2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230720-m102.4_LibB-230720-m102-0.3_prob_escape.csv">LibB-230720-m102.4 LibB-230720-m102-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230720-m102.4_LibB-230720-m102-0.8_prob_escape.csv">LibB-230720-m102.4 LibB-230720-m102-0.8</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230720-m102.4_LibB-230720-m102-1.2_prob_escape.csv">LibB-230720-m102.4 LibB-230720-m102-1.2</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230720-HENV32_LibB-230720-HENV32-0.3_prob_escape.csv">LibB-230720-HENV32 LibB-230720-HENV32-0.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230720-HENV32_LibB-230720-HENV32-0.8_prob_escape.csv">LibB-230720-HENV32 LibB-230720-HENV32-0.8</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/by_selection/LibB-230720-HENV32_LibB-230720-HENV32-1.2_prob_escape.csv">LibB-230720-HENV32 LibB-230720-HENV32-1.2</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Fits of polyclonal models to antibody escape selections (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/fit_antibody_escape_LibA-221115-m102.4.html">LibA-221115-m102.4</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibB-221115-m102.4.html">LibB-221115-m102.4</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibA-230331-293T-Bat_E2.html">LibA-230331-293T-Bat_E2</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibA-230331-293T-Bat_E3.html">LibA-230331-293T-Bat_E3</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibA-230331-nAH1.3.html">LibA-230331-nAH1.3</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibA-230331-m102.4.html">LibA-230331-m102.4</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibA-230331-HENV26.html">LibA-230331-HENV26</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibA-230331-293T_E2-Bat_E2.html">LibA-230331-293T_E2-Bat_E2</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibB-230704-nAH1.3.html">LibB-230704-nAH1.3</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibB-230704-HENV26.html">LibB-230704-HENV26</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibB-230704-HENV32.html">LibB-230704-HENV32</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibB-230720-nAH1.3.html">LibB-230720-nAH1.3</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibB-230720-m102.4.html">LibB-230720-m102.4</a></li>
+<li><a href="notebooks/fit_antibody_escape_LibB-230720-HENV32.html">LibB-230720-HENV32</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Average selections for antibody/serum (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/avg_antibody_escape_nAH1.3.html">nAH1.3</a></li>
+<li><a href="notebooks/avg_antibody_escape_m102.4.html">m102.4</a></li>
+<li><a href="notebooks/avg_antibody_escape_HENV26.html">HENV26</a></li>
+<li><a href="notebooks/avg_antibody_escape_HENV32.html">HENV32</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Antibody/serum mutation escape CSVs (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/nAH1.3_mut_escape.csv">nAH1.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/m102.4_mut_escape.csv">m102.4</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/HENV26_mut_escape.csv">HENV26</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/HENV32_mut_escape.csv">HENV32</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Antibody/serum mutation ICXX CSVs (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/nAH1.3_mut_icXX.csv">nAH1.3</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/m102.4_mut_icXX.csv">m102.4</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/HENV26_mut_icXX.csv">HENV26</a></li>
+<li><a href="https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/HENV32_mut_icXX.csv">HENV32</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Antibody/serum mutation escape plots (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="htmls/nAH1.3_mut_escape.html">nAH1.3</a></li>
+<li><a href="htmls/m102.4_mut_escape.html">m102.4</a></li>
+<li><a href="htmls/HENV26_mut_escape.html">HENV26</a></li>
+<li><a href="htmls/HENV32_mut_escape.html">HENV32</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Antibody/serum mutation ICXX plots (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="htmls/nAH1.3_mut_icXX.html">nAH1.3</a></li>
+<li><a href="htmls/m102.4_mut_icXX.html">m102.4</a></li>
+<li><a href="htmls/HENV26_mut_icXX.html">HENV26</a></li>
+<li><a href="htmls/HENV32_mut_icXX.html">HENV32</a></li>
+</ul></details>
+
+</li>
+</ul>

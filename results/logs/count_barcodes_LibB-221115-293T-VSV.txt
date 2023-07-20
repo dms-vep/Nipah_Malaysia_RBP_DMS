@@ -1,0 +1,10 @@
+There are 66412 valid barcodes for library='LibB'
+Parsing barcodes from /fh/fast/bloom_j/SR/ngs/illumina/blarsen/221117_VH00319_298_AACGHC3M5/Unaligned/Project_blarsen/BL_221115_VSV-B_S2_R1_001.fastq.gz
+Counts of valid and invalid barcodes:
+       n_barcodes  n_counts
+valid                      
+False      299613   4683206
+True        65755  26947030
+Writing valid barcode counts to results/barcode_counts/LibB-221115-293T-VSV_counts.csv
+Writing invalid barcode counts to results/barcode_counts/LibB-221115-293T-VSV_invalid.csv
+Writing barcode fates to results/barcode_counts/LibB-221115-293T-VSV_fates.csv

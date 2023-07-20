@@ -1,0 +1,792 @@
+Input Notebook:  dms-vep-pipeline-3/notebooks/fit_antibody_escape.ipynb
+Output Notebook: results/notebooks/fit_antibody_escape_LibB-230720-nAH1.3.ipynb
+Executing:   0%|          | 0/32 [00:00<?, ?cell/s]0.01s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+Executing notebook with kernel: python3
+Executing:   3%|▎         | 1/32 [00:04<02:19,  4.51s/cell][IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+Executing:   6%|▋         | 2/32 [00:08<02:02,  4.07s/cell]Executing:  22%|██▏       | 7/32 [00:08<00:20,  1.25cell/s]Executing:  38%|███▊      | 12/32 [00:08<00:07,  2.60cell/s][IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+Executing:  47%|████▋     | 15/32 [00:08<00:05,  3.26cell/s]Executing:  56%|█████▋    | 18/32 [00:09<00:03,  4.42cell/s]Executing:  69%|██████▉   | 22/32 [00:09<00:01,  5.15cell/s]Executing:  75%|███████▌  | 24/32 [00:09<00:01,  5.90cell/s][IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+Executing:  81%|████████▏ | 26/32 [00:10<00:01,  5.97cell/s]Executing:  88%|████████▊ | 28/32 [00:10<00:00,  6.97cell/s]Executing:  94%|█████████▍| 30/32 [00:10<00:00,  6.00cell/s]Executing:  97%|█████████▋| 31/32 [00:30<00:00,  6.00cell/s][IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+Executing: 100%|██████████| 32/32 [01:49<00:00, 13.56s/cell][IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+[IPKernelApp] ERROR | Error in message handler
+Traceback (most recent call last):
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 516, in dispatch_queue
+    await self.process_one()
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 505, in process_one
+    await dispatch(*args)
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/ipykernel/kernelbase.py", line 369, in dispatch_shell
+    idents, msg = self.session.feed_identities(msg, copy=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/fh/fast/bloom_j/software/miniconda3/envs/dms-vep-pipeline-3/lib/python3.11/site-packages/jupyter_client/session.py", line 990, in feed_identities
+    raise ValueError(msg)
+ValueError: DELIM not in msg_list
+Executing: 100%|██████████| 32/32 [01:50<00:00,  3.44s/cell]
