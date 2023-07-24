@@ -1,2 +1,2 @@
 [NbConvertApp] Converting notebook results/notebooks/avg_antibody_escape_HENV26.ipynb to html
-[NbConvertApp] Writing 6851794 bytes to docs/notebooks/avg_antibody_escape_HENV26.html
+[NbConvertApp] Writing 6852212 bytes to docs/notebooks/avg_antibody_escape_HENV26.html

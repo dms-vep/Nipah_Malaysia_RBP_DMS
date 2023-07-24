@@ -1,6 +1,6 @@
 Input Notebook:  dms-vep-pipeline-3/notebooks/fit_antibody_escape.ipynb
 Output Notebook: results/notebooks/fit_antibody_escape_LibB-230704-nAH1.3.ipynb
-Executing:   0%|          | 0/32 [00:00<?, ?cell/s]0.01s - Debugger warning: It seems that frozen modules are being used, which may
+Executing:   0%|          | 0/32 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
 0.00s - to python to disable frozen modules.
 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
@@ -9,4 +9,4 @@ Output Notebook: results/notebooks/fit_antibody_escape_LibB-230704-nAH1.3.ipynb
 0.00s - to python to disable frozen modules.
 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
 Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/32 [00:04<02:19,  4.51s/cell]Executing:   6%|▋         | 2/32 [00:08<02:01,  4.06s/cell]Executing:  22%|██▏       | 7/32 [00:08<00:19,  1.25cell/s]Executing:  38%|███▊      | 12/32 [00:08<00:07,  2.61cell/s]Executing:  50%|█████     | 16/32 [00:08<00:04,  3.65cell/s]Executing:  62%|██████▎   | 20/32 [00:08<00:02,  5.31cell/s]Executing:  72%|███████▏  | 23/32 [00:09<00:01,  5.62cell/s]Executing:  78%|███████▊  | 25/32 [00:09<00:01,  6.54cell/s]Executing:  84%|████████▍ | 27/32 [00:09<00:00,  6.93cell/s]Executing:  91%|█████████ | 29/32 [00:09<00:00,  8.16cell/s]Executing:  97%|█████████▋| 31/32 [00:10<00:00,  7.17cell/s]Executing:  97%|█████████▋| 31/32 [00:30<00:00,  7.17cell/s]Executing: 100%|██████████| 32/32 [00:49<00:00,  6.23s/cell]Executing: 100%|██████████| 32/32 [00:49<00:00,  1.56s/cell]
+Executing:   3%|▎         | 1/32 [00:01<00:58,  1.88s/cell]Executing:   6%|▋         | 2/32 [00:03<00:50,  1.68s/cell]Executing:  22%|██▏       | 7/32 [00:03<00:08,  2.95cell/s]Executing:  38%|███▊      | 12/32 [00:03<00:03,  5.93cell/s]Executing:  50%|█████     | 16/32 [00:03<00:02,  7.24cell/s]Executing:  62%|██████▎   | 20/32 [00:04<00:01, 10.10cell/s]Executing:  72%|███████▏  | 23/32 [00:04<00:01,  8.77cell/s]Executing:  81%|████████▏ | 26/32 [00:04<00:00,  9.07cell/s]Executing:  88%|████████▊ | 28/32 [00:04<00:00, 10.21cell/s]Executing:  94%|█████████▍| 30/32 [00:05<00:00,  8.14cell/s]Executing:  97%|█████████▋| 31/32 [00:20<00:00,  8.14cell/s]Executing: 100%|██████████| 32/32 [00:41<00:00,  4.56s/cell]Executing: 100%|██████████| 32/32 [00:41<00:00,  1.31s/cell]

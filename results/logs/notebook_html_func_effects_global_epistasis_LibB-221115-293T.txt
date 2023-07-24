@@ -1,2 +1,2 @@
 [NbConvertApp] Converting notebook results/notebooks/func_effects_global_epistasis_LibB-221115-293T.ipynb to html
-[NbConvertApp] Writing 998946 bytes to docs/notebooks/func_effects_global_epistasis_LibB-221115-293T.html
+[NbConvertApp] Writing 998250 bytes to docs/notebooks/func_effects_global_epistasis_LibB-221115-293T.html
