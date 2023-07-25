@@ -1,2 +1,2 @@
 [NbConvertApp] Converting notebook results/notebooks/fit_antibody_escape_LibA-230331-293T_E2-Bat_E2.ipynb to html
-[NbConvertApp] Writing 2416868 bytes to docs/notebooks/fit_antibody_escape_LibA-230331-293T_E2-Bat_E2.html
+[NbConvertApp] Writing 2417165 bytes to docs/notebooks/fit_antibody_escape_LibA-230331-293T_E2-Bat_E2.html

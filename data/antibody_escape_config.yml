@@ -388,3 +388,9 @@ avg_antibody_escape:
       - LibB-230704-HENV32
       - LibB-230720-HENV32
 
+  Bat_EFNB2_Dimeric:
+    <<: *avg_receptor_affinity_default
+    title: Receptor Affinity for Dimeric Bat EFNB2
+    selections:
+      - LibA-230331-293T_E2-Bat_E2
+      - LibA-230331-293T-Bat_E2

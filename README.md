@@ -3,10 +3,12 @@ Study by Brendan Larsen and Jesse Bloom.
 
 For documentation of the analysis, see [https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/](https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/).
 
-## Organization of this repo
 
+## Data
+This repo contains data and analyses from deep mutational scanning experiments on the Nipah Receptor Binding Protein. All experiments were performed on the reference Nipah genome sequenced during the original outbreak in Malaysia [NC_002728.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_002728.1). Thirty two amino acids were removed from the cytoplasmic tail to improve lentivirus titers, and all residues between reference sites 71 and 602 contain every possible single missense mutation. Stop codons were designed to occur at every other position from positions 71 to 234.
 
 ## Overview
+
 This repository contains a [snakemake](https://snakemake.readthedocs.io/) pipeline for analysis of deep mutational scanning of barcoded viral entry proteins.
 
 Note that this is version 3 of the pipeline (see the [CHANGELOG](CHANGELOG.md) for details); older versions are hosted on the no-longer maintained [https://github.com/dms-vep/dms-vep-pipeline](https://github.com/dms-vep/dms-vep-pipeline) repo.
@@ -33,13 +35,13 @@ In other words, the directory structure would look like this:
 └── <other files / subdirectories that are part of project>
 ```
 
-For this to work, the top-level `config.yaml` needs specify details for your project (see more below).
+For this to work, the top-level `config.yaml`  specify details for your project (see more below).
 
 
 ## Running the pipeline
 You can run the pipeline from the top-level directory using:
 
-    snakemake -j <n_jobs> --use-conda -s dms-vep-pipeline-3/Snakefile
+    snakemake -c <n_jobs> --use-conda -s dms-vep-pipeline-3/Snakefile
 
 Note that the `-s dms-vep-pipeline-3/Snakefile` flag specifies to use the Snakefile in the pipeline submodule.
 
@@ -52,8 +54,12 @@ Running the pipeline will put results in `./results/` and the HTML documentation
 To display the HTML documentation via GitHub pages, set up your repo to serve documentation via GitHub pages from the `/docs` folder of the main (or master) branch [as described here](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 The documentation will then be at `https://dms-vep.github.io/<my_dms_repo>` (assuming you are using the [https://github.com/dms-vep](https://github.com/dms-vep) organization; otherwise replace `dms-vep` with whatever account contains your repo).
 
+## Updating the pipeline
+Anytime new changes are made to `dms-vep-pipeline-3` you can update the pipeline by running `git submodule foreach git pull` in the top level directory.
+
+
 ## Configuring and customizing the pipeline
-The main configuration for the analysis is in the `config.yaml` file that you place in your-top level repository.
+The main configuration for the analysis is in the `config.yaml` file that is in the top level repository.
 An example of this configuration file is at [test_example/config.yaml](test_example/config.yaml).
 Note in order for things to work properly you need to correctly set the `pipeline_path`, `docs`, `github_repo_url`, `github_blob_url`, `description`, `year`, and `authors` keys in the `config.yaml` file.
 
@@ -72,10 +78,6 @@ So if you want other files or outputs for any of your custom rules to be rendere
 Your top-level repo also needs to have an appropriate `.gitignore` file that specifies which results to include and which not to include (we don't include them all or it would be too much to track).
 A template `.gitignore` file is at [test_example/.gitignore](test_example/.gitignore).
 
-
-## Details on setup of this pipeline repository
-
-### Other details about pipeline
 
 ### `conda` environment
 The [conda](https://docs.conda.io/) environment for the pipeline is in [environment.yml](environment.yml).

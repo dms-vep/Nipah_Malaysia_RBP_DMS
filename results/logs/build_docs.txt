@@ -166,26 +166,31 @@ See [https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS.git](https://github.com/d
     - [m102.4](notebooks/avg_antibody_escape_m102.4.html)
     - [HENV26](notebooks/avg_antibody_escape_HENV26.html)
     - [HENV32](notebooks/avg_antibody_escape_HENV32.html)
+    - [Bat_EFNB2_Dimeric](notebooks/avg_antibody_escape_Bat_EFNB2_Dimeric.html)
   - Antibody/serum mutation escape CSVs
     - [nAH1.3](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/nAH1.3_mut_escape.csv)
     - [m102.4](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/m102.4_mut_escape.csv)
     - [HENV26](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/HENV26_mut_escape.csv)
     - [HENV32](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/HENV32_mut_escape.csv)
+    - [Bat_EFNB2_Dimeric](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/Bat_EFNB2_Dimeric_mut_escape.csv)
   - Antibody/serum mutation ICXX CSVs
     - [nAH1.3](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/nAH1.3_mut_icXX.csv)
     - [m102.4](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/m102.4_mut_icXX.csv)
     - [HENV26](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/HENV26_mut_icXX.csv)
     - [HENV32](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/HENV32_mut_icXX.csv)
+    - [Bat_EFNB2_Dimeric](https://github.com/dms-vep/dms-vep-pipeline-3/blob/main/test_example/results/antibody_escape/averages/Bat_EFNB2_Dimeric_mut_icXX.csv)
   - Antibody/serum mutation escape plots
     - [nAH1.3](htmls/nAH1.3_mut_escape.html)
     - [m102.4](htmls/m102.4_mut_escape.html)
     - [HENV26](htmls/HENV26_mut_escape.html)
     - [HENV32](htmls/HENV32_mut_escape.html)
+    - [Bat_EFNB2_Dimeric](htmls/Bat_EFNB2_Dimeric_mut_escape.html)
   - Antibody/serum mutation ICXX plots
     - [nAH1.3](htmls/nAH1.3_mut_icXX.html)
     - [m102.4](htmls/m102.4_mut_icXX.html)
     - [HENV26](htmls/HENV26_mut_icXX.html)
     - [HENV32](htmls/HENV32_mut_icXX.html)
+    - [Bat_EFNB2_Dimeric](htmls/Bat_EFNB2_Dimeric_mut_icXX.html)
 
 
 Collapsing the following nested lists:
