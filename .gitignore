@@ -1,0 +1,9 @@
+.*
+_*
+*.out
+results/process_ccs/
+
+!.github
+!.gitignore
+!.gitattributes
+!.gitmodules
