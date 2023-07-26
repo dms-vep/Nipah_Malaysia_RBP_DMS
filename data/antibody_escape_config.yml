@@ -165,10 +165,10 @@ antibody_selections:
     antibody_samples:
      LibA-230331-293T-E2-nAH1-0.05:
       concentration: 0.05
-      use_in_fit: true
+      use_in_fit: false
      LibA-230331-293T-E2-nAH1-0.1:
       concentration: 0.1
-      use_in_fit: true
+      use_in_fit: false
      LibA-230331-293T-E2-nAH1-0.2:
       concentration: 0.2
       use_in_fit: true
@@ -222,7 +222,7 @@ antibody_selections:
     antibody_samples:
      LibB-230704-nAH1-0.1:
       concentration: 0.1
-      use_in_fit: true
+      use_in_fit: false
      LibB-230704-nAH1-0.3:
       concentration: 0.3
       use_in_fit: true
@@ -265,7 +265,7 @@ antibody_selections:
     antibody_samples:
      LibB-230720-nAH1-0.3:
       concentration: 0.3
-      use_in_fit: true
+      use_in_fit: false
      LibB-230720-nAH1-0.8:
       concentration: 0.8
       use_in_fit: true
@@ -283,13 +283,13 @@ antibody_selections:
     antibody_samples:
      LibB-230720-m102-0.3:
       concentration: 0.3
-      use_in_fit: true
+      use_in_fit: false
      LibB-230720-m102-0.8:
       concentration: 0.8
       use_in_fit: true
      LibB-230720-m102-1.2:
       concentration: 1.2
-      use_in_fit: true
+      use_in_fit: false
 
   LibB-230720-HENV32:
     neut_standard_name: neut_standard
@@ -301,10 +301,10 @@ antibody_selections:
     antibody_samples:
      LibB-230720-HENV32-0.3:
       concentration: 0.3
-      use_in_fit: true
+      use_in_fit: false
      LibB-230720-HENV32-0.8:
       concentration: 0.8
-      use_in_fit: true
+      use_in_fit: false
      LibB-230720-HENV32-1.2:
       concentration: 1.2
       use_in_fit: true
@@ -371,8 +371,6 @@ avg_antibody_escape:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody m102.4
     selections:
-      - LibA-221115-m102.4
-      - LibB-221115-m102.4
       - LibA-230331-m102.4
       - LibB-230720-m102.4
   HENV26:
