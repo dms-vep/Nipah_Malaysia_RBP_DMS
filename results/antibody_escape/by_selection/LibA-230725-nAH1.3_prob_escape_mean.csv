@@ -1,0 +1,17 @@
+sample,concentration,use_in_fit,n_substitutions,n_variants,censored,probability escape
+LibA-230725-nAH13-0.8,0.8,False,0,9221,"censored to [0, 1]",0.1768
+LibA-230725-nAH13-0.8,0.8,False,1,44535,"censored to [0, 1]",0.1738
+LibA-230725-nAH13-0.8,0.8,False,2,13544,"censored to [0, 1]",0.184
+LibA-230725-nAH13-0.8,0.8,False,>2,2088,"censored to [0, 1]",0.1841
+LibA-230725-nAH13-1.2,1.2,True,0,9215,"censored to [0, 1]",0.04557
+LibA-230725-nAH13-1.2,1.2,True,1,44415,"censored to [0, 1]",0.06108
+LibA-230725-nAH13-1.2,1.2,True,2,13433,"censored to [0, 1]",0.07578
+LibA-230725-nAH13-1.2,1.2,True,>2,2069,"censored to [0, 1]",0.0903
+LibA-230725-nAH13-0.8,0.8,False,0,9221,not censored,0.1843
+LibA-230725-nAH13-0.8,0.8,False,1,44535,not censored,0.2058
+LibA-230725-nAH13-0.8,0.8,False,2,13544,not censored,0.2524
+LibA-230725-nAH13-0.8,0.8,False,>2,2088,not censored,0.2902
+LibA-230725-nAH13-1.2,1.2,True,0,9215,not censored,0.04887
+LibA-230725-nAH13-1.2,1.2,True,1,44415,not censored,0.0823
+LibA-230725-nAH13-1.2,1.2,True,2,13433,not censored,0.1157
+LibA-230725-nAH13-1.2,1.2,True,>2,2069,not censored,0.1566

@@ -1,4 +1,4 @@
-There are 66412 valid barcodes for library='LibB'
+There are 66405 valid barcodes for library='LibB'
 Parsing barcodes from /fh/fast/bloom_j/SR/ngs/illumina/tmcmahon/230621_VH01189_127_AACWWCMM5/Unaligned/Project_tmcmahon/TM_230615_CHO_A2_Wash_VSV_S5_R1_001.fastq.gz
 Counts of valid and invalid barcodes:
        n_barcodes  n_counts

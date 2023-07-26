@@ -1,4 +1,4 @@
-There are 84833 valid barcodes for library='LibA'
+There are 84826 valid barcodes for library='LibA'
 Parsing barcodes from /fh/fast/bloom_j/SR/ngs/illumina/blarsen/221117_VH00319_298_AACGHC3M5/Unaligned/Project_blarsen/BL_221115_Niv-A-CTL_S5_R1_001.fastq.gz /fh/fast/bloom_j/SR/ngs/illumina/blarsen/221117_VH00319_298_AACGHC3M5/Unaligned/Project_blarsen/BL_221115_NiV-A_S3_R1_001.fastq.gz
 Counts of valid and invalid barcodes:
        n_barcodes  n_counts

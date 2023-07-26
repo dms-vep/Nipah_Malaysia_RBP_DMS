@@ -96,7 +96,17 @@ func_scores:
     global_epistasis_params: *global_epistasis_params
     
 
-
+  LibB-230720-CHO-EFNB3_normal_VSV:
+    post_selection_sample: LibB-230720-no_antibody
+    pre_selection_sample: LibB-230720-C6_VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+    
+  LibB-230720-CHO-EFNB3_low_VSV:
+    post_selection_sample: LibB-230720-no_antibody
+    pre_selection_sample: LibB-230720-C6-low_cycles_VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
 # --------------------------------------------------------------------------------------
 # Configuration for averaging mutation functional effects across selections and plotting
 # them.
@@ -164,6 +174,7 @@ avg_func_effects:
       - LibB-230621-CHO-EFNB3
       - LibB-230704-CHO-EFNB3
       - LibB-230509-CHO-EFNB3
+      - LibB-230720-CHO-EFNB3_normal_VSV
 
   NiV_293T:
     <<: *avg_func_effects_default

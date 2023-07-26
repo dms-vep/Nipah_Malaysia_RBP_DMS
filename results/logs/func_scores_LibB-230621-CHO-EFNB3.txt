@@ -18,7 +18,7 @@ Adequate post_count wildtype counts of 1769864
 Only keeping scores for variants with at least 50 pre-selection counts:
                                  n_variants
 sufficient_pre_selection_counts            
-False                                 22523
+False                                 22516
 True                                  43889
 
 Writing summary counts to results/func_scores/LibB-230621-CHO-EFNB3_count_summary.csv

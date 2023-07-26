@@ -1,2 +1,3 @@
 [NbConvertApp] Converting notebook results/notebooks/func_effects_global_epistasis_LibA-230405-293T_E2.ipynb to html
-[NbConvertApp] Writing 990786 bytes to docs/notebooks/func_effects_global_epistasis_LibA-230405-293T_E2.html
+[NbConvertApp] WARNING | Alternative text is missing on 2 image(s).
+[NbConvertApp] Writing 648630 bytes to docs/notebooks/func_effects_global_epistasis_LibA-230405-293T_E2.html

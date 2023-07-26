@@ -308,6 +308,67 @@ antibody_selections:
      LibB-230720-HENV32-1.2:
       concentration: 1.2
       use_in_fit: true
+      
+  LibA-230725-minibinder:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230725-no_antibody
+    antibody_samples:
+     LibA-230725-minibinder-0.2:
+      concentration: 0.2
+      use_in_fit: true
+      
+  LibA-230725-nAH1.3:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230725-no_antibody
+    antibody_samples:
+     LibA-230725-nAH13-0.8:
+      concentration: 0.8
+      use_in_fit: false
+     LibA-230725-nAH13-1.2:
+      concentration: 1.2
+      use_in_fit: true
+
+  LibA-230725-m102.4:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230725-no_antibody
+    antibody_samples:
+     LibA-230725-m102-0.3:
+      concentration: 0.3
+      use_in_fit: false
+     LibA-230725-m102-0.8:
+      concentration: 0.8
+      use_in_fit: true
+     LibA-230725-m102-1.2:
+      concentration: 1.2
+      use_in_fit: true
+
+  LibA-230725-HENV32:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230725-no_antibody
+    antibody_samples:
+     LibA-230725-HENV32-1.0:
+      concentration: 1.0
+      use_in_fit: false
+     LibA-230725-HENV32-2.5:
+      concentration: 2.5
+      use_in_fit: true
+
 # --------------------------------------------------------------------------------------
 # Configuration for averaging and plotting selections for the same antibody
 # --------------------------------------------------------------------------------------
@@ -367,12 +428,13 @@ avg_antibody_escape:
       - LibA-230331-nAH1.3
       - LibB-230704-nAH1.3
       - LibB-230720-nAH1.3
+      - LibA-230725-nAH1.3
   m102.4:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody m102.4
     selections:
-      - LibA-230331-m102.4
       - LibB-230720-m102.4
+      - LibA-230725-m102.4
   HENV26:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody HENV26
@@ -385,6 +447,7 @@ avg_antibody_escape:
     selections:
       - LibB-230704-HENV32
       - LibB-230720-HENV32
+      - LibA-230725-HENV32
 
   Bat_EFNB2_Dimeric:
     <<: *avg_receptor_affinity_default
