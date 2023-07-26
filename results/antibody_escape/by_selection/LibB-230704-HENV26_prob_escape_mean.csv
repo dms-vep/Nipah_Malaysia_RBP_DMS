@@ -1,9 +1,0 @@
-sample,concentration,use_in_fit,n_substitutions,n_variants,censored,probability escape
-LibB-230704-HENV26-0.3,0.3,True,0,7138,"censored to [0, 1]",0.1461
-LibB-230704-HENV26-0.3,0.3,True,1,35991,"censored to [0, 1]",0.1434
-LibB-230704-HENV26-0.3,0.3,True,2,10358,"censored to [0, 1]",0.1392
-LibB-230704-HENV26-0.3,0.3,True,>2,1672,"censored to [0, 1]",0.1309
-LibB-230704-HENV26-0.3,0.3,True,0,7138,not censored,0.1498
-LibB-230704-HENV26-0.3,0.3,True,1,35991,not censored,0.1567
-LibB-230704-HENV26-0.3,0.3,True,2,10358,not censored,0.1611
-LibB-230704-HENV26-0.3,0.3,True,>2,1672,not censored,0.1618

@@ -1,2 +1,0 @@
-[NbConvertApp] Converting notebook results/notebooks/avg_antibody_escape_Dimeric_Bat_E2.ipynb to html
-[NbConvertApp] Writing 7136717 bytes to docs/notebooks/avg_antibody_escape_Dimeric_Bat_E2.html

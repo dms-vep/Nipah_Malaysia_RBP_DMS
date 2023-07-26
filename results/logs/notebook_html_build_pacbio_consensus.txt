@@ -1,2 +1,0 @@
-[NbConvertApp] Converting notebook results/notebooks/build_pacbio_consensus.ipynb to html
-[NbConvertApp] Writing 969597 bytes to docs/notebooks/build_pacbio_consensus.html

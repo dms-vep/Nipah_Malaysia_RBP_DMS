@@ -1,2 +1,0 @@
-[NbConvertApp] Converting notebook results/notebooks/fit_antibody_escape_LibB-230704-HENV32.ipynb to html
-[NbConvertApp] Writing 2296213 bytes to docs/notebooks/fit_antibody_escape_LibB-230704-HENV32.html

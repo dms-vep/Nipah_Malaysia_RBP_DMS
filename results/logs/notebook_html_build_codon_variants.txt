@@ -1,2 +1,0 @@
-[NbConvertApp] Converting notebook results/notebooks/build_codon_variants.ipynb to html
-[NbConvertApp] Writing 5854710 bytes to docs/notebooks/build_codon_variants.html
