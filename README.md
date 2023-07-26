@@ -18,6 +18,7 @@ On the Hutch cluster, you can also run with the `slurm` script [run_Hutch_cluste
     sbatch run_Hutch_cluster.bash
 
 The configuration for the analysis is in [config.yaml](config.yaml), and additional input data are in [./data/](data).
+Additional input data are in [./data/](data).
 
 The results of running the pipeline are placed in [./results/](results), only some of which are tracked per the [.gitignore](.gitignore) file.
 
