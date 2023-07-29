@@ -1,2 +1,0 @@
-[NbConvertApp] Converting notebook results/notebooks/analyze_variant_counts.ipynb to html
-[NbConvertApp] Writing 1485177 bytes to docs/notebooks/analyze_variant_counts.html

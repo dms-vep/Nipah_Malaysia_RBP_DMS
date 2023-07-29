@@ -1,12 +1,0 @@
-Input Notebook:  dms-vep-pipeline-3/notebooks/fit_antibody_escape.ipynb
-Output Notebook: results/notebooks/fit_antibody_escape_LibA-230725-m102.4.ipynb
-Executing:   0%|          | 0/32 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/32 [00:02<01:11,  2.31s/cell]Executing:   6%|▋         | 2/32 [00:04<01:02,  2.09s/cell]Executing:  19%|█▉        | 6/32 [00:04<00:12,  2.00cell/s]Executing:  31%|███▏      | 10/32 [00:04<00:05,  3.97cell/s]Executing:  41%|████      | 13/32 [00:04<00:04,  4.61cell/s]Executing:  50%|█████     | 16/32 [00:05<00:02,  6.30cell/s]Executing:  62%|██████▎   | 20/32 [00:05<00:01,  9.07cell/s]Executing:  72%|███████▏  | 23/32 [00:05<00:01,  7.12cell/s]Executing:  78%|███████▊  | 25/32 [00:06<00:00,  7.53cell/s]Executing:  84%|████████▍ | 27/32 [00:06<00:00,  6.56cell/s]Executing:  91%|█████████ | 29/32 [00:06<00:00,  7.32cell/s]Executing:  97%|█████████▋| 31/32 [00:07<00:00,  5.07cell/s]Executing: 100%|██████████| 32/32 [00:33<00:00,  4.31s/cell]Executing: 100%|██████████| 32/32 [00:33<00:00,  1.06s/cell]

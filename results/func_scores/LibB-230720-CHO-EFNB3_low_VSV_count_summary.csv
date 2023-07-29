@@ -1,2 +1,0 @@
-selection,library,pre_selection_sample,post_selection_sample,pre_selection_date,post_selection_date,min_pre_selection_count,pre_count_median,pre_count_q1,pre_count_q3,pre_count_min,pre_count_max,post_count_median,post_count_q1,post_count_q3,post_count_min,post_count_max
-LibB-230720-CHO-EFNB3_low_VSV,LibB,LibB-230720-C6-low_cycles_VSV,LibB-230720-no_antibody,2023-07-20,2023-07-20,50,251.0,116.0,516.0,0,20437,152.0,35.0,456.0,0,38223
