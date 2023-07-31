@@ -1,12 +1,0 @@
-Input Notebook:  dms-vep-pipeline-3/notebooks/avg_func_effects.ipynb
-Output Notebook: results/notebooks/avg_func_effects_NiV_293T_EFNB2.ipynb
-Executing:   0%|          | 0/15 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-Executing notebook with kernel: python3
-Executing:   7%|▋         | 1/15 [00:05<01:11,  5.10s/cell]Executing:  13%|█▎        | 2/15 [00:11<01:14,  5.77s/cell]Executing:  47%|████▋     | 7/15 [00:11<00:09,  1.14s/cell]Executing:  60%|██████    | 9/15 [00:11<00:05,  1.20cell/s]Executing:  73%|███████▎  | 11/15 [00:12<00:02,  1.44cell/s]Executing:  93%|█████████▎| 14/15 [00:16<00:00,  1.04cell/s]Executing: 100%|██████████| 15/15 [00:16<00:00,  1.21cell/s]Executing: 100%|██████████| 15/15 [00:17<00:00,  1.16s/cell]

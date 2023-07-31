@@ -1,12 +1,0 @@
-Input Notebook:  dms-vep-pipeline-3/notebooks/func_effects_global_epistasis.ipynb
-Output Notebook: results/notebooks/func_effects_global_epistasis_LibB-230704-CHO-EFNB3.ipynb
-Executing:   0%|          | 0/19 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-Executing notebook with kernel: python3
-Executing:   5%|▌         | 1/19 [00:02<00:38,  2.13s/cell]Executing:  11%|█         | 2/19 [00:04<00:41,  2.46s/cell]Executing:  37%|███▋      | 7/19 [00:05<00:06,  1.83cell/s]Executing:  47%|████▋     | 9/19 [00:11<00:13,  1.31s/cell]Executing:  58%|█████▊    | 11/19 [00:42<00:45,  5.71s/cell]Executing:  68%|██████▊   | 13/19 [00:46<00:28,  4.69s/cell]Executing:  79%|███████▉  | 15/19 [01:01<00:21,  5.42s/cell]Executing:  89%|████████▉ | 17/19 [01:04<00:08,  4.27s/cell]Executing: 100%|██████████| 19/19 [01:04<00:00,  3.00s/cell]Executing: 100%|██████████| 19/19 [01:05<00:00,  3.45s/cell]

@@ -1,9 +1,0 @@
-sample,concentration,use_in_fit,n_substitutions,n_variants,censored,probability escape
-LibA-230725-minibinder-0.2,0.2,True,0,9200,"censored to [0, 1]",0.8024
-LibA-230725-minibinder-0.2,0.2,True,1,44077,"censored to [0, 1]",0.7345
-LibA-230725-minibinder-0.2,0.2,True,2,13235,"censored to [0, 1]",0.6675
-LibA-230725-minibinder-0.2,0.2,True,>2,2020,"censored to [0, 1]",0.6251
-LibA-230725-minibinder-0.2,0.2,True,0,9200,not censored,0.897
-LibA-230725-minibinder-0.2,0.2,True,1,44077,not censored,0.8497
-LibA-230725-minibinder-0.2,0.2,True,2,13235,not censored,0.8053
-LibA-230725-minibinder-0.2,0.2,True,>2,2020,not censored,0.7939

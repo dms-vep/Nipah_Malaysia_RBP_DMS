@@ -1,12 +1,0 @@
-Input Notebook:  dms-vep-pipeline-3/notebooks/build_codon_variants.ipynb
-Output Notebook: results/notebooks/build_codon_variants.ipynb
-Executing:   0%|          | 0/29 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-0.00s - Debugger warning: It seems that frozen modules are being used, which may
-0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
-0.00s - to python to disable frozen modules.
-0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
-Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/29 [00:04<02:13,  4.78s/cell]Executing:   7%|▋         | 2/29 [00:10<02:29,  5.52s/cell]Executing:  24%|██▍       | 7/29 [00:10<00:23,  1.08s/cell]Executing:  31%|███       | 9/29 [00:11<00:15,  1.27cell/s]Executing:  38%|███▊      | 11/29 [00:14<00:18,  1.05s/cell]Executing:  45%|████▍     | 13/29 [00:20<00:26,  1.64s/cell]Executing:  48%|████▊     | 14/29 [00:21<00:23,  1.60s/cell]Executing:  55%|█████▌    | 16/29 [00:22<00:15,  1.20s/cell]Executing:  66%|██████▌   | 19/29 [00:22<00:07,  1.41cell/s]Executing:  72%|███████▏  | 21/29 [00:25<00:07,  1.10cell/s]Executing:  76%|███████▌  | 22/29 [00:26<00:06,  1.10cell/s]Executing:  79%|███████▉  | 23/29 [00:26<00:04,  1.30cell/s]Executing:  86%|████████▌ | 25/29 [00:27<00:02,  1.59cell/s]Executing:  93%|█████████▎| 27/29 [00:27<00:00,  2.01cell/s]Executing:  97%|█████████▋| 28/29 [00:28<00:00,  2.34cell/s]Executing: 100%|██████████| 29/29 [00:28<00:00,  2.40cell/s]Executing: 100%|██████████| 29/29 [00:29<00:00,  1.00s/cell]
