@@ -86,7 +86,7 @@ consensus_params:  # parameters for building PacBio consensus sequences
   max_indel_diffs: null
   max_minor_sub_frac: 0.4
   max_minor_indel_frac: 0.4
-  min_support: 3
+  min_support: 2
 
 # created files with sequences of parental protein
 gene_sequence_codon: results/gene_sequence/codon.fasta
@@ -106,7 +106,7 @@ barcode_runs: data/barcode_runs.csv  # Illumina barcode runs, set to null if no 
 illumina_barcode_parser_params:
   upstream: AACTCCACTAGGAACATTTCTCTCTCGAATCTAGA
   downstream: ''
-  minq: 20
+  minq: 25
   upstream_mismatch: 2
 
 # ----------------------------------------------------------------------------

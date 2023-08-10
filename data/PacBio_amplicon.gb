@@ -1,14 +1,15 @@
 LOCUS       PacBio_amplicon        1898 bp    DNA     linear   UNA 07-NOV-2022
-DEFINITION  .
+DEFINITION  Nipah Malaysia RBP amplicon after PCR from infection minipreps
 ACCESSION   
 VERSION     
 KEYWORDS    .
 SOURCE      
-  ORGANISM  .
+  ORGANISM  virus_PCR
 FEATURES             Location/Qualifiers
      termini5        1..47
      variant_tag5    28..28
-     gene            48..1760
+     gene_flank5     48..161
+     gene            162..1760
      barcode         1812..1827
      termini3        1828..1898
      variant_tag3    1854..1854
