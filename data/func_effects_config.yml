@@ -26,7 +26,7 @@ global_epistasis_params: &global_epistasis_params
   #  - median_stop: median func score of all variants with stop codons
   #  - null: no clipping
   #  - a number: clip at this number
-  clip_lower: median_stop
+  clip_lower: null
   clip_upper: null
   # Do we collapse barcodes with same variant?
   collapse_identical_variants: false  # {false, mean, median}
@@ -149,6 +149,24 @@ func_scores:
     pre_selection_sample: LibB-230720-C6-low_cycles_VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
+    
+  LibB-230815-CHO-EFNB3:
+    post_selection_sample: LibB-230815-no_antibody
+    pre_selection_sample: LibB-230815-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+    
+  LibA-230815-CHO-EFNB3:
+    post_selection_sample: LibA-230815-no_antibody
+    pre_selection_sample: LibA-230815-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+    
+  LibB-230815-CHO-EFNB3_PLL:
+    post_selection_sample: LibB-230815-no_antibody_PLL
+    pre_selection_sample: LibB-230815-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
 # --------------------------------------------------------------------------------------
 # Configuration for averaging mutation functional effects across selections and plotting
 # them.
@@ -177,41 +195,6 @@ avg_func_effects_default: &avg_func_effects_default
     init_site_statistic: mean
     site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
     heatmap_color_scheme: brownbluegreen
-    sites_to_show: 
-      include: 
-        - 238
-        - 239
-        - 240
-        - 241
-        - 242
-        - 305
-        - 389
-        - 401
-        - 402
-        - 403
-        - 458
-        - 488
-        - 489
-        - 490
-        - 491
-        - 492
-        - 501
-        - 504
-        - 505
-        - 506
-        - 507
-        - 530
-        - 531
-        - 533
-        - 532
-        - 555
-        - 557
-        - 558
-        - 559
-        - 580
-        - 581
-        - 583
-        - 588
     slider_binding_range_kwargs:
       times_seen:
         step: 1
@@ -251,15 +234,23 @@ avg_func_effects:
       - LibB-230621-CHO-EFNB2-G6
       - LibB-230621-CHO-EFNB2-H1
 
+  NiV_CHO_ENFB3_PLL:
+    <<: *avg_func_effects_default
+    title: Median mutation effects on entry into CHO cells overexpressing EFNB3
+    selections:
+      - LibB-230815-CHO-EFNB3_PLL
+
   NiV_CHO_ENFB3:
     <<: *avg_func_effects_default
     title: Median mutation effects on entry into CHO cells overexpressing EFNB3
     selections:
       - LibB-230621-CHO-EFNB3
-      - LibB-230704-CHO-EFNB3
+      #- LibB-230704-CHO-EFNB3
       - LibB-230509-CHO-EFNB3
       - LibB-230720-CHO-EFNB3_normal_VSV
       #- LibB-230621-CHO-EFNB3-F3
+      - LibA-230815-CHO-EFNB3
+      - LibB-230815-CHO-EFNB3
 
   NiV_293T_EFNB2:
     <<: *avg_func_effects_default

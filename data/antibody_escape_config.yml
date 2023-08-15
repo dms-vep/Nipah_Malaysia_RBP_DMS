@@ -31,10 +31,10 @@ prob_escape_filters_default: &prob_escape_filters_default
   # Only retain for fitting variants with at least this many counts and this fraction
   # of total counts in the no-antibody sample **OR** the indicated counts and fraction
   # of total counts in the antibody sample.
-  min_no_antibody_count: 10  # make bigger for real experiments, say 20
+  min_no_antibody_count: 20  # make bigger for real experiments, say 20
   min_no_antibody_frac: 0.000001  # make smaller for large libraries, say ~0.1 / (library size)
-  min_antibody_count: 50  # make bigger for real experiments, say 100
-  min_antibody_frac: 0.00001  # make smaller for large libraries, say ~10 / (library size)
+  min_antibody_count: 100  # make bigger for real experiments, say 100
+  min_antibody_frac: 0.0001  # make smaller for large libraries, say ~10 / (library size)
   # For averaging and plotting the mean probability (fraction) escape across variants, use
   # these cutoffs:
   max_aa_subs: 3  # group variants with >= this many substitutions
@@ -387,9 +387,75 @@ antibody_selections:
     antibody_samples:
      LibA-230725-HENV32-1.0:
       concentration: 1.0
-      use_in_fit: false
+      use_in_fit: true
      LibA-230725-HENV32-2.5:
       concentration: 2.5
+      use_in_fit: true
+      
+  LibB-230815-HENV26:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230815-no_antibody
+    antibody_samples:
+     LibB-230815-HENV26-0.2:
+      concentration: 0.2
+      use_in_fit: false
+     LibB-230815-HENV26-0.4:
+      concentration: 0.4
+      use_in_fit: true
+      
+  LibB-230815-minibinder:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230815-no_antibody
+    antibody_samples:
+     LibB-230815-minibinder-0.6:
+      concentration: 0.6
+      use_in_fit: false
+     LibB-230815-minibinder-1.0:
+      concentration: 1
+      use_in_fit: true
+      
+  LibA-230815-HENV117:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230815-no_antibody
+    antibody_samples:
+     LibA-230815-HENV117-0.2:
+      concentration: 0.2
+      use_in_fit: false
+     LibA-230815-HENV117-0.8:
+      concentration: 0.8
+      use_in_fit: true
+     LibA-230815-HENV117-1.5:
+      concentration: 1.5
+      use_in_fit: true
+      
+  LibA-230815-HENV103:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230815-no_antibody
+    antibody_samples:
+     LibA-230815-HENV103-0.5:
+      concentration: 0.5
+      use_in_fit: false
+     LibA-230815-HENV103-2:
+      concentration: 2
+      use_in_fit: true
+     LibA-230815-HENV103-5:
+      concentration: 5
       use_in_fit: true
 
 # --------------------------------------------------------------------------------------
@@ -495,6 +561,7 @@ avg_antibody_escape:
     selections:
       - LibA-230331-HENV26
       - LibB-230704-HENV26
+      - LibB-230815-HENV26
   HENV32:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody HENV26
@@ -502,6 +569,14 @@ avg_antibody_escape:
       - LibB-230704-HENV32
       - LibB-230720-HENV32
       - LibA-230725-HENV32
+      
+  minibinder:
+    <<: *avg_antibody_escape_default
+    title: Escape map for antibody HENV26
+    selections:
+      - LibB-230815-minibinder
+      - LibA-230725-minibinder
+      
   EFNB2:
     <<: *avg_receptor_affinity_default
     title: Escape map for receptor EFNB2
