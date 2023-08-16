@@ -137,7 +137,6 @@ func_scores:
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
-
   LibB-230720-CHO-EFNB3_normal_VSV:
     post_selection_sample: LibB-230720-no_antibody
     pre_selection_sample: LibB-230720-C6_VSV
@@ -274,8 +273,6 @@ avg_func_effects:
       - LibB-230704-293T
       - LibA-230331-293T
       - LibA-230405-293T
-
-
 
 # --------------------------------------------------------------------------------------
 # Configuration for func effect shifts from `multidms` models comparing conditions.

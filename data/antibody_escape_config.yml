@@ -1,7 +1,9 @@
-# Configurations for determining effects of mutations on antibody/sera escape
+# Configurations for determining effects of mutations on antibody/sera escape,
+# or escape from neutralization by soluble receptor (which can be used to determine
+# receptor affinity).
 
 # --------------------------------------------------------------------------------------
-# Configuration for each antibody selection experiment.
+# Configuration for each antibody or soluble receptor selection experiment.
 # --------------------------------------------------------------------------------------
 
 # `antibody_selections` is keyed by name of each selection experiment, which includes a
@@ -22,6 +24,7 @@
 # the preferred neutralization range to include in the fit, so if `use_in_fit: false`
 # then functional scores are computed and plotted but it is not included in the fit.
 
+
 # default prob_escape filters
 prob_escape_filters_default: &prob_escape_filters_default
   # error if sample used in fit doesn't have >= this many neut standard counts and
@@ -34,7 +37,7 @@ prob_escape_filters_default: &prob_escape_filters_default
   min_no_antibody_count: 20  # make bigger for real experiments, say 20
   min_no_antibody_frac: 0.000001  # make smaller for large libraries, say ~0.1 / (library size)
   min_antibody_count: 100  # make bigger for real experiments, say 100
-  min_antibody_frac: 0.0001  # make smaller for large libraries, say ~10 / (library size)
+  min_antibody_frac: 0.000025  # make smaller for large libraries, say ~10 / (library size)
   # For averaging and plotting the mean probability (fraction) escape across variants, use
   # these cutoffs:
   max_aa_subs: 3  # group variants with >= this many substitutions
@@ -63,31 +66,6 @@ escape_plot_kwargs_default: &escape_plot_kwargs_default
   init_site_statistic: sum
   site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
   heatmap_color_scheme: pinkyellowgreen
-  sites_to_show: 
-    include_range: 
-      - 71
-      - 602
-
-receptor_affinity_plot_kwargs_default: &receptor_affinity_plot_kwargs_default
-  alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C','*']
-  addtl_slider_stats:
-    times_seen: 3
-  addtl_tooltip_stats:
-    - sequential_site
-  heatmap_max_at_least: 2
-  heatmap_min_at_least: -2
-  init_floor_at_zero: false
-  init_site_statistic: sum
-  site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
-  rename_stat_col: Ephrin affinity
-  scale_stat_col: -1
-  heatmap_color_scheme: purpleorange
-  sites_to_show: 
-    include_range: 
-      - 71
-      - 602
-
-
 
 # Specify any statistics (usually functional effects) for which you want to enable
 # sliders that hide data. Keyed by statistic name, then next dict gives:
@@ -96,12 +74,17 @@ receptor_affinity_plot_kwargs_default: &receptor_affinity_plot_kwargs_default
 #   - `init`: initial value of slider
 plot_hide_stats_default: &plot_hide_stats_default
   functional effect:
-    csv: results/func_effects/by_selection/LibB-230704-CHO-EFNB3_func_effects.csv
-    csv_col: functional_effect
-    init: -3
+    csv: results/func_effects/averages/NiV_CHO_ENFB3_func_effects.csv
+    csv_col: effect
+    init: -2
+    min_filters:
+      times_seen: 3
+
 
 # define the antibody selections
 antibody_selections:
+  # ---------------------------------------------------------------------------------
+  # m102.4
   LibA-221115-m102.4:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
@@ -132,51 +115,6 @@ antibody_selections:
       concentration: 0.6
       use_in_fit: true
 
-  LibA-230331-293T-Bat_E2:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *receptor_affinity_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230331-293T-no_antibody
-    antibody_samples:
-     LibA-230331-293T-Bat-E2-0.05:
-      concentration: 0.05
-      use_in_fit: false
-     LibA-230331-293T-Bat-E2-0.1:
-      concentration: 0.1
-      use_in_fit: true
-
-  LibA-230331-293T-Bat_E3:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *receptor_affinity_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230331-293T-no_antibody
-    antibody_samples:
-     LibA-230331-293T-Bat-E3-0.1:
-      concentration: 0.1
-      use_in_fit: true
-
-  LibA-230331-nAH1.3:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230331-293T_E2-no_antibody
-    antibody_samples:
-     LibA-230331-293T-E2-nAH1-0.05:
-      concentration: 0.05
-      use_in_fit: false
-     LibA-230331-293T-E2-nAH1-0.1:
-      concentration: 0.1
-      use_in_fit: false
-     LibA-230331-293T-E2-nAH1-0.2:
-      concentration: 0.2
-      use_in_fit: true
-
   LibA-230331-m102.4:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
@@ -189,7 +127,44 @@ antibody_selections:
       concentration: 0.5
       use_in_fit: true
 
-  LibA-230331-HENV26:
+  LibB-230720-m102.4:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230720-no_antibody
+    antibody_samples:
+     LibB-230720-m102-0.3:
+      concentration: 0.3
+      use_in_fit: true
+     LibB-230720-m102-0.8:
+      concentration: 0.8
+      use_in_fit: true
+     LibB-230720-m102-1.2:
+      concentration: 1.2
+      use_in_fit: true
+      
+  LibA-230725-m102.4:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230725-no_antibody
+    antibody_samples:
+     LibA-230725-m102-0.3:
+      concentration: 0.3
+      use_in_fit: true
+     LibA-230725-m102-0.8:
+      concentration: 0.8
+      use_in_fit: true
+     LibA-230725-m102-1.2:
+      concentration: 1.2
+      use_in_fit: true
+  # ---------------------------------------------------------------------------------
+  # nAH1.3
+  LibA-230331-nAH1.3:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *polyclonal_params_default
@@ -197,43 +172,15 @@ antibody_selections:
     plot_hide_stats: *plot_hide_stats_default
     no_antibody_sample: LibA-230331-293T_E2-no_antibody
     antibody_samples:
-     LibA-230331-293T-E2-HENV26-0.3:
-      concentration: 0.3
-      use_in_fit: true
-
-  LibA-230331-293T_E2-Bat_E2:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *receptor_affinity_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230331-293T_E2-no_antibody
-    antibody_samples:
-     LibA-230331-293T-E2-Bat-E2-0.05:
+     LibA-230331-293T-E2-nAH1-0.05:
       concentration: 0.05
       use_in_fit: true
-    LibA-230331-293T-E2-Bat-E2-0.1:
+     LibA-230331-293T-E2-nAH1-0.1:
       concentration: 0.1
       use_in_fit: true
-
-  LibA-230509-293T-E2-Bat_E2:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *receptor_affinity_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230509-293T-EFNB2_no_antibody
-    antibody_samples:
-     LibA-230509-293T-E2-Bat-E2-0.015:
-      concentration: 0.015
-      use_in_fit: false
-     LibA-230509-293T-E2-Bat-E2-0.078:
-      concentration: 0.078
-      use_in_fit: false
-     LibA-230509-293T-E2-Bat-E2-0.392:
-      concentration: 0.392
+     LibA-230331-293T-E2-nAH1-0.2:
+      concentration: 0.2
       use_in_fit: true
-
 
   LibB-230704-nAH1.3:
     neut_standard_name: neut_standard
@@ -245,8 +192,54 @@ antibody_selections:
     antibody_samples:
      LibB-230704-nAH1-0.1:
       concentration: 0.1
-      use_in_fit: false
+      use_in_fit: true
      LibB-230704-nAH1-0.3:
+      concentration: 0.3
+      use_in_fit: true
+
+  LibB-230720-nAH1.3:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230720-no_antibody
+    antibody_samples:
+     LibB-230720-nAH1-0.3:
+      concentration: 0.3
+      use_in_fit: true
+     LibB-230720-nAH1-0.8:
+      concentration: 0.8
+      use_in_fit: true
+     LibB-230720-nAH1-1.2:
+      concentration: 1.2
+      use_in_fit: true
+
+  LibA-230725-nAH1.3:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230725-no_antibody
+    antibody_samples:
+     LibA-230725-nAH13-0.8:
+      concentration: 0.8
+      use_in_fit: true
+     LibA-230725-nAH13-1.2:
+      concentration: 1.2
+      use_in_fit: true
+  # ---------------------------------------------------------------------------------
+  # HENV26
+  LibA-230331-HENV26:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230331-293T_E2-no_antibody
+    antibody_samples:
+     LibA-230331-293T-E2-HENV26-0.3:
       concentration: 0.3
       use_in_fit: true
 
@@ -262,7 +255,23 @@ antibody_selections:
       concentration: 0.3
       use_in_fit: true
 
+  LibB-230815-HENV26:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230815-no_antibody
+    antibody_samples:
+     LibB-230815-HENV26-0.2:
+      concentration: 0.2
+      use_in_fit: true
+     LibB-230815-HENV26-0.4:
+      concentration: 0.4
+      use_in_fit: true
 
+  # ---------------------------------------------------------------------------------
+  # HENV32
   LibB-230704-HENV32:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
@@ -278,42 +287,6 @@ antibody_selections:
       concentration: 0.8
       use_in_fit: true
 
-  LibB-230720-nAH1.3:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230720-no_antibody
-    antibody_samples:
-     LibB-230720-nAH1-0.3:
-      concentration: 0.3
-      use_in_fit: false
-     LibB-230720-nAH1-0.8:
-      concentration: 0.8
-      use_in_fit: true
-     LibB-230720-nAH1-1.2:
-      concentration: 1.2
-      use_in_fit: true
-
-  LibB-230720-m102.4:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230720-no_antibody
-    antibody_samples:
-     LibB-230720-m102-0.3:
-      concentration: 0.3
-      use_in_fit: false
-     LibB-230720-m102-0.8:
-      concentration: 0.8
-      use_in_fit: true
-     LibB-230720-m102-1.2:
-      concentration: 1.2
-      use_in_fit: false
-
   LibB-230720-HENV32:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
@@ -324,59 +297,14 @@ antibody_selections:
     antibody_samples:
      LibB-230720-HENV32-0.3:
       concentration: 0.3
-      use_in_fit: false
+      use_in_fit: true
      LibB-230720-HENV32-0.8:
       concentration: 0.8
-      use_in_fit: false
+      use_in_fit: true
      LibB-230720-HENV32-1.2:
       concentration: 1.2
       use_in_fit: true
       
-  LibA-230725-minibinder:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230725-no_antibody
-    antibody_samples:
-     LibA-230725-minibinder-0.2:
-      concentration: 0.2
-      use_in_fit: true
-      
-  LibA-230725-nAH1.3:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230725-no_antibody
-    antibody_samples:
-     LibA-230725-nAH13-0.8:
-      concentration: 0.8
-      use_in_fit: false
-     LibA-230725-nAH13-1.2:
-      concentration: 1.2
-      use_in_fit: true
-
-  LibA-230725-m102.4:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230725-no_antibody
-    antibody_samples:
-     LibA-230725-m102-0.3:
-      concentration: 0.3
-      use_in_fit: false
-     LibA-230725-m102-0.8:
-      concentration: 0.8
-      use_in_fit: true
-     LibA-230725-m102-1.2:
-      concentration: 1.2
-      use_in_fit: true
-
   LibA-230725-HENV32:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
@@ -391,55 +319,9 @@ antibody_selections:
      LibA-230725-HENV32-2.5:
       concentration: 2.5
       use_in_fit: true
-      
-  LibB-230815-HENV26:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230815-no_antibody
-    antibody_samples:
-     LibB-230815-HENV26-0.2:
-      concentration: 0.2
-      use_in_fit: false
-     LibB-230815-HENV26-0.4:
-      concentration: 0.4
-      use_in_fit: true
-      
-  LibB-230815-minibinder:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230815-no_antibody
-    antibody_samples:
-     LibB-230815-minibinder-0.6:
-      concentration: 0.6
-      use_in_fit: false
-     LibB-230815-minibinder-1.0:
-      concentration: 1
-      use_in_fit: true
-      
-  LibA-230815-HENV117:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230815-no_antibody
-    antibody_samples:
-     LibA-230815-HENV117-0.2:
-      concentration: 0.2
-      use_in_fit: false
-     LibA-230815-HENV117-0.8:
-      concentration: 0.8
-      use_in_fit: true
-     LibA-230815-HENV117-1.5:
-      concentration: 1.5
-      use_in_fit: true
-      
+
+  # ---------------------------------------------------------------------------------
+  # HENV103
   LibA-230815-HENV103:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
@@ -450,7 +332,7 @@ antibody_selections:
     antibody_samples:
      LibA-230815-HENV103-0.5:
       concentration: 0.5
-      use_in_fit: false
+      use_in_fit: true
      LibA-230815-HENV103-2:
       concentration: 2
       use_in_fit: true
@@ -458,8 +340,152 @@ antibody_selections:
       concentration: 5
       use_in_fit: true
 
+  # ---------------------------------------------------------------------------------
+  # HENV117
+  LibA-230815-HENV117:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230815-no_antibody
+    antibody_samples:
+     LibA-230815-HENV117-0.2:
+      concentration: 0.2
+      use_in_fit: true
+     LibA-230815-HENV117-0.8:
+      concentration: 0.8
+      use_in_fit: true
+     LibA-230815-HENV117-1.5:
+      concentration: 1.5
+      use_in_fit: true
+
+  # ---------------------------------------------------------------------------------
+  # minibinder
+  LibA-230725-minibinder:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230725-no_antibody
+    antibody_samples:
+     LibA-230725-minibinder-0.2:
+      concentration: 0.2
+      use_in_fit: true
+
+  LibB-230815-minibinder:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230815-no_antibody
+    antibody_samples:
+     LibB-230815-minibinder-0.6:
+      concentration: 0.6
+      use_in_fit: true
+     LibB-230815-minibinder-1.0:
+      concentration: 1
+      use_in_fit: true
+
+
+# Note that for soluble receptor affinity selections, you define selection experiments
+# exactly analogously to `antibody_selections` in `receptor_selections`, using `antibody`
+# as a synonym for the soluble receptor.
+
+# Define some defaults slightly different than from antibody selections
+
+# default parameters for `polyclonal` model fitting for receptor affinity
+receptor_polyclonal_params_default: &receptor_polyclonal_params_default
+  n_epitopes: 1
+  spatial_distances: null
+  fit_kwargs:  # keyword arguments to `Polyclonal.fit`
+    reg_escape_weight: 0.1
+    reg_spread_weight: 0
+    reg_activity_weight: 1.0
+    logfreq: 200
+
+# default stats to hide cells on plot of receptor affinity
+receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
+  functional effect:
+    csv: results/func_effects/averages/NiV_CHO_ENFB3_func_effects.csv
+    csv_col: effect
+    init: -2
+    min_filters:
+      times_seen: 3
+
+# Define the receptor selections
+receptor_selections:
+  # ---------------------------------------------------------------------------------
+  # dimeric bat E2
+  LibA-230331-293T_BatE2:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default
+    no_antibody_sample: LibA-230331-293T-no_antibody
+    antibody_samples:
+     LibA-230331-293T_BatE2-0.05:
+      concentration: 0.05
+      use_in_fit: true
+     LibA-230331-293T_BatE2-0.1:
+      concentration: 0.1
+      use_in_fit: true
+
+  LibA-230331-293T_E2-BatE2:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default
+    no_antibody_sample: LibA-230331-293T_E2-no_antibody
+    antibody_samples:
+     LibA-230331-293T-E2-BatE2-0.05:
+      concentration: 0.05
+      use_in_fit: true
+    LibA-230331-293T-E2-BatE2-0.1:
+      concentration: 0.1
+      use_in_fit: false
+
+  LibA-230509-293T-E2-BatE2:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default
+    no_antibody_sample: LibA-230509-293T-EFNB2_no_antibody
+    antibody_samples:
+     LibA-230509-293T-E2-BatE2-0.003:
+      concentration: 0.003
+      use_in_fit: true
+     LibA-230509-293T-E2-BatE2-0.015:
+      concentration: 0.015
+      use_in_fit: true
+     LibA-230509-293T-E2-BatE2-0.078:
+      concentration: 0.078
+      use_in_fit: true
+     LibA-230509-293T-E2-BatE2-0.392:
+      concentration: 0.392
+      use_in_fit: false
+
+  # ---------------------------------------------------------------------------------
+  # dimeric bat E3
+  LibA-230331-293T_BatE3:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default
+    no_antibody_sample: LibA-230331-293T-no_antibody
+    antibody_samples:
+     LibA-230331-293T_BatE3-0.1:
+      concentration: 0.1
+      use_in_fit: true
+
 # --------------------------------------------------------------------------------------
-# Configuration for averaging and plotting selections for the same antibody
+# Configuration for averaging/plotting selections for same antibody or soluble receptor
 # --------------------------------------------------------------------------------------
 
 # Average/plot escape values from different selections with the same antibody/serum using
@@ -470,6 +496,10 @@ antibody_selections:
 #   - `plot_hide_stats`: dict giving data frames with stats for slider to hide mutations
 #   - `title`: title of plots
 #   - `legend`: legend added to plots
+
+# For soluble receptor experiments used to measure receptor affinity, do exactly the same
+# except under the key `avg_receptor_affinity` rather than `avg_antibody_escape`.
+
 
 # Define defaults for each antibody/serum, used via the merge (<<) operator
 avg_escape_plot_kwargs_default: &avg_escape_plot_kwargs_default
@@ -503,44 +533,24 @@ avg_antibody_escape_default: &avg_antibody_escape_default
 
     The minimum max of escape at site is useful to select the sites where mutations confer the most escape.
 
-
-# Define defaults for each receptor affinity
-avg_receptor_affinity_plot_kwargs_default: &avg_receptor_affinity_plot_kwargs_default
-  alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C',"'*'"]
-  addtl_slider_stats:
-    times_seen: 3
-  addtl_tooltip_stats:
-    - sequential_site
-  heatmap_max_at_least: 1
-  heatmap_min_at_least: -1
-  init_floor_at_zero: false
-  init_site_statistic: sum
-  rename_stat_col: Ephrin affinity
-  scale_stat_col: -1
-  heatmap_color_scheme: purpleorange
-  site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
-
-# Define defaults for each antibody/serum, used via the merge (<<) operator
+# Define the receptor affinity experiments to average
 avg_receptor_affinity_default: &avg_receptor_affinity_default
-  icXX: 90
-  escape_plot_kwargs:
-    <<: *avg_receptor_affinity_plot_kwargs_default
-    avg_type: median
-    per_model_tooltip: true
-  plot_hide_stats: *plot_hide_stats_default
-  legend: |
-    Interactive plot of how mutations affect antibody escape.
+  <<: *avg_antibody_escape_default
+  icXX: 50  # IC50
 
-    Use the site zoom bar at the top to zoom in on specific sites. The line plot shows a summary statistic indicating escape at each site. The heat map shows escape for individual mutations, with parental amino-acid identities indicated by x and gray indicating non-measured mutations. Mouse over points for details.
-
-    Options at the bottom of the plot let you modify the display, such as by selecting how many different variants a mutation must be seen in to be shown (*minimum times_seen*), how many different experimental selections the mutation was measured in (*minimum n_models*), what site summary statistic to show, etc.
-
-    You can filter by the functional effects of mutations. Mutations removed by this filter are shown as dark gray squares in the heat map to distinguish unmeasured mutations from ones measured to be deleterious.
-
-    The minimum max of escape at site is useful to select the sites where mutations confer the most escape.
 
 # Define the antibodies/sera to average
 avg_antibody_escape:
+  m102.4:
+    <<: *avg_antibody_escape_default
+    title: Escape map for antibody m102.4
+    selections:
+      - LibA-221115-m102.4
+      - LibB-221115-m102.4
+      - LibA-230331-m102.4
+      - LibB-230720-m102.4
+      - LibA-230725-m102.4
+
   nAH1.3:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody nAH1.3
@@ -549,12 +559,7 @@ avg_antibody_escape:
       - LibB-230704-nAH1.3
       - LibB-230720-nAH1.3
       - LibA-230725-nAH1.3
-  m102.4:
-    <<: *avg_antibody_escape_default
-    title: Escape map for antibody m102.4
-    selections:
-      - LibB-230720-m102.4
-      - LibA-230725-m102.4
+
   HENV26:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody HENV26
@@ -562,25 +567,43 @@ avg_antibody_escape:
       - LibA-230331-HENV26
       - LibB-230704-HENV26
       - LibB-230815-HENV26
+
   HENV32:
     <<: *avg_antibody_escape_default
-    title: Escape map for antibody HENV26
+    title: Escape map for antibody HENV32
     selections:
       - LibB-230704-HENV32
       - LibB-230720-HENV32
       - LibA-230725-HENV32
-      
+
+  HENV103:
+    <<: *avg_antibody_escape_default
+    title: Escape map for antibody HENV103
+    selections:
+      - LibA-230815-HENV103
+
+  HENV117:
+    <<: *avg_antibody_escape_default
+    title: Escape map for antibody HENV117
+    selections:
+      - LibA-230815-HENV117
+
   minibinder:
     <<: *avg_antibody_escape_default
-    title: Escape map for antibody HENV26
+    title: Escape map for minibinder from David Baker lab
     selections:
       - LibB-230815-minibinder
       - LibA-230725-minibinder
-      
-  EFNB2:
+
+# ------------------------------------------------------------------------------
+avg_receptor_affinity:
+  dimeric_EFNB2:
     <<: *avg_receptor_affinity_default
-    title: Escape map for receptor EFNB2
+    title: Affinity for dimeric EFNB2
+    plot_hide_stats: *receptor_plot_hide_stats_default
     selections:
-      - LibA-230509-293T-E2-Bat_E2
-      - LibA-230331-293T_E2-Bat_E2
-      - LibA-230331-293T-Bat_E2
+      - LibA-230331-293T_BatE2
+      - LibA-230331-293T_E2-BatE2
+      - LibA-230509-293T-E2-BatE2
+
+

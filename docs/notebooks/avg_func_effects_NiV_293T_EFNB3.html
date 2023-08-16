@@ -7500,7 +7500,7 @@ The next cell is tagged as <code>parameters</code> to get the passed parameters.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=a1a154a9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=dabdb912">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7511,10 +7511,8 @@ The next cell is tagged as <code>parameters</code> to get the passed parameters.
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Parameters</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"avg_method"</span><span class="p">:</span> <span class="s2">"median"</span><span class="p">,</span>
-    <span class="s2">"legend"</span><span class="p">:</span> <span class="s2">"Interactive plot of the effects of mutations. Negative values indicated deleterious mutations,</span><span class="se">\n</span><span class="s2">positive values indicate beneficial mutations for the measured phenotype.</span><span class="se">\n\n</span><span class="s2">Use the site zoom bar at the top to zoom in on specific sites. The line plot shows a summary</span><span class="se">\n</span><span class="s2">statistic indicating the effects of mutations at each site. The heat map shows the effects of</span><span class="se">\n</span><span class="s2">individual mutations, with parental amino-acid identities indicated by x and gray</span><span class="se">\n</span><span class="s2">indicating non-measured mutations.</span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">You can mouse over points to get details about individual measurements, include measurements</span><span class="se">\n</span><span class="s2">in individual selection experiments.</span><span class="se">\n\n</span><span class="s2">The options at the bottom of the plot let you modify the display, such as by selecting how</span><span class="se">\n</span><span class="s2">many different variants a mutation must be seen in to be shown (*minimum times_seen*),</span><span class="se">\n</span><span class="s2">how many different experimental selections the mutation was measured in</span><span class="se">\n</span><span class="s2">(*minimum n_selections*), what site summary statistic to show, etc.</span><span class="se">\n\n</span><span class="s2">The *minimum max of effect* at site is useful to select the sites where mutations have</span><span class="se">\n</span><span class="s2">the most positive functional effects.</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
     <span class="s2">"per_selection_tooltips"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
     <span class="s2">"plot_kwargs"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"addtl_slider_stats"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"times_seen"</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
         <span class="s2">"alphabet"</span><span class="p">:</span> <span class="p">[</span>
             <span class="s2">"R"</span><span class="p">,</span>
             <span class="s2">"K"</span><span class="p">,</span>
@@ -7538,19 +7536,21 @@ The next cell is tagged as <code>parameters</code> to get the passed parameters.
             <span class="s2">"C"</span><span class="p">,</span>
             <span class="s2">"*"</span><span class="p">,</span>
         <span class="p">],</span>
-        <span class="s2">"heatmap_color_scheme"</span><span class="p">:</span> <span class="s2">"brownbluegreen"</span><span class="p">,</span>
+        <span class="s2">"addtl_slider_stats"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"times_seen"</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
         <span class="s2">"heatmap_max_at_least"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"heatmap_min_at_least"</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
         <span class="s2">"init_floor_at_zero"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
         <span class="s2">"init_site_statistic"</span><span class="p">:</span> <span class="s2">"mean"</span><span class="p">,</span>
         <span class="s2">"site_zoom_bar_color_col"</span><span class="p">:</span> <span class="s2">"region"</span><span class="p">,</span>
+        <span class="s2">"heatmap_color_scheme"</span><span class="p">:</span> <span class="s2">"brownbluegreen"</span><span class="p">,</span>
         <span class="s2">"slider_binding_range_kwargs"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"times_seen"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"step"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"min"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"max"</span><span class="p">:</span> <span class="mi">25</span><span class="p">},</span>
             <span class="s2">"n_selections"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"step"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-            <span class="s2">"times_seen"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"max"</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">"min"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"step"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
         <span class="p">},</span>
     <span class="p">},</span>
-    <span class="s2">"selections"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"LibB-230509-293T-EFNB3"</span><span class="p">],</span>
+    <span class="s2">"legend"</span><span class="p">:</span> <span class="s2">"Interactive plot of the effects of mutations. Negative values indicated deleterious mutations,</span><span class="se">\n</span><span class="s2">positive values indicate beneficial mutations for the measured phenotype.</span><span class="se">\n\n</span><span class="s2">Use the site zoom bar at the top to zoom in on specific sites. The line plot shows a summary</span><span class="se">\n</span><span class="s2">statistic indicating the effects of mutations at each site. The heat map shows the effects of</span><span class="se">\n</span><span class="s2">individual mutations, with parental amino-acid identities indicated by x and gray</span><span class="se">\n</span><span class="s2">indicating non-measured mutations.</span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">You can mouse over points to get details about individual measurements, include measurements</span><span class="se">\n</span><span class="s2">in individual selection experiments.</span><span class="se">\n\n</span><span class="s2">The options at the bottom of the plot let you modify the display, such as by selecting how</span><span class="se">\n</span><span class="s2">many different variants a mutation must be seen in to be shown (*minimum times_seen*),</span><span class="se">\n</span><span class="s2">how many different experimental selections the mutation was measured in</span><span class="se">\n</span><span class="s2">(*minimum n_selections*), what site summary statistic to show, etc.</span><span class="se">\n\n</span><span class="s2">The *minimum max of effect* at site is useful to select the sites where mutations have</span><span class="se">\n</span><span class="s2">the most positive functional effects.</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
     <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Median mutation effects on entry into 293T cells overexpressing EFNB3"</span><span class="p">,</span>
+    <span class="s2">"selections"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"LibB-230509-293T-EFNB3"</span><span class="p">],</span>
 <span class="p">}</span>
 <span class="n">site_numbering_map_csv</span> <span class="o">=</span> <span class="s2">"data/site_numbering_map.csv"</span>
 <span class="n">func_effects_csv</span> <span class="o">=</span> <span class="s2">"results/func_effects/averages/NiV_293T_EFNB3_func_effects.csv"</span>
@@ -7696,23 +7696,23 @@ The next cell is tagged as <code>parameters</code> to get the passed parameters.
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-f9fe25cb55ef459087709a893f7d6456.vega-embed {
+  #altair-viz-c2ea2ae086e540618a5b7b167e583509.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f9fe25cb55ef459087709a893f7d6456.vega-embed details,
-  #altair-viz-f9fe25cb55ef459087709a893f7d6456.vega-embed details summary {
+  #altair-viz-c2ea2ae086e540618a5b7b167e583509.vega-embed details,
+  #altair-viz-c2ea2ae086e540618a5b7b167e583509.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f9fe25cb55ef459087709a893f7d6456"></div>
+<div id="altair-viz-c2ea2ae086e540618a5b7b167e583509"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f9fe25cb55ef459087709a893f7d6456") {
-      outputDiv = document.getElementById("altair-viz-f9fe25cb55ef459087709a893f7d6456");
+    if (outputDiv.id !== "altair-viz-c2ea2ae086e540618a5b7b167e583509") {
+      outputDiv = document.getElementById("altair-viz-c2ea2ae086e540618a5b7b167e583509");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -7766,23 +7766,23 @@ The next cell is tagged as <code>parameters</code> to get the passed parameters.
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-76efa773250c40e7a446f391cb9d49cd.vega-embed {
+  #altair-viz-b4dca7d371a143568e9b5fd2f20b125f.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-76efa773250c40e7a446f391cb9d49cd.vega-embed details,
-  #altair-viz-76efa773250c40e7a446f391cb9d49cd.vega-embed details summary {
+  #altair-viz-b4dca7d371a143568e9b5fd2f20b125f.vega-embed details,
+  #altair-viz-b4dca7d371a143568e9b5fd2f20b125f.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-76efa773250c40e7a446f391cb9d49cd"></div>
+<div id="altair-viz-b4dca7d371a143568e9b5fd2f20b125f"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-76efa773250c40e7a446f391cb9d49cd") {
-      outputDiv = document.getElementById("altair-viz-76efa773250c40e7a446f391cb9d49cd");
+    if (outputDiv.id !== "altair-viz-b4dca7d371a143568e9b5fd2f20b125f") {
+      outputDiv = document.getElementById("altair-viz-b4dca7d371a143568e9b5fd2f20b125f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8066,23 +8066,23 @@ Plotting functional_effect and saving to results/func_effects/averages/NiV_293T_
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-02b3f16598da47429bebb510a1a8c8ae.vega-embed {
+  #altair-viz-4036cac0b94e4075b9bbd2156bad93c2.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-02b3f16598da47429bebb510a1a8c8ae.vega-embed details,
-  #altair-viz-02b3f16598da47429bebb510a1a8c8ae.vega-embed details summary {
+  #altair-viz-4036cac0b94e4075b9bbd2156bad93c2.vega-embed details,
+  #altair-viz-4036cac0b94e4075b9bbd2156bad93c2.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-02b3f16598da47429bebb510a1a8c8ae"></div>
+<div id="altair-viz-4036cac0b94e4075b9bbd2156bad93c2"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-02b3f16598da47429bebb510a1a8c8ae") {
-      outputDiv = document.getElementById("altair-viz-02b3f16598da47429bebb510a1a8c8ae");
+    if (outputDiv.id !== "altair-viz-4036cac0b94e4075b9bbd2156bad93c2") {
+      outputDiv = document.getElementById("altair-viz-4036cac0b94e4075b9bbd2156bad93c2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8145,23 +8145,23 @@ Plotting latent_phenotype_effect and saving to results/func_effects/averages/NiV
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-10f65b69fccb4c71a1a7abdc90b16ec9.vega-embed {
+  #altair-viz-a07c6d42d70e480787363f8554811b2e.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-10f65b69fccb4c71a1a7abdc90b16ec9.vega-embed details,
-  #altair-viz-10f65b69fccb4c71a1a7abdc90b16ec9.vega-embed details summary {
+  #altair-viz-a07c6d42d70e480787363f8554811b2e.vega-embed details,
+  #altair-viz-a07c6d42d70e480787363f8554811b2e.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-10f65b69fccb4c71a1a7abdc90b16ec9"></div>
+<div id="altair-viz-a07c6d42d70e480787363f8554811b2e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-10f65b69fccb4c71a1a7abdc90b16ec9") {
-      outputDiv = document.getElementById("altair-viz-10f65b69fccb4c71a1a7abdc90b16ec9");
+    if (outputDiv.id !== "altair-viz-a07c6d42d70e480787363f8554811b2e") {
+      outputDiv = document.getElementById("altair-viz-a07c6d42d70e480787363f8554811b2e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
