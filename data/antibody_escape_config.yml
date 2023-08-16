@@ -37,7 +37,7 @@ prob_escape_filters_default: &prob_escape_filters_default
   min_no_antibody_count: 20  # make bigger for real experiments, say 20
   min_no_antibody_frac: 0.000001  # make smaller for large libraries, say ~0.1 / (library size)
   min_antibody_count: 100  # make bigger for real experiments, say 100
-  min_antibody_frac: 0.000025  # make smaller for large libraries, say ~10 / (library size)
+  min_antibody_frac: 0.00001  # make smaller for large libraries, say ~10 / (library size)
   # For averaging and plotting the mean probability (fraction) escape across variants, use
   # these cutoffs:
   max_aa_subs: 3  # group variants with >= this many substitutions
@@ -137,7 +137,7 @@ antibody_selections:
     antibody_samples:
      LibB-230720-m102-0.3:
       concentration: 0.3
-      use_in_fit: true
+      use_in_fit: false
      LibB-230720-m102-0.8:
       concentration: 0.8
       use_in_fit: true
@@ -174,10 +174,10 @@ antibody_selections:
     antibody_samples:
      LibA-230331-293T-E2-nAH1-0.05:
       concentration: 0.05
-      use_in_fit: true
+      use_in_fit: false
      LibA-230331-293T-E2-nAH1-0.1:
       concentration: 0.1
-      use_in_fit: true
+      use_in_fit: false
      LibA-230331-293T-E2-nAH1-0.2:
       concentration: 0.2
       use_in_fit: true
@@ -192,7 +192,7 @@ antibody_selections:
     antibody_samples:
      LibB-230704-nAH1-0.1:
       concentration: 0.1
-      use_in_fit: true
+      use_in_fit: false
      LibB-230704-nAH1-0.3:
       concentration: 0.3
       use_in_fit: true
@@ -207,13 +207,13 @@ antibody_selections:
     antibody_samples:
      LibB-230720-nAH1-0.3:
       concentration: 0.3
-      use_in_fit: true
+      use_in_fit: false
      LibB-230720-nAH1-0.8:
       concentration: 0.8
       use_in_fit: true
      LibB-230720-nAH1-1.2:
       concentration: 1.2
-      use_in_fit: true
+      use_in_fit: false
 
   LibA-230725-nAH1.3:
     neut_standard_name: neut_standard
@@ -265,7 +265,7 @@ antibody_selections:
     antibody_samples:
      LibB-230815-HENV26-0.2:
       concentration: 0.2
-      use_in_fit: true
+      use_in_fit: false
      LibB-230815-HENV26-0.4:
       concentration: 0.4
       use_in_fit: true
@@ -282,7 +282,7 @@ antibody_selections:
     antibody_samples:
      LibB-230704-HENV32-0.3:
       concentration: 0.3
-      use_in_fit: true
+      use_in_fit: false
      LibB-230704-HENV32-0.8:
       concentration: 0.8
       use_in_fit: true
@@ -297,10 +297,10 @@ antibody_selections:
     antibody_samples:
      LibB-230720-HENV32-0.3:
       concentration: 0.3
-      use_in_fit: true
+      use_in_fit: false
      LibB-230720-HENV32-0.8:
       concentration: 0.8
-      use_in_fit: true
+      use_in_fit: false
      LibB-230720-HENV32-1.2:
       concentration: 1.2
       use_in_fit: true
@@ -315,7 +315,7 @@ antibody_selections:
     antibody_samples:
      LibA-230725-HENV32-1.0:
       concentration: 1.0
-      use_in_fit: true
+      use_in_fit: false
      LibA-230725-HENV32-2.5:
       concentration: 2.5
       use_in_fit: true
@@ -352,13 +352,13 @@ antibody_selections:
     antibody_samples:
      LibA-230815-HENV117-0.2:
       concentration: 0.2
-      use_in_fit: true
+      use_in_fit: false
      LibA-230815-HENV117-0.8:
       concentration: 0.8
       use_in_fit: true
      LibA-230815-HENV117-1.5:
       concentration: 1.5
-      use_in_fit: true
+      use_in_fit: false
 
   # ---------------------------------------------------------------------------------
   # minibinder
@@ -545,8 +545,8 @@ avg_antibody_escape:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody m102.4
     selections:
-      - LibA-221115-m102.4
-      - LibB-221115-m102.4
+      #- LibA-221115-m102.4
+      #- LibB-221115-m102.4
       - LibA-230331-m102.4
       - LibB-230720-m102.4
       - LibA-230725-m102.4
@@ -565,7 +565,7 @@ avg_antibody_escape:
     title: Escape map for antibody HENV26
     selections:
       - LibA-230331-HENV26
-      - LibB-230704-HENV26
+      #- LibB-230704-HENV26
       - LibB-230815-HENV26
 
   HENV32:

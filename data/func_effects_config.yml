@@ -233,11 +233,6 @@ avg_func_effects:
       - LibB-230621-CHO-EFNB2-G6
       - LibB-230621-CHO-EFNB2-H1
 
-  NiV_CHO_ENFB3_PLL:
-    <<: *avg_func_effects_default
-    title: Median mutation effects on entry into CHO cells overexpressing EFNB3
-    selections:
-      - LibB-230815-CHO-EFNB3_PLL
 
   NiV_CHO_ENFB3:
     <<: *avg_func_effects_default
@@ -250,6 +245,7 @@ avg_func_effects:
       #- LibB-230621-CHO-EFNB3-F3
       - LibA-230815-CHO-EFNB3
       - LibB-230815-CHO-EFNB3
+      - LibB-230815-CHO-EFNB3_PLL
 
   NiV_293T_EFNB2:
     <<: *avg_func_effects_default
