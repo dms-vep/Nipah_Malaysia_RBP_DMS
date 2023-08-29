@@ -3,6 +3,42 @@
 # receptor affinity).
 
 # --------------------------------------------------------------------------------------
+# Define the selections
+# --------------------------------------------------------------------------------------
+
+# `assays` is keyed by assay (eg, "antibody_escape", "receptor_affinity", etc). Values are:
+#    - `title`: title used for selection in docs
+#    - `selections`: name of key used to define all selections for this assay
+#    - `averages`: name of key used to define averages across selections for this assay.
+#       Leave out this key if not taking averages.
+#    - `prob_escape_scale`: the scale used for the y-axis when plotting prob escape as
+#      a function of concentration. Typically symlog if all values close to zero, linear
+#      otherwise. Should be in the form of keyword arguments to `altair.Scale`.
+#    - `scale_stat`: scale the statistic being estimated for mutation effects by this
+#      number. Typically is 1 (no scaling) unless you want negative values to indicate a
+#      favorable effect (as for soluble receptor selections), in which case use -1.
+#    - `stat_name`: name assigned to statistic, eg, "escape" or "receptor affinity".
+
+assays:
+  antibody_escape:
+    title: Antibody/serum escape
+    selections: antibody_selections
+    averages: avg_antibody_escape
+    prob_escape_scale:
+      type: symlog
+      constant: 0.04
+    scale_stat: 1
+    stat_name: escape
+  receptor_affinity:
+    title: Receptor affinity
+    selections: receptor_selections
+    averages: avg_receptor_affinity
+    prob_escape_scale:
+      type: linear
+    scale_stat: -1
+    stat_name: receptor affinity
+
+# --------------------------------------------------------------------------------------
 # Configuration for each antibody or soluble receptor selection experiment.
 # --------------------------------------------------------------------------------------
 
@@ -35,9 +71,9 @@ prob_escape_filters_default: &prob_escape_filters_default
   # of total counts in the no-antibody sample **OR** the indicated counts and fraction
   # of total counts in the antibody sample.
   min_no_antibody_count: 20  # make bigger for real experiments, say 20
-  min_no_antibody_frac: 0.000002  # make smaller for large libraries, say ~0.1 / (library size)
+  min_no_antibody_frac: 0.000001  # make smaller for large libraries, say ~0.1 / (library size)
   min_antibody_count: 100  # make bigger for real experiments, say 100
-  min_antibody_frac: 0.00001  # make smaller for large libraries, say ~10 / (library size)
+  min_antibody_frac: 0.0001  # make smaller for large libraries, say ~10 / (library size)
   # For averaging and plotting the mean probability (fraction) escape across variants, use
   # these cutoffs:
   max_aa_subs: 3  # group variants with >= this many substitutions
@@ -79,6 +115,7 @@ plot_hide_stats_default: &plot_hide_stats_default
     init: -2
     min_filters:
       times_seen: 3
+
 
 
 # define the antibody selections
@@ -137,7 +174,7 @@ antibody_selections:
     antibody_samples:
      LibB-230720-m102-0.3: #IC 70
       concentration: 0.3
-      use_in_fit: false
+      use_in_fit: true
      LibB-230720-m102-0.8: #IC 98.5
       concentration: 0.8
       use_in_fit: true
@@ -155,7 +192,7 @@ antibody_selections:
     antibody_samples:
      LibA-230725-m102-0.3: #IC 70
       concentration: 0.3
-      use_in_fit: false
+      use_in_fit: true
      LibA-230725-m102-0.8: #IC 94
       concentration: 0.8
       use_in_fit: true
@@ -174,7 +211,7 @@ antibody_selections:
     antibody_samples:
      LibA-230331-293T-E2-nAH1-0.05: #IC40
       concentration: 0.05
-      use_in_fit: false
+      use_in_fit: true
      LibA-230331-293T-E2-nAH1-0.1: #IC60
       concentration: 0.1
       use_in_fit: true
@@ -207,7 +244,7 @@ antibody_selections:
     antibody_samples:
      LibB-230720-nAH1-0.3: #IC 33
       concentration: 0.3
-      use_in_fit: false
+      use_in_fit: true
      LibB-230720-nAH1-0.8: #IC 95
       concentration: 0.8
       use_in_fit: true
@@ -297,7 +334,7 @@ antibody_selections:
     antibody_samples:
      LibB-230704-HENV32-0.3: #IC50
       concentration: 0.3
-      use_in_fit: false
+      use_in_fit: true
      LibB-230704-HENV32-0.8: #IC95
       concentration: 0.8
       use_in_fit: true
@@ -315,7 +352,7 @@ antibody_selections:
       use_in_fit: false
      LibB-230720-HENV32-0.8: #IC40
       concentration: 0.8
-      use_in_fit: false
+      use_in_fit: true
      LibB-230720-HENV32-1.2: #IC80 looks so so
       concentration: 1.2
       use_in_fit: true
@@ -330,7 +367,7 @@ antibody_selections:
     antibody_samples:
      LibA-230725-HENV32-1.0: #IC40
       concentration: 1.0
-      use_in_fit: false
+      use_in_fit: true
      LibA-230725-HENV32-2.5: #IC96 looks good
       concentration: 2.5
       use_in_fit: true
@@ -347,7 +384,7 @@ antibody_selections:
     antibody_samples:
      LibA-230815-HENV103-0.5: #IC 40
       concentration: 0.5
-      use_in_fit: false
+      use_in_fit: true
      LibA-230815-HENV103-2: #IC 99 but variant count looks good
       concentration: 2
       use_in_fit: true
@@ -379,13 +416,13 @@ antibody_selections:
     antibody_samples:
      LibA-230815-HENV117-0.2: #IC 20
       concentration: 0.2
-      use_in_fit: false
+      use_in_fit: true
      LibA-230815-HENV117-0.8: #IC 98
       concentration: 0.8
       use_in_fit: true
      LibA-230815-HENV117-1.5: #IC 99.9
       concentration: 1.5
-      use_in_fit: false
+      use_in_fit: true
 
   LibB-230724-HENV117:
     neut_standard_name: neut_standard
@@ -427,7 +464,7 @@ antibody_selections:
     antibody_samples:
      LibB-230815-minibinder-0.6: #IC 50
       concentration: 0.6
-      use_in_fit: false
+      use_in_fit: true
      LibB-230815-minibinder-1.0: #IC 55
       concentration: 1
       use_in_fit: true
@@ -442,7 +479,7 @@ antibody_selections:
     antibody_samples:
      LibA-230818-minibinder-2500: #IC 75
       concentration: 2.5
-      use_in_fit: false
+      use_in_fit: true
      LibA-230818-minibinder-10000: #IC 99.9 but variant counts looks good
       concentration: 10
       use_in_fit: true
@@ -582,7 +619,7 @@ receptor_selections:
       use_in_fit: true
      LibA-230825-C6-EFNB3-5:
       concentration: 5
-      use_in_fit: false
+      use_in_fit: true
 # --------------------------------------------------------------------------------------
 # Configuration for averaging/plotting selections for same antibody or soluble receptor
 # --------------------------------------------------------------------------------------
@@ -655,7 +692,7 @@ avg_antibody_escape:
     title: Escape map for antibody nAH1.3
     selections:
       - LibA-230331-nAH1.3
-      - LibB-230704-nAH1.3
+      #- LibB-230704-nAH1.3 poor correlations
       - LibB-230720-nAH1.3
       - LibA-230725-nAH1.3
 
@@ -700,20 +737,11 @@ avg_antibody_escape:
 
 # ------------------------------------------------------------------------------
 avg_receptor_affinity:
-  dimeric_EFNB2:
-    <<: *avg_receptor_affinity_default
-    title: Affinity for dimeric EFNB2
-    plot_hide_stats: *receptor_plot_hide_stats_default
-    selections:
-      - LibA-230331-293T_BatE2
-      - LibA-230331-293T_E2-BatE2
-      - LibA-230509-293T-E2-BatE2
-
   dimeric_EFNB3:
     <<: *avg_receptor_affinity_default
     title: Affinity for dimeric EFNB3
     plot_hide_stats: *receptor_plot_hide_stats_default
     selections:
-      - LibA-230331-293T_BatE3
+      #- LibA-230331-293T_BatE3
       - LibA-230812-CHO_BatE3
       - LibA-230825-CHO_BatE3
