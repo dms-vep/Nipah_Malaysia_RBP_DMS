@@ -15,9 +15,9 @@ func_scores_params_default: &func_scores_params_default
   min_wt_frac: 0.001  # error if not at least this fraction of counts for wildtype
   # `min_pre_selection_count` and `min_pre_selection_frac` drop variants with low counts
   # or frequencies that may not have sufficient statistics for good estimates.
-  min_pre_selection_count: 25  # drop variants < this many pre-selection counts
+  min_pre_selection_count: 50  # drop variants < this many pre-selection counts
   # !!! Make min_pre_selection_frac LARGER for larger libraries, such 0.1 / (library size) !!!
-  min_pre_selection_frac: 0.000002  # drop variants that are < this fraction of all counts
+  min_pre_selection_frac: 0.00000125  # drop variants that are < this fraction of all counts
 
 # Define default parameters for fitting global epistasis models to each
 # individual selection to get mutationo effects.
@@ -26,7 +26,7 @@ global_epistasis_params: &global_epistasis_params
   #  - median_stop: median func score of all variants with stop codons
   #  - null: no clipping
   #  - a number: clip at this number
-  clip_lower: median_stop
+  clip_lower: null
   clip_upper: null
   # Do we collapse barcodes with same variant?
   collapse_identical_variants: false  # {false, mean, median}
@@ -278,7 +278,7 @@ avg_func_effects:
       - LibA-230818-CHO-EFNB3 #0.88 r value
 
       - LibB-230509-CHO-EFNB3 #0.86 r value, 0.86 r value
-      - LibB-230621-CHO-EFNB3 #0.8 r value
+      #- LibB-230621-CHO-EFNB3 #0.8 r value
       #- LibB-230621-CHO-EFNB3-F3 #outlier for correlations
       - LibB-230704-CHO-EFNB3 #0.88 r value
       - LibB-230720-CHO-EFNB3 #0.85 r value

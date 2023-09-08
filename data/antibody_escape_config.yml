@@ -84,8 +84,8 @@ polyclonal_params_default: &polyclonal_params_default
   n_epitopes: 1  # fit this many epitopes, also fit all numbers less than this and plot
   spatial_distances: null  # CSV with residue distances for spatial regularization, or null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
-    reg_escape_weight: 0.1
-    reg_spread_weight: 0.25
+    reg_escape_weight: 0.5
+    reg_spread_weight: 0.1
     reg_activity_weight: 1.0
     logfreq: 200
 
@@ -322,6 +322,23 @@ antibody_selections:
       concentration: 2
       use_in_fit: true
 
+  LibB-230907-HENV26: 
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230906-no-antibody-control
+    antibody_samples:
+     LibB-230906-HENV26-200: #IC70
+      concentration: 0.2
+      use_in_fit: true
+     LibB-230906-HENV26-700: #IC99
+      concentration: 0.7
+      use_in_fit: true
+     LibB-230906-HENV26-1300: #IC99
+      concentration: 1.3
+      use_in_fit: true
   # ---------------------------------------------------------------------------------
   # HENV32
   LibB-230704-HENV32:
@@ -372,6 +389,23 @@ antibody_selections:
       concentration: 2.5
       use_in_fit: true
 
+  LibB-230907-HENV32: 
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230906-no-antibody-control
+    antibody_samples:
+     LibB-230906-HENV32-800: #IC40
+      concentration: 0.8
+      use_in_fit: true
+     LibB-230906-HENV32-2000: #IC98
+      concentration: 2.0
+      use_in_fit: true
+     LibB-230906-HENV32-3000: #IC99
+      concentration: 3.0
+      use_in_fit: true
   # ---------------------------------------------------------------------------------
   # HENV103
   LibA-230815-HENV103:
@@ -402,6 +436,24 @@ antibody_selections:
     antibody_samples:
      LibB-230818-HENV103-1500: #IC 99.9 but variant counts look good
       concentration: 1.5
+      use_in_fit: true
+
+  LibB-230907-HENV103: #somewhat noisy
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230906-no-antibody-control
+    antibody_samples:
+     LibB-230906-HENV103-600: #IC90
+      concentration: 0.6
+      use_in_fit: true
+     LibB-230906-HENV103-1000: #IC99
+      concentration: 1.0
+      use_in_fit: true
+     LibB-230906-HENV103-1800: #IC99.9
+      concentration: 1.8
       use_in_fit: true
 
   # ---------------------------------------------------------------------------------
@@ -439,7 +491,23 @@ antibody_selections:
       concentration: 1.2
       use_in_fit: false
 
-
+  LibB-230907-HENV117: #somewhat noisy
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibB-230906-no-antibody-control
+    antibody_samples:
+     LibB-230906-HENV117-250: #IC80
+      concentration: 0.25
+      use_in_fit: true
+     LibB-230906-HENV117-500: #IC99.9
+      concentration: 0.5
+      use_in_fit: true
+     LibB-230906-HENV117-1000: #overneutralized
+      concentration: 1.0
+      use_in_fit: false
   # ---------------------------------------------------------------------------------
   # minibinder
   LibA-230725-minibinder:
@@ -495,7 +563,7 @@ receptor_polyclonal_params_default: &receptor_polyclonal_params_default
   n_epitopes: 1
   spatial_distances: null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
-    reg_escape_weight: 0.1
+    reg_escape_weight: 0.5
     reg_spread_weight: 0
     reg_activity_weight: 1.0
     logfreq: 200
@@ -692,7 +760,7 @@ avg_antibody_escape:
     title: Escape map for antibody nAH1.3
     selections:
       - LibA-230331-nAH1.3
-      #- LibB-230704-nAH1.3 poor correlations
+      #- LibB-230704-nAH1.3
       - LibB-230720-nAH1.3
       - LibA-230725-nAH1.3
 
@@ -700,32 +768,36 @@ avg_antibody_escape:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody HENV26
     selections:
-      - LibA-230331-HENV26
+      #- LibA-230331-HENV26
       #- LibB-230704-HENV26 too low IC
       #- LibB-230815-HENV26 too low IC
       - LibA-230724-HENV26
+      - LibB-230907-HENV26
 
   HENV32:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody HENV32
     selections:
-      - LibB-230704-HENV32
+      #- LibB-230704-HENV32
       - LibB-230720-HENV32
       - LibA-230725-HENV32
+      - LibB-230907-HENV32
 
   HENV103:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody HENV103
     selections:
       - LibA-230815-HENV103
-      - LibB-230724-HENV103
+      #- LibB-230724-HENV103
+      - LibB-230907-HENV103
 
   HENV117:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody HENV117
     selections:
       - LibA-230815-HENV117
-      - LibB-230724-HENV117
+      #- LibB-230724-HENV117
+      - LibB-230907-HENV117
 
   minibinder:
     <<: *avg_antibody_escape_default
@@ -745,3 +817,4 @@ avg_receptor_affinity:
       #- LibA-230331-293T_BatE3
       - LibA-230812-CHO_BatE3
       - LibA-230825-CHO_BatE3
+

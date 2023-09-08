@@ -19,8 +19,8 @@ summary:
       max_at_least: 1  # make heatmap max at least
       min_at_least: -1  # make heatmap min at least this
       antibody_list:  # antibodies to include: keys name used for `avg_escape`, values name for plot
-        nAH1.3: nAH1.3
-        m102.4: m102.4
+        nAH1.3: nAH1_3
+        m102.4: m102_4
         HENV32: HENV32
         HENV117: HENV117
         HENV103: HENV103
