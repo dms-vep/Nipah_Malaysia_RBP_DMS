@@ -80,7 +80,7 @@ variant_tags:  # variant tags in PacBio amplicon, or "null" if no tags
     variant_1: G
     variant_2: C
     wildtype: A
-max_ccs_error_rate: 1.0e-3  # only keep CCS if gene/barcode error rate <= this
+max_ccs_error_rate: 1.0e-4  # only keep CCS if gene/barcode error rate <= this
 consensus_params:  # parameters for building PacBio consensus sequences
   max_sub_diffs: null
   max_indel_diffs: null
@@ -106,7 +106,7 @@ barcode_runs: data/barcode_runs.csv  # Illumina barcode runs, set to null if no 
 illumina_barcode_parser_params:
   upstream: ACTCCACTAGGAACATTTCTCTCTCGAATCTAGA
   downstream: ''
-  minq: 15
+  minq: 5
   upstream_mismatch: 2
 
 # ----------------------------------------------------------------------------

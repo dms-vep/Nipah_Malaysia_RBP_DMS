@@ -71,9 +71,9 @@ prob_escape_filters_default: &prob_escape_filters_default
   # of total counts in the no-antibody sample **OR** the indicated counts and fraction
   # of total counts in the antibody sample.
   min_no_antibody_count: 20  # make bigger for real experiments, say 20
-  min_no_antibody_frac: 0.000001  # make smaller for large libraries, say ~0.1 / (library size)
+  min_no_antibody_frac: 0.00000125  # make smaller for large libraries, say ~0.1 / (library size)
   min_antibody_count: 100  # make bigger for real experiments, say 100
-  min_antibody_frac: 0.0001  # make smaller for large libraries, say ~10 / (library size)
+  min_antibody_frac: 0.000125  # make smaller for large libraries, say ~10 / (library size)
   # For averaging and plotting the mean probability (fraction) escape across variants, use
   # these cutoffs:
   max_aa_subs: 3  # group variants with >= this many substitutions
@@ -84,8 +84,8 @@ polyclonal_params_default: &polyclonal_params_default
   n_epitopes: 1  # fit this many epitopes, also fit all numbers less than this and plot
   spatial_distances: null  # CSV with residue distances for spatial regularization, or null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
-    reg_escape_weight: 0.3
-    reg_spread_weight: 0.1
+    reg_escape_weight: 0.5
+    reg_spread_weight: 0.25
     reg_activity_weight: 1.0
     logfreq: 200
 
@@ -112,7 +112,7 @@ plot_hide_stats_default: &plot_hide_stats_default
   functional effect:
     csv: results/func_effects/averages/NiV_CHO_ENFB3_func_effects.csv
     csv_col: effect
-    init: -2
+    init: -3
     min_filters:
       times_seen: 3
 
@@ -338,7 +338,7 @@ antibody_selections:
       use_in_fit: true
      LibB-230906-HENV26-1300: #IC99
       concentration: 1.3
-      use_in_fit: false
+      use_in_fit: true
   # ---------------------------------------------------------------------------------
   # HENV32
   LibB-230704-HENV32:
@@ -405,7 +405,7 @@ antibody_selections:
       use_in_fit: true
      LibB-230906-HENV32-3000: #IC99
       concentration: 3.0
-      use_in_fit: false
+      use_in_fit: true
   # ---------------------------------------------------------------------------------
   # HENV103
   LibA-230815-HENV103:
@@ -424,7 +424,7 @@ antibody_selections:
       use_in_fit: true
      LibA-230815-HENV103-5: #IC 99.9 but variant counts looks good
       concentration: 5
-      use_in_fit: false
+      use_in_fit: true
 
   LibB-230724-HENV103:
     neut_standard_name: neut_standard
@@ -454,7 +454,7 @@ antibody_selections:
       use_in_fit: true
      LibB-230906-HENV103-1800: #IC99.9
       concentration: 1.8
-      use_in_fit: false
+      use_in_fit: true
 
   # ---------------------------------------------------------------------------------
   # HENV117
@@ -472,9 +472,9 @@ antibody_selections:
      LibA-230815-HENV117-0.8: #IC 98
       concentration: 0.8
       use_in_fit: true
-     LibA-230815-HENV117-1.5: #IC 99.9
+     LibA-230815-HENV117-1.5: #IC 99.9 overneutralized
       concentration: 1.5
-      use_in_fit: true
+      use_in_fit: false
 
   LibB-230724-HENV117:
     neut_standard_name: neut_standard
@@ -584,7 +584,7 @@ receptor_polyclonal_params_default: &receptor_polyclonal_params_default
   n_epitopes: 1
   spatial_distances: null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
-    reg_escape_weight: 0.6
+    reg_escape_weight: 1.0
     reg_spread_weight: 0
     reg_activity_weight: 1.0
     logfreq: 200
@@ -596,7 +596,7 @@ receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
     csv_col: effect
     init: -2
     min_filters:
-      times_seen: 3
+      times_seen: 4
 
 # Define the receptor selections
 receptor_selections:
@@ -895,11 +895,11 @@ avg_receptor_affinity:
       - LibA-230825-CHO_BatE3
       - LibB-230907-EFNB3
 
-  dimeric_EFNB2:
-    <<: *avg_receptor_affinity_default
-    title: Affinity for dimeric EFNB3
-    plot_hide_stats: *receptor_plot_hide_stats_default
-    selections:
-      - LibA-230509-293T-E2-BatE2
-      - LibB-230907-EFNB2
+#  dimeric_EFNB2:
+#    <<: *avg_receptor_affinity_default
+#    title: Affinity for dimeric EFNB3
+#    plot_hide_stats: *receptor_plot_hide_stats_default
+#    selections:
+#      - LibA-230509-293T-E2-BatE2
+#      - LibB-230907-EFNB2
 
