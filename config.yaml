@@ -84,8 +84,8 @@ max_ccs_error_rate: 1.0e-4  # only keep CCS if gene/barcode error rate <= this
 consensus_params:  # parameters for building PacBio consensus sequences
   max_sub_diffs: null
   max_indel_diffs: null
-  max_minor_sub_frac: 0.2
-  max_minor_indel_frac: 0.2
+  max_minor_sub_frac: 0.25
+  max_minor_indel_frac: 0.25
   min_support: 2
 
 # created files with sequences of parental protein
@@ -106,7 +106,7 @@ barcode_runs: data/barcode_runs.csv  # Illumina barcode runs, set to null if no 
 illumina_barcode_parser_params:
   upstream: ACTCCACTAGGAACATTTCTCTCTCGAATCTAGA
   downstream: ''
-  minq: 5
+  minq: 20
   upstream_mismatch: 2
 
 # ----------------------------------------------------------------------------

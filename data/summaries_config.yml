@@ -19,12 +19,12 @@ summary:
       max_at_least: 1  # make heatmap max at least
       min_at_least: -1  # make heatmap min at least this
       antibody_list:  # antibodies to include: keys name used for `avg_escape`, values name for plot
-        nAH1.3: nAH1_3
         m102.4: m102_4
-        HENV32: HENV32
-        HENV117: HENV117
-        HENV103: HENV103
         HENV26: HENV26
+        HENV117: HENV117
+        HENV32: HENV32
+        HENV103: HENV103
+        nAH1.3: nAH1_3
         minibinder: minibinder
 
   func_effects:  # effects of mutations on function
@@ -46,6 +46,16 @@ summary:
         max_at_least: 1
         min_at_least: 0
         init_min_value: -10  # initial min value in slider
+        
+      EphrinB2 affinity:  # name of particular assay condition
+        condition: dimeric_EFNB2  # condition specified in `avg_escape`
+        stat: receptor affinity_median  # statisti used for mutation effects
+        positive_color: "#0072B2"  # dark blue
+        negative_color: "#D55E00"  # red
+        max_at_least: 1
+        min_at_least: 0
+        init_min_value: -10  # initial min value in slider
+
   title: Effects of mutations to RBP of Nipah Malaysia on escape from mAbs, cell entry, and Bat EphrinB3 affinity as measured in pseudotyped lentiviral deep mutational scanning experiments
   legend: |
     This is is an interactive chart. Mouseover points for details and measurements, and
