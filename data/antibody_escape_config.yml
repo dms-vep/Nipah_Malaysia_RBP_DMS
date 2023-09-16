@@ -675,10 +675,35 @@ receptor_selections:
       use_in_fit: false
      LibB-230907-EFNB2-500:
       concentration: 0.5
-      use_in_fit: false
+      use_in_fit: true
      LibB-230907-EFNB2-1500:
       concentration: 1.5
       use_in_fit: false
+
+  LibA-230916-EFNB2:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default
+    no_antibody_sample: LibA-230916-C6-no-antibody-control
+    antibody_samples:
+     LibA-230916-EFNB2-5:
+      concentration: 0.005
+      use_in_fit: true
+     LibA-230916-EFNB2-10:
+      concentration: 0.01
+      use_in_fit: true
+     LibA-230916-EFNB2-50:
+      concentration: 0.05
+      use_in_fit: false
+     LibA-230916-EFNB2-100:
+      concentration: 0.1
+      use_in_fit: true
+     LibA-230916-EFNB2-250:
+      concentration: 0.25
+      use_in_fit: true
+     
 
   # ---------------------------------------------------------------------------------
   # dimeric bat E3
@@ -729,10 +754,10 @@ receptor_selections:
       use_in_fit: true
      LibA-230825-C6-EFNB3-1:
       concentration: 1
-      use_in_fit: false
+      use_in_fit: true
      LibA-230825-C6-EFNB3-2:
       concentration: 2
-      use_in_fit: false
+      use_in_fit: true
      LibA-230825-C6-EFNB3-5:
       concentration: 5
       use_in_fit: false
@@ -756,10 +781,10 @@ receptor_selections:
       use_in_fit: true
      LibB-230907-EFNB3-800:
       concentration: 0.8
-      use_in_fit: false
+      use_in_fit: true
      LibB-230907-EFNB3-1500:
       concentration: 1.5
-      use_in_fit: false
+      use_in_fit: true
      LibB-230907-EFNB3-5000:
       concentration: 5.0
       use_in_fit: false
@@ -900,6 +925,6 @@ avg_receptor_affinity:
     title: Affinity for dimeric EFNB2
     plot_hide_stats: *receptor_plot_hide_stats_default
     selections:
-      - LibA-230509-293T-E2-BatE2
+      - LibA-230916-EFNB2
       - LibB-230907-EFNB2
 
