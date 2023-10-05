@@ -26,7 +26,7 @@ global_epistasis_params: &global_epistasis_params
   #  - median_stop: median func score of all variants with stop codons
   #  - null: no clipping
   #  - a number: clip at this number
-  clip_lower: null
+  clip_lower: median_stop
   clip_upper: null
   # Do we collapse barcodes with same variant?
   collapse_identical_variants: false  # {false, mean, median}
@@ -221,11 +221,11 @@ avg_func_effects_default: &avg_func_effects_default
   avg_method: median
   per_selection_tooltips: true
   plot_kwargs:
-    alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C',"'*'"]
+    alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
     addtl_slider_stats:
-      times_seen: 3
-    heatmap_max_at_least: 1
-    heatmap_min_at_least: -1
+      times_seen: 4
+    heatmap_max_at_least: 3
+    heatmap_min_at_least: -3
     init_floor_at_zero: false
     init_site_statistic: mean
     site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
@@ -237,6 +237,8 @@ avg_func_effects_default: &avg_func_effects_default
         max: 25
       n_selections:
         step: 1
+    #sites_to_show: 
+    #  include: [228, 248, 327, 344, 381, 376, 384, 386, 404, 408, 423, 426, 427, 470, 478, 481, 498]
   legend: |
     Interactive plot of the effects of mutations. Negative values indicated deleterious mutations,
     positive values indicate beneficial mutations for the measured phenotype.
@@ -277,10 +279,10 @@ avg_func_effects:
       #- LibA-230815-CHO-EFNB3 #outlier for correlations, 0.55 r value, little purging
       - LibA-230818-CHO-EFNB3 #0.88 r value
 
-      - LibB-230509-CHO-EFNB3 #0.86 r value, 0.86 r value
+      #- LibB-230509-CHO-EFNB3 #0.86 r value, 0.86 r value
       #- LibB-230621-CHO-EFNB3 #0.8 r value
       #- LibB-230621-CHO-EFNB3-F3 #outlier for correlations
-      - LibB-230704-CHO-EFNB3 #0.88 r value
+      #- LibB-230704-CHO-EFNB3 #0.88 r value
       - LibB-230720-CHO-EFNB3 #0.85 r value
       - LibB-230815-CHO-EFNB3 #0.88 r value
 
@@ -449,21 +451,21 @@ avg_func_effect_shifts_default: &avg_func_effect_shifts_default
     (*minimum n_comparisons*), what site summary statistic to show, etc.
 
 # Define the functional effect conditions to average
-avg_func_effect_shifts:
-  293T_vs_CHO_EFNB3:
-    <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in different cells
-    comparisons:
-      - LibA-1
-      - LibA-2
-      - LibB-1
-      - LibB-2
-    lasso_shift: 0.0001
-    
-  CHO_EFNB3_w_Nipah_F_vs_Hendra_F:
-    <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in different cells
-    comparisons:
-      - LibA-Hendra-1
-      - LibA-Hendra-2
-    lasso_shift: 0.0001
+#avg_func_effect_shifts:
+#  293T_vs_CHO_EFNB3:
+#    <<: *avg_func_effect_shifts_default
+#    title: Comparison of functional effects in different cells
+#    comparisons:
+#      - LibA-1
+#      - LibA-2
+#      - LibB-1
+#      - LibB-2
+#    lasso_shift: 0.001
+#    
+#  CHO_EFNB3_w_Nipah_F_vs_Hendra_F:
+#    <<: *avg_func_effect_shifts_default
+#    title: Comparison of functional effects in different cells
+#    comparisons:
+#      - LibA-Hendra-1
+#      - LibA-Hendra-2
+#    lasso_shift: 0.001

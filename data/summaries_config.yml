@@ -25,7 +25,6 @@ summary:
         HENV32: HENV32
         HENV103: HENV103
         nAH1.3: nAH1_3
-        minibinder: minibinder
 
   func_effects:  # effects of mutations on function
     RBP mediated entry:  # name of functional selection

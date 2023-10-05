@@ -85,7 +85,7 @@ polyclonal_params_default: &polyclonal_params_default
   spatial_distances: null  # CSV with residue distances for spatial regularization, or null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
     reg_escape_weight: 0.5
-    reg_spread_weight: 0.1
+    reg_spread_weight: 0.25
     reg_activity_weight: 1.0
     logfreq: 200
 
@@ -101,7 +101,7 @@ escape_plot_kwargs_default: &escape_plot_kwargs_default
   init_floor_at_zero: false
   init_site_statistic: sum
   site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
-  heatmap_color_scheme: pinkyellowgreen
+  heatmap_color_scheme: redblue
 
 # Specify any statistics (usually functional effects) for which you want to enable
 # sliders that hide data. Keyed by statistic name, then next dict gives:
@@ -672,13 +672,13 @@ receptor_selections:
       use_in_fit: true
      LibB-230907-EFNB2-200:
       concentration: 0.2
-      use_in_fit: false
+      use_in_fit: true
      LibB-230907-EFNB2-500:
       concentration: 0.5
       use_in_fit: true
      LibB-230907-EFNB2-1500:
       concentration: 1.5
-      use_in_fit: false
+      use_in_fit: true
 
   LibA-230916-EFNB2:
     neut_standard_name: neut_standard
@@ -760,7 +760,7 @@ receptor_selections:
       use_in_fit: true
      LibA-230825-C6-EFNB3-5:
       concentration: 5
-      use_in_fit: false
+      use_in_fit: true
       
   LibB-230907-EFNB3:
     neut_standard_name: neut_standard
@@ -787,7 +787,7 @@ receptor_selections:
       use_in_fit: true
      LibB-230907-EFNB3-5000:
       concentration: 5.0
-      use_in_fit: false
+      use_in_fit: true
 # --------------------------------------------------------------------------------------
 # Configuration for averaging/plotting selections for same antibody or soluble receptor
 # --------------------------------------------------------------------------------------
@@ -807,16 +807,19 @@ receptor_selections:
 
 # Define defaults for each antibody/serum, used via the merge (<<) operator
 avg_escape_plot_kwargs_default: &avg_escape_plot_kwargs_default
-  alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C',"'*'"]
+  alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
   addtl_slider_stats:
-    times_seen: 3
+    times_seen: 4
   addtl_tooltip_stats:
     - sequential_site
-  heatmap_max_at_least: 2
-  heatmap_min_at_least: -2
+  heatmap_max_at_least: 0.5
+  heatmap_min_at_least: -0.5
   init_floor_at_zero: false
   init_site_statistic: sum
   site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
+  #sites_to_show: 
+  #  include: [129, 132, 132, 142, 161, 167, 202, 211, 228, 242, 254, 281, 284, 302, 304, 323, 335, 351, 490, 491, 492, 492, 501, 501, 505, 515, 529, 530, 530, 554, 555, 555, 564, 580, 583, 584, 588, 588, 589]
+  heatmap_color_scheme: purpleorange
 
 # Define defaults for each antibody/serum, used via the merge (<<) operator
 avg_antibody_escape_default: &avg_antibody_escape_default
