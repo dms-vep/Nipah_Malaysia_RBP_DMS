@@ -73,7 +73,7 @@ prob_escape_filters_default: &prob_escape_filters_default
   min_no_antibody_count: 20  # make bigger for real experiments, say 20
   min_no_antibody_frac: 0.00000125  # make smaller for large libraries, say ~0.1 / (library size)
   min_antibody_count: 100  # make bigger for real experiments, say 100
-  min_antibody_frac: 0.0000125  # make smaller for large libraries, say ~10 / (library size)
+  min_antibody_frac: 0.000125  # make smaller for large libraries, say ~10 / (library size)
   # For averaging and plotting the mean probability (fraction) escape across variants, use
   # these cutoffs:
   max_aa_subs: 3  # group variants with >= this many substitutions
@@ -84,24 +84,24 @@ polyclonal_params_default: &polyclonal_params_default
   n_epitopes: 1  # fit this many epitopes, also fit all numbers less than this and plot
   spatial_distances: null  # CSV with residue distances for spatial regularization, or null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
-    reg_escape_weight: 0.5
-    reg_spread_weight: 0.25
+    reg_escape_weight: 0.1
+    reg_spread_weight: 0.1
     reg_activity_weight: 1.0
     logfreq: 200
 
 # keyword arguments to `Polyclonal.mut_escape_plot`
 escape_plot_kwargs_default: &escape_plot_kwargs_default
-  alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C','*']
+  alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
   addtl_slider_stats:
     times_seen: 3
   addtl_tooltip_stats:
     - sequential_site
-  heatmap_max_at_least: 2
-  heatmap_min_at_least: -2
+  heatmap_max_at_least: 1
+  heatmap_min_at_least: -1
   init_floor_at_zero: false
   init_site_statistic: sum
   site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
-  heatmap_color_scheme: redblue
+  heatmap_color_scheme: pinkyellowgreen
 
 # Specify any statistics (usually functional effects) for which you want to enable
 # sliders that hide data. Keyed by statistic name, then next dict gives:
@@ -211,7 +211,7 @@ antibody_selections:
     antibody_samples:
      LibA-230331-293T-E2-nAH1-0.05: #IC40
       concentration: 0.05
-      use_in_fit: true
+      use_in_fit: false
      LibA-230331-293T-E2-nAH1-0.1: #IC60
       concentration: 0.1
       use_in_fit: true
@@ -572,6 +572,32 @@ antibody_selections:
      LibB-230907-minibinder-8000: 
       concentration: 8.0
       use_in_fit: true
+##########################
+#Sera Selections
+  LibA-231006-Sera71:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-231006-C6-no-antibody-control
+    antibody_samples:
+     LibA-231006-Sera71D28-0.0001: 
+      concentration: 10
+      use_in_fit: true
+     LibA-231006-Sera71D28-0.00003: 
+      concentration: 3.3
+      use_in_fit: true
+     LibA-231006-Sera71D28-0.00005: 
+      concentration: 5
+      use_in_fit: true
+     LibA-231006-Sera71D28-0.00007: 
+      concentration: 6.6
+      use_in_fit: true
+     LibA-231006-Sera71D28-0.000015: 
+      concentration: 1.5
+      use_in_fit: true
+
 
 # Note that for soluble receptor affinity selections, you define selection experiments
 # exactly analogously to `antibody_selections` in `receptor_selections`, using `antibody`
@@ -584,7 +610,7 @@ receptor_polyclonal_params_default: &receptor_polyclonal_params_default
   n_epitopes: 1
   spatial_distances: null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
-    reg_escape_weight: 1.0
+    reg_escape_weight: 0.1
     reg_spread_weight: 0
     reg_activity_weight: 1.0
     logfreq: 200
@@ -594,7 +620,16 @@ receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
   functional effect:
     csv: results/func_effects/averages/NiV_CHO_ENFB3_func_effects.csv
     csv_col: effect
-    init: -2
+    init: -3
+    min_filters:
+      times_seen: 4
+      
+# default stats to hide cells on plot of receptor affinity
+receptor_plot_hide_stats_default_E2: &receptor_plot_hide_stats_default_E2
+  functional effect:
+    csv: results/func_effects/averages/NiV_CHO_ENFB2_func_effects.csv
+    csv_col: effect
+    init: -3
     min_filters:
       times_seen: 4
 
@@ -637,7 +672,7 @@ receptor_selections:
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *receptor_plot_hide_stats_default
+    plot_hide_stats: *receptor_plot_hide_stats_default_E2
     no_antibody_sample: LibA-230509-293T-EFNB2_no_antibody
     antibody_samples:
      LibA-230509-293T-E2-BatE2-0.003:
@@ -658,7 +693,7 @@ receptor_selections:
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *receptor_plot_hide_stats_default
+    plot_hide_stats: *receptor_plot_hide_stats_default_E2
     no_antibody_sample: LibB-230907-no-antibody-control
     antibody_samples:
      LibB-230907-EFNB2-10:
@@ -672,20 +707,20 @@ receptor_selections:
       use_in_fit: true
      LibB-230907-EFNB2-200:
       concentration: 0.2
-      use_in_fit: true
+      use_in_fit: false
      LibB-230907-EFNB2-500:
       concentration: 0.5
       use_in_fit: true
      LibB-230907-EFNB2-1500:
       concentration: 1.5
-      use_in_fit: true
+      use_in_fit: false
 
   LibA-230916-EFNB2:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *receptor_plot_hide_stats_default
+    plot_hide_stats: *receptor_plot_hide_stats_default_E2
     no_antibody_sample: LibA-230916-C6-no-antibody-control
     antibody_samples:
      LibA-230916-EFNB2-5:
@@ -809,24 +844,24 @@ receptor_selections:
 avg_escape_plot_kwargs_default: &avg_escape_plot_kwargs_default
   alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
   addtl_slider_stats:
-    times_seen: 4
+    times_seen: 3
   addtl_tooltip_stats:
     - sequential_site
-  heatmap_max_at_least: 0.5
-  heatmap_min_at_least: -0.5
+  heatmap_max_at_least: 1
+  heatmap_min_at_least: -1
   init_floor_at_zero: false
   init_site_statistic: sum
   site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
   #sites_to_show: 
   #  include: [129, 132, 132, 142, 161, 167, 202, 211, 228, 242, 254, 281, 284, 302, 304, 323, 335, 351, 490, 491, 492, 492, 501, 501, 505, 515, 529, 530, 530, 554, 555, 555, 564, 580, 583, 584, 588, 588, 589]
-  heatmap_color_scheme: purpleorange
+  heatmap_color_scheme: pinkyellowgreen
 
 # Define defaults for each antibody/serum, used via the merge (<<) operator
 avg_antibody_escape_default: &avg_antibody_escape_default
-  icXX: 90
+  icXX: 50
   escape_plot_kwargs:
     <<: *avg_escape_plot_kwargs_default
-    avg_type: median
+    avg_type: mean
     per_model_tooltip: true
   plot_hide_stats: *plot_hide_stats_default
   legend: |
@@ -840,12 +875,6 @@ avg_antibody_escape_default: &avg_antibody_escape_default
 
     The minimum max of escape at site is useful to select the sites where mutations confer the most escape.
 
-# Define the receptor affinity experiments to average
-avg_receptor_affinity_default: &avg_receptor_affinity_default
-  <<: *avg_antibody_escape_default
-  icXX: 50  # IC50
-
-
 # Define the antibodies/sera to average
 avg_antibody_escape:
   m102.4:
@@ -854,7 +883,7 @@ avg_antibody_escape:
     selections:
       #- LibA-221115-m102.4 bottlenecked
       #- LibB-221115-m102.4 bottlenecked
-      #- LibA-230331-m102.4 too low IC
+      #- LibA-230331-m102.4 # too low IC
       - LibB-230720-m102.4
       - LibA-230725-m102.4
 
@@ -872,8 +901,8 @@ avg_antibody_escape:
     title: Escape map for antibody HENV26
     selections:
       #- LibA-230331-HENV26
-      #- LibB-230704-HENV26 too low IC
-      #- LibB-230815-HENV26 too low IC
+      #- LibB-230704-HENV26 #too low IC
+      #- LibB-230815-HENV26 #too low IC
       - LibA-230724-HENV26
       - LibB-230907-HENV26
 
@@ -891,7 +920,7 @@ avg_antibody_escape:
     title: Escape map for antibody HENV103
     selections:
       - LibA-230815-HENV103
-      #- LibB-230724-HENV103
+      - LibB-230724-HENV103
       - LibB-230907-HENV103
 
   HENV117:
@@ -912,6 +941,12 @@ avg_antibody_escape:
       - LibB-230907-minibinder
 
 # ------------------------------------------------------------------------------
+# Define the receptor affinity experiments to average
+avg_receptor_affinity_default: &avg_receptor_affinity_default
+  <<: *avg_antibody_escape_default
+  icXX: 50  # IC50
+
+
 avg_receptor_affinity:
   dimeric_EFNB3:
     <<: *avg_receptor_affinity_default
