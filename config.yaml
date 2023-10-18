@@ -80,12 +80,12 @@ variant_tags:  # variant tags in PacBio amplicon, or "null" if no tags
     variant_1: G
     variant_2: C
     wildtype: A
-max_ccs_error_rate: 1.0e-4  # only keep CCS if gene/barcode error rate <= this
+max_ccs_error_rate: 5.0e-4  # only keep CCS if gene/barcode error rate <= this
 consensus_params:  # parameters for building PacBio consensus sequences
   max_sub_diffs: null
   max_indel_diffs: null
-  max_minor_sub_frac: 0.3
-  max_minor_indel_frac: 0.3
+  max_minor_sub_frac: 0.2
+  max_minor_indel_frac: 0.2
   min_support: 2
 
 # created files with sequences of parental protein

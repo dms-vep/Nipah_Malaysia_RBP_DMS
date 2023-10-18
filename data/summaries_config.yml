@@ -28,13 +28,14 @@ summary:
 
   func_effects:  # effects of mutations on function
     RBP mediated entry:  # name of functional selection
-      condition: NiV_CHO_ENFB3  # condition specified in `avg_func_effects`
+      condition: CHOEFNB3  # condition specified in `avg_func_effects`
       effect_type: func_effects  # "func_effects" or "latent_effects"
       positive_color: "#009E73"  # green
       negative_color: "#F0E442"  # yellow
       max_at_least: 1
       min_at_least: 0
       init_min_value: -3  # initial min value in slider
+
   other_assays:  # other assays that we show, empty dict if no assays being shown
     receptor_affinity:  # assay type
       EphrinB3 affinity:  # name of particular assay condition

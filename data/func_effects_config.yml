@@ -15,7 +15,7 @@ func_scores_params_default: &func_scores_params_default
   min_wt_frac: 0.001  # error if not at least this fraction of counts for wildtype
   # `min_pre_selection_count` and `min_pre_selection_frac` drop variants with low counts
   # or frequencies that may not have sufficient statistics for good estimates.
-  min_pre_selection_count: 50  # drop variants < this many pre-selection counts
+  min_pre_selection_count: 25  # drop variants < this many pre-selection counts
   # !!! Make min_pre_selection_frac LARGER for larger libraries, such 0.1 / (library size) !!!
   min_pre_selection_frac: 0.00000125  # drop variants that are < this fraction of all counts
 
@@ -43,177 +43,192 @@ global_epistasis_params: &global_epistasis_params
 func_scores:
   #Library A, in date order
   LibA-221115-293T:
-    post_selection_sample: LibA-221115-293T-no_antibody
+    post_selection_sample: LibA-221115-293T
     pre_selection_sample: LibA-221115-293T-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-    
+
   LibA-230331-293T:
-    post_selection_sample: LibA-230331-293T-no_antibody
+    post_selection_sample: LibA-230331-293T
     pre_selection_sample: LibA-230331-293T-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-    
-  LibA-230331-293T_E2:
-    post_selection_sample: LibA-230331-293T_E2-no_antibody
-    pre_selection_sample: LibA-230331-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-    
+
   LibA-230405-293T:
-    post_selection_sample: LibA-230405-293T-no_antibody
+    post_selection_sample: LibA-230405-293T
     pre_selection_sample: LibA-230405-293T-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230509-CHO-EFNB3:
-    post_selection_sample: LibA-230509-CHO-EFNB3_no_antibody
-    pre_selection_sample: LibA-230509-293T-VSV
+  LibA-230418-CHO-EFNB2-A2:
+    post_selection_sample: LibA-230418-CHO-EFNB2-A2
+    pre_selection_sample: LibA-230418-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230626-293T:
+  LibA-230418-CHO-EFNB3-F3:
+    post_selection_sample: LibA-230418-CHO-EFNB3-F3
+    pre_selection_sample: LibA-230418-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibA-230509-CHO-EFNB3-F3:
+    post_selection_sample: LibA-230509-CHO-EFNB3-F3
+    pre_selection_sample: LibA-230509-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibA-230509-CHO-EFNB2-A2:
+    post_selection_sample: LibA-230509-CHO-EFNB2-A2
+    pre_selection_sample: LibA-230509-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibA-230725-CHO-EFNB3-C6:
+    post_selection_sample: LibA-230725-CHO-EFNB3-C6
+    pre_selection_sample: LibA-230815-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibA-230725-CHO-EFNB3-C6-CON:
+    post_selection_sample: LibA-230725-CHO-EFNB3-C6-CON
+    pre_selection_sample: LibA-230815-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibA-230815-CHO-EFNB3-C6:
+    post_selection_sample: LibA-230815-CHO-EFNB3-C6
+    pre_selection_sample: LibA-230815-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibA-230818-CHO-EFNB3-C6:
+    post_selection_sample: LibA-230818-CHO-EFNB3-C6
+    pre_selection_sample: LibA-230818-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibA-230818-CHO-EFNB3-C6-HendraF:
+    post_selection_sample: LibA-230818-CHO-EFNB3-C6-HendraF
+    pre_selection_sample: LibA-230818-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibA-230825-293T-PREV:
     post_selection_sample: LibA-230825-293T-0626-no-antibody
     pre_selection_sample: LibA-230825-293T-0626-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230725-CHO-EFNB3:
-    post_selection_sample: LibA-230725-no_antibody
-    pre_selection_sample: LibA-230815-VSV
+  LibA-230825-293T:
+    post_selection_sample: LibA-230825-293T
+    pre_selection_sample: LibA-230825-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-
-  LibA-230812-CHO-EFNB3:
-    post_selection_sample: LibA-230818-no_antibody_ctl
-    pre_selection_sample: LibA-230818-VSV
+  LibA-230825-CHO-EFNB3-C6-HendraF:
+    post_selection_sample: LibA-230825-CHO-EFNB3-C6-HendraF
+    pre_selection_sample: LibA-230825-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230812-CHO-EFNB3-HendraF:
-    post_selection_sample: LibA-230818-HendraF
-    pre_selection_sample: LibA-230818-VSV
+  LibA-230825-CHO-EFNB3-C6:
+    post_selection_sample: LibA-230825-CHO-EFNB3-C6
+    pre_selection_sample: LibA-230825-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230815-CHO-EFNB3:
-    post_selection_sample: LibA-230815-no_antibody
-    pre_selection_sample: LibA-230815-VSV
+  LibA-230916-CHO-EFNB3-C6:
+    post_selection_sample: LibA-230916-CHO-EFNB3-C6
+    pre_selection_sample: LibA-230825-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230818-293T:
-    post_selection_sample: LibA-230825-293T-no-antibody
-    pre_selection_sample: LibA-230825-C6-VSV
+  LibA-231006-CHO-EFNB3-C6:
+    post_selection_sample: LibA-231006-CHO-EFNB3-C6
+    pre_selection_sample: LibA-230825-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230818-CHO-EFNB3-HendraF:
-    post_selection_sample: LibA-230825-C6-HendraF
-    pre_selection_sample: LibA-230825-C6-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-    
-  LibA-230818-CHO-EFNB3:
-    post_selection_sample: LibA-230825-C6-no-antibody
-    pre_selection_sample: LibA-230825-C6-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
 
   #Library B, in date order
   LibB-221115-293T:
-    post_selection_sample: LibB-221115-293T-no_antibody
+    post_selection_sample: LibB-221115-293T
     pre_selection_sample: LibB-221115-293T-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibB-230509-CHO-EFNB3:
-    post_selection_sample: LibA-230509-CHO-EFNB3_no_antibody
-    pre_selection_sample: LibA-230509-CHO-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-    
-  LibB-230509-CHO-EFNB2:
-    post_selection_sample: LibA-230509-CHO-EFNB2_no_antibody
-    pre_selection_sample: LibA-230509-CHO-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-    
-  LibB-230509-293T-EFNB3:
-    post_selection_sample: LibA-230509-293T-EFNB3_no_antibody
-    pre_selection_sample: LibA-230509-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-    
-  LibB-230509-293T-EFNB2:
-    post_selection_sample: LibA-230509-293T-EFNB2_no_antibody
-    pre_selection_sample: LibA-230509-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-    
-  LibB-230621-CHO-EFNB3:
-    post_selection_sample: LibB-230621-CHO_EFNB3_no_antibody
+  LibB-230621-CHO-EFNB3-C6:
+    post_selection_sample: LibB-230621-CHO-EFNB3-C6
     pre_selection_sample: LibB-230621-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
   LibB-230621-CHO-EFNB2-A2:
-    post_selection_sample: LibB-230621-CHO-A2
+    post_selection_sample: LibB-230621-CHO-EFNB2-A2
     pre_selection_sample: LibB-230621-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibB-230621-CHO-EFNB3-F3:
-    post_selection_sample: LibB-230621-CHO-F3
+    post_selection_sample: LibB-230621-CHO-EFNB3-F3
     pre_selection_sample: LibB-230621-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibB-230621-CHO-EFNB2-G6:
-    post_selection_sample: LibB-230621-CHO-G6
+    post_selection_sample: LibB-230621-CHO-EFNB2-G6
     pre_selection_sample: LibB-230621-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibB-230621-CHO-EFNB2-H1:
-    post_selection_sample: LibB-230621-CHO-H1
+    post_selection_sample: LibB-230621-CHO-EFNB2-H1
     pre_selection_sample: LibB-230621-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibB-230704-293T:
-    post_selection_sample: LibB-230704-293T-no_antibody
-    pre_selection_sample: LibB-230704-CHO_VSV
+  LibB-230630-293T:
+    post_selection_sample: LibB-230630-293T
+    pre_selection_sample: LibB-230630-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
-  LibB-230704-CHO-EFNB3:
-    post_selection_sample: LibB-230704-CHO_EFNB3_no_antibody
-    pre_selection_sample: LibB-230704-CHO_VSV
+  LibB-230630-CHO-EFNB3-C6:
+    post_selection_sample: LibB-230630-CHO-EFNB3-C6
+    pre_selection_sample: LibB-230630-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
-  LibB-230720-CHO-EFNB3:
-    post_selection_sample: LibB-230720-no_antibody
-    pre_selection_sample: LibB-230720-C6_VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-    
-  LibB-230720-CHO-EFNB3_low_VSV:
-    post_selection_sample: LibB-230720-no_antibody
-    pre_selection_sample: LibB-230720-C6-low_cycles_VSV
+  LibB-230720-CHO-EFNB3-C6:
+    post_selection_sample: LibB-230720-CHO-EFNB3-C6
+    pre_selection_sample: LibB-230720-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibB-230815-CHO-EFNB3: #now combined with LibB-230815-no_antibody_PLL because look similar
-    post_selection_sample: LibB-230815-no_antibody
-    pre_selection_sample: LibB-230815-VSV
+  LibB-230815-CHO-EFNB3-C6: 
+    post_selection_sample: LibB-230815-CHO-EFNB3-C6
+    pre_selection_sample: LibB-230815-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
+  LibB-230818-CHO-EFNB3-C6: 
+    post_selection_sample: LibB-230818-CHO-EFNB3-C6
+    pre_selection_sample: LibB-230630-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
 
-    
+  LibB-230906-CHO-EFNB3-C6: 
+    post_selection_sample: LibB-230906-CHO-EFNB3-C6
+    pre_selection_sample: LibB-230630-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibB-230907-CHO-EFNB3-C6: 
+    post_selection_sample: LibB-230907-CHO-EFNB3-C6
+    pre_selection_sample: LibB-230630-CHO-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
 
 
 # --------------------------------------------------------------------------------------
@@ -278,65 +293,67 @@ avg_func_effects_default: &avg_func_effects_default
 # Define the functional effect conditions to average
 avg_func_effects:
 
-  NiV_CHO_ENFB2:
+  CHOEFNB2:
     <<: *avg_func_effects_default
     title: Median mutation effects on entry into CHO cells overexpressing EFNB2
     selections:
-      - LibB-230509-CHO-EFNB2 #an outlier for correlations
-      - LibB-230621-CHO-EFNB2-A2
-      #- LibB-230621-CHO-EFNB2-G6 #outlier for correlations
-      #- LibB-230621-CHO-EFNB2-H1 #outlier for correlations
+      - LibA-230418-CHO-EFNB2-A2 #r=0.7
+      - LibA-230509-CHO-EFNB2-A2 #r=0.8
 
-  NiV_CHO_ENFB3:
+      - LibB-230621-CHO-EFNB2-A2 #r=0.67, little purging
+      - LibB-230621-CHO-EFNB2-G6 #r=0.63
+      - LibB-230621-CHO-EFNB2-H1 #r=0.64
+
+  CHOEFNB3:
     <<: *avg_func_effects_default
     title: Median mutation effects on entry into CHO cells overexpressing EFNB3
     selections:
-      - LibA-230509-CHO-EFNB3 #r=0.81
-      #- LibA-230725-CHO-EFNB3 #r=0.78,slightly bottlenecked
-      - LibA-230812-CHO-EFNB3 #0.85 r value, nice func score dist, 
-      #- LibA-230815-CHO-EFNB3 #outlier for correlations, 0.55 r value, little purging
-      #- LibA-230818-CHO-EFNB3 #0.88 r value, double peak func score dist, slightly bottlenecked
+      - LibA-230725-CHO-EFNB3-C6 #
+      #- LibA-230725-CHO-EFNB3-C6-CON #
+      #- LibA-230815-CHO-EFNB3-C6 #
+      - LibA-230818-CHO-EFNB3-C6 #
+      - LibA-230825-CHO-EFNB3-C6 #
+      - LibA-230916-CHO-EFNB3-C6 #
+      - LibA-231006-CHO-EFNB3-C6 #
 
-      - LibB-230509-CHO-EFNB3 #0.86 r value
-      #- LibB-230621-CHO-EFNB3 #0.8 r value, outlier for correlations
-      #- LibB-230621-CHO-EFNB3-F3 #outlier for correlations
-      #- LibB-230704-CHO-EFNB3 #r=0.81, maybe very slightly bottlenecked
-      - LibB-230720-CHO-EFNB3 #r=0.81 nice func score distribution
-      - LibB-230815-CHO-EFNB3 #r=0.85
-      #- LibB-230720-CHO-EFNB3_low_VSV
+      - LibB-230621-CHO-EFNB3-C6 #
+      - LibB-230630-CHO-EFNB3-C6 #
+      - LibB-230720-CHO-EFNB3-C6 #
+      - LibB-230815-CHO-EFNB3-C6 #
+      - LibB-230818-CHO-EFNB3-C6 #
+      - LibB-230906-CHO-EFNB3-C6 #
+      - LibB-230907-CHO-EFNB3-C6 #
 
-  NiV_CHO_ENFB3-HendraF:
+  CHOEFNB3_F3:
+    <<: *avg_func_effects_default
+    title: Median mutation effects on entry into CHO cells overexpressing EFNB3
+    selections:
+      - LibA-230418-CHO-EFNB3-F3 #
+      - LibA-230509-CHO-EFNB3-F3 #
+      - LibB-230621-CHO-EFNB3-F3 #
+
+
+  CHO-EFNB3-HendraF:
     <<: *avg_func_effects_default
     title: Median mutation effects on entry into CHO cells overexpressing EFNB2
     selections:
-      - LibA-230812-CHO-EFNB3-HendraF #0.83 r value if clip_lower set to median_stop
-      - LibA-230818-CHO-EFNB3-HendraF #0.39 r value if clip_lower set to median_stop
+      - LibA-230818-CHO-EFNB3-C6-HendraF #0.83 r value if clip_lower set to median_stop
+      - LibA-230825-CHO-EFNB3-C6-HendraF #0.39 r value if clip_lower set to median_stop
 
-  NiV_293T_EFNB2:
-    <<: *avg_func_effects_default
-    title: Median mutation effects on entry into 293T cells overexpressing EFNB2
-    selections:
-      - LibA-230331-293T_E2
-      - LibB-230509-293T-EFNB2
 
-  NiV_293T_EFNB3:
-    <<: *avg_func_effects_default
-    title: Median mutation effects on entry into 293T cells overexpressing EFNB3
-    selections:
-      - LibB-230509-293T-EFNB3
-
-  NiV_293T:
+  293T:
     <<: *avg_func_effects_default
     title: Median mutation effects on entry into WT 293T cells
     selections:
-      #- LibA-221115-293T #0.7 r value
+      - LibA-221115-293T #0.7 r value
       - LibA-230331-293T #slightly bottlenecked, 0.7 r value
       - LibA-230405-293T #slightly bottlenecked, 0.67 r value
-      #- LibA-230626-293T #very bottlenecked 0.58 r value
-      - LibA-230818-293T #slightly bottlenecked 0.7 r value
+      #- LibA-230825-293T-PREV #slightly bottlenecked 0.7 r value
+      - LibA-230825-293T #very bottlenecked 0.58 r value
+
 
       - LibB-221115-293T #0.68 r value
-      - LibB-230704-293T #slightly bottlenecked 0.76 r value
+      - LibB-230630-293T #slightly bottlenecked 0.76 r value
 
 
 # --------------------------------------------------------------------------------------
@@ -355,7 +372,7 @@ avg_func_effects:
 # If you are not doing comparisons, just set `func_effect_shifts` to `null` or
 # leave it out altogether.
 
-# default settings for `func_effect_shifts` comparisons
+#default settings for `func_effect_shifts` comparisons
 func_effect_shifts_default: &func_effect_shifts_default
   # How to clip functional scores at upper / lower bounds. Allowable values:
   #  - median_stop: median func score of all variants with stop codons
@@ -378,57 +395,76 @@ func_effect_shifts:
     reference: 293T
     conditions:
       293T: LibA-221115-293T
-      CHO_bat_EFNB3: LibA-230812-CHO-EFNB3
+      CHO_bat_EFNB3: LibA-230818-CHO-EFNB3-C6
 
   LibA-2:
     <<: *func_effect_shifts_default
     reference: 293T
     conditions:
-      293T: LibA-230331-293T
-      CHO_bat_EFNB3: LibA-230818-CHO-EFNB3
+      293T: LibB-221115-293T
+      CHO_bat_EFNB3: LibB-230621-CHO-EFNB3-C6
 
   LibB-1:
     <<: *func_effect_shifts_default
     reference: 293T
     conditions:
-      293T: LibB-230704-293T
-      CHO_bat_EFNB3: LibB-230704-CHO-EFNB3
+      293T: LibA-230825-293T
+      CHO_bat_EFNB3: LibA-230825-CHO-EFNB3-C6
 
-  LibB-2:
-    <<: *func_effect_shifts_default
-    reference: 293T
-    conditions:
-      293T: LibB-221115-293T
-      CHO_bat_EFNB3: LibB-230509-CHO-EFNB3
+
+
 
   #Hendra comparisons
-  LibA-Hendra-1:
+  Hendra-1:
     <<: *func_effect_shifts_default
     reference: Nipah_F
     conditions:
-      Nipah_F: LibA-230812-CHO-EFNB3
-      Hendra_F: LibA-230812-CHO-EFNB3-HendraF
+      Nipah_F: LibA-230916-CHO-EFNB3-C6
+      Hendra_F: LibA-230818-CHO-EFNB3-C6-HendraF
 
-  LibA-Hendra-2:
+  Hendra-2:
     <<: *func_effect_shifts_default
     reference: Nipah_F
     conditions:
-      Nipah_F: LibA-230818-CHO-EFNB3
-      Hendra_F: LibA-230818-CHO-EFNB3-HendraF
+      Nipah_F: LibB-230818-CHO-EFNB3-C6
+      Hendra_F: LibA-230818-CHO-EFNB3-C6-HendraF
+
+  #CHO-EFNB3-C6 vs CHO-EFNB3-F3
+  EFNB3_C6_vs_F3-1:
+    <<: *func_effect_shifts_default
+    reference: C6
+    conditions:
+      C6: LibA-230818-CHO-EFNB3-C6
+      F3: LibA-230418-CHO-EFNB3-F3
+
+  EFNB3_C6_vs_F3-2:
+    <<: *func_effect_shifts_default
+    reference: C6
+    conditions:
+      C6: LibB-230621-CHO-EFNB3-C6
+      F3: LibA-230509-CHO-EFNB3-F3
+
   #E2vsE3
   EFNB3_1:
     <<: *func_effect_shifts_default
     reference: EFNB3
     conditions:
-      EFNB3: LibA-230818-CHO-EFNB3
-      EFNB2: LibB-230621-CHO-EFNB2-A2
+      EFNB3: LibA-230818-CHO-EFNB3-C6
+      EFNB2: LibA-230509-CHO-EFNB2-A2
 
   EFNB3_2:
     <<: *func_effect_shifts_default
     reference: EFNB3
     conditions:
-      EFNB3: LibB-230815-CHO-EFNB3
-      EFNB2: LibB-230621-CHO-EFNB2-G6
+      EFNB3: LibB-230815-CHO-EFNB3-C6
+      EFNB2: LibA-230418-CHO-EFNB2-A2
+      
+  EFNB3_3:
+    <<: *func_effect_shifts_default
+    reference: EFNB3
+    conditions:
+      EFNB3: LibB-230906-CHO-EFNB3-C6
+      EFNB2: LibB-230621-CHO-EFNB2-A2
 # --------------------------------------------------------------------------------------
 # Configuration for averaging func effect shifts from multiple comparisons.
 # --------------------------------------------------------------------------------------
@@ -446,7 +482,7 @@ func_effect_shifts:
 
 # Define some defaults for each condition, used via the merge (<<) operator.
 avg_func_effect_shifts_default: &avg_func_effect_shifts_default
-  avg_method: median
+  avg_method: mean
   per_comparison_tooltips: true
   plot_kwargs:
     alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
@@ -454,8 +490,8 @@ avg_func_effect_shifts_default: &avg_func_effect_shifts_default
     #  include: [239,240,241,242,305,389,401,402,490,491,492,501,504,505,506,507,530,531,532,533,555,557,558,559,581,588]
     addtl_slider_stats:
       times_seen: 3
-    heatmap_max_at_least: 0.5
-    heatmap_min_at_least: -0.5
+    heatmap_max_at_least: 1
+    heatmap_min_at_least: -1
     init_floor_at_zero: false
     init_site_statistic: mean
     site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
@@ -486,22 +522,22 @@ avg_func_effect_shifts_default: &avg_func_effect_shifts_default
 
 #Define the functional effect conditions to average
 avg_func_effect_shifts:
-  293T_vs_CHO_EFNB3:
+  293T_vs_CHO-EFNB3-C6:
     <<: *avg_func_effect_shifts_default
     title: Comparison of functional effects in different cells
     comparisons:
       - LibA-1
       - LibA-2
       - LibB-1
-      - LibB-2
-    lasso_shift: 0.0001
+      #- LibB-2
+    lasso_shift: 0.00005
     
   CHO_EFNB3_w_Nipah_F_vs_Hendra_F:
     <<: *avg_func_effect_shifts_default
     title: Comparison of functional effects in different cells
     comparisons:
-      - LibA-Hendra-1
-      - LibA-Hendra-2
+      - Hendra-1
+      - Hendra-2
     lasso_shift: 0.00005
 
   CHO_EFNB3_vs_CHO_EFNB2:
@@ -510,4 +546,13 @@ avg_func_effect_shifts:
     comparisons:
       - EFNB3_1
       - EFNB3_2
+      - EFNB3_3
+    lasso_shift: 0.00005
+
+  EFNB3_C6_vs_F3:
+    <<: *avg_func_effect_shifts_default
+    title: Comparison of C6 and F3 CHO-EFNB3 clones
+    comparisons:
+      - EFNB3_C6_vs_F3-1
+      - EFNB3_C6_vs_F3-2
     lasso_shift: 0.00005
