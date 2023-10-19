@@ -40,7 +40,7 @@ summary:
     receptor_affinity:  # assay type
       EphrinB3 affinity:  # name of particular assay condition
         condition: dimeric_EFNB3  # condition specified in `avg_escape`
-        stat: receptor affinity_median  # statisti used for mutation effects
+        stat: Ephrin binding_median  # statisti used for mutation effects
         positive_color: "#0072B2"  # dark blue
         negative_color: "#D55E00"  # red
         max_at_least: 1
@@ -49,7 +49,7 @@ summary:
         
       EphrinB2 affinity:  # name of particular assay condition
         condition: dimeric_EFNB2  # condition specified in `avg_escape`
-        stat: receptor affinity_median  # statisti used for mutation effects
+        stat: Ephrin binding_median  # statisti used for mutation effects
         positive_color: "#0072B2"  # dark blue
         negative_color: "#D55E00"  # red
         max_at_least: 1

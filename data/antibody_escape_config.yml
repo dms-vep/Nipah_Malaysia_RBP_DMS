@@ -30,13 +30,13 @@ assays:
     scale_stat: 1
     stat_name: escape
   receptor_affinity:
-    title: Receptor affinity
+    title: Ephrin binding
     selections: receptor_selections
     averages: avg_receptor_affinity
     prob_escape_scale:
       type: linear
     scale_stat: -1
-    stat_name: receptor affinity
+    stat_name: Ephrin binding
 
 # --------------------------------------------------------------------------------------
 # Configuration for each antibody or soluble receptor selection experiment.
@@ -93,7 +93,7 @@ polyclonal_params_default: &polyclonal_params_default
 escape_plot_kwargs_default: &escape_plot_kwargs_default
   alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
   addtl_slider_stats:
-    times_seen: 4
+    times_seen: 3
   addtl_tooltip_stats:
     - sequential_site
   heatmap_max_at_least: 1
@@ -101,7 +101,7 @@ escape_plot_kwargs_default: &escape_plot_kwargs_default
   init_floor_at_zero: false
   init_site_statistic: sum
   site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
-  heatmap_color_scheme: pinkyellowgreen
+  heatmap_color_scheme: purplegreen
 
 # Specify any statistics (usually functional effects) for which you want to enable
 # sliders that hide data. Keyed by statistic name, then next dict gives:
@@ -112,7 +112,7 @@ plot_hide_stats_default: &plot_hide_stats_default
   functional effect:
     csv: results/func_effects/averages/CHOEFNB3_func_effects.csv
     csv_col: effect
-    init: -3
+    init: -2
     min_filters:
       times_seen: 3
 
@@ -132,7 +132,7 @@ antibody_selections:
     antibody_samples:
      LibA-221115-293T-m102-0.1:
       concentration: 0.1
-      use_in_fit: false
+      use_in_fit: true
      LibA-221115-293T-m102-0.6:
       concentration: 0.6
       use_in_fit: true
@@ -147,7 +147,7 @@ antibody_selections:
     antibody_samples:
      LibB-221115-293T-m102-0.1:
       concentration: 0.1
-      use_in_fit: false
+      use_in_fit: true
      LibB-221115-293T-m102-0.6:
       concentration: 0.6
       use_in_fit: true
@@ -195,7 +195,7 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230331-293T
+    no_antibody_sample: LibA-230331-293T_E2
     antibody_samples:
      LibA-230331-293T-E2-nAH1-0.05: #IC40
       concentration: 0.05
@@ -215,10 +215,10 @@ antibody_selections:
     plot_hide_stats: *plot_hide_stats_default
     no_antibody_sample: LibB-230630-CHO-EFNB3-C6
     antibody_samples:
-     LibB-230630-nAH1-0.1: 
+     LibB-230630-nAH1-0.1: #IC25
       concentration: 0.1
       use_in_fit: true
-     LibB-230630-nAH1-0.3:
+     LibB-230630-nAH1-0.3: #IC65
       concentration: 0.3
       use_in_fit: true
 
@@ -264,10 +264,10 @@ antibody_selections:
     plot_hide_stats: *plot_hide_stats_default
     no_antibody_sample: LibB-230815-CHO-EFNB3-C6
     antibody_samples:
-     LibB-230815-HENV26-0.2:
+     LibB-230815-HENV26-0.2: #IC70
       concentration: 0.2
       use_in_fit: true
-     LibB-230815-HENV26-0.4:
+     LibB-230815-HENV26-0.4: #IC80
       concentration: 0.4
       use_in_fit: true
 
@@ -320,7 +320,7 @@ antibody_selections:
       concentration: 0.8
       use_in_fit: true
 
-  LibB-230720-HENV32: #somewhat noisy
+  LibB-230720-HENV32: 
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *polyclonal_params_default
@@ -334,7 +334,7 @@ antibody_selections:
      LibB-230720-HENV32-0.8: #IC40
       concentration: 0.8
       use_in_fit: true
-     LibB-230720-HENV32-1.2: #IC80 looks so so
+     LibB-230720-HENV32-1.2: #IC80
       concentration: 1.2
       use_in_fit: true
       
@@ -574,7 +574,7 @@ receptor_polyclonal_params_default: &receptor_polyclonal_params_default
   n_epitopes: 1
   spatial_distances: null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
-    reg_escape_weight: 0
+    reg_escape_weight: 0.1
     reg_spread_weight: 0
     reg_activity_weight: 1.0
     logfreq: 200
@@ -584,7 +584,7 @@ receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
   functional effect:
     csv: results/func_effects/averages/CHOEFNB3_func_effects.csv
     csv_col: effect
-    init: -3
+    init: -2
     min_filters:
       times_seen: 3
       
@@ -593,7 +593,7 @@ receptor_plot_hide_stats_default_E2: &receptor_plot_hide_stats_default_E2
   functional effect:
     csv: results/func_effects/averages/CHOEFNB2_func_effects.csv
     csv_col: effect
-    init: -3
+    init: -2
     min_filters:
       times_seen: 3
 
@@ -808,7 +808,7 @@ receptor_selections:
 avg_escape_plot_kwargs_default: &avg_escape_plot_kwargs_default
   alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
   addtl_slider_stats:
-    times_seen: 4
+    times_seen: 3
   addtl_tooltip_stats:
     - sequential_site
   heatmap_max_at_least: 1
@@ -818,14 +818,18 @@ avg_escape_plot_kwargs_default: &avg_escape_plot_kwargs_default
   site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
   #sites_to_show: 
   #  include: [129, 132, 132, 142, 161, 167, 202, 211, 228, 242, 254, 281, 284, 302, 304, 323, 335, 351, 490, 491, 492, 492, 501, 501, 505, 515, 529, 530, 530, 554, 555, 555, 564, 580, 583, 584, 588, 588, 589]
-  heatmap_color_scheme: pinkyellowgreen
+  heatmap_color_scheme: purplegreen
 
 # Define defaults for each antibody/serum, used via the merge (<<) operator
 avg_antibody_escape_default: &avg_antibody_escape_default
-  icXX: 50
+  icXX: 90
   escape_plot_kwargs:
     <<: *avg_escape_plot_kwargs_default
     avg_type: mean
+    addtl_slider_stats:
+      times_seen: 3
+      escape_std: 1.5
+    addtl_slider_stats_as_max: [escape_std]
     per_model_tooltip: true
   plot_hide_stats: *plot_hide_stats_default
   legend: |

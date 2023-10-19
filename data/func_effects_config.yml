@@ -15,7 +15,7 @@ func_scores_params_default: &func_scores_params_default
   min_wt_frac: 0.001  # error if not at least this fraction of counts for wildtype
   # `min_pre_selection_count` and `min_pre_selection_frac` drop variants with low counts
   # or frequencies that may not have sufficient statistics for good estimates.
-  min_pre_selection_count: 25  # drop variants < this many pre-selection counts
+  min_pre_selection_count: 20  # drop variants < this many pre-selection counts
   # !!! Make min_pre_selection_frac LARGER for larger libraries, such 0.1 / (library size) !!!
   min_pre_selection_frac: 0.00000125  # drop variants that are < this fraction of all counts
 
@@ -26,7 +26,7 @@ global_epistasis_params: &global_epistasis_params
   #  - median_stop: median func score of all variants with stop codons
   #  - null: no clipping
   #  - a number: clip at this number
-  clip_lower: null
+  clip_lower: -4
   clip_upper: null
   # Do we collapse barcodes with same variant?
   collapse_identical_variants: false  # {false, mean, median}
@@ -248,6 +248,7 @@ func_scores:
 # Define some defaults for each condition, used via the merge (<<) operator.
 avg_func_effects_default: &avg_func_effects_default
   avg_method: mean
+  floor_for_effect_std: -2.5
   per_selection_tooltips: true
   plot_kwargs:
     alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
@@ -255,8 +256,12 @@ avg_func_effects_default: &avg_func_effects_default
     #  include: [239,240,241,242,305,389,401,402,490,491,492,501,504,505,506,507,530,531,532,533,555,557,558,559,581,588]
     addtl_slider_stats:
       times_seen: 3
-    heatmap_max_at_least: 2
-    heatmap_min_at_least: -2
+      effect_std: 1.5
+    addtl_slider_stats_as_max: [effect_std]
+    #heatmap_max_at_least: 1
+    #heatmap_min_at_least: -1
+    heatmap_min_fixed: -2
+    heatmap_max_fixed: 2
     init_floor_at_zero: false
     init_site_statistic: mean
     site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
@@ -378,7 +383,7 @@ func_effect_shifts_default: &func_effect_shifts_default
   #  - median_stop: median func score of all variants with stop codons
   #  - null: no clipping
   #  - a number: clip at this number
-  clip_lower: median_stop
+  clip_lower: -4
   clip_upper: null
   # Do we collapse barcodes with same variant?
   collapse_identical_variants: false  # {false, mean, median}
