@@ -28,7 +28,7 @@ summary:
 
   func_effects:  # effects of mutations on function
     RBP mediated entry:  # name of functional selection
-      condition: CHOEFNB3  # condition specified in `avg_func_effects`
+      condition: CHO_EFNB3  # condition specified in `avg_func_effects`
       effect_type: func_effects  # "func_effects" or "latent_effects"
       positive_color: "#009E73"  # green
       negative_color: "#F0E442"  # yellow
