@@ -8,6 +8,8 @@ _*
 
 results/*
 
+notebooks/*
+
 !results/gene_sequence
 results/gene_sequence/*
 !results/gene_sequence/codon.fasta
