@@ -13,7 +13,7 @@ PacBio_amplicon:
       mutation_op_count: null
   gene:
     filter:
-      mutation_nt_count: 90
+      mutation_nt_count: 15
       mutation_op_count: null
     return: [mutations, accuracy]
   barcode:

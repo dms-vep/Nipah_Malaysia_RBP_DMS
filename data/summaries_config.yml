@@ -48,7 +48,7 @@ summary:
         init_min_value: -10  # initial min value in slider
         
       EphrinB2 affinity:  # name of particular assay condition
-        condition: dimeric_EFNB2  # condition specified in `avg_escape`
+        condition: dimeric_EFNB2-w_E3_cells  # condition specified in `avg_escape`
         stat: Ephrin binding_median  # statisti used for mutation effects
         positive_color: "#0072B2"  # dark blue
         negative_color: "#D55E00"  # red
