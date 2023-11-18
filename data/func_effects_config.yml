@@ -15,7 +15,7 @@ func_scores_params_default: &func_scores_params_default
   min_wt_frac: 0.001  # error if not at least this fraction of counts for wildtype
   # `min_pre_selection_count` and `min_pre_selection_frac` drop variants with low counts
   # or frequencies that may not have sufficient statistics for good estimates.
-  min_pre_selection_count: 40  # drop variants < this many pre-selection counts
+  min_pre_selection_count: 50  # drop variants < this many pre-selection counts
   # !!! Make min_pre_selection_frac LARGER for larger libraries, such 0.1 / (library size) !!!
   min_pre_selection_frac: 0.00000125  # drop variants that are < this fraction of all counts
 
@@ -26,7 +26,7 @@ global_epistasis_params: &global_epistasis_params
   #  - median_stop: median func score of all variants with stop codons
   #  - null: no clipping
   #  - a number: clip at this number
-  clip_lower: null
+  clip_lower: median_stop
   clip_upper: null
   # Do we collapse barcodes with same variant?
   collapse_identical_variants: false  # {false, mean, median}
@@ -86,13 +86,13 @@ func_scores:
 
   LibA-230725-CHO-EFNB3-C6:
     post_selection_sample: LibA-230725-CHO-EFNB3-C6 #29,000 effective barcodes
-    pre_selection_sample: LibA-230825-CHO-VSV #29,000 effective barcodes
+    pre_selection_sample: LibA-230818-CHO-VSV #29,000 effective barcodes
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibA-230815-CHO-EFNB3-C6:
     post_selection_sample: LibA-230815-CHO-EFNB3-C6 #30,000 effective barcodes
-    pre_selection_sample: LibA-230815-CHO-VSV #41,000 effective barcodes
+    pre_selection_sample: LibA-230509-CHO-VSV #41,000 effective barcodes #LibA-230815-CHO-VSV try changing
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
@@ -108,24 +108,6 @@ func_scores:
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230825-293T-PREV:
-    post_selection_sample: LibA-230825-293T-0626-no-antibody #22,000 effective barcodes
-    pre_selection_sample: LibA-230825-293T-0626-VSV #45,000 effective barcodes
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230825-293T:
-    post_selection_sample: LibA-230825-293T #18,000 effective barcodes
-    pre_selection_sample: LibA-230825-CHO-VSV #29,000 effective barcodes
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230825-CHO-EFNB3-C6-HendraF:
-    post_selection_sample: LibA-230825-CHO-EFNB3-C6-HendraF #23,000 effective barcodes
-    pre_selection_sample: LibA-230825-CHO-VSV #29,000 effective barcodes
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
   LibA-230825-CHO-EFNB3-C6:
     post_selection_sample: LibA-230825-CHO-EFNB3-C6 #19,000 effective barcodes
     pre_selection_sample: LibA-230825-CHO-VSV #29,000 effective barcodes
@@ -134,30 +116,18 @@ func_scores:
 
   LibA-230916-CHO-EFNB3-C6:
     post_selection_sample: LibA-230916-CHO-EFNB3-C6 #29,000 effective barcodes
-    pre_selection_sample: LibA-230918-CHO-BA6-VSV #28,000 effective barcodes
+    pre_selection_sample: LibA-230825-CHO-VSV 
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibA-231006-CHO-EFNB3-C6:
     post_selection_sample: LibA-231006-CHO-EFNB3-C6 #23,000 effective barcodes
-    pre_selection_sample: LibA-230818-CHO-VSV #29,000 effective barcodes TESTING
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231019-CHO-EFNB2-BA6:
-    post_selection_sample: LibA-231019-CHO-EFNB2-BA6 #19,000 effective barcodes
-    pre_selection_sample: LibA-231019-CHO-VSV #29,000 effective barcodes
+    pre_selection_sample: LibA-230825-CHO-VSV #29,000 effective barcodes
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibA-231019-CHO-EFNB2-BA4:
     post_selection_sample: LibA-231019-CHO-EFNB2-BA4 #19,000 effective barcodes
-    pre_selection_sample: LibA-231019-CHO-VSV #29,000 effective barcodes
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231019-CHO-EFNB3-BB2:
-    post_selection_sample: LibA-231019-CHO-EFNB3-BB2 #13,000 effective barcodes
     pre_selection_sample: LibA-231019-CHO-VSV #29,000 effective barcodes
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
@@ -174,19 +144,18 @@ func_scores:
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231024-CHO-EFNB3-C6:
-    post_selection_sample: LibA-231024-noab-ctl #29,000 effective barcodes
-    pre_selection_sample: LibA-231024-CHO-BA6-VSV #44,000 effective barcodes
+  LibA-231112-CHO-EFNB3-C6: 
+    post_selection_sample: LibA-231112-C6
+    pre_selection_sample: LibA-231112-C6-VSV #36,000 effective barcodes
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231024-CHO-EFNB2-BA6:
-    post_selection_sample: LibA-231024-CHO-BA6-no-antibody-control #29,000 effective barcodes
-    pre_selection_sample: LibA-231024-CHO-BA6-VSV #44,000 effective barcodes
+  LibA-231112-CHO-EFNB2-BA6: 
+    post_selection_sample: LibA-231112-BA6
+    pre_selection_sample: LibA-231112-BA6-VSV #36,000 effective barcodes
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-    
-    
+
   #Library B, in date order
   LibB-221115-293T:
     post_selection_sample: LibB-221115-293T
@@ -196,42 +165,36 @@ func_scores:
 
   LibB-230621-CHO-EFNB3-C6:
     post_selection_sample: LibB-230621-CHO-EFNB3-C6 #25,000 effective barcodes
-    pre_selection_sample: LibB-230621-CHO-VSV #36,000 effective barcodes
+    pre_selection_sample: LibB-230720-CHO-VSV #36,000 effective barcodes
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
   LibB-230621-CHO-EFNB2-A2:
     post_selection_sample: LibB-230621-CHO-EFNB2-A2 #28,000 effective barcodes
-    pre_selection_sample: LibB-230621-CHO-VSV #36,000 effective barcodes
+    pre_selection_sample: LibB-230720-CHO-VSV #36,000 effective barcodes
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibB-230621-CHO-EFNB3-F3:
     post_selection_sample: LibB-230621-CHO-EFNB3-F3
-    pre_selection_sample: LibB-230621-CHO-VSV
+    pre_selection_sample: LibB-230720-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibB-230621-CHO-EFNB2-G6:
     post_selection_sample: LibB-230621-CHO-EFNB2-G6
-    pre_selection_sample: LibB-230621-CHO-VSV
+    pre_selection_sample: LibB-230720-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibB-230621-CHO-EFNB2-H1:
     post_selection_sample: LibB-230621-CHO-EFNB2-H1
-    pre_selection_sample: LibB-230621-CHO-VSV
+    pre_selection_sample: LibB-230720-CHO-VSV #LibB-230621-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
   LibB-230630-293T:
     post_selection_sample: LibB-230630-293T #25,000 effective barcodes
-    pre_selection_sample: LibB-230630-CHO-VSV #38,000 effective barcodes
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-    
-  LibB-230630-CHO-EFNB3-C6:
-    post_selection_sample: LibB-230630-CHO-EFNB3-C6 #25,000 effective barcodes
     pre_selection_sample: LibB-230630-CHO-VSV #38,000 effective barcodes
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
@@ -272,6 +235,33 @@ func_scores:
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
+  LibB-231105-CHO-EFNB2-BA6: 
+    post_selection_sample: LibB-231105-EFNB2-dimeric-BA6-nab
+    pre_selection_sample: LibB-231004-CHO-BA6-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibB-231108-CHO-EFNB2-BA6: 
+    post_selection_sample: LibB-231108-E2-monomeric-BA6-nab
+    pre_selection_sample: LibB-231004-CHO-BA6-VSV
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibB-231112-CHO-EFNB2-BA6: 
+    post_selection_sample: LibB-231112-BA6
+    pre_selection_sample: LibB-231112-BA6-VSV #44,000 effective barcodes
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+  LibB-231112-CHO-EFNB3-C6: 
+    post_selection_sample: LibB-231112-C6
+    pre_selection_sample: LibB-231112-C6-VSV #45,000 effective barcodes
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+
+### VSV not used
+# LibB-230928-CHO-BA6-VSV
+# LibB-231004-CHO-BA6-VSV
 # --------------------------------------------------------------------------------------
 # Configuration for averaging mutation functional effects across selections and plotting
 # them.
@@ -289,7 +279,7 @@ func_scores:
 # Define some defaults for each condition, used via the merge (<<) operator.
 avg_func_effects_default: &avg_func_effects_default
   avg_method: median
-  floor_for_effect_std: -3
+  floor_for_effect_std: -2
   per_selection_tooltips: true
   plot_kwargs:
     alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
@@ -297,7 +287,7 @@ avg_func_effects_default: &avg_func_effects_default
       #include: [218, 220, 236, 239, 240, 243, 304, 389, 390, 400, 438, 458, 490, 491, 494, 495, 501, 504, 505, 526, 528, 529, 530, 532, 533, 552, 556, 557, 559, 579, 581, 584, 585, 588, 590]
     addtl_slider_stats:
       times_seen: 3
-      effect_std: 2
+      effect_std: 1
     addtl_slider_stats_as_max: [effect_std]
     #heatmap_max_at_least: 1
     #heatmap_min_at_least: -1
@@ -338,85 +328,76 @@ avg_func_effects_default: &avg_func_effects_default
 
 # Define the functional effect conditions to average
 avg_func_effects:
-
-  CHO_EFNB2_A2:
+  CHO_EFNB2_low:
     <<: *avg_func_effects_default
-    title: Median mutation effects on entry into CHO cells overexpressing EFNB2
+    title: Median mutation effects on entry into CHO cells expressing bat EFNB2 (low expression)
     selections:
-      - LibA-230418-CHO-EFNB2-A2 # r=0.75
-      - LibA-230509-CHO-EFNB2-A2 # r=0.84, good
+      - LibA-231019-CHO-EFNB2-BA4 #
+      - LibB-231024-CHO-EFNB2-BA6 #
+      - LibB-231108-CHO-EFNB2-BA6 #
+      - LibB-231105-CHO-EFNB2-BA6 #
+      - LibB-231112-CHO-EFNB2-BA6 #
+
+  CHO_EFNB2_medium:
+    <<: *avg_func_effects_default
+    title: Median mutation effects on entry into CHO cells expressing bat EFNB2 (medium expression)
+    selections:
+      - LibA-230418-CHO-EFNB2-A2 
+      - LibA-230509-CHO-EFNB2-A2 
+      - LibB-230621-CHO-EFNB2-A2
 
   CHO_EFNB2_high:
     <<: *avg_func_effects_default
-    title: Median mutation effects on entry into CHO cells overexpressing EFNB2
+    title: Median mutation effects on entry into CHO cells expressing bat EFNB2 (high expression)
     selections:
-      - LibB-230621-CHO-EFNB2-G6 # r=0.71, little purging
-      - LibB-230621-CHO-EFNB2-H1 # r=0.71, little purging
+      - LibB-230621-CHO-EFNB2-G6 
+      - LibB-230621-CHO-EFNB2-H1 
 
 
-  CHO_EFNB2_new:
+  CHO_EFNB3_low:
     <<: *avg_func_effects_default
-    title: Median mutation effects on entry into CHO cells overexpressing EFNB2
+    title: Median mutation effects on entry into CHO cells expressing bat EFNB3 (low expression)
     selections:
-      - LibA-231019-CHO-EFNB2-BA4 # r=0.81 #slightly bottlenecked
-      - LibA-231019-CHO-EFNB2-BA6 # r=0.73 #slightly bottlenecked
-      #- LibA-231024-CHO-EFNB2-BA6 # r=0.72
-      #- LibB-231024-CHO-EFNB2-BA6 # r=0.69
-      - LibA-230509-CHO-EFNB2-A2 # r=0.84
+      - LibA-230725-CHO-EFNB3-C6 #
+      - LibA-230815-CHO-EFNB3-C6 #
+      - LibA-230818-CHO-EFNB3-C6 #
+      - LibA-230825-CHO-EFNB3-C6 #
+      - LibA-230916-CHO-EFNB3-C6 #
+      - LibA-231006-CHO-EFNB3-C6 #
+      - LibA-231019-CHO-EFNB3-C6 #
+      - LibA-231112-CHO-EFNB3-C6 #
+      - LibB-230621-CHO-EFNB3-C6 #
+      - LibB-230720-CHO-EFNB3-C6 #
+      - LibB-230815-CHO-EFNB3-C6 #
+      - LibB-230818-CHO-EFNB3-C6 #
+      - LibB-230906-CHO-EFNB3-C6 #
+      - LibB-230907-CHO-EFNB3-C6 #
+      - LibB-231112-CHO-EFNB3-C6 #
 
-  CHO_EFNB3:
+  CHO_EFNB3_high:
     <<: *avg_func_effects_default
-    title: Median mutation effects on entry into CHO cells overexpressing EFNB3
+    title: Median mutation effects on entry into CHO cells expressing bat EFNB3 (high expression)
     selections:
-      #- LibA-230725-CHO-EFNB3-C6 # r=0.86, slightly bottlenecked, little purging, different VSV
-      #- LibA-230815-CHO-EFNB3-C6 # r=0.74, little purging
-      - LibA-230818-CHO-EFNB3-C6 # r=0.85
-      - LibA-230825-CHO-EFNB3-C6 # r=0.89, slightly low barcode count
-      - LibA-230916-CHO-EFNB3-C6 # r=0.84 good
-      #- LibA-231006-CHO-EFNB3-C6 # r=0.80, different VSV, consider removing
-      #- LibA-231019-CHO-EFNB3-C6 # r=0.81 bottlenecked and low barcode count
-      #- LibA-231024-CHO-EFNB3-C6 # r=0.83 #pretty bottlenecked
+      - LibA-230418-CHO-EFNB3-F3 
+      - LibA-230509-CHO-EFNB3-F3 
+      - LibB-230621-CHO-EFNB3-F3 
 
-      #- LibB-230621-CHO-EFNB3-C6 # r=0.84, but little purging.
-      #- LibB-230630-CHO-EFNB3-C6 # r=0.85, bottlenecked, correlation outlier, consider removing
-      - LibB-230720-CHO-EFNB3-C6 # r=0.85 good
-      - LibB-230815-CHO-EFNB3-C6 # r=0.86 very slightly bottlenecked
-      #- LibB-230818-CHO-EFNB3-C6 # r=0.87, different VSV
-      #- LibB-230906-CHO-EFNB3-C6 # r=0.85 different VSV
-      #- LibB-230907-CHO-EFNB3-C6 # r=0.86 different VSV
-      #- LibA-231019-CHO-EFNB3-BB2 r=0.6, very bottlenecked
-
-  CHO-EFNB3_F3:
+  CHO_EFNB3-HendraF:
     <<: *avg_func_effects_default
-    title: Median mutation effects on entry into CHO cells overexpressing EFNB3
+    title: Median mutation effects on entry with Hendra F instead of Nipah F into CHO cells expressing bat EFNB3
     selections:
-      - LibA-230418-CHO-EFNB3-F3 # r=0.77
-      - LibA-230509-CHO-EFNB3-F3 #r=0.85 good
-      #- LibB-230621-CHO-EFNB3-F3 #r=0.76. Little purging.
-
-
-  CHO-EFNB3-HendraF:
-    <<: *avg_func_effects_default
-    title: Median mutation effects on entry into CHO cells overexpressing EFNB2
-    selections:
-      - LibA-230818-CHO-EFNB3-C6-HendraF # r=0.8
-      #- LibA-230825-CHO-EFNB3-C6-HendraF #0.39 r value if clip_lower set to median_stop
-      - LibA-231019-CHO-EFNB3-C6-HendraF # r=0.72
-
+      - LibA-230818-CHO-EFNB3-C6-HendraF 
+      - LibA-231019-CHO-EFNB3-C6-HendraF 
 
   293T:
     <<: *avg_func_effects_default
     title: Median mutation effects on entry into WT 293T cells
     selections:
-      - LibA-221115-293T # r=0.7
-      - LibA-230331-293T # r=0.64, slightly bottlenecked
-      - LibA-230405-293T # r=0.67, slightly bottlenecked
-      #- LibA-230825-293T-PREV # r=0.46, very bottlenecked
-      - LibA-230825-293T #very bottlenecked 0.58 r value
-
-
-      - LibB-221115-293T # r=0.74
-      - LibB-230630-293T #slightly bottlenecked 0.76 r value
+      - LibA-221115-293T 
+      - LibA-230331-293T 
+      - LibA-230405-293T 
+      - LibB-221115-293T 
+      - LibB-230630-293T 
 
 
 # --------------------------------------------------------------------------------------
@@ -452,97 +433,134 @@ func_effect_shifts_default: &func_effect_shifts_default
   lasso_shifts: [0.00001, 0.00005, 0.0001, 0.0002, 0.001]
 
 func_effect_shifts:
-  #cell effects
-  LibA-1:
+  Comp1:
     <<: *func_effect_shifts_default
     reference: 293T
     conditions:
       293T: LibA-221115-293T
-      CHO_bat_EFNB3: LibA-230916-CHO-EFNB3-C6
+      CHO_bat_EFNB3: LibA-230815-CHO-EFNB3-C6
 
-  LibA-2:
+  Comp2:
     <<: *func_effect_shifts_default
     reference: 293T
     conditions:
-      293T: LibB-221115-293T
-      CHO_bat_EFNB3: LibB-230720-CHO-EFNB3-C6
+      293T: LibA-230331-293T
+      CHO_bat_EFNB3: LibA-230825-CHO-EFNB3-C6
 
-  LibB-1:
+  Comp3:
     <<: *func_effect_shifts_default
     reference: 293T
     conditions:
       293T: LibA-230405-293T
-      CHO_bat_EFNB3: LibA-230825-CHO-EFNB3-C6
+      CHO_bat_EFNB3: LibA-230916-CHO-EFNB3-C6
 
-  #Hendra comparisons
-  Hendra-1:
+  Comp4:
+    <<: *func_effect_shifts_default
+    reference: 293T
+    conditions:
+      293T: LibB-221115-293T
+      CHO_bat_EFNB3: LibB-230907-CHO-EFNB3-C6
+
+  Comp5:
+    <<: *func_effect_shifts_default
+    reference: 293T
+    conditions:
+      293T: LibB-230630-293T
+      CHO_bat_EFNB3: LibB-230720-CHO-EFNB3-C6
+
+  #Nipah vs Hendra F
+  Hendra_1:
     <<: *func_effect_shifts_default
     reference: Nipah_F
     conditions:
-      Nipah_F: LibA-230916-CHO-EFNB3-C6
+      Nipah_F: LibA-230818-CHO-EFNB3-C6
       Hendra_F: LibA-230818-CHO-EFNB3-C6-HendraF
 
-  Hendra-2:
+  Hendra_2:
     <<: *func_effect_shifts_default
     reference: Nipah_F
     conditions:
-      Nipah_F: LibB-230720-CHO-EFNB3-C6
+      Nipah_F: LibA-231112-CHO-EFNB3-C6
       Hendra_F: LibA-231019-CHO-EFNB3-C6-HendraF
 
-  #CHO-EFNB3-C6 vs CHO-EFNB3-F3
-  EFNB3_C6_vs_F3-1:
-    <<: *func_effect_shifts_default
-    reference: C6
-    conditions:
-      C6: LibA-230916-CHO-EFNB3-C6
-      F3: LibA-230418-CHO-EFNB3-F3
-
-  EFNB3_C6_vs_F3-2:
-    <<: *func_effect_shifts_default
-    reference: C6
-    conditions:
-      C6: LibB-230720-CHO-EFNB3-C6
-      F3: LibA-230509-CHO-EFNB3-F3
-
-  #E2vsE3
-  EFNB3_1:
+  #Comparison of low EFNB3 vs low EFNB2
+  EFNB3_vs_EFNB2_1:
     <<: *func_effect_shifts_default
     reference: EFNB3
     conditions:
-      EFNB3: LibA-230916-CHO-EFNB3-C6
-      EFNB2: LibA-230509-CHO-EFNB2-A2
-
-  EFNB3_2:
-    <<: *func_effect_shifts_default
-    reference: EFNB3
-    conditions:
-      EFNB3: LibB-230720-CHO-EFNB3-C6
+      EFNB3: LibA-230725-CHO-EFNB3-C6
       EFNB2: LibA-231019-CHO-EFNB2-BA4
-      
-#  EFNB3_3:
-#    <<: *func_effect_shifts_default
-#    reference: EFNB3
-#    conditions:
-#      EFNB3: LibB-230906-CHO-EFNB3-C6
-#      EFNB2: LibB-230621-CHO-EFNB2-A2
-# --------------------------------------------------------------------------------------
-# Configuration for averaging func effect shifts from multiple comparisons.
-# --------------------------------------------------------------------------------------
 
-# Define `func_effect_shifts` comparisons to average. `avg_func_effect_shifts` is keyed
-# by name of averaged comparisons. Keys within that are:
-#  - `title`: title of comparisons being averaged
-#  - `comparisons`: list of comparisons from `func_effect_shifts`, must have same
-#                   condition names, lasso shifts, and reference.
-#  - `lasso_shift`: the single lasso shift to use for the final averaged values.
-#  - `avg_method`: how to average across the selections, options are "median" and "mean"
-#  - `plot_kwargs`: keyword arguments passed to `polyclonal.plot.lineplot_and_heatmap`
-#  - `title`: title of plot. Will be suffixed with "(latent phenotype)" or ("functional score)"
-#  - `legend`: legend added to plot
+  EFNB3_vs_EFNB2_2:
+    <<: *func_effect_shifts_default
+    reference: EFNB3
+    conditions:
+      EFNB3: LibA-230815-CHO-EFNB3-C6
+      EFNB2: LibA-231019-CHO-EFNB2-BA4
 
-# Define some defaults for each condition, used via the merge (<<) operator.
+  EFNB3_vs_EFNB2_3:
+    <<: *func_effect_shifts_default
+    reference: EFNB3
+    conditions:
+      EFNB3: LibB-230815-CHO-EFNB3-C6
+      EFNB2: LibB-231024-CHO-EFNB2-BA6
+
+  EFNB3_vs_EFNB2_4:
+    <<: *func_effect_shifts_default
+    reference: EFNB3
+    conditions:
+      EFNB3: LibB-231112-CHO-EFNB3-C6
+      EFNB2: LibB-231112-CHO-EFNB2-BA6
+
+  #Comparison of EFNB2 low vs high expression
+  EFNB2_low_high1:
+    <<: *func_effect_shifts_default
+    reference: EFNB2_low
+    conditions:
+      EFNB2_low: LibA-231019-CHO-EFNB2-BA4
+      EFNB2_high: LibB-230621-CHO-EFNB2-G6
+
+  EFNB2_low_high2:
+    <<: *func_effect_shifts_default
+    reference: EFNB2_low
+    conditions:
+      EFNB2_low: LibB-231112-CHO-EFNB2-BA6
+      EFNB2_high: LibB-230621-CHO-EFNB2-H1
+
+  #Comparison of EFNB3 low vs high expression
+  EFNB3_low_high1:
+    <<: *func_effect_shifts_default
+    reference: EFNB3_low
+    conditions:
+      EFNB3_low: LibB-230815-CHO-EFNB3-C6
+      EFNB3_high: LibB-230621-CHO-EFNB3-F3
+
+  EFNB3_low_high2:
+    <<: *func_effect_shifts_default
+    reference: EFNB3_low
+    conditions:
+      EFNB3_low: LibA-230916-CHO-EFNB3-C6
+      EFNB3_high: LibA-230509-CHO-EFNB3-F3
+
+
+## --------------------------------------------------------------------------------------
+## Configuration for averaging func effect shifts from multiple comparisons.
+## --------------------------------------------------------------------------------------
+#
+## Define `func_effect_shifts` comparisons to average. `avg_func_effect_shifts` is keyed
+## by name of averaged comparisons. Keys within that are:
+##  - `title`: title of comparisons being averaged
+##  - `comparisons`: list of comparisons from `func_effect_shifts`, must have same
+##                   condition names, lasso shifts, and reference.
+##  - `lasso_shift`: the single lasso shift to use for the final averaged values.
+##  - `avg_method`: how to average across the selections, options are "median" and "mean"
+##  - `plot_kwargs`: keyword arguments passed to `polyclonal.plot.lineplot_and_heatmap`
+##  - `title`: title of plot. Will be suffixed with "(latent phenotype)" or ("functional score)"
+##  - `legend`: legend added to plot
+#
+## Define some defaults for each condition, used via the merge (<<) operator.
 avg_func_effect_shifts_default: &avg_func_effect_shifts_default
-  avg_method: mean
+  avg_method: median
   per_comparison_tooltips: true
   plot_kwargs:
     alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
@@ -584,35 +602,46 @@ avg_func_effect_shifts_default: &avg_func_effect_shifts_default
 avg_func_effect_shifts:
   293T_vs_CHO-EFNB3-C6:
     <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in different cells
+    title: Comparison of cell entry between CHO-EFNB3 and 293T cells
     comparisons:
-      - LibA-1
-      - LibA-2
-      - LibB-1
-      #- LibB-2
+      - Comp1
+      - Comp2
+      - Comp3
+      - Comp4
+      - Comp5
     lasso_shift: 0.00005
-    
-  CHO_EFNB3_w_Nipah_F_vs_Hendra_F:
+
+  NipahF_vs_Hendra_F:
     <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in different cells
+    title: Comparison of cell entry between NipahF and HendraF
     comparisons:
-      - Hendra-1
-      - Hendra-2
+      - Hendra_1
+      - Hendra_2
     lasso_shift: 0.00005
 
   CHO_EFNB3_vs_CHO_EFNB2:
     <<: *avg_func_effect_shifts_default
-    title: Comparison of EFNB2 and EFNB3
+    title: Comparison of cell entry between CHO-EFNB2 and CHO-EFNB3
     comparisons:
-      - EFNB3_1
-      - EFNB3_2
-      #- EFNB3_3
+      - EFNB3_vs_EFNB2_1
+      - EFNB3_vs_EFNB2_2
+      - EFNB3_vs_EFNB2_3
+      - EFNB3_vs_EFNB2_4
     lasso_shift: 0.00005
 
-  EFNB3_C6_vs_F3:
+  EFNB2_low_vs_high_expression:
     <<: *avg_func_effect_shifts_default
-    title: Comparison of C6 and F3 CHO-EFNB3 clones
+    title: Comparison of cell entry between low and high expressing CHO-EFNB2 cells
     comparisons:
-      - EFNB3_C6_vs_F3-1
-      - EFNB3_C6_vs_F3-2
+      - EFNB2_low_high1
+      - EFNB2_low_high2
     lasso_shift: 0.00005
+
+  EFNB3_low_vs_high_expression:
+    <<: *avg_func_effect_shifts_default
+    title: Comparison of cell entry between low and high expressing CHO-EFNB3 cells
+    comparisons:
+      - EFNB3_low_high1
+      - EFNB3_low_high2
+    lasso_shift: 0.00005
+

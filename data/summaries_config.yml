@@ -28,7 +28,7 @@ summary:
 
   func_effects:  # effects of mutations on function
     RBP mediated entry:  # name of functional selection
-      condition: CHO_EFNB3  # condition specified in `avg_func_effects`
+      condition: CHO_EFNB3_low  # condition specified in `avg_func_effects`
       effect_type: func_effects  # "func_effects" or "latent_effects"
       positive_color: "#009E73"  # green
       negative_color: "#F0E442"  # yellow
@@ -39,7 +39,7 @@ summary:
   other_assays:  # other assays that we show, empty dict if no assays being shown
     receptor_affinity:  # assay type
       EphrinB3 affinity:  # name of particular assay condition
-        condition: dimeric_EFNB3  # condition specified in `avg_escape`
+        condition: EFNB3_dimeric  # condition specified in `avg_escape`
         stat: Ephrin binding_median  # statisti used for mutation effects
         positive_color: "#0072B2"  # dark blue
         negative_color: "#D55E00"  # red
@@ -48,7 +48,7 @@ summary:
         init_min_value: -10  # initial min value in slider
         
       EphrinB2 affinity:  # name of particular assay condition
-        condition: dimeric_EFNB2-w_E3_cells  # condition specified in `avg_escape`
+        condition: EFNB2_monomeric  # condition specified in `avg_escape`
         stat: Ephrin binding_median  # statisti used for mutation effects
         positive_color: "#0072B2"  # dark blue
         negative_color: "#D55E00"  # red

@@ -86,7 +86,8 @@ consensus_params:  # parameters for building PacBio consensus sequences
   max_indel_diffs: null
   max_minor_sub_frac: 0.25
   max_minor_indel_frac: 0.25
-  min_support: 3
+  max_minor_greater_or_equal: True
+  min_support: 4
 
 # created files with sequences of parental protein
 gene_sequence_codon: results/gene_sequence/codon.fasta
@@ -107,7 +108,7 @@ illumina_barcode_parser_params:
   upstream: ACTCCACTAGGAACATTTCTCTCTCGAATCTAGA
   downstream: ''
   minq: 20
-  upstream_mismatch: 2
+  upstream_mismatch: 1
 
 # ----------------------------------------------------------------------------
 # Configuration related to other analyses
