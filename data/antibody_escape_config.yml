@@ -70,10 +70,10 @@ prob_escape_filters_default: &prob_escape_filters_default
   # Only retain for fitting variants with at least this many counts and this fraction
   # of total counts in the no-antibody sample **OR** the indicated counts and fraction
   # of total counts in the antibody sample.
-  min_no_antibody_count: 20  # make bigger for real experiments, say 20
-  min_no_antibody_frac: 0.00000125  # make smaller for large libraries, say ~0.1 / (library size)
-  min_antibody_count: 100  # make bigger for real experiments, say 100
-  min_antibody_frac: 0.0000125  # make smaller for large libraries, say ~10 / (library size)
+  min_no_antibody_count: 25  # make bigger for real experiments, say 20
+  min_no_antibody_frac: 0.000002  # make smaller for large libraries, say ~0.1 / (library size)
+  min_antibody_count: 500  # make bigger for real experiments, say 100
+  min_antibody_frac: 0.00025  # make smaller for large libraries, say ~10 / (library size)
   # For averaging and plotting the mean probability (fraction) escape across variants, use
   # these cutoffs:
   max_aa_subs: 3  # group variants with >= this many substitutions
@@ -114,7 +114,7 @@ plot_hide_stats_default: &plot_hide_stats_default
   functional effect:
     csv: results/func_effects/averages/CHO_EFNB3_low_func_effects.csv
     csv_col: effect
-    init: -2.5
+    init: -3
     min_filters:
       times_seen: 3
 
@@ -511,7 +511,7 @@ antibody_selections:
       use_in_fit: false
      LibA-231019-CHO-EFNB3-C6-Sera72-10: 
       concentration: 0.0025
-      use_in_fit: true
+      use_in_fit: false
      LibA-231019-CHO-EFNB3-C6-Sera72-5: 
       concentration: 0.00125
       use_in_fit: true

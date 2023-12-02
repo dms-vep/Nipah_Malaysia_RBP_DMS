@@ -4,7 +4,7 @@ PacBio_amplicon:
   termini5:
     filter:
       clip5: 12
-      mutation_nt_count: 2
+      mutation_nt_count: 3
       mutation_op_count: null
   gene_flank5:
     filter:
@@ -14,7 +14,7 @@ PacBio_amplicon:
   gene:
     filter:
       mutation_nt_count: 15
-      mutation_op_count: null
+      mutation_op_count: 15
     return: [mutations, accuracy]
   barcode:
     filter:
@@ -24,7 +24,7 @@ PacBio_amplicon:
   termini3:
     filter:
       clip3: 12
-      mutation_nt_count: 2
+      mutation_nt_count: 3
       mutation_op_count: null
   variant_tag5:
     filter:

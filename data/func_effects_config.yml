@@ -15,9 +15,9 @@ func_scores_params_default: &func_scores_params_default
   min_wt_frac: 0.001  # error if not at least this fraction of counts for wildtype
   # `min_pre_selection_count` and `min_pre_selection_frac` drop variants with low counts
   # or frequencies that may not have sufficient statistics for good estimates.
-  min_pre_selection_count: 50  # drop variants < this many pre-selection counts
+  min_pre_selection_count: 40  # drop variants < this many pre-selection counts
   # !!! Make min_pre_selection_frac LARGER for larger libraries, such 0.1 / (library size) !!!
-  min_pre_selection_frac: 0.00000125  # drop variants that are < this fraction of all counts
+  min_pre_selection_frac: 0.000002  # drop variants that are < this fraction of all counts
 
 # Define default parameters for fitting global epistasis models to each
 # individual selection to get mutationo effects.
@@ -26,7 +26,7 @@ global_epistasis_params: &global_epistasis_params
   #  - median_stop: median func score of all variants with stop codons
   #  - null: no clipping
   #  - a number: clip at this number
-  clip_lower: median_stop
+  clip_lower: -4
   clip_upper: null
   # Do we collapse barcodes with same variant?
   collapse_identical_variants: false  # {false, mean, median}
@@ -92,7 +92,7 @@ func_scores:
 
   LibA-230815-CHO-EFNB3-C6:
     post_selection_sample: LibA-230815-CHO-EFNB3-C6 #30,000 effective barcodes
-    pre_selection_sample: LibA-230509-CHO-VSV #41,000 effective barcodes #LibA-230815-CHO-VSV try changing
+    pre_selection_sample: LibA-230815-CHO-VSV #41,000 effective barcodes #LibA-230815-CHO-VSV try changing
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
@@ -165,7 +165,7 @@ func_scores:
 
   LibB-230621-CHO-EFNB3-C6:
     post_selection_sample: LibB-230621-CHO-EFNB3-C6 #25,000 effective barcodes
-    pre_selection_sample: LibB-230720-CHO-VSV #36,000 effective barcodes
+    pre_selection_sample: LibB-230621-CHO-VSV #36,000 effective barcodes
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
@@ -278,7 +278,7 @@ func_scores:
 
 # Define some defaults for each condition, used via the merge (<<) operator.
 avg_func_effects_default: &avg_func_effects_default
-  avg_method: median
+  avg_method: mean
   floor_for_effect_std: -2
   per_selection_tooltips: true
   plot_kwargs:
@@ -358,21 +358,21 @@ avg_func_effects:
     <<: *avg_func_effects_default
     title: Median mutation effects on entry into CHO cells expressing bat EFNB3 (low expression)
     selections:
-      - LibA-230725-CHO-EFNB3-C6 #
-      - LibA-230815-CHO-EFNB3-C6 #
-      - LibA-230818-CHO-EFNB3-C6 #
-      - LibA-230825-CHO-EFNB3-C6 #
-      - LibA-230916-CHO-EFNB3-C6 #
-      - LibA-231006-CHO-EFNB3-C6 #
-      - LibA-231019-CHO-EFNB3-C6 #
-      - LibA-231112-CHO-EFNB3-C6 #
-      - LibB-230621-CHO-EFNB3-C6 #
-      - LibB-230720-CHO-EFNB3-C6 #
-      - LibB-230815-CHO-EFNB3-C6 #
-      - LibB-230818-CHO-EFNB3-C6 #
-      - LibB-230906-CHO-EFNB3-C6 #
-      - LibB-230907-CHO-EFNB3-C6 #
-      - LibB-231112-CHO-EFNB3-C6 #
+      #- LibA-230725-CHO-EFNB3-C6 #r=0.84
+      #- LibA-230815-CHO-EFNB3-C6 #r=0.84
+      - LibA-230818-CHO-EFNB3-C6 #r=0.86
+      - LibA-230825-CHO-EFNB3-C6 #r=0.86
+      - LibA-230916-CHO-EFNB3-C6 #r=0.85
+      #- LibA-231006-CHO-EFNB3-C6 #r=0.81
+      #- LibA-231019-CHO-EFNB3-C6 #r=0.82
+      - LibA-231112-CHO-EFNB3-C6 #r=0.85
+      - LibB-230621-CHO-EFNB3-C6 #r=0.85
+      - LibB-230720-CHO-EFNB3-C6 #r=0.86
+      - LibB-230815-CHO-EFNB3-C6 #r=0.87
+      #- LibB-230818-CHO-EFNB3-C6 #r=0.86
+      #- LibB-230906-CHO-EFNB3-C6 #r=0.86
+      - LibB-230907-CHO-EFNB3-C6 #r=0.87
+      - LibB-231112-CHO-EFNB3-C6 #r=0.87
 
   CHO_EFNB3_high:
     <<: *avg_func_effects_default
@@ -560,7 +560,7 @@ func_effect_shifts:
 #
 ## Define some defaults for each condition, used via the merge (<<) operator.
 avg_func_effect_shifts_default: &avg_func_effect_shifts_default
-  avg_method: median
+  avg_method: mean
   per_comparison_tooltips: true
   plot_kwargs:
     alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
