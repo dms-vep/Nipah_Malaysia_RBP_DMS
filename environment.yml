@@ -7,7 +7,9 @@ channels:
 
 dependencies:
   - altair=5.1.2
+  - altair_saver
   - biopython=1.81
+  - biotite
   - black-jupyter
   - bs4=4.12
   - entrez-direct=16.2

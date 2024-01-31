@@ -84,10 +84,10 @@ max_ccs_error_rate: 1.0e-4  # only keep CCS if gene/barcode error rate <= this
 consensus_params:  # parameters for building PacBio consensus sequences
   max_sub_diffs: null
   max_indel_diffs: null
-  max_minor_sub_frac: 0.33
-  max_minor_indel_frac: 0.33
-  max_minor_greater_or_equal: True
-  min_support: 3
+  max_minor_sub_frac: 0.2
+  max_minor_indel_frac: 0.2
+  #max_minor_greater_or_equal: True
+  min_support: 4
 
 # created files with sequences of parental protein
 gene_sequence_codon: results/gene_sequence/codon.fasta

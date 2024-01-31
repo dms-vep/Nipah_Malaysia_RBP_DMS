@@ -27,36 +27,47 @@ summary:
         nAH1.3: nAH1_3
 
   func_effects:  # effects of mutations on function
-    RBP mediated entry:  # name of functional selection
+    E2_entry:  # name of functional selection
+      condition: CHO_EFNB2_low  # condition specified in `avg_func_effects`
+      effect_type: func_effects  # "func_effects" or "latent_effects"
+      positive_color: "#BDE4DE"  
+      negative_color: "#704108"  
+      max_at_least: 2
+      min_at_least: -2
+      init_min_value: -3  # initial min value in slider
+      
+    E3_entry:  # name of functional selection
       condition: CHO_EFNB3_low  # condition specified in `avg_func_effects`
       effect_type: func_effects  # "func_effects" or "latent_effects"
-      positive_color: "#009E73"  # green
-      negative_color: "#F0E442"  # yellow
-      max_at_least: 1
-      min_at_least: 0
+      positive_color: "#BDE4DE"  
+      negative_color: "#704108"  
+      max_at_least: 2
+      min_at_least: -2
       init_min_value: -3  # initial min value in slider
 
   other_assays:  # other assays that we show, empty dict if no assays being shown
     receptor_affinity:  # assay type
-      EphrinB3 affinity:  # name of particular assay condition
+      EphrinB2 binding:  # name of particular assay condition
+        condition: EFNB2_monomeric  # condition specified in `avg_escape`
+        stat: Ephrin binding_median  # statisti used for mutation effects
+        positive_color: "#0072B2"  # dark blue
+        negative_color: "#D55E00"  # red
+        max_at_least: 4
+        min_at_least: -4
+        init_min_value: -10  # initial min value in slider
+
+      EphrinB3 binding:  # name of particular assay condition
         condition: EFNB3_dimeric  # condition specified in `avg_escape`
         stat: Ephrin binding_median  # statisti used for mutation effects
         positive_color: "#0072B2"  # dark blue
         negative_color: "#D55E00"  # red
         max_at_least: 1
-        min_at_least: 0
+        min_at_least: -1
         init_min_value: -10  # initial min value in slider
         
-      EphrinB2 affinity:  # name of particular assay condition
-        condition: EFNB2_monomeric  # condition specified in `avg_escape`
-        stat: Ephrin binding_median  # statisti used for mutation effects
-        positive_color: "#0072B2"  # dark blue
-        negative_color: "#D55E00"  # red
-        max_at_least: 1
-        min_at_least: 0
-        init_min_value: -10  # initial min value in slider
 
-  title: Effects of mutations to RBP of Nipah Malaysia on escape from mAbs, cell entry, and Bat EphrinB3 affinity as measured in pseudotyped lentiviral deep mutational scanning experiments
+
+  title: Effects of mutations to RBP of Nipah Malaysia on escape from mAbs, cell entry, and receptor binding as measured in pseudotyped lentiviral deep mutational scanning experiments
   legend: |
     This is is an interactive chart. Mouseover points for details and measurements, and
     use the top zoom bar to zoom in on specific sites. The options at the bottom let you

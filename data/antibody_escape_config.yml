@@ -70,10 +70,10 @@ prob_escape_filters_default: &prob_escape_filters_default
   # Only retain for fitting variants with at least this many counts and this fraction
   # of total counts in the no-antibody sample **OR** the indicated counts and fraction
   # of total counts in the antibody sample.
-  min_no_antibody_count: 25  # make bigger for real experiments, say 20
-  min_no_antibody_frac: 0.000002  # make smaller for large libraries, say ~0.1 / (library size)
-  min_antibody_count: 500  # make bigger for real experiments, say 100
-  min_antibody_frac: 0.00025  # make smaller for large libraries, say ~10 / (library size)
+  min_no_antibody_count: 20  # make bigger for real experiments, say 20
+  min_no_antibody_frac: 0.000001  # make smaller for large libraries, say ~0.1 / (library size)
+  min_antibody_count: 300  # make bigger for real experiments, say 100
+  min_antibody_frac: 0.0001  # make smaller for large libraries, say ~10 / (library size)
   # For averaging and plotting the mean probability (fraction) escape across variants, use
   # these cutoffs:
   max_aa_subs: 3  # group variants with >= this many substitutions
@@ -93,17 +93,17 @@ polyclonal_params_default: &polyclonal_params_default
 escape_plot_kwargs_default: &escape_plot_kwargs_default
   alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
   addtl_slider_stats:
-    times_seen: 3
+    times_seen: 3.5
   addtl_tooltip_stats:
     - sequential_site
   #heatmap_min_fixed: -2
   #heatmap_max_fixed: 2
-  heatmap_max_at_least: 2
-  heatmap_min_at_least: -2
+  heatmap_max_at_least: 1
+  heatmap_min_at_least: -1
   init_floor_at_zero: false
-  init_site_statistic: sum
+  init_site_statistic: mean
   site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
-  heatmap_color_scheme: purplegreen
+  heatmap_color_scheme: redblue
 
 # Specify any statistics (usually functional effects) for which you want to enable
 # sliders that hide data. Keyed by statistic name, then next dict gives:
@@ -114,11 +114,9 @@ plot_hide_stats_default: &plot_hide_stats_default
   functional effect:
     csv: results/func_effects/averages/CHO_EFNB3_low_func_effects.csv
     csv_col: effect
-    init: -3
+    init: -2
     min_filters:
       times_seen: 3
-
-
 
 # define the antibody selections
 antibody_selections:
@@ -130,15 +128,15 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230720-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230720-CHO-C6-nac
     antibody_samples:
-     LibB-230720-m102-0.3: #IC 70
+     LibB-230720-CHO-C6-m102-0.3: #IC 70
       concentration: 0.3
       use_in_fit: true
-     LibB-230720-m102-0.8: #IC 98.5
+     LibB-230720-CHO-C6-m102-0.8: #IC 98.5
       concentration: 0.8
       use_in_fit: true
-     LibB-230720-m102-1.2: #IC 99.9
+     LibB-230720-CHO-C6-m102-1.2: #IC 99.9
       concentration: 1.2
       use_in_fit: true
       
@@ -148,31 +146,62 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230725-CHO-EFNB3-C6
+    no_antibody_sample: LibA-230725-CHO-C6-nac
     antibody_samples:
-     LibA-230725-m102-0.3: #IC 70
+     LibA-230725-CHO-C6-m102-0.3: #IC 70
       concentration: 0.3
       use_in_fit: true
-     LibA-230725-m102-0.8: #IC 94
+     LibA-230725-CHO-C6-m102-0.8: #IC 94
       concentration: 0.8
       use_in_fit: true
-     LibA-230725-m102-1.2: #IC 99
+     LibA-230725-CHO-C6-m102-1.2: #IC 99
       concentration: 1.2
       use_in_fit: true
+
+  LibA-231116-m102.4:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-231116-CHO-BA6-nac
+    antibody_samples:
+     LibA-231116-CHO-BA6-m102-0.2: 
+      concentration: 0.2
+      use_in_fit: true
+     LibA-231116-CHO-BA6-m102-0.6: 
+      concentration: 0.6
+      use_in_fit: true
+
   # ---------------------------------------------------------------------------------
   # nAH1.3
+  LibA-230725-nAH1.3:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: LibA-230725-CHO-C6-nac
+    antibody_samples:
+     LibA-230725-CHO-C6-nAH13-0.8: #IC 82
+      concentration: 0.8
+      use_in_fit: true
+     LibA-230725-CHO-C6-nAH13-1.2: #IC 96
+      concentration: 1.2
+      use_in_fit: true
+
   LibB-230630-nAH1.3:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230630-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230630-CHO-C6-nac
     antibody_samples:
-     LibB-230630-nAH1-0.1: #IC25
+     LibB-230630-CHO-C6-nAH1-0.1: #IC25
       concentration: 0.1
       use_in_fit: true
-     LibB-230630-nAH1-0.3: #IC65
+     LibB-230630-CHO-C6-nAH1-0.3: #IC65
       concentration: 0.3
       use_in_fit: true
 
@@ -182,46 +211,51 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230720-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230720-CHO-C6-nac
     antibody_samples:
-     LibB-230720-nAH1-0.3: #IC 33
+     LibB-230720-CHO-C6-nAH1-0.3: #IC 33
       concentration: 0.3
       use_in_fit: true
-     LibB-230720-nAH1-0.8: #IC 95
+     LibB-230720-CHO-C6-nAH1-0.8: #IC 95
       concentration: 0.8
       use_in_fit: true
-     LibB-230720-nAH1-1.2: #IC 99
+     LibB-230720-CHO-C6-nAH1-1.2: #IC 99
       concentration: 1.2
       use_in_fit: true
 
-  LibA-230725-nAH1.3:
+
+  # ---------------------------------------------------------------------------------
+  # HENV26
+  LibA-231024-HENV26: 
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230725-CHO-EFNB3-C6
+    no_antibody_sample: LibA-231024-CHO-C6-nac
     antibody_samples:
-     LibA-230725-nAH13-0.8: #IC 82
-      concentration: 0.8
+     LibA-231024-CHO-C6-HENV26-0.2: #IC70
+      concentration: 0.2
       use_in_fit: true
-     LibA-230725-nAH13-1.2: #IC 96
-      concentration: 1.2
+     LibA-231024-CHO-C6-HENV26-0.6: #IC99
+      concentration: 0.6
       use_in_fit: true
-  # ---------------------------------------------------------------------------------
-  # HENV26
+     LibA-231024-CHO-C6-HENV26-0.9: #IC99
+      concentration: 0.9
+      use_in_fit: true
+
   LibB-230815-HENV26: #too low IC
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230815-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230815-CHO-C6-nac
     antibody_samples:
-     LibB-230815-HENV26-0.2: #IC70
+     LibB-230815-CHO-C6-HENV26-0.2: #IC70
       concentration: 0.2
       use_in_fit: true
-     LibB-230815-HENV26-0.4: #IC80
+     LibB-230815-CHO-C6-HENV26-0.4: #IC80
       concentration: 0.4
       use_in_fit: true
 
@@ -231,12 +265,12 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230818-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230818-CHO-C6-nac
     antibody_samples:
-     LibB-230818-HENV26-600: #IC 90
+     LibB-230818-CHO-C6-HENV26-0.6: #IC 90
       concentration: 0.6
       use_in_fit: true
-     LibB-230818-HENV26-2000: #IC 99.2 maybe slightly over neutralized
+     LibB-230818-CHO-C6-HENV26-2.0: #IC 99.2 maybe slightly over neutralized
       concentration: 2
       use_in_fit: true
 
@@ -246,35 +280,19 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230906-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230906-CHO-C6-nac
     antibody_samples:
-     LibB-230906-HENV26-200: #IC70
+     LibB-230906-CHO-C6-HENV26-0.2: #IC70
       concentration: 0.2
       use_in_fit: true
-     LibB-230906-HENV26-700: #IC99
+     LibB-230906-CHO-C6-HENV26-0.7: #IC99
       concentration: 0.7
       use_in_fit: true
-     LibB-230906-HENV26-1300: #IC99
+     LibB-230906-CHO-C6-HENV26-1.3: #IC99
       concentration: 1.3
       use_in_fit: true
       
-  LibA-231024-HENV26: 
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-231024-noab-ctl
-    antibody_samples:
-     LibA-231024-HENV26-200: #IC70
-      concentration: 0.2
-      use_in_fit: true
-     LibA-231024-HENV26-600: #IC99
-      concentration: 0.6
-      use_in_fit: true
-     LibA-231024-HENV26-900: #IC99
-      concentration: 0.9
-      use_in_fit: true
+
   # ---------------------------------------------------------------------------------
   # HENV32
   LibB-230704-HENV32:
@@ -283,12 +301,12 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230630-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230630-CHO-C6-nac
     antibody_samples:
-     LibB-230630-HENV32-0.3: #IC50
+     LibB-230630-CHO-C6-HENV32-0.3: #IC50
       concentration: 0.3
       use_in_fit: true
-     LibB-230630-HENV32-0.8: #IC95
+     LibB-230630-CHO-C6-HENV32-0.8: #IC95
       concentration: 0.8
       use_in_fit: true
 
@@ -298,15 +316,15 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230720-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230720-CHO-C6-nac
     antibody_samples:
-     LibB-230720-HENV32-0.3: #IC10
+     LibB-230720-CHO-C6-HENV32-0.3: #IC10
       concentration: 0.3
       use_in_fit: true
-     LibB-230720-HENV32-0.8: #IC40
+     LibB-230720-CHO-C6-HENV32-0.8: #IC40
       concentration: 0.8
       use_in_fit: true
-     LibB-230720-HENV32-1.2: #IC80
+     LibB-230720-CHO-C6-HENV32-1.2: #IC80
       concentration: 1.2
       use_in_fit: true
       
@@ -316,12 +334,12 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230725-CHO-EFNB3-C6
+    no_antibody_sample: LibA-230725-CHO-C6-nac
     antibody_samples:
-     LibA-230725-HENV32-1.0: #IC40
+     LibA-230725-CHO-C6-HENV32-1.0: #IC40
       concentration: 1.0
       use_in_fit: true
-     LibA-230725-HENV32-2.5: #IC96 looks good
+     LibA-230725-CHO-C6-HENV32-2.5: #IC96 looks good
       concentration: 2.5
       use_in_fit: true
 
@@ -331,15 +349,15 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230906-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230906-CHO-C6-nac
     antibody_samples:
-     LibB-230906-HENV32-800: #IC40
+     LibB-230906-CHO-C6-HENV32-0.8: #IC40
       concentration: 0.8
       use_in_fit: true
-     LibB-230906-HENV32-2000: #IC98
+     LibB-230906-CHO-C6-HENV32-2.0: #IC98
       concentration: 2.0
       use_in_fit: true
-     LibB-230906-HENV32-3000: #IC99
+     LibB-230906-CHO-C6-HENV32-3.0: #IC99
       concentration: 3.0
       use_in_fit: true
   # ---------------------------------------------------------------------------------
@@ -350,15 +368,15 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230815-CHO-EFNB3-C6
+    no_antibody_sample: LibA-230815-CHO-C6-nac
     antibody_samples:
-     LibA-230815-HENV103-0.5: #IC 40
+     LibA-230815-CHO-C6-HENV103-0.5: #IC 40
       concentration: 0.5
       use_in_fit: true
-     LibA-230815-HENV103-2: #IC 99 but variant count looks good
+     LibA-230815-CHO-C6-HENV103-2.0: #IC 99 but variant count looks good
       concentration: 2
       use_in_fit: true
-     LibA-230815-HENV103-5: #IC 99.9 but variant counts looks good
+     LibA-230815-CHO-C6-HENV103-5.0: #IC 99.9 but variant counts looks good
       concentration: 5
       use_in_fit: true
 
@@ -368,9 +386,9 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230818-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230818-CHO-C6-nac
     antibody_samples:
-     LibB-230818-HENV103-1500: #IC 99.9 but variant counts look good
+     LibB-230818-CHO-C6-HENV103-1.5: #IC 99.9 but variant counts look good
       concentration: 1.5
       use_in_fit: true
 
@@ -380,15 +398,15 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230906-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230906-CHO-C6-nac
     antibody_samples:
-     LibB-230906-HENV103-600: #IC90
+     LibB-230906-CHO-C6-HENV103-0.6: #IC90
       concentration: 0.6
       use_in_fit: true
-     LibB-230906-HENV103-1000: #IC99
+     LibB-230906-CHO-C6-HENV103-1.0: #IC99
       concentration: 1.0
       use_in_fit: true
-     LibB-230906-HENV103-1800: #IC99.9
+     LibB-230906-CHO-C6-HENV103-1.8: #IC99.9
       concentration: 1.8
       use_in_fit: true
 
@@ -400,15 +418,15 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230815-CHO-EFNB3-C6
+    no_antibody_sample: LibA-230815-CHO-C6-nac
     antibody_samples:
-     LibA-230815-HENV117-0.2: #IC 20
+     LibA-230815-CHO-C6-HENV117-0.2: #IC 20
       concentration: 0.2
       use_in_fit: true
-     LibA-230815-HENV117-0.8: #IC 98
+     LibA-230815-CHO-C6-HENV117-0.8: #IC 98
       concentration: 0.8
       use_in_fit: true
-     LibA-230815-HENV117-1.5: #IC 99.9 overneutralized
+     LibA-230815-CHO-C6-HENV117-1.5: #IC 99.9 overneutralized
       concentration: 1.5
       use_in_fit: false
 
@@ -418,12 +436,12 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230818-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230818-CHO-C6-nac
     antibody_samples:
-     LibB-230818-HENV117-600: #IC 91
+     LibB-230818-CHO-C6-HENV117-0.6: #IC 91
       concentration: 0.6
       use_in_fit: true
-     LibB-230818-HENV117-1200: #IC 99.9 overneutralized
+     LibB-230818-CHO-C6-HENV117-1.2: #IC 99.9 overneutralized
       concentration: 1.2
       use_in_fit: false
 
@@ -433,15 +451,15 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230906-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230906-CHO-C6-nac
     antibody_samples:
-     LibB-230906-HENV117-250: #IC80
+     LibB-230906-CHO-C6-HENV117-0.25: #IC80
       concentration: 0.25
       use_in_fit: true
-     LibB-230906-HENV117-500: #IC99.9
+     LibB-230906-CHO-C6-HENV117-0.5: #IC99.9
       concentration: 0.5
       use_in_fit: true
-     LibB-230906-HENV117-1000: #overneutralized
+     LibB-230906-CHO-C6-HENV117-1.0: #overneutralized
       concentration: 1.0
       use_in_fit: false
   # ---------------------------------------------------------------------------------
@@ -452,12 +470,12 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230815-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230815-CHO-C6-nac
     antibody_samples:
-     LibB-230815-minibinder-0.6: #IC 50
+     LibB-230815-CHO-C6-minibinder-0.6: #IC 50
       concentration: 0.6
       use_in_fit: true
-     LibB-230815-minibinder-1.0: #IC 55
+     LibB-230815-CHO-C6-minibinder-1.0: #IC 55
       concentration: 1
       use_in_fit: true
 
@@ -467,12 +485,12 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230818-CHO-EFNB3-C6
+    no_antibody_sample: LibA-230818-CHO-C6-nac
     antibody_samples:
-     LibA-230818-minibinder-2500: #IC 75
+     LibA-230818-CHO-C6-minibinder-2.5: #IC 75
       concentration: 2.5
       use_in_fit: true
-     LibA-230818-minibinder-10000: #IC 99.9 but variant counts looks good
+     LibA-230818-CHO-C6-minibinder-10.0: #IC 99.9 but variant counts looks good
       concentration: 10
       use_in_fit: true
       
@@ -482,18 +500,18 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230907-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230907-CHO-C6-nac
     antibody_samples:
-     LibB-230907-minibinder-500: 
+     LibB-230907-CHO-C6-minibinder-0.5: 
       concentration: 0.5
       use_in_fit: true
-     LibB-230907-minibinder-2000: 
+     LibB-230907-CHO-C6-minibinder-2.0: 
       concentration: 2.0
       use_in_fit: true
-     LibB-230907-minibinder-4000: 
+     LibB-230907-CHO-C6-minibinder-4.0: 
       concentration: 4.0
       use_in_fit: true
-     LibB-230907-minibinder-8000: 
+     LibB-230907-CHO-C6-minibinder-8.0: 
       concentration: 8.0
       use_in_fit: true
 ##########################
@@ -504,7 +522,7 @@ antibody_selections:
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-231019-CHO-EFNB3-C6
+    no_antibody_sample: LibA-231019-CHO-C6-nac
     antibody_samples:
      LibA-231019-CHO-EFNB3-C6-Sera72-50: 
       concentration: 0.0121
@@ -533,7 +551,7 @@ receptor_polyclonal_params_default: &receptor_polyclonal_params_default
   n_epitopes: 1
   spatial_distances: null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
-    reg_escape_weight: 0.1
+    reg_escape_weight: 0.2
     reg_spread_weight: 0
     reg_activity_weight: 1.0
     logfreq: 200
@@ -566,18 +584,18 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    no_antibody_sample: LibA-230509-293T-EFNB2
+    no_antibody_sample: LibA-230509-293T-nac
     antibody_samples:
-     LibA-230509-293T-E2-BatE2-0.003:
+     LibA-230509-293T-EFNB2-dimeric-0.003:
       concentration: 0.003
       use_in_fit: true
-     LibA-230509-293T-E2-BatE2-0.015:
+     LibA-230509-293T-EFNB2-dimeric-0.015:
       concentration: 0.015
       use_in_fit: true
-     LibA-230509-293T-E2-BatE2-0.078:
+     LibA-230509-293T-EFNB2-dimeric-0.078:
       concentration: 0.078
       use_in_fit: true
-     LibA-230509-293T-E2-BatE2-0.392:
+     LibA-230509-293T-EFNB2-dimeric-0.392:
       concentration: 0.392
       use_in_fit: true
       
@@ -587,24 +605,24 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    no_antibody_sample: LibB-230907-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230907-CHO-C6-nac
     antibody_samples:
-     LibB-230907-EFNB2-10:
+     LibB-230907-CHO-BA6-EFNB2-dimeric-0.01:
       concentration: 0.01
       use_in_fit: true
-     LibB-230907-EFNB2-50:
+     LibB-230907-CHO-BA6-EFNB2-dimeric-0.05:
       concentration: 0.05
       use_in_fit: true
-     LibB-230907-EFNB2-100:
+     LibB-230907-CHO-BA6-EFNB2-dimeric-0.1:
       concentration: 0.1
       use_in_fit: true
-     LibB-230907-EFNB2-200:
+     LibB-230907-CHO-BA6-EFNB2-dimeric-0.2:
       concentration: 0.2
       use_in_fit: false
-     LibB-230907-EFNB2-500:
+     LibB-230907-CHO-BA6-EFNB2-dimeric-0.5:
       concentration: 0.5
       use_in_fit: true
-     LibB-230907-EFNB2-1500: #overneutralized
+     LibB-230907-CHO-BA6-EFNB2-dimeric-1.5: #overneutralized
       concentration: 1.5
       use_in_fit: false
 
@@ -614,21 +632,21 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    no_antibody_sample: LibA-230916-CHO-EFNB3-C6
+    no_antibody_sample: LibA-230916-CHO-BA6-nac
     antibody_samples:
-     LibA-230916-EFNB2-5:
+     LibA-230916-CHO-BA6-EFNB2-dimeric-0.005:
       concentration: 0.005
       use_in_fit: false
-     LibA-230916-EFNB2-10:
+     LibA-230916-CHO-BA6-EFNB2-dimeric-0.01:
       concentration: 0.01
       use_in_fit: true
-     LibA-230916-EFNB2-50:
+     LibA-230916-CHO-BA6-EFNB2-dimeric-0.05:
       concentration: 0.05
       use_in_fit: false
-     LibA-230916-EFNB2-100:
+     LibA-230916-CHO-BA6-EFNB2-dimeric-0.1:
       concentration: 0.1
       use_in_fit: true
-     LibA-230916-EFNB2-250:
+     LibA-230916-CHO-BA6-EFNB2-dimeric-0.25:
       concentration: 0.25
       use_in_fit: true
      
@@ -638,18 +656,18 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    no_antibody_sample: LibA-231024-noab-ctl
+    no_antibody_sample: LibA-231024-CHO-BA6-nac
     antibody_samples:
-     LibA-231024-CHO-BA6-EFNB2-10:
+     LibA-231024-CHO-BA6-EFNB2-dimeric-0.01:
       concentration: 0.01
       use_in_fit: true
-     LibA-231024-CHO-BA6-EFNB2-50:
+     LibA-231024-CHO-BA6-EFNB2-dimeric-0.05:
       concentration: 0.05
       use_in_fit: true
-     LibA-231024-CHO-BA6-EFNB2-100:
+     LibA-231024-CHO-BA6-EFNB2-dimeric-0.1:
       concentration: 0.1
       use_in_fit: true
-     LibA-231024-CHO-BA6-250:
+     LibA-231024-CHO-BA6-EFNB2-dimeric-0.25:
       concentration: 0.25
       use_in_fit: true
 
@@ -659,18 +677,18 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    no_antibody_sample: LibB-230731-CHO-BA6-no-antibody-control
+    no_antibody_sample: LibB-230731-CHO-BA6-nac
     antibody_samples:
-     LibB-230731-CHO-BA6-EFNB2-10:
+     LibB-230731-CHO-BA6-EFNB2-dimeric-0.01:
       concentration: 0.01
       use_in_fit: true
-     LibB-230731-CHO-BA6-EFNB2-50:
+     LibB-230731-CHO-BA6-EFNB2-dimeric-0.05:
       concentration: 0.05
       use_in_fit: true
-     LibB-230731-CHO-BA6-EFNB2-100:
+     LibB-230731-CHO-BA6-EFNB2-dimeric-0.1:
       concentration: 0.1
       use_in_fit: true
-     LibB-230731-CHO-BA6-EFNB2-250:
+     LibB-230731-CHO-BA6-EFNB2-dimeric-0.25:
       concentration: 0.25
       use_in_fit: true
 
@@ -680,18 +698,18 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    no_antibody_sample: LibB-231105-EFNB2-dimeric-BA6-nab
+    no_antibody_sample: LibB-231105-CHO-BA6-nac
     antibody_samples:
-     LibB-231105-EFNB2-dimeric-BA6-2000:
+     LibB-231105-CHO-BA6-EFNB2-dimeric-2.0:
       concentration: 2
       use_in_fit: true
-     LibB-231105-EFNB2-dimeric-BA6-1000:
+     LibB-231105-CHO-BA6-EFNB2-dimeric-1.0:
       concentration: 1
       use_in_fit: true
-     LibB-231105-EFNB2-dimeric-BA6-400:
+     LibB-231105-CHO-BA6-EFNB2-dimeric-0.4:
       concentration: 0.4
       use_in_fit: true
-     LibB-231105-EFNB2-dimeric-BA6-100:
+     LibB-231105-CHO-BA6-EFNB2-dimeric-0.1:
       concentration: 0.1
       use_in_fit: true
 
@@ -701,21 +719,21 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    no_antibody_sample: LibB-231108-E2-monomeric-BA6-nab
+    no_antibody_sample: LibB-231108-CHO-BA6-nac
     antibody_samples:
-     LibB-231108-E2-monomeric-BA6-5000:
+     LibB-231108-CHO-BA6-EFNB2-monomeric-5.0:
       concentration: 5
       use_in_fit: false
-     LibB-231108-E2-monomeric-BA6-2500:
+     LibB-231108-CHO-BA6-EFNB2-monomeric-2.5:
       concentration: 2.5
       use_in_fit: true
-     LibB-231108-E2-monomeric-BA6-1000:
+     LibB-231108-CHO-BA6-EFNB2-monomeric-1.0:
       concentration: 1
       use_in_fit: true
-     LibB-231108-E2-monomeric-BA6-500:
+     LibB-231108-CHO-BA6-EFNB2-monomeric-0.5:
       concentration: 0.5
       use_in_fit: true
-     LibB-231108-E2-monomeric-BA6-100:
+     LibB-231108-CHO-BA6-EFNB2-monomeric-0.1:
       concentration: 0.1
       use_in_fit: true
 
@@ -725,39 +743,99 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    no_antibody_sample: LibA-231112-BA6-no-antibody-control
+    no_antibody_sample: LibA-231112-CHO-BA6-nac
     antibody_samples:
-     LibA-231112-BA6-E2-monomeric-10:
+     LibA-231112-CHO-BA6-EFNB2-monomeric-0.01:
       concentration: 0.01
       use_in_fit: true
-     LibA-231112-BA6-E2-monomeric-30:
+     LibA-231112-CHO-BA6-EFNB2-monomeric-0.03:
       concentration: 0.03
       use_in_fit: true
-     LibA-231112-BA6-E2-monomeric-100:
+     LibA-231112-CHO-BA6-EFNB2-monomeric-0.1:
       concentration: 0.1
       use_in_fit: true
-     LibA-231112-BA6-E2-monomeric-500:
+     LibA-231112-CHO-BA6-EFNB2-monomeric-0.5:
       concentration: 0.5
       use_in_fit: true
-     LibA-231112-BA6-E2-monomeric-1000:
+     LibA-231112-CHO-BA6-EFNB2-monomeric-1.0:
+      concentration: 1
+      use_in_fit: true
+
+  LibA-231207-EFNB2-monomeric:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default_E2
+    no_antibody_sample: LibA-231207-293T-nac
+    antibody_samples:
+     LibA-231207-293T-EFNB2-monomeric-0.05:
+      concentration: 0.05
+      use_in_fit: true
+     LibA-231207-293T-EFNB2-monomeric-0.1:
+      concentration: 0.1
+      use_in_fit: true
+     LibA-231207-293T-EFNB2-monomeric-0.5:
+      concentration: 0.5
+      use_in_fit: true
+     LibA-231207-293T-EFNB2-monomeric-1.0:
+      concentration: 1
+      use_in_fit: true
+     LibA-231207-293T-EFNB2-monomeric-2.0:
+      concentration: 2
+      use_in_fit: true
+
+  LibA-231222-BA6-CHO-EFNB2-monomeric:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default_E2
+    no_antibody_sample: LibA-231222-CHO-BA6-nac
+    antibody_samples:
+     LibA-231222-BA6-CHO-BA6-EFNB2-monomeric-0.01:
+      concentration: 0.01
+      use_in_fit: true
+     LibA-231222-BA6-CHO-BA6-EFNB2-monomeric-0.1:
+      concentration: 0.1
+      use_in_fit: true
+     LibA-231222-BA6-CHO-BA6-EFNB2-monomeric-1.0:
+      concentration: 1
+      use_in_fit: true
+
+  LibB-231222-BA6-CHO-EFNB2-monomeric:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default_E2
+    no_antibody_sample: LibB-231222-CHO-BA6-nac
+    antibody_samples:
+     LibB-231222-CHO-BA6-EFNB2-monomeric-0.01:
+      concentration: 0.01
+      use_in_fit: true
+     LibB-231222-CHO-BA6-EFNB2-monomeric-0.1:
+      concentration: 0.1
+      use_in_fit: true
+     LibB-231222-CHO-BA6-EFNB2-monomeric-1.0:
       concentration: 1
       use_in_fit: true
 
 
   # ---------------------------------------------------------------------------------
-  # dimeric bat E3
+  # bat E3
   LibA-230818-EFNB3-dimeric:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default
-    no_antibody_sample: LibA-230818-CHO-EFNB3-C6
+    no_antibody_sample: LibA-230818-CHO-C6-nac
     antibody_samples:
-     LibA-230818-EFNB3-300: 
+     LibA-230818-CHO-C6-EFNB3-dimeric-0.3: 
       concentration: 0.3
       use_in_fit: true
-     LibA-230818-EFNB3-15:
+     LibA-230818-CHO-C6-EFNB3-dimeric-0.015:
       concentration: 0.015
       use_in_fit: true
 
@@ -767,24 +845,24 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default
-    no_antibody_sample: LibA-230825-CHO-EFNB3-C6
+    no_antibody_sample: LibA-230825-CHO-C6-nac
     antibody_samples:
-     LibA-230825-C6-EFNB3-0.05: 
+     LibA-230825-CHO-C6-EFNB3-dimeric-0.05: 
       concentration: 0.05
       use_in_fit: true
-     LibA-230825-C6-EFNB3-0.2:
+     LibA-230825-CHO-C6-EFNB3-dimeric-0.2:
       concentration: 0.2
       use_in_fit: true
-     LibA-230825-C6-EFNB3-0.5:
+     LibA-230825-CHO-C6-EFNB3-dimeric-0.5:
       concentration: 0.5
       use_in_fit: true
-     LibA-230825-C6-EFNB3-1:
+     LibA-230825-CHO-C6-EFNB3-dimeric-1.0:
       concentration: 1
       use_in_fit: true
-     LibA-230825-C6-EFNB3-2:
+     LibA-230825-CHO-C6-EFNB3-dimeric-2.0:
       concentration: 2
       use_in_fit: true
-     LibA-230825-C6-EFNB3-5:
+     LibA-230825-CHO-C6-EFNB3-dimeric-5.0:
       concentration: 5
       use_in_fit: true
       
@@ -794,24 +872,24 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default
-    no_antibody_sample: LibB-230907-CHO-EFNB3-C6
+    no_antibody_sample: LibB-230907-CHO-C6-nac
     antibody_samples:
-     LibB-230907-EFNB3-50:
+     LibB-230907-CHO-C6-EFNB3-dimeric-0.05:
       concentration: 0.05
       use_in_fit: true
-     LibB-230907-EFNB3-200:
+     LibB-230907-CHO-C6-EFNB3-dimeric-0.2:
       concentration: 0.2
       use_in_fit: true
-     LibB-230907-EFNB3-400:
+     LibB-230907-CHO-C6-EFNB3-dimeric-0.4:
       concentration: 0.4
       use_in_fit: true
-     LibB-230907-EFNB3-800:
+     LibB-230907-CHO-C6-EFNB3-dimeric-0.8:
       concentration: 0.8
       use_in_fit: true
-     LibB-230907-EFNB3-1500:
+     LibB-230907-CHO-C6-EFNB3-dimeric-1.5:
       concentration: 1.5
       use_in_fit: true
-     LibB-230907-EFNB3-5000:
+     LibB-230907-CHO-C6-EFNB3-dimeric-5.0:
       concentration: 5.0
       use_in_fit: true
       
@@ -821,21 +899,21 @@ receptor_selections:
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default
-    no_antibody_sample: LibB-231108-E3-monomeric-C6-nab
+    no_antibody_sample: LibB-231108-CHO-C6-nac
     antibody_samples:
-     LibB-231108-E3-monomeric-C6-5000:
+     LibB-231108-CHO-C6-EFNB3-monomeric-5.0:
       concentration: 5
       use_in_fit: true
-     LibB-231108-E3-monomeric-C6-2500:
+     LibB-231108-CHO-C6-EFNB3-monomeric-2.5:
       concentration: 2.5
       use_in_fit: true
-     LibB-231108-E3-monomeric-C6-1000:
+     LibB-231108-CHO-C6-EFNB3-monomeric-1.0:
       concentration: 1
       use_in_fit: true
-     LibB-231108-E3-monomeric-C6-500:
+     LibB-231108-CHO-C6-EFNB3-monomeric-0.5:
       concentration: 0.5
       use_in_fit: true
-     LibB-231108-E3-monomeric-C6-100:
+     LibB-231108-CHO-C6-EFNB3-monomeric-0.1:
       concentration: 0.1
       use_in_fit: true
 
@@ -864,7 +942,7 @@ avg_escape_plot_kwargs_default: &avg_escape_plot_kwargs_default
     escape_std: 2
   addtl_tooltip_stats:
     - sequential_site
-  heatmap_max_at_least: 2
+  heatmap_max_at_least: 1
   heatmap_min_at_least: -2
   #heatmap_min_fixed: -2
   #heatmap_max_fixed: 2
@@ -873,8 +951,8 @@ avg_escape_plot_kwargs_default: &avg_escape_plot_kwargs_default
   init_site_statistic: mean
   site_zoom_bar_color_col: region  # supplied in `site_numbering_map`
   #sites_to_show: 
-  #  include: [129, 132, 132, 142, 161, 167, 202, 211, 228, 242, 254, 281, 284, 302, 304, 323, 335, 351, 490, 491, 492, 492, 501, 501, 505, 515, 529, 530, 530, 554, 555, 555, 564, 580, 583, 584, 588, 588, 589]
-  heatmap_color_scheme: purplegreen
+    #include: [239, 240, 241, 242, 305, 388, 389, 402, 458, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 559, 579, 581, 583, 588]
+  heatmap_color_scheme: redblue
 
 # Define defaults for each antibody/serum, used via the merge (<<) operator
 avg_antibody_escape_default: &avg_antibody_escape_default
@@ -907,6 +985,7 @@ avg_antibody_escape:
     selections:
       - LibB-230720-m102.4
       - LibA-230725-m102.4
+      #- LibA-231116-m102.4
 
   nAH1.3:
     <<: *avg_antibody_escape_default
@@ -920,8 +999,8 @@ avg_antibody_escape:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody HENV26
     selections:
-      - LibB-230815-HENV26 
       - LibA-231024-HENV26
+      #- LibB-230815-HENV26 
       - LibB-230818-HENV26
       - LibB-230907-HENV26
 
@@ -929,9 +1008,9 @@ avg_antibody_escape:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody HENV32
     selections:
+      - LibA-230725-HENV32
       - LibB-230704-HENV32
       - LibB-230720-HENV32
-      - LibA-230725-HENV32
       - LibB-230907-HENV32
 
   HENV103:
@@ -950,13 +1029,13 @@ avg_antibody_escape:
       - LibB-230818-HENV117
       - LibB-230907-HENV117
 
-  minibinder:
-    <<: *avg_antibody_escape_default
-    title: Escape map for minibinder from David Baker lab
-    selections:
-      #- LibB-230815-minibinder
-      - LibA-230812-minibinder
-      - LibB-230907-minibinder
+#  minibinder:
+#    <<: *avg_antibody_escape_default
+#    title: Escape map for minibinder from David Baker lab
+#    selections:
+#      #- LibB-230815-minibinder
+#      - LibA-230812-minibinder
+#      - LibB-230907-minibinder
 
 # ------------------------------------------------------------------------------
 # Define the receptor affinity experiments to average
@@ -973,6 +1052,9 @@ avg_receptor_affinity:
     selections:
       - LibA-231112-EFNB2-monomeric
       - LibB-231108-EFNB2-monomeric
+      #- LibA-231207-EFNB2-monomeric
+      - LibB-231222-BA6-CHO-EFNB2-monomeric
+      - LibA-231222-BA6-CHO-EFNB2-monomeric
 
   EFNB2_dimeric:
     <<: *avg_receptor_affinity_default
@@ -994,10 +1076,13 @@ avg_receptor_affinity:
       #- LibA-230916-EFNB2-dimeric
       - LibA-231112-EFNB2-monomeric
       #- LibB-230907-EFNB2-dimeric
-      - LibB-230731-EFNB2-dimeric
+      #- LibB-230731-EFNB2-dimeric
       #- LibA-231024-EFNB2-dimeric
       - LibB-231105-EFNB2-dimeric
       - LibB-231108-EFNB2-monomeric
+      #- LibA-231207-EFNB2-monomeric
+      - LibB-231222-BA6-CHO-EFNB2-monomeric
+      - LibA-231222-BA6-CHO-EFNB2-monomeric
 
 
   EFNB3_dimeric:
