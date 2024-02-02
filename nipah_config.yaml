@@ -9,4 +9,10 @@ glycans: [159, 306, 378, 417, 481, 529]
 func_times_seen_cutoff: 2
 func_std_cutoff: 1
 
-surface: notebooks/data/surface_exposure.csv
+min_func_effect_for_binding: -1.5
+min_times_seen_binding: 2.5
+max_binding_std: 2
+frac_models: 0.75
+
+surface: data/custom_analyses_data/surface_exposure.csv
+entropy: data/custom_analyses_data/entropy.csv
