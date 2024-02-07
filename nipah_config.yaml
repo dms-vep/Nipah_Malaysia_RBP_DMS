@@ -20,9 +20,9 @@ min_func_effect_for_binding: -1.5
 min_times_seen_ab: 2
 max_ab_std: 2
 frac_models: 0.75
-sum_quantile: 0.99
-max_quantile: 0.99
-min_escape_cutoff: 0.2
+sum_quantile: 0.98
+max_quantile: 0.98
+min_escape_cutoff: 0.3
 min_func_effect_for_ab: -2
 
 

@@ -18,7 +18,7 @@ def brendan_theme():
         "config": {
             "background": "transparent",
             "title": {
-                "fontSize": 14,
+                "fontSize": 20,
                 "font": font,
                 "anchor": "middle",
                 "color": "#000000"
@@ -27,7 +27,7 @@ def brendan_theme():
                 "domain": True,
                 "domainColor": axisColor,
                 "domainWidth": 1,
-                "grid": True,
+                "grid": False,
                 "gridColor": gridColor,
                 "gridWidth": 0.5,
                 "labelFont": labelFont,
@@ -44,7 +44,7 @@ def brendan_theme():
                 "domain": True,
                 "domainColor": axisColor,
                 "domainWidth": 1,
-                "grid": True,
+                "grid": False,
                 "gridColor": gridColor,
                 "gridWidth": 0.5,
                 "labelFont": labelFont,

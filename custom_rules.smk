@@ -20,7 +20,9 @@ rule analyze_nipah_RBP_entry:
         filtered_E3_data="results/filtered_data/E3_entry_filtered.csv",
         E2_entry_heatmap="results/images/E2_entry_heatmap.html",
         E3_entry_heatmap="results/images/E3_entry_heatmap.html",
+        contact_type_plot='results/images/contact_type_plot.html',
         E2_E3_entry_corr_plot="results/images/E2_E3_entry_corr_plot.html",
+        E2_E3_entry_all_muts_plot="results/images/E2_E3_entry_all_muts_plot.html",
         entry_boxplot_E2_plot="results/images/E2_entry_boxplot.html",
         entry_boxplot_E3_plot="results/images/E3_entry_boxplot.html",
     params:
@@ -29,11 +31,13 @@ rule analyze_nipah_RBP_entry:
                 "func_scores_E2_file": input.func_scores_E2_file,
                 "func_scores_E3_file": input.func_scores_E3_file,
                 "e2_distances_file": input.e2_distances_file,
+                "contact_type_plot": output.contact_type_plot,
                 "filtered_E2_data": output.filtered_E2_data,
                 "filtered_E3_data": output.filtered_E3_data,
                 "E2_entry_heatmap": output.E2_entry_heatmap,
                 "E3_entry_heatmap": output.E3_entry_heatmap,
                 "E2_E3_entry_corr_plot": output.E2_E3_entry_corr_plot,
+                "E2_E3_entry_all_muts_plot": output.E2_E3_entry_all_muts_plot,
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
                 "entropy_file": input.entropy_file,
@@ -210,8 +214,7 @@ rule lib_lib_correlations:
         codon_variants_file="results/variants/codon_variants.csv"
     output:
         nb="results/notebooks/library_correlations.ipynb",
-        CHO_EFNB2_corr_plot_save="results/images/CHO_EFNB2_library_corr.html",
-        CHO_EFNB3_corr_plot_save="results/images/CHO_EFNB3_library_corr.html",
+        CHO_corr_plot_save="results/images/CHO_corr_plot_save.html",
         CHO_EFNB2_indiv_plot_save="results/images/CHO_EFNB2_all_corrs.html",
         CHO_EFNB3_indiv_plot_save="results/images/CHO_EFNB3_all_corrs.html",
         histogram_plot="results/images/variants_histogram.html",
@@ -222,8 +225,7 @@ rule lib_lib_correlations:
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
                 "codon_variants_file": input.codon_variants_file,
-                "CHO_EFNB2_corr_plot_save": output.CHO_EFNB2_corr_plot_save,
-                "CHO_EFNB3_corr_plot_save": output.CHO_EFNB3_corr_plot_save,
+                "CHO_corr_plot_save": output.CHO_corr_plot_save,
                 "CHO_EFNB2_indiv_plot_save": output.CHO_EFNB2_indiv_plot_save,
                 "CHO_EFNB3_indiv_plot_save": output.CHO_EFNB3_indiv_plot_save,
                 "histogram_plot": output.histogram_plot,
@@ -464,12 +466,9 @@ rule analyze_escape_data:
         escape_bubble_plot="results/images/escape_bubble_plot.html",
         bubble_1_mut_plot="results/images/escape_bubble_1_mut_plot.html",
         overlap_escape_plot="results/images/overlap_escape_plot.html",
-        m102_heat="results/images/m102_heatmap.html",
-        HENV26_heat="results/images/HENV26_heatmap.html",
-        HENV32_heat="results/images/HENV32_heatmap.html",
-        nAH1_heat="results/images/nAH1_heatmap.html",
-        HENV117_heat="results/images/HENV117_heatmap.html",
-        HENV103_heat="results/images/HENV103_heatmap.html",
+        mab_line_escape_plot="results/images/mab_line_escape_plot.html",
+        mab_plot_top="results/images/mab_plot_top.html",
+        mab_plot_all="results/images/mab_plot_all.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -484,12 +483,9 @@ rule analyze_escape_data:
                 "escape_bubble_plot": output.escape_bubble_plot,
                 "bubble_1_mut_plot": output.bubble_1_mut_plot,
                 "overlap_escape_plot": output.overlap_escape_plot,
-                "m102_heat": output.m102_heat,
-                "HENV26_heat": output.HENV26_heat,
-                "HENV32_heat": output.HENV32_heat,
-                "nAH1_heat": output.nAH1_heat,
-                "HENV117_heat": output.HENV117_heat,
-                "HENV103_heat": output.HENV103_heat,
+                "mab_line_escape_plot": output.mab_line_escape_plot,
+                "mab_plot_top": output.mab_plot_top,
+                "mab_plot_all": output.mab_plot_all,
             }
         ),
     log:
@@ -502,7 +498,7 @@ rule analyze_escape_data:
 docs["Additional files and charts"] = {
     "Cell Entry": {
         "Cell Entry Analysis Notebook": rules.analyze_nipah_RBP_entry.output.nb,
-        "Interactive Plot of CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_corr_plot,
+        "Interactive Plot of Entry Scores for Contact Sites": rules.analyze_nipah_RBP_entry.output.contact_type_plot,
         "Entry Heatmaps": {
             "EFNB2 Entry Heatmap": rules.analyze_nipah_RBP_entry.output.E2_entry_heatmap,
             "EFNB3 Entry Heatmap": rules.analyze_nipah_RBP_entry.output.E3_entry_heatmap,
@@ -510,6 +506,10 @@ docs["Additional files and charts"] = {
         "Plots of Entry Scores by RBP Region": {
             "EFNB2 Entry by Region": rules.analyze_nipah_RBP_entry.output.entry_boxplot_E2_plot,
             "EFNB3 Entry by Region": rules.analyze_nipah_RBP_entry.output.entry_boxplot_E3_plot,
+        },
+        "Interactive Plots of Entry Score Correlations": {
+            "Aggregate CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_corr_plot,
+            "All Mutant CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_all_muts_plot,
         },
         "Filtered Entry CSVs": {
             "EFNB2 entry filtered csv": rules.analyze_nipah_RBP_entry.output.filtered_E2_data,
@@ -559,22 +559,16 @@ docs["Additional files and charts"] = {
             "Top Escape Mutants Versus Entry": rules.analyze_escape_data.output.escape_bubble_plot,
             "Top Escape Mutants Versus Entry-One Mutation Away": rules.analyze_escape_data.output.bubble_1_mut_plot,
             "Shared Escape Mutations Between Antibodies": rules.analyze_escape_data.output.overlap_escape_plot,
+            "Summed Escape by Site": rules.analyze_escape_data.output.mab_line_escape_plot,
         },
         "Interactive Heatmaps of Escape Data": {
-            "m102.4": rules.analyze_escape_data.output.m102_heat,
-            "HENV-26": rules.analyze_escape_data.output.HENV26_heat,
-            "HENV-117": rules.analyze_escape_data.output.HENV117_heat,
-            "HENV-103": rules.analyze_escape_data.output.HENV103_heat,
-            "HENV-32": rules.analyze_escape_data.output.HENV32_heat,
-            "nAH1.3": rules.analyze_escape_data.output.nAH1_heat,
+            "Top Escape Sites": rules.analyze_escape_data.output.mab_plot_top,
+            "All Sites": rules.analyze_escape_data.output.mab_plot_all,
         },
     },
     "Library Correlations and Stats": {
         "Library Correlations Notebook": rules.lib_lib_correlations.output.nb,
-        "Interactive Plots of Library Correlations": {
-            "CHO-EFNB2 LibA vs LibB": rules.lib_lib_correlations.output.CHO_EFNB2_corr_plot_save,
-            "CHO-EFNB3 LibA vs LibB": rules.lib_lib_correlations.output.CHO_EFNB3_corr_plot_save,
-        },
+        "Interactive Plot of Library Correlations": rules.lib_lib_correlations.output.CHO_corr_plot_save,
         "Plots of all cell entry score correlations": {
             "Indiv. CHO-EFNB2 cell entry selections": rules.lib_lib_correlations.output.CHO_EFNB2_indiv_plot_save,
             "Indiv. CHO-EFNB3 cell entry selections": rules.lib_lib_correlations.output.CHO_EFNB3_indiv_plot_save,
