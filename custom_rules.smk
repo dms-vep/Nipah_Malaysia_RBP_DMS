@@ -73,6 +73,7 @@ rule analyze_nipah_RBP_binding:
         E3_binding_heatmap="results/images/E3_binding_heatmap.html",
         E2_E3_correlation="results/images/E2_E3_correlation.html",
         E2_E3_correlation_site="results/images/E2_E3_correlation_site.html",
+        binding_by_site_plot="results/images/binding_by_site_plot.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -91,6 +92,7 @@ rule analyze_nipah_RBP_binding:
                 "E2_E3_correlation": output.E2_E3_correlation,
                 "E2_E3_correlation_site": output.E2_E3_correlation_site,
                 "entropy_file": input.entropy_file,
+                "binding_by_site_plot": output.binding_by_site_plot,
             }
         ),
     log:
@@ -218,6 +220,7 @@ rule lib_lib_correlations:
         CHO_EFNB2_indiv_plot_save="results/images/CHO_EFNB2_all_corrs.html",
         CHO_EFNB3_indiv_plot_save="results/images/CHO_EFNB3_all_corrs.html",
         histogram_plot="results/images/variants_histogram.html",
+        func_scores_plot="results/images/func_scores_distribution.html",
 
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -229,6 +232,7 @@ rule lib_lib_correlations:
                 "CHO_EFNB2_indiv_plot_save": output.CHO_EFNB2_indiv_plot_save,
                 "CHO_EFNB3_indiv_plot_save": output.CHO_EFNB3_indiv_plot_save,
                 "histogram_plot": output.histogram_plot,
+                "func_scores_plot": output.func_scores_plot,
             }
         ),
     log:
@@ -469,6 +473,7 @@ rule analyze_escape_data:
         mab_line_escape_plot="results/images/mab_line_escape_plot.html",
         mab_plot_top="results/images/mab_plot_top.html",
         mab_plot_all="results/images/mab_plot_all.html",
+        aggregate_mab_and_binding="results/images/aggregate_mab_and_binding.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -486,6 +491,7 @@ rule analyze_escape_data:
                 "mab_line_escape_plot": output.mab_line_escape_plot,
                 "mab_plot_top": output.mab_plot_top,
                 "mab_plot_all": output.mab_plot_all,
+                "aggregate_mab_and_binding": output.aggregate_mab_and_binding,
             }
         ),
     log:
@@ -538,6 +544,7 @@ docs["Additional files and charts"] = {
         },
         "Interactive Plot of EFNB2 and EFNB3 Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation,
         "Interactive Plot of EFNB2 and EFNB3 Site Level Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation_site,
+        "Interactive Plot of Median Binding by Site": rules.analyze_nipah_RBP_binding.output.binding_by_site_plot,
         "Ephrin neutralization notebook": rules.ephrin_neuts.output.nb,
         "Ephrin neutralization curve plot": rules.ephrin_neuts.output.ephrin_curve_plot,
         "Ephrin Binding Validation Neut Curves Plots": {
@@ -565,6 +572,7 @@ docs["Additional files and charts"] = {
         "Interactive Heatmaps of Escape Data": {
             "Top Escape Sites": rules.analyze_escape_data.output.mab_plot_top,
             "All Sites": rules.analyze_escape_data.output.mab_plot_all,
+            "Aggregate Escape and Ephrin-B2 Binding": rules.analyze_escape_data.output.aggregate_mab_and_binding,
         },
     },
     "Library Correlations and Stats": {
@@ -575,6 +583,7 @@ docs["Additional files and charts"] = {
             "Indiv. CHO-EFNB3 cell entry selections": rules.lib_lib_correlations.output.CHO_EFNB3_indiv_plot_save,
         },
         "Variants histogram": rules.lib_lib_correlations.output.histogram_plot,
+        "Functional Score Distributions": rules.lib_lib_correlations.output.func_scores_plot,
     },
     "Miscellaneous": {
         "Bat and Human Ephrin alignment notebook": rules.ephrin_alignment.output.nb,
