@@ -18,10 +18,12 @@ def brendan_theme():
         "config": {
             "background": "transparent",
             "title": {
-                "fontSize": 20,
+                "fontSize": 22,
                 "font": font,
-                "anchor": "middle",
-                "color": "#000000"
+                "anchor": "start",
+                "color": "#000000",
+                "orient": 'top',
+                "offset": 10,
             },
             "axisX": {
                 "domain": True,
@@ -38,7 +40,7 @@ def brendan_theme():
                 "titleFont": font,
                 "tickCount": 3,
                 "titleFontSize": 14,
-                "titlePadding": 5,
+                "titlePadding": 6,
             },
             "axisY": {
                 "domain": True,
@@ -55,7 +57,7 @@ def brendan_theme():
                 "tickCount": 3,
                 "titleFont": font,
                 "titleFontSize":14,
-                "titlePadding": 5,
+                "titlePadding": 6,
                 "titleAngle": 270,
             },
             "legend": {

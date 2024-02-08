@@ -495,6 +495,7 @@ rule analyze_escape_data:
     shell:
         "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
+
 docs["Additional files and charts"] = {
     "Cell Entry": {
         "Cell Entry Analysis Notebook": rules.analyze_nipah_RBP_entry.output.nb,

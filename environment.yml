@@ -44,3 +44,4 @@ dependencies:
     - neutcurve==0.5.7
     - polyclonal==6.9
     - vl-convert-python
+    - configure-dms-viz
