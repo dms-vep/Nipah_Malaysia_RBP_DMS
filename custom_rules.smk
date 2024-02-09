@@ -23,8 +23,10 @@ rule analyze_nipah_RBP_entry:
         contact_type_plot='results/images/contact_type_plot.html',
         E2_E3_entry_corr_plot="results/images/E2_E3_entry_corr_plot.html",
         E2_E3_entry_all_muts_plot="results/images/E2_E3_entry_all_muts_plot.html",
+        combined_E2_E3_correlation_plots="results/images/combined_E2_E3_correlation_plots.html",
         entry_boxplot_E2_plot="results/images/E2_entry_boxplot.html",
         entry_boxplot_E3_plot="results/images/E3_entry_boxplot.html",
+        combined_entry_boxplots="results/images/combined_entry_boxplots.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -38,11 +40,13 @@ rule analyze_nipah_RBP_entry:
                 "E3_entry_heatmap": output.E3_entry_heatmap,
                 "E2_E3_entry_corr_plot": output.E2_E3_entry_corr_plot,
                 "E2_E3_entry_all_muts_plot": output.E2_E3_entry_all_muts_plot,
+                "combined_E2_E3_correlation_plots": output.combined_E2_E3_correlation_plots,
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
                 "entropy_file": input.entropy_file,
                 "entry_boxplot_E2_plot": output.entry_boxplot_E2_plot,
                 "entry_boxplot_E3_plot": output.entry_boxplot_E3_plot,
+                "combined_entry_boxplots": output.combined_entry_boxplots,
             }
         ),
     log:
@@ -523,10 +527,12 @@ docs["Additional files and charts"] = {
         "Plots of Entry Scores by RBP Region": {
             "EFNB2 Entry by Region": rules.analyze_nipah_RBP_entry.output.entry_boxplot_E2_plot,
             "EFNB3 Entry by Region": rules.analyze_nipah_RBP_entry.output.entry_boxplot_E3_plot,
+            "Combined Boxplot of Entry by Region": rules.analyze_nipah_RBP_entry.output.combined_entry_boxplots,
         },
         "Interactive Plots of Entry Score Correlations": {
             "Aggregate CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_corr_plot,
             "All Mutant CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_all_muts_plot,
+            "Combined Aggregate and Mutant EFNB2/EFNB3 entry correlations": rules.analyze_nipah_RBP_entry.output.combined_E2_E3_correlation_plots,
         },
         "Filtered Entry CSVs": {
             "EFNB2 entry filtered csv": rules.analyze_nipah_RBP_entry.output.filtered_E2_data,
