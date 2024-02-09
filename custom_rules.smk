@@ -113,7 +113,8 @@ rule analyze_mab_validation_data:
     output:
         nb="results/notebooks/mab_validation.ipynb",
         nah1_validation_neut_curves="results/images/nah1_validation_neut_curves.html",
-        IC50_validation_plot="results/images/IC50_validation_plot.html"
+        IC50_validation_plot="results/images/IC50_validation_plot.html",
+        combined_ic50_neut_curve_plot="results/images/combined_ic50_neut_curve_plot.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -123,6 +124,7 @@ rule analyze_mab_validation_data:
                 "escape_file": input.escape_file,
                 "nah1_validation_neut_curves": output.nah1_validation_neut_curves,
                 "IC50_validation_plot": output.IC50_validation_plot,
+                "combined_ic50_neut_curve_plot": output.combined_ic50_neut_curve_plot,
             }
         ),
     log:
@@ -146,6 +148,7 @@ rule cell_entry_validations:
         nb="results/notebooks/cell_entry_validations.ipynb",
         func_score_E2_plot="results/images/func_score_E2_validation.html",
         func_score_E3_plot="results/images/func_score_E3_validation.html",
+        corr_plots_combined="results/images/corr_plots_combined.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -157,6 +160,7 @@ rule cell_entry_validations:
                 "func_scores_E3_file": input.func_scores_E3_file,
                 "func_score_E2_plot": output.func_score_E2_plot,
                 "func_score_E3_plot": output.func_score_E3_plot,
+                "corr_plots_combined": output.corr_plots_combined,
             }
         ),
     log:
@@ -532,6 +536,7 @@ docs["Additional files and charts"] = {
         "Cell Entry Validation Plots": {
             "Cell entry validation in CHO-EFNB2 cells": rules.cell_entry_validations.output.func_score_E2_plot,
             "Cell entry validation in CHO-EFNB3 cells": rules.cell_entry_validations.output.func_score_E3_plot,
+            "Combined cell entry validation plots": rules.cell_entry_validations.output.corr_plots_combined,
         },
     },
     "Ephrin Binding": {
@@ -567,9 +572,12 @@ docs["Additional files and charts"] = {
         "Antibody Escape Analysis Notebook": rules.analyze_escape_data.output.nb,
         "Neutralization Curves For All Six mAbs Notebook": rules.analyze_mab_neuts.output.nb,
         "Neutralization Curves Plot": rules.analyze_mab_neuts.output.mab_neuts_plot,
-        "Antibody validation notebook": rules.analyze_mab_validation_data.output.nb,
-        "Antibody validation neut curves": rules.analyze_mab_validation_data.output.nah1_validation_neut_curves,
-        "Antibody validation correlation plot (IC50 vs DMS)": rules.analyze_mab_validation_data.output.IC50_validation_plot,
+        "Antibody Validations": {
+            "Antibody validation notebook": rules.analyze_mab_validation_data.output.nb,
+            "Antibody validation neut curves": rules.analyze_mab_validation_data.output.nah1_validation_neut_curves,
+            "Antibody validation correlation plot (IC50 vs DMS)": rules.analyze_mab_validation_data.output.IC50_validation_plot,
+            "Combined Neut Curve and IC50": rules.analyze_mab_validation_data.output.combined_ic50_neut_curve_plot,
+        },
         "Interactive Plots of Escape Data": {
             "Top Escape Mutants Versus Entry": rules.analyze_escape_data.output.escape_bubble_plot,
             "Top Escape Mutants Versus Entry-One Mutation Away": rules.analyze_escape_data.output.bubble_1_mut_plot,
