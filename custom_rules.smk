@@ -71,12 +71,13 @@ rule analyze_nipah_RBP_binding:
         nb="results/notebooks/ephrin_binding.ipynb",
         filtered_E2_binding_data="results/filtered_data/E2_binding_filtered.csv",
         filtered_E3_binding_data="results/filtered_data/E3_binding_filtered.csv",
-        E2_binding_entry="results/images/E2_binding_entry.html",
-        E3_binding_entry="results/images/E3_binding_entry.html",
+        entry_binding_combined_corr_plot="results/images/entry_binding_combined_corr_plot.html",
+        entry_binding_combined_corr_plot_agg="results/images/entry_binding_combined_corr_plot_agg.html",
         E2_binding_heatmap="results/images/E2_binding_heatmap.html",
         E3_binding_heatmap="results/images/E3_binding_heatmap.html",
         E2_E3_correlation="results/images/E2_E3_correlation.html",
         E2_E3_correlation_site="results/images/E2_E3_correlation_site.html",
+        combined_E2_E3_site_corr="results/images/combined_E2_E3_site_corr.html",
         binding_by_site_plot="results/images/binding_by_site_plot.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -87,14 +88,15 @@ rule analyze_nipah_RBP_binding:
                 "binding_E3_file": input.binding_E3_file,
                 "filtered_E2_binding_data": output.filtered_E2_binding_data,
                 "filtered_E3_binding_data": output.filtered_E3_binding_data,
-                "E2_binding_entry": output.E2_binding_entry,
-                "E3_binding_entry": output.E3_binding_entry,
+                "entry_binding_combined_corr_plot": output.entry_binding_combined_corr_plot,
+                "entry_binding_combined_corr_plot_agg": output.entry_binding_combined_corr_plot_agg,
                 "E2_binding_heatmap": output.E2_binding_heatmap,
                 "E3_binding_heatmap": output.E3_binding_heatmap,
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
                 "E2_E3_correlation": output.E2_E3_correlation,
                 "E2_E3_correlation_site": output.E2_E3_correlation_site,
+                "combined_E2_E3_site_corr": output.combined_E2_E3_site_corr,
                 "entropy_file": input.entropy_file,
                 "binding_by_site_plot": output.binding_by_site_plot,
             }
@@ -548,8 +550,8 @@ docs["Additional files and charts"] = {
     "Ephrin Binding": {
         "EFNB2 and EFNB3 binding notebook": rules.analyze_nipah_RBP_binding.output.nb,
         "Binding vs Entry Plots": {
-            "EFNB2 Binding Vs Entry Post Filter": rules.analyze_nipah_RBP_binding.output.E2_binding_entry,
-            "EFNB3 Binding Vs Entry Post Filter": rules.analyze_nipah_RBP_binding.output.E3_binding_entry,
+            "Binding vs Entry for all mutants": rules.analyze_nipah_RBP_binding.output.entry_binding_combined_corr_plot,
+            "Aggregated Binding vs Entry": rules.analyze_nipah_RBP_binding.output.entry_binding_combined_corr_plot_agg,
         },
         "Ephrin Binding Heatmaps": {
             "EFNB2 Binding Heatmap": rules.analyze_nipah_RBP_binding.output.E2_binding_heatmap,
@@ -559,8 +561,12 @@ docs["Additional files and charts"] = {
             "Filtered EFNB2 Binding CSV": rules.analyze_nipah_RBP_binding.output.filtered_E2_binding_data,
             "Filtered EFNB3 Binding CSV": rules.analyze_nipah_RBP_binding.output.filtered_E3_binding_data,
         },
-        "Interactive Plot of EFNB2 and EFNB3 Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation,
-        "Interactive Plot of EFNB2 and EFNB3 Site Level Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation_site,
+        "EFNB2 and EFNB3 Binding Correlations" : {
+            "Interactive Plot of EFNB2 and EFNB3 Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation,
+            "Interactive Plot of EFNB2 and EFNB3 Site Level Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation_site,
+            "Combined plot of EFNB2 and EFNB3 binding correlations": rules.analyze_nipah_RBP_binding.output.combined_E2_E3_site_corr,
+        },
+        
         "Interactive Plot of Median Binding by Site": rules.analyze_nipah_RBP_binding.output.binding_by_site_plot,
         "Ephrin neutralization notebook": rules.ephrin_neuts.output.nb,
         "Ephrin neutralization curve plot": rules.ephrin_neuts.output.ephrin_curve_plot,
