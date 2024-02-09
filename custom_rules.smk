@@ -474,6 +474,8 @@ rule analyze_escape_data:
         mab_plot_top="results/images/mab_plot_top.html",
         mab_plot_all="results/images/mab_plot_all.html",
         aggregate_mab_and_binding="results/images/aggregate_mab_and_binding.html",
+        binding_vs_escape='results/images/binding_vs_escape.html',
+        aggregate_mab_and_niv_polymorphism='results/images/aggregate_mab_and_niv_polymorphism.html'
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -492,6 +494,8 @@ rule analyze_escape_data:
                 "mab_plot_top": output.mab_plot_top,
                 "mab_plot_all": output.mab_plot_all,
                 "aggregate_mab_and_binding": output.aggregate_mab_and_binding,
+                "binding_vs_escape": output.binding_vs_escape,
+                "aggregate_mab_and_niv_polymorphism": output.aggregate_mab_and_niv_polymorphism,
             }
         ),
     log:
@@ -573,7 +577,9 @@ docs["Additional files and charts"] = {
             "Top Escape Sites": rules.analyze_escape_data.output.mab_plot_top,
             "All Sites": rules.analyze_escape_data.output.mab_plot_all,
             "Aggregate Escape and Ephrin-B2 Binding": rules.analyze_escape_data.output.aggregate_mab_and_binding,
+            "Aggregate Escape and NiV Polymorphisms": rules.analyze_escape_data.output.aggregate_mab_and_niv_polymorphism,
         },
+        "Binding vs Escape": rules.analyze_escape_data.output.binding_vs_escape,
     },
     "Library Correlations and Stats": {
         "Library Correlations Notebook": rules.lib_lib_correlations.output.nb,

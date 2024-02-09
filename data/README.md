@@ -42,3 +42,6 @@ The format is explained within the file.
 ## Configuration for analyzing antibody escape
 [antibody_escape_config.yml](antibody_escape_config.yml) has the configuration for analyzing effects of mutations on escape from antibodies or sera.
 The format is explained within the file.
+
+## Input data for custom analyses
+This directory contains input data for custom jupyter notebooks used in the analyses of nipah RBP DMS data.

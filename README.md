@@ -1,4 +1,4 @@
-# Deep mutational scanning of the Nipah Receptor Binding Protein using a barcoded lentiviral vector
+# Deep mutational scanning of the Nipah receptor binding protein (RBP) using a barcoded lentiviral vector
 Study by Brendan Larsen, Teagan McMahon and Jesse Bloom.
 
 For documentation of the analysis, see [https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/](https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/).
