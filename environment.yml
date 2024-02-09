@@ -45,3 +45,4 @@ dependencies:
     - polyclonal==6.9
     - vl-convert-python
     - configure-dms-viz
+    - sphinx

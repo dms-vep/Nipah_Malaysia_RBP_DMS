@@ -7516,7 +7516,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=69b5ca9d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=26e77ad0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7526,10 +7526,10 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Parameters</span>
 <span class="n">ephrin_binding_neuts_file</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">"data/custom_analyses_data/experimental_data/231109_ephrin_neuts.csv"</span>
+    <span class="s2">"data/custom_analyses_data/experimental_data/bat_ephrin_neuts.csv"</span>
 <span class="p">)</span>
 <span class="n">ephrin_validation_curves</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">"data/custom_analyses_data/experimental_data/231208_affinity_validations.csv"</span>
+    <span class="s2">"data/custom_analyses_data/experimental_data/binding_single_mutant_validations.csv"</span>
 <span class="p">)</span>
 <span class="n">validation_ic50s_file</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">"data/custom_analyses_data/experimental_data/receptor_IC_validations.csv"</span>
@@ -7644,8 +7644,8 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#altair_config = 'data/custom_analyses_data/theme.py'</span>
 <span class="c1">#nipah_config = 'nipah_config.yaml'</span>
-<span class="c1">#ephrin_binding_neuts_file = 'data/custom_analyses_data/experimental_data/231109_ephrin_neuts.csv'</span>
-<span class="c1">#ephrin_validation_curves = 'data/custom_analyses_data/experimental_data/231208_affinity_validations.csv'</span>
+<span class="c1">#ephrin_binding_neuts_file = 'data/custom_analyses_data/experimental_data/bat_ephrin_neuts.csv'</span>
+<span class="c1">#ephrin_validation_curves = 'data/custom_analyses_data/experimental_data/binding_single_mutant_validations.csv'</span>
 <span class="c1">#validation_ic50s_file = 'data/custom_analyses_data/experimental_data/receptor_IC_validations.csv'</span>
 <span class="c1">#e2_monomeric_binding_file = 'results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv'</span>
 <span class="c1">#e3_dimeric_binding_file = 'results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv'</span>
@@ -7757,7 +7757,7 @@ a.anchor-link {
 <span class="n">ephrin_curve</span> <span class="o">=</span> <span class="n">plot_neut_curve</span><span class="p">(</span><span class="n">curve</span><span class="p">)</span>
 <span class="n">ephrin_curve</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 <span class="n">ephrin_curve</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">ephrin_curve_plot</span><span class="p">)</span>
-<span class="c1">#ephrin_curve.save('results/images/svg/ephrin_neut_curve.svg')</span>
+<span class="n">ephrin_curve</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">'ephrin_curve.json'</span><span class="p">)</span>
 
 <span class="n">fitParams</span> <span class="o">=</span> <span class="n">fitParams</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'serum'</span><span class="p">:</span> <span class="s1">'target_cells'</span><span class="p">,</span> <span class="s1">'virus'</span><span class="p">:</span> <span class="s1">'soluble_receptor'</span><span class="p">})</span>
 <span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50_nM'</span><span class="p">]</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
@@ -7776,23 +7776,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-4e89593f67644c3c82ed08a27234425d.vega-embed {
+  #altair-viz-3c94daca35aa43e1bc96772aed6801e7.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4e89593f67644c3c82ed08a27234425d.vega-embed details,
-  #altair-viz-4e89593f67644c3c82ed08a27234425d.vega-embed details summary {
+  #altair-viz-3c94daca35aa43e1bc96772aed6801e7.vega-embed details,
+  #altair-viz-3c94daca35aa43e1bc96772aed6801e7.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4e89593f67644c3c82ed08a27234425d"></div>
+<div id="altair-viz-3c94daca35aa43e1bc96772aed6801e7"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4e89593f67644c3c82ed08a27234425d") {
-      outputDiv = document.getElementById("altair-viz-4e89593f67644c3c82ed08a27234425d");
+    if (outputDiv.id !== "altair-viz-3c94daca35aa43e1bc96772aed6801e7") {
+      outputDiv = document.getElementById("altair-viz-3c94daca35aa43e1bc96772aed6801e7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -7999,19 +7999,18 @@ a.anchor-link {
 <span class="n">ephrin_b2_neut_curve</span> <span class="o">=</span> <span class="n">plot_validation_curves</span><span class="p">(</span><span class="n">e2_validation_curves</span><span class="p">,</span><span class="s1">'Ephrin-B2-monomeric'</span><span class="p">)</span>
 <span class="n">ephrin_b2_neut_curve</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 <span class="n">ephrin_b2_neut_curve</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">e2_curve_plot</span><span class="p">)</span>
-<span class="c1">#ephrin_b2_neut_curve.save('results/images/svg/EFNB2_mutant_neuts_curve_plot.svg')</span>
+<span class="c1">#ephrin_b2_neut_curve.save('ephrinb2.json')</span>
 
 <span class="n">ephrin_b3_neut_curve</span> <span class="o">=</span> <span class="n">plot_validation_curves</span><span class="p">(</span><span class="n">e3_validation_curves</span><span class="p">,</span><span class="s1">'Ephrin-B3-dimeric'</span><span class="p">)</span>
 <span class="n">ephrin_b3_neut_curve</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 <span class="n">ephrin_b3_neut_curve</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">e3_curve_plot</span><span class="p">)</span>
-<span class="c1">#ephrin_b3_neut_curve.save('results/images/svg/EFNB3_mutant_neuts_curve_plot.svg')</span>
+<span class="c1">#ephrin_b3_neut_curve.save('ephrinb3.json')</span>
 
 <span class="c1"># Find the IC50 values in ng/mL and relative IC50 to WT</span>
 <span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50_ng'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">efnb2</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="n">fitParams</span><span class="p">[</span><span class="s1">'target_cells'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'EFNB2-monomeric'</span><span class="p">]</span>
 <span class="n">WT_IC50</span> <span class="o">=</span> <span class="n">efnb2</span><span class="p">[</span><span class="n">efnb2</span><span class="p">[</span><span class="s1">'mutant'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'WT'</span><span class="p">]</span>
 <span class="n">wt50</span> <span class="o">=</span> <span class="n">WT_IC50</span><span class="p">[</span><span class="s1">'ic50_ng'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="c1">#print(wt50)</span>
 
 <span class="n">fitParams</span><span class="p">[</span><span class="s1">'relative_ic50'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50_ng'</span><span class="p">]</span> <span class="o">/</span> <span class="n">wt50</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">fitParams</span><span class="p">[[</span><span class="s1">'target_cells'</span><span class="p">,</span><span class="s1">'mutant'</span><span class="p">,</span><span class="s1">'ic50_ng'</span><span class="p">,</span><span class="s1">'relative_ic50'</span><span class="p">]])</span>
@@ -8028,23 +8027,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-1b1ef90038ed49d1aa9bf49fa3351541.vega-embed {
+  #altair-viz-a2d031641d18498380e35ce4754a7e54.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-1b1ef90038ed49d1aa9bf49fa3351541.vega-embed details,
-  #altair-viz-1b1ef90038ed49d1aa9bf49fa3351541.vega-embed details summary {
+  #altair-viz-a2d031641d18498380e35ce4754a7e54.vega-embed details,
+  #altair-viz-a2d031641d18498380e35ce4754a7e54.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-1b1ef90038ed49d1aa9bf49fa3351541"></div>
+<div id="altair-viz-a2d031641d18498380e35ce4754a7e54"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1b1ef90038ed49d1aa9bf49fa3351541") {
-      outputDiv = document.getElementById("altair-viz-1b1ef90038ed49d1aa9bf49fa3351541");
+    if (outputDiv.id !== "altair-viz-a2d031641d18498380e35ce4754a7e54") {
+      outputDiv = document.getElementById("altair-viz-a2d031641d18498380e35ce4754a7e54");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8098,23 +8097,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-4ea6ffaa641441aab756d9bce11d172c.vega-embed {
+  #altair-viz-38daab1232a34cb68f1bc41674747956.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4ea6ffaa641441aab756d9bce11d172c.vega-embed details,
-  #altair-viz-4ea6ffaa641441aab756d9bce11d172c.vega-embed details summary {
+  #altair-viz-38daab1232a34cb68f1bc41674747956.vega-embed details,
+  #altair-viz-38daab1232a34cb68f1bc41674747956.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4ea6ffaa641441aab756d9bce11d172c"></div>
+<div id="altair-viz-38daab1232a34cb68f1bc41674747956"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4ea6ffaa641441aab756d9bce11d172c") {
-      outputDiv = document.getElementById("altair-viz-4ea6ffaa641441aab756d9bce11d172c");
+    if (outputDiv.id !== "altair-viz-38daab1232a34cb68f1bc41674747956") {
+      outputDiv = document.getElementById("altair-viz-38daab1232a34cb68f1bc41674747956");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8428,12 +8427,12 @@ a.anchor-link {
 <span class="n">e2_corr</span> <span class="o">=</span> <span class="n">make_corr_chart</span><span class="p">(</span><span class="n">e2_df_out</span><span class="p">,</span><span class="s1">'Ephrin-B2-monomeric'</span><span class="p">)</span>
 <span class="n">e2_corr</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 <span class="n">e2_corr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">e2_corr_plot</span><span class="p">)</span>
-<span class="c1">#e2_corr.save('results/images/svg/EFNB2_NT50_corr_plot.svg')</span>
+<span class="c1">#e2_corr.save('e2_corr.json')</span>
 
 <span class="n">e3_corr</span> <span class="o">=</span> <span class="n">make_corr_chart</span><span class="p">(</span><span class="n">e3_df_out</span><span class="p">,</span><span class="s1">'Ephrin-B3-dimeric'</span><span class="p">)</span>
 <span class="n">e3_corr</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 <span class="n">e3_corr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">e3_corr_plot</span><span class="p">)</span>
-<span class="c1">#e3_corr.save('results/images/svg/EFNB3_NT50_corr_plot.svg')</span>
+<span class="c1">#e3_corr.save('e3_corr.json')</span>
 </pre></div>
 </div>
 </div>
@@ -8454,23 +8453,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-f0d5693ba5b24faa95220707590b8b76.vega-embed {
+  #altair-viz-7c2ccd2bf0cd406e89fb753fb3acbd8a.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f0d5693ba5b24faa95220707590b8b76.vega-embed details,
-  #altair-viz-f0d5693ba5b24faa95220707590b8b76.vega-embed details summary {
+  #altair-viz-7c2ccd2bf0cd406e89fb753fb3acbd8a.vega-embed details,
+  #altair-viz-7c2ccd2bf0cd406e89fb753fb3acbd8a.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f0d5693ba5b24faa95220707590b8b76"></div>
+<div id="altair-viz-7c2ccd2bf0cd406e89fb753fb3acbd8a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f0d5693ba5b24faa95220707590b8b76") {
-      outputDiv = document.getElementById("altair-viz-f0d5693ba5b24faa95220707590b8b76");
+    if (outputDiv.id !== "altair-viz-7c2ccd2bf0cd406e89fb753fb3acbd8a") {
+      outputDiv = document.getElementById("altair-viz-7c2ccd2bf0cd406e89fb753fb3acbd8a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8531,23 +8530,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-fe86c0927f4d448d9c354a4d4fb05e02.vega-embed {
+  #altair-viz-b8e2366690314c3ab7f8c845ad82b2cd.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-fe86c0927f4d448d9c354a4d4fb05e02.vega-embed details,
-  #altair-viz-fe86c0927f4d448d9c354a4d4fb05e02.vega-embed details summary {
+  #altair-viz-b8e2366690314c3ab7f8c845ad82b2cd.vega-embed details,
+  #altair-viz-b8e2366690314c3ab7f8c845ad82b2cd.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-fe86c0927f4d448d9c354a4d4fb05e02"></div>
+<div id="altair-viz-b8e2366690314c3ab7f8c845ad82b2cd"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-fe86c0927f4d448d9c354a4d4fb05e02") {
-      outputDiv = document.getElementById("altair-viz-fe86c0927f4d448d9c354a4d4fb05e02");
+    if (outputDiv.id !== "altair-viz-b8e2366690314c3ab7f8c845ad82b2cd") {
+      outputDiv = document.getElementById("altair-viz-b8e2366690314c3ab7f8c845ad82b2cd");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8599,16 +8598,92 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3de948c1-970d-46a5-8c9d-fba8443aefdf">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3de948c1-970d-46a5-8c9d-fba8443aefdf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">e2_corr</span> <span class="o">|</span> <span class="n">e3_corr</span><span class="p">)</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<style>
+  #altair-viz-db1ea063b8db468c83a0e8741020746b.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-db1ea063b8db468c83a0e8741020746b.vega-embed details,
+  #altair-viz-db1ea063b8db468c83a0e8741020746b.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-db1ea063b8db468c83a0e8741020746b"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-db1ea063b8db468c83a0e8741020746b") {
+      outputDiv = document.getElementById("altair-viz-db1ea063b8db468c83a0e8741020746b");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.15.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.15.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"background": "transparent", "title": {"fontSize": 22, "font": "Helvetica", "anchor": "start", "color": "#000000", "orient": "top", "offset": 10}, "axisX": {"domain": true, "domainColor": "black", "domainWidth": 1, "grid": false, "gridColor": "lightgray", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 12, "labelAngle": 0, "tickColor": "black", "tickSize": 4, "titleFont": "Helvetica", "tickCount": 3, "titleFontSize": 14, "titlePadding": 6}, "axisY": {"domain": true, "domainColor": "black", "domainWidth": 1, "grid": false, "gridColor": "lightgray", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 12, "labelAngle": 0, "tickColor": "black", "tickSize": 4, "tickCount": 3, "titleFont": "Helvetica", "titleFontSize": 14, "titlePadding": 6, "titleAngle": 270}, "legend": {"labelFont": "Helvetica", "labelFontSize": 12, "symbolSize": 75, "titleFont": "Helvetica", "titleFontSize": 14, "padding": 5, "titleLimit": 200, "gradientLength": 75}, "range": {"category": ["#1f4e79", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"], "diverging": ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]}, "view": {"stroke": "transparent"}}, "hconcat": [{"layer": [{"data": {"name": "data-ec9893842f5e29d1cb739cf924fb53fd"}, "mark": {"type": "point", "filled": true, "opacity": 1, "size": 100}, "encoding": {"color": {"field": "mutation", "scale": {"domain": ["WT", "H333Q", "Q492R", "V507I", "Q530F", "S553W", "D555K"], "range": ["black", "#4E79A5", "#F18F3B", "#E0585B", "#77B7B2", "#5AA155", "#EDC958"]}, "title": "Mutant", "type": "nominal"}, "x": {"field": "Ephrin binding_median", "title": "DMS binding Score", "type": "quantitative"}, "y": {"field": "NT50", "scale": {"domain": [0.1, 100], "type": "log"}, "title": "Ephrin-B2-monomeric NT50 (\u03bcg/ml-1)", "type": "quantitative"}}}, {"data": {"name": "data-66fe1bbc7383a2352f1d096e669decce"}, "mark": {"type": "text", "align": "left", "baseline": "top", "dx": 5}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}], "height": 300, "width": 300}, {"layer": [{"data": {"name": "data-70b9f9b997e437756b70e1ca6ef4e0ef"}, "mark": {"type": "point", "filled": true, "opacity": 1, "size": 100}, "encoding": {"color": {"field": "mutation", "scale": {"domain": ["WT", "H333Q", "Q492R", "V507I", "Q530F", "S553W", "D555K"], "range": ["black", "#4E79A5", "#F18F3B", "#E0585B", "#77B7B2", "#5AA155", "#EDC958"]}, "title": "Mutant", "type": "nominal"}, "x": {"field": "Ephrin binding_median", "title": "DMS binding Score", "type": "quantitative"}, "y": {"field": "NT50", "scale": {"domain": [0.1, 100], "type": "log"}, "title": "Ephrin-B3-dimeric NT50 (\u03bcg/ml-1)", "type": "quantitative"}}}, {"data": {"name": "data-85c85006d6b4fe695e6d965c7352f7be"}, "mark": {"type": "text", "align": "left", "baseline": "top", "dx": 5}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}], "height": 300, "width": 300}], "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-ec9893842f5e29d1cb739cf924fb53fd": [{"antibody": "EFNB2-monomeric", "mutation": "H333Q", "measured IC50": 0.09235529, "measured IC90": 0.506719116, "epitope": 1.0, "site": 333.0, "wildtype": "H", "mutant": "Q", "Ephrin binding_mean": 0.08647, "Ephrin binding_median": 0.1096, "Ephrin binding_std": 0.256, "n_models": 4.0, "times_seen": 10.25, "frac_models": 1.0, "LibA-231112-EFNB2-monomeric": 0.2262, "LibA-231222-BA6-CHO-EFNB2-monomeric": -0.2259, "LibB-231108-EFNB2-monomeric": -0.007055, "LibB-231222-BA6-CHO-EFNB2-monomeric": 0.3526, "NT50": 10.827750094228495}, {"antibody": "EFNB2-monomeric", "mutation": "Q492R", "measured IC50": 0.527823473, "measured IC90": 2.0381362, "epitope": 1.0, "site": 492.0, "wildtype": "Q", "mutant": "R", "Ephrin binding_mean": -2.875, "Ephrin binding_median": -2.917, "Ephrin binding_std": 0.613, "n_models": 4.0, "times_seen": 17.75, "frac_models": 1.0, "LibA-231112-EFNB2-monomeric": -3.515, "LibA-231222-BA6-CHO-EFNB2-monomeric": -2.609, "LibB-231108-EFNB2-monomeric": -2.151, "LibB-231222-BA6-CHO-EFNB2-monomeric": -3.225, "NT50": 1.8945728091937284}, {"antibody": "EFNB2-monomeric", "mutation": "V507I", "measured IC50": 0.036940257, "measured IC90": 0.229801192, "epitope": 1.0, "site": 507.0, "wildtype": "V", "mutant": "I", "Ephrin binding_mean": 0.7466, "Ephrin binding_median": 0.8221, "Ephrin binding_std": 0.3366, "n_models": 4.0, "times_seen": 14.0, "frac_models": 1.0, "LibA-231112-EFNB2-monomeric": 0.7564, "LibA-231222-BA6-CHO-EFNB2-monomeric": 0.8879, "LibB-231108-EFNB2-monomeric": 0.2783, "LibB-231222-BA6-CHO-EFNB2-monomeric": 1.064, "NT50": 27.070737488372107}, {"antibody": "EFNB2-monomeric", "mutation": "Q530F", "measured IC50": 1.077382751, "measured IC90": 5.895299686, "epitope": 1.0, "site": 530.0, "wildtype": "Q", "mutant": "F", "Ephrin binding_mean": -3.91, "Ephrin binding_median": -3.945, "Ephrin binding_std": 0.3541, "n_models": 4.0, "times_seen": 5.75, "frac_models": 1.0, "LibA-231112-EFNB2-monomeric": -3.859, "LibA-231222-BA6-CHO-EFNB2-monomeric": -3.453, "LibB-231108-EFNB2-monomeric": -4.03, "LibB-231222-BA6-CHO-EFNB2-monomeric": -4.298, "NT50": 0.9281752460505096}, {"antibody": "EFNB2-monomeric", "mutation": "S553W", "measured IC50": 0.020630113, "measured IC90": 0.100615542, "epitope": 1.0, "site": 553.0, "wildtype": "S", "mutant": "W", "Ephrin binding_mean": 1.969, "Ephrin binding_median": 1.941, "Ephrin binding_std": 0.3013, "n_models": 4.0, "times_seen": 10.0, "frac_models": 1.0, "LibA-231112-EFNB2-monomeric": 2.067, "LibA-231222-BA6-CHO-EFNB2-monomeric": 1.815, "LibB-231108-EFNB2-monomeric": 1.653, "LibB-231222-BA6-CHO-EFNB2-monomeric": 2.342, "NT50": 48.472831922927426}, {"antibody": "EFNB2-monomeric", "mutation": "D555K", "measured IC50": 1.799782947, "measured IC90": 5.528406841, "epitope": 1.0, "site": 555.0, "wildtype": "D", "mutant": "K", "Ephrin binding_mean": -3.319, "Ephrin binding_median": -3.336, "Ephrin binding_std": 0.6486, "n_models": 4.0, "times_seen": 6.75, "frac_models": 1.0, "LibA-231112-EFNB2-monomeric": -3.801, "LibA-231222-BA6-CHO-EFNB2-monomeric": -3.947, "LibB-231108-EFNB2-monomeric": -2.658, "LibB-231222-BA6-CHO-EFNB2-monomeric": -2.872, "NT50": 0.5556225553013866}, {"antibody": "EFNB2-monomeric", "mutation": "WT", "measured IC50": 0.05743931, "measured IC90": 0.402529879, "epitope": null, "site": null, "wildtype": null, "mutant": null, "Ephrin binding_mean": null, "Ephrin binding_median": 0.0, "Ephrin binding_std": null, "n_models": null, "times_seen": null, "frac_models": null, "LibA-231112-EFNB2-monomeric": null, "LibA-231222-BA6-CHO-EFNB2-monomeric": null, "LibB-231108-EFNB2-monomeric": null, "LibB-231222-BA6-CHO-EFNB2-monomeric": null, "NT50": 17.409679886474958}], "data-66fe1bbc7383a2352f1d096e669decce": [{"x": -3.945, "y": 48.472831922927426, "text": "r = 0.89"}], "data-70b9f9b997e437756b70e1ca6ef4e0ef": [{"antibody": "EFNB3-dimeric", "mutation": "H333Q", "measured IC50": 0.088480335, "measured IC90": 0.36666435, "epitope": 1.0, "site": 333.0, "wildtype": "H", "mutant": "Q", "Ephrin binding_mean": 0.0296, "Ephrin binding_median": 0.0296, "Ephrin binding_std": 0.009314, "n_models": 2.0, "times_seen": 10.5, "frac_models": 1.0, "LibA-230825-EFNB3-dimeric": 0.03618, "LibB-230907-EFNB3-dimeric": 0.02301, "NT50": 11.30194635904125}, {"antibody": "EFNB3-dimeric", "mutation": "Q492R", "measured IC50": 0.038991716, "measured IC90": 0.190036862, "epitope": 1.0, "site": 492.0, "wildtype": "Q", "mutant": "R", "Ephrin binding_mean": 0.6505, "Ephrin binding_median": 0.6505, "Ephrin binding_std": 0.0756, "n_models": 2.0, "times_seen": 18.5, "frac_models": 1.0, "LibA-230825-EFNB3-dimeric": 0.704, "LibB-230907-EFNB3-dimeric": 0.5971, "NT50": 25.646473214977252}, {"antibody": "EFNB3-dimeric", "mutation": "V507I", "measured IC50": 0.078610404, "measured IC90": 0.207413499, "epitope": 1.0, "site": 507.0, "wildtype": "V", "mutant": "I", "Ephrin binding_mean": 0.1947, "Ephrin binding_median": 0.1947, "Ephrin binding_std": 0.1053, "n_models": 2.0, "times_seen": 15.0, "frac_models": 1.0, "LibA-230825-EFNB3-dimeric": 0.1202, "LibB-230907-EFNB3-dimeric": 0.2692, "NT50": 12.720962482268888}, {"antibody": "EFNB3-dimeric", "mutation": "Q530F", "measured IC50": 0.029808281, "measured IC90": 0.232682552, "epitope": 1.0, "site": 530.0, "wildtype": "Q", "mutant": "F", "Ephrin binding_mean": 0.04744, "Ephrin binding_median": 0.04744, "Ephrin binding_std": 0.1122, "n_models": 2.0, "times_seen": 5.5, "frac_models": 1.0, "LibA-230825-EFNB3-dimeric": 0.1268, "LibB-230907-EFNB3-dimeric": -0.03192, "NT50": 33.54772454003638}, {"antibody": "EFNB3-dimeric", "mutation": "S553W", "measured IC50": 0.032810343, "measured IC90": 0.177843035, "epitope": 1.0, "site": 553.0, "wildtype": "S", "mutant": "W", "Ephrin binding_mean": 0.981, "Ephrin binding_median": 0.981, "Ephrin binding_std": 0.4143, "n_models": 2.0, "times_seen": 9.5, "frac_models": 1.0, "LibA-230825-EFNB3-dimeric": 0.688, "LibB-230907-EFNB3-dimeric": 1.274, "NT50": 30.478194025585164}, {"antibody": "EFNB3-dimeric", "mutation": "D555K", "measured IC50": 0.178288111, "measured IC90": 1.271605528, "epitope": 1.0, "site": 555.0, "wildtype": "D", "mutant": "K", "Ephrin binding_mean": -1.96, "Ephrin binding_median": -1.96, "Ephrin binding_std": 0.9842, "n_models": 2.0, "times_seen": 5.5, "frac_models": 1.0, "LibA-230825-EFNB3-dimeric": -1.264, "LibB-230907-EFNB3-dimeric": -2.655, "NT50": 5.608898957934441}, {"antibody": "EFNB3-dimeric", "mutation": "WT", "measured IC50": 0.057482627, "measured IC90": 0.258549637, "epitope": null, "site": null, "wildtype": null, "mutant": null, "Ephrin binding_mean": null, "Ephrin binding_median": 0.0, "Ephrin binding_std": null, "n_models": null, "times_seen": null, "frac_models": null, "LibA-230825-EFNB3-dimeric": null, "LibB-230907-EFNB3-dimeric": null, "NT50": 17.396560529497023}], "data-85c85006d6b4fe695e6d965c7352f7be": [{"x": -1.96, "y": 33.54772454003638, "text": "r = 0.69"}]}}, {"mode": "vega-lite"});
+</script>
 </div>
 </div>
 </div>

@@ -105,21 +105,23 @@ rule analyze_nipah_RBP_binding:
 rule analyze_mab_validation_data:
     """Analyze nAH1.3 validation data"""
     input:
-        validation_ic50s_file="data/custom_analyses_data/experimental_data/IC50_antibody_validations.csv",
+        neut="data/custom_analyses_data/experimental_data/nAH1_3_mab_validation_neuts.csv",
         escape_file="results/antibody_escape/averages/nAH1.3_mut_effect.csv",
         nb="notebooks/IC50_validations.ipynb",
         nipah_config="nipah_config.yaml",
         altair_config="data/custom_analyses_data/theme.py",
     output:
         nb="results/notebooks/mab_validation.ipynb",
+        nah1_validation_neut_curves="results/images/nah1_validation_neut_curves.html",
         IC50_validation_plot="results/images/IC50_validation_plot.html"
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
-                "validation_ic50s_file": input.validation_ic50s_file,
+                "neut": input.neut,
                 "escape_file": input.escape_file,
+                "nah1_validation_neut_curves": output.nah1_validation_neut_curves,
                 "IC50_validation_plot": output.IC50_validation_plot,
             }
         ),
@@ -167,8 +169,8 @@ rule cell_entry_validations:
 rule ephrin_neuts:
     """Analyze ephrin neut validations"""
     input:
-        ephrin_binding_neuts_file="data/custom_analyses_data/experimental_data/231109_ephrin_neuts.csv",
-        ephrin_validation_curves="data/custom_analyses_data/experimental_data/231208_affinity_validations.csv",
+        ephrin_binding_neuts_file="data/custom_analyses_data/experimental_data/bat_ephrin_neuts.csv",
+        ephrin_validation_curves="data/custom_analyses_data/experimental_data/binding_single_mutant_validations.csv",
         validation_ic50s_file="data/custom_analyses_data/experimental_data/receptor_IC_validations.csv",
         e2_monomeric_binding_file="results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv",
         e3_dimeric_binding_file="results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv",
@@ -245,7 +247,7 @@ rule lib_lib_correlations:
 rule ephrin_alignment:
     """Plot alignment of bat and human ephrin-b2 and -b3"""
     input:
-        ephrin_alignment_file="data/custom_analyses_data/alignments/E2_E3_sequences.fasta",
+        ephrin_alignment_file="data/custom_analyses_data/alignments/ephrin_E2_E3_sequences.fasta",
         nb="notebooks/ephrin_alignment.ipynb",
     output:
         nb="results/notebooks/ephrin_alignment.ipynb",
@@ -275,7 +277,7 @@ rule henipavirus_entropy:
         e2_entry="results/func_effects/averages/CHO_EFNB2_low_func_effects.csv",
         e3_binding="results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv",
         e3_entry="results/func_effects/averages/CHO_EFNB3_low_func_effects.csv",
-        nipah_alignment="data/custom_analyses_data/alignments/Nipah_RBP_alignment_240111.fasta",
+        nipah_alignment="data/custom_analyses_data/alignments/Nipah_RBP_AA_align.fasta",
     output:
         nb="results/notebooks/henipavirus_conservation.ipynb",
         entropy_output="results/entropy/entropy.csv",
@@ -379,7 +381,7 @@ rule analyze_mab_neuts:
     input:
         nb="notebooks/mab_neut_ic50.ipynb",
         altair_config="data/custom_analyses_data/theme.py",
-        mab_neuts="data/custom_analyses_data/experimental_data/231220_mAb_all_redo.csv",
+        mab_neuts="data/custom_analyses_data/experimental_data/NiV_neut_all_mabs.csv",
     output:
         nb="results/notebooks/mab_neut_ic50.ipynb",
         mab_neuts_plot="results/images/mab_neuts_plot.html",
@@ -566,7 +568,8 @@ docs["Additional files and charts"] = {
         "Neutralization Curves For All Six mAbs Notebook": rules.analyze_mab_neuts.output.nb,
         "Neutralization Curves Plot": rules.analyze_mab_neuts.output.mab_neuts_plot,
         "Antibody validation notebook": rules.analyze_mab_validation_data.output.nb,
-        "Antibody validation plot (IC50 vs DMS)": rules.analyze_mab_validation_data.output.IC50_validation_plot,
+        "Antibody validation neut curves": rules.analyze_mab_validation_data.output.nah1_validation_neut_curves,
+        "Antibody validation correlation plot (IC50 vs DMS)": rules.analyze_mab_validation_data.output.IC50_validation_plot,
         "Interactive Plots of Escape Data": {
             "Top Escape Mutants Versus Entry": rules.analyze_escape_data.output.escape_bubble_plot,
             "Top Escape Mutants Versus Entry-One Mutation Away": rules.analyze_escape_data.output.bubble_1_mut_plot,
