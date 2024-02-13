@@ -75,6 +75,8 @@ rule analyze_nipah_RBP_binding:
         binding_by_site_plot="results/images/binding_by_site_plot.html",
         entry_binding_corr_heatmap="results/images/entry_binding_corr_heatmap.html",
         binding_corr_heatmap="results/images/binding_corr_heatmap.html",
+        binding_region_boxplot_plot="results/images/binding_region_boxplot_plot.html",
+        binding_region_bubble_plot="results/images/binding_region_bubble_plot.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -98,6 +100,8 @@ rule analyze_nipah_RBP_binding:
                 "binding_by_site_plot": output.binding_by_site_plot,
                 "entry_binding_corr_heatmap": output.entry_binding_corr_heatmap,
                 "binding_corr_heatmap": output.binding_corr_heatmap,
+                "binding_region_boxplot_plot": output.binding_region_boxplot_plot,
+                "binding_region_bubble_plot": output.binding_region_bubble_plot,
             }
         ),
     log:
@@ -193,6 +197,9 @@ rule ephrin_neuts:
         e3_curve_plot="results/images/ephrinB3_neut_curve.html",
         e2_corr_plot="results/images/e2_corr_plot.html",
         e3_corr_plot="results/images/e3_corr_plot.html",
+        EFNB2_neut_corr="results/images/EFNB2_neut_corr.html",
+        EFNB3_neut_corr="results/images/EFNB3_neut_corr.html",
+
 
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -209,6 +216,8 @@ rule ephrin_neuts:
                 "e3_curve_plot": output.e3_curve_plot,
                 "e2_corr_plot": output.e2_corr_plot,
                 "e3_corr_plot": output.e3_corr_plot,
+                "EFNB2_neut_corr": output.EFNB2_neut_corr,
+                "EFNB3_neut_corr": output.EFNB3_neut_corr,
             }
         ),
     log:
@@ -619,6 +628,8 @@ docs["Additional files and charts"] = {
         },
         
         "Interactive Plot of Median Binding by Site": rules.analyze_nipah_RBP_binding.output.binding_by_site_plot,
+        "Boxplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_boxplot_plot,
+        "Bubbleplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_bubble_plot,
         "Ephrin neutralization notebook": rules.ephrin_neuts.output.nb,
         "Ephrin neutralization curve plot": rules.ephrin_neuts.output.ephrin_curve_plot,
         "Ephrin Binding Validation Neut Curves Plots": {
@@ -628,6 +639,10 @@ docs["Additional files and charts"] = {
         "Ephrin Binding Validation Correlation Plots": {
             "EphrinB2-monomeric neutralization correlation plot": rules.ephrin_neuts.output.e2_corr_plot,
             "EphrinB3-dimeric neutralization correlation plot": rules.ephrin_neuts.output.e3_corr_plot,
+        },
+        "Combined Neut and Correlation Neut Curves": {
+            "EFNB2_neut_corr": rules.ephrin_neuts.output.EFNB2_neut_corr,
+            "EFNB3_neut_corr": rules.ephrin_neuts.output.EFNB3_neut_corr,
         },
     },
     "Antibody Escape": {
