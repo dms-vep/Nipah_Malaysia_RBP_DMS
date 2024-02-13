@@ -19,11 +19,7 @@ rule analyze_nipah_RBP_entry:
         nb="results/notebooks/nipah_RBP_entry_analysis.ipynb",
         filtered_E2_data="results/filtered_data/E2_entry_filtered.csv",
         filtered_E3_data="results/filtered_data/E3_entry_filtered.csv",
-        E2_entry_heatmap="results/images/E2_entry_heatmap.html",
-        E3_entry_heatmap="results/images/E3_entry_heatmap.html",
         contact_type_plot='results/images/contact_type_plot.html',
-        combined_entry_contact_heatmaps="results/images/combined_entry_contact_heatmaps.html",
-        entry_heatmap_by_wt_aa_property="results/images/entry_heatmap_by_wt_aa_property.html",
         E2_E3_entry_corr_plot="results/images/E2_E3_entry_corr_plot.html",
         E2_E3_entry_all_muts_plot="results/images/E2_E3_entry_all_muts_plot.html",
         combined_E2_E3_correlation_plots="results/images/combined_E2_E3_correlation_plots.html",
@@ -37,10 +33,6 @@ rule analyze_nipah_RBP_entry:
                 "contact_type_plot": output.contact_type_plot,
                 "filtered_E2_data": output.filtered_E2_data,
                 "filtered_E3_data": output.filtered_E3_data,
-                "E2_entry_heatmap": output.E2_entry_heatmap,
-                "E3_entry_heatmap": output.E3_entry_heatmap,
-                "combined_entry_contact_heatmaps": output.combined_entry_contact_heatmaps,
-                "entry_heatmap_by_wt_aa_property": output.entry_heatmap_by_wt_aa_property,
                 "E2_E3_entry_corr_plot": output.E2_E3_entry_corr_plot,
                 "E2_E3_entry_all_muts_plot": output.E2_E3_entry_all_muts_plot,
                 "combined_E2_E3_correlation_plots": output.combined_E2_E3_correlation_plots,
@@ -73,34 +65,39 @@ rule analyze_nipah_RBP_binding:
         nb="results/notebooks/ephrin_binding.ipynb",
         filtered_E2_binding_data="results/filtered_data/E2_binding_filtered.csv",
         filtered_E3_binding_data="results/filtered_data/E3_binding_filtered.csv",
+        filtered_E2_binding_low_effect="results/filtered_data/E2_binding_low_effect_filter.csv",
+        filtered_E3_binding_low_effect="results/filtered_data/E3_binding_low_effect_filter.csv",
         entry_binding_combined_corr_plot="results/images/entry_binding_combined_corr_plot.html",
         entry_binding_combined_corr_plot_agg="results/images/entry_binding_combined_corr_plot_agg.html",
-        E2_binding_heatmap="results/images/E2_binding_heatmap.html",
-        E3_binding_heatmap="results/images/E3_binding_heatmap.html",
         E2_E3_correlation="results/images/E2_E3_correlation.html",
         E2_E3_correlation_site="results/images/E2_E3_correlation_site.html",
         combined_E2_E3_site_corr="results/images/combined_E2_E3_site_corr.html",
         binding_by_site_plot="results/images/binding_by_site_plot.html",
+        entry_binding_corr_heatmap="results/images/entry_binding_corr_heatmap.html",
+        binding_corr_heatmap="results/images/binding_corr_heatmap.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
+                "nipah_config": input.nipah_config,
+                "altair_config": input.altair_config,
+                "entropy_file": input.entropy_file,
                 "func_scores_E2_file": input.func_scores_E2_file,
                 "binding_E2_file": input.binding_E2_file,
                 "func_scores_E3_file": input.func_scores_E3_file,
                 "binding_E3_file": input.binding_E3_file,
+                
                 "filtered_E2_binding_data": output.filtered_E2_binding_data,
                 "filtered_E3_binding_data": output.filtered_E3_binding_data,
+                "filtered_E2_binding_low_effect": output.filtered_E2_binding_low_effect,
+                "filtered_E3_binding_low_effect": output.filtered_E3_binding_low_effect,
                 "entry_binding_combined_corr_plot": output.entry_binding_combined_corr_plot,
                 "entry_binding_combined_corr_plot_agg": output.entry_binding_combined_corr_plot_agg,
-                "E2_binding_heatmap": output.E2_binding_heatmap,
-                "E3_binding_heatmap": output.E3_binding_heatmap,
-                "nipah_config": input.nipah_config,
-                "altair_config": input.altair_config,
                 "E2_E3_correlation": output.E2_E3_correlation,
                 "E2_E3_correlation_site": output.E2_E3_correlation_site,
                 "combined_E2_E3_site_corr": output.combined_E2_E3_site_corr,
-                "entropy_file": input.entropy_file,
                 "binding_by_site_plot": output.binding_by_site_plot,
+                "entry_binding_corr_heatmap": output.entry_binding_corr_heatmap,
+                "binding_corr_heatmap": output.binding_corr_heatmap,
             }
         ),
     log:
@@ -521,16 +518,65 @@ rule analyze_escape_data:
     shell:
         "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
+rule make_heatmaps:
+    """Make Entry and Binding heatmaps"""
+    input:
+        nb="notebooks/plot_heatmaps.ipynb",
+        nipah_config="nipah_config.yaml",
+        altair_config="data/custom_analyses_data/theme.py",
+        entropy_file="results/entropy/entropy.csv",
+        func_scores_E2_file="results/filtered_data/E2_entry_filtered.csv",
+        func_scores_E3_file="results/filtered_data/E3_entry_filtered.csv",
+        binding_E2_file="results/filtered_data/E2_binding_filtered.csv",
+        binding_E3_file="results/filtered_data/E3_binding_filtered.csv",
+        e2_low_func_file="results/filtered_data/E2_binding_low_effect_filter.csv",
+        e3_low_func_file="results/filtered_data/E3_binding_low_effect_filter.csv",
+        
+    output:
+        nb="results/notebooks/plot_heatmaps.ipynb",
+        E2_binding_heatmap="results/images/E2_binding_heatmap.html",
+        E3_binding_heatmap="results/images/E3_binding_heatmap.html",
+        E2_entry_heatmap="results/images/E2_entry_heatmap.html",
+        E3_entry_heatmap="results/images/E3_entry_heatmap.html",
+        combined_entry_contact_heatmaps="results/images/combined_entry_contact_heatmaps.html",
+        combined_contact_binding_plot="results/images/combined_contact_binding_plot.html",
+        
+    params:
+        yaml=lambda _, input, output: yaml.round_trip_dump(
+            {
+                "nipah_config": input.nipah_config,
+                "altair_config": input.altair_config,
+                "entropy_file": input.entropy_file,
+                "func_scores_E2_file": input.func_scores_E2_file,
+                "func_scores_E3_file": input.func_scores_E3_file,
+                "binding_E2_file": input.binding_E2_file,
+                "binding_E3_file": input.binding_E3_file,
+                "e2_low_func_file": input.e2_low_func_file,
+                "e3_low_func_file": input.e3_low_func_file,
+                "E2_binding_heatmap": output.E2_binding_heatmap,
+                "E3_binding_heatmap": output.E3_binding_heatmap,
+                "E2_entry_heatmap": output.E2_entry_heatmap,
+                "E3_entry_heatmap": output.E3_entry_heatmap,
+                "combined_entry_contact_heatmaps": output.combined_entry_contact_heatmaps,
+                "combined_contact_binding_plot": output.combined_contact_binding_plot,
+                
+            }
+        ),
+    log:
+        log="results/logs/make_heatmaps.txt",
+    conda:
+        "environment.yml",
+    shell:
+        "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
 docs["Additional files and charts"] = {
     "Cell Entry": {
         "Cell Entry Analysis Notebook": rules.analyze_nipah_RBP_entry.output.nb,
         "Interactive Plot of Entry Scores for Contact Sites": rules.analyze_nipah_RBP_entry.output.contact_type_plot,
         "Entry Heatmaps": {
-            "EFNB2 Entry Heatmap": rules.analyze_nipah_RBP_entry.output.E2_entry_heatmap,
-            "EFNB3 Entry Heatmap": rules.analyze_nipah_RBP_entry.output.E3_entry_heatmap,
-            "EFNB2 and EFNB3 Entry Heatmaps for Contact Sites": rules.analyze_nipah_RBP_entry.output.combined_entry_contact_heatmaps,
-            "EFNB2 Entry Heatmap by Wildtype Amino Acid Property": rules.analyze_nipah_RBP_entry.output.entry_heatmap_by_wt_aa_property,
+            "EFNB2 Entry Heatmap": rules.make_heatmaps.output.E2_entry_heatmap,
+            "EFNB3 Entry Heatmap": rules.make_heatmaps.output.E3_entry_heatmap,
+            "EFNB2 and EFNB3 Entry Heatmaps for Contact Sites": rules.make_heatmaps.output.combined_entry_contact_heatmaps,
         },
         "Plots of Entry Scores by RBP Region": rules.analyze_nipah_RBP_entry.output.entry_region_boxplot_plot,
         "Interactive Plots of Entry Score Correlations": {
@@ -554,10 +600,12 @@ docs["Additional files and charts"] = {
         "Binding vs Entry Plots": {
             "Binding vs Entry for all mutants": rules.analyze_nipah_RBP_binding.output.entry_binding_combined_corr_plot,
             "Aggregated Binding vs Entry": rules.analyze_nipah_RBP_binding.output.entry_binding_combined_corr_plot_agg,
+            "Binding vs Entry Heatmap": rules.analyze_nipah_RBP_binding.output.entry_binding_corr_heatmap,
         },
         "Ephrin Binding Heatmaps": {
-            "EFNB2 Binding Heatmap": rules.analyze_nipah_RBP_binding.output.E2_binding_heatmap,
-            "EFNB3 Binding Heatmap": rules.analyze_nipah_RBP_binding.output.E3_binding_heatmap,
+            "EFNB2 Binding Heatmap": rules.make_heatmaps.output.E2_binding_heatmap,
+            "EFNB3 Binding Heatmap": rules.make_heatmaps.output.E3_binding_heatmap,
+            "Contact Sites Binding Heatmap": rules.make_heatmaps.output.combined_contact_binding_plot,
         },
         "Filtered Binding CSVs": {
             "Filtered EFNB2 Binding CSV": rules.analyze_nipah_RBP_binding.output.filtered_E2_binding_data,
@@ -567,6 +615,7 @@ docs["Additional files and charts"] = {
             "Interactive Plot of EFNB2 and EFNB3 Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation,
             "Interactive Plot of EFNB2 and EFNB3 Site Level Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation_site,
             "Combined plot of EFNB2 and EFNB3 binding correlations": rules.analyze_nipah_RBP_binding.output.combined_E2_E3_site_corr,
+            "E2 and E3 binding correlations heatmap": rules.analyze_nipah_RBP_binding.output.binding_corr_heatmap,
         },
         
         "Interactive Plot of Median Binding by Site": rules.analyze_nipah_RBP_binding.output.binding_by_site_plot,

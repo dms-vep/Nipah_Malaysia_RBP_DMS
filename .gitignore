@@ -9,6 +9,20 @@ _*
 results/*
 
 notebooks/*
+!notebooks/analyze_escape_data.ipynb
+!notebooks/plot_heatmaps.ipynb
+!notebooks/henipavirus_conservation.ipynb
+!notebooks/nipah_RBP_entry_analsysis.ipynb
+!notebooks/ephrin_binding.ipynb
+!notebooks/library_correlations.ipynb
+!notebooks/ephrin_neut_curves.ipynb
+!notebooks/cell_entry_validations.ipynb
+!notebooks/receptor_distance.ipynb
+!notebooks/IC50_validations.ipynb
+!notebooks/escape_filter_logo.ipynb
+!notebooks/henipavirus_RBP_alignment.ipynb
+!notebooks/mab_neut_ic50.ipynb
+!notebooks/README.md
 
 !results/gene_sequence
 results/gene_sequence/*
