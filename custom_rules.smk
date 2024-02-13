@@ -14,6 +14,7 @@ rule analyze_nipah_RBP_entry:
         altair_config="data/custom_analyses_data/theme.py",
         entropy_file="results/entropy/entropy.csv",
         e2_distances_file="results/distances/2vsm_distances.csv",
+        surface="data/custom_analyses_data/surface_exposure.csv",
     output:
         nb="results/notebooks/nipah_RBP_entry_analysis.ipynb",
         filtered_E2_data="results/filtered_data/E2_entry_filtered.csv",
@@ -21,12 +22,12 @@ rule analyze_nipah_RBP_entry:
         E2_entry_heatmap="results/images/E2_entry_heatmap.html",
         E3_entry_heatmap="results/images/E3_entry_heatmap.html",
         contact_type_plot='results/images/contact_type_plot.html',
+        combined_entry_contact_heatmaps="results/images/combined_entry_contact_heatmaps.html",
+        entry_heatmap_by_wt_aa_property="results/images/entry_heatmap_by_wt_aa_property.html",
         E2_E3_entry_corr_plot="results/images/E2_E3_entry_corr_plot.html",
         E2_E3_entry_all_muts_plot="results/images/E2_E3_entry_all_muts_plot.html",
         combined_E2_E3_correlation_plots="results/images/combined_E2_E3_correlation_plots.html",
-        entry_boxplot_E2_plot="results/images/E2_entry_boxplot.html",
-        entry_boxplot_E3_plot="results/images/E3_entry_boxplot.html",
-        combined_entry_boxplots="results/images/combined_entry_boxplots.html",
+        entry_region_boxplot_plot="results/images/entry_region_boxplot_plot.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -38,15 +39,16 @@ rule analyze_nipah_RBP_entry:
                 "filtered_E3_data": output.filtered_E3_data,
                 "E2_entry_heatmap": output.E2_entry_heatmap,
                 "E3_entry_heatmap": output.E3_entry_heatmap,
+                "combined_entry_contact_heatmaps": output.combined_entry_contact_heatmaps,
+                "entry_heatmap_by_wt_aa_property": output.entry_heatmap_by_wt_aa_property,
                 "E2_E3_entry_corr_plot": output.E2_E3_entry_corr_plot,
                 "E2_E3_entry_all_muts_plot": output.E2_E3_entry_all_muts_plot,
                 "combined_E2_E3_correlation_plots": output.combined_E2_E3_correlation_plots,
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
                 "entropy_file": input.entropy_file,
-                "entry_boxplot_E2_plot": output.entry_boxplot_E2_plot,
-                "entry_boxplot_E3_plot": output.entry_boxplot_E3_plot,
-                "combined_entry_boxplots": output.combined_entry_boxplots,
+                "entry_region_boxplot_plot": output.entry_region_boxplot_plot,
+                "surface": input.surface,
             }
         ),
     log:
@@ -477,6 +479,7 @@ rule analyze_escape_data:
         HENV32_filter="results/filtered_data/HENV32_escape_filtered.csv",
         m102_filter="results/filtered_data/m102_escape_filtered.csv",
         nAH1_filter="results/filtered_data/nAH1_escape_filtered.csv",
+        binding_data="results/filtered_data/E2_binding_filtered.csv",
     output:
         nb="results/notebooks/analyze_escape_data.ipynb",
         escape_bubble_plot="results/images/escape_bubble_plot.html",
@@ -499,6 +502,7 @@ rule analyze_escape_data:
                 "HENV32_filter": input.HENV32_filter,
                 "m102_filter": input.m102_filter,
                 "nAH1_filter": input.nAH1_filter,
+                "binding_data": input.binding_data,
                 "escape_bubble_plot": output.escape_bubble_plot,
                 "bubble_1_mut_plot": output.bubble_1_mut_plot,
                 "overlap_escape_plot": output.overlap_escape_plot,
@@ -525,12 +529,10 @@ docs["Additional files and charts"] = {
         "Entry Heatmaps": {
             "EFNB2 Entry Heatmap": rules.analyze_nipah_RBP_entry.output.E2_entry_heatmap,
             "EFNB3 Entry Heatmap": rules.analyze_nipah_RBP_entry.output.E3_entry_heatmap,
+            "EFNB2 and EFNB3 Entry Heatmaps for Contact Sites": rules.analyze_nipah_RBP_entry.output.combined_entry_contact_heatmaps,
+            "EFNB2 Entry Heatmap by Wildtype Amino Acid Property": rules.analyze_nipah_RBP_entry.output.entry_heatmap_by_wt_aa_property,
         },
-        "Plots of Entry Scores by RBP Region": {
-            "EFNB2 Entry by Region": rules.analyze_nipah_RBP_entry.output.entry_boxplot_E2_plot,
-            "EFNB3 Entry by Region": rules.analyze_nipah_RBP_entry.output.entry_boxplot_E3_plot,
-            "Combined Boxplot of Entry by Region": rules.analyze_nipah_RBP_entry.output.combined_entry_boxplots,
-        },
+        "Plots of Entry Scores by RBP Region": rules.analyze_nipah_RBP_entry.output.entry_region_boxplot_plot,
         "Interactive Plots of Entry Score Correlations": {
             "Aggregate CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_corr_plot,
             "All Mutant CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_all_muts_plot,

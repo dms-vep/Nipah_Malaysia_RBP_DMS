@@ -14,7 +14,7 @@ func_std_cutoff: 1
 ### Binding filtering parameters
 min_times_seen_binding: 2
 max_binding_std: 2
-min_func_effect_for_binding: -1.5
+min_func_effect_for_binding: -2
 
 ### Antibody escape filtering parameters
 min_times_seen_ab: 2
@@ -25,7 +25,8 @@ max_quantile: 0.97
 min_escape_cutoff: 0.3
 min_func_effect_for_ab: -2
 
-
-
-surface: data/custom_analyses_data/surface_exposure.csv
-#entropy: data/custom_analyses_data/entropy.csv
+### Heatmap parameters
+effect_color: 'redblue'
+entropy_color: 'purples'
+strokewidth_size: 0.25 #strokesize around boxes
+background_color: "#d1d3d4" #color for cells without observations

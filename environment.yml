@@ -22,12 +22,15 @@ dependencies:
   - matplotlib=3.8
   - minimap2=2.26
   - nbstripout
+  - nbsphinx
   - nbqa
   - openpyxl
   - pandas=2.0
   - papermill=2.4
+  - pandoc
   - pip
   - plotnine=0.12
+  - pydata-sphinx-theme
   - python=3.11
   - ruamel.yaml=0.17
   - ruff
