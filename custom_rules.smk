@@ -24,6 +24,7 @@ rule analyze_nipah_RBP_entry:
         E2_E3_entry_all_muts_plot="results/images/E2_E3_entry_all_muts_plot.html",
         combined_E2_E3_correlation_plots="results/images/combined_E2_E3_correlation_plots.html",
         entry_region_boxplot_plot="results/images/entry_region_boxplot_plot.html",
+
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -77,6 +78,8 @@ rule analyze_nipah_RBP_binding:
         binding_corr_heatmap="results/images/binding_corr_heatmap.html",
         binding_region_boxplot_plot="results/images/binding_region_boxplot_plot.html",
         binding_region_bubble_plot="results/images/binding_region_bubble_plot.html",
+        max_binding_in_contact="results/images/max_binding_in_contact.html",
+        max_binding_in_stalk="results/images/max_binding_in_stalk.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -102,6 +105,8 @@ rule analyze_nipah_RBP_binding:
                 "binding_corr_heatmap": output.binding_corr_heatmap,
                 "binding_region_boxplot_plot": output.binding_region_boxplot_plot,
                 "binding_region_bubble_plot": output.binding_region_bubble_plot,
+                "max_binding_in_contact": output.max_binding_in_contact,
+                "max_binding_in_stalk": output.max_binding_in_stalk,
             }
         ),
     log:
@@ -578,6 +583,56 @@ rule make_heatmaps:
     shell:
         "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
+rule make_interactive_figures:
+    """Make Interactive Figures"""
+    input:
+        nb="notebooks/interactive_figures.ipynb",
+        nipah_config="nipah_config.yaml",
+        altair_config="data/custom_analyses_data/theme.py",
+        func_scores_E2_file="results/filtered_data/E2_entry_filtered.csv",
+        func_scores_E3_file="results/filtered_data/E3_entry_filtered.csv",
+        binding_E2_file="results/filtered_data/E2_binding_filtered.csv",
+        binding_E3_file="results/filtered_data/E3_binding_filtered.csv",
+        e2_low_func_file="results/filtered_data/E2_binding_low_effect_filter.csv",
+        e3_low_func_file="results/filtered_data/E3_binding_low_effect_filter.csv",
+        HENV103_filter="results/filtered_data/HENV103_escape_filtered.csv",
+        HENV117_filter="results/filtered_data/HENV117_escape_filtered.csv",
+        HENV26_filter="results/filtered_data/HENV26_escape_filtered.csv",
+        HENV32_filter="results/filtered_data/HENV32_escape_filtered.csv",
+        m102_filter="results/filtered_data/m102_escape_filtered.csv",
+        nAH1_filter="results/filtered_data/nAH1_escape_filtered.csv",
+    output:
+        nb="results/notebooks/interactive_figures.ipynb",
+        effect_binding_escape="results/images/effect_binding_escape.html",
+        
+    params:
+        yaml=lambda _, input, output: yaml.round_trip_dump(
+            {
+                "nipah_config": input.nipah_config,
+                "altair_config": input.altair_config,
+                "func_scores_E2_file": input.func_scores_E2_file,
+                "func_scores_E3_file": input.func_scores_E3_file,
+                "binding_E2_file": input.binding_E2_file,
+                "binding_E3_file": input.binding_E3_file,
+                "e2_low_func_file": input.e2_low_func_file,
+                "e3_low_func_file": input.e3_low_func_file,
+                "HENV103_filter": input.HENV103_filter,
+                "HENV117_filter": input.HENV117_filter,
+                "HENV26_filter": input.HENV26_filter,
+                "HENV32_filter": input.HENV32_filter,
+                "m102_filter": input.m102_filter,
+                "nAH1_filter": input.nAH1_filter,
+                "effect_binding_escape": output.effect_binding_escape,
+                
+            }
+        ),
+    log:
+        log="results/logs/interactive_figures.txt",
+    conda:
+        "environment.yml",
+    shell:
+        "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
+
 docs["Additional files and charts"] = {
     "Cell Entry": {
         "Cell Entry Analysis Notebook": rules.analyze_nipah_RBP_entry.output.nb,
@@ -630,6 +685,8 @@ docs["Additional files and charts"] = {
         "Interactive Plot of Median Binding by Site": rules.analyze_nipah_RBP_binding.output.binding_by_site_plot,
         "Boxplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_boxplot_plot,
         "Bubbleplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_bubble_plot,
+        "Max Binding Scores in Contact Site": rules.analyze_nipah_RBP_binding.output.max_binding_in_contact,
+        "Max Binding Scores in Stalk": rules.analyze_nipah_RBP_binding.output.max_binding_in_stalk,
         "Ephrin neutralization notebook": rules.ephrin_neuts.output.nb,
         "Ephrin neutralization curve plot": rules.ephrin_neuts.output.ephrin_curve_plot,
         "Ephrin Binding Validation Neut Curves Plots": {
@@ -696,5 +753,8 @@ docs["Additional files and charts"] = {
         "Notebook for mapping filtered scores onto crystal structures": rules.make_files_for_mapping_structure.output.nb,
         "Nipah polymorphic sites cell entry plot": rules.henipavirus_entropy.output.entry_scores_niv_poly,
         "Nipah polymorphic sites binding plot": rules.henipavirus_entropy.output.binding_scores_niv_poly,
+    },
+    "Interactive Figures": {
+        "Binding and Escape and Cell Entry": rules.make_interactive_figures.output.effect_binding_escape,
     },
 }
