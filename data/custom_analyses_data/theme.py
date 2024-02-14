@@ -83,7 +83,7 @@ def brendan_theme():
             	"filled": True,
             	"size": 25,
             	"opacity": 1,
-            	"color": "black",
+            	"color": "black"
             },
             "boxplot": {
             	"extent": "min-max",
