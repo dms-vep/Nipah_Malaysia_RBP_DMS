@@ -30,3 +30,18 @@ effect_color: 'redblue'
 entropy_color: 'purples'
 strokewidth_size: 0.25 #strokesize around boxes
 background_color: "#d1d3d4" #color for cells without observations
+
+### General Figure properties
+width: 200
+height: 200
+
+neut_curve_width: 300
+neut_curve_height: 200
+
+bubble_width: 300
+bubble_height: 250
+
+large_line_width: 800
+large_line_height: 100
+
+#.properties(width=config['width'],height=config['height'])

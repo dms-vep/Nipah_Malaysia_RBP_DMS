@@ -404,6 +404,7 @@ rule analyze_mab_neuts:
     input:
         nb="notebooks/mab_neut_ic50.ipynb",
         altair_config="data/custom_analyses_data/theme.py",
+        nipah_config="nipah_config.yaml",
         mab_neuts="data/custom_analyses_data/experimental_data/NiV_neut_all_mabs.csv",
     output:
         nb="results/notebooks/mab_neut_ic50.ipynb",
@@ -412,6 +413,7 @@ rule analyze_mab_neuts:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
                 "altair_config": input.altair_config,
+                "nipah_config": input.nipah_config,
                 "mab_neuts": input.mab_neuts,
                 "mab_neuts_plot": output.mab_neuts_plot,
             }
@@ -459,6 +461,21 @@ rule filter_mabs_make_logo:
         nAH1_file="results/antibody_escape/averages/nAH1.3_mut_effect.csv",
     output:
         nb="results/notebooks/escape_filter_logo.ipynb",
+        
+        HENV103_logo_path="results/images/logo_plots/HENV103_logo.svg",
+        HENV117_logo_path="results/images/logo_plots/HENV117_logo.svg",
+        HENV26_logo_path="results/images/logo_plots/HENV26_logo.svg",
+        HENV32_logo_path="results/images/logo_plots/HENV32_logo.svg",
+        m102_logo_path="results/images/logo_plots/m102_logo.svg",
+        nAH1_logo_path="results/images/logo_plots/nAH1_logo.svg",
+        
+        HENV103_filtered_path="results/filtered_data/HENV103_escape_filtered.csv",
+        HENV117_filtered_path="results/filtered_data/HENV117_escape_filtered.csv",
+        HENV26_filtered_path="results/filtered_data/HENV26_escape_filtered.csv",
+        m102_filtered_path="results/filtered_data/m102_escape_filtered.csv",
+        HENV32_filtered_path="results/filtered_data/HENV32_escape_filtered.csv",
+        nAH1_filtered_path="results/filtered_data/nAH1_escape_filtered.csv",
+
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -469,6 +486,18 @@ rule filter_mabs_make_logo:
                 "HENV32_file": input.HENV32_file,
                 "m102_file": input.m102_file,
                 "nAH1_file": input.nAH1_file,
+                "HENV103_logo_path": output.HENV103_logo_path,
+                "HENV117_logo_path": output.HENV117_logo_path,
+                "HENV26_logo_path": output.HENV26_logo_path,
+                "HENV32_logo_path": output.HENV32_logo_path,
+                "m102_logo_path": output.m102_logo_path,
+                "nAH1_logo_path": output.nAH1_logo_path,
+                "HENV103_filtered_path": output.HENV103_filtered_path,
+                "HENV117_filtered_path": output.HENV117_filtered_path,
+                "HENV26_filtered_path": output.HENV26_filtered_path,
+                "HENV32_filtered_path": output.HENV32_filtered_path,
+                "m102_filtered_path": output.m102_filtered_path,
+                "nAH1_filtered_path": output.nAH1_filtered_path,
             }
         ),
     log:

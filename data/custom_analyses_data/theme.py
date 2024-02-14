@@ -11,19 +11,21 @@ def brendan_theme():
     sequential_palette = ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]
 
     # Axes
-    axisColor = "black"
-    gridColor = "lightgray"
+    axisColor = "#000000"
+    gridColor = "#DEDDDD"
     
     return {
+        "width": 200,
+        "height": 200,
         "config": {
             "background": "transparent",
             "title": {
-                "fontSize": 22,
+                "fontSize": 18,
                 "font": font,
                 "anchor": "start",
                 "color": "#000000",
                 "orient": 'top',
-                "offset": 10,
+                "offset": 0,
             },
             "axisX": {
                 "domain": True,
@@ -36,11 +38,11 @@ def brendan_theme():
                 "labelFontSize": 12,
                 "labelAngle": 0,
                 "tickColor": axisColor,
-                "tickSize": 4,
+                "tickSize": 5,
                 "titleFont": font,
                 "tickCount": 3,
-                "titleFontSize": 14,
-                "titlePadding": 6,
+                "titleFontSize": 12,
+                "titlePadding": 10,
             },
             "axisY": {
                 "domain": True,
@@ -53,22 +55,22 @@ def brendan_theme():
                 "labelFontSize": 12,
                 "labelAngle": 0,
                 "tickColor": axisColor,
-                "tickSize": 4,
+                "tickSize": 5,
                 "tickCount": 3,
                 "titleFont": font,
-                "titleFontSize":14,
-                "titlePadding": 6,
+                "titleFontSize":12,
+                "titlePadding": 10,
                 "titleAngle": 270,
             },
             "legend": {
                 "labelFont": labelFont,
                 "labelFontSize": 12,
-                "symbolSize": 75,
+                "symbolSize": 100,
                 "titleFont": font,
-                "titleFontSize": 14,
+                "titleFontSize": 12,
                 "padding": 5,
                 "titleLimit": 200,
-                "gradientLength": 75,
+                "gradientLength": 100,
             },
             "range": {
                 "category": main_palette,
@@ -76,6 +78,16 @@ def brendan_theme():
             },
             "view": {
                 "stroke": "transparent", # Remove the border around the visualization
+            },
+            "point": {
+            	"filled": True,
+            	"size": 25,
+            	"opacity": 1,
+            	"color": "black",
+            },
+            "boxplot": {
+            	"extent": "min-max",
+            	
             }
         }
     }
