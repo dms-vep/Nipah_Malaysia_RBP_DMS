@@ -12,17 +12,17 @@ func_times_seen_cutoff: 2
 func_std_cutoff: 1
 
 ### Binding filtering parameters
-min_times_seen_binding: 2
-max_binding_std: 2
+min_times_seen_binding: 2.25
+max_binding_std: 3
 min_func_effect_for_binding: -2
 
 ### Antibody escape filtering parameters
-min_times_seen_ab: 2
-max_ab_std: 2
+min_times_seen_ab: 2.25
+max_ab_std: 3
 frac_models: 0.75
-sum_quantile: 0.97
-max_quantile: 0.97
-min_escape_cutoff: 0.3
+sum_quantile: 0.98
+max_quantile: 0.98
+min_escape_cutoff: 0.25
 min_func_effect_for_ab: -2
 
 ### Heatmap parameters
