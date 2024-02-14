@@ -1,5 +1,5 @@
 #These are parameters for different site subsets of the RBP
-contact_sites: [239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
+contact_sites: [216, 218, 238, 239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 554, 555, 556, 557, 558, 559, 579, 580, 581, 583, 588]
 hydrophobic: [401, 402, 531, 532, 557, 558, 559, 305, 579, 580, 581, 458, 588, 488, 489, 490, 240, 504, 505, 506, 507]
 salt_bridges: [242,501,533]
 h_bond_total: [239,240,241,242,388,389,402,490,491,492,501,506,530,532,533,555,557,559,581]
@@ -13,12 +13,12 @@ func_std_cutoff: 1
 
 ### Binding filtering parameters
 min_times_seen_binding: 2.25
-max_binding_std: 3
-min_func_effect_for_binding: -2
+max_binding_std: 2
+min_func_effect_for_binding: -1.5
 
 ### Antibody escape filtering parameters
 min_times_seen_ab: 2.25
-max_ab_std: 3
+max_ab_std: 2
 frac_models: 0.75
 sum_quantile: 0.98
 max_quantile: 0.98
