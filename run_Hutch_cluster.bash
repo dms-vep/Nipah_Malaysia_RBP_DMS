@@ -1,5 +1,5 @@
 #!/bin/bash
 #
-#SBATCH -c 4
+#SBATCH -c 16
 
-snakemake -c 4 --use-conda --latency-wait 30 --rerun-incomplete -s dms-vep-pipeline-3/Snakefile
+snakemake -c 16 --use-conda --latency-wait 30 --rerun-incomplete -s dms-vep-pipeline-3/Snakefile
