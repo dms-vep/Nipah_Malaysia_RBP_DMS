@@ -673,12 +673,12 @@ rule get_tables:
         antibody_info="results/tables/antibody_neutralization_table.html",
         library_stats="results/tables/library_stats_table.html",
     output:
-        antibody_info_out="results/images/antibody_neutralization_table.html",
-        library_stats_out="results/images/library_stats_table.html",
+        antibody_info_table="results/images/antibody_neutralization_table.html",
+        library_stats_table="results/images/library_stats_table.html",
     shell:
         """
-        cp {input.antibody_info} {output.antibody_info_out}
-        cp {input.library_stats} {output.library_stats_out}
+        cp {input.antibody_info} {output.antibody_info_table}
+        cp {input.library_stats} {output.library_stats_table}
         """
 
 docs["Additional files and charts"] = {
@@ -801,8 +801,8 @@ docs["Additional files and charts"] = {
         "Notebook for mapping filtered scores onto crystal structures": rules.make_files_for_mapping_structure.output.nb,
         "Nipah polymorphic sites cell entry plot": rules.henipavirus_entropy.output.entry_scores_niv_poly,
         "Nipah polymorphic sites binding plot": rules.henipavirus_entropy.output.binding_scores_niv_poly,
-        "Antibody Info Table": rules.get_tables.output.antibody_info_out,
-        "Library Stats Table": rules.get_tables.output.library_stats_out,
+        "Antibody Info Table": rules.get_tables.output.antibody_info_table,
+        "Library Stats Table": rules.get_tables.output.library_stats_table,
     },
     "Interactive Figures": {
         "Binding and Escape and Cell Entry": rules.make_interactive_figures.output.effect_binding_escape,
