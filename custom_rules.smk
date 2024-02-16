@@ -246,6 +246,7 @@ rule lib_lib_correlations:
         CHO_EFNB3_indiv_plot_save="results/images/CHO_EFNB3_all_corrs.html",
         histogram_plot="results/images/variants_histogram.html",
         func_scores_plot="results/images/func_scores_distribution.html",
+        uniq_barcodes_per_lib_df="results/tables/uniq_barcodes_per_lib_df.csv",
 
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -258,6 +259,7 @@ rule lib_lib_correlations:
                 "CHO_EFNB3_indiv_plot_save": output.CHO_EFNB3_indiv_plot_save,
                 "histogram_plot": output.histogram_plot,
                 "func_scores_plot": output.func_scores_plot,
+                "uniq_barcodes_per_lib_df": output.uniq_barcodes_per_lib_df,
             }
         ),
     log:
@@ -409,6 +411,7 @@ rule analyze_mab_neuts:
     output:
         nb="results/notebooks/mab_neut_ic50.ipynb",
         mab_neuts_plot="results/images/mab_neuts_plot.html",
+        mAb_neuts_table="results/tables/mAb_neuts_table.csv",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -416,6 +419,7 @@ rule analyze_mab_neuts:
                 "nipah_config": input.nipah_config,
                 "mab_neuts": input.mab_neuts,
                 "mab_neuts_plot": output.mab_neuts_plot,
+                "mAb_neuts_table": output.mAb_neuts_table,
             }
         ),
     log:
@@ -662,14 +666,15 @@ rule make_interactive_figures:
     shell:
         "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
+
 rule get_tables:
-    """Make Interactive Figures"""
+    """Copy tables into images directory"""
     input:
-        antibody_info="data/custom_analyses_data/tables/antibody_neutralization.html",
-        library_stats="data/custom_analyses_data/tables/Library_stats.html",
+        antibody_info="results/tables/antibody_neutralization_table.html",
+        library_stats="results/tables/library_stats_table.html",
     output:
         antibody_info_out="results/images/antibody_neutralization_table.html",
-        library_stats_out="results/images/library_stats.html",
+        library_stats_out="results/images/library_stats_table.html",
     shell:
         """
         cp {input.antibody_info} {output.antibody_info_out}

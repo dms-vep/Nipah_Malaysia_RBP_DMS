@@ -7499,12 +7499,13 @@ a.anchor-link {
 <span class="n">nipah_config</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">mab_neuts</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">mab_neuts_plot</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">mAb_neuts_table</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=68bf5667">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=6883fc50">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7517,6 +7518,7 @@ a.anchor-link {
 <span class="n">nipah_config</span> <span class="o">=</span> <span class="s2">"nipah_config.yaml"</span>
 <span class="n">mab_neuts</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/experimental_data/NiV_neut_all_mabs.csv"</span>
 <span class="n">mab_neuts_plot</span> <span class="o">=</span> <span class="s2">"results/images/mab_neuts_plot.html"</span>
+<span class="n">mAb_neuts_table</span> <span class="o">=</span> <span class="s2">"results/tables/mAb_neuts_table.csv"</span>
 </pre></div>
 </div>
 </div>
@@ -7669,7 +7671,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8e215ef3-e962-4912-8e6c-ca7e107418e2">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8e215ef3-e962-4912-8e6c-ca7e107418e2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7683,85 +7685,24 @@ a.anchor-link {
             <span class="p">)</span>
 <span class="n">fitParams</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">fitParams</span><span class="p">(</span><span class="n">ics</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span>
 <span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50_ng'</span><span class="p">]</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
-<span class="n">display</span><span class="p">(</span><span class="n">fitParams</span><span class="p">[[</span><span class="s1">'serum'</span><span class="p">,</span><span class="s1">'ic50_ng'</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">fit_df</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[[</span><span class="s1">'serum'</span><span class="p">,</span><span class="s1">'ic50_ng'</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fit_df</span> <span class="o">=</span> <span class="n">fit_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">fit_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'serum'</span><span class="p">:</span><span class="s1">'Antibody'</span><span class="p">,</span><span class="s1">'ic50_ng'</span><span class="p">:</span><span class="s1">'ic50'</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Set 'Antibody' as the index</span>
+<span class="n">fit_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Antibody'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Define the new order you want; it must be a list of the index labels</span>
+<span class="n">new_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'m102.4'</span><span class="p">,</span><span class="s1">'HENV-26'</span><span class="p">,</span><span class="s1">'HENV-117'</span><span class="p">,</span><span class="s1">'HENV-103'</span><span class="p">,</span><span class="s1">'HENV-32'</span><span class="p">,</span><span class="s1">'nAH1.3'</span><span class="p">]</span>
+
+<span class="c1"># Reindex the DataFrame with the new order</span>
+<span class="n">fit_df</span> <span class="o">=</span> <span class="n">fit_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">new_order</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="c1">#new_order = ['m102.4','HENV-26','HENV-117','HENV-103','HENV-32','nAH1.3']</span>
+<span class="c1">#fit_df['Antibody'] = fit_df['Antibody'].loc[new_order].values</span>
+<span class="n">fit_df</span><span class="p">[</span><span class="s1">'Epitope'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Receptor Face'</span><span class="p">,</span><span class="s1">'Receptor Face'</span><span class="p">,</span><span class="s1">'Receptor Face'</span><span class="p">,</span><span class="s1">'Dimerization'</span><span class="p">,</span><span class="s1">'Dimerization'</span><span class="p">,</span><span class="s1">'Distal Head'</span><span class="p">]</span>
+
+<span class="c1">#display(fit_df)</span>
+<span class="n">fit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">mAb_neuts_table</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>serum</th>
-<th>ic50_ng</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>nAH1.3</td>
-<td>23.1</td>
-</tr>
-<tr>
-<th>1</th>
-<td>m102.4</td>
-<td>12.3</td>
-</tr>
-<tr>
-<th>2</th>
-<td>HENV-26</td>
-<td>13.7</td>
-</tr>
-<tr>
-<th>3</th>
-<td>HENV-32</td>
-<td>143.0</td>
-</tr>
-<tr>
-<th>4</th>
-<td>HENV-103</td>
-<td>66.7</td>
-</tr>
-<tr>
-<th>5</th>
-<td>HENV-117</td>
-<td>11.7</td>
-</tr>
-<tr>
-<th>6</th>
-<td>EFNB2-monomeric</td>
-<td>53.5</td>
-</tr>
-<tr>
-<th>7</th>
-<td>EFNB3-dimeric</td>
-<td>117.0</td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
@@ -7938,23 +7879,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-d8442e804438484b84e47c019545b30c.vega-embed {
+  #altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-d8442e804438484b84e47c019545b30c.vega-embed details,
-  #altair-viz-d8442e804438484b84e47c019545b30c.vega-embed details summary {
+  #altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa.vega-embed details,
+  #altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-d8442e804438484b84e47c019545b30c"></div>
+<div id="altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d8442e804438484b84e47c019545b30c") {
-      outputDiv = document.getElementById("altair-viz-d8442e804438484b84e47c019545b30c");
+    if (outputDiv.id !== "altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa") {
+      outputDiv = document.getElementById("altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

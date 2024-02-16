@@ -27,7 +27,7 @@ min_func_effect_for_ab: -2
 
 ### Heatmap parameters
 effect_color: 'redblue'
-entropy_color: 'purples'
+entropy_color: 'greens'
 strokewidth_size: 0.25 #strokesize around boxes
 background_color: "#d1d3d4" #color for cells without observations
 

@@ -49,3 +49,5 @@ dependencies:
     - vl-convert-python
     - configure-dms-viz
     - sphinx
+    - jupyterlab-code-formatter
+    - black

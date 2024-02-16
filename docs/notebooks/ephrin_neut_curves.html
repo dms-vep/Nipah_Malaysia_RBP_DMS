@@ -7518,7 +7518,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=cf551b29">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=7f76656e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7614,11 +7614,16 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># allow more rows for Altair</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">disable_max_rows</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/'</span><span class="p">:</span>
+<span class="k">if</span> <span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="o">==</span> <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
+<span class="p">):</span>
     <span class="k">pass</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Already in correct directory"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span>
+        <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
+    <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Setup in correct directory"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7658,19 +7663,27 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">EFNB2_neut_corr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">altair_config</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/theme.py'</span>
-    <span class="n">nipah_config</span> <span class="o">=</span> <span class="s1">'nipah_config.yaml'</span>
-    <span class="n">ephrin_binding_neuts_file</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/experimental_data/bat_ephrin_neuts.csv'</span>
-    <span class="n">ephrin_validation_curves</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/experimental_data/binding_single_mutant_validations.csv'</span>
-    <span class="n">validation_ic50s_file</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/experimental_data/receptor_IC_validations.csv'</span>
-    <span class="n">e2_monomeric_binding_file</span> <span class="o">=</span> <span class="s1">'results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv'</span>
-    <span class="n">e3_dimeric_binding_file</span> <span class="o">=</span> <span class="s1">'results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv'</span>
-    
-    <span class="c1">#ephrin_curve_plot</span>
-    <span class="c1">#e2_curve_plot</span>
-    <span class="c1">#e3_curve_plot</span>
-    <span class="c1">#e2_corr_plot</span>
-    <span class="c1">#e3_corr_plot</span>
+    <span class="n">altair_config</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/theme.py"</span>
+    <span class="n">nipah_config</span> <span class="o">=</span> <span class="s2">"nipah_config.yaml"</span>
+    <span class="n">ephrin_binding_neuts_file</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"data/custom_analyses_data/experimental_data/bat_ephrin_neuts.csv"</span>
+    <span class="p">)</span>
+    <span class="n">ephrin_validation_curves</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/experimental_data/binding_single_mutant_validations.csv"</span>
+    <span class="n">validation_ic50s_file</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"data/custom_analyses_data/experimental_data/receptor_IC_validations.csv"</span>
+    <span class="p">)</span>
+    <span class="n">e2_monomeric_binding_file</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv"</span>
+    <span class="p">)</span>
+    <span class="n">e3_dimeric_binding_file</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv"</span>
+    <span class="p">)</span>
+
+    <span class="c1"># ephrin_curve_plot</span>
+    <span class="c1"># e2_curve_plot</span>
+    <span class="c1"># e3_curve_plot</span>
+    <span class="c1"># e2_corr_plot</span>
+    <span class="c1"># e3_corr_plot</span>
 </pre></div>
 </div>
 </div>
@@ -7685,7 +7698,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">altair_config</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">altair_config</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">altair_config</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="n">exec</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nipah_config</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -7715,51 +7728,95 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ephrin_binding_neuts_file</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'virus'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'virus'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">'E2-dimeric'</span><span class="p">:</span> <span class="s1">'EFNB2-dimeric'</span><span class="p">,</span> <span class="s1">'E2-monomeric'</span><span class="p">:</span> <span class="s1">'EFNB2-monomeric'</span><span class="p">,</span><span class="s1">'E3-dimeric'</span><span class="p">:</span> <span class="s1">'EFNB3-dimeric'</span><span class="p">,</span> <span class="s1">'E3-monomeric'</span><span class="p">:</span> <span class="s1">'EFNB3-monomeric'</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"E2-dimeric"</span><span class="p">:</span> <span class="s2">"EFNB2-dimeric"</span><span class="p">,</span>
+        <span class="s2">"E2-monomeric"</span><span class="p">:</span> <span class="s2">"EFNB2-monomeric"</span><span class="p">,</span>
+        <span class="s2">"E3-dimeric"</span><span class="p">:</span> <span class="s2">"EFNB3-dimeric"</span><span class="p">,</span>
+        <span class="s2">"E3-monomeric"</span><span class="p">:</span> <span class="s2">"EFNB3-monomeric"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 <span class="n">fits</span> <span class="o">=</span> <span class="n">neutcurve</span><span class="o">.</span><span class="n">curvefits</span><span class="o">.</span><span class="n">CurveFits</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
-            <span class="n">fixbottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-            <span class="p">)</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+    <span class="n">fixbottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">fitParams</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">fitParams</span><span class="p">(</span><span class="n">ics</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span>
 
-<span class="k">def</span> <span class="nf">extract_dataframe_from_neutcurve</span><span class="p">(</span><span class="n">serum</span><span class="p">,</span> <span class="n">viruses</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="s1">'average'</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="nf">extract_dataframe_from_neutcurve</span><span class="p">(</span><span class="n">serum</span><span class="p">,</span> <span class="n">viruses</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="s2">"average"</span><span class="p">):</span>
     <span class="n">curves</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="c1"># Loop over each virus type and retrieve the curve</span>
     <span class="k">for</span> <span class="n">virus</span> <span class="ow">in</span> <span class="n">viruses</span><span class="p">:</span>
         <span class="n">curve</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">getCurve</span><span class="p">(</span><span class="n">serum</span><span class="o">=</span><span class="n">serum</span><span class="p">,</span> <span class="n">virus</span><span class="o">=</span><span class="n">virus</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="n">replicate</span><span class="p">)</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">curve</span><span class="o">.</span><span class="n">dataframe</span><span class="p">()</span>
-        <span class="n">df</span><span class="p">[</span><span class="s1">'virus'</span><span class="p">]</span> <span class="o">=</span> <span class="n">virus</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span> <span class="o">=</span> <span class="n">virus</span>
         <span class="n">curves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-    
+
     <span class="c1"># Concatenate all the dataframes into one</span>
     <span class="n">combined_curve</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">curves</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">combined_curve</span>
 
-<span class="n">serum</span> <span class="o">=</span> <span class="s1">'CHO-EFNB3'</span> <span class="c1">#pull out the neuts that were done on CHO-EFNB3 cells, not E2</span>
-<span class="n">viruses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'EFNB2-dimeric'</span><span class="p">,</span><span class="s1">'EFNB2-monomeric'</span><span class="p">,</span><span class="s1">'EFNB3-dimeric'</span><span class="p">,</span><span class="s1">'EFNB3-monomeric'</span><span class="p">]</span>
+
+<span class="n">serum</span> <span class="o">=</span> <span class="s2">"CHO-EFNB3"</span>  <span class="c1"># pull out the neuts that were done on CHO-EFNB3 cells, not E2</span>
+<span class="n">viruses</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"EFNB2-dimeric"</span><span class="p">,</span> <span class="s2">"EFNB2-monomeric"</span><span class="p">,</span> <span class="s2">"EFNB3-dimeric"</span><span class="p">,</span> <span class="s2">"EFNB3-monomeric"</span><span class="p">]</span>
 <span class="n">curve</span> <span class="o">=</span> <span class="n">extract_dataframe_from_neutcurve</span><span class="p">(</span><span class="n">serum</span><span class="p">,</span> <span class="n">viruses</span><span class="p">)</span>
-<span class="n">curve</span><span class="p">[</span><span class="s1">'upper'</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'measurement'</span><span class="p">]</span> <span class="o">+</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'stderr'</span><span class="p">]</span>
-<span class="n">curve</span><span class="p">[</span><span class="s1">'lower'</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'measurement'</span><span class="p">]</span> <span class="o">-</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'stderr'</span><span class="p">]</span>
+<span class="n">curve</span><span class="p">[</span><span class="s2">"upper"</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"measurement"</span><span class="p">]</span> <span class="o">+</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"stderr"</span><span class="p">]</span>
+<span class="n">curve</span><span class="p">[</span><span class="s2">"lower"</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"measurement"</span><span class="p">]</span> <span class="o">-</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"stderr"</span><span class="p">]</span>
+
 
 <span class="k">def</span> <span class="nf">plot_neut_curve</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'concentration:Q'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">'.0e'</span><span class="p">),</span><span class="n">title</span><span class="o">=</span><span class="s1">'Concentration (μM)'</span><span class="p">),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'fit:Q'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Fraction Infectivity'</span><span class="p">,),</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'virus'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Receptor'</span><span class="p">)</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_width'</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_height'</span><span class="p">])</span>
-    <span class="n">circle</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'concentration'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">'.0e'</span><span class="p">),</span><span class="n">title</span><span class="o">=</span><span class="s1">'Concentration (μM)'</span><span class="p">),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'measurement:Q'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Fraction Infectivity'</span><span class="p">),</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'virus'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Receptor'</span><span class="p">),</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_width'</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_height'</span><span class="p">])</span>
-    <span class="n">error</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_errorbar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="s1">'concentration'</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'lower'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Fraction Infectivity'</span><span class="p">),</span>
-        <span class="n">y2</span><span class="o">=</span><span class="s1">'upper'</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">'virus'</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_width'</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_height'</span><span class="p">])</span>
-    <span class="n">plot</span> <span class="o">=</span> <span class="n">chart</span><span class="o">+</span><span class="n">circle</span><span class="o">+</span><span class="n">error</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+                <span class="s2">"concentration:Q"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">),</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Concentration (μM)"</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
+                <span class="s2">"fit:Q"</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Fraction Infectivity"</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">"virus"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Receptor"</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_width"</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_height"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">circle</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+                <span class="s2">"concentration"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">),</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Concentration (μM)"</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"measurement:Q"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Fraction Infectivity"</span><span class="p">),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">"virus"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Receptor"</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_width"</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_height"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_errorbar</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">"concentration"</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"lower"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Fraction Infectivity"</span><span class="p">),</span>
+            <span class="n">y2</span><span class="o">=</span><span class="s2">"upper"</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">"virus"</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_width"</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_height"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">plot</span> <span class="o">=</span> <span class="n">chart</span> <span class="o">+</span> <span class="n">circle</span> <span class="o">+</span> <span class="n">error</span>
     <span class="k">return</span> <span class="n">plot</span>
 
 
@@ -7768,10 +7825,12 @@ a.anchor-link {
 <span class="k">if</span> <span class="n">EFNB2_neut_corr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">ephrin_curve</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">ephrin_curve_plot</span><span class="p">)</span>
 
-<span class="n">fitParams</span> <span class="o">=</span> <span class="n">fitParams</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'serum'</span><span class="p">:</span> <span class="s1">'target_cells'</span><span class="p">,</span> <span class="s1">'virus'</span><span class="p">:</span> <span class="s1">'soluble_receptor'</span><span class="p">})</span>
-<span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50_nM'</span><span class="p">]</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
-<span class="n">subset</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="n">fitParams</span><span class="p">[</span><span class="s1">'target_cells'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'CHO-EFNB3'</span><span class="p">]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">subset</span><span class="p">[[</span><span class="s1">'soluble_receptor'</span><span class="p">,</span><span class="s1">'ic50_nM'</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">fitParams</span> <span class="o">=</span> <span class="n">fitParams</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"serum"</span><span class="p">:</span> <span class="s2">"target_cells"</span><span class="p">,</span> <span class="s2">"virus"</span><span class="p">:</span> <span class="s2">"soluble_receptor"</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">fitParams</span><span class="p">[</span><span class="s2">"ic50_nM"</span><span class="p">]</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="s2">"ic50"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="n">fitParams</span><span class="p">[</span><span class="s2">"target_cells"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"CHO-EFNB3"</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">subset</span><span class="p">[[</span><span class="s2">"soluble_receptor"</span><span class="p">,</span> <span class="s2">"ic50_nM"</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -7785,23 +7844,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-58784727873c4380aa2bd258ed355c60.vega-embed {
+  #altair-viz-85fdef2e50b64a3aa7b564dd9e4f44dd.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-58784727873c4380aa2bd258ed355c60.vega-embed details,
-  #altair-viz-58784727873c4380aa2bd258ed355c60.vega-embed details summary {
+  #altair-viz-85fdef2e50b64a3aa7b564dd9e4f44dd.vega-embed details,
+  #altair-viz-85fdef2e50b64a3aa7b564dd9e4f44dd.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-58784727873c4380aa2bd258ed355c60"></div>
+<div id="altair-viz-85fdef2e50b64a3aa7b564dd9e4f44dd"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-58784727873c4380aa2bd258ed355c60") {
-      outputDiv = document.getElementById("altair-viz-58784727873c4380aa2bd258ed355c60");
+    if (outputDiv.id !== "altair-viz-85fdef2e50b64a3aa7b564dd9e4f44dd") {
+      outputDiv = document.getElementById("altair-viz-85fdef2e50b64a3aa7b564dd9e4f44dd");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -7926,95 +7985,160 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">validation_curves</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ephrin_validation_curves</span><span class="p">)</span>
 
 <span class="n">fits</span> <span class="o">=</span> <span class="n">neutcurve</span><span class="o">.</span><span class="n">curvefits</span><span class="o">.</span><span class="n">CurveFits</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">validation_curves</span><span class="p">,</span>
-            <span class="n">fixbottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-            <span class="p">)</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">validation_curves</span><span class="p">,</span>
+    <span class="n">fixbottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">fitParams</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">fitParams</span><span class="p">(</span><span class="n">ics</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span>
-<span class="n">fitParams</span> <span class="o">=</span> <span class="n">fitParams</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'serum'</span><span class="p">:</span> <span class="s1">'target_cells'</span><span class="p">,</span> <span class="s1">'virus'</span><span class="p">:</span> <span class="s1">'mutant'</span><span class="p">})</span>
-<span class="k">def</span> <span class="nf">extract_dataframe_from_neutcurve</span><span class="p">(</span><span class="n">serum</span><span class="p">,</span> <span class="n">viruses</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="s1">'average'</span><span class="p">):</span>
+<span class="n">fitParams</span> <span class="o">=</span> <span class="n">fitParams</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"serum"</span><span class="p">:</span> <span class="s2">"target_cells"</span><span class="p">,</span> <span class="s2">"virus"</span><span class="p">:</span> <span class="s2">"mutant"</span><span class="p">})</span>
+
+
+<span class="k">def</span> <span class="nf">extract_dataframe_from_neutcurve</span><span class="p">(</span><span class="n">serum</span><span class="p">,</span> <span class="n">viruses</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="s2">"average"</span><span class="p">):</span>
     <span class="n">curves</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="c1"># Loop over each virus type and retrieve the curve</span>
     <span class="k">for</span> <span class="n">virus</span> <span class="ow">in</span> <span class="n">viruses</span><span class="p">:</span>
         <span class="n">curve</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">getCurve</span><span class="p">(</span><span class="n">serum</span><span class="o">=</span><span class="n">serum</span><span class="p">,</span> <span class="n">virus</span><span class="o">=</span><span class="n">virus</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="n">replicate</span><span class="p">)</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">curve</span><span class="o">.</span><span class="n">dataframe</span><span class="p">()</span>
-        <span class="n">df</span><span class="p">[</span><span class="s1">'virus'</span><span class="p">]</span> <span class="o">=</span> <span class="n">virus</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span> <span class="o">=</span> <span class="n">virus</span>
         <span class="n">curves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-    
+
     <span class="c1"># Concatenate all the dataframes into one</span>
     <span class="n">combined_curve</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">curves</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">combined_curve</span>
 
-<span class="k">def</span> <span class="nf">get_curves</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">serum</span><span class="p">):</span>
-    <span class="n">viruses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'H333Q'</span><span class="p">,</span> <span class="s1">'Q492R'</span><span class="p">,</span> <span class="s1">'V507I'</span><span class="p">,</span> <span class="s1">'Q530F'</span><span class="p">,</span> <span class="s1">'S553W'</span><span class="p">,</span> <span class="s1">'D555K'</span><span class="p">,</span> <span class="s1">'WT'</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_curves</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">serum</span><span class="p">):</span>
+    <span class="n">viruses</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"H333Q"</span><span class="p">,</span> <span class="s2">"Q492R"</span><span class="p">,</span> <span class="s2">"V507I"</span><span class="p">,</span> <span class="s2">"Q530F"</span><span class="p">,</span> <span class="s2">"S553W"</span><span class="p">,</span> <span class="s2">"D555K"</span><span class="p">,</span> <span class="s2">"WT"</span><span class="p">]</span>
     <span class="n">curve</span> <span class="o">=</span> <span class="n">extract_dataframe_from_neutcurve</span><span class="p">(</span><span class="n">serum</span><span class="p">,</span> <span class="n">viruses</span><span class="p">)</span>
-    <span class="n">curve</span><span class="p">[</span><span class="s1">'upper'</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'measurement'</span><span class="p">]</span> <span class="o">+</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'stderr'</span><span class="p">]</span>
-    <span class="n">curve</span><span class="p">[</span><span class="s1">'lower'</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'measurement'</span><span class="p">]</span> <span class="o">-</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'stderr'</span><span class="p">]</span>
+    <span class="n">curve</span><span class="p">[</span><span class="s2">"upper"</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"measurement"</span><span class="p">]</span> <span class="o">+</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"stderr"</span><span class="p">]</span>
+    <span class="n">curve</span><span class="p">[</span><span class="s2">"lower"</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"measurement"</span><span class="p">]</span> <span class="o">-</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"stderr"</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">curve</span>
 
-<span class="n">e2_validation_curves</span> <span class="o">=</span> <span class="n">get_curves</span><span class="p">(</span><span class="n">validation_curves</span><span class="p">,</span><span class="s1">'EFNB2-monomeric'</span><span class="p">)</span>
-<span class="n">e3_validation_curves</span> <span class="o">=</span> <span class="n">get_curves</span><span class="p">(</span><span class="n">validation_curves</span><span class="p">,</span><span class="s1">'EFNB3-dimeric'</span><span class="p">)</span>
+
+<span class="n">e2_validation_curves</span> <span class="o">=</span> <span class="n">get_curves</span><span class="p">(</span><span class="n">validation_curves</span><span class="p">,</span> <span class="s2">"EFNB2-monomeric"</span><span class="p">)</span>
+<span class="n">e3_validation_curves</span> <span class="o">=</span> <span class="n">get_curves</span><span class="p">(</span><span class="n">validation_curves</span><span class="p">,</span> <span class="s2">"EFNB3-dimeric"</span><span class="p">)</span>
+
 
 <span class="c1"># Sorting function to put 'WT' on top of the legend, followed by numerical order</span>
 <span class="k">def</span> <span class="nf">custom_sort_order</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
     <span class="c1"># Sort based on the numerical part in mutation strings, e.g., '530' in 'Q530F'</span>
     <span class="k">def</span> <span class="nf">extract_number</span><span class="p">(</span><span class="n">virus</span><span class="p">):</span>
-        <span class="n">num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d+'</span><span class="p">,</span> <span class="n">virus</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d+"</span><span class="p">,</span> <span class="n">virus</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">group</span><span class="p">())</span> <span class="k">if</span> <span class="n">num</span> <span class="k">else</span> <span class="mi">0</span>
 
     <span class="n">array</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">extract_number</span><span class="p">)</span>
 
     <span class="c1"># Move 'WT' to the beginning of the list</span>
-    <span class="k">if</span> <span class="s1">'WT'</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
-        <span class="n">array</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'WT'</span><span class="p">)</span>
-        <span class="n">array</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'WT'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">"WT"</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+        <span class="n">array</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"WT"</span><span class="p">)</span>
+        <span class="n">array</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"WT"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">array</span>
 
-<span class="k">def</span> <span class="nf">plot_validation_curves</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="nf">plot_validation_curves</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
     <span class="c1"># Define the category10 colors manually</span>
-    <span class="n">category10_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#4E79A5'</span><span class="p">,</span> <span class="s1">'#F18F3B'</span><span class="p">,</span> <span class="s1">'#E0585B'</span><span class="p">,</span> <span class="s1">'#77B7B2'</span><span class="p">,</span> <span class="s1">'#5AA155'</span><span class="p">,</span> <span class="s1">'#EDC958'</span><span class="p">,</span> <span class="s1">'#AF7AA0'</span><span class="p">,</span> <span class="s1">'#FE9EA8'</span><span class="p">,</span> <span class="s1">'#9C7561'</span><span class="p">,</span> <span class="s1">'#BAB0AC'</span><span class="p">]</span>
+    <span class="n">category10_colors</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"#4E79A5"</span><span class="p">,</span>
+        <span class="s2">"#F18F3B"</span><span class="p">,</span>
+        <span class="s2">"#E0585B"</span><span class="p">,</span>
+        <span class="s2">"#77B7B2"</span><span class="p">,</span>
+        <span class="s2">"#5AA155"</span><span class="p">,</span>
+        <span class="s2">"#EDC958"</span><span class="p">,</span>
+        <span class="s2">"#AF7AA0"</span><span class="p">,</span>
+        <span class="s2">"#FE9EA8"</span><span class="p">,</span>
+        <span class="s2">"#9C7561"</span><span class="p">,</span>
+        <span class="s2">"#BAB0AC"</span><span class="p">,</span>
+    <span class="p">]</span>
 
     <span class="c1"># Adjust colors based on the unique mutations</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'black'</span><span class="p">]</span> <span class="o">+</span> <span class="n">category10_colors</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'virus'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"black"</span><span class="p">]</span> <span class="o">+</span> <span class="n">category10_colors</span><span class="p">[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'concentration:Q'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">'.0e'</span><span class="p">,</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> conc. (μg/mL)'</span><span class="p">),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'fit:Q'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Fraction Infectivity'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">)),</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'virus'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Virus'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'virus'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span><span class="p">))</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_width'</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_height'</span><span class="p">])</span>
-    <span class="n">circle</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'concentration'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">'.0e'</span><span class="p">,</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> conc. (μg/mL)'</span><span class="p">),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'measurement:Q'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Fraction Infectivity'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">)),</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'virus'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Virus'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'virus'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span><span class="p">))</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_width'</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_height'</span><span class="p">])</span>
-    <span class="n">error</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_errorbar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="s1">'concentration'</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'lower'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Fraction Infectivity'</span><span class="p">),</span>
-        <span class="n">y2</span><span class="o">=</span><span class="s1">'upper'</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">'virus'</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_width'</span><span class="p">],</span><span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_height'</span><span class="p">])</span>
-    <span class="n">plot</span> <span class="o">=</span> <span class="n">chart</span><span class="o">+</span><span class="n">circle</span><span class="o">+</span><span class="n">error</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_line</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+                <span class="s2">"concentration:Q"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+                <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> conc. (μg/mL)"</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"fit:Q"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Fraction Infectivity"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">)),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+                <span class="s2">"virus"</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Virus"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span>
+                    <span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span>
+                <span class="p">),</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_width"</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_height"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">circle</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+                <span class="s2">"concentration"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+                <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> conc. (μg/mL)"</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
+                <span class="s2">"measurement:Q"</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Fraction Infectivity"</span><span class="p">,</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+            <span class="p">),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+                <span class="s2">"virus"</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Virus"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span>
+                    <span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span>
+                <span class="p">),</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_width"</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_height"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_errorbar</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">"concentration"</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"lower"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Fraction Infectivity"</span><span class="p">),</span>
+            <span class="n">y2</span><span class="o">=</span><span class="s2">"upper"</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">"virus"</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_width"</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_height"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">plot</span> <span class="o">=</span> <span class="n">chart</span> <span class="o">+</span> <span class="n">circle</span> <span class="o">+</span> <span class="n">error</span>
     <span class="n">plot</span>
     <span class="k">return</span> <span class="n">plot</span>
 
-<span class="n">ephrin_b2_neut_curve</span> <span class="o">=</span> <span class="n">plot_validation_curves</span><span class="p">(</span><span class="n">e2_validation_curves</span><span class="p">,</span><span class="s1">'EFNB2-monomeric'</span><span class="p">)</span>
+
+<span class="n">ephrin_b2_neut_curve</span> <span class="o">=</span> <span class="n">plot_validation_curves</span><span class="p">(</span><span class="n">e2_validation_curves</span><span class="p">,</span> <span class="s2">"EFNB2-monomeric"</span><span class="p">)</span>
 <span class="n">ephrin_b2_neut_curve</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">EFNB2_neut_corr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">ephrin_b2_neut_curve</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">e2_curve_plot</span><span class="p">)</span>
 
-<span class="n">ephrin_b3_neut_curve</span> <span class="o">=</span> <span class="n">plot_validation_curves</span><span class="p">(</span><span class="n">e3_validation_curves</span><span class="p">,</span><span class="s1">'EFNB3-dimeric'</span><span class="p">)</span>
+<span class="n">ephrin_b3_neut_curve</span> <span class="o">=</span> <span class="n">plot_validation_curves</span><span class="p">(</span><span class="n">e3_validation_curves</span><span class="p">,</span> <span class="s2">"EFNB3-dimeric"</span><span class="p">)</span>
 <span class="n">ephrin_b3_neut_curve</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">EFNB2_neut_corr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">ephrin_b3_neut_curve</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">e3_curve_plot</span><span class="p">)</span>
 
 <span class="c1"># Find the IC50 values in ng/mL and relative IC50 to WT</span>
-<span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50_ng'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">efnb2</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="n">fitParams</span><span class="p">[</span><span class="s1">'target_cells'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'EFNB2-monomeric'</span><span class="p">]</span>
-<span class="n">WT_IC50</span> <span class="o">=</span> <span class="n">efnb2</span><span class="p">[</span><span class="n">efnb2</span><span class="p">[</span><span class="s1">'mutant'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'WT'</span><span class="p">]</span>
-<span class="n">wt50</span> <span class="o">=</span> <span class="n">WT_IC50</span><span class="p">[</span><span class="s1">'ic50_ng'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">fitParams</span><span class="p">[</span><span class="s2">"ic50_ng"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fitParams</span><span class="p">[</span><span class="s2">"ic50"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">efnb2</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="n">fitParams</span><span class="p">[</span><span class="s2">"target_cells"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"EFNB2-monomeric"</span><span class="p">]</span>
+<span class="n">WT_IC50</span> <span class="o">=</span> <span class="n">efnb2</span><span class="p">[</span><span class="n">efnb2</span><span class="p">[</span><span class="s2">"mutant"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"WT"</span><span class="p">]</span>
+<span class="n">wt50</span> <span class="o">=</span> <span class="n">WT_IC50</span><span class="p">[</span><span class="s2">"ic50_ng"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 
-<span class="n">fitParams</span><span class="p">[</span><span class="s1">'relative_ic50'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50_ng'</span><span class="p">]</span> <span class="o">/</span> <span class="n">wt50</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">fitParams</span><span class="p">[[</span><span class="s1">'target_cells'</span><span class="p">,</span><span class="s1">'mutant'</span><span class="p">,</span><span class="s1">'ic50_ng'</span><span class="p">,</span><span class="s1">'relative_ic50'</span><span class="p">]])</span>
+<span class="n">fitParams</span><span class="p">[</span><span class="s2">"relative_ic50"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fitParams</span><span class="p">[</span><span class="s2">"ic50_ng"</span><span class="p">]</span> <span class="o">/</span> <span class="n">wt50</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">fitParams</span><span class="p">[[</span><span class="s2">"target_cells"</span><span class="p">,</span> <span class="s2">"mutant"</span><span class="p">,</span> <span class="s2">"ic50_ng"</span><span class="p">,</span> <span class="s2">"relative_ic50"</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
@@ -8028,23 +8152,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-24e255efdfa142e982f0d43b43b1b85f.vega-embed {
+  #altair-viz-0d63e6258615435cb51af814a512c037.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-24e255efdfa142e982f0d43b43b1b85f.vega-embed details,
-  #altair-viz-24e255efdfa142e982f0d43b43b1b85f.vega-embed details summary {
+  #altair-viz-0d63e6258615435cb51af814a512c037.vega-embed details,
+  #altair-viz-0d63e6258615435cb51af814a512c037.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-24e255efdfa142e982f0d43b43b1b85f"></div>
+<div id="altair-viz-0d63e6258615435cb51af814a512c037"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-24e255efdfa142e982f0d43b43b1b85f") {
-      outputDiv = document.getElementById("altair-viz-24e255efdfa142e982f0d43b43b1b85f");
+    if (outputDiv.id !== "altair-viz-0d63e6258615435cb51af814a512c037") {
+      outputDiv = document.getElementById("altair-viz-0d63e6258615435cb51af814a512c037");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8098,23 +8222,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-f3b25f0a82e44b639c98564089d01d2c.vega-embed {
+  #altair-viz-0dcaf84d9165430881eceed6b198a167.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f3b25f0a82e44b639c98564089d01d2c.vega-embed details,
-  #altair-viz-f3b25f0a82e44b639c98564089d01d2c.vega-embed details summary {
+  #altair-viz-0dcaf84d9165430881eceed6b198a167.vega-embed details,
+  #altair-viz-0dcaf84d9165430881eceed6b198a167.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f3b25f0a82e44b639c98564089d01d2c"></div>
+<div id="altair-viz-0dcaf84d9165430881eceed6b198a167"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f3b25f0a82e44b639c98564089d01d2c") {
-      outputDiv = document.getElementById("altair-viz-f3b25f0a82e44b639c98564089d01d2c");
+    if (outputDiv.id !== "altair-viz-0dcaf84d9165430881eceed6b198a167") {
+      outputDiv = document.getElementById("altair-viz-0dcaf84d9165430881eceed6b198a167");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8327,20 +8451,22 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">validation_ic50s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">validation_ic50s_file</span><span class="p">,</span><span class="n">na_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">validation_ic50s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">validation_ic50s_file</span><span class="p">,</span> <span class="n">na_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">e2_monomeric_binding</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">e2_monomeric_binding_file</span><span class="p">)</span>
 <span class="n">e3_dimeric_binding</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">e3_dimeric_binding_file</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">make_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
-    <span class="n">merged</span> <span class="o">=</span> <span class="n">validation_ic50s</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">])</span>
-    <span class="n">wt_rows</span> <span class="o">=</span> <span class="n">validation_ic50s</span><span class="p">[</span><span class="n">validation_ic50s</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'WT'</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">wt_rows</span><span class="p">[</span><span class="s1">'Ephrin binding_median'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.00000</span>
+
+<span class="k">def</span> <span class="nf">make_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="n">validation_ic50s</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">])</span>
+    <span class="n">wt_rows</span> <span class="o">=</span> <span class="n">validation_ic50s</span><span class="p">[</span><span class="n">validation_ic50s</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"WT"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">wt_rows</span><span class="p">[</span><span class="s2">"Ephrin binding_median"</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.00000</span>
     <span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">merged</span><span class="p">,</span> <span class="n">wt_rows</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">df_tmp</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="p">[</span><span class="s1">'antibody'</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span>
+    <span class="n">df_tmp</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="p">[</span><span class="s2">"antibody"</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">df_tmp</span>
 
-<span class="n">e2_df_out</span> <span class="o">=</span> <span class="n">make_df</span><span class="p">(</span><span class="n">e2_monomeric_binding</span><span class="p">,</span><span class="s1">'EFNB2-monomeric'</span><span class="p">)</span>
-<span class="n">e3_df_out</span> <span class="o">=</span> <span class="n">make_df</span><span class="p">(</span><span class="n">e3_dimeric_binding</span><span class="p">,</span><span class="s1">'EFNB3-dimeric'</span><span class="p">)</span>
+
+<span class="n">e2_df_out</span> <span class="o">=</span> <span class="n">make_df</span><span class="p">(</span><span class="n">e2_monomeric_binding</span><span class="p">,</span> <span class="s2">"EFNB2-monomeric"</span><span class="p">)</span>
+<span class="n">e3_df_out</span> <span class="o">=</span> <span class="n">make_df</span><span class="p">(</span><span class="n">e3_dimeric_binding</span><span class="p">,</span> <span class="s2">"EFNB3-dimeric"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8369,30 +8495,44 @@ a.anchor-link {
 <span class="k">def</span> <span class="nf">custom_sort_order</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
     <span class="c1"># Sort based on the numerical part in mutation strings, e.g., '530' in 'Q530F'</span>
     <span class="k">def</span> <span class="nf">extract_number</span><span class="p">(</span><span class="n">mutation</span><span class="p">):</span>
-        <span class="n">num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d+'</span><span class="p">,</span> <span class="n">mutation</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d+"</span><span class="p">,</span> <span class="n">mutation</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">group</span><span class="p">())</span> <span class="k">if</span> <span class="n">num</span> <span class="k">else</span> <span class="mi">0</span>
 
     <span class="n">array</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">extract_number</span><span class="p">)</span>
 
     <span class="c1"># Move 'WT' to the beginning of the list</span>
-    <span class="k">if</span> <span class="s1">'WT'</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
-        <span class="n">array</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'WT'</span><span class="p">)</span>
-        <span class="n">array</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'WT'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">"WT"</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+        <span class="n">array</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"WT"</span><span class="p">)</span>
+        <span class="n">array</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"WT"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">array</span>
 
-<span class="k">def</span> <span class="nf">make_corr_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
-    <span class="c1">#calculate NT50</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">'NT50'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">'measured IC50'</span><span class="p">]</span>
 
-    <span class="c1">#calculate R value:</span>
-    <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Ephrin binding_median'</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">'NT50'</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'The r-value is: </span><span class="si">{</span><span class="n">r_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">make_corr_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="c1"># calculate NT50</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">"NT50"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">"measured IC50"</span><span class="p">]</span>
+
+    <span class="c1"># calculate R value:</span>
+    <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"Ephrin binding_median"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"NT50"</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The r-value is: </span><span class="si">{</span><span class="n">r_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="c1"># Define the category10 colors manually</span>
-    <span class="n">category10_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#4E79A5'</span><span class="p">,</span> <span class="s1">'#F18F3B'</span><span class="p">,</span> <span class="s1">'#E0585B'</span><span class="p">,</span> <span class="s1">'#77B7B2'</span><span class="p">,</span> <span class="s1">'#5AA155'</span><span class="p">,</span> <span class="s1">'#EDC958'</span><span class="p">,</span> <span class="s1">'#AF7AA0'</span><span class="p">,</span> <span class="s1">'#FE9EA8'</span><span class="p">,</span> <span class="s1">'#9C7561'</span><span class="p">,</span> <span class="s1">'#BAB0AC'</span><span class="p">]</span>
+    <span class="n">category10_colors</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"#4E79A5"</span><span class="p">,</span>
+        <span class="s2">"#F18F3B"</span><span class="p">,</span>
+        <span class="s2">"#E0585B"</span><span class="p">,</span>
+        <span class="s2">"#77B7B2"</span><span class="p">,</span>
+        <span class="s2">"#5AA155"</span><span class="p">,</span>
+        <span class="s2">"#EDC958"</span><span class="p">,</span>
+        <span class="s2">"#AF7AA0"</span><span class="p">,</span>
+        <span class="s2">"#FE9EA8"</span><span class="p">,</span>
+        <span class="s2">"#9C7561"</span><span class="p">,</span>
+        <span class="s2">"#BAB0AC"</span><span class="p">,</span>
+    <span class="p">]</span>
 
     <span class="c1"># Adjust colors based on the unique mutations</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'black'</span><span class="p">]</span> <span class="o">+</span> <span class="n">category10_colors</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"black"</span><span class="p">]</span> <span class="o">+</span> <span class="n">category10_colors</span><span class="p">[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">corr_chart</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
         <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -8403,31 +8543,43 @@ a.anchor-link {
             <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
                 <span class="s2">"NT50"</span><span class="p">,</span>
                 <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> NT50 (μg/ml-1)"</span><span class="p">,</span>
-                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">100</span><span class="p">]),</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">]),</span>
             <span class="p">),</span>
-            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'mutation'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Virus'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span><span class="p">)),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+                <span class="s2">"mutation"</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Virus"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span>
+                    <span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span>
+                <span class="p">),</span>
+            <span class="p">),</span>
         <span class="p">)</span>
         <span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-        
     <span class="p">)</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">({</span><span class="s1">'values'</span><span class="p">:[{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Ephrin binding_median'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s1">'NT50'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="s1">'text'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'r = </span><span class="si">{</span><span class="n">r_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">}]})</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-        <span class="n">align</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span>
-        <span class="n">baseline</span><span class="o">=</span><span class="s1">'top'</span><span class="p">,</span>
-        <span class="n">dx</span><span class="o">=</span><span class="mi">5</span>  
-    <span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'x:Q'</span><span class="p">),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'y:Q'</span><span class="p">),</span>
-        <span class="n">text</span><span class="o">=</span><span class="s1">'text:N'</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">"x"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Ephrin binding_median"</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+                        <span class="s2">"y"</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s2">"NT50"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+                        <span class="s2">"text"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"r = </span><span class="si">{</span><span class="n">r_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_text</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="s2">"top"</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">"x:Q"</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"y:Q"</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">"text:N"</span><span class="p">)</span>
     <span class="p">)</span>
     <span class="n">chart</span> <span class="o">=</span> <span class="n">corr_chart</span> <span class="o">+</span> <span class="n">text</span>
     <span class="k">return</span> <span class="n">chart</span>
 
-<span class="n">e2_corr</span> <span class="o">=</span> <span class="n">make_corr_chart</span><span class="p">(</span><span class="n">e2_df_out</span><span class="p">,</span><span class="s1">'EFNB2-monomeric'</span><span class="p">)</span>
+
+<span class="n">e2_corr</span> <span class="o">=</span> <span class="n">make_corr_chart</span><span class="p">(</span><span class="n">e2_df_out</span><span class="p">,</span> <span class="s2">"EFNB2-monomeric"</span><span class="p">)</span>
 <span class="n">e2_corr</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">EFNB2_neut_corr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">e2_corr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">e2_corr_plot</span><span class="p">)</span>
 
-<span class="n">e3_corr</span> <span class="o">=</span> <span class="n">make_corr_chart</span><span class="p">(</span><span class="n">e3_df_out</span><span class="p">,</span><span class="s1">'EFNB3-dimeric'</span><span class="p">)</span>
+<span class="n">e3_corr</span> <span class="o">=</span> <span class="n">make_corr_chart</span><span class="p">(</span><span class="n">e3_df_out</span><span class="p">,</span> <span class="s2">"EFNB3-dimeric"</span><span class="p">)</span>
 <span class="n">e3_corr</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">EFNB2_neut_corr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">e3_corr</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">e3_corr_plot</span><span class="p">)</span>
@@ -8455,23 +8607,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-7a05ed158827435a9d51003e85df626a.vega-embed {
+  #altair-viz-1803f10f530e414082491a4426e37057.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-7a05ed158827435a9d51003e85df626a.vega-embed details,
-  #altair-viz-7a05ed158827435a9d51003e85df626a.vega-embed details summary {
+  #altair-viz-1803f10f530e414082491a4426e37057.vega-embed details,
+  #altair-viz-1803f10f530e414082491a4426e37057.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-7a05ed158827435a9d51003e85df626a"></div>
+<div id="altair-viz-1803f10f530e414082491a4426e37057"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7a05ed158827435a9d51003e85df626a") {
-      outputDiv = document.getElementById("altair-viz-7a05ed158827435a9d51003e85df626a");
+    if (outputDiv.id !== "altair-viz-1803f10f530e414082491a4426e37057") {
+      outputDiv = document.getElementById("altair-viz-1803f10f530e414082491a4426e37057");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8532,23 +8684,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-d716cc21c84f4aefb2e5bb547968ccd3.vega-embed {
+  #altair-viz-dfdc874a37ac44afa5fbd935dfff05e1.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-d716cc21c84f4aefb2e5bb547968ccd3.vega-embed details,
-  #altair-viz-d716cc21c84f4aefb2e5bb547968ccd3.vega-embed details summary {
+  #altair-viz-dfdc874a37ac44afa5fbd935dfff05e1.vega-embed details,
+  #altair-viz-dfdc874a37ac44afa5fbd935dfff05e1.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-d716cc21c84f4aefb2e5bb547968ccd3"></div>
+<div id="altair-viz-dfdc874a37ac44afa5fbd935dfff05e1"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d716cc21c84f4aefb2e5bb547968ccd3") {
-      outputDiv = document.getElementById("altair-viz-d716cc21c84f4aefb2e5bb547968ccd3");
+    if (outputDiv.id !== "altair-viz-dfdc874a37ac44afa5fbd935dfff05e1") {
+      outputDiv = document.getElementById("altair-viz-dfdc874a37ac44afa5fbd935dfff05e1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
