@@ -204,6 +204,7 @@ rule ephrin_neuts:
         e3_corr_plot="results/images/e3_corr_plot.html",
         EFNB2_neut_corr="results/images/EFNB2_neut_corr.html",
         EFNB3_neut_corr="results/images/EFNB3_neut_corr.html",
+        all_ephrin_neut_plots='results/images/all_ephrin_neut_plots.html',
 
 
     params:
@@ -223,6 +224,7 @@ rule ephrin_neuts:
                 "e3_corr_plot": output.e3_corr_plot,
                 "EFNB2_neut_corr": output.EFNB2_neut_corr,
                 "EFNB3_neut_corr": output.EFNB3_neut_corr,
+                "all_ephrin_neut_plots": output.all_ephrin_neut_plots,
             }
         ),
     log:
@@ -748,6 +750,7 @@ docs["Additional files and charts"] = {
         "Combined Neut and Correlation Neut Curves": {
             "EFNB2_neut_corr": rules.ephrin_neuts.output.EFNB2_neut_corr,
             "EFNB3_neut_corr": rules.ephrin_neuts.output.EFNB3_neut_corr,
+            "Everything combined": rules.ephrin_neuts.output.all_ephrin_neut_plots,
         },
     },
     "Antibody Escape": {
