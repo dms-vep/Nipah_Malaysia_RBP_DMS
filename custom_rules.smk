@@ -662,6 +662,20 @@ rule make_interactive_figures:
     shell:
         "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
+rule get_tables:
+    """Make Interactive Figures"""
+    input:
+        antibody_info="data/custom_analyses_data/tables/antibody_neutralization.html",
+        library_stats="data/custom_analyses_data/tables/Library_stats.html",
+    output:
+        antibody_info_out="results/images/antibody_neutralization_table.html",
+        library_stats_out="results/images/library_stats.html",
+    shell:
+        """
+        cp {input.antibody_info} {output.antibody_info_out}
+        cp {input.library_stats} {output.library_stats_out}
+        """
+
 docs["Additional files and charts"] = {
     "Cell Entry": {
         "Cell Entry Analysis Notebook": rules.analyze_nipah_RBP_entry.output.nb,
@@ -782,6 +796,8 @@ docs["Additional files and charts"] = {
         "Notebook for mapping filtered scores onto crystal structures": rules.make_files_for_mapping_structure.output.nb,
         "Nipah polymorphic sites cell entry plot": rules.henipavirus_entropy.output.entry_scores_niv_poly,
         "Nipah polymorphic sites binding plot": rules.henipavirus_entropy.output.binding_scores_niv_poly,
+        "Antibody Info Table": rules.get_tables.output.antibody_info_out,
+        "Library Stats Table": rules.get_tables.output.library_stats_out,
     },
     "Interactive Figures": {
         "Binding and Escape and Cell Entry": rules.make_interactive_figures.output.effect_binding_escape,
