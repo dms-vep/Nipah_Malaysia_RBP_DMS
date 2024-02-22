@@ -7482,7 +7482,10 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="This-notebook-will-read-in-experimentally-determined-luciferase-entry-of-individual-mutants-and-plot-correlation-with-DMS-entry-scores">This notebook will read in experimentally determined luciferase entry of individual mutants and plot correlation with DMS entry scores<a class="anchor-link" href="#This-notebook-will-read-in-experimentally-determined-luciferase-entry-of-individual-mutants-and-plot-correlation-with-DMS-entry-scores">¶</a></h1>
+<h1 id="cell_entry_validations">cell_entry_validations<a class="anchor-link" href="#cell_entry_validations">¶</a></h1><p>This notebook will read in experimentally determined luciferase entry of individual mutants and plot correlation with DMS entry scores</p>
+<ul>
+<li>Written by Brendan Larsen</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7511,7 +7514,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=fe7d5c1b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=1e1b436e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7575,11 +7578,16 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># allow more rows for Altair</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">disable_max_rows</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/'</span><span class="p">:</span>
+<span class="k">if</span> <span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="o">==</span> <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
+<span class="p">):</span>
     <span class="k">pass</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Already in correct directory"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span>
+        <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
+    <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Setup in correct directory"</span><span class="p">)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"config.yaml"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -7621,18 +7629,29 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">corr_plots_combined</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">altair_config</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/theme.py'</span>
-    <span class="n">nipah_config</span> <span class="o">=</span> <span class="s1">'nipah_config.yaml'</span>
-    <span class="n">validation_file_E2</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/experimental_data/functional_validations_EFNB2.csv'</span>
-    <span class="n">validation_file_E3</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/experimental_data/functional_validations_EFNB3.csv'</span>
-    
+    <span class="n">altair_config</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/theme.py"</span>
+    <span class="n">nipah_config</span> <span class="o">=</span> <span class="s2">"nipah_config.yaml"</span>
+    <span class="n">validation_file_E2</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"data/custom_analyses_data/experimental_data/functional_validations_EFNB2.csv"</span>
+    <span class="p">)</span>
+    <span class="n">validation_file_E3</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"data/custom_analyses_data/experimental_data/functional_validations_EFNB3.csv"</span>
+    <span class="p">)</span>
     <span class="n">func_scores_E2_file</span> <span class="o">=</span> <span class="s2">"results/func_effects/averages/CHO_EFNB2_low_func_effects.csv"</span>
     <span class="n">func_scores_E3_file</span> <span class="o">=</span> <span class="s2">"results/func_effects/averages/CHO_EFNB3_low_func_effects.csv"</span>
-    
-    <span class="c1">#func_score_E2_plot </span>
-    <span class="c1">#func_score_E3_plot</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=14c2f429-61c8-4edf-921e-ca669072b583">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Load-in-config-files">Load in config files<a class="anchor-link" href="#Load-in-config-files">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7645,7 +7664,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">altair_config</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">altair_config</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">altair_config</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="n">exec</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nipah_config</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -7674,13 +7693,17 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">func_validations_EFNB2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">validation_file_E2</span><span class="p">,</span><span class="n">na_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="n">func_validations_EFNB2</span> <span class="o">=</span> <span class="n">func_validations_EFNB2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'mean_luciferase'</span><span class="p">:</span><span class="s1">'mean_luciferase_E2'</span><span class="p">})</span>
-<span class="n">func_validations_EFNB3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">validation_file_E3</span><span class="p">,</span><span class="n">na_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="n">func_validations_EFNB3</span> <span class="o">=</span> <span class="n">func_validations_EFNB3</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'mean_luciferase'</span><span class="p">:</span><span class="s1">'mean_luciferase_E3'</span><span class="p">})</span>
-<span class="n">func_validations_EFNB3</span> <span class="o">=</span> <span class="n">func_validations_EFNB3</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'mutation'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">func_validations_EFNB2</span><span class="p">,</span><span class="n">func_validations_EFNB3</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">concat</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">func_validations_EFNB2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">validation_file_E2</span><span class="p">,</span> <span class="n">na_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">func_validations_EFNB2</span> <span class="o">=</span> <span class="n">func_validations_EFNB2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"mean_luciferase"</span><span class="p">:</span> <span class="s2">"mean_luciferase_E2"</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">func_validations_EFNB3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">validation_file_E3</span><span class="p">,</span> <span class="n">na_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">func_validations_EFNB3</span> <span class="o">=</span> <span class="n">func_validations_EFNB3</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"mean_luciferase"</span><span class="p">:</span> <span class="s2">"mean_luciferase_E3"</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">func_validations_EFNB3</span> <span class="o">=</span> <span class="n">func_validations_EFNB3</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">"mutation"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">func_validations_EFNB2</span><span class="p">,</span> <span class="n">func_validations_EFNB3</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">concat</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -7777,108 +7800,6 @@ a.anchor-link {
 <td>12841</td>
 <td>2012</td>
 </tr>
-<tr>
-<th>10</th>
-<td>P488S</td>
-<td>1023</td>
-<td>155</td>
-</tr>
-<tr>
-<th>11</th>
-<td>P488S</td>
-<td>9621</td>
-<td>1672</td>
-</tr>
-<tr>
-<th>12</th>
-<td>Q530L</td>
-<td>13695</td>
-<td>5601</td>
-</tr>
-<tr>
-<th>13</th>
-<td>Q530L</td>
-<td>13589</td>
-<td>5730</td>
-</tr>
-<tr>
-<th>14</th>
-<td>Q530L</td>
-<td>11817</td>
-<td>5136</td>
-</tr>
-<tr>
-<th>15</th>
-<td>C162L</td>
-<td>1</td>
-<td>30</td>
-</tr>
-<tr>
-<th>16</th>
-<td>C162L</td>
-<td>4</td>
-<td>9</td>
-</tr>
-<tr>
-<th>17</th>
-<td>C162L</td>
-<td>1</td>
-<td>20</td>
-</tr>
-<tr>
-<th>18</th>
-<td>F168A</td>
-<td>7771</td>
-<td>24956</td>
-</tr>
-<tr>
-<th>19</th>
-<td>F168A</td>
-<td>9860</td>
-<td>29080</td>
-</tr>
-<tr>
-<th>20</th>
-<td>F168A</td>
-<td>6493</td>
-<td>23138</td>
-</tr>
-<tr>
-<th>21</th>
-<td>WT</td>
-<td>8775</td>
-<td>24502</td>
-</tr>
-<tr>
-<th>22</th>
-<td>WT</td>
-<td>9407</td>
-<td>23416</td>
-</tr>
-<tr>
-<th>23</th>
-<td>WT</td>
-<td>9936</td>
-<td>32370</td>
-</tr>
-<tr>
-<th>24</th>
-<td>Q492L</td>
-<td>19403</td>
-<td>42769</td>
-</tr>
-<tr>
-<th>25</th>
-<td>Q492L</td>
-<td>10533</td>
-<td>36135</td>
-</tr>
-<tr>
-<th>26</th>
-<td>Q492L</td>
-<td>11757</td>
-<td>46212</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -7906,18 +7827,23 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">func_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">func_scores_E2_file</span><span class="p">)</span>
-<span class="n">func_scores</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span> <span class="o">=</span> <span class="n">func_scores</span><span class="p">[</span><span class="s1">'wildtype'</span><span class="p">]</span> <span class="o">+</span> <span class="n">func_scores</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">func_scores</span><span class="p">[</span><span class="s1">'mutant'</span><span class="p">]</span>
+<span class="n">func_scores</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">func_scores</span><span class="p">[</span><span class="s2">"wildtype"</span><span class="p">]</span> <span class="o">+</span> <span class="n">func_scores</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">func_scores</span><span class="p">[</span><span class="s2">"mutant"</span><span class="p">]</span>
+<span class="p">)</span>
 
 <span class="n">func_scores_E3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">func_scores_E3_file</span><span class="p">)</span>
-<span class="n">func_scores_E3</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span> <span class="o">=</span> <span class="n">func_scores_E3</span><span class="p">[</span><span class="s1">'wildtype'</span><span class="p">]</span> <span class="o">+</span> <span class="n">func_scores_E3</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">func_scores_E3</span><span class="p">[</span><span class="s1">'mutant'</span><span class="p">]</span>
+<span class="n">func_scores_E3</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">func_scores_E3</span><span class="p">[</span><span class="s2">"wildtype"</span><span class="p">]</span>
+    <span class="o">+</span> <span class="n">func_scores_E3</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="o">+</span> <span class="n">func_scores_E3</span><span class="p">[</span><span class="s2">"mutant"</span><span class="p">]</span>
+<span class="p">)</span>
 
-<span class="n">func_scores_merged</span> <span class="o">=</span> <span class="n">func_scores</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">func_scores_E3</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">suffixes</span><span class="o">=</span><span class="p">[</span><span class="s1">'_E2'</span><span class="p">,</span><span class="s1">'_E3'</span><span class="p">])</span>
-<span class="n">merged</span> <span class="o">=</span> <span class="n">concat</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">func_scores_merged</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">],</span><span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
-<span class="c1">#Change effect of WT to very small number other than 0 so can plot on log scale</span>
-<span class="n">merged</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">merged</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'WT'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'effect_E2'</span><span class="p">,</span> <span class="s1">'effect_E3'</span><span class="p">]]</span> <span class="o">=</span> <span class="mf">0.0000001</span>
-
-<span class="c1">#for column in merged.select_dtypes(include=['int64']).columns:</span>
-<span class="c1">#    merged[column] = merged[column].astype(int)</span>
+<span class="n">func_scores_merged</span> <span class="o">=</span> <span class="n">func_scores</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">func_scores_E3</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span> <span class="n">suffixes</span><span class="o">=</span><span class="p">[</span><span class="s2">"_E2"</span><span class="p">,</span> <span class="s2">"_E3"</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">concat</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">func_scores_merged</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">"left"</span><span class="p">)</span>
+<span class="c1"># Change effect of WT to very small number other than 0 so can plot on log scale</span>
+<span class="n">merged</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">merged</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"WT"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"effect_E2"</span><span class="p">,</span> <span class="s2">"effect_E3"</span><span class="p">]]</span> <span class="o">=</span> <span class="mf">0.0000001</span>
 </pre></div>
 </div>
 </div>
@@ -7941,7 +7867,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="E2-Correlations">E2 Correlations<a class="anchor-link" href="#E2-Correlations">¶</a></h3>
+<h3 id="CHO-EFNB2-Entry-Correlations">CHO-EFNB2 Entry Correlations<a class="anchor-link" href="#CHO-EFNB2-Entry-Correlations">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7954,67 +7880,99 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">##### calculate R value:</span>
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'effect_E2'</span><span class="p">],</span> <span class="n">merged</span><span class="p">[</span><span class="s1">'mean_luciferase_E2'</span><span class="p">])</span>
+<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span>
+    <span class="n">merged</span><span class="p">[</span><span class="s2">"effect_E2"</span><span class="p">],</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"mean_luciferase_E2"</span><span class="p">]</span>
+<span class="p">)</span>
 <span class="n">r_value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">r_value</span><span class="p">)</span>
+
 
 <span class="c1"># Sorting function to put 'WT' on top of the legend, followed by numerical order</span>
 <span class="k">def</span> <span class="nf">custom_sort_order</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
     <span class="c1"># Sort based on the numerical part in mutation strings, e.g., '530' in 'Q530F'</span>
     <span class="k">def</span> <span class="nf">extract_number</span><span class="p">(</span><span class="n">mutation</span><span class="p">):</span>
-        <span class="n">num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d+'</span><span class="p">,</span> <span class="n">mutation</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d+"</span><span class="p">,</span> <span class="n">mutation</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">group</span><span class="p">())</span> <span class="k">if</span> <span class="n">num</span> <span class="k">else</span> <span class="mi">0</span>
 
     <span class="n">array</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">extract_number</span><span class="p">)</span>
 
     <span class="c1"># Move 'WT' to the beginning of the list</span>
-    <span class="k">if</span> <span class="s1">'WT'</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
-        <span class="n">array</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'WT'</span><span class="p">)</span>
-        <span class="n">array</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'WT'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">"WT"</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+        <span class="n">array</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"WT"</span><span class="p">)</span>
+        <span class="n">array</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"WT"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">array</span>
 
+
 <span class="c1"># Define the category10 colors manually</span>
-<span class="n">category10_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#4E79A5'</span><span class="p">,</span> <span class="s1">'#F18F3B'</span><span class="p">,</span> <span class="s1">'#E0585B'</span><span class="p">,</span> <span class="s1">'#77B7B2'</span><span class="p">,</span> <span class="s1">'#5AA155'</span><span class="p">,</span> <span class="s1">'#EDC958'</span><span class="p">,</span> <span class="s1">'#AF7AA0'</span><span class="p">,</span> <span class="s1">'#FE9EA8'</span><span class="p">,</span> <span class="s1">'#9C7561'</span><span class="p">,</span> <span class="s1">'#BAB0AC'</span><span class="p">]</span>
+<span class="n">category10_colors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"#4E79A5"</span><span class="p">,</span>
+    <span class="s2">"#F18F3B"</span><span class="p">,</span>
+    <span class="s2">"#E0585B"</span><span class="p">,</span>
+    <span class="s2">"#77B7B2"</span><span class="p">,</span>
+    <span class="s2">"#5AA155"</span><span class="p">,</span>
+    <span class="s2">"#EDC958"</span><span class="p">,</span>
+    <span class="s2">"#AF7AA0"</span><span class="p">,</span>
+    <span class="s2">"#FE9EA8"</span><span class="p">,</span>
+    <span class="s2">"#9C7561"</span><span class="p">,</span>
+    <span class="s2">"#BAB0AC"</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="c1"># Adjust colors based on the unique mutations</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'black'</span><span class="p">]</span> <span class="o">+</span> <span class="n">category10_colors</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"black"</span><span class="p">]</span> <span class="o">+</span> <span class="n">category10_colors</span><span class="p">[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># Create the Altair chart</span>
 <span class="n">corr_chart</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">merged</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span><span class="s1">'CHO-EFNB2'</span><span class="p">,</span><span class="n">anchor</span><span class="o">=</span><span class="s1">'middle'</span><span class="p">))</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">merged</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span><span class="s2">"CHO-EFNB2"</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">"middle"</span><span class="p">))</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
             <span class="s2">"effect_E2:Q"</span><span class="p">,</span>
             <span class="n">title</span><span class="o">=</span><span class="s2">"DMS entry score"</span><span class="p">,</span>
-            <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]),</span>
-            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+            <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>
+            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span>
         <span class="p">),</span>
         <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
             <span class="s2">"mean_luciferase_E2"</span><span class="p">,</span>
             <span class="n">title</span><span class="o">=</span><span class="s2">"RLU/μL"</span><span class="p">,</span>
             <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
-            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># Display in scientific notation</span>
+            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span>
+                <span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">4</span>
+            <span class="p">),</span>  <span class="c1"># Display in scientific notation</span>
         <span class="p">),</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'mutation'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Mutant'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span><span class="p">)),</span>
-        <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">,</span><span class="s1">'effect_E2'</span><span class="p">,</span><span class="s1">'mean_luciferase_E2'</span><span class="p">]</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+            <span class="s2">"mutation"</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">"Mutant"</span><span class="p">,</span>
+            <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span>
+                <span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span>
+            <span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">,</span> <span class="s2">"effect_E2"</span><span class="p">,</span> <span class="s2">"mean_luciferase_E2"</span><span class="p">],</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">min_effect_E2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'effect_E2'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
-<span class="n">max_mean_luciferase_E2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'mean_luciferase_E2'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">min_effect_E2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">"effect_E2"</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="n">max_mean_luciferase_E2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">"mean_luciferase_E2"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">({</span><span class="s1">'values'</span><span class="p">:[{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">min_effect_E2</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">max_mean_luciferase_E2</span><span class="p">,</span> <span class="s1">'text'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'r = </span><span class="si">{</span><span class="n">r_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">}]})</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-
-    <span class="n">align</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span>
-    <span class="n">baseline</span><span class="o">=</span><span class="s1">'top'</span><span class="p">,</span>
-    <span class="n">dx</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span>  <span class="c1"># Adjust this for position</span>
-    <span class="n">dy</span><span class="o">=-</span><span class="mi">10</span>  <span class="c1"># Adjust this for position</span>
-<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'x:Q'</span><span class="p">),</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'y:Q'</span><span class="p">),</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">'text:N'</span>
+<span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"x"</span><span class="p">:</span> <span class="n">min_effect_E2</span><span class="p">,</span>
+                    <span class="s2">"y"</span><span class="p">:</span> <span class="n">max_mean_luciferase_E2</span><span class="p">,</span>
+                    <span class="s2">"text"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"r = </span><span class="si">{</span><span class="n">r_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
+        <span class="n">align</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span>
+        <span class="n">baseline</span><span class="o">=</span><span class="s2">"top"</span><span class="p">,</span>
+        <span class="n">dx</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span>  <span class="c1"># Adjust this for position</span>
+        <span class="n">dy</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># Adjust this for position</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">"x:Q"</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"y:Q"</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">"text:N"</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="c1">#text</span>
+<span class="c1"># text</span>
 <span class="n">final_chart</span> <span class="o">=</span> <span class="n">corr_chart</span> <span class="o">+</span> <span class="n">text</span>
 
 
@@ -8035,23 +7993,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-e6ccf873425346e68a52ee79d71520c0.vega-embed {
+  #altair-viz-18cd532b6b4940c2b37ea0bbe705f532.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-e6ccf873425346e68a52ee79d71520c0.vega-embed details,
-  #altair-viz-e6ccf873425346e68a52ee79d71520c0.vega-embed details summary {
+  #altair-viz-18cd532b6b4940c2b37ea0bbe705f532.vega-embed details,
+  #altair-viz-18cd532b6b4940c2b37ea0bbe705f532.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-e6ccf873425346e68a52ee79d71520c0"></div>
+<div id="altair-viz-18cd532b6b4940c2b37ea0bbe705f532"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e6ccf873425346e68a52ee79d71520c0") {
-      outputDiv = document.getElementById("altair-viz-e6ccf873425346e68a52ee79d71520c0");
+    if (outputDiv.id !== "altair-viz-18cd532b6b4940c2b37ea0bbe705f532") {
+      outputDiv = document.getElementById("altair-viz-18cd532b6b4940c2b37ea0bbe705f532");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8103,6 +8061,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0f108f6d-c962-498e-a19c-117d49374224">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="CHO-EFNB3-entry-correlations-plot">CHO-EFNB3 entry correlations plot<a class="anchor-link" href="#CHO-EFNB3-entry-correlations-plot">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6e00f6a8-086f-4b79-b4cf-80505f392cad">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8111,68 +8080,100 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#calculate R value:</span>
-<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'effect_E3'</span><span class="p">],</span> <span class="n">merged</span><span class="p">[</span><span class="s1">'mean_luciferase_E3'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># calculate R value:</span>
+<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span>
+    <span class="n">merged</span><span class="p">[</span><span class="s2">"effect_E3"</span><span class="p">],</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"mean_luciferase_E3"</span><span class="p">]</span>
+<span class="p">)</span>
 <span class="n">r_value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">r_value</span><span class="p">)</span>
+
 
 <span class="c1"># Sorting function to put 'WT' on top of the legend, followed by numerical order</span>
 <span class="k">def</span> <span class="nf">custom_sort_order</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
     <span class="c1"># Sort based on the numerical part in mutation strings, e.g., '530' in 'Q530F'</span>
     <span class="k">def</span> <span class="nf">extract_number</span><span class="p">(</span><span class="n">mutation</span><span class="p">):</span>
-        <span class="n">num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\d+'</span><span class="p">,</span> <span class="n">mutation</span><span class="p">)</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d+"</span><span class="p">,</span> <span class="n">mutation</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">group</span><span class="p">())</span> <span class="k">if</span> <span class="n">num</span> <span class="k">else</span> <span class="mi">0</span>
 
     <span class="n">array</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">extract_number</span><span class="p">)</span>
 
     <span class="c1"># Move 'WT' to the beginning of the list</span>
-    <span class="k">if</span> <span class="s1">'WT'</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
-        <span class="n">array</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'WT'</span><span class="p">)</span>
-        <span class="n">array</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'WT'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">"WT"</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+        <span class="n">array</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"WT"</span><span class="p">)</span>
+        <span class="n">array</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"WT"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">array</span>
 
+
 <span class="c1"># Define the category10 colors manually</span>
-<span class="n">category10_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#4E79A5'</span><span class="p">,</span> <span class="s1">'#F18F3B'</span><span class="p">,</span> <span class="s1">'#E0585B'</span><span class="p">,</span> <span class="s1">'#77B7B2'</span><span class="p">,</span> <span class="s1">'#5AA155'</span><span class="p">,</span> <span class="s1">'#EDC958'</span><span class="p">,</span> <span class="s1">'#AF7AA0'</span><span class="p">,</span> <span class="s1">'#FE9EA8'</span><span class="p">,</span> <span class="s1">'#9C7561'</span><span class="p">,</span> <span class="s1">'#BAB0AC'</span><span class="p">]</span>
+<span class="n">category10_colors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"#4E79A5"</span><span class="p">,</span>
+    <span class="s2">"#F18F3B"</span><span class="p">,</span>
+    <span class="s2">"#E0585B"</span><span class="p">,</span>
+    <span class="s2">"#77B7B2"</span><span class="p">,</span>
+    <span class="s2">"#5AA155"</span><span class="p">,</span>
+    <span class="s2">"#EDC958"</span><span class="p">,</span>
+    <span class="s2">"#AF7AA0"</span><span class="p">,</span>
+    <span class="s2">"#FE9EA8"</span><span class="p">,</span>
+    <span class="s2">"#9C7561"</span><span class="p">,</span>
+    <span class="s2">"#BAB0AC"</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="c1"># Adjust colors based on the unique mutations</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'black'</span><span class="p">]</span> <span class="o">+</span> <span class="n">category10_colors</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"black"</span><span class="p">]</span> <span class="o">+</span> <span class="n">category10_colors</span><span class="p">[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># Create the Altair chart</span>
 <span class="n">corr_chart</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">merged</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span><span class="s1">'CHO-EFNB3'</span><span class="p">,</span><span class="n">anchor</span><span class="o">=</span><span class="s1">'middle'</span><span class="p">))</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">merged</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Title</span><span class="p">(</span><span class="s2">"CHO-EFNB3"</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">"middle"</span><span class="p">))</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
             <span class="s2">"effect_E3:Q"</span><span class="p">,</span>
             <span class="n">title</span><span class="o">=</span><span class="s2">"DMS entry score"</span><span class="p">,</span>
-            <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]),</span>
-            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+            <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>
+            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span>
         <span class="p">),</span>
         <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
             <span class="s2">"mean_luciferase_E3"</span><span class="p">,</span>
             <span class="n">title</span><span class="o">=</span><span class="s2">"RLU/μL"</span><span class="p">,</span>
             <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
-            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># Display in scientific notation</span>
+            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span>
+                <span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">4</span>
+            <span class="p">),</span>  <span class="c1"># Display in scientific notation</span>
         <span class="p">),</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'mutation'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Mutant'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span><span class="p">)),</span>
-        <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">,</span><span class="s1">'effect_E3'</span><span class="p">,</span><span class="s1">'mean_luciferase_E3'</span><span class="p">]</span>    
+        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+            <span class="s2">"mutation"</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">"Mutant"</span><span class="p">,</span>
+            <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span>
+                <span class="n">domain</span><span class="o">=</span><span class="n">custom_sort_order</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="nb">range</span><span class="o">=</span><span class="n">colors</span>
+            <span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">,</span> <span class="s2">"effect_E3"</span><span class="p">,</span> <span class="s2">"mean_luciferase_E3"</span><span class="p">],</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">min_effect_E3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'effect_E3'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
-<span class="n">max_mean_luciferase_E3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s1">'mean_luciferase_E3'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">min_effect_E3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">"effect_E3"</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="n">max_mean_luciferase_E3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="s2">"mean_luciferase_E3"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">({</span><span class="s1">'values'</span><span class="p">:[{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">min_effect_E3</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span> <span class="n">max_mean_luciferase_E3</span><span class="p">,</span> <span class="s1">'text'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'r = </span><span class="si">{</span><span class="n">r_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">}]})</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-
-    <span class="n">align</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span>
-    <span class="n">baseline</span><span class="o">=</span><span class="s1">'top'</span><span class="p">,</span>
-    <span class="n">dx</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span>  <span class="c1"># Adjust this for position</span>
-    <span class="n">dy</span><span class="o">=-</span><span class="mi">10</span>  <span class="c1"># Adjust this for position</span>
-<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'x:Q'</span><span class="p">),</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'y:Q'</span><span class="p">),</span>
-    <span class="n">text</span><span class="o">=</span><span class="s1">'text:N'</span>
+<span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">"x"</span><span class="p">:</span> <span class="n">min_effect_E3</span><span class="p">,</span>
+                    <span class="s2">"y"</span><span class="p">:</span> <span class="n">max_mean_luciferase_E3</span><span class="p">,</span>
+                    <span class="s2">"text"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"r = </span><span class="si">{</span><span class="n">r_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
+        <span class="n">align</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span>
+        <span class="n">baseline</span><span class="o">=</span><span class="s2">"top"</span><span class="p">,</span>
+        <span class="n">dx</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span>  <span class="c1"># Adjust this for position</span>
+        <span class="n">dy</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># Adjust this for position</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">"x:Q"</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"y:Q"</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">"text:N"</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="c1">#text</span>
+<span class="c1"># text</span>
 <span class="n">final_chart</span> <span class="o">=</span> <span class="n">corr_chart</span> <span class="o">+</span> <span class="n">text</span>
 
 <span class="n">func_score_E3_chart</span> <span class="o">=</span> <span class="n">final_chart</span>
@@ -8192,23 +8193,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-67b0d85ebffb4994afc1b379e1b4269f.vega-embed {
+  #altair-viz-764c129235794549a0076dc3d368e03d.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-67b0d85ebffb4994afc1b379e1b4269f.vega-embed details,
-  #altair-viz-67b0d85ebffb4994afc1b379e1b4269f.vega-embed details summary {
+  #altair-viz-764c129235794549a0076dc3d368e03d.vega-embed details,
+  #altair-viz-764c129235794549a0076dc3d368e03d.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-67b0d85ebffb4994afc1b379e1b4269f"></div>
+<div id="altair-viz-764c129235794549a0076dc3d368e03d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-67b0d85ebffb4994afc1b379e1b4269f") {
-      outputDiv = document.getElementById("altair-viz-67b0d85ebffb4994afc1b379e1b4269f");
+    if (outputDiv.id !== "altair-viz-764c129235794549a0076dc3d368e03d") {
+      outputDiv = document.getElementById("altair-viz-764c129235794549a0076dc3d368e03d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8260,6 +8261,22 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=223577cb-8b9b-4924-9efa-fe063938868a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Combine the plots</span>
+<span class="k">if</span> <span class="n">corr_plots_combined</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="p">(</span><span class="n">func_score_E2_chart</span> <span class="o">|</span> <span class="n">func_score_E3_chart</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">corr_plots_combined</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0675a100-8a6b-4dd9-ad1a-d25787fc05e9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8276,15 +8293,19 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">mean_luc_E2</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'mutation == "WT"'</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'mutation'</span><span class="p">)[</span><span class="s1">'mean_luciferase_E2'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">mean_luc_E3</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'mutation == "WT"'</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'mutation'</span><span class="p">)[</span><span class="s1">'mean_luciferase_E3'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">merged</span><span class="p">[</span><span class="s1">'E2_relative'</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">'mean_luciferase_E2'</span><span class="p">]</span> <span class="o">/</span> <span class="n">mean_luc_E2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">merged</span><span class="p">[</span><span class="s1">'E3_relative'</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">'mean_luciferase_E3'</span><span class="p">]</span> <span class="o">/</span> <span class="n">mean_luc_E3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mean_luc_E2</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">merged</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'mutation == "WT"'</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"mutation"</span><span class="p">)[</span><span class="s2">"mean_luciferase_E2"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">mean_luc_E3</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">merged</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'mutation == "WT"'</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"mutation"</span><span class="p">)[</span><span class="s2">"mean_luciferase_E3"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">merged</span><span class="p">[</span><span class="s2">"E2_relative"</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"mean_luciferase_E2"</span><span class="p">]</span> <span class="o">/</span> <span class="n">mean_luc_E2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">merged</span><span class="p">[</span><span class="s2">"E3_relative"</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"mean_luciferase_E3"</span><span class="p">]</span> <span class="o">/</span> <span class="n">mean_luc_E3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">merged_wt_drop</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="p">[</span><span class="s1">'mutation'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'WT'</span><span class="p">]</span>
+<span class="n">merged_wt_drop</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">"WT"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -8295,19 +8316,45 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_functional_validations</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>    
-    <span class="n">df_melted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s1">'mutation'</span><span class="p">,</span> <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">'E2_relative'</span><span class="p">,</span> <span class="s1">'E3_relative'</span><span class="p">],</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">'type'</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">'effect'</span><span class="p">)</span>    
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_melted</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'type:N'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="kc">True</span><span class="p">)),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'effect'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Cell Entry of RBP Mutants Relative to WT'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">6</span><span class="p">)),</span>  <span class="c1"># Display in scientific notation</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Receptor'</span><span class="p">),</span>
-        <span class="n">column</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">'mutation:N'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Header</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">labelFont</span><span class="o">=</span><span class="s2">"Helvetica Light"</span><span class="p">,</span> <span class="n">labelOrient</span><span class="o">=</span><span class="s1">'bottom'</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_functional_validations</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">df_melted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+        <span class="n">id_vars</span><span class="o">=</span><span class="s2">"mutation"</span><span class="p">,</span>
+        <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">"E2_relative"</span><span class="p">,</span> <span class="s2">"E3_relative"</span><span class="p">],</span>
+        <span class="n">var_name</span><span class="o">=</span><span class="s2">"type"</span><span class="p">,</span>
+        <span class="n">value_name</span><span class="o">=</span><span class="s2">"effect"</span><span class="p">,</span>
     <span class="p">)</span>
-    
+    <span class="n">chart</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_melted</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+                <span class="s2">"type:N"</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="p">),</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
+                <span class="s2">"effect"</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Cell Entry of RBP Mutants Relative to WT"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span>
+            <span class="p">),</span>  <span class="c1"># Display in scientific notation</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Receptor"</span><span class="p">),</span>
+            <span class="n">column</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span>
+                <span class="s2">"mutation:N"</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">header</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Header</span><span class="p">(</span>
+                    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">labelFont</span><span class="o">=</span><span class="s2">"Helvetica Light"</span><span class="p">,</span> <span class="n">labelOrient</span><span class="o">=</span><span class="s2">"bottom"</span>
+                <span class="p">),</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="p">)</span>
+
     <span class="k">return</span> <span class="n">chart</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+
 
 <span class="n">plot_functional_validations</span><span class="p">(</span><span class="n">merged_wt_drop</span><span class="p">)</span>
 </pre></div>
@@ -8323,23 +8370,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-4f85ba4d4a8f40df9d2320b9a1407210.vega-embed {
+  #altair-viz-4b2ff9b7d5fc4407baa9e5b73de34ad5.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4f85ba4d4a8f40df9d2320b9a1407210.vega-embed details,
-  #altair-viz-4f85ba4d4a8f40df9d2320b9a1407210.vega-embed details summary {
+  #altair-viz-4b2ff9b7d5fc4407baa9e5b73de34ad5.vega-embed details,
+  #altair-viz-4b2ff9b7d5fc4407baa9e5b73de34ad5.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4f85ba4d4a8f40df9d2320b9a1407210"></div>
+<div id="altair-viz-4b2ff9b7d5fc4407baa9e5b73de34ad5"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4f85ba4d4a8f40df9d2320b9a1407210") {
-      outputDiv = document.getElementById("altair-viz-4f85ba4d4a8f40df9d2320b9a1407210");
+    if (outputDiv.id !== "altair-viz-4b2ff9b7d5fc4407baa9e5b73de34ad5") {
+      outputDiv = document.getElementById("altair-viz-4b2ff9b7d5fc4407baa9e5b73de34ad5");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8385,66 +8432,8 @@ a.anchor-link {
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"width": 200, "height": 200, "config": {"background": "transparent", "title": {"fontSize": 18, "font": "Helvetica", "anchor": "start", "color": "#000000", "orient": "top", "offset": 0}, "axisX": {"domain": true, "domainColor": "#000000", "domainWidth": 0.75, "grid": false, "gridColor": "#DEDDDD", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 12, "labelAngle": 0, "tickColor": "#000000", "tickSize": 4, "titleFont": "Helvetica", "tickCount": 3, "titleFontSize": 12, "titlePadding": 10}, "axisY": {"domain": true, "domainColor": "#000000", "domainWidth": 0.75, "grid": false, "gridColor": "#DEDDDD", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 12, "labelAngle": 0, "tickColor": "#000000", "tickSize": 4, "tickCount": 3, "titleFont": "Helvetica", "titleFontSize": 12, "titlePadding": 10, "titleAngle": 270}, "legend": {"labelFont": "Helvetica", "labelFontSize": 12, "symbolSize": 100, "titleFont": "Helvetica", "titleFontSize": 12, "padding": 5, "titleLimit": 200, "gradientLength": 100}, "range": {"category": ["#1f4e79", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"], "diverging": ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]}, "view": {"stroke": "transparent"}, "point": {"filled": true, "size": 25, "opacity": 1, "color": "black"}, "boxplot": {"extent": "min-max"}}, "data": {"name": "data-7956cc99dde33e976bb897de1db65def"}, "mark": {"type": "circle", "size": 75}, "encoding": {"color": {"field": "type", "title": "Receptor", "type": "nominal"}, "column": {"field": "mutation", "header": {"labelFont": "Helvetica Light", "labelFontSize": 16, "labelOrient": "bottom"}, "title": null, "type": "nominal"}, "x": {"axis": {"domain": true, "labels": false, "ticks": false}, "field": "type", "title": null, "type": "nominal"}, "y": {"axis": {"grid": true, "tickCount": 6}, "field": "effect", "scale": {"base": 10, "type": "log"}, "title": "Cell Entry of RBP Mutants Relative to WT", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-7956cc99dde33e976bb897de1db65def": [{"mutation": "Q530F", "type": "E2_relative", "effect": 1.4765274912867203}, {"mutation": "Q530F", "type": "E2_relative", "effect": 1.2450032007966427}, {"mutation": "Q530F", "type": "E2_relative", "effect": 1.3425208051781778}, {"mutation": "Y389T", "type": "E2_relative", "effect": 0.9840315811935416}, {"mutation": "Y389T", "type": "E2_relative", "effect": 1.0204139696991252}, {"mutation": "Y389T", "type": "E2_relative", "effect": 0.6750480119496408}, {"mutation": "Q530E", "type": "E2_relative", "effect": 0.9551177181876379}, {"mutation": "Q530E", "type": "E2_relative", "effect": 0.5147947933707946}, {"mutation": "Q530E", "type": "E2_relative", "effect": 0.8391421864997511}, {"mutation": "P488S", "type": "E2_relative", "effect": 1.3700476563055695}, {"mutation": "P488S", "type": "E2_relative", "effect": 0.10914716551675084}, {"mutation": "P488S", "type": "E2_relative", "effect": 1.026495483320293}, {"mutation": "Q530L", "type": "E2_relative", "effect": 1.4611636674016646}, {"mutation": "Q530L", "type": "E2_relative", "effect": 1.4498541859307206}, {"mutation": "Q530L", "type": "E2_relative", "effect": 1.2607937975673946}, {"mutation": "C162L", "type": "E2_relative", "effect": 0.00010669322142399886}, {"mutation": "C162L", "type": "E2_relative", "effect": 0.00042677288569599545}, {"mutation": "C162L", "type": "E2_relative", "effect": 0.00010669322142399886}, {"mutation": "F168A", "type": "E2_relative", "effect": 0.8291130236858952}, {"mutation": "F168A", "type": "E2_relative", "effect": 1.0519951632406288}, {"mutation": "F168A", "type": "E2_relative", "effect": 0.6927590867060247}, {"mutation": "Q492L", "type": "E2_relative", "effect": 2.07016857528985}, {"mutation": "Q492L", "type": "E2_relative", "effect": 1.12379970125898}, {"mutation": "Q492L", "type": "E2_relative", "effect": 1.2543922042819546}, {"mutation": "Q530F", "type": "E3_relative", "effect": 1.4631202670386607}, {"mutation": "Q530F", "type": "E3_relative", "effect": 1.4546009366281387}, {"mutation": "Q530F", "type": "E3_relative", "effect": 1.2190489238740534}, {"mutation": "Y389T", "type": "E3_relative", "effect": 0.0006725787166201674}, {"mutation": "Y389T", "type": "E3_relative", "effect": 0.0007846751693901952}, {"mutation": "Y389T", "type": "E3_relative", "effect": 0.001120964527700279}, {"mutation": "Q530E", "type": "E3_relative", "effect": 0.0001120964527700279}, {"mutation": "Q530E", "type": "E3_relative", "effect": 7.473096851335193e-05}, {"mutation": "Q530E", "type": "E3_relative", "effect": 3.736548425667596e-05}, {"mutation": "P488S", "type": "E3_relative", "effect": 0.07517935432443204}, {"mutation": "P488S", "type": "E3_relative", "effect": 0.005791650059784775}, {"mutation": "P488S", "type": "E3_relative", "effect": 0.06247508967716221}, {"mutation": "Q530L", "type": "E3_relative", "effect": 0.2092840773216421}, {"mutation": "Q530L", "type": "E3_relative", "effect": 0.21410422479075328}, {"mutation": "Q530L", "type": "E3_relative", "effect": 0.19190912714228775}, {"mutation": "C162L", "type": "E3_relative", "effect": 0.001120964527700279}, {"mutation": "C162L", "type": "E3_relative", "effect": 0.0003362893583100837}, {"mutation": "C162L", "type": "E3_relative", "effect": 0.0007473096851335193}, {"mutation": "F168A", "type": "E3_relative", "effect": 0.9324930251096054}, {"mutation": "F168A", "type": "E3_relative", "effect": 1.086588282184137}, {"mutation": "F168A", "type": "E3_relative", "effect": 0.8645625747309684}, {"mutation": "Q492L", "type": "E3_relative", "effect": 1.5980843961737743}, {"mutation": "Q492L", "type": "E3_relative", "effect": 1.350201773614986}, {"mutation": "Q492L", "type": "E3_relative", "effect": 1.7267337584695097}]}}, {"mode": "vega-lite"});
+  })({"width": 100, "height": 100, "config": {"background": "transparent", "title": {"fontSize": 18, "font": "Helvetica", "anchor": "start", "color": "#000000", "orient": "top", "offset": 0}, "axisX": {"domain": true, "domainColor": "#000000", "domainWidth": 0.75, "grid": false, "gridColor": "#DEDDDD", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 12, "labelAngle": 0, "tickColor": "#000000", "tickSize": 4, "titleFont": "Helvetica", "tickCount": 3, "titleFontSize": 12, "titlePadding": 10}, "axisY": {"domain": true, "domainColor": "#000000", "domainWidth": 0.75, "grid": false, "gridColor": "#DEDDDD", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 12, "labelAngle": 0, "tickColor": "#000000", "tickSize": 4, "tickCount": 3, "titleFont": "Helvetica", "titleFontSize": 12, "titlePadding": 10, "titleAngle": 270}, "legend": {"labelFont": "Helvetica", "labelFontSize": 12, "symbolSize": 100, "titleFont": "Helvetica", "titleFontSize": 12, "padding": 5, "titleLimit": 200, "gradientLength": 100}, "range": {"category": ["#1f4e79", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"], "diverging": ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]}, "view": {"stroke": "transparent"}, "point": {"filled": true, "size": 25, "opacity": 1, "color": "black"}, "boxplot": {"extent": "min-max"}}, "data": {"name": "data-7956cc99dde33e976bb897de1db65def"}, "mark": {"type": "circle", "size": 75}, "encoding": {"color": {"field": "type", "title": "Receptor", "type": "nominal"}, "column": {"field": "mutation", "header": {"labelFont": "Helvetica Light", "labelFontSize": 16, "labelOrient": "bottom"}, "title": null, "type": "nominal"}, "x": {"axis": {"domain": true, "labels": false, "ticks": false}, "field": "type", "title": null, "type": "nominal"}, "y": {"axis": {"grid": true, "tickCount": 6}, "field": "effect", "scale": {"base": 10, "type": "log"}, "title": "Cell Entry of RBP Mutants Relative to WT", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-7956cc99dde33e976bb897de1db65def": [{"mutation": "Q530F", "type": "E2_relative", "effect": 1.4765274912867203}, {"mutation": "Q530F", "type": "E2_relative", "effect": 1.2450032007966427}, {"mutation": "Q530F", "type": "E2_relative", "effect": 1.3425208051781778}, {"mutation": "Y389T", "type": "E2_relative", "effect": 0.9840315811935416}, {"mutation": "Y389T", "type": "E2_relative", "effect": 1.0204139696991252}, {"mutation": "Y389T", "type": "E2_relative", "effect": 0.6750480119496408}, {"mutation": "Q530E", "type": "E2_relative", "effect": 0.9551177181876379}, {"mutation": "Q530E", "type": "E2_relative", "effect": 0.5147947933707946}, {"mutation": "Q530E", "type": "E2_relative", "effect": 0.8391421864997511}, {"mutation": "P488S", "type": "E2_relative", "effect": 1.3700476563055695}, {"mutation": "P488S", "type": "E2_relative", "effect": 0.10914716551675084}, {"mutation": "P488S", "type": "E2_relative", "effect": 1.026495483320293}, {"mutation": "Q530L", "type": "E2_relative", "effect": 1.4611636674016646}, {"mutation": "Q530L", "type": "E2_relative", "effect": 1.4498541859307206}, {"mutation": "Q530L", "type": "E2_relative", "effect": 1.2607937975673946}, {"mutation": "C162L", "type": "E2_relative", "effect": 0.00010669322142399886}, {"mutation": "C162L", "type": "E2_relative", "effect": 0.00042677288569599545}, {"mutation": "C162L", "type": "E2_relative", "effect": 0.00010669322142399886}, {"mutation": "F168A", "type": "E2_relative", "effect": 0.8291130236858952}, {"mutation": "F168A", "type": "E2_relative", "effect": 1.0519951632406288}, {"mutation": "F168A", "type": "E2_relative", "effect": 0.6927590867060247}, {"mutation": "Q492L", "type": "E2_relative", "effect": 2.07016857528985}, {"mutation": "Q492L", "type": "E2_relative", "effect": 1.12379970125898}, {"mutation": "Q492L", "type": "E2_relative", "effect": 1.2543922042819546}, {"mutation": "Q530F", "type": "E3_relative", "effect": 1.4631202670386607}, {"mutation": "Q530F", "type": "E3_relative", "effect": 1.4546009366281387}, {"mutation": "Q530F", "type": "E3_relative", "effect": 1.2190489238740534}, {"mutation": "Y389T", "type": "E3_relative", "effect": 0.0006725787166201674}, {"mutation": "Y389T", "type": "E3_relative", "effect": 0.0007846751693901952}, {"mutation": "Y389T", "type": "E3_relative", "effect": 0.001120964527700279}, {"mutation": "Q530E", "type": "E3_relative", "effect": 0.0001120964527700279}, {"mutation": "Q530E", "type": "E3_relative", "effect": 7.473096851335193e-05}, {"mutation": "Q530E", "type": "E3_relative", "effect": 3.736548425667596e-05}, {"mutation": "P488S", "type": "E3_relative", "effect": 0.07517935432443204}, {"mutation": "P488S", "type": "E3_relative", "effect": 0.005791650059784775}, {"mutation": "P488S", "type": "E3_relative", "effect": 0.06247508967716221}, {"mutation": "Q530L", "type": "E3_relative", "effect": 0.2092840773216421}, {"mutation": "Q530L", "type": "E3_relative", "effect": 0.21410422479075328}, {"mutation": "Q530L", "type": "E3_relative", "effect": 0.19190912714228775}, {"mutation": "C162L", "type": "E3_relative", "effect": 0.001120964527700279}, {"mutation": "C162L", "type": "E3_relative", "effect": 0.0003362893583100837}, {"mutation": "C162L", "type": "E3_relative", "effect": 0.0007473096851335193}, {"mutation": "F168A", "type": "E3_relative", "effect": 0.9324930251096054}, {"mutation": "F168A", "type": "E3_relative", "effect": 1.086588282184137}, {"mutation": "F168A", "type": "E3_relative", "effect": 0.8645625747309684}, {"mutation": "Q492L", "type": "E3_relative", "effect": 1.5980843961737743}, {"mutation": "Q492L", "type": "E3_relative", "effect": 1.350201773614986}, {"mutation": "Q492L", "type": "E3_relative", "effect": 1.7267337584695097}]}}, {"mode": "vega-lite"});
 </script>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e28cbacc-dea2-4b9a-aae6-bb43e4e162fd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#corr_plots_combined</span>
-<span class="k">if</span> <span class="n">corr_plots_combined</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="p">(</span><span class="n">func_score_E2_chart</span> <span class="o">|</span> <span class="n">func_score_E3_chart</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">corr_plots_combined</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7919f9ba-729d-43aa-bb95-a06e698063da">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3e096044-6ca1-4f41-8c24-4775c249f406">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7dec8ac4-8392-4bdd-bd9e-135e6f6f5984">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
 </div>
 </div>
 </div>

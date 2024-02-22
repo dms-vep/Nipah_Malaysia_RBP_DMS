@@ -7482,7 +7482,10 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="This-notebook-analyzes-ephrin-neutralization-of-Nipah-pseudovirus">This notebook analyzes ephrin neutralization of Nipah pseudovirus<a class="anchor-link" href="#This-notebook-analyzes-ephrin-neutralization-of-Nipah-pseudovirus">¶</a></h3>
+<h1 id="ephrin_neut_curves">ephrin_neut_curves<a class="anchor-link" href="#ephrin_neut_curves">¶</a></h1><p>This notebook analyzes ephrin neutralization of Nipah pseudovirus</p>
+<ul>
+<li>Written by Brendan Larsen</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7519,7 +7522,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=6f64ec1f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=e1ca4804">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7680,14 +7683,19 @@ a.anchor-link {
     <span class="n">e3_dimeric_binding_file</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s2">"results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv"</span>
     <span class="p">)</span>
-
-    <span class="c1"># ephrin_curve_plot</span>
-    <span class="c1"># e2_curve_plot</span>
-    <span class="c1"># e3_curve_plot</span>
-    <span class="c1"># e2_corr_plot</span>
-    <span class="c1"># e3_corr_plot</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e9c6f154-3ac5-4a48-b830-f52d26dc1f86">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Read-in-config-files">Read in config files<a class="anchor-link" href="#Read-in-config-files">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7721,7 +7729,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=059d3340-edc7-4625-a664-d71ead11adb5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=112039e7-3bcf-45e0-952d-d96f21ce6936">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7729,7 +7737,11 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ephrin_binding_neuts_file</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># First, load in the neut data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ephrin_binding_neuts_file</span><span class="p">)</span>
+
+
+<span class="c1"># In this particular case I want to fix the names</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
     <span class="p">{</span>
         <span class="s2">"E2-dimeric"</span><span class="p">:</span> <span class="s2">"EFNB2-dimeric"</span><span class="p">,</span>
@@ -7738,7 +7750,105 @@ a.anchor-link {
         <span class="s2">"E3-monomeric"</span><span class="p">:</span> <span class="s2">"EFNB3-monomeric"</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
-<span class="n">fits</span> <span class="o">=</span> <span class="n">neutcurve</span><span class="o">.</span><span class="n">curvefits</span><span class="o">.</span><span class="n">CurveFits</span><span class="p">(</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>serum</th>
+<th>virus</th>
+<th>replicate</th>
+<th>concentration</th>
+<th>fraction infectivity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>CHO-EFNB3</td>
+<td>EFNB2-dimeric</td>
+<td>1</td>
+<td>0.098039</td>
+<td>0.00001</td>
+</tr>
+<tr>
+<th>1</th>
+<td>CHO-EFNB3</td>
+<td>EFNB2-dimeric</td>
+<td>1</td>
+<td>0.032680</td>
+<td>0.00001</td>
+</tr>
+<tr>
+<th>2</th>
+<td>CHO-EFNB3</td>
+<td>EFNB2-dimeric</td>
+<td>1</td>
+<td>0.010893</td>
+<td>0.00000</td>
+</tr>
+<tr>
+<th>3</th>
+<td>CHO-EFNB3</td>
+<td>EFNB2-dimeric</td>
+<td>1</td>
+<td>0.003631</td>
+<td>0.00001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aeeac162-a200-4048-99b5-de6321acd360">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Get-neut-curves-and-plot">Get neut curves and plot<a class="anchor-link" href="#Get-neut-curves-and-plot">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=059d3340-edc7-4625-a664-d71ead11adb5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">fits</span> <span class="o">=</span> <span class="n">neutcurve</span><span class="o">.</span><span class="n">curvefits</span><span class="o">.</span><span class="n">CurveFits</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
     <span class="n">fixbottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="p">)</span>
@@ -7846,23 +7956,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-f9e6fb128dd44229b4038d7ca6edbcdf.vega-embed {
+  #altair-viz-2bca2b79f409463db956e0ed8775a4ff.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f9e6fb128dd44229b4038d7ca6edbcdf.vega-embed details,
-  #altair-viz-f9e6fb128dd44229b4038d7ca6edbcdf.vega-embed details summary {
+  #altair-viz-2bca2b79f409463db956e0ed8775a4ff.vega-embed details,
+  #altair-viz-2bca2b79f409463db956e0ed8775a4ff.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f9e6fb128dd44229b4038d7ca6edbcdf"></div>
+<div id="altair-viz-2bca2b79f409463db956e0ed8775a4ff"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f9e6fb128dd44229b4038d7ca6edbcdf") {
-      outputDiv = document.getElementById("altair-viz-f9e6fb128dd44229b4038d7ca6edbcdf");
+    if (outputDiv.id !== "altair-viz-2bca2b79f409463db956e0ed8775a4ff") {
+      outputDiv = document.getElementById("altair-viz-2bca2b79f409463db956e0ed8775a4ff");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -7981,7 +8091,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">validation_curves</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ephrin_validation_curves</span><span class="p">)</span>
@@ -8154,23 +8264,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-df04c58d3a3a4be6b0053efc64a94192.vega-embed {
+  #altair-viz-b14dad7fae0d4ffca30a3b6e85e1b0d0.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-df04c58d3a3a4be6b0053efc64a94192.vega-embed details,
-  #altair-viz-df04c58d3a3a4be6b0053efc64a94192.vega-embed details summary {
+  #altair-viz-b14dad7fae0d4ffca30a3b6e85e1b0d0.vega-embed details,
+  #altair-viz-b14dad7fae0d4ffca30a3b6e85e1b0d0.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-df04c58d3a3a4be6b0053efc64a94192"></div>
+<div id="altair-viz-b14dad7fae0d4ffca30a3b6e85e1b0d0"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-df04c58d3a3a4be6b0053efc64a94192") {
-      outputDiv = document.getElementById("altair-viz-df04c58d3a3a4be6b0053efc64a94192");
+    if (outputDiv.id !== "altair-viz-b14dad7fae0d4ffca30a3b6e85e1b0d0") {
+      outputDiv = document.getElementById("altair-viz-b14dad7fae0d4ffca30a3b6e85e1b0d0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8224,23 +8334,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-f74e9f4c43114195bd0b422b26145029.vega-embed {
+  #altair-viz-8f1d634544c14f1ead3d2926afc43bc9.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f74e9f4c43114195bd0b422b26145029.vega-embed details,
-  #altair-viz-f74e9f4c43114195bd0b422b26145029.vega-embed details summary {
+  #altair-viz-8f1d634544c14f1ead3d2926afc43bc9.vega-embed details,
+  #altair-viz-8f1d634544c14f1ead3d2926afc43bc9.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f74e9f4c43114195bd0b422b26145029"></div>
+<div id="altair-viz-8f1d634544c14f1ead3d2926afc43bc9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f74e9f4c43114195bd0b422b26145029") {
-      outputDiv = document.getElementById("altair-viz-f74e9f4c43114195bd0b422b26145029");
+    if (outputDiv.id !== "altair-viz-8f1d634544c14f1ead3d2926afc43bc9") {
+      outputDiv = document.getElementById("altair-viz-8f1d634544c14f1ead3d2926afc43bc9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8450,10 +8560,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">validation_ic50s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">validation_ic50s_file</span><span class="p">,</span> <span class="n">na_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Read in filtered DMS binding data</span>
 <span class="n">e2_monomeric_binding</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">e2_monomeric_binding_file</span><span class="p">)</span>
 <span class="n">e3_dimeric_binding</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">e3_dimeric_binding_file</span><span class="p">)</span>
 
@@ -8490,7 +8601,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Sorting function to put 'WT' on top of the legend, followed by numerical order</span>
@@ -8614,23 +8725,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-d54ee2da38974a50b6c5f650786ef8c5.vega-embed {
+  #altair-viz-d060dbf670424eafb791d4e70f3adaf5.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-d54ee2da38974a50b6c5f650786ef8c5.vega-embed details,
-  #altair-viz-d54ee2da38974a50b6c5f650786ef8c5.vega-embed details summary {
+  #altair-viz-d060dbf670424eafb791d4e70f3adaf5.vega-embed details,
+  #altair-viz-d060dbf670424eafb791d4e70f3adaf5.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-d54ee2da38974a50b6c5f650786ef8c5"></div>
+<div id="altair-viz-d060dbf670424eafb791d4e70f3adaf5"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d54ee2da38974a50b6c5f650786ef8c5") {
-      outputDiv = document.getElementById("altair-viz-d54ee2da38974a50b6c5f650786ef8c5");
+    if (outputDiv.id !== "altair-viz-d060dbf670424eafb791d4e70f3adaf5") {
+      outputDiv = document.getElementById("altair-viz-d060dbf670424eafb791d4e70f3adaf5");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8691,23 +8802,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-1889788264384962a0a2bbeabc24ef60.vega-embed {
+  #altair-viz-3848b66a1b9842a8afbc91efb51b437c.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-1889788264384962a0a2bbeabc24ef60.vega-embed details,
-  #altair-viz-1889788264384962a0a2bbeabc24ef60.vega-embed details summary {
+  #altair-viz-3848b66a1b9842a8afbc91efb51b437c.vega-embed details,
+  #altair-viz-3848b66a1b9842a8afbc91efb51b437c.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-1889788264384962a0a2bbeabc24ef60"></div>
+<div id="altair-viz-3848b66a1b9842a8afbc91efb51b437c"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1889788264384962a0a2bbeabc24ef60") {
-      outputDiv = document.getElementById("altair-viz-1889788264384962a0a2bbeabc24ef60");
+    if (outputDiv.id !== "altair-viz-3848b66a1b9842a8afbc91efb51b437c") {
+      outputDiv = document.getElementById("altair-viz-3848b66a1b9842a8afbc91efb51b437c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8761,23 +8872,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-097618a2375649458ebebf2a42a833b7.vega-embed {
+  #altair-viz-fcd1bd2faf104616a012ab012949899d.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-097618a2375649458ebebf2a42a833b7.vega-embed details,
-  #altair-viz-097618a2375649458ebebf2a42a833b7.vega-embed details summary {
+  #altair-viz-fcd1bd2faf104616a012ab012949899d.vega-embed details,
+  #altair-viz-fcd1bd2faf104616a012ab012949899d.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-097618a2375649458ebebf2a42a833b7"></div>
+<div id="altair-viz-fcd1bd2faf104616a012ab012949899d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-097618a2375649458ebebf2a42a833b7") {
-      outputDiv = document.getElementById("altair-viz-097618a2375649458ebebf2a42a833b7");
+    if (outputDiv.id !== "altair-viz-fcd1bd2faf104616a012ab012949899d") {
+      outputDiv = document.getElementById("altair-viz-fcd1bd2faf104616a012ab012949899d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

@@ -7482,7 +7482,10 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Make-neut-plots-of-all-six-monoclonal-antibodies-used-for-mapping-escape-in-Nipah-RBP">Make neut plots of all six monoclonal antibodies used for mapping escape in Nipah RBP<a class="anchor-link" href="#Make-neut-plots-of-all-six-monoclonal-antibodies-used-for-mapping-escape-in-Nipah-RBP">¶</a></h3>
+<h1 id="mab_neut_ic50">mab_neut_ic50<a class="anchor-link" href="#mab_neut_ic50">¶</a></h1><p>Make neut curve plots with altair for all six monoclonal antibodies used for mapping escape in Nipah RBP</p>
+<ul>
+<li>Written by Brendan Larsen</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7505,7 +7508,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=6883fc50">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=3868b5cf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7584,11 +7587,16 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># allow more rows for Altair</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">disable_max_rows</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/'</span><span class="p">:</span>
+<span class="k">if</span> <span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="o">==</span> <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
+<span class="p">):</span>
     <span class="k">pass</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Already in correct directory"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span>
+        <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
+    <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Setup in correct directory"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7628,12 +7636,22 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">mab_neuts_plot</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">altair_config</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/theme.py'</span>
-    <span class="n">nipah_config</span> <span class="o">=</span> <span class="s1">'nipah_config.yaml'</span>
-    <span class="n">mab_neuts</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/experimental_data/NiV_neut_all_mabs.csv'</span>
-    <span class="c1">#mab_neuts_plot = </span>
+    <span class="n">altair_config</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/theme.py"</span>
+    <span class="n">nipah_config</span> <span class="o">=</span> <span class="s2">"nipah_config.yaml"</span>
+    <span class="n">mab_neuts</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/experimental_data/NiV_neut_all_mabs.csv"</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7d266f35-6668-48fd-a4f6-7771dcee84c0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Read-in-config-files">Read in config files<a class="anchor-link" href="#Read-in-config-files">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7646,7 +7664,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">altair_config</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">altair_config</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">altair_config</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="n">exec</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nipah_config</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -7664,7 +7682,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#load data</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># load data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">mab_neuts</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7680,28 +7698,33 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fits</span> <span class="o">=</span> <span class="n">neutcurve</span><span class="o">.</span><span class="n">curvefits</span><span class="o">.</span><span class="n">CurveFits</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
-            <span class="n">fixbottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-            <span class="p">)</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+    <span class="n">fixbottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="n">fitParams</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">fitParams</span><span class="p">(</span><span class="n">ics</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span>
-<span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50_ng'</span><span class="p">]</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="s1">'ic50'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
-<span class="n">fit_df</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[[</span><span class="s1">'serum'</span><span class="p">,</span><span class="s1">'ic50_ng'</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fitParams</span><span class="p">[</span><span class="s2">"ic50_ng"</span><span class="p">]</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[</span><span class="s2">"ic50"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># Convert from ug to ng</span>
+<span class="n">fit_df</span> <span class="o">=</span> <span class="n">fitParams</span><span class="p">[[</span><span class="s2">"serum"</span><span class="p">,</span> <span class="s2">"ic50_ng"</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">fit_df</span> <span class="o">=</span> <span class="n">fit_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">fit_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'serum'</span><span class="p">:</span><span class="s1">'Antibody'</span><span class="p">,</span><span class="s1">'ic50_ng'</span><span class="p">:</span><span class="s1">'ic50'</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fit_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"serum"</span><span class="p">:</span> <span class="s2">"Antibody"</span><span class="p">,</span> <span class="s2">"ic50_ng"</span><span class="p">:</span> <span class="s2">"ic50"</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># Set 'Antibody' as the index</span>
-<span class="n">fit_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Antibody'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fit_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"Antibody"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Define the new order you want; it must be a list of the index labels</span>
-<span class="n">new_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'m102.4'</span><span class="p">,</span><span class="s1">'HENV-26'</span><span class="p">,</span><span class="s1">'HENV-117'</span><span class="p">,</span><span class="s1">'HENV-103'</span><span class="p">,</span><span class="s1">'HENV-32'</span><span class="p">,</span><span class="s1">'nAH1.3'</span><span class="p">]</span>
+<span class="n">new_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"m102.4"</span><span class="p">,</span> <span class="s2">"HENV-26"</span><span class="p">,</span> <span class="s2">"HENV-117"</span><span class="p">,</span> <span class="s2">"HENV-103"</span><span class="p">,</span> <span class="s2">"HENV-32"</span><span class="p">,</span> <span class="s2">"nAH1.3"</span><span class="p">]</span>
 
 <span class="c1"># Reindex the DataFrame with the new order</span>
 <span class="n">fit_df</span> <span class="o">=</span> <span class="n">fit_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">new_order</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="c1">#new_order = ['m102.4','HENV-26','HENV-117','HENV-103','HENV-32','nAH1.3']</span>
-<span class="c1">#fit_df['Antibody'] = fit_df['Antibody'].loc[new_order].values</span>
-<span class="n">fit_df</span><span class="p">[</span><span class="s1">'Epitope'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Receptor Face'</span><span class="p">,</span><span class="s1">'Receptor Face'</span><span class="p">,</span><span class="s1">'Receptor Face'</span><span class="p">,</span><span class="s1">'Dimerization'</span><span class="p">,</span><span class="s1">'Dimerization'</span><span class="p">,</span><span class="s1">'Distal Head'</span><span class="p">]</span>
-
-<span class="c1">#display(fit_df)</span>
-<span class="n">fit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">mAb_neuts_table</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fit_df</span><span class="p">[</span><span class="s2">"Epitope"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"Receptor Face"</span><span class="p">,</span>
+    <span class="s2">"Receptor Face"</span><span class="p">,</span>
+    <span class="s2">"Receptor Face"</span><span class="p">,</span>
+    <span class="s2">"Dimerization"</span><span class="p">,</span>
+    <span class="s2">"Dimerization"</span><span class="p">,</span>
+    <span class="s2">"Distal Head"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="c1"># Export IC50s for making a table</span>
+<span class="k">if</span> <span class="n">mab_neuts_plot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">fit_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">mAb_neuts_table</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7715,27 +7738,26 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">extract_dataframe_from_neutcurve</span><span class="p">(</span><span class="n">serum</span><span class="p">,</span> <span class="n">viruses</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="s1">'average'</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">extract_dataframe_from_neutcurve</span><span class="p">(</span><span class="n">serum</span><span class="p">,</span> <span class="n">viruses</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="s2">"average"</span><span class="p">):</span>
     <span class="n">curves</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="c1"># Loop over each virus type and retrieve the curve</span>
     <span class="k">for</span> <span class="n">sera</span> <span class="ow">in</span> <span class="n">serum</span><span class="p">:</span>
-        <span class="c1">#print(sera)</span>
-        <span class="c1">#print(viruses)</span>
         <span class="n">curve</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">getCurve</span><span class="p">(</span><span class="n">serum</span><span class="o">=</span><span class="n">sera</span><span class="p">,</span> <span class="n">virus</span><span class="o">=</span><span class="n">viruses</span><span class="p">,</span> <span class="n">replicate</span><span class="o">=</span><span class="n">replicate</span><span class="p">)</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">curve</span><span class="o">.</span><span class="n">dataframe</span><span class="p">()</span>
-        <span class="n">df</span><span class="p">[</span><span class="s1">'antibody'</span><span class="p">]</span> <span class="o">=</span> <span class="n">sera</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"antibody"</span><span class="p">]</span> <span class="o">=</span> <span class="n">sera</span>
         <span class="n">curves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-    
+
     <span class="c1"># Concatenate all the dataframes into one</span>
     <span class="n">curve</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">curves</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">curve</span><span class="p">[</span><span class="s1">'upper'</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'measurement'</span><span class="p">]</span> <span class="o">+</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'stderr'</span><span class="p">]</span>
-    <span class="n">curve</span><span class="p">[</span><span class="s1">'lower'</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'measurement'</span><span class="p">]</span> <span class="o">-</span> <span class="n">curve</span><span class="p">[</span><span class="s1">'stderr'</span><span class="p">]</span>
-    
+    <span class="n">curve</span><span class="p">[</span><span class="s2">"upper"</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"measurement"</span><span class="p">]</span> <span class="o">+</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"stderr"</span><span class="p">]</span>
+    <span class="n">curve</span><span class="p">[</span><span class="s2">"lower"</span><span class="p">]</span> <span class="o">=</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"measurement"</span><span class="p">]</span> <span class="o">-</span> <span class="n">curve</span><span class="p">[</span><span class="s2">"stderr"</span><span class="p">]</span>
+
     <span class="k">return</span> <span class="n">curve</span>
 
+
 <span class="c1"># Example usage:</span>
-<span class="n">serum</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'nAH1.3'</span><span class="p">,</span><span class="s1">'m102.4'</span><span class="p">,</span><span class="s1">'HENV-26'</span><span class="p">,</span><span class="s1">'HENV-32'</span><span class="p">,</span><span class="s1">'HENV-103'</span><span class="p">,</span><span class="s1">'HENV-117'</span><span class="p">]</span>
-<span class="n">viruses</span> <span class="o">=</span> <span class="s1">'NiV'</span>
+<span class="n">serum</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"nAH1.3"</span><span class="p">,</span> <span class="s2">"m102.4"</span><span class="p">,</span> <span class="s2">"HENV-26"</span><span class="p">,</span> <span class="s2">"HENV-32"</span><span class="p">,</span> <span class="s2">"HENV-103"</span><span class="p">,</span> <span class="s2">"HENV-117"</span><span class="p">]</span>
+<span class="n">viruses</span> <span class="o">=</span> <span class="s2">"NiV"</span>
 <span class="n">curve</span> <span class="o">=</span> <span class="n">extract_dataframe_from_neutcurve</span><span class="p">(</span><span class="n">serum</span><span class="p">,</span> <span class="n">viruses</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">curve</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
@@ -7835,37 +7857,78 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_neut</span><span class="p">():</span>
-    <span class="n">cat10_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#4E79A5'</span><span class="p">,</span> <span class="s1">'#F18F3B'</span><span class="p">,</span> <span class="s1">'#E0585B'</span><span class="p">,</span> <span class="s1">'#77B7B2'</span><span class="p">,</span> <span class="s1">'#5AA155'</span><span class="p">,</span> <span class="s1">'#EDC958'</span><span class="p">,</span> <span class="s1">'#AF7AA0'</span><span class="p">,</span> <span class="s1">'#FE9EA8'</span><span class="p">,</span> <span class="s1">'#9C7561'</span><span class="p">,</span> <span class="s1">'#BAB0AC'</span><span class="p">]</span>
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">curve</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'concentration:Q'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">'.0e'</span><span class="p">),</span><span class="n">title</span><span class="o">=</span><span class="s1">'Concentration (μg/mL)'</span><span class="p">),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'fit:Q'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Fraction Infectivity'</span><span class="p">),</span> 
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'antibody'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Antibody'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="n">cat10_colors</span><span class="p">))</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-        <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_height'</span><span class="p">],</span>
-        <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_width'</span><span class="p">],</span>
+    <span class="n">cat10_colors</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"#4E79A5"</span><span class="p">,</span>
+        <span class="s2">"#F18F3B"</span><span class="p">,</span>
+        <span class="s2">"#E0585B"</span><span class="p">,</span>
+        <span class="s2">"#77B7B2"</span><span class="p">,</span>
+        <span class="s2">"#5AA155"</span><span class="p">,</span>
+        <span class="s2">"#EDC958"</span><span class="p">,</span>
+        <span class="s2">"#AF7AA0"</span><span class="p">,</span>
+        <span class="s2">"#FE9EA8"</span><span class="p">,</span>
+        <span class="s2">"#9C7561"</span><span class="p">,</span>
+        <span class="s2">"#BAB0AC"</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">curve</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+                <span class="s2">"concentration:Q"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">),</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Concentration (μg/mL)"</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"fit:Q"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Fraction Infectivity"</span><span class="p">),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+                <span class="s2">"antibody"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Antibody"</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="n">cat10_colors</span><span class="p">)</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+            <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_height"</span><span class="p">],</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_width"</span><span class="p">],</span>
+        <span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="n">circle</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">curve</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'concentration'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'log'</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">'.0e'</span><span class="p">),</span><span class="n">title</span><span class="o">=</span><span class="s1">'Concentration (μg/mL)'</span><span class="p">),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'measurement:Q'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Fraction Infectivity'</span><span class="p">),</span> 
-        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">'antibody'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Antibody'</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="n">cat10_colors</span><span class="p">)),</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
-        <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_height'</span><span class="p">],</span>
-        <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">'neut_curve_width'</span><span class="p">],</span>
+    <span class="n">circle</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">curve</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+                <span class="s2">"concentration"</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">),</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">"Concentration (μg/mL)"</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"measurement:Q"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Fraction Infectivity"</span><span class="p">),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+                <span class="s2">"antibody"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Antibody"</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="n">cat10_colors</span><span class="p">)</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+            <span class="n">height</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_height"</span><span class="p">],</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">"neut_curve_width"</span><span class="p">],</span>
+        <span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="n">error</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">curve</span><span class="p">)</span><span class="o">.</span><span class="n">mark_errorbar</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="s1">'concentration'</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'lower'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Fraction Infectivity'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">)),</span>
-        <span class="n">y2</span><span class="o">=</span><span class="s1">'upper'</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">'antibody'</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">curve</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_errorbar</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">"concentration"</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"lower"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Fraction Infectivity"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">tickCount</span><span class="o">=</span><span class="mi">3</span><span class="p">)),</span>
+            <span class="n">y2</span><span class="o">=</span><span class="s2">"upper"</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">"antibody"</span><span class="p">,</span>
+        <span class="p">)</span>
     <span class="p">)</span>
-    <span class="n">plot</span> <span class="o">=</span> <span class="n">chart</span><span class="o">+</span><span class="n">circle</span><span class="o">+</span><span class="n">error</span>
+    <span class="n">plot</span> <span class="o">=</span> <span class="n">chart</span> <span class="o">+</span> <span class="n">circle</span> <span class="o">+</span> <span class="n">error</span>
     <span class="k">return</span> <span class="n">plot</span>
+
 
 <span class="n">neut_chart</span> <span class="o">=</span> <span class="n">plot_neut</span><span class="p">()</span>
 <span class="n">neut_chart</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
-<span class="n">neut_chart</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mab_neuts_plot</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">mab_neuts_plot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">neut_chart</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mab_neuts_plot</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7879,23 +7942,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa.vega-embed {
+  #altair-viz-0dd92bb6313444c9b22a6e6f3d01e4fb.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa.vega-embed details,
-  #altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa.vega-embed details summary {
+  #altair-viz-0dd92bb6313444c9b22a6e6f3d01e4fb.vega-embed details,
+  #altair-viz-0dd92bb6313444c9b22a6e6f3d01e4fb.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa"></div>
+<div id="altair-viz-0dd92bb6313444c9b22a6e6f3d01e4fb"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa") {
-      outputDiv = document.getElementById("altair-viz-9cfba09cdaa4496eaa4bc3c9912a0ffa");
+    if (outputDiv.id !== "altair-viz-0dd92bb6313444c9b22a6e6f3d01e4fb") {
+      outputDiv = document.getElementById("altair-viz-0dd92bb6313444c9b22a6e6f3d01e4fb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -7947,7 +8010,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b3a5ce76-2571-4c67-8139-a4651b588e04">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3440040e-51d6-4741-93d2-a8a7df399a72">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

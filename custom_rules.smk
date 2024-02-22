@@ -376,12 +376,25 @@ rule make_files_for_mapping_structure:
         E2_binding_infile="results/filtered_data/E2_binding_filtered.csv",
         E3_func_infile="results/filtered_data/E3_entry_filtered.csv",
         E3_binding_infile="results/filtered_data/E3_binding_filtered.csv",
+        HENV26_infile='results/filtered_data/HENV26_escape_filtered.csv',
+        HENV32_infile='results/filtered_data/HENV32_escape_filtered.csv',
+        HENV103_infile='results/filtered_data/HENV103_escape_filtered.csv',
+        HENV117_infile='results/filtered_data/HENV117_escape_filtered.csv',
+        m1024_infile='results/filtered_data/m102_escape_filtered.csv',
+        nAH13_infile='results/filtered_data/nAH1_escape_filtered.csv',
     output:
         nb="results/notebooks/mapping_site_level.ipynb",
         E2_func_output="results/parsed_mapping_data/E2_entry_parsed.csv",
         E2_binding_output="results/parsed_mapping_data/E2_binding_parsed.csv",
         E3_func_output="results/parsed_mapping_data/E3_entry_parsed.csv",
         E3_binding_output="results/parsed_mapping_data/E3_binding_parsed.csv",
+        HENV26_output='results/parsed_mapping_data/HENV26_escape_sum_parsed.csv',
+        HENV32_output='results/parsed_mapping_data/HENV32_escape_sum_parsed.csv',
+        HENV103_output='results/parsed_mapping_data/HENV103_escape_sum_parsed.csv',
+        HENV117_output='results/parsed_mapping_data/HENV117_escape_sum_parsed.csv',
+        m1024_output='results/parsed_mapping_data/m102_escape_sum_parsed.csv',
+        nAH13_output='results/parsed_mapping_data/nAH1_escape_sum_parsed.csv',
+
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -394,6 +407,21 @@ rule make_files_for_mapping_structure:
                 "E3_binding_infile": input.E3_binding_infile,
                 "E3_func_output": output.E3_func_output,
                 "E3_binding_output": output.E3_binding_output,
+
+                "HENV26_infile": input.HENV26_infile,
+                "HENV32_infile": input.HENV32_infile,
+                "HENV103_infile": input.HENV103_infile,
+                "HENV117_infile": input.HENV117_infile,
+                "m1024_infile": input.m1024_infile,
+                "nAH13_infile": input.nAH13_infile,
+
+                "HENV26_output": output.HENV26_output,
+                "HENV32_output": output.HENV32_output,
+                "HENV103_output": output.HENV103_output,
+                "HENV117_output": output.HENV117_output,
+                "m1024_output": output.m1024_output,
+                "nAH13_output": output.nAH13_output,
+
             }
         ),
     log:
@@ -618,56 +646,6 @@ rule make_heatmaps:
     shell:
         "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
-rule make_interactive_figures:
-    """Make Interactive Figures"""
-    input:
-        nb="notebooks/interactive_figures.ipynb",
-        nipah_config="nipah_config.yaml",
-        altair_config="data/custom_analyses_data/theme.py",
-        func_scores_E2_file="results/filtered_data/E2_entry_filtered.csv",
-        func_scores_E3_file="results/filtered_data/E3_entry_filtered.csv",
-        binding_E2_file="results/filtered_data/E2_binding_filtered.csv",
-        binding_E3_file="results/filtered_data/E3_binding_filtered.csv",
-        e2_low_func_file="results/filtered_data/E2_binding_low_effect_filter.csv",
-        e3_low_func_file="results/filtered_data/E3_binding_low_effect_filter.csv",
-        HENV103_filter="results/filtered_data/HENV103_escape_filtered.csv",
-        HENV117_filter="results/filtered_data/HENV117_escape_filtered.csv",
-        HENV26_filter="results/filtered_data/HENV26_escape_filtered.csv",
-        HENV32_filter="results/filtered_data/HENV32_escape_filtered.csv",
-        m102_filter="results/filtered_data/m102_escape_filtered.csv",
-        nAH1_filter="results/filtered_data/nAH1_escape_filtered.csv",
-    output:
-        nb="results/notebooks/interactive_figures.ipynb",
-        effect_binding_escape="results/images/effect_binding_escape.html",
-        
-    params:
-        yaml=lambda _, input, output: yaml.round_trip_dump(
-            {
-                "nipah_config": input.nipah_config,
-                "altair_config": input.altair_config,
-                "func_scores_E2_file": input.func_scores_E2_file,
-                "func_scores_E3_file": input.func_scores_E3_file,
-                "binding_E2_file": input.binding_E2_file,
-                "binding_E3_file": input.binding_E3_file,
-                "e2_low_func_file": input.e2_low_func_file,
-                "e3_low_func_file": input.e3_low_func_file,
-                "HENV103_filter": input.HENV103_filter,
-                "HENV117_filter": input.HENV117_filter,
-                "HENV26_filter": input.HENV26_filter,
-                "HENV32_filter": input.HENV32_filter,
-                "m102_filter": input.m102_filter,
-                "nAH1_filter": input.nAH1_filter,
-                "effect_binding_escape": output.effect_binding_escape,
-                
-            }
-        ),
-    log:
-        log="results/logs/interactive_figures.txt",
-    conda:
-        "environment.yml",
-    shell:
-        "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
-
 
 rule get_tables:
     """Copy tables into images directory"""
@@ -802,12 +780,10 @@ docs["Additional files and charts"] = {
             "RBP dimerization residue distance csv": rules.receptor_distances.output.dimerization_distance,
         },
         "Notebook for mapping filtered scores onto crystal structures": rules.make_files_for_mapping_structure.output.nb,
+        "Notebook for making heatmaps": rules.make_heatmaps.output.nb,
         "Nipah polymorphic sites cell entry plot": rules.henipavirus_entropy.output.entry_scores_niv_poly,
         "Nipah polymorphic sites binding plot": rules.henipavirus_entropy.output.binding_scores_niv_poly,
         "Antibody Info Table": rules.get_tables.output.antibody_info_table,
         "Library Stats Table": rules.get_tables.output.library_stats_table,
-    },
-    "Interactive Figures": {
-        "Binding and Escape and Cell Entry": rules.make_interactive_figures.output.effect_binding_escape,
     },
 }

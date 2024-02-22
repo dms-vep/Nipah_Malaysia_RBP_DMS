@@ -7482,7 +7482,10 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Find-distances-of-each-RBP-residue-to-either-Ephrin-B2-or--B3,-and-find-contact-sites">Find distances of each RBP residue to either Ephrin-B2 or -B3, and find contact sites<a class="anchor-link" href="#Find-distances-of-each-RBP-residue-to-either-Ephrin-B2-or--B3,-and-find-contact-sites">¶</a></h2>
+<h2 id="receptor_distance">receptor_distance<a class="anchor-link" href="#receptor_distance">¶</a></h2><p>Find distances of each RBP residue to either Ephrin-B2 or -B3, and find contact sites</p>
+<ul>
+<li>Written by Brendan Larsen</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7510,7 +7513,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=c7864804">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=df64e929">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7559,7 +7562,7 @@ a.anchor-link {
 <span class="kn">from</span> <span class="nn">Bio.PDB.DSSP</span> <span class="kn">import</span> <span class="n">DSSP</span>
 <span class="kn">from</span> <span class="nn">Bio.PDB</span> <span class="kn">import</span> <span class="n">PDBParser</span>
 
-<span class="c1">#pd.set_option('display.max_rows', None)</span>
+<span class="c1"># pd.set_option('display.max_rows', None)</span>
 </pre></div>
 </div>
 </div>
@@ -7576,11 +7579,16 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># allow more rows for Altair</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">disable_max_rows</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/'</span><span class="p">:</span>
+<span class="k">if</span> <span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="o">==</span> <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
+<span class="p">):</span>
     <span class="k">pass</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Already in correct directory"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span>
+        <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
+    <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Setup in correct directory"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7600,6 +7608,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2e90155e-bc77-4c01-a451-4c12114c1a2a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="For-running-interactively">For running interactively<a class="anchor-link" href="#For-running-interactively">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d176b4a5-6eca-4744-ad85-7f1a91daf7a2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7609,18 +7628,29 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">ephrin_b2_close_residues</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">e2_pdb</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/crystal_structures/2vsm.pdb'</span>
-    <span class="n">e3_pdb</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/crystal_structures/3d12.pdb'</span>
-    <span class="n">rbp_pdb</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/crystal_structures/7txz.pdb'</span>
-    
-    <span class="n">ephrin_b2_close_residues</span> <span class="o">=</span> <span class="s1">'results/distances/2vsm_close_residues.csv'</span>
-    <span class="n">ephrin_b3_close_residues</span> <span class="o">=</span> <span class="s1">'results/distances/3d12_close_residues.csv'</span>
-    
-    <span class="n">ephrin_b2_distance</span> <span class="o">=</span> <span class="s1">'results/distances/2vsm_distances.csv'</span>
-    <span class="n">ephrin_b3_distance</span> <span class="o">=</span> <span class="s1">'results/distances/3d12_distances.csv'</span>
-    <span class="n">dimerization_distance</span> <span class="o">=</span> <span class="s1">'results/distances/7txz_distances.csv'</span>
+    <span class="n">e2_pdb</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/crystal_structures/2vsm.pdb"</span>
+    <span class="n">e3_pdb</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/crystal_structures/3d12.pdb"</span>
+    <span class="n">rbp_pdb</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/crystal_structures/7txz.pdb"</span>
+
+    <span class="n">ephrin_b2_close_residues</span> <span class="o">=</span> <span class="s2">"results/distances/2vsm_close_residues.csv"</span>
+    <span class="n">ephrin_b3_close_residues</span> <span class="o">=</span> <span class="s2">"results/distances/3d12_close_residues.csv"</span>
+
+    <span class="n">ephrin_b2_distance</span> <span class="o">=</span> <span class="s2">"results/distances/2vsm_distances.csv"</span>
+    <span class="n">ephrin_b3_distance</span> <span class="o">=</span> <span class="s2">"results/distances/3d12_distances.csv"</span>
+    <span class="n">dimerization_distance</span> <span class="o">=</span> <span class="s2">"results/distances/7txz_distances.csv"</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=99c45693-d43f-4678-abd5-70e1bc148b9a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Check-whether-data-already-exists">Check whether data already exists<a class="anchor-link" href="#Check-whether-data-already-exists">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7632,7 +7662,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#check whether output directory exists</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># check whether output directory exists</span>
 <span class="k">def</span> <span class="nf">create_directory</span><span class="p">(</span><span class="n">directory_path</span><span class="p">):</span>
     <span class="c1"># Check if the directory exists</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory_path</span><span class="p">):</span>
@@ -7642,8 +7672,9 @@ a.anchor-link {
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Directory '</span><span class="si">{</span><span class="n">directory_path</span><span class="si">}</span><span class="s2">' already exists."</span><span class="p">)</span>
 
+
 <span class="c1"># Example usage</span>
-<span class="n">directory_path</span> <span class="o">=</span> <span class="s1">'results/distances/'</span>
+<span class="n">directory_path</span> <span class="o">=</span> <span class="s2">"results/distances/"</span>
 <span class="n">create_directory</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7707,28 +7738,36 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_nearby_residues</span><span class="p">(</span><span class="n">pdb_path</span><span class="p">,</span> <span class="n">source_chain_id</span><span class="p">,</span> <span class="n">target_chain_ids</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cutoff_distance</span><span class="p">):</span>
-    <span class="c1"># Initialize the PDB parser and load the structure</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_nearby_residues</span><span class="p">(</span>
+    <span class="n">pdb_path</span><span class="p">,</span> <span class="n">source_chain_id</span><span class="p">,</span> <span class="n">target_chain_ids</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cutoff_distance</span>
+<span class="p">):</span>
+    <span class="c1"># Initialize the PDB parser and load the structure from the given pdb_path</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">PDB</span><span class="o">.</span><span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">structure</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s1">'structure_id'</span><span class="p">,</span> <span class="n">pdb_path</span><span class="p">)</span>
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">"structure_id"</span><span class="p">,</span> <span class="n">pdb_path</span><span class="p">)</span>
 
+    <span class="c1"># Retrieve the source chain and target chains from the structure</span>
     <span class="n">source_chain</span> <span class="o">=</span> <span class="n">structure</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">source_chain_id</span><span class="p">]</span>
     <span class="n">target_chains</span> <span class="o">=</span> <span class="p">[</span><span class="n">structure</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">chain_id</span><span class="p">]</span> <span class="k">for</span> <span class="n">chain_id</span> <span class="ow">in</span> <span class="n">target_chain_ids</span><span class="p">]</span>
 
     <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
 
+    <span class="c1"># Loop through each residue in the source chain</span>
     <span class="k">for</span> <span class="n">residueA</span> <span class="ow">in</span> <span class="n">source_chain</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">residueA</span><span class="o">.</span><span class="n">resname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"HOH"</span><span class="p">,</span> <span class="s2">"WAT"</span><span class="p">,</span> <span class="s2">"IPA"</span><span class="p">,</span> <span class="s2">"NAG"</span><span class="p">,</span><span class="s2">"SO4"</span><span class="p">]:</span>
+        <span class="c1"># Skip water and common non-protein residues</span>
+        <span class="k">if</span> <span class="n">residueA</span><span class="o">.</span><span class="n">resname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"HOH"</span><span class="p">,</span> <span class="s2">"WAT"</span><span class="p">,</span> <span class="s2">"IPA"</span><span class="p">,</span> <span class="s2">"NAG"</span><span class="p">,</span> <span class="s2">"SO4"</span><span class="p">]:</span>
             <span class="k">continue</span>
-        
+
         <span class="n">nearby_residues</span> <span class="o">=</span> <span class="p">[]</span>
 
+        <span class="c1"># Compare against residues in each target chain</span>
         <span class="k">for</span> <span class="n">target_chain</span> <span class="ow">in</span> <span class="n">target_chains</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">residueB</span> <span class="ow">in</span> <span class="n">target_chain</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">residueB</span><span class="o">.</span><span class="n">resname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"HOH"</span><span class="p">,</span> <span class="s2">"WAT"</span><span class="p">,</span> <span class="s2">"IPA"</span><span class="p">,</span><span class="s2">"SO4"</span><span class="p">]:</span>
+                <span class="c1"># Skip water and common non-protein residues in target chains as well</span>
+                <span class="k">if</span> <span class="n">residueB</span><span class="o">.</span><span class="n">resname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"HOH"</span><span class="p">,</span> <span class="s2">"WAT"</span><span class="p">,</span> <span class="s2">"IPA"</span><span class="p">,</span> <span class="s2">"SO4"</span><span class="p">]:</span>
                     <span class="k">continue</span>
 
                 <span class="n">is_within_cutoff</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="c1"># Calculate distance between atoms in the two residues</span>
                 <span class="k">for</span> <span class="n">atomA</span> <span class="ow">in</span> <span class="n">residueA</span><span class="p">:</span>
                     <span class="k">for</span> <span class="n">atomB</span> <span class="ow">in</span> <span class="n">residueB</span><span class="p">:</span>
                         <span class="n">distance</span> <span class="o">=</span> <span class="n">atomA</span> <span class="o">-</span> <span class="n">atomB</span>
@@ -7737,65 +7776,94 @@ a.anchor-link {
                             <span class="k">break</span>
                     <span class="k">if</span> <span class="n">is_within_cutoff</span><span class="p">:</span>
                         <span class="k">break</span>
-                        
+
+                <span class="c1"># If within cutoff, add to nearby residues list</span>
                 <span class="k">if</span> <span class="n">is_within_cutoff</span><span class="p">:</span>
-                    <span class="n">nearby_residues</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-                        <span class="s1">'chain'</span><span class="p">:</span> <span class="n">target_chain</span><span class="o">.</span><span class="n">get_id</span><span class="p">(),</span>
-                        <span class="s1">'residue_id'</span><span class="p">:</span> <span class="n">residueB</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                        <span class="s1">'residue_name'</span><span class="p">:</span> <span class="n">residueB</span><span class="o">.</span><span class="n">resname</span><span class="p">,</span>
-                        <span class="s1">'distance'</span><span class="p">:</span> <span class="n">distance</span>
-                    <span class="p">})</span>
+                    <span class="n">nearby_residues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="p">{</span>
+                            <span class="s2">"chain"</span><span class="p">:</span> <span class="n">target_chain</span><span class="o">.</span><span class="n">get_id</span><span class="p">(),</span>
+                            <span class="s2">"residue_id"</span><span class="p">:</span> <span class="n">residueB</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                            <span class="s2">"residue_name"</span><span class="p">:</span> <span class="n">residueB</span><span class="o">.</span><span class="n">resname</span><span class="p">,</span>
+                            <span class="s2">"distance"</span><span class="p">:</span> <span class="n">distance</span><span class="p">,</span>
+                        <span class="p">}</span>
+                    <span class="p">)</span>
 
-        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-            <span class="s1">'wildtype'</span><span class="p">:</span> <span class="n">residueA</span><span class="o">.</span><span class="n">resname</span><span class="p">,</span>
-            <span class="s1">'site'</span><span class="p">:</span> <span class="n">residueA</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-            <span class="s1">'nearby_residues'</span><span class="p">:</span> <span class="n">nearby_residues</span><span class="p">,</span>
-            <span class="s1">'custom_source'</span><span class="p">:</span> <span class="n">name</span>
-        <span class="p">})</span>
+        <span class="c1"># Append collected data for each residue in source chain</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">"wildtype"</span><span class="p">:</span> <span class="n">residueA</span><span class="o">.</span><span class="n">resname</span><span class="p">,</span>
+                <span class="s2">"site"</span><span class="p">:</span> <span class="n">residueA</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="s2">"nearby_residues"</span><span class="p">:</span> <span class="n">nearby_residues</span><span class="p">,</span>
+                <span class="s2">"custom_source"</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
 
-    <span class="c1"># Convert data to pandas DataFrame</span>
+    <span class="c1"># Convert collected data into a pandas DataFrame for easier manipulation</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">df</span>
 
-<span class="c1"># Usage</span>
+
+<span class="c1"># Example usage of the function with specified parameters</span>
 <span class="n">pdb_path_2VSM</span> <span class="o">=</span> <span class="n">e2_pdb</span>
-<span class="n">source_chain_2VSM</span> <span class="o">=</span> <span class="s1">'A'</span>
-<span class="n">target_chains_2VSM</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'B'</span><span class="p">]</span>
+<span class="n">source_chain_2VSM</span> <span class="o">=</span> <span class="s2">"A"</span>
+<span class="n">target_chains_2VSM</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"B"</span><span class="p">]</span>
 
-
-<span class="c1">### 3D12 is crystal structure of RBP head bound to EFNB3</span>
 <span class="n">pdb_path_3D12</span> <span class="o">=</span> <span class="n">e3_pdb</span>
-<span class="n">source_chain_3D12</span> <span class="o">=</span> <span class="s1">'A'</span>
-<span class="n">target_chains_3D12</span> <span class="o">=</span> <span class="s1">'B'</span>
+<span class="n">source_chain_3D12</span> <span class="o">=</span> <span class="s2">"A"</span>
+<span class="n">target_chains_3D12</span> <span class="o">=</span> <span class="s2">"B"</span>
 
-<span class="n">df_2VSM_close</span> <span class="o">=</span> <span class="n">calculate_nearby_residues</span><span class="p">(</span><span class="n">pdb_path_2VSM</span><span class="p">,</span> <span class="n">source_chain_2VSM</span><span class="p">,</span> <span class="n">target_chains_2VSM</span><span class="p">,</span> <span class="s1">'2VSM_source'</span><span class="p">,</span> <span class="n">cutoff_distance</span><span class="p">)</span>
-<span class="n">df_2VSM_close</span><span class="p">[</span><span class="s1">'number_of_contact_residues_within_5'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2VSM_close</span><span class="p">[</span><span class="s1">'nearby_residues'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-<span class="n">df_2VSM_close</span><span class="p">[</span><span class="s1">'close_residues'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2VSM_close</span><span class="p">[</span><span class="s1">'nearby_residues'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">'residue_id'</span><span class="p">])</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Calculate nearby residues and add custom columns to summarize data</span>
+<span class="n">df_2VSM_close</span> <span class="o">=</span> <span class="n">calculate_nearby_residues</span><span class="p">(</span>
+    <span class="n">pdb_path_2VSM</span><span class="p">,</span> <span class="n">source_chain_2VSM</span><span class="p">,</span> <span class="n">target_chains_2VSM</span><span class="p">,</span> <span class="s2">"2VSM_source"</span><span class="p">,</span> <span class="n">cutoff_distance</span>
+<span class="p">)</span>
+<span class="n">df_2VSM_close</span><span class="p">[</span><span class="s2">"number_of_contact_residues_within_5"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2VSM_close</span><span class="p">[</span>
+    <span class="s2">"nearby_residues"</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="n">df_2VSM_close</span><span class="p">[</span><span class="s2">"close_residues"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2VSM_close</span><span class="p">[</span><span class="s2">"nearby_residues"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">"residue_id"</span><span class="p">])</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="p">)</span>
+
+<span class="n">df_3D12_close</span> <span class="o">=</span> <span class="n">calculate_nearby_residues</span><span class="p">(</span>
+    <span class="n">pdb_path_3D12</span><span class="p">,</span> <span class="n">source_chain_3D12</span><span class="p">,</span> <span class="n">target_chains_3D12</span><span class="p">,</span> <span class="s2">"3D12_source"</span><span class="p">,</span> <span class="n">cutoff_distance</span>
+<span class="p">)</span>
+<span class="n">df_3D12_close</span><span class="p">[</span><span class="sa">f</span><span class="s2">"number_of_contact_residues_within_</span><span class="si">{</span><span class="n">cutoff_distance</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_3D12_close</span><span class="p">[</span>
+    <span class="s2">"nearby_residues"</span>
+<span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="n">df_3D12_close</span><span class="p">[</span><span class="s2">"close_residues"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_3D12_close</span><span class="p">[</span><span class="s2">"nearby_residues"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">"residue_id"</span><span class="p">])</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="p">)</span>
 
 
-<span class="n">df_3D12_close</span> <span class="o">=</span> <span class="n">calculate_nearby_residues</span><span class="p">(</span><span class="n">pdb_path_3D12</span><span class="p">,</span> <span class="n">source_chain_3D12</span><span class="p">,</span> <span class="n">target_chains_3D12</span><span class="p">,</span> <span class="s1">'3D12_source'</span><span class="p">,</span> <span class="n">cutoff_distance</span><span class="p">)</span>
-<span class="n">df_3D12_close</span><span class="p">[</span><span class="sa">f</span><span class="s1">'number_of_contact_residues_within_</span><span class="si">{</span><span class="n">cutoff_distance</span><span class="si">}</span><span class="s1">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_3D12_close</span><span class="p">[</span><span class="s1">'nearby_residues'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-<span class="n">df_3D12_close</span><span class="p">[</span><span class="s1">'close_residues'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_3D12_close</span><span class="p">[</span><span class="s1">'nearby_residues'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">'residue_id'</span><span class="p">])</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="c1">##Adjust numbering for 2VSM</span>
+<span class="c1"># Adjust numbering for specific residues based on criteria</span>
 <span class="k">def</span> <span class="nf">adjust_residues</span><span class="p">(</span><span class="n">residue_str</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">residue_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
-    
-    <span class="c1"># Convert comma-separated string to list of integers</span>
-    <span class="n">residues</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">residue_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">residue_id</span> <span class="ow">in</span> <span class="n">residue_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">', '</span><span class="p">)]</span>
-    
-    <span class="c1"># Adjust residue IDs</span>
-    <span class="n">adjusted_residues</span> <span class="o">=</span> <span class="p">[</span><span class="n">residue_id</span> <span class="o">-</span> <span class="mi">3</span> <span class="k">if</span> <span class="n">residue_id</span> <span class="o">&lt;</span> <span class="mi">68</span> <span class="k">else</span> <span class="n">residue_id</span> <span class="k">for</span> <span class="n">residue_id</span> <span class="ow">in</span> <span class="n">residues</span><span class="p">]</span>
-    
-    <span class="c1"># Convert list of integers back to comma-separated string</span>
-    <span class="k">return</span> <span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">adjusted_residues</span><span class="p">))</span>
 
-<span class="n">df_2VSM_close</span><span class="p">[</span><span class="s1">'close_residues'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2VSM_close</span><span class="p">[</span><span class="s1">'close_residues'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">adjust_residues</span><span class="p">)</span>
-<span class="n">df_2VSM_close</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ephrin_b2_close_residues</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">df_3D12_close</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ephrin_b3_close_residues</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">residues</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">residue_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">residue_id</span> <span class="ow">in</span> <span class="n">residue_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">", "</span><span class="p">)]</span>
+
+    <span class="n">adjusted_residues</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">residue_id</span> <span class="o">-</span> <span class="mi">3</span> <span class="k">if</span> <span class="n">residue_id</span> <span class="o">&lt;</span> <span class="mi">68</span> <span class="k">else</span> <span class="n">residue_id</span> <span class="k">for</span> <span class="n">residue_id</span> <span class="ow">in</span> <span class="n">residues</span>
+    <span class="p">]</span>
+
+    <span class="k">return</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">adjusted_residues</span><span class="p">))</span>
+
+
+<span class="n">df_2VSM_close</span><span class="p">[</span><span class="s2">"close_residues"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2VSM_close</span><span class="p">[</span><span class="s2">"close_residues"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">adjust_residues</span><span class="p">)</span>
+<span class="n">df_2VSM_close</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ephrin_b2_close_residues</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_3D12_close</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ephrin_b3_close_residues</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bcc55869-54cb-43a9-9283-a45cc70f2270">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Now find distances to all residues</p>
 </div>
 </div>
 </div>
@@ -7808,30 +7876,35 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_min_distances</span><span class="p">(</span><span class="n">pdb_path</span><span class="p">,</span> <span class="n">source_chain_id</span><span class="p">,</span> <span class="n">target_chain_ids</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="c1"># Initialize the PDB parser and load the structure</span>
+    <span class="c1"># Initialize the PDB parser and load the structure from the given pdb_path</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">PDB</span><span class="o">.</span><span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">structure</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s1">'structure_id'</span><span class="p">,</span> <span class="n">pdb_path</span><span class="p">)</span>
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">"structure_id"</span><span class="p">,</span> <span class="n">pdb_path</span><span class="p">)</span>
 
+    <span class="c1"># Retrieve the source chain and target chains from the structure</span>
     <span class="n">source_chain</span> <span class="o">=</span> <span class="n">structure</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">source_chain_id</span><span class="p">]</span>
     <span class="n">target_chains</span> <span class="o">=</span> <span class="p">[</span><span class="n">structure</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">chain_id</span><span class="p">]</span> <span class="k">for</span> <span class="n">chain_id</span> <span class="ow">in</span> <span class="n">target_chain_ids</span><span class="p">]</span>
 
     <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
 
+    <span class="c1"># Loop through each residue in the source chain</span>
     <span class="k">for</span> <span class="n">residueA</span> <span class="ow">in</span> <span class="n">source_chain</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">residueA</span><span class="o">.</span><span class="n">resname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"HOH"</span><span class="p">,</span> <span class="s2">"WAT"</span><span class="p">,</span> <span class="s2">"IPA"</span><span class="p">,</span> <span class="s2">"NAG"</span><span class="p">,</span><span class="s2">"SO4"</span><span class="p">]:</span>
+        <span class="c1"># Skip water and common non-protein residues</span>
+        <span class="k">if</span> <span class="n">residueA</span><span class="o">.</span><span class="n">resname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"HOH"</span><span class="p">,</span> <span class="s2">"WAT"</span><span class="p">,</span> <span class="s2">"IPA"</span><span class="p">,</span> <span class="s2">"NAG"</span><span class="p">,</span> <span class="s2">"SO4"</span><span class="p">]:</span>
             <span class="k">continue</span>
 
-        <span class="n">min_distance</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">)</span>
+        <span class="c1"># Initialize variables to track the closest residue and its distance</span>
+        <span class="n">min_distance</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"inf"</span><span class="p">)</span>
         <span class="n">closest_residueB</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">closest_chain_id</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="n">residues_within_4</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">residues_within_4</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Count of residues within 4 angstroms</span>
 
+        <span class="c1"># Compare against residues in each target chain</span>
         <span class="k">for</span> <span class="n">target_chain</span> <span class="ow">in</span> <span class="n">target_chains</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">residueB</span> <span class="ow">in</span> <span class="n">target_chain</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">residueB</span><span class="o">.</span><span class="n">resname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"HOH"</span><span class="p">,</span> <span class="s2">"WAT"</span><span class="p">,</span> <span class="s2">"IPA"</span><span class="p">,</span><span class="s2">"SO4"</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">residueB</span><span class="o">.</span><span class="n">resname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"HOH"</span><span class="p">,</span> <span class="s2">"WAT"</span><span class="p">,</span> <span class="s2">"IPA"</span><span class="p">,</span> <span class="s2">"SO4"</span><span class="p">]:</span>
                     <span class="k">continue</span>
 
-                <span class="c1"># Check for residues within 4 angstroms</span>
+                <span class="c1"># Check for minimum distance and residues within 4 angstroms</span>
                 <span class="n">is_within_4</span> <span class="o">=</span> <span class="kc">False</span>
                 <span class="k">for</span> <span class="n">atomA</span> <span class="ow">in</span> <span class="n">residueA</span><span class="p">:</span>
                     <span class="k">for</span> <span class="n">atomB</span> <span class="ow">in</span> <span class="n">residueB</span><span class="p">:</span>
@@ -7845,63 +7918,101 @@ a.anchor-link {
                 <span class="k">if</span> <span class="n">is_within_4</span><span class="p">:</span>
                     <span class="n">residues_within_4</span> <span class="o">+=</span> <span class="mi">1</span>
 
-        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-            <span class="s1">'wildtype'</span><span class="p">:</span> <span class="n">residueA</span><span class="o">.</span><span class="n">resname</span><span class="p">,</span>
-            <span class="s1">'site'</span><span class="p">:</span> <span class="n">residueA</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-            <span class="s1">'chain'</span><span class="p">:</span> <span class="n">closest_chain_id</span><span class="p">,</span>
-            <span class="s1">'residue'</span><span class="p">:</span> <span class="n">closest_residueB</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-            <span class="s1">'residue_name'</span><span class="p">:</span> <span class="n">closest_residueB</span><span class="o">.</span><span class="n">resname</span><span class="p">,</span>
-            <span class="s1">'distance'</span><span class="p">:</span> <span class="n">min_distance</span><span class="p">,</span>
-            <span class="s1">'residues_within_4'</span><span class="p">:</span> <span class="n">residues_within_4</span><span class="p">,</span>
-            <span class="s1">'custom_source'</span><span class="p">:</span> <span class="n">name</span>
-        <span class="p">})</span>
+        <span class="c1"># Append collected data for each residue in source chain</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">"wildtype"</span><span class="p">:</span> <span class="n">residueA</span><span class="o">.</span><span class="n">resname</span><span class="p">,</span>
+                <span class="s2">"site"</span><span class="p">:</span> <span class="n">residueA</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="s2">"chain"</span><span class="p">:</span> <span class="n">closest_chain_id</span><span class="p">,</span>
+                <span class="s2">"residue"</span><span class="p">:</span> <span class="n">closest_residueB</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="s2">"residue_name"</span><span class="p">:</span> <span class="n">closest_residueB</span><span class="o">.</span><span class="n">resname</span><span class="p">,</span>
+                <span class="s2">"distance"</span><span class="p">:</span> <span class="n">min_distance</span><span class="p">,</span>
+                <span class="s2">"residues_within_4"</span><span class="p">:</span> <span class="n">residues_within_4</span><span class="p">,</span>
+                <span class="s2">"custom_source"</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
 
-    <span class="c1"># Convert data to pandas DataFrame</span>
+    <span class="c1"># Convert collected data into a pandas DataFrame for easier manipulation</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">df</span>
 
-<span class="c1"># Usage</span>
-<span class="c1">### 2VSM is crystal structure for RBP head bound to EFNB2</span>
+
+<span class="c1"># Usage examples with specified parameters for different PDB structures</span>
 <span class="n">pdb_path_2VSM</span> <span class="o">=</span> <span class="n">e2_pdb</span>
-<span class="n">source_chain_2VSM</span> <span class="o">=</span> <span class="s1">'A'</span>
-<span class="n">target_chains_2VSM</span> <span class="o">=</span> <span class="s1">'B'</span>
+<span class="n">source_chain_2VSM</span> <span class="o">=</span> <span class="s2">"A"</span>
+<span class="n">target_chains_2VSM</span> <span class="o">=</span> <span class="s2">"B"</span>
 
-
-<span class="c1">### 3D12 is crystal structure of RBP head bound to EFNB3</span>
 <span class="n">pdb_path_3D12</span> <span class="o">=</span> <span class="n">e3_pdb</span>
-<span class="n">source_chain_3D12</span> <span class="o">=</span> <span class="s1">'A'</span>
-<span class="n">target_chains_3D12</span> <span class="o">=</span> <span class="s1">'B'</span>
+<span class="n">source_chain_3D12</span> <span class="o">=</span> <span class="s2">"A"</span>
+<span class="n">target_chains_3D12</span> <span class="o">=</span> <span class="s2">"B"</span>
 
 <span class="n">pdb_path_7txz</span> <span class="o">=</span> <span class="n">rbp_pdb</span>
-<span class="n">source_chain_7txz</span> <span class="o">=</span> <span class="s1">'B'</span>
-<span class="n">target_chains_7txz</span> <span class="o">=</span> <span class="s1">'A'</span>
+<span class="n">source_chain_7txz</span> <span class="o">=</span> <span class="s2">"B"</span>
+<span class="n">target_chains_7txz</span> <span class="o">=</span> <span class="s2">"A"</span>
 
+<span class="c1">#pdb_path_7txz = rbp_pdb</span>
+<span class="n">source_chain_7txz_A</span> <span class="o">=</span> <span class="s2">"A"</span>
+<span class="n">target_chains_7txz_B</span> <span class="o">=</span> <span class="s2">"B"</span>
+
+<span class="c1"># Dictionary to convert three-letter amino acid codes to one-letter</span>
 <span class="n">three_to_one_letter</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'ALA'</span><span class="p">:</span> <span class="s1">'A'</span><span class="p">,</span> <span class="s1">'ARG'</span><span class="p">:</span> <span class="s1">'R'</span><span class="p">,</span> <span class="s1">'ASN'</span><span class="p">:</span> <span class="s1">'N'</span><span class="p">,</span> <span class="s1">'ASP'</span><span class="p">:</span> <span class="s1">'D'</span><span class="p">,</span>
-    <span class="s1">'CYS'</span><span class="p">:</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'GLU'</span><span class="p">:</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'GLN'</span><span class="p">:</span> <span class="s1">'Q'</span><span class="p">,</span> <span class="s1">'GLY'</span><span class="p">:</span> <span class="s1">'G'</span><span class="p">,</span>
-    <span class="s1">'HIS'</span><span class="p">:</span> <span class="s1">'H'</span><span class="p">,</span> <span class="s1">'ILE'</span><span class="p">:</span> <span class="s1">'I'</span><span class="p">,</span> <span class="s1">'LEU'</span><span class="p">:</span> <span class="s1">'L'</span><span class="p">,</span> <span class="s1">'LYS'</span><span class="p">:</span> <span class="s1">'K'</span><span class="p">,</span>
-    <span class="s1">'MET'</span><span class="p">:</span> <span class="s1">'M'</span><span class="p">,</span> <span class="s1">'PHE'</span><span class="p">:</span> <span class="s1">'F'</span><span class="p">,</span> <span class="s1">'PRO'</span><span class="p">:</span> <span class="s1">'P'</span><span class="p">,</span> <span class="s1">'SER'</span><span class="p">:</span> <span class="s1">'S'</span><span class="p">,</span>
-    <span class="s1">'THR'</span><span class="p">:</span> <span class="s1">'T'</span><span class="p">,</span> <span class="s1">'TRP'</span><span class="p">:</span> <span class="s1">'W'</span><span class="p">,</span> <span class="s1">'TYR'</span><span class="p">:</span> <span class="s1">'Y'</span><span class="p">,</span> <span class="s1">'VAL'</span><span class="p">:</span> <span class="s1">'V'</span><span class="p">,</span>
+    <span class="s2">"ALA"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ARG"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"ASN"</span><span class="p">:</span> <span class="s2">"N"</span><span class="p">,</span>
+    <span class="s2">"ASP"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"CYS"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"GLU"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"GLN"</span><span class="p">:</span> <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"GLY"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"HIS"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"ILE"</span><span class="p">:</span> <span class="s2">"I"</span><span class="p">,</span>
+    <span class="s2">"LEU"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"LYS"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"MET"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"PHE"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PRO"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"SER"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"THR"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"TRP"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TYR"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"VAL"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
 <span class="p">}</span>
 
+<span class="c1"># Calculate minimum distances and modify dataframes with additional information</span>
+<span class="n">df_2VSM</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span>
+    <span class="n">pdb_path_2VSM</span><span class="p">,</span> <span class="n">source_chain_2VSM</span><span class="p">,</span> <span class="n">target_chains_2VSM</span><span class="p">,</span> <span class="s2">"E2"</span>
+<span class="p">)</span>
+<span class="n">df_2VSM</span><span class="p">[</span><span class="s2">"E2_PDB_residue"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2VSM</span><span class="p">[</span><span class="s2">"residue_name"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">three_to_one_letter</span><span class="p">)</span>
+<span class="c1"># Adjust residue numbering for specific cases</span>
+<span class="n">df_2VSM</span><span class="p">[</span><span class="s2">"residue"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">df_2VSM</span><span class="p">[</span><span class="s2">"residue"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">68</span><span class="p">,</span> <span class="n">df_2VSM</span><span class="p">[</span><span class="s2">"residue"</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">df_2VSM</span><span class="p">[</span><span class="s2">"residue"</span><span class="p">]</span>
+<span class="p">)</span>
 
-<span class="n">df_2VSM</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span><span class="n">pdb_path_2VSM</span><span class="p">,</span> <span class="n">source_chain_2VSM</span><span class="p">,</span> <span class="n">target_chains_2VSM</span><span class="p">,</span> <span class="s1">'E2'</span><span class="p">)</span>
-<span class="n">df_2VSM</span><span class="p">[</span><span class="s1">'E2_PDB_residue'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2VSM</span><span class="p">[</span><span class="s1">'residue_name'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">three_to_one_letter</span><span class="p">)</span>
-<span class="c1">#Have to adjust the numbering because 2VSM numbering of Ephrin-B2 is off compared to Reference</span>
-<span class="n">df_2VSM</span><span class="p">[</span><span class="s1">'residue'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df_2VSM</span><span class="p">[</span><span class="s1">'residue'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">68</span><span class="p">,</span> <span class="n">df_2VSM</span><span class="p">[</span><span class="s1">'residue'</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">df_2VSM</span><span class="p">[</span><span class="s1">'residue'</span><span class="p">])</span>
+<span class="n">df_3D12</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span>
+    <span class="n">pdb_path_3D12</span><span class="p">,</span> <span class="n">source_chain_3D12</span><span class="p">,</span> <span class="n">target_chains_3D12</span><span class="p">,</span> <span class="s2">"E3"</span>
+<span class="p">)</span>
+<span class="n">df_3D12</span><span class="p">[</span><span class="s2">"E3_PDB_residue"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_3D12</span><span class="p">[</span><span class="s2">"residue_name"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">three_to_one_letter</span><span class="p">)</span>
 
+<span class="n">df_7txz</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span>
+    <span class="n">pdb_path_7txz</span><span class="p">,</span> <span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s2">"dimerization"</span>
+<span class="p">)</span>
+<span class="n">df_7txz</span><span class="p">[</span><span class="s2">"dimerization_PDB_residue"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_7txz</span><span class="p">[</span><span class="s2">"residue_name"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="n">three_to_one_letter</span>
+<span class="p">)</span>
 
-<span class="n">df_3D12</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span><span class="n">pdb_path_3D12</span><span class="p">,</span> <span class="n">source_chain_3D12</span><span class="p">,</span> <span class="n">target_chains_3D12</span><span class="p">,</span> <span class="s1">'E3'</span><span class="p">)</span>
-<span class="n">df_3D12</span><span class="p">[</span><span class="s1">'E3_PDB_residue'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_3D12</span><span class="p">[</span><span class="s1">'residue_name'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">three_to_one_letter</span><span class="p">)</span>
-
-<span class="n">df_7txz</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span><span class="n">pdb_path_7txz</span><span class="p">,</span> <span class="n">source_chain_7txz</span><span class="p">,</span> <span class="n">target_chains_7txz</span><span class="p">,</span> <span class="s1">'dimerization'</span><span class="p">)</span>
-<span class="n">df_7txz</span><span class="p">[</span><span class="s1">'dimerization_PDB_residue'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_7txz</span><span class="p">[</span><span class="s1">'residue_name'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">three_to_one_letter</span><span class="p">)</span>
+<span class="n">df_7txz_assm</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span>
+    <span class="n">pdb_path_7txz</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'A'</span><span class="p">,</span> <span class="s2">"dimerization"</span>
+<span class="p">)</span>
+<span class="n">df_7txz_assm</span><span class="p">[</span><span class="s2">"dimerization_PDB_residue"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_7txz_assm</span><span class="p">[</span><span class="s2">"residue_name"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+    <span class="n">three_to_one_letter</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"All done!"</span><span class="p">)</span>
 
-<span class="n">df_2VSM</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ephrin_b2_distance</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">df_3D12</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ephrin_b3_distance</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">df_7txz</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">dimerization_distance</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># Save the processed data to CSV files</span>
+<span class="n">df_2VSM</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ephrin_b2_distance</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_3D12</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">ephrin_b3_distance</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_7txz</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">dimerization_distance</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7939,14 +8050,13 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_close_residues</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">distance_cutoff</span><span class="p">):</span>
-    <span class="n">close</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'distance'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">distance_cutoff</span><span class="p">]</span>
-    <span class="n">unique_sites</span> <span class="o">=</span> <span class="n">close</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_close_residues</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">distance_cutoff</span><span class="p">):</span>
+    <span class="n">close</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"distance"</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">distance_cutoff</span><span class="p">]</span>
+    <span class="n">unique_sites</span> <span class="o">=</span> <span class="n">close</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">unique_sites</span>
 
-<span class="n">ephrin_b2_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_2VSM</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ephrin_b2_close</span><span class="p">))</span>
-<span class="n">ephrin_b2_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_2VSM</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">ephrin_b2_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_2VSM</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ephrin_b2_close</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -7961,7 +8071,6 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
-[238, 239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 556, 557, 558, 559, 579, 580, 581, 583, 588]
 </pre>
 </div>
 </div>
@@ -7975,9 +8084,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">ephrin_b3_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_3D12</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ephrin_b3_close</span><span class="p">))</span>
-<span class="n">ephrin_b3_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_3D12</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ephrin_b3_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_3D12</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ephrin_b3_close</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -7992,7 +8099,6 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
-[216, 218, 238, 239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 554, 555, 556, 557, 558, 559, 579, 580, 581, 583, 588]
 </pre>
 </div>
 </div>
@@ -8006,10 +8112,20 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dimerization</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_7txz</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dimerization</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_7txz</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dimerization</span><span class="p">))</span>
-<span class="n">dimerization</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_7txz</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dimerization</span><span class="p">))</span>
+
+<span class="n">dimerization_assm</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_7txz_assm</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dimerization_assm</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">find_overlapping_sites</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="n">combined_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+    <span class="n">unique_elements</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">combined_list</span><span class="p">)</span>
+    <span class="n">sorted_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_elements</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
+
+<span class="n">find_overlapping_sites</span><span class="p">(</span><span class="n">dimerization</span><span class="p">,</span><span class="n">dimerization_assm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8022,8 +8138,10 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[167, 168, 170, 171, 172, 202, 203, 204, 205, 208, 210, 212, 237, 238, 239, 240, 242, 258, 584, 589, 591]
-[146, 164, 166, 167, 168, 169, 170, 171, 172, 173, 202, 203, 204, 205, 208, 209, 210, 212, 213, 214, 215, 216, 237, 238, 239, 240, 242, 243, 244, 258, 259, 260, 583, 584, 585, 586, 588, 589, 591]
+<pre>[160, 162, 163, 164, 165, 166, 169, 171, 205, 206, 208, 247, 249, 256, 258, 259, 260, 261, 266, 267, 268, 270, 323, 324, 325, 331]
+[167, 168, 170, 171, 172, 202, 203, 204, 205, 208, 210, 212, 237, 238, 239, 240, 242, 258, 584, 589, 591]
+43
+[160, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 202, 203, 204, 205, 206, 208, 210, 212, 237, 238, 239, 240, 242, 247, 249, 256, 258, 259, 260, 261, 266, 267, 268, 270, 323, 324, 325, 331, 584, 589, 591]
 </pre>
 </div>
 </div>
@@ -8048,13 +8166,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Assuming ephrin_b2_close and ephrin_b3_close are sets or any iterable</span>
-<span class="n">test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ephrin_b2_close</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">ephrin_b3_close</span><span class="p">)</span>
-<span class="n">unique_elements</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-
-<span class="c1"># Convert set to a list and sort</span>
-<span class="n">sorted_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_elements</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">find_overlapping_sites</span><span class="p">(</span><span class="n">ephrin_b2_close</span><span class="p">,</span><span class="n">ephrin_b3_close</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8067,13 +8179,14 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[216, 218, 238, 239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 554, 555, 556, 557, 558, 559, 579, 580, 581, 583, 588]
+<pre>33
+[239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7b63b0ae-caf8-4175-bbdb-f865cc669d6e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=205b1605-2487-465e-a3f2-846755367f04">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
