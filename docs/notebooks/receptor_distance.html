@@ -7513,7 +7513,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=df64e929">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=2af358c7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7561,7 +7561,7 @@ a.anchor-link {
 <span class="kn">from</span> <span class="nn">Bio.Align</span> <span class="kn">import</span> <span class="n">PairwiseAligner</span>
 <span class="kn">from</span> <span class="nn">Bio.PDB.DSSP</span> <span class="kn">import</span> <span class="n">DSSP</span>
 <span class="kn">from</span> <span class="nn">Bio.PDB</span> <span class="kn">import</span> <span class="n">PDBParser</span>
-
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
 <span class="c1"># pd.set_option('display.max_rows', None)</span>
 </pre></div>
 </div>
@@ -7978,7 +7978,7 @@ a.anchor-link {
     <span class="s2">"VAL"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="c1"># Calculate minimum distances and modify dataframes with additional information</span>
+<span class="c1">#Calculate minimum distances and modify dataframes with additional information</span>
 <span class="n">df_2VSM</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span>
     <span class="n">pdb_path_2VSM</span><span class="p">,</span> <span class="n">source_chain_2VSM</span><span class="p">,</span> <span class="n">target_chains_2VSM</span><span class="p">,</span> <span class="s2">"E2"</span>
 <span class="p">)</span>
@@ -8005,6 +8005,17 @@ a.anchor-link {
 <span class="p">)</span>
 <span class="n">df_7txz_assm</span><span class="p">[</span><span class="s2">"dimerization_PDB_residue"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_7txz_assm</span><span class="p">[</span><span class="s2">"residue_name"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
     <span class="n">three_to_one_letter</span>
+<span class="p">)</span>
+
+<span class="n">EFNB2_dist</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span>
+    <span class="n">pdb_path_2VSM</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'EFNB2'</span>
+<span class="p">)</span>
+<span class="n">EFNB2_dist</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">EFNB2_dist</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">68</span><span class="p">,</span> <span class="n">EFNB2_dist</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">EFNB2_dist</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">EFNB3_dist</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span>
+    <span class="n">pdb_path_3D12</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'EFNB3'</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"All done!"</span><span class="p">)</span>
@@ -8052,12 +8063,53 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_close_residues</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">distance_cutoff</span><span class="p">):</span>
     <span class="n">close</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"distance"</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">distance_cutoff</span><span class="p">]</span>
-    <span class="n">unique_sites</span> <span class="o">=</span> <span class="n">close</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="n">unique_sites</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">close</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">unique_sites</span>
 
-
 <span class="n">ephrin_b2_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_2VSM</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ephrin_b2_close</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'For 2VSM (RBP/Ephrin-B2), the close contact sites are: </span><span class="si">{</span><span class="n">ephrin_b2_close</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">ephrin_b3_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_3D12</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'For 3D12 (RBP/Ephrin-B3), the close contact sites are: </span><span class="si">{</span><span class="n">ephrin_b3_close</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">dimerization</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_7txz</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">' For 7TXZ Chain A, close contact sites are: </span><span class="si">{</span><span class="n">dimerization</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">dimerization_assm</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_7txz_assm</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">' For 7TXZ Chain B, close contact sites are : </span><span class="si">{</span><span class="n">dimerization_assm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">EFNB2_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">EFNB2_dist</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">' For EFNB2, close contact sites are : </span><span class="si">{</span><span class="n">EFNB2_close</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">EFNB3_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">EFNB3_dist</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">' For EFNB3, close contact sites are : </span><span class="si">{</span><span class="n">EFNB3_close</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="c1"># Function for finding the combined values for two different lists</span>
+<span class="k">def</span> <span class="nf">find_combined_sites</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="n">combined_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+    <span class="n">unique_elements</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">combined_list</span><span class="p">)</span>
+    <span class="n">sorted_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_elements</span><span class="p">)</span>
+    <span class="n">len_list</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'The number of residues is: </span><span class="si">{</span><span class="n">len_list</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
+
+<span class="n">find_combined_sites</span><span class="p">(</span><span class="n">ephrin_b2_close</span><span class="p">,</span><span class="n">ephrin_b3_close</span><span class="p">)</span>
+<span class="n">find_combined_sites</span><span class="p">(</span><span class="n">EFNB2_close</span><span class="p">,</span><span class="n">EFNB3_close</span><span class="p">)</span>
+
+<span class="c1"># Function for finding values that are shared between two different lists</span>
+<span class="k">def</span> <span class="nf">find_overlapping_sites</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="c1"># Convert both lists to sets</span>
+    <span class="n">set1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+    <span class="n">set2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+    <span class="c1"># Find the intersection (common elements) of both sets</span>
+    <span class="n">overlapping_sites</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+    <span class="c1"># Convert the resulting set to a sorted list</span>
+    <span class="n">sorted_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">overlapping_sites</span><span class="p">)</span>
+    <span class="c1"># Print the number of overlapping sites and the sites themselves</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'The number of overlapping residues is: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
+
+<span class="n">find_overlapping_sites</span><span class="p">(</span><span class="n">ephrin_b2_close</span><span class="p">,</span> <span class="n">ephrin_b3_close</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8070,13 +8122,29 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
+<pre>For 2VSM (RBP/Ephrin-B2), the close contact sites are: [239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
+
+For 3D12 (RBP/Ephrin-B3), the close contact sites are: [239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
+
+ For 7TXZ Chain A, close contact sites are: [160, 162, 163, 164, 165, 166, 169, 171, 205, 206, 208, 247, 249, 256, 258, 259, 260, 261, 266, 267, 268, 270, 323, 324, 325, 331]
+ For 7TXZ Chain B, close contact sites are : [167, 168, 170, 171, 172, 202, 203, 204, 205, 208, 210, 212, 237, 238, 239, 240, 242, 258, 584, 589, 591]
+ For EFNB2, close contact sites are : [54, 55, 57, 97, 101, 102, 103, 106, 107, 108, 109, 111, 112, 113, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130]
+ For EFNB3, close contact sites are : [55, 57, 101, 102, 106, 107, 108, 109, 112, 113, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130]
+The number of residues is: 33
+
+[239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
+The number of residues is: 28
+
+[54, 55, 57, 97, 101, 102, 103, 106, 107, 108, 109, 111, 112, 113, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130]
+The number of overlapping residues is: 33
+
+[239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=34b17274-bda8-4f47-96c9-d4d88856d68e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=25934328-d15c-40c9-bf92-b8e839647209">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8084,8 +8152,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">ephrin_b3_close</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_3D12</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ephrin_b3_close</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># What residues are shared between chain A and B in dimerization face?</span>
+<span class="n">find_combined_sites</span><span class="p">(</span><span class="n">dimerization</span><span class="p">,</span><span class="n">dimerization_assm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8098,13 +8166,15 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
+<pre>The number of residues is: 43
+
+[160, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 202, 203, 204, 205, 206, 208, 210, 212, 237, 238, 239, 240, 242, 247, 249, 256, 258, 259, 260, 261, 266, 267, 268, 270, 323, 324, 325, 331, 584, 589, 591]
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=54147030-159e-46ea-8a2a-7cff6f8099ec">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4a3c3776-8117-4e2b-9ec6-1ae6de2c66e2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8112,20 +8182,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">dimerization</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_7txz</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dimerization</span><span class="p">))</span>
-
-<span class="n">dimerization_assm</span> <span class="o">=</span> <span class="n">find_close_residues</span><span class="p">(</span><span class="n">df_7txz_assm</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dimerization_assm</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">find_overlapping_sites</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
-    <span class="n">combined_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
-    <span class="n">unique_elements</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">combined_list</span><span class="p">)</span>
-    <span class="n">sorted_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unique_elements</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span>
-
-<span class="n">find_overlapping_sites</span><span class="p">(</span><span class="n">dimerization</span><span class="p">,</span><span class="n">dimerization_assm</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># What residues are overlapping for both asymmetric heads?</span>
+<span class="n">find_overlapping_sites</span><span class="p">(</span><span class="n">dimerization</span><span class="p">,</span> <span class="n">dimerization_assm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8138,55 +8196,15 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[160, 162, 163, 164, 165, 166, 169, 171, 205, 206, 208, 247, 249, 256, 258, 259, 260, 261, 266, 267, 268, 270, 323, 324, 325, 331]
-[167, 168, 170, 171, 172, 202, 203, 204, 205, 208, 210, 212, 237, 238, 239, 240, 242, 258, 584, 589, 591]
-43
-[160, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 202, 203, 204, 205, 206, 208, 210, 212, 237, 238, 239, 240, 242, 247, 249, 256, 258, 259, 260, 261, 266, 267, 268, 270, 323, 324, 325, 331, 584, 589, 591]
+<pre>The number of overlapping residues is: 4
+
+[171, 205, 208, 258]
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=251b0d94-36cf-4273-9c94-aec28372eeef">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Find-overlapping-sites-for-EFNB2-and-EFNB3-that-are-within-5-angstroms">Find overlapping sites for EFNB2 and EFNB3 that are within 5 angstroms<a class="anchor-link" href="#Find-overlapping-sites-for-EFNB2-and-EFNB3-that-are-within-5-angstroms">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=014d1dc7-b84e-4294-85ef-3a5dd349ee3e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">find_overlapping_sites</span><span class="p">(</span><span class="n">ephrin_b2_close</span><span class="p">,</span><span class="n">ephrin_b3_close</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>33
-[239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=205b1605-2487-465e-a3f2-846755367f04">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=be481d85-8c5a-4a32-9b2a-dbbdae9470b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

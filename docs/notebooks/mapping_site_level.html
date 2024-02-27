@@ -7522,7 +7522,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=996ae43a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=d6172b18">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7729,7 +7729,7 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">aggregate_binding</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'binding_median'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'binding_median'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
     <span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     
     <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
@@ -7754,12 +7754,47 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=66e77ad3-c46a-458c-b55f-20d7d5d25d1e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7c015f13-37b8-43ca-8e4b-0b500710ba86">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">max_binding</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+    <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'binding_median'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
+    <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_median'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_median'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_median'</span><span class="p">]</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="c1"># Write header lines</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">'attribute: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
+    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">max_binding</span><span class="p">(</span><span class="n">E2_binding_infile</span><span class="p">,</span><span class="s1">'E2_binding'</span><span class="p">,</span><span class="s1">'results/parsed_mapping_data/E2_binding_max.csv'</span><span class="p">)</span>
+<span class="n">max_binding</span><span class="p">(</span><span class="n">E3_binding_infile</span><span class="p">,</span><span class="s1">'E3_binding'</span><span class="p">,</span><span class="s1">'results/parsed_mapping_data/E3_binding_max.csv'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=66e77ad3-c46a-458c-b55f-20d7d5d25d1e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">aggregate_escape</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
@@ -7809,7 +7844,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Specify the directory containing the .csv files</span>
@@ -7842,6 +7877,7 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Copied results/parsed_mapping_data/E3_entry_parsed.csv to results/parsed_mapping_data/E3_entry_parsed.defattr
+Copied results/parsed_mapping_data/E2_binding_max.csv to results/parsed_mapping_data/E2_binding_max.defattr
 Copied results/parsed_mapping_data/HENV117_escape_sum_parsed.csv to results/parsed_mapping_data/HENV117_escape_sum_parsed.defattr
 Copied results/parsed_mapping_data/HENV26_escape_sum_parsed.csv to results/parsed_mapping_data/HENV26_escape_sum_parsed.defattr
 Copied results/parsed_mapping_data/E2_binding_parsed.csv to results/parsed_mapping_data/E2_binding_parsed.defattr
@@ -7853,6 +7889,7 @@ Copied results/parsed_mapping_data/E3_binding_parsed.csv to results/parsed_mappi
 Copied results/parsed_mapping_data/E3_entry_sum.csv to results/parsed_mapping_data/E3_entry_sum.defattr
 Copied results/parsed_mapping_data/HENV32_escape_sum_parsed.csv to results/parsed_mapping_data/HENV32_escape_sum_parsed.defattr
 Copied results/parsed_mapping_data/E2_entry_parsed.csv to results/parsed_mapping_data/E2_entry_parsed.defattr
+Copied results/parsed_mapping_data/E3_binding_max.csv to results/parsed_mapping_data/E3_binding_max.defattr
 </pre>
 </div>
 </div>
