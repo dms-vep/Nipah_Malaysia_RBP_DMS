@@ -7513,7 +7513,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=2af358c7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=f590b55b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8010,9 +8010,9 @@ a.anchor-link {
 <span class="n">EFNB2_dist</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span>
     <span class="n">pdb_path_2VSM</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'EFNB2'</span>
 <span class="p">)</span>
-<span class="n">EFNB2_dist</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
-    <span class="n">EFNB2_dist</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">68</span><span class="p">,</span> <span class="n">EFNB2_dist</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">EFNB2_dist</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span>
-<span class="p">)</span>
+<span class="c1">#EFNB2_dist["site"] = np.where(</span>
+<span class="c1">#    EFNB2_dist["site"] &lt; 68, EFNB2_dist["site"] - 3, EFNB2_dist["site"]</span>
+<span class="c1">#)</span>
 
 <span class="n">EFNB3_dist</span> <span class="o">=</span> <span class="n">calculate_min_distances</span><span class="p">(</span>
     <span class="n">pdb_path_3D12</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'EFNB3'</span>
@@ -8128,14 +8128,14 @@ For 3D12 (RBP/Ephrin-B3), the close contact sites are: [239, 240, 241, 242, 305,
 
  For 7TXZ Chain A, close contact sites are: [160, 162, 163, 164, 165, 166, 169, 171, 205, 206, 208, 247, 249, 256, 258, 259, 260, 261, 266, 267, 268, 270, 323, 324, 325, 331]
  For 7TXZ Chain B, close contact sites are : [167, 168, 170, 171, 172, 202, 203, 204, 205, 208, 210, 212, 237, 238, 239, 240, 242, 258, 584, 589, 591]
- For EFNB2, close contact sites are : [54, 55, 57, 97, 101, 102, 103, 106, 107, 108, 109, 111, 112, 113, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130]
+ For EFNB2, close contact sites are : [57, 58, 60, 97, 101, 102, 103, 106, 107, 108, 109, 111, 112, 113, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130]
  For EFNB3, close contact sites are : [55, 57, 101, 102, 106, 107, 108, 109, 112, 113, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130]
 The number of residues is: 33
 
 [239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]
-The number of residues is: 28
+The number of residues is: 29
 
-[54, 55, 57, 97, 101, 102, 103, 106, 107, 108, 109, 111, 112, 113, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130]
+[55, 57, 58, 60, 97, 101, 102, 103, 106, 107, 108, 109, 111, 112, 113, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130]
 The number of overlapping residues is: 33
 
 [239, 240, 241, 242, 305, 388, 389, 401, 402, 458, 488, 489, 490, 491, 492, 501, 504, 505, 506, 507, 530, 531, 532, 533, 555, 557, 558, 559, 579, 580, 581, 583, 588]

@@ -7514,7 +7514,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=d442a14f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=f007bff8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7617,16 +7617,17 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#altair_config = 'data/custom_analyses_data/theme.py'</span>
-<span class="c1">#nipah_config = 'nipah_config.yaml'</span>
-<span class="c1">#e2_binding = 'results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv'</span>
-<span class="c1">#e2_entry = 'results/func_effects/averages/CHO_EFNB2_low_func_effects.csv'</span>
-<span class="c1">#e3_binding = 'results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv'</span>
-<span class="c1">#e3_entry = 'results/func_effects/averages/CHO_EFNB3_low_func_effects.csv'</span>
-<span class="c1">#nipah_alignment = 'data/custom_analyses_data/alignments/Nipah_RBP_alignment_240111.fasta'</span>
-<span class="c1">#entropy_output = 'results/entropy/entropy.csv'</span>
-<span class="c1">#entry_scores_niv_poly = 'results/images/niv_polymorphic_entry.html'</span>
-<span class="c1">#binding_scores_niv_poly = 'results/images/niv_polymorphic_binding.html'</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">nipah_alignment</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">altair_config</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/theme.py'</span>
+    <span class="n">nipah_config</span> <span class="o">=</span> <span class="s1">'nipah_config.yaml'</span>
+    <span class="n">e2_binding</span> <span class="o">=</span> <span class="s1">'results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv'</span>
+    <span class="n">e2_entry</span> <span class="o">=</span> <span class="s1">'results/func_effects/averages/CHO_EFNB2_low_func_effects.csv'</span>
+    <span class="n">e3_binding</span> <span class="o">=</span> <span class="s1">'results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv'</span>
+    <span class="n">e3_entry</span> <span class="o">=</span> <span class="s1">'results/func_effects/averages/CHO_EFNB3_low_func_effects.csv'</span>
+    <span class="n">nipah_alignment</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/alignments/Nipah_RBP_AA_align.fasta'</span>
+    <span class="n">entropy_output</span> <span class="o">=</span> <span class="s1">'results/entropy/entropy.csv'</span>
+    <span class="n">entry_scores_niv_poly</span> <span class="o">=</span> <span class="s1">'results/images/niv_polymorphic_entry.html'</span>
+    <span class="n">binding_scores_niv_poly</span> <span class="o">=</span> <span class="s1">'results/images/niv_polymorphic_binding.html'</span>
 </pre></div>
 </div>
 </div>
@@ -8022,14 +8023,14 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
 <pre>
-muscle 5.1.linux64 []  791Gb RAM, 36 cores
+muscle 5.1.linux64 []  395Gb RAM, 24 cores
 Built Feb 24 2022 03:16:15
 (C) Copyright 2004-2021 Robert C. Edgar.
 https://drive5.com
 
 Input: 8 seqs, avg length 611, max 632
 
-00:00 17Mb   CPU has 36 cores, defaulting to 20 threads
+00:00 17Mb   CPU has 24 cores, defaulting to 20 threads
 
 WARNING: Max OMP threads 1
 
@@ -8257,23 +8258,23 @@ WARNING: Max OMP threads 1
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-e2b33acbfbad40dbb18e9d3a8ab6ca77.vega-embed {
+  #altair-viz-85ca877505474a5da7382aef3bdaf073.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-e2b33acbfbad40dbb18e9d3a8ab6ca77.vega-embed details,
-  #altair-viz-e2b33acbfbad40dbb18e9d3a8ab6ca77.vega-embed details summary {
+  #altair-viz-85ca877505474a5da7382aef3bdaf073.vega-embed details,
+  #altair-viz-85ca877505474a5da7382aef3bdaf073.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-e2b33acbfbad40dbb18e9d3a8ab6ca77"></div>
+<div id="altair-viz-85ca877505474a5da7382aef3bdaf073"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e2b33acbfbad40dbb18e9d3a8ab6ca77") {
-      outputDiv = document.getElementById("altair-viz-e2b33acbfbad40dbb18e9d3a8ab6ca77");
+    if (outputDiv.id !== "altair-viz-85ca877505474a5da7382aef3bdaf073") {
+      outputDiv = document.getElementById("altair-viz-85ca877505474a5da7382aef3bdaf073");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8336,7 +8337,7 @@ WARNING: Max OMP threads 1
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bfb99ec4-3b3b-4dab-8986-16aa115514ee">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=09b17ce5-be7f-486a-866d-10c7e0cefff8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8344,63 +8345,13 @@ WARNING: Max OMP threads 1
 <div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">shannon_entropy_and_mutant_aa</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">wildtype_aa</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Compute the Shannon entropy of a column in the alignment and return the top amino acid excluding the wildtype."""</span>
-    <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">column</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">aa</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"-"</span><span class="p">,</span> <span class="s2">"X"</span><span class="p">]:</span>
-            <span class="k">if</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
-                <span class="n">counts</span><span class="p">[</span><span class="n">aa</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">counts</span><span class="p">[</span><span class="n">aa</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">counts</span><span class="p">:</span>  <span class="c1"># all positions were ignored characters</span>
-        <span class="k">return</span> <span class="mf">0.0</span><span class="p">,</span> <span class="kc">None</span>
-        
-    <span class="n">entropy</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
-        <span class="n">freq</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-        <span class="n">entropy</span> <span class="o">+=</span> <span class="n">freq</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>
-
-    <span class="c1"># Remove the wildtype amino acid from counts if it's there</span>
-    <span class="n">counts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">wildtype_aa</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="c1"># Sort the amino acids by frequency to find the mutant</span>
-    <span class="n">sorted_aas</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="n">mutant_aa</span> <span class="o">=</span> <span class="n">sorted_aas</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">sorted_aas</span> <span class="ow">and</span> <span class="n">sorted_aas</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="kc">None</span>
-    <span class="c1">#mutant_aa = sorted_aas[0][0] if sorted_aas else None</span>
-    <span class="k">return</span> <span class="o">-</span><span class="n">entropy</span><span class="p">,</span> <span class="n">mutant_aa</span>
-
-<span class="n">alignment_path</span> <span class="o">=</span> <span class="n">nipah_alignment</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">alignment_path</span> <span class="o">=</span> <span class="n">nipah_alignment</span>
 <span class="n">alignment</span> <span class="o">=</span> <span class="n">AlignIO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">alignment_path</span><span class="p">,</span> <span class="s2">"fasta"</span><span class="p">)</span>
 
 <span class="c1"># Convert alignment to DataFrame</span>
 <span class="n">alignment_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">record</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">alignment</span><span class="p">}</span>
 <span class="n">df_alignment</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">alignment_dict</span><span class="p">)</span>
-
-<span class="n">wildtype_series</span> <span class="o">=</span> <span class="n">df_alignment</span><span class="p">[</span><span class="s1">'NC_002728.1_Nipah_virus_complete_genome'</span><span class="p">]</span>
-
-<span class="c1"># Compute the values</span>
-<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">shannon_entropy_and_mutant_aa</span><span class="p">(</span><span class="n">df_alignment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">wildtype_series</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">df_alignment</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
-<span class="n">entropies</span><span class="p">,</span> <span class="n">mutants</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>
-
-<span class="n">df_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">'site'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">entropies</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="s1">'entropy'</span><span class="p">:</span> <span class="n">entropies</span><span class="p">,</span>
-    <span class="s1">'wildtype'</span><span class="p">:</span> <span class="n">wildtype_series</span><span class="p">,</span>
-    <span class="s1">'mutant'</span><span class="p">:</span> <span class="n">mutants</span>
-<span class="p">})</span>
-
-<span class="c1"># Filter to get rid of extra site at end</span>
-<span class="n">df_final</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="n">df_final</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">603</span><span class="p">]</span>
-
-<span class="c1">#df_mutations are all sites that have polymorphisms in Nipah sequences</span>
-<span class="n">df_mutations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_final</span><span class="p">,</span><span class="n">df_assign</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'site'</span><span class="p">,</span><span class="s1">'wildtype'</span><span class="p">,</span><span class="s1">'mutant'</span><span class="p">],</span><span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
-
-<span class="c1">#df_total is data frame with all information</span>
-<span class="n">df_total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_merged</span><span class="p">,</span><span class="n">df_final</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'site'</span><span class="p">])</span>
-<span class="n">df_total</span> <span class="o">=</span> <span class="n">df_total</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'wildtype_y'</span><span class="p">:</span><span class="s1">'nipahM_con'</span><span class="p">,</span><span class="s1">'mutant_y'</span><span class="p">:</span><span class="s1">'nipahM_minor'</span><span class="p">,</span><span class="s1">'wildtype_x'</span><span class="p">:</span><span class="s1">'wildtype'</span><span class="p">,</span><span class="s1">'mutant_x'</span><span class="p">:</span><span class="s1">'mutant'</span><span class="p">})</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df_total</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_alignment</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8431,149 +8382,149 @@ WARNING: Max OMP threads 1
 <thead>
 <tr style="text-align: right;">
 <th></th>
-<th>site</th>
-<th>wildtype</th>
-<th>mutant</th>
-<th>effect_E2</th>
-<th>binding_median_E2</th>
-<th>binding_std_E2</th>
-<th>effect_E3</th>
-<th>binding_median_E3</th>
-<th>binding_std_E3</th>
-<th>hendra</th>
+<th>NC_002728.1_Nipah_virus_complete_genome</th>
+<th>OM135495.1_Nipah_henipavirus_isolate_MCL-21-H-9808_partial_genome</th>
+<th>MW535746.1_Nipah_henipavirus_isolate_NiV/TH/P.lylei/2017/B17640.GUL_complete_genome</th>
+<th>MK673558.1_Nipah_henipavirus_isolate_808579_complete_genome</th>
+<th>MK673559.1_Nipah_henipavirus_isolate_808581_complete_genome</th>
+<th>MK673560.1_Nipah_henipavirus_isolate_808585_complete_genome</th>
+<th>MK673561.1_Nipah_henipavirus_isolate_808589_complete_genome</th>
+<th>MK673562.1_Nipah_henipavirus_isolate_808651_complete_genome</th>
+<th>MK673563.1_Nipah_henipavirus_isolate_808652_complete_genome</th>
+<th>MK673564.1_Nipah_henipavirus_isolate_810398_complete_genome</th>
 <th>...</th>
-<th>nipah_india</th>
-<th>nipah_cambodia</th>
-<th>cedar_2</th>
-<th>ghana</th>
-<th>hendra_G2</th>
-<th>henipavirus_entropy</th>
-<th>conserved</th>
-<th>entropy</th>
-<th>nipahM_con</th>
-<th>nipahM_minor</th>
+<th>JN808864.1_Nipah_virus_isolate_NIVBGD2010FARIDPUR_partial_genome</th>
+<th>FJ513078.1_Nipah_virus_isolate_Ind-Nipah-07-FG_from_India_complete_genome</th>
+<th>AY988601.1_Nipah_virus_from_Bangladesh_complete_genome</th>
+<th>AJ627196.1_Nipah_virus_complete_genome_isolate_NV/MY/99/VRI-0626</th>
+<th>AJ564621.1_Nipah_virus_complete_genome_isolate_NV/MY/99/VRI-2794</th>
+<th>AJ564622.1_Nipah_virus_complete_genome_isolate_NV/MY/99/VRI-1413</th>
+<th>AJ564623.1_Nipah_virus_complete_genome_isolate_NV/MY/99/UM-0128</th>
+<th>AY029767.1_Nipah_virus_isolate_UMMC1_complete_genome</th>
+<th>AY029768.1_Nipah_virus_isolate_UMMC2_complete_genome</th>
+<th>AF212302.2_Nipah_virus_complete_genome</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>0</th>
-<td>71</td>
-<td>Q</td>
-<td>C</td>
-<td>-1.7200</td>
-<td>-0.02026</td>
-<td>0.38950</td>
-<td>-0.8328</td>
-<td>-0.13320</td>
-<td>0.152500</td>
-<td>Q</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
 <td>...</td>
-<td>Q</td>
-<td>Q</td>
-<td>T</td>
-<td>Y</td>
-<td>Q</td>
-<td>1.298795</td>
-<td>False</td>
-<td>-0.0</td>
-<td>Q</td>
-<td>None</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
+<td>M</td>
 </tr>
 <tr>
 <th>1</th>
-<td>71</td>
-<td>Q</td>
-<td>D</td>
-<td>-1.4670</td>
-<td>-0.08074</td>
-<td>1.64600</td>
-<td>-0.4981</td>
-<td>-0.29370</td>
-<td>0.330500</td>
-<td>Q</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
 <td>...</td>
-<td>Q</td>
-<td>Q</td>
-<td>T</td>
-<td>Y</td>
-<td>Q</td>
-<td>1.298795</td>
-<td>False</td>
-<td>-0.0</td>
-<td>Q</td>
-<td>None</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
+<td>P</td>
 </tr>
 <tr>
 <th>2</th>
-<td>71</td>
-<td>Q</td>
-<td>E</td>
-<td>-1.2110</td>
-<td>0.30170</td>
-<td>0.43090</td>
-<td>0.3605</td>
-<td>-0.35270</td>
-<td>0.176200</td>
-<td>Q</td>
-<td>...</td>
-<td>Q</td>
-<td>Q</td>
+<td>A</td>
 <td>T</td>
-<td>Y</td>
-<td>Q</td>
-<td>1.298795</td>
-<td>False</td>
-<td>-0.0</td>
-<td>Q</td>
-<td>None</td>
+<td>T</td>
+<td>A</td>
+<td>T</td>
+<td>A</td>
+<td>A</td>
+<td>A</td>
+<td>A</td>
+<td>T</td>
+<td>...</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>A</td>
+<td>A</td>
+<td>A</td>
+<td>A</td>
+<td>A</td>
+<td>A</td>
+<td>A</td>
 </tr>
 <tr>
 <th>3</th>
-<td>71</td>
-<td>Q</td>
-<td>F</td>
-<td>-1.1310</td>
-<td>-0.19110</td>
-<td>0.52990</td>
-<td>-0.5317</td>
-<td>-0.03982</td>
-<td>0.128300</td>
-<td>Q</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
 <td>...</td>
-<td>Q</td>
-<td>Q</td>
-<td>T</td>
-<td>Y</td>
-<td>Q</td>
-<td>1.298795</td>
-<td>False</td>
-<td>-0.0</td>
-<td>Q</td>
-<td>None</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
 </tr>
 <tr>
 <th>4</th>
-<td>71</td>
-<td>Q</td>
-<td>G</td>
-<td>-1.2800</td>
-<td>0.19060</td>
-<td>0.70420</td>
-<td>-1.2470</td>
-<td>-0.04107</td>
-<td>0.058420</td>
-<td>Q</td>
+<td>N</td>
+<td>S</td>
+<td>S</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>S</td>
 <td>...</td>
-<td>Q</td>
-<td>Q</td>
-<td>T</td>
-<td>Y</td>
-<td>Q</td>
-<td>1.298795</td>
-<td>False</td>
-<td>-0.0</td>
-<td>Q</td>
-<td>None</td>
+<td>S</td>
+<td>S</td>
+<td>S</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
 </tr>
 <tr>
 <th>...</th>
@@ -8600,129 +8551,223 @@ WARNING: Max OMP threads 1
 <td>...</td>
 </tr>
 <tr>
-<th>9936</th>
-<td>602</td>
-<td>T</td>
-<td>R</td>
-<td>0.5772</td>
-<td>0.02670</td>
-<td>0.55210</td>
-<td>0.4772</td>
-<td>-0.04309</td>
-<td>0.119100</td>
-<td>S</td>
+<th>598</th>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
 <td>...</td>
-<td>T</td>
-<td>T</td>
-<td>-</td>
-<td>R</td>
-<td>S</td>
-<td>1.905639</td>
-<td>False</td>
-<td>-0.0</td>
-<td>T</td>
-<td>None</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
 </tr>
 <tr>
-<th>9937</th>
-<td>602</td>
-<td>T</td>
-<td>S</td>
-<td>0.1452</td>
-<td>0.75420</td>
-<td>0.36050</td>
-<td>0.3906</td>
-<td>0.08546</td>
-<td>0.005451</td>
-<td>S</td>
+<th>599</th>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
 <td>...</td>
-<td>T</td>
-<td>T</td>
-<td>-</td>
-<td>R</td>
-<td>S</td>
-<td>1.905639</td>
-<td>False</td>
-<td>-0.0</td>
-<td>T</td>
-<td>None</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
+<td>Q</td>
 </tr>
 <tr>
-<th>9938</th>
-<td>602</td>
-<td>T</td>
-<td>V</td>
-<td>0.5282</td>
-<td>0.22890</td>
-<td>0.59530</td>
-<td>0.3780</td>
-<td>0.20070</td>
-<td>0.101500</td>
-<td>S</td>
+<th>600</th>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
 <td>...</td>
-<td>T</td>
-<td>T</td>
-<td>-</td>
-<td>R</td>
-<td>S</td>
-<td>1.905639</td>
-<td>False</td>
-<td>-0.0</td>
-<td>T</td>
-<td>None</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
+<td>C</td>
 </tr>
 <tr>
-<th>9939</th>
-<td>602</td>
+<th>601</th>
 <td>T</td>
-<td>W</td>
-<td>0.4930</td>
-<td>-0.03435</td>
-<td>0.15290</td>
-<td>0.5438</td>
-<td>0.16630</td>
-<td>0.134300</td>
-<td>S</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
 <td>...</td>
 <td>T</td>
 <td>T</td>
-<td>-</td>
-<td>R</td>
-<td>S</td>
-<td>1.905639</td>
-<td>False</td>
-<td>-0.0</td>
 <td>T</td>
-<td>None</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
 </tr>
 <tr>
-<th>9940</th>
-<td>602</td>
-<td>T</td>
-<td>Y</td>
-<td>0.3363</td>
-<td>-0.24160</td>
-<td>0.08885</td>
-<td>0.4982</td>
-<td>0.05261</td>
-<td>0.016170</td>
-<td>S</td>
-<td>...</td>
-<td>T</td>
-<td>T</td>
+<th>602</th>
 <td>-</td>
-<td>R</td>
-<td>S</td>
-<td>1.905639</td>
-<td>False</td>
-<td>-0.0</td>
-<td>T</td>
-<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>...</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<p>9941 rows × 22 columns</p>
+<p>603 rows × 79 columns</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bfb99ec4-3b3b-4dab-8986-16aa115514ee">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">shannon_entropy_and_mutant_aa</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">wildtype_aa</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Compute the Shannon entropy of a column in the alignment and return the top amino acid excluding the wildtype.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - column: A column from a sequence alignment, representing one site across multiple sequences.</span>
+<span class="sd">    - wildtype_aa: The wildtype (original) amino acid at this position in a reference sequence.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - The Shannon entropy of the column (a measure of diversity).</span>
+<span class="sd">    - The amino acid variant that appears most frequently, excluding the wildtype.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Initialize a dictionary to count occurrences of each amino acid</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># Iterate through each amino acid in the column</span>
+    <span class="k">for</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">column</span><span class="p">:</span>
+        <span class="c1"># Ignore gap ('-') and unknown ('X') characters</span>
+        <span class="k">if</span> <span class="n">aa</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"-"</span><span class="p">,</span> <span class="s2">"X"</span><span class="p">]:</span>
+            <span class="c1"># If the amino acid is already in the dictionary, increment its count</span>
+            <span class="k">if</span> <span class="n">aa</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+                <span class="n">counts</span><span class="p">[</span><span class="n">aa</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c1"># Otherwise, add it to the dictionary with a count of 1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">counts</span><span class="p">[</span><span class="n">aa</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="c1"># If counts is empty after filtering, return 0.0 entropy and None for the mutant amino acid</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">counts</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span><span class="p">,</span> <span class="kc">None</span>
+      
+    <span class="c1"># Calculate Shannon entropy</span>
+    <span class="n">entropy</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+        <span class="n">freq</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>  <span class="c1"># Calculate frequency of each amino acid</span>
+        <span class="n">entropy</span> <span class="o">+=</span> <span class="n">freq</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>  <span class="c1"># Add the frequency times the log base 2 of the frequency to the entropy</span>
+
+    <span class="c1"># Remove the wildtype amino acid from counts if it's present</span>
+    <span class="n">counts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">wildtype_aa</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="c1"># Sort the amino acids by frequency to find the mutant</span>
+    <span class="n">sorted_aas</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Select the top amino acid as the mutant, ensuring there's at least one amino acid and its count is greater than 2</span>
+    <span class="c1"># This line seems to be a mistake or redundant as it's immediately overridden by the next line.</span>
+    <span class="n">mutant_aa</span> <span class="o">=</span> <span class="n">sorted_aas</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">sorted_aas</span> <span class="ow">and</span> <span class="n">sorted_aas</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="c1"># Correctly select the top amino acid if any exist</span>
+    <span class="c1">#mutant_aa = sorted_aas[0][0] if sorted_aas else None</span>
+    <span class="c1"># Return the negative entropy (since entropy is traditionally a measure of disorder, negative entropy can be seen as order) and the mutant amino acid</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">entropy</span><span class="p">,</span> <span class="n">mutant_aa</span>
+
+<span class="c1"># Path to the alignment file (presumed defined elsewhere in your code)</span>
+<span class="n">alignment_path</span> <span class="o">=</span> <span class="n">nipah_alignment</span>
+<span class="c1"># Read the alignment file using BioPython's AlignIO</span>
+<span class="n">alignment</span> <span class="o">=</span> <span class="n">AlignIO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">alignment_path</span><span class="p">,</span> <span class="s2">"fasta"</span><span class="p">)</span>
+
+<span class="c1"># Convert the alignment to a pandas DataFrame for easier manipulation</span>
+<span class="n">alignment_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">record</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">alignment</span><span class="p">}</span>
+<span class="n">df_alignment</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">alignment_dict</span><span class="p">)</span>
+
+<span class="c1"># Extract the wildtype sequence from the DataFrame</span>
+<span class="n">wildtype_series</span> <span class="o">=</span> <span class="n">df_alignment</span><span class="p">[</span><span class="s1">'NC_002728.1_Nipah_virus_complete_genome'</span><span class="p">]</span>
+
+<span class="c1"># Compute entropy and mutant amino acid for each site in the alignment</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">shannon_entropy_and_mutant_aa</span><span class="p">(</span><span class="n">df_alignment</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">wildtype_series</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">df_alignment</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+<span class="c1"># Unpack the computed values into two lists: entropies and mutants</span>
+<span class="n">entropies</span><span class="p">,</span> <span class="n">mutants</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>
+
+<span class="c1"># Create a final DataFrame to hold the computed values along with site numbers</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">'site'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mutants</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">'entropy'</span><span class="p">:</span> <span class="n">entropies</span><span class="p">,</span>
+    <span class="s1">'wildtype'</span><span class="p">:</span> <span class="n">wildtype_series</span><span class="p">,</span>
+    <span class="s1">'mutant'</span><span class="p">:</span> <span class="n">mutants</span>
+<span class="p">})</span>
+
+<span class="c1"># Filter to get rid of extra site at end</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="n">df_final</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">603</span><span class="p">]</span>
+<span class="c1">#display(df_final[df_final)</span>
+<span class="c1">#df_mutations are all sites that have polymorphisms in Nipah sequences</span>
+<span class="n">df_mutations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_final</span><span class="p">,</span><span class="n">df_assign</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'site'</span><span class="p">,</span><span class="s1">'wildtype'</span><span class="p">,</span><span class="s1">'mutant'</span><span class="p">],</span><span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
+
+<span class="c1">#df_total is data frame with all information</span>
+<span class="n">df_total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_merged</span><span class="p">,</span><span class="n">df_final</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'site'</span><span class="p">])</span>
+<span class="n">df_total</span> <span class="o">=</span> <span class="n">df_total</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'wildtype_y'</span><span class="p">:</span><span class="s1">'nipahM_con'</span><span class="p">,</span><span class="s1">'mutant_y'</span><span class="p">:</span><span class="s1">'nipahM_minor'</span><span class="p">,</span><span class="s1">'wildtype_x'</span><span class="p">:</span><span class="s1">'wildtype'</span><span class="p">,</span><span class="s1">'mutant_x'</span><span class="p">:</span><span class="s1">'mutant'</span><span class="p">})</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -8743,13 +8788,14 @@ WARNING: Max OMP threads 1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sites_with_mutants</span> <span class="o">=</span> <span class="n">df_final</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_final</span><span class="p">[</span><span class="s1">'mutant'</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">(),</span> <span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">polymorphisms</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sites_with_mutants</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">polymorphisms</span><span class="p">)</span>
 <span class="n">data_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">polymorphisms</span><span class="p">)</span>  
-<span class="n">filtered_series</span> <span class="o">=</span> <span class="n">data_series</span><span class="p">[</span><span class="n">data_series</span> <span class="o">&gt;</span> <span class="mi">72</span><span class="p">]</span>
+<span class="n">filtered_series</span> <span class="o">=</span> <span class="n">data_series</span><span class="p">[</span><span class="n">data_series</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">]</span>
 <span class="n">polymorphisms</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered_series</span><span class="p">)</span>
 <span class="n">polymorphism_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">polymorphisms</span><span class="p">)</span>
 <span class="c1">#print(polymorphism_length)</span>
@@ -8766,7 +8812,8 @@ WARNING: Max OMP threads 1
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>These are a list of polymorphic sites in NiV RBP sequences: [82, 89, 135, 172, 228, 236, 274, 288, 299, 325, 328, 329, 335, 339, 344, 376, 384, 385, 386, 421, 423, 424, 426, 427, 470, 478, 481, 498, 502, 545]
+<pre>[3, 5, 14, 20, 82, 89, 135, 172, 228, 236, 274, 288, 299, 325, 328, 329, 335, 339, 344, 376, 384, 385, 386, 421, 423, 424, 426, 427, 470, 478, 481, 498, 502, 545]
+These are a list of polymorphic sites in NiV RBP sequences: [82, 89, 135, 172, 228, 236, 274, 288, 299, 325, 328, 329, 335, 339, 344, 376, 384, 385, 386, 421, 423, 424, 426, 427, 470, 478, 481, 498, 502, 545]
 </pre>
 </div>
 </div>
@@ -8777,7 +8824,7 @@ WARNING: Max OMP threads 1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the 5th and 95th percentiles</span>
@@ -8841,7 +8888,7 @@ Upper limit (95th percentile): 0.47
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#If I draw random samples of size x, what is probability I get an observation in there as high as observed?</span>
@@ -8884,7 +8931,7 @@ Upper limit (95th percentile): 0.47
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>The fraction of times a random draw of effect_E2 included a value greater than 0.43 was 0.98
-The fraction of times a random draw of effect_E3 included a value greater than 0.52 was 0.78
+The fraction of times a random draw of effect_E3 included a value greater than 0.52 was 0.79
 </pre>
 </div>
 </div>
@@ -8906,7 +8953,7 @@ The fraction of times a random draw of effect_E3 included a value greater than 0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_stats</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">column</span><span class="p">):</span>
@@ -9007,7 +9054,7 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_functional_effect_polymorphism</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -9065,23 +9112,23 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-f0f0fb93adbf4d8491133156fb0d24c2.vega-embed {
+  #altair-viz-cc5bf932714d47ecb9aed22b507a46cc.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f0f0fb93adbf4d8491133156fb0d24c2.vega-embed details,
-  #altair-viz-f0f0fb93adbf4d8491133156fb0d24c2.vega-embed details summary {
+  #altair-viz-cc5bf932714d47ecb9aed22b507a46cc.vega-embed details,
+  #altair-viz-cc5bf932714d47ecb9aed22b507a46cc.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f0f0fb93adbf4d8491133156fb0d24c2"></div>
+<div id="altair-viz-cc5bf932714d47ecb9aed22b507a46cc"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f0f0fb93adbf4d8491133156fb0d24c2") {
-      outputDiv = document.getElementById("altair-viz-f0f0fb93adbf4d8491133156fb0d24c2");
+    if (outputDiv.id !== "altair-viz-cc5bf932714d47ecb9aed22b507a46cc") {
+      outputDiv = document.getElementById("altair-viz-cc5bf932714d47ecb9aed22b507a46cc");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9149,7 +9196,7 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_functional_effect_polymorphism_E2</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -9206,23 +9253,23 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-041e28353c8444bc9807b857df730f77.vega-embed {
+  #altair-viz-79c4724080a84cc1b338710c59f44b5d.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-041e28353c8444bc9807b857df730f77.vega-embed details,
-  #altair-viz-041e28353c8444bc9807b857df730f77.vega-embed details summary {
+  #altair-viz-79c4724080a84cc1b338710c59f44b5d.vega-embed details,
+  #altair-viz-79c4724080a84cc1b338710c59f44b5d.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-041e28353c8444bc9807b857df730f77"></div>
+<div id="altair-viz-79c4724080a84cc1b338710c59f44b5d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-041e28353c8444bc9807b857df730f77") {
-      outputDiv = document.getElementById("altair-viz-041e28353c8444bc9807b857df730f77");
+    if (outputDiv.id !== "altair-viz-79c4724080a84cc1b338710c59f44b5d") {
+      outputDiv = document.getElementById("altair-viz-79c4724080a84cc1b338710c59f44b5d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9290,7 +9337,7 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">entropy_scatter_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">metric</span><span class="p">,</span><span class="n">effect</span><span class="p">):</span>
@@ -9358,23 +9405,23 @@ The p_value is: 0.00
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-c73987eb0d8d4ed9a1f3725b9c777959.vega-embed {
+  #altair-viz-829d5c903a4c496bab188174448e63f1.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-c73987eb0d8d4ed9a1f3725b9c777959.vega-embed details,
-  #altair-viz-c73987eb0d8d4ed9a1f3725b9c777959.vega-embed details summary {
+  #altair-viz-829d5c903a4c496bab188174448e63f1.vega-embed details,
+  #altair-viz-829d5c903a4c496bab188174448e63f1.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-c73987eb0d8d4ed9a1f3725b9c777959"></div>
+<div id="altair-viz-829d5c903a4c496bab188174448e63f1"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c73987eb0d8d4ed9a1f3725b9c777959") {
-      outputDiv = document.getElementById("altair-viz-c73987eb0d8d4ed9a1f3725b9c777959");
+    if (outputDiv.id !== "altair-viz-829d5c903a4c496bab188174448e63f1") {
+      outputDiv = document.getElementById("altair-viz-829d5c903a4c496bab188174448e63f1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9436,23 +9483,23 @@ The p_value is: 0.00
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-4ddb647a3c054f108a554e2c24e9482c.vega-embed {
+  #altair-viz-0b7a153d1fe242999b6611fd92e28988.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-4ddb647a3c054f108a554e2c24e9482c.vega-embed details,
-  #altair-viz-4ddb647a3c054f108a554e2c24e9482c.vega-embed details summary {
+  #altair-viz-0b7a153d1fe242999b6611fd92e28988.vega-embed details,
+  #altair-viz-0b7a153d1fe242999b6611fd92e28988.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-4ddb647a3c054f108a554e2c24e9482c"></div>
+<div id="altair-viz-0b7a153d1fe242999b6611fd92e28988"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4ddb647a3c054f108a554e2c24e9482c") {
-      outputDiv = document.getElementById("altair-viz-4ddb647a3c054f108a554e2c24e9482c");
+    if (outputDiv.id !== "altair-viz-0b7a153d1fe242999b6611fd92e28988") {
+      outputDiv = document.getElementById("altair-viz-0b7a153d1fe242999b6611fd92e28988");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9520,7 +9567,7 @@ The p_value is: 0.00
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_hendra_mutations_E2</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -9583,23 +9630,23 @@ The p_value is: 0.00
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-2b7d3ba90f8a4f68861c29522c522434.vega-embed {
+  #altair-viz-c7f6a844bd474ca4a4bce8fc8b6e289e.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-2b7d3ba90f8a4f68861c29522c522434.vega-embed details,
-  #altair-viz-2b7d3ba90f8a4f68861c29522c522434.vega-embed details summary {
+  #altair-viz-c7f6a844bd474ca4a4bce8fc8b6e289e.vega-embed details,
+  #altair-viz-c7f6a844bd474ca4a4bce8fc8b6e289e.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-2b7d3ba90f8a4f68861c29522c522434"></div>
+<div id="altair-viz-c7f6a844bd474ca4a4bce8fc8b6e289e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2b7d3ba90f8a4f68861c29522c522434") {
-      outputDiv = document.getElementById("altair-viz-2b7d3ba90f8a4f68861c29522c522434");
+    if (outputDiv.id !== "altair-viz-c7f6a844bd474ca4a4bce8fc8b6e289e") {
+      outputDiv = document.getElementById("altair-viz-c7f6a844bd474ca4a4bce8fc8b6e289e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9653,23 +9700,23 @@ The p_value is: 0.00
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-f22436fb5e364f8da9784eb04bdd0e5b.vega-embed {
+  #altair-viz-0b03a387383541ec98454db07990cdcf.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f22436fb5e364f8da9784eb04bdd0e5b.vega-embed details,
-  #altair-viz-f22436fb5e364f8da9784eb04bdd0e5b.vega-embed details summary {
+  #altair-viz-0b03a387383541ec98454db07990cdcf.vega-embed details,
+  #altair-viz-0b03a387383541ec98454db07990cdcf.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f22436fb5e364f8da9784eb04bdd0e5b"></div>
+<div id="altair-viz-0b03a387383541ec98454db07990cdcf"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f22436fb5e364f8da9784eb04bdd0e5b") {
-      outputDiv = document.getElementById("altair-viz-f22436fb5e364f8da9784eb04bdd0e5b");
+    if (outputDiv.id !== "altair-viz-0b03a387383541ec98454db07990cdcf") {
+      outputDiv = document.getElementById("altair-viz-0b03a387383541ec98454db07990cdcf");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
