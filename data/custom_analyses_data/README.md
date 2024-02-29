@@ -4,21 +4,26 @@ This subdirectory contains input data used by custom analyses jupyter notebooks
 [theme.py](theme.py): 
 * File for setting custom altair themes, used by all notebooks for plotting
 
-
 [surface_exposure.csv](surface_exposure.csv): 
-* This file contains information about the relative surface exposure of NiV RBP residues.
+* This file contains information about the relative surface exposure of NiV RBP residues
 
 [./alignments](alignments): 
-* ephrin_E2_E3_sequences.fasta Amino acid sequences and alignment of Human and P. alecto EFNB2 and EFNB3
+* **ephrin_E2_E3_sequences.fasta** Amino acid alignment of Human and Pteropus alecto EFNB2 and EFNB3
 * **Nipah_RBP_AA_align.fasta** Alignment of Nipah RBP sequences downloaded from GenBank
 * **wild_type_seq.fasta** wildtype sequence (non codon-optimized) of NiV-M RBP
 * **Nipah-B_MK673572.1.fasta** wildtype sequence of NiV-B RBP
+
+[./alignments/phylo](phylogenetics)
+* **country_genbank_ids.csv** Country of origin of genbank sequences
+* **nipah_whole_genome_alignment.fasta** Alignment of whole genome nipah sequences
+* **nipah_whole_genome_genbank_accession_ids.txt** Accession IDs from genbank
+* **nipah_whole_genome_phylo.tre** Phylogeny of whole genome nipah sequences inferred from IQ-TREE
 
 [./crystal_structures](crystal_structures):
 **PDB files of:**
 * **2vsm.pdb** (Nipah RBP bound to Ephrin-B2)
 * **3d12.pdb** (Nipah RBP bound to Ephrin-B3)
-* **6cmg.pdb** (Hendra RBP bound to mAb m102)
+* **6cmg.pdb** (Hendra RBP bound to mAb m102.3)
 * **6vy4.pdb** (Nipah RBP bound to mAb HENV-32)
 * **6vy5.pdb** (Nipah RBP bound to mAb HENV-26)
 * **7txz.pdb** (Partial Nipah RBP bound to mAb nAH1.3)
