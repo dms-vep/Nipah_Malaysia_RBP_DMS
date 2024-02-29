@@ -481,7 +481,7 @@ func_scores:
 
 # Define some defaults for each condition, used via the merge (<<) operator.
 avg_func_effects_default: &avg_func_effects_default
-  avg_method: median
+  avg_method: mean
   floor_for_effect_std: -2
   per_selection_tooltips: true
   plot_kwargs:

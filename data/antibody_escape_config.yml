@@ -959,7 +959,7 @@ avg_antibody_escape_default: &avg_antibody_escape_default
   icXX: 90
   escape_plot_kwargs:
     <<: *avg_escape_plot_kwargs_default
-    avg_type: median
+    avg_type: mean
     addtl_slider_stats:
       times_seen: 3
       escape_std: 2

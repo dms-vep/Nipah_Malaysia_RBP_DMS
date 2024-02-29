@@ -384,16 +384,16 @@ rule make_files_for_mapping_structure:
         nAH13_infile='results/filtered_data/nAH1_escape_filtered.csv',
     output:
         nb="results/notebooks/mapping_site_level.ipynb",
-        E2_func_output="results/parsed_mapping_data/E2_entry_parsed.csv",
-        E2_binding_output="results/parsed_mapping_data/E2_binding_parsed.csv",
-        E3_func_output="results/parsed_mapping_data/E3_entry_parsed.csv",
-        E3_binding_output="results/parsed_mapping_data/E3_binding_parsed.csv",
-        HENV26_output='results/parsed_mapping_data/HENV26_escape_sum_parsed.csv',
-        HENV32_output='results/parsed_mapping_data/HENV32_escape_sum_parsed.csv',
-        HENV103_output='results/parsed_mapping_data/HENV103_escape_sum_parsed.csv',
-        HENV117_output='results/parsed_mapping_data/HENV117_escape_sum_parsed.csv',
-        m1024_output='results/parsed_mapping_data/m102_escape_sum_parsed.csv',
-        nAH13_output='results/parsed_mapping_data/nAH1_escape_sum_parsed.csv',
+        E2_func_output="results/parsed_mapping_data/E2_entry_mean.csv",
+        E2_binding_output="results/parsed_mapping_data/E2_binding_mean.csv",
+        E3_func_output="results/parsed_mapping_data/E3_entry_mean.csv",
+        E3_binding_output="results/parsed_mapping_data/E3_binding_mean.csv",
+        HENV26_output='results/parsed_mapping_data/HENV26_escape_mean.csv',
+        HENV32_output='results/parsed_mapping_data/HENV32_escape_mean.csv',
+        HENV103_output='results/parsed_mapping_data/HENV103_escape_mean.csv',
+        HENV117_output='results/parsed_mapping_data/HENV117_escape_mean.csv',
+        m1024_output='results/parsed_mapping_data/m102_escape_mean.csv',
+        nAH13_output='results/parsed_mapping_data/nAH1_escape_mean.csv',
 
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
