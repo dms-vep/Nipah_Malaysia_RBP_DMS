@@ -956,7 +956,7 @@ avg_escape_plot_kwargs_default: &avg_escape_plot_kwargs_default
 
 # Define defaults for each antibody/serum, used via the merge (<<) operator
 avg_antibody_escape_default: &avg_antibody_escape_default
-  icXX: 90
+  icXX: 50
   escape_plot_kwargs:
     <<: *avg_escape_plot_kwargs_default
     avg_type: mean

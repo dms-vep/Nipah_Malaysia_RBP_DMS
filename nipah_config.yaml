@@ -18,17 +18,17 @@ func_times_seen_cutoff: 2
 func_std_cutoff: 1
 
 ### Binding filtering parameters
-min_times_seen_binding: 2.25
-max_binding_std: 2
+min_times_seen_binding: 2
+max_binding_std: 3
 min_func_effect_for_binding: -1.5
 
 ### Antibody escape filtering parameters
-min_times_seen_ab: 2.25
+min_times_seen_ab: 2
 max_ab_std: 3
-frac_models: 0.75
-sum_quantile: 0.985
-max_quantile: 0.985
-min_escape_cutoff: 0.25
+frac_models: 0.5
+sum_quantile: 0.99
+max_quantile: 0.99
+min_escape_cutoff: 0.3
 min_func_effect_for_ab: -2
 
 ### Heatmap parameters
@@ -50,4 +50,3 @@ bubble_height: 250
 large_line_width: 800
 large_line_height: 100
 
-#.properties(width=config['width'],height=config['height'])

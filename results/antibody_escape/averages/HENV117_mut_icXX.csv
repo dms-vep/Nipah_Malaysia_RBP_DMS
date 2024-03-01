@@ -1,4 +1,4 @@
-site,wildtype,mutant,log2 fold change IC90 mean,log2 fold change IC90 median,n_models,times_seen,frac_models,LibA-230815-HENV117,LibB-230818-HENV117,LibB-230907-HENV117
+site,wildtype,mutant,log2 fold change IC50 mean,log2 fold change IC50 median,n_models,times_seen,frac_models,LibA-230815-HENV117,LibB-230818-HENV117,LibB-230907-HENV117
 71,Q,A,-0.1424,-0.1042,3,1.667,1,-0.03673,-0.1042,-0.2861
 71,Q,C,-0.2645,-0.2645,2,3,0.6667,-0.5655,0.03648,
 71,Q,D,-0.1304,-0.04436,3,3.333,1,0.02913,-0.3758,-0.04436

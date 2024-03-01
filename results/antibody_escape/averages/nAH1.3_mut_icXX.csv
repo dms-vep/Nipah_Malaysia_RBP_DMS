@@ -1,4 +1,4 @@
-site,wildtype,mutant,log2 fold change IC90 mean,log2 fold change IC90 median,n_models,times_seen,frac_models,LibA-230725-nAH1.3,LibB-230630-nAH1.3,LibB-230720-nAH1.3
+site,wildtype,mutant,log2 fold change IC50 mean,log2 fold change IC50 median,n_models,times_seen,frac_models,LibA-230725-nAH1.3,LibB-230630-nAH1.3,LibB-230720-nAH1.3
 71,Q,A,0.06292,0.03685,3,2,1,0.169,-0.01713,0.03685
 71,Q,C,-0.7417,-0.6307,3,2.333,1,-0.3748,-1.22,-0.6307
 71,Q,D,-0.6501,-0.2273,3,3.667,1,-0.2273,-1.558,-0.1646

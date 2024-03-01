@@ -7508,7 +7508,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=5056e1fc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=f0215752">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8018,23 +8018,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-1378c168446646b8b3a5d45c9a940e1d.vega-embed {
+  #altair-viz-a62571a7a74e49acaf1a8599506c6f00.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-1378c168446646b8b3a5d45c9a940e1d.vega-embed details,
-  #altair-viz-1378c168446646b8b3a5d45c9a940e1d.vega-embed details summary {
+  #altair-viz-a62571a7a74e49acaf1a8599506c6f00.vega-embed details,
+  #altair-viz-a62571a7a74e49acaf1a8599506c6f00.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-1378c168446646b8b3a5d45c9a940e1d"></div>
+<div id="altair-viz-a62571a7a74e49acaf1a8599506c6f00"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1378c168446646b8b3a5d45c9a940e1d") {
-      outputDiv = document.getElementById("altair-viz-1378c168446646b8b3a5d45c9a940e1d");
+    if (outputDiv.id !== "altair-viz-a62571a7a74e49acaf1a8599506c6f00") {
+      outputDiv = document.getElementById("altair-viz-a62571a7a74e49acaf1a8599506c6f00");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8086,7 +8086,245 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3440040e-51d6-4741-93d2-a8a7df399a72">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3440040e-51d6-4741-93d2-a8a7df399a72">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ic50_test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/custom_analyses_data/experimental_data/ic50_comparisons.csv'</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">ic50_test_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>antibody</th>
+<th>ic50</th>
+<th>DMS_ic50</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>m102.4</td>
+<td>12.3</td>
+<td>207</td>
+</tr>
+<tr>
+<th>1</th>
+<td>HENV-26</td>
+<td>13.7</td>
+<td>218</td>
+</tr>
+<tr>
+<th>2</th>
+<td>HENV-117</td>
+<td>11.7</td>
+<td>172</td>
+</tr>
+<tr>
+<th>3</th>
+<td>HENV-103</td>
+<td>66.7</td>
+<td>523</td>
+</tr>
+<tr>
+<th>4</th>
+<td>HENV-32</td>
+<td>143.0</td>
+<td>835</td>
+</tr>
+<tr>
+<th>5</th>
+<td>nAH1.3</td>
+<td>23.1</td>
+<td>358</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=121cf484-b74e-43a5-a1c3-d43a96258fa1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">custom_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'m102.4'</span><span class="p">,</span><span class="s1">'HENV-26'</span><span class="p">,</span><span class="s1">'HENV-117'</span><span class="p">,</span><span class="s1">'HENV-103'</span><span class="p">,</span><span class="s1">'HENV-32'</span><span class="p">,</span><span class="s1">'nAH1.3'</span><span class="p">]</span>
+<span class="n">cat10_colors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"#4E79A5"</span><span class="p">,</span>
+    <span class="s2">"#F18F3B"</span><span class="p">,</span>
+    <span class="s2">"#E0585B"</span><span class="p">,</span>
+    <span class="s2">"#77B7B2"</span><span class="p">,</span>
+    <span class="s2">"#5AA155"</span><span class="p">,</span>
+    <span class="s2">"#EDC958"</span><span class="p">,</span>
+    <span class="s2">"#AF7AA0"</span><span class="p">,</span>
+    <span class="s2">"#FE9EA8"</span><span class="p">,</span>
+    <span class="s2">"#9C7561"</span><span class="p">,</span>
+    <span class="s2">"#BAB0AC"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span>
+        <span class="n">ic50_test_df</span><span class="p">[</span><span class="s2">"ic50"</span><span class="p">],</span> <span class="n">ic50_test_df</span><span class="p">[</span><span class="s2">"DMS_ic50"</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">r_value</span><span class="p">)</span>
+<span class="n">circle</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">ic50_test_df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+            <span class="s2">"ic50"</span><span class="p">,</span>
+            <span class="c1">#scale=alt.Scale(type="log"),</span>
+            <span class="c1">#axis=alt.Axis(format=".0e"),</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">"Experimental IC50"</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"DMS_ic50:Q"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"DMS IC50"</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+            <span class="s2">"antibody"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Antibody"</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="n">custom_order</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="n">cat10_colors</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+        <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">"x"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">ic50_test_df</span><span class="p">[</span><span class="s2">"ic50"</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span>
+                        <span class="s2">"y"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">ic50_test_df</span><span class="p">[</span><span class="s2">"DMS_ic50"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span>
+                        <span class="s2">"text"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"r = </span><span class="si">{</span><span class="n">r_value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_text</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="s2">"top"</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Adjust this for position</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">"x:Q"</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"y:Q"</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">"text:N"</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">final_chart</span> <span class="o">=</span> <span class="n">circle</span> <span class="o">+</span> <span class="n">text</span>
+<span class="n">final_chart</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0.9827157270329682</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style>
+  #altair-viz-6bfc7948b72043b297d3effc055c596b.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-6bfc7948b72043b297d3effc055c596b.vega-embed details,
+  #altair-viz-6bfc7948b72043b297d3effc055c596b.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-6bfc7948b72043b297d3effc055c596b"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-6bfc7948b72043b297d3effc055c596b") {
+      outputDiv = document.getElementById("altair-viz-6bfc7948b72043b297d3effc055c596b");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.15.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.15.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"width": 200, "height": 200, "config": {"background": "transparent", "title": {"fontSize": 18, "font": "Helvetica", "anchor": "start", "color": "#000000", "orient": "top", "offset": 0}, "axisX": {"domain": true, "domainColor": "#000000", "domainWidth": 0.75, "grid": false, "gridColor": "#DEDDDD", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 12, "labelAngle": 0, "tickColor": "#000000", "tickSize": 4, "titleFont": "Helvetica", "tickCount": 3, "titleFontSize": 12, "titlePadding": 10}, "axisY": {"domain": true, "domainColor": "#000000", "domainWidth": 0.75, "grid": false, "gridColor": "#DEDDDD", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 12, "labelAngle": 0, "tickColor": "#000000", "tickSize": 4, "tickCount": 3, "titleFont": "Helvetica", "titleFontSize": 12, "titlePadding": 10, "titleAngle": 270}, "legend": {"labelFont": "Helvetica", "labelFontSize": 12, "symbolSize": 100, "titleFont": "Helvetica", "titleFontSize": 12, "padding": 5, "titleLimit": 200, "gradientLength": 100}, "range": {"category": ["#1f4e79", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"], "diverging": ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]}, "view": {"stroke": "transparent"}, "point": {"filled": true, "size": 25, "opacity": 1, "color": "black"}, "boxplot": {"extent": "min-max"}}, "layer": [{"data": {"name": "data-dbe1330fae89faf7d418faa5782c1e0e"}, "mark": {"type": "circle", "opacity": 1, "size": 40}, "encoding": {"color": {"field": "antibody", "scale": {"range": ["#4E79A5", "#F18F3B", "#E0585B", "#77B7B2", "#5AA155", "#EDC958", "#AF7AA0", "#FE9EA8", "#9C7561", "#BAB0AC"]}, "sort": ["m102.4", "HENV-26", "HENV-117", "HENV-103", "HENV-32", "nAH1.3"], "title": "Antibody", "type": "nominal"}, "x": {"field": "ic50", "title": "Experimental IC50", "type": "quantitative"}, "y": {"field": "DMS_ic50", "title": "DMS IC50", "type": "quantitative"}}}, {"data": {"name": "data-e6b29e4a836c50502563a953db2f31bd"}, "mark": {"type": "text", "align": "left", "baseline": "top", "dx": 5}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-dbe1330fae89faf7d418faa5782c1e0e": [{"antibody": "m102.4", "ic50": 12.3, "DMS_ic50": 207}, {"antibody": "HENV-26", "ic50": 13.7, "DMS_ic50": 218}, {"antibody": "HENV-117", "ic50": 11.7, "DMS_ic50": 172}, {"antibody": "HENV-103", "ic50": 66.7, "DMS_ic50": 523}, {"antibody": "HENV-32", "ic50": 143.0, "DMS_ic50": 835}, {"antibody": "nAH1.3", "ic50": 23.1, "DMS_ic50": 358}], "data-e6b29e4a836c50502563a953db2f31bd": [{"x": 11.7, "y": 835.0, "text": "r = 0.98"}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4a448c03-9e15-4ea5-914e-28e411f3da8c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
