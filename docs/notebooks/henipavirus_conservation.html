@@ -7514,7 +7514,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=e509467b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=fa701eb6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8023,22 +8023,22 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
 <pre>
-muscle 5.1.linux64 []  791Gb RAM, 36 cores
+muscle 5.1.linux64 []  395Gb RAM, 24 cores
 Built Feb 24 2022 03:16:15
 (C) Copyright 2004-2021 Robert C. Edgar.
 https://drive5.com
 
 Input: 8 seqs, avg length 611, max 632
 
-00:00 17Mb   CPU has 36 cores, defaulting to 20 threads
+00:00 17Mb   CPU has 24 cores, defaulting to 20 threads
 
 WARNING: Max OMP threads 1
 
-00:02 18Mb    100.0% Calc posteriors
-00:02 20Mb    100.0% Consistency (1/2)
-00:02 20Mb    100.0% Consistency (2/2)
-00:02 20Mb    100.0% UPGMA5
-00:02 21Mb    100.0% Refining
+00:01 18Mb    100.0% Calc posteriors
+00:01 20Mb    100.0% Consistency (1/2)
+00:01 20Mb    100.0% Consistency (2/2)
+00:01 20Mb    100.0% UPGMA5
+00:01 21Mb    100.0% Refining
 </pre>
 </div>
 </div>
@@ -8258,23 +8258,23 @@ WARNING: Max OMP threads 1
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-7f6128420cbf47189e88e488931d9f97.vega-embed {
+  #altair-viz-78d67dff73e2434b822ff8b7a1523245.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-7f6128420cbf47189e88e488931d9f97.vega-embed details,
-  #altair-viz-7f6128420cbf47189e88e488931d9f97.vega-embed details summary {
+  #altair-viz-78d67dff73e2434b822ff8b7a1523245.vega-embed details,
+  #altair-viz-78d67dff73e2434b822ff8b7a1523245.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-7f6128420cbf47189e88e488931d9f97"></div>
+<div id="altair-viz-78d67dff73e2434b822ff8b7a1523245"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7f6128420cbf47189e88e488931d9f97") {
-      outputDiv = document.getElementById("altair-viz-7f6128420cbf47189e88e488931d9f97");
+    if (outputDiv.id !== "altair-viz-78d67dff73e2434b822ff8b7a1523245") {
+      outputDiv = document.getElementById("altair-viz-78d67dff73e2434b822ff8b7a1523245");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8725,11 +8725,11 @@ WARNING: Max OMP threads 1
     <span class="n">counts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">wildtype_aa</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
     <span class="c1"># Sort the amino acids by frequency to find the mutant</span>
     <span class="n">sorted_aas</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="c1"># Select the top amino acid as the mutant, ensuring there's at least one amino acid and its count is greater than 2</span>
-    <span class="c1"># This line seems to be a mistake or redundant as it's immediately overridden by the next line.</span>
+
     <span class="n">mutant_aa</span> <span class="o">=</span> <span class="n">sorted_aas</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">sorted_aas</span> <span class="ow">and</span> <span class="n">sorted_aas</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="kc">None</span>
     <span class="c1"># Correctly select the top amino acid if any exist</span>
     <span class="c1">#mutant_aa = sorted_aas[0][0] if sorted_aas else None</span>
+    
     <span class="c1"># Return the negative entropy (since entropy is traditionally a measure of disorder, negative entropy can be seen as order) and the mutant amino acid</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">entropy</span><span class="p">,</span> <span class="n">mutant_aa</span>
 
@@ -8772,6 +8772,341 @@ WARNING: Max OMP threads 1
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=81dc3bdf-c582-4437-ab93-5c0619207987">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>site</th>
+<th>wildtype</th>
+<th>mutant</th>
+<th>effect_E2</th>
+<th>binding_median_E2</th>
+<th>binding_std_E2</th>
+<th>effect_E3</th>
+<th>binding_median_E3</th>
+<th>binding_std_E3</th>
+<th>hendra</th>
+<th>...</th>
+<th>nipah_india</th>
+<th>nipah_cambodia</th>
+<th>cedar_2</th>
+<th>ghana</th>
+<th>hendra_G2</th>
+<th>henipavirus_entropy</th>
+<th>conserved</th>
+<th>entropy</th>
+<th>nipahM_con</th>
+<th>nipahM_minor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>71</td>
+<td>Q</td>
+<td>C</td>
+<td>-1.75000</td>
+<td>-0.02026</td>
+<td>0.38950</td>
+<td>-0.7227</td>
+<td>-0.13320</td>
+<td>0.152500</td>
+<td>Q</td>
+<td>...</td>
+<td>Q</td>
+<td>Q</td>
+<td>T</td>
+<td>Y</td>
+<td>Q</td>
+<td>1.298795</td>
+<td>False</td>
+<td>-0.0</td>
+<td>Q</td>
+<td>None</td>
+</tr>
+<tr>
+<th>1</th>
+<td>71</td>
+<td>Q</td>
+<td>D</td>
+<td>-1.16400</td>
+<td>-0.08074</td>
+<td>1.64600</td>
+<td>-0.3884</td>
+<td>-0.29370</td>
+<td>0.330500</td>
+<td>Q</td>
+<td>...</td>
+<td>Q</td>
+<td>Q</td>
+<td>T</td>
+<td>Y</td>
+<td>Q</td>
+<td>1.298795</td>
+<td>False</td>
+<td>-0.0</td>
+<td>Q</td>
+<td>None</td>
+</tr>
+<tr>
+<th>2</th>
+<td>71</td>
+<td>Q</td>
+<td>E</td>
+<td>-1.25500</td>
+<td>0.30170</td>
+<td>0.43090</td>
+<td>-0.2482</td>
+<td>-0.35270</td>
+<td>0.176200</td>
+<td>Q</td>
+<td>...</td>
+<td>Q</td>
+<td>Q</td>
+<td>T</td>
+<td>Y</td>
+<td>Q</td>
+<td>1.298795</td>
+<td>False</td>
+<td>-0.0</td>
+<td>Q</td>
+<td>None</td>
+</tr>
+<tr>
+<th>3</th>
+<td>71</td>
+<td>Q</td>
+<td>F</td>
+<td>-1.05800</td>
+<td>-0.19110</td>
+<td>0.52990</td>
+<td>-0.4973</td>
+<td>-0.03982</td>
+<td>0.128300</td>
+<td>Q</td>
+<td>...</td>
+<td>Q</td>
+<td>Q</td>
+<td>T</td>
+<td>Y</td>
+<td>Q</td>
+<td>1.298795</td>
+<td>False</td>
+<td>-0.0</td>
+<td>Q</td>
+<td>None</td>
+</tr>
+<tr>
+<th>4</th>
+<td>71</td>
+<td>Q</td>
+<td>G</td>
+<td>-1.42500</td>
+<td>0.19060</td>
+<td>0.70420</td>
+<td>-1.3310</td>
+<td>-0.04107</td>
+<td>0.058420</td>
+<td>Q</td>
+<td>...</td>
+<td>Q</td>
+<td>Q</td>
+<td>T</td>
+<td>Y</td>
+<td>Q</td>
+<td>1.298795</td>
+<td>False</td>
+<td>-0.0</td>
+<td>Q</td>
+<td>None</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>9936</th>
+<td>602</td>
+<td>T</td>
+<td>R</td>
+<td>0.57900</td>
+<td>0.02670</td>
+<td>0.55210</td>
+<td>0.4114</td>
+<td>-0.04309</td>
+<td>0.119100</td>
+<td>S</td>
+<td>...</td>
+<td>T</td>
+<td>T</td>
+<td>-</td>
+<td>R</td>
+<td>S</td>
+<td>1.905639</td>
+<td>False</td>
+<td>-0.0</td>
+<td>T</td>
+<td>None</td>
+</tr>
+<tr>
+<th>9937</th>
+<td>602</td>
+<td>T</td>
+<td>S</td>
+<td>0.09699</td>
+<td>0.75420</td>
+<td>0.36050</td>
+<td>0.3778</td>
+<td>0.08546</td>
+<td>0.005451</td>
+<td>S</td>
+<td>...</td>
+<td>T</td>
+<td>T</td>
+<td>-</td>
+<td>R</td>
+<td>S</td>
+<td>1.905639</td>
+<td>False</td>
+<td>-0.0</td>
+<td>T</td>
+<td>None</td>
+</tr>
+<tr>
+<th>9938</th>
+<td>602</td>
+<td>T</td>
+<td>V</td>
+<td>0.40620</td>
+<td>0.22890</td>
+<td>0.59530</td>
+<td>0.4051</td>
+<td>0.20070</td>
+<td>0.101500</td>
+<td>S</td>
+<td>...</td>
+<td>T</td>
+<td>T</td>
+<td>-</td>
+<td>R</td>
+<td>S</td>
+<td>1.905639</td>
+<td>False</td>
+<td>-0.0</td>
+<td>T</td>
+<td>None</td>
+</tr>
+<tr>
+<th>9939</th>
+<td>602</td>
+<td>T</td>
+<td>W</td>
+<td>0.49310</td>
+<td>-0.03435</td>
+<td>0.15290</td>
+<td>0.5205</td>
+<td>0.16630</td>
+<td>0.134300</td>
+<td>S</td>
+<td>...</td>
+<td>T</td>
+<td>T</td>
+<td>-</td>
+<td>R</td>
+<td>S</td>
+<td>1.905639</td>
+<td>False</td>
+<td>-0.0</td>
+<td>T</td>
+<td>None</td>
+</tr>
+<tr>
+<th>9940</th>
+<td>602</td>
+<td>T</td>
+<td>Y</td>
+<td>0.19750</td>
+<td>-0.24160</td>
+<td>0.08885</td>
+<td>0.4106</td>
+<td>0.05261</td>
+<td>0.016170</td>
+<td>S</td>
+<td>...</td>
+<td>T</td>
+<td>T</td>
+<td>-</td>
+<td>R</td>
+<td>S</td>
+<td>1.905639</td>
+<td>False</td>
+<td>-0.0</td>
+<td>T</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>9941 rows × 22 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bee3862b-b4d3-4137-9dc0-ad2a48ed7aed">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8788,7 +9123,7 @@ WARNING: Max OMP threads 1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sites_with_mutants</span> <span class="o">=</span> <span class="n">df_final</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_final</span><span class="p">[</span><span class="s1">'mutant'</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">(),</span> <span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -8798,7 +9133,7 @@ WARNING: Max OMP threads 1
 <span class="n">filtered_series</span> <span class="o">=</span> <span class="n">data_series</span><span class="p">[</span><span class="n">data_series</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">]</span>
 <span class="n">polymorphisms</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered_series</span><span class="p">)</span>
 <span class="n">polymorphism_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">polymorphisms</span><span class="p">)</span>
-<span class="c1">#print(polymorphism_length)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">polymorphism_length</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'These are a list of polymorphic sites in NiV RBP sequences: </span><span class="si">{</span><span class="n">polymorphisms</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8813,6 +9148,7 @@ WARNING: Max OMP threads 1
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[3, 5, 14, 20, 82, 89, 135, 172, 228, 236, 274, 288, 299, 325, 328, 329, 335, 339, 344, 376, 384, 385, 386, 421, 423, 424, 426, 427, 470, 478, 481, 498, 502, 545]
+30
 These are a list of polymorphic sites in NiV RBP sequences: [82, 89, 135, 172, 228, 236, 274, 288, 299, 325, 328, 329, 335, 339, 344, 376, 384, 385, 386, 421, 423, 424, 426, 427, 470, 478, 481, 498, 502, 545]
 </pre>
 </div>
@@ -8824,7 +9160,7 @@ These are a list of polymorphic sites in NiV RBP sequences: [82, 89, 135, 172, 2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the 5th and 95th percentiles</span>
@@ -8888,7 +9224,7 @@ Upper limit (95th percentile): 0.40
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#If I draw random samples of size x, what is probability I get an observation in there as high as observed?</span>
@@ -8930,8 +9266,8 @@ Upper limit (95th percentile): 0.40
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>The fraction of times a random draw of effect_E2 included a value greater than 0.38 was 0.98
-The fraction of times a random draw of effect_E3 included a value greater than 0.49 was 0.70
+<pre>The fraction of times a random draw of effect_E2 included a value greater than 0.38 was 0.96
+The fraction of times a random draw of effect_E3 included a value greater than 0.49 was 0.68
 </pre>
 </div>
 </div>
@@ -8953,7 +9289,7 @@ The fraction of times a random draw of effect_E3 included a value greater than 0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_stats</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">column</span><span class="p">):</span>
@@ -9054,7 +9390,7 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_functional_effect_polymorphism</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -9112,23 +9448,23 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-dc283582065a4c0d82ae507a12cd688d.vega-embed {
+  #altair-viz-636f9aab3ba44457a4b01a7decfec76e.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-dc283582065a4c0d82ae507a12cd688d.vega-embed details,
-  #altair-viz-dc283582065a4c0d82ae507a12cd688d.vega-embed details summary {
+  #altair-viz-636f9aab3ba44457a4b01a7decfec76e.vega-embed details,
+  #altair-viz-636f9aab3ba44457a4b01a7decfec76e.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-dc283582065a4c0d82ae507a12cd688d"></div>
+<div id="altair-viz-636f9aab3ba44457a4b01a7decfec76e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-dc283582065a4c0d82ae507a12cd688d") {
-      outputDiv = document.getElementById("altair-viz-dc283582065a4c0d82ae507a12cd688d");
+    if (outputDiv.id !== "altair-viz-636f9aab3ba44457a4b01a7decfec76e") {
+      outputDiv = document.getElementById("altair-viz-636f9aab3ba44457a4b01a7decfec76e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9196,7 +9532,7 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_functional_effect_polymorphism_E2</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -9253,23 +9589,23 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-71f1c08aa2ce49c1a0d6e970acd91281.vega-embed {
+  #altair-viz-a8280742dd7d4f1e93d0c485376f8b3c.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-71f1c08aa2ce49c1a0d6e970acd91281.vega-embed details,
-  #altair-viz-71f1c08aa2ce49c1a0d6e970acd91281.vega-embed details summary {
+  #altair-viz-a8280742dd7d4f1e93d0c485376f8b3c.vega-embed details,
+  #altair-viz-a8280742dd7d4f1e93d0c485376f8b3c.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-71f1c08aa2ce49c1a0d6e970acd91281"></div>
+<div id="altair-viz-a8280742dd7d4f1e93d0c485376f8b3c"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-71f1c08aa2ce49c1a0d6e970acd91281") {
-      outputDiv = document.getElementById("altair-viz-71f1c08aa2ce49c1a0d6e970acd91281");
+    if (outputDiv.id !== "altair-viz-a8280742dd7d4f1e93d0c485376f8b3c") {
+      outputDiv = document.getElementById("altair-viz-a8280742dd7d4f1e93d0c485376f8b3c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9337,7 +9673,7 @@ The max and min of effect_E2 are: -0.81 and 0.88
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">entropy_scatter_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">metric</span><span class="p">,</span><span class="n">effect</span><span class="p">):</span>
@@ -9405,23 +9741,23 @@ The p_value is: 0.00
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-fa5ac660cbb14128bcfe2a44a07a15fa.vega-embed {
+  #altair-viz-d4c78c5372ec403d961a65b03d694da1.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-fa5ac660cbb14128bcfe2a44a07a15fa.vega-embed details,
-  #altair-viz-fa5ac660cbb14128bcfe2a44a07a15fa.vega-embed details summary {
+  #altair-viz-d4c78c5372ec403d961a65b03d694da1.vega-embed details,
+  #altair-viz-d4c78c5372ec403d961a65b03d694da1.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-fa5ac660cbb14128bcfe2a44a07a15fa"></div>
+<div id="altair-viz-d4c78c5372ec403d961a65b03d694da1"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-fa5ac660cbb14128bcfe2a44a07a15fa") {
-      outputDiv = document.getElementById("altair-viz-fa5ac660cbb14128bcfe2a44a07a15fa");
+    if (outputDiv.id !== "altair-viz-d4c78c5372ec403d961a65b03d694da1") {
+      outputDiv = document.getElementById("altair-viz-d4c78c5372ec403d961a65b03d694da1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9483,23 +9819,23 @@ The p_value is: 0.00
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-990d8bbbdd9d40399d11c46ce3e86727.vega-embed {
+  #altair-viz-1fc64c5e50ce491f8222016ee90d8fe7.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-990d8bbbdd9d40399d11c46ce3e86727.vega-embed details,
-  #altair-viz-990d8bbbdd9d40399d11c46ce3e86727.vega-embed details summary {
+  #altair-viz-1fc64c5e50ce491f8222016ee90d8fe7.vega-embed details,
+  #altair-viz-1fc64c5e50ce491f8222016ee90d8fe7.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-990d8bbbdd9d40399d11c46ce3e86727"></div>
+<div id="altair-viz-1fc64c5e50ce491f8222016ee90d8fe7"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-990d8bbbdd9d40399d11c46ce3e86727") {
-      outputDiv = document.getElementById("altair-viz-990d8bbbdd9d40399d11c46ce3e86727");
+    if (outputDiv.id !== "altair-viz-1fc64c5e50ce491f8222016ee90d8fe7") {
+      outputDiv = document.getElementById("altair-viz-1fc64c5e50ce491f8222016ee90d8fe7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9567,13 +9903,12 @@ The p_value is: 0.00
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_hendra_mutations_E2</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="n">df_hendra_comparison</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'hendra'</span><span class="p">:</span><span class="s1">'mutant'</span><span class="p">})</span>
     <span class="n">df_hendra</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_hendra_comparison</span><span class="p">,</span><span class="n">df_merged</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'site'</span><span class="p">,</span><span class="s1">'mutant'</span><span class="p">],</span><span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
-
     <span class="c1"># Melt the dataframe to make it long-form for Altair plotting</span>
     <span class="n">df_melted</span> <span class="o">=</span> <span class="n">df_hendra</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">'site'</span><span class="p">,</span><span class="s1">'wildtype'</span><span class="p">,</span><span class="s1">'hendra'</span><span class="p">],</span> <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">'binding_median_E2'</span><span class="p">,</span><span class="s1">'binding_median_E3'</span><span class="p">],</span> 
                                   <span class="n">var_name</span><span class="o">=</span><span class="s1">'effect'</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">'value'</span><span class="p">)</span>
@@ -9583,14 +9918,9 @@ The p_value is: 0.00
         <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'site:N'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Site'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">labelAngle</span><span class="o">=-</span><span class="mi">90</span><span class="p">)),</span>
         <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'value:Q'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Receptor Binding'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">4</span><span class="p">)),</span>
         <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">'site'</span><span class="p">,</span><span class="s1">'wildtype'</span><span class="p">,</span><span class="s1">'hendra'</span><span class="p">,</span><span class="s1">'value'</span><span class="p">],</span>
-        <span class="c1">#color=alt.Color('effect:N',scale=alt.Scale(scheme='tableau10'), legend=alt.Legend(title='Receptor')),</span>
-        <span class="c1">#row=alt.Row('effect')</span>
     <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">()</span>
 
-    <span class="c1">#rule95 = alt.Chart(pd.DataFrame({'y': [percentile_95_binding_mean_E2]})).mark_rule(color='#1f4e79').encode(y='y:Q')</span>
-    <span class="c1">#rule50 = alt.Chart(pd.DataFrame({'y': [percentile_50_binding_mean_E2]})).mark_rule(color='#1f4e79').encode(y='y:Q')</span>
-    <span class="c1">#rule5 = alt.Chart(pd.DataFrame({'y': [percentile_5_binding_mean_E2]})).mark_rule(color='#1f4e79').encode(y='y:Q')</span>
-    <span class="n">chart_master</span> <span class="o">=</span> <span class="n">chart</span> <span class="c1">#+ rule95 + rule50 + rule5</span>
+    <span class="n">chart_master</span> <span class="o">=</span> <span class="n">chart</span> 
     <span class="k">return</span> <span class="n">chart_master</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">plot_hendra_mutations_E3</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -9606,15 +9936,11 @@ The p_value is: 0.00
         <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'site:N'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Site'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">labelAngle</span><span class="o">=-</span><span class="mi">45</span><span class="p">)),</span>
         <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'value:Q'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Receptor Binding'</span><span class="p">),</span>
         <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">'site'</span><span class="p">,</span><span class="s1">'wildtype'</span><span class="p">,</span><span class="s1">'hendra'</span><span class="p">,</span><span class="s1">'value'</span><span class="p">],</span>
-        <span class="c1">#color=alt.Color('effect:N',scale=alt.Scale(scheme='tableau10'), legend=alt.Legend(title='Receptor')),</span>
-        <span class="c1">#row=alt.Row('effect')</span>
     <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">()</span>
-
-    <span class="c1">#rule95 = alt.Chart(pd.DataFrame({'y': [percentile_95_binding_mean_E3]})).mark_rule(color='#ff7f0e').encode(y='y:Q')</span>
-    <span class="c1">#rule50 = alt.Chart(pd.DataFrame({'y': [percentile_50_binding_mean_E3]})).mark_rule(color='#ff7f0e').encode(y='y:Q')</span>
-    <span class="c1">#rule5 = alt.Chart(pd.DataFrame({'y': [percentile_5_binding_mean_E3]})).mark_rule(color='#ff7f0e').encode(y='y:Q')</span>
-    <span class="n">chart_master</span> <span class="o">=</span> <span class="n">chart</span> <span class="c1">#+ rule95 + rule50 + rule5</span>
+    
+    <span class="n">chart_master</span> <span class="o">=</span> <span class="n">chart</span> 
     <span class="k">return</span> <span class="n">chart_master</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+
 <span class="n">plot_hendra_mutations_E2</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">plot_hendra_mutations_E3</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
@@ -9630,23 +9956,23 @@ The p_value is: 0.00
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-61d62bf94546401d9712f3235d8b27e6.vega-embed {
+  #altair-viz-9e17a5502d52417abfe725a49556dce2.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-61d62bf94546401d9712f3235d8b27e6.vega-embed details,
-  #altair-viz-61d62bf94546401d9712f3235d8b27e6.vega-embed details summary {
+  #altair-viz-9e17a5502d52417abfe725a49556dce2.vega-embed details,
+  #altair-viz-9e17a5502d52417abfe725a49556dce2.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-61d62bf94546401d9712f3235d8b27e6"></div>
+<div id="altair-viz-9e17a5502d52417abfe725a49556dce2"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-61d62bf94546401d9712f3235d8b27e6") {
-      outputDiv = document.getElementById("altair-viz-61d62bf94546401d9712f3235d8b27e6");
+    if (outputDiv.id !== "altair-viz-9e17a5502d52417abfe725a49556dce2") {
+      outputDiv = document.getElementById("altair-viz-9e17a5502d52417abfe725a49556dce2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9700,23 +10026,23 @@ The p_value is: 0.00
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-6082aa50539844c79afac660a6b7e3b7.vega-embed {
+  #altair-viz-221b87c3ce934967b5a665558ab763db.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-6082aa50539844c79afac660a6b7e3b7.vega-embed details,
-  #altair-viz-6082aa50539844c79afac660a6b7e3b7.vega-embed details summary {
+  #altair-viz-221b87c3ce934967b5a665558ab763db.vega-embed details,
+  #altair-viz-221b87c3ce934967b5a665558ab763db.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-6082aa50539844c79afac660a6b7e3b7"></div>
+<div id="altair-viz-221b87c3ce934967b5a665558ab763db"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6082aa50539844c79afac660a6b7e3b7") {
-      outputDiv = document.getElementById("altair-viz-6082aa50539844c79afac660a6b7e3b7");
+    if (outputDiv.id !== "altair-viz-221b87c3ce934967b5a665558ab763db") {
+      outputDiv = document.getElementById("altair-viz-221b87c3ce934967b5a665558ab763db");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -9768,7 +10094,47 @@ The p_value is: 0.00
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a94d653a-eeab-42e8-9a6b-f613e26b8f77">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1738ff5d-b18d-42ca-926a-a06885444399">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_hendra_mutants</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">virus</span><span class="p">):</span>
+    <span class="n">df_hendra_comparison</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">virus</span><span class="p">:</span><span class="s1">'mutant'</span><span class="p">})</span>
+    <span class="n">df_hendra_comparison</span> <span class="o">=</span> <span class="n">df_hendra_comparison</span><span class="p">[[</span><span class="s1">'mutant'</span><span class="p">,</span><span class="s1">'site'</span><span class="p">]]</span>
+    <span class="n">df_hendra</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_hendra_comparison</span><span class="p">,</span><span class="n">df_merged</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">'site'</span><span class="p">,</span><span class="s1">'mutant'</span><span class="p">],</span><span class="n">how</span><span class="o">=</span><span class="s1">'inner'</span><span class="p">)</span>
+    <span class="n">hendra_sites</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_hendra</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hendra_sites</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hendra_sites</span><span class="p">))</span>
+    <span class="c1">#display(df_hendra)</span>
+
+<span class="n">find_hendra_mutants</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s1">'hendra'</span><span class="p">)</span>
+<span class="n">find_hendra_mutants</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s1">'cedar'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[76, 82, 85, 86, 89, 90, 96, 98, 136, 144, 174, 175, 176, 180, 187, 194, 195, 196, 201, 209, 211, 212, 213, 215, 224, 226, 228, 236, 241, 244, 245, 261, 265, 277, 279, 280, 284, 285, 287, 288, 289, 293, 299, 309, 311, 312, 315, 316, 317, 322, 326, 327, 329, 333, 334, 335, 337, 338, 339, 340, 342, 344, 371, 376, 385, 386, 388, 392, 401, 402, 403, 404, 420, 422, 423, 424, 425, 426, 427, 432, 434, 437, 446, 458, 466, 470, 473, 476, 478, 483, 498, 502, 507, 517, 520, 525, 527, 538, 548, 549, 550, 553, 554, 564, 569, 571, 586, 599, 602]
+109
+[71, 72, 73, 74, 75, 76, 77, 78, 80, 81, 82, 83, 84, 85, 86, 89, 92, 93, 94, 95, 96, 98, 99, 100, 102, 106, 108, 109, 110, 111, 112, 113, 115, 117, 118, 120, 121, 122, 123, 125, 126, 127, 129, 131, 132, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 147, 149, 150, 152, 155, 163, 164, 166, 167, 168, 169, 170, 171, 172, 173, 174, 176, 177, 178, 179, 180, 182, 184, 186, 187, 188, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 202, 204, 206, 207, 210, 211, 212, 213, 214, 215, 217, 218, 219, 223, 224, 225, 226, 228, 230, 232, 234, 236, 238, 241, 242, 243, 244, 246, 247, 248, 249, 250, 251, 252, 255, 256, 261, 262, 266, 267, 268, 269, 270, 271, 272, 273, 275, 276, 277, 278, 280, 281, 283, 284, 286, 287, 289, 290, 291, 292, 294, 296, 297, 299, 300, 301, 302, 303, 304, 305, 308, 310, 312, 313, 314, 315, 316, 318, 319, 320, 321, 322, 325, 326, 328, 329, 330, 332, 333, 340, 341, 342, 343, 346, 347, 348, 349, 350, 351, 353, 354, 356, 357, 358, 360, 361, 362, 363, 364, 366, 367, 368, 369, 370, 371, 372, 373, 374, 376, 377, 378, 379, 380, 383, 384, 385, 386, 387, 389, 391, 392, 394, 396, 397, 399, 400, 401, 402, 403, 406, 407, 408, 409, 410, 411, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 426, 427, 428, 429, 430, 432, 433, 434, 435, 438, 442, 443, 444, 445, 446, 447, 451, 452, 453, 456, 458, 463, 464, 466, 468, 470, 471, 472, 473, 475, 476, 477, 480, 489, 491, 492, 496, 497, 498, 504, 505, 507, 511, 512, 513, 514, 516, 517, 518, 519, 520, 521, 522, 523, 525, 529, 531, 536, 537, 541, 542, 543, 544, 548, 549, 550, 551, 552, 553, 554, 555, 556, 558, 559, 560, 562, 564, 568, 569, 570, 571, 572, 577, 578, 580, 581, 582, 583, 584, 585, 586, 587, 591, 592, 593, 594, 595, 599, 600]
+350
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6765a35c-98c9-4dcf-a34b-1ee0101935d2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

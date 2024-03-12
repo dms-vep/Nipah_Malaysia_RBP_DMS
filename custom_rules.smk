@@ -7,18 +7,19 @@ This file is included by the pipeline ``Snakefile``.
 rule analyze_nipah_RBP_entry:
     """Analyze EFNB2 and EFNB3 entry"""
     input:
-        func_scores_E2_file="results/func_effects/averages/CHO_EFNB2_low_func_effects.csv",
-        func_scores_E3_file="results/func_effects/averages/CHO_EFNB3_low_func_effects.csv",
+        func_scores_E2_file="results/filtered_data/entry/e2_entry_filtered.csv",
+        func_scores_E3_file="results/filtered_data/entry/e3_entry_filtered.csv",
         nb="notebooks/nipah_RBP_entry_analysis.ipynb",
         nipah_config="nipah_config.yaml",
         altair_config="data/custom_analyses_data/theme.py",
-        entropy_file="results/entropy/entropy.csv",
+        concat_df_file="results/filtered_data/entry/e2_e3_entry_filter_concat.csv",
+        merged_df_file="results/filtered_data/entry/e2_e3_entry_filter_merged.csv",
         e2_distances_file="results/distances/2vsm_distances.csv",
         surface="data/custom_analyses_data/surface_exposure.csv",
     output:
         nb="results/notebooks/nipah_RBP_entry_analysis.ipynb",
-        filtered_E2_data="results/filtered_data/E2_entry_filtered.csv",
-        filtered_E3_data="results/filtered_data/E3_entry_filtered.csv",
+        #filtered_E2_data="results/filtered_data/E2_entry_filtered.csv",
+        #filtered_E3_data="results/filtered_data/E3_entry_filtered.csv",
         contact_type_plot='results/images/contact_type_plot.html',
         E2_E3_entry_corr_plot="results/images/E2_E3_entry_corr_plot.html",
         E2_E3_entry_all_muts_plot="results/images/E2_E3_entry_all_muts_plot.html",
@@ -32,14 +33,14 @@ rule analyze_nipah_RBP_entry:
                 "func_scores_E3_file": input.func_scores_E3_file,
                 "e2_distances_file": input.e2_distances_file,
                 "contact_type_plot": output.contact_type_plot,
-                "filtered_E2_data": output.filtered_E2_data,
-                "filtered_E3_data": output.filtered_E3_data,
+                "merged_df_file": input.merged_df_file,
+                "concat_df_file": input.concat_df_file,
                 "E2_E3_entry_corr_plot": output.E2_E3_entry_corr_plot,
                 "E2_E3_entry_all_muts_plot": output.E2_E3_entry_all_muts_plot,
                 "combined_E2_E3_correlation_plots": output.combined_E2_E3_correlation_plots,
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
-                "entropy_file": input.entropy_file,
+                #"entropy_file": input.entropy_file,
                 "entry_region_boxplot_plot": output.entry_region_boxplot_plot,
                 "surface": input.surface,
             }
@@ -54,20 +55,19 @@ rule analyze_nipah_RBP_entry:
 rule analyze_nipah_RBP_binding:
     """Analyze EFNB2 and EFNB3 binding"""
     input:
-        func_scores_E2_file="results/func_effects/averages/CHO_EFNB2_low_func_effects.csv",
-        binding_E2_file="results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv",
-        func_scores_E3_file="results/func_effects/averages/CHO_EFNB3_low_func_effects.csv",
-        binding_E3_file="results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv",
+        #func_scores_E2_file="results/func_effects/averages/CHO_EFNB2_low_func_effects.csv",
+        binding_E2_file="results/filtered_data/binding/E2_binding_filtered.csv",
+        #func_scores_E3_file="results/func_effects/averages/CHO_EFNB3_low_func_effects.csv",
+        binding_E3_file="results/filtered_data/binding/E3_binding_filtered.csv",
         nb="notebooks/ephrin_binding.ipynb",
         nipah_config="nipah_config.yaml",
         altair_config="data/custom_analyses_data/theme.py",
-        entropy_file="results/entropy/entropy.csv",
     output:
         nb="results/notebooks/ephrin_binding.ipynb",
-        filtered_E2_binding_data="results/filtered_data/E2_binding_filtered.csv",
-        filtered_E3_binding_data="results/filtered_data/E3_binding_filtered.csv",
-        filtered_E2_binding_low_effect="results/filtered_data/E2_binding_low_effect_filter.csv",
-        filtered_E3_binding_low_effect="results/filtered_data/E3_binding_low_effect_filter.csv",
+        #filtered_E2_binding_data="results/filtered_data/E2_binding_filtered.csv",
+        #filtered_E3_binding_data="results/filtered_data/E3_binding_filtered.csv",
+        #filtered_E2_binding_low_effect="results/filtered_data/E2_binding_low_effect_filter.csv",
+        #filtered_E3_binding_low_effect="results/filtered_data/E3_binding_low_effect_filter.csv",
         entry_binding_combined_corr_plot="results/images/entry_binding_combined_corr_plot.html",
         entry_binding_combined_corr_plot_agg="results/images/entry_binding_combined_corr_plot_agg.html",
         E2_E3_correlation="results/images/E2_E3_correlation.html",
@@ -86,15 +86,15 @@ rule analyze_nipah_RBP_binding:
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
                 "entropy_file": input.entropy_file,
-                "func_scores_E2_file": input.func_scores_E2_file,
+                #"func_scores_E2_file": input.func_scores_E2_file,
                 "binding_E2_file": input.binding_E2_file,
-                "func_scores_E3_file": input.func_scores_E3_file,
+                #"func_scores_E3_file": input.func_scores_E3_file,
                 "binding_E3_file": input.binding_E3_file,
                 
-                "filtered_E2_binding_data": output.filtered_E2_binding_data,
-                "filtered_E3_binding_data": output.filtered_E3_binding_data,
-                "filtered_E2_binding_low_effect": output.filtered_E2_binding_low_effect,
-                "filtered_E3_binding_low_effect": output.filtered_E3_binding_low_effect,
+                #"filtered_E2_binding_data": output.filtered_E2_binding_data,
+                #"filtered_E3_binding_data": output.filtered_E3_binding_data,
+                #"filtered_E2_binding_low_effect": output.filtered_E2_binding_low_effect,
+                #"filtered_E3_binding_low_effect": output.filtered_E3_binding_low_effect,
                 "entry_binding_combined_corr_plot": output.entry_binding_combined_corr_plot,
                 "entry_binding_combined_corr_plot_agg": output.entry_binding_combined_corr_plot_agg,
                 "E2_E3_correlation": output.E2_E3_correlation,
@@ -372,16 +372,16 @@ rule make_files_for_mapping_structure:
     """calculate site level statistics for mapping in ChimeraX"""
     input:
         nb="notebooks/mapping_site_level.ipynb",
-        E2_func_infile="results/filtered_data/E2_entry_filtered.csv",
-        E2_binding_infile="results/filtered_data/E2_binding_filtered.csv",
-        E3_func_infile="results/filtered_data/E3_entry_filtered.csv",
-        E3_binding_infile="results/filtered_data/E3_binding_filtered.csv",
-        HENV26_infile='results/filtered_data/HENV26_escape_filtered.csv',
-        HENV32_infile='results/filtered_data/HENV32_escape_filtered.csv',
-        HENV103_infile='results/filtered_data/HENV103_escape_filtered.csv',
-        HENV117_infile='results/filtered_data/HENV117_escape_filtered.csv',
-        m1024_infile='results/filtered_data/m102_escape_filtered.csv',
-        nAH13_infile='results/filtered_data/nAH1_escape_filtered.csv',
+        E2_func_infile="results/filtered_data/entry/e2_entry_filtered.csv",
+        E2_binding_infile="results/filtered_data/binding/e2_binding_filtered.csv",
+        E3_func_infile="results/filtered_data/entry/e3_entry_filtered.csv",
+        E3_binding_infile="results/filtered_data/binding/e3_binding_filtered.csv",
+        HENV26_infile='results/filtered_data/escape/HENV26_escape_filtered.csv',
+        HENV32_infile='results/filtered_data/escape/HENV32_escape_filtered.csv',
+        HENV103_infile='results/filtered_data/escape/HENV103_escape_filtered.csv',
+        HENV117_infile='results/filtered_data/escape/HENV117_escape_filtered.csv',
+        m1024_infile='results/filtered_data/escape/m102_escape_filtered.csv',
+        nAH13_infile='results/filtered_data/escape/nAH1_escape_filtered.csv',
     output:
         nb="results/notebooks/mapping_site_level.ipynb",
         E2_func_output="results/parsed_mapping_data/E2_entry_mean.csv",
@@ -482,33 +482,45 @@ rule make_RBP_alignment:
         "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
 
-rule filter_mabs_make_logo:
-    """Filter escape data and make logo plots"""
+rule filter_data:
+    """Filter data"""
     input:
-        nb="notebooks/escape_filter_logo.ipynb",
+        nb="notebooks/filter_data.ipynb",
         nipah_config="nipah_config.yaml",
+        
         HENV103_file="results/antibody_escape/averages/HENV103_mut_effect.csv",
         HENV117_file="results/antibody_escape/averages/HENV117_mut_effect.csv",
         HENV26_file="results/antibody_escape/averages/HENV26_mut_effect.csv",
         HENV32_file="results/antibody_escape/averages/HENV32_mut_effect.csv",
         m102_file="results/antibody_escape/averages/m102.4_mut_effect.csv",
         nAH1_file="results/antibody_escape/averages/nAH1.3_mut_effect.csv",
+        
+        e2_entry_file = 'results/func_effects/averages/CHO_EFNB2_low_func_effects.csv',
+        e3_entry_file = 'results/func_effects/averages/CHO_EFNB3_low_func_effects.csv',
+
+        e2_binding_file = 'results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv',
+        e3_binding_file = 'results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv'
     output:
-        nb="results/notebooks/escape_filter_logo.ipynb",
-        
-        HENV103_logo_path="results/images/logo_plots/HENV103_logo.svg",
-        HENV117_logo_path="results/images/logo_plots/HENV117_logo.svg",
-        HENV26_logo_path="results/images/logo_plots/HENV26_logo.svg",
-        HENV32_logo_path="results/images/logo_plots/HENV32_logo.svg",
-        m102_logo_path="results/images/logo_plots/m102_logo.svg",
-        nAH1_logo_path="results/images/logo_plots/nAH1_logo.svg",
-        
-        HENV103_filtered_path="results/filtered_data/HENV103_escape_filtered.csv",
-        HENV117_filtered_path="results/filtered_data/HENV117_escape_filtered.csv",
-        HENV26_filtered_path="results/filtered_data/HENV26_escape_filtered.csv",
-        m102_filtered_path="results/filtered_data/m102_escape_filtered.csv",
-        HENV32_filtered_path="results/filtered_data/HENV32_escape_filtered.csv",
-        nAH1_filtered_path="results/filtered_data/nAH1_escape_filtered.csv",
+        nb="results/notebooks/filter_data.ipynb",
+
+        e2_entry_filtered = 'results/filtered_data/entry/e2_entry_filtered.csv',
+        e3_entry_filtered = 'results/filtered_data/entry/e3_entry_filtered.csv',
+        entry_filter_merged = 'results/filtered_data/entry/e2_e3_entry_filter_merged.csv',
+        entry_filter_concat = 'results/filtered_data/entry/e2_e3_entry_filter_concat.csv',
+
+        e2_binding_filtered = 'results/filtered_data/binding/e2_binding_filtered.csv',
+        e3_binding_filtered = 'results/filtered_data/binding/e3_binding_filtered.csv',
+        e2_low_binding_effect_filter = 'results/filtered_data/binding/e2_low_binding_effect_filter.csv',
+        e3_low_binding_effect_filter = 'results/filtered_data/binding/e3_low_binding_effect_filter.csv',
+            
+        HENV103_filtered_path="results/filtered_data/escape/HENV103_escape_filtered.csv",
+        HENV117_filtered_path="results/filtered_data/escape/HENV117_escape_filtered.csv",
+        HENV26_filtered_path="results/filtered_data/escape/HENV26_escape_filtered.csv",
+        m102_filtered_path="results/filtered_data/escape/m102_escape_filtered.csv",
+        HENV32_filtered_path="results/filtered_data/escape/HENV32_escape_filtered.csv",
+        nAH1_filtered_path="results/filtered_data/escape/nAH1_escape_filtered.csv",
+        e2_low_mab_effect_filter = 'results/filtered_data/escape/e2_low_mab_effect_filter.csv',
+        e3_low_mab_effect_filter = 'results/filtered_data/escape/e3_low_mab_effect_filter.csv'
 
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -520,18 +532,26 @@ rule filter_mabs_make_logo:
                 "HENV32_file": input.HENV32_file,
                 "m102_file": input.m102_file,
                 "nAH1_file": input.nAH1_file,
-                "HENV103_logo_path": output.HENV103_logo_path,
-                "HENV117_logo_path": output.HENV117_logo_path,
-                "HENV26_logo_path": output.HENV26_logo_path,
-                "HENV32_logo_path": output.HENV32_logo_path,
-                "m102_logo_path": output.m102_logo_path,
-                "nAH1_logo_path": output.nAH1_logo_path,
+                "e2_entry_file": input.e2_entry_file,
+                "e3_entry_file": input.e3_entry_file,
+                "e2_binding_file": input.e2_binding_file,
+                "e3_binding_file": input.e3_binding_file,
+                "e2_entry_filtered": output.e2_entry_filtered,
+                "e3_entry_filtered": output.e3_entry_filtered,
+                "entry_filter_merged": output.entry_filter_merged,
+                "entry_filter_concat": output.entry_filter_concat,
+                "e2_binding_filtered": output.e2_binding_filtered,
+                "e3_binding_filtered": output.e3_binding_filtered,
+                "e2_low_binding_effect_filter": output.e2_low_binding_effect_filter,
+                "e3_low_binding_effect_filter": output.e3_low_binding_effect_filter,
                 "HENV103_filtered_path": output.HENV103_filtered_path,
                 "HENV117_filtered_path": output.HENV117_filtered_path,
                 "HENV26_filtered_path": output.HENV26_filtered_path,
                 "HENV32_filtered_path": output.HENV32_filtered_path,
                 "m102_filtered_path": output.m102_filtered_path,
                 "nAH1_filtered_path": output.nAH1_filtered_path,
+                "e2_low_mab_effect_filter": output.e2_low_mab_effect_filter,
+                "e3_low_mab_effect_filter": output.e3_low_mab_effect_filter,
             }
         ),
     log:
@@ -547,13 +567,15 @@ rule analyze_escape_data:
         nb="notebooks/analyze_escape_data.ipynb",
         nipah_config="nipah_config.yaml",
         altair_config="data/custom_analyses_data/theme.py",
-        HENV103_filter="results/filtered_data/HENV103_escape_filtered.csv",
-        HENV117_filter="results/filtered_data/HENV117_escape_filtered.csv",
-        HENV26_filter="results/filtered_data/HENV26_escape_filtered.csv",
-        HENV32_filter="results/filtered_data/HENV32_escape_filtered.csv",
-        m102_filter="results/filtered_data/m102_escape_filtered.csv",
-        nAH1_filter="results/filtered_data/nAH1_escape_filtered.csv",
-        binding_data="results/filtered_data/E2_binding_filtered.csv",
+        HENV103_filter="results/filtered_data/escape/HENV103_escape_filtered.csv",
+        HENV117_filter="results/filtered_data/escape/HENV117_escape_filtered.csv",
+        HENV26_filter="results/filtered_data/escape/HENV26_escape_filtered.csv",
+        HENV32_filter="results/filtered_data/escape/HENV32_escape_filtered.csv",
+        m102_filter="results/filtered_data/escape/m102_escape_filtered.csv",
+        nAH1_filter="results/filtered_data/escape/nAH1_escape_filtered.csv",
+        func_scores_low_effect_E3_file = "results/filtered_data/escape/e3_low_mab_effect_filter.csv",
+        concat_df_file = "results/filtered_data/escape/mab_filter_concat.csv",
+        binding_data="results/filtered_data/binding/e2_binding_filtered.csv",
     output:
         nb="results/notebooks/analyze_escape_data.ipynb",
         escape_bubble_plot="results/images/escape_bubble_plot.html",
@@ -563,7 +585,7 @@ rule analyze_escape_data:
         mab_plot_top="results/images/mab_plot_top.html",
         mab_plot_all="results/images/mab_plot_all.html",
         aggregate_mab_and_binding="results/images/aggregate_mab_and_binding.html",
-        binding_vs_escape='results/images/binding_vs_escape.html',
+        #binding_vs_escape='results/images/binding_vs_escape.html',
         aggregate_mab_and_niv_polymorphism='results/images/aggregate_mab_and_niv_polymorphism.html'
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -576,6 +598,9 @@ rule analyze_escape_data:
                 "HENV32_filter": input.HENV32_filter,
                 "m102_filter": input.m102_filter,
                 "nAH1_filter": input.nAH1_filter,
+                "func_scores_low_effect_E3_file": input.func_scores_low_effect_E3_file,
+                "concat_df_file": input.concat_df_file,
+
                 "binding_data": input.binding_data,
                 "escape_bubble_plot": output.escape_bubble_plot,
                 "bubble_1_mut_plot": output.bubble_1_mut_plot,
@@ -584,7 +609,7 @@ rule analyze_escape_data:
                 "mab_plot_top": output.mab_plot_top,
                 "mab_plot_all": output.mab_plot_all,
                 "aggregate_mab_and_binding": output.aggregate_mab_and_binding,
-                "binding_vs_escape": output.binding_vs_escape,
+                #"binding_vs_escape": output.binding_vs_escape,
                 "aggregate_mab_and_niv_polymorphism": output.aggregate_mab_and_niv_polymorphism,
             }
         ),
@@ -602,12 +627,12 @@ rule make_heatmaps:
         nipah_config="nipah_config.yaml",
         altair_config="data/custom_analyses_data/theme.py",
         entropy_file="results/entropy/entropy.csv",
-        func_scores_E2_file="results/filtered_data/E2_entry_filtered.csv",
-        func_scores_E3_file="results/filtered_data/E3_entry_filtered.csv",
-        binding_E2_file="results/filtered_data/E2_binding_filtered.csv",
-        binding_E3_file="results/filtered_data/E3_binding_filtered.csv",
-        e2_low_func_file="results/filtered_data/E2_binding_low_effect_filter.csv",
-        e3_low_func_file="results/filtered_data/E3_binding_low_effect_filter.csv",
+        func_scores_E2_file="results/filtered_data/entry/e2_entry_filtered.csv",
+        func_scores_E3_file="results/filtered_data/entry/e3_entry_filtered.csv",
+        binding_E2_file="results/filtered_data/binding/e2_binding_filtered.csv",
+        binding_E3_file="results/filtered_data/binding/e3_binding_filtered.csv",
+        e2_low_func_file="results/filtered_data/binding/e2_low_binding_effect_filter.csv",
+        e3_low_func_file="results/filtered_data/binding/e3_low_binding_effect_filter.csv",
         
     output:
         nb="results/notebooks/plot_heatmaps.ipynb",
@@ -676,10 +701,10 @@ docs["Additional files and charts"] = {
             "All Mutant CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_all_muts_plot,
             "Combined Aggregate and Mutant EFNB2/EFNB3 entry correlations": rules.analyze_nipah_RBP_entry.output.combined_E2_E3_correlation_plots,
         },
-        "Filtered Entry CSVs": {
-            "EFNB2 entry filtered csv": rules.analyze_nipah_RBP_entry.output.filtered_E2_data,
-            "EFNB3 entry filtered csv": rules.analyze_nipah_RBP_entry.output.filtered_E3_data,
-        },
+        #"Filtered Entry CSVs": {
+            #"EFNB2 entry filtered csv": rules.analyze_nipah_RBP_entry.output.filtered_E2_data,
+            #"EFNB3 entry filtered csv": rules.analyze_nipah_RBP_entry.output.filtered_E3_data,
+        #},
         "Cell Entry Validation Notebook": rules.cell_entry_validations.output.nb,
         "Cell Entry Validation Plots": {
             "Cell entry validation in CHO-EFNB2 cells": rules.cell_entry_validations.output.func_score_E2_plot,
@@ -699,10 +724,10 @@ docs["Additional files and charts"] = {
             "EFNB3 Binding Heatmap": rules.make_heatmaps.output.E3_binding_heatmap,
             "Contact Sites Binding Heatmap": rules.make_heatmaps.output.combined_contact_binding_plot,
         },
-        "Filtered Binding CSVs": {
-            "Filtered EFNB2 Binding CSV": rules.analyze_nipah_RBP_binding.output.filtered_E2_binding_data,
-            "Filtered EFNB3 Binding CSV": rules.analyze_nipah_RBP_binding.output.filtered_E3_binding_data,
-        },
+        #"Filtered Binding CSVs": {
+            #"Filtered EFNB2 Binding CSV": rules.analyze_nipah_RBP_binding.output.filtered_E2_binding_data,
+            #"Filtered EFNB3 Binding CSV": rules.analyze_nipah_RBP_binding.output.filtered_E3_binding_data,
+        #},
         "EFNB2 and EFNB3 Binding Correlations" : {
             "Interactive Plot of EFNB2 and EFNB3 Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation,
             "Interactive Plot of EFNB2 and EFNB3 Site Level Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation_site,
@@ -732,7 +757,7 @@ docs["Additional files and charts"] = {
         },
     },
     "Antibody Escape": {
-        "Antibody Escape Filtering and Logo Plot Notebook": rules.filter_mabs_make_logo.output.nb,
+        "Antibody Escape Filtering and Logo Plot Notebook": rules.filter_data.output.nb,
         "Antibody Escape Analysis Notebook": rules.analyze_escape_data.output.nb,
         "Neutralization Curves For All Six mAbs Notebook": rules.analyze_mab_neuts.output.nb,
         "Neutralization Curves Plot": rules.analyze_mab_neuts.output.mab_neuts_plot,
@@ -754,7 +779,7 @@ docs["Additional files and charts"] = {
             "Aggregate Escape and Ephrin-B2 Binding": rules.analyze_escape_data.output.aggregate_mab_and_binding,
             "Aggregate Escape and NiV Polymorphisms": rules.analyze_escape_data.output.aggregate_mab_and_niv_polymorphism,
         },
-        "Binding vs Escape": rules.analyze_escape_data.output.binding_vs_escape,
+        #"Binding vs Escape": rules.analyze_escape_data.output.binding_vs_escape,
     },
     "Library Correlations and Stats": {
         "Library Correlations Notebook": rules.lib_lib_correlations.output.nb,
