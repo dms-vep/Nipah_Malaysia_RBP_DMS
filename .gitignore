@@ -23,6 +23,7 @@ notebooks/*
 !notebooks/henipavirus_RBP_alignment.ipynb
 !notebooks/mab_neut_ic50.ipynb
 !notebooks/README.md
+!notebooks/make_nipah_phylogeny_baltic.ipynb
 
 !results/gene_sequence
 results/gene_sequence/*
