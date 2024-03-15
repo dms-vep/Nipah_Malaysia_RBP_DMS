@@ -7482,7 +7482,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="This-notebook-takes-filtered-functional-or-binding-data,-and-parses-it-to-make-input-files-for-mapping-in-ChimeraX">This notebook takes filtered functional or binding data, and parses it to make input files for mapping in ChimeraX<a class="anchor-link" href="#This-notebook-takes-filtered-functional-or-binding-data,-and-parses-it-to-make-input-files-for-mapping-in-ChimeraX">¶</a></h2>
+<h1 id="mapping_site_level.ipynb">mapping_site_level.ipynb<a class="anchor-link" href="#mapping_site_level.ipynb">¶</a></h1><h3 id="This-notebook-takes-filtered-data-from-filter_data.ipynb,-and-parses-it-to-make-input-files-for-mapping-in-ChimeraX">This notebook takes filtered data from filter_data.ipynb, and parses it to make input files for mapping in ChimeraX<a class="anchor-link" href="#This-notebook-takes-filtered-data-from-filter_data.ipynb,-and-parses-it-to-make-input-files-for-mapping-in-ChimeraX">¶</a></h3><ul>
+<li>Written by Brendan Larsen</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7522,7 +7524,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=25f7fc3c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=8425c4ad">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7567,7 +7569,6 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">shutil</span>
-
 
 <span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 
@@ -7618,6 +7619,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f71be8ac-e788-4393-8cbe-d18e0b1ebc37">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="For-running-notebook-interactively">For running notebook interactively<a class="anchor-link" href="#For-running-notebook-interactively">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2ef9874e-8439-414c-9085-f1cf9478c4e0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7628,16 +7640,16 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">E2_func_infile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">E2_func_infile</span> <span class="o">=</span> <span class="s1">'results/filtered_data/entry/e2_entry_filtered.csv'</span>
-    <span class="n">E2_func_output</span> <span class="o">=</span> <span class="s1">'E2_entry_mean.csv'</span>
+    <span class="n">E2_func_output</span> <span class="o">=</span> <span class="s1">'results/parsed_mapping_data/E2_entry_mean.csv'</span>
     
     <span class="n">E2_binding_infile</span> <span class="o">=</span> <span class="s1">'results/filtered_data/binding/e2_binding_filtered.csv'</span>
-    <span class="n">E2_binding_output</span> <span class="o">=</span> <span class="s1">'E2_binding_mean.csv'</span>
+    <span class="n">E2_binding_output</span> <span class="o">=</span> <span class="s1">'results/parsed_mapping_data/E2_binding_mean.csv'</span>
     
     <span class="n">E3_func_infile</span> <span class="o">=</span> <span class="s1">'results/filtered_data/entry/e3_entry_filtered.csv'</span>
-    <span class="n">E3_func_output</span> <span class="o">=</span> <span class="s1">'E3_entry_mean.csv'</span>
+    <span class="n">E3_func_output</span> <span class="o">=</span> <span class="s1">'results/parsed_mapping_data/E3_entry_mean.csv'</span>
     
     <span class="n">E3_binding_infile</span> <span class="o">=</span> <span class="s1">'results/filtered_data/binding/e3_binding_filtered.csv'</span>
-    <span class="n">E3_binding_output</span> <span class="o">=</span> <span class="s1">'E3_binding_mean.csv'</span>
+    <span class="n">E3_binding_output</span> <span class="o">=</span> <span class="s1">'results/parsed_mapping_data/E3_binding_mean.csv'</span>
     
 
     <span class="n">HENV26_infile</span> <span class="o">=</span> <span class="s1">'results/filtered_data/escape/HENV26_escape_filtered.csv'</span>
@@ -7662,6 +7674,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5d9a483d-f482-456c-806a-674d4f876336">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Aggregate-cell-entry">Aggregate cell entry<a class="anchor-link" href="#Aggregate-cell-entry">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3f7de8c7-b8d5-4ed0-aaf1-bb808b0e21aa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7673,7 +7696,7 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">aggregate_entry_mean</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
     <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'effect'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#test_df = test_df.round(2)</span>
     
     <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
@@ -7697,38 +7720,14 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4dca7510-af75-459b-a801-a5d3acea2e79">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=553cb860-3e2b-4697-9f09-174a0bb0ff8d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">aggregate_entry_sum</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'effect'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    
-    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'effect'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'effect'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'effect'</span><span class="p">]</span>
-    
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="c1"># Write header lines</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">'attribute: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-
-    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1">#aggregate_entry_sum(E2_func_infile,'E2_entry_sum','results/parsed_mapping_data/E2_entry_sum.csv')</span>
-<span class="c1">#aggregate_entry_sum(E3_func_infile,'E3_entry_sum','results/parsed_mapping_data/E3_entry_sum.csv')</span>
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Aggregate-receptor-binding">Aggregate receptor binding<a class="anchor-link" href="#Aggregate-receptor-binding">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7737,14 +7736,13 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">aggregate_binding</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
     <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'binding_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    
+
     <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_mean'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
@@ -7767,38 +7765,14 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7c015f13-37b8-43ca-8e4b-0b500710ba86">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=06b64c50-fa76-459b-bbf9-0a4d187ac1c0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">max_binding</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'binding_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    
-    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_mean'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_mean'</span><span class="p">]</span>
-    
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="c1"># Write header lines</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">'attribute: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-
-    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1">#max_binding(E2_binding_infile,'E2_binding','results/parsed_mapping_data/E2_binding_max.csv')</span>
-<span class="c1">#max_binding(E3_binding_infile,'E3_binding','results/parsed_mapping_data/E3_binding_max.csv')</span>
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Aggregate-antibody-escape">Aggregate antibody escape<a class="anchor-link" href="#Aggregate-antibody-escape">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7807,7 +7781,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">aggregate_escape</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
@@ -7841,176 +7815,32 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c778c05c-ac9f-4297-8150-e57a1f0cd37b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">### Make aggregated escape for receptor binding face and dimerization face mabs </span>
-<span class="k">def</span> <span class="nf">aggregate_escape_between_multiple</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
-    <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">HENV26_infile</span><span class="p">)</span>
-    <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">HENV117_infile</span><span class="p">)</span>
-    <span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">m1024_infile</span><span class="p">)</span>
-    <span class="n">tot_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">df3</span><span class="p">])</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">tot_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-
-    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span>
-    
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="c1"># Write header lines</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">'attribute: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-
-    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="c1">#tot_df.to_csv('results/parsed_mapping_data/binding_face.csv',index=False)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span>
-
-<span class="n">aggregate_escape_between_multiple</span><span class="p">(</span><span class="s1">'binding_face'</span><span class="p">,</span><span class="s1">'results/parsed_mapping_data/binding_face.csv'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>site</th>
-<th>escape_mean</th>
-<th>formatted</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>71</td>
-<td>-0.04</td>
-<td>\t:71\t-0.04</td>
-</tr>
-<tr>
-<th>1</th>
-<td>72</td>
-<td>-0.05</td>
-<td>\t:72\t-0.05</td>
-</tr>
-<tr>
-<th>2</th>
-<td>73</td>
-<td>0.013</td>
-<td>\t:73\t0.013</td>
-</tr>
-<tr>
-<th>3</th>
-<td>74</td>
-<td>-0.041</td>
-<td>\t:74\t-0.041</td>
-</tr>
-<tr>
-<th>4</th>
-<td>75</td>
-<td>-0.029</td>
-<td>\t:75\t-0.029</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>505</th>
-<td>598</td>
-<td>-0.076</td>
-<td>\t:598\t-0.076</td>
-</tr>
-<tr>
-<th>506</th>
-<td>599</td>
-<td>-0.019</td>
-<td>\t:599\t-0.019</td>
-</tr>
-<tr>
-<th>507</th>
-<td>600</td>
-<td>-0.0</td>
-<td>\t:600\t-0.0</td>
-</tr>
-<tr>
-<th>508</th>
-<td>601</td>
-<td>-0.09</td>
-<td>\t:601\t-0.09</td>
-</tr>
-<tr>
-<th>509</th>
-<td>602</td>
-<td>0.019</td>
-<td>\t:602\t0.019</td>
-</tr>
-</tbody>
-</table>
-<p>510 rows × 3 columns</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=70f9624f-d452-4543-ba2f-e5b71c655762">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=228590af-d8fa-4b58-8606-88e56373143c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Make-aggregated-files-for-distinct-antibody-epitopes">Make aggregated files for distinct antibody epitopes<a class="anchor-link" href="#Make-aggregated-files-for-distinct-antibody-epitopes">¶</a></h3>
+<h3 id="aggregate-escape-for-receptor-binding-face-antibodies-OR-dimerization-face-antibodies">aggregate escape for receptor binding face antibodies OR dimerization face antibodies<a class="anchor-link" href="#aggregate-escape-for-receptor-binding-face-antibodies-OR-dimerization-face-antibodies">¶</a></h3>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=982a9324-43d5-49b2-9230-712a786f77fc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c778c05c-ac9f-4297-8150-e57a1f0cd37b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### Make aggregated escape for receptor binding face and dimerization face mabs </span>
-<span class="k">def</span> <span class="nf">aggregate_escape_between_multiple</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
-    <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">HENV32_infile</span><span class="p">)</span>
-    <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">HENV103_infile</span><span class="p">)</span>
-
-    <span class="n">tot_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">])</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">tot_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">aggregate_escape_between_binding</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">HENV26_infile</span><span class="p">)</span>
+    <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">HENV117_infile</span><span class="p">)</span>
+    <span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">m1024_infile</span><span class="p">)</span>
+    <span class="n">tot_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">df3</span><span class="p">])</span>
+    <span class="n">test_df</span> <span class="o">=</span> <span class="n">tot_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
     <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
@@ -8026,116 +7856,36 @@ a.anchor-link {
     <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="c1">#tot_df.to_csv('results/parsed_mapping_data/binding_face.csv',index=False)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span>
 
-<span class="n">aggregate_escape_between_multiple</span><span class="p">(</span><span class="s1">'dimer_face'</span><span class="p">,</span><span class="s1">'results/parsed_mapping_data/dimer_face.csv'</span><span class="p">)</span>
+<span class="c1"># call function</span>
+<span class="n">aggregate_escape_between_binding</span><span class="p">(</span><span class="s1">'binding_face'</span><span class="p">,</span><span class="s1">'results/parsed_mapping_data/binding_face.csv'</span><span class="p">)</span>
+
+<span class="c1">### Make aggregated escape for receptor binding face and dimerization face mabs </span>
+<span class="k">def</span> <span class="nf">aggregate_escape_between_dimer</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">HENV32_infile</span><span class="p">)</span>
+    <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">HENV103_infile</span><span class="p">)</span>
+
+    <span class="n">tot_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">])</span>
+    <span class="n">test_df</span> <span class="o">=</span> <span class="n">tot_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
+    <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="c1"># Write header lines</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">'attribute: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
+    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">aggregate_escape_between_dimer</span><span class="p">(</span><span class="s1">'dimer_face'</span><span class="p">,</span><span class="s1">'results/parsed_mapping_data/dimer_face.csv'</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>site</th>
-<th>escape_mean</th>
-<th>formatted</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>71</td>
-<td>-0.052</td>
-<td>\t:71\t-0.052</td>
-</tr>
-<tr>
-<th>1</th>
-<td>72</td>
-<td>-0.024</td>
-<td>\t:72\t-0.024</td>
-</tr>
-<tr>
-<th>2</th>
-<td>73</td>
-<td>-0.01</td>
-<td>\t:73\t-0.01</td>
-</tr>
-<tr>
-<th>3</th>
-<td>74</td>
-<td>-0.011</td>
-<td>\t:74\t-0.011</td>
-</tr>
-<tr>
-<th>4</th>
-<td>75</td>
-<td>-0.041</td>
-<td>\t:75\t-0.041</td>
-</tr>
-<tr>
-<th>...</th>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr>
-<th>506</th>
-<td>598</td>
-<td>-0.094</td>
-<td>\t:598\t-0.094</td>
-</tr>
-<tr>
-<th>507</th>
-<td>599</td>
-<td>-0.094</td>
-<td>\t:599\t-0.094</td>
-</tr>
-<tr>
-<th>508</th>
-<td>600</td>
-<td>0.003</td>
-<td>\t:600\t0.003</td>
-</tr>
-<tr>
-<th>509</th>
-<td>601</td>
-<td>-0.067</td>
-<td>\t:601\t-0.067</td>
-</tr>
-<tr>
-<th>510</th>
-<td>602</td>
-<td>0.017</td>
-<td>\t:602\t0.017</td>
-</tr>
-</tbody>
-</table>
-<p>511 rows × 3 columns</p>
-</div>
 </div>
 </div>
 </div>
@@ -8156,7 +7906,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Specify the directory containing the .csv files</span>
@@ -8176,6 +7926,10 @@ a.anchor-link {
         <span class="c1"># Copy the content of the .csv file to the new .defattr file</span>
         <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">src_file</span><span class="p">,</span> <span class="n">dest_file</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Copied </span><span class="si">{</span><span class="n">src_file</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">dest_file</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        
+        <span class="c1"># Remove the original .csv file</span>
+        <span class="c1">#os.remove(src_file)</span>
+        <span class="c1">#print(f"Removed {src_file}")</span>
 </pre></div>
 </div>
 </div>
@@ -8189,7 +7943,6 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Copied results/parsed_mapping_data/HENV103_escape_mean.csv to results/parsed_mapping_data/HENV103_escape_mean.defattr
-Copied results/parsed_mapping_data/E3_entry_mean_1.csv to results/parsed_mapping_data/E3_entry_mean_1.defattr
 Copied results/parsed_mapping_data/E2_binding_mean.csv to results/parsed_mapping_data/E2_binding_mean.defattr
 Copied results/parsed_mapping_data/E3_entry_mean.csv to results/parsed_mapping_data/E3_entry_mean.defattr
 Copied results/parsed_mapping_data/nAH1_escape_mean.csv to results/parsed_mapping_data/nAH1_escape_mean.defattr
@@ -8198,12 +7951,24 @@ Copied results/parsed_mapping_data/binding_face.csv to results/parsed_mapping_da
 Copied results/parsed_mapping_data/E2_entry_mean.csv to results/parsed_mapping_data/E2_entry_mean.defattr
 Copied results/parsed_mapping_data/m102_escape_mean.csv to results/parsed_mapping_data/m102_escape_mean.defattr
 Copied results/parsed_mapping_data/HENV117_escape_mean.csv to results/parsed_mapping_data/HENV117_escape_mean.defattr
-Copied results/parsed_mapping_data/HENV32_escape_parsed.csv to results/parsed_mapping_data/HENV32_escape_parsed.defattr
 Copied results/parsed_mapping_data/HENV26_escape_mean.csv to results/parsed_mapping_data/HENV26_escape_mean.defattr
 Copied results/parsed_mapping_data/dimer_face.csv to results/parsed_mapping_data/dimer_face.defattr
-Copied results/parsed_mapping_data/HENV26_escape_parsed.csv to results/parsed_mapping_data/HENV26_escape_parsed.defattr
 Copied results/parsed_mapping_data/HENV32_escape_mean.csv to results/parsed_mapping_data/HENV32_escape_mean.defattr
 </pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fc8f76b3-c097-43df-a895-63b106c02f7a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 </div>
 </div>
 </div>

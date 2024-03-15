@@ -519,7 +519,7 @@ rule filter_data:
         m102_filtered_path="results/filtered_data/escape/m102_escape_filtered.csv",
         HENV32_filtered_path="results/filtered_data/escape/HENV32_escape_filtered.csv",
         nAH1_filtered_path="results/filtered_data/escape/nAH1_escape_filtered.csv",
-        e2_low_mab_effect_filter = 'results/filtered_data/escape/e2_low_mab_effect_filter.csv',
+        #e2_low_mab_effect_filter = 'results/filtered_data/escape/e2_low_mab_effect_filter.csv',
         e3_low_mab_effect_filter = 'results/filtered_data/escape/e3_low_mab_effect_filter.csv'
 
     params:
@@ -550,7 +550,7 @@ rule filter_data:
                 "HENV32_filtered_path": output.HENV32_filtered_path,
                 "m102_filtered_path": output.m102_filtered_path,
                 "nAH1_filtered_path": output.nAH1_filtered_path,
-                "e2_low_mab_effect_filter": output.e2_low_mab_effect_filter,
+                #"e2_low_mab_effect_filter": output.e2_low_mab_effect_filter,
                 "e3_low_mab_effect_filter": output.e3_low_mab_effect_filter,
             }
         ),
