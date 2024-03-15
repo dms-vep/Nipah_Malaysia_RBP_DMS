@@ -579,13 +579,14 @@ rule analyze_escape_data:
     output:
         nb="results/notebooks/analyze_escape_data.ipynb",
         escape_bubble_plot="results/images/escape_bubble_plot.html",
-        bubble_1_mut_plot="results/images/escape_bubble_1_mut_plot.html",
+        #bubble_1_mut_plot="results/images/escape_bubble_1_mut_plot.html",
         overlap_escape_plot="results/images/overlap_escape_plot.html",
         mab_line_escape_plot="results/images/mab_line_escape_plot.html",
         mab_plot_top="results/images/mab_plot_top.html",
         mab_plot_all="results/images/mab_plot_all.html",
         aggregate_mab_and_binding="results/images/aggregate_mab_and_binding.html",
         #binding_vs_escape='results/images/binding_vs_escape.html',
+        combined_evol_sites_escape="results/images/combined_evol_sites_escape.html",
         aggregate_mab_and_niv_polymorphism='results/images/aggregate_mab_and_niv_polymorphism.html'
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -603,13 +604,14 @@ rule analyze_escape_data:
 
                 "binding_data": input.binding_data,
                 "escape_bubble_plot": output.escape_bubble_plot,
-                "bubble_1_mut_plot": output.bubble_1_mut_plot,
+                #"bubble_1_mut_plot": output.bubble_1_mut_plot,
                 "overlap_escape_plot": output.overlap_escape_plot,
                 "mab_line_escape_plot": output.mab_line_escape_plot,
                 "mab_plot_top": output.mab_plot_top,
                 "mab_plot_all": output.mab_plot_all,
                 "aggregate_mab_and_binding": output.aggregate_mab_and_binding,
                 #"binding_vs_escape": output.binding_vs_escape,
+                "combined_evol_sites_escape": output.combined_evol_sites_escape,
                 "aggregate_mab_and_niv_polymorphism": output.aggregate_mab_and_niv_polymorphism,
             }
         ),
@@ -769,7 +771,6 @@ docs["Additional files and charts"] = {
         },
         "Interactive Plots of Escape Data": {
             "Top Escape Mutants Versus Entry": rules.analyze_escape_data.output.escape_bubble_plot,
-            "Top Escape Mutants Versus Entry-One Mutation Away": rules.analyze_escape_data.output.bubble_1_mut_plot,
             "Shared Escape Mutations Between Antibodies": rules.analyze_escape_data.output.overlap_escape_plot,
             "Summed Escape by Site": rules.analyze_escape_data.output.mab_line_escape_plot,
         },
@@ -779,7 +780,7 @@ docs["Additional files and charts"] = {
             "Aggregate Escape and Ephrin-B2 Binding": rules.analyze_escape_data.output.aggregate_mab_and_binding,
             "Aggregate Escape and NiV Polymorphisms": rules.analyze_escape_data.output.aggregate_mab_and_niv_polymorphism,
         },
-        #"Binding vs Escape": rules.analyze_escape_data.output.binding_vs_escape,
+        "Escape at Nipah and Hendra polymorphisms and differences": rules.analyze_escape_data.output.combined_evol_sites_escape,
     },
     "Library Correlations and Stats": {
         "Library Correlations Notebook": rules.lib_lib_correlations.output.nb,
