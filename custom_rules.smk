@@ -688,6 +688,30 @@ rule get_tables:
         cp {input.library_stats} {output.library_stats_table}
         """
 
+rule make_phylogeny:
+    """Make Nipah Phylogeny"""
+    input:
+        nb="notebooks/make_nipah_phylogeny_baltic.ipynb",
+        input_phylo="data/custom_analyses_data/alignments/phylo/nipah_whole_genome_phylo.tre",
+    output:
+        nb="results/notebooks/make_nipah_phylogeny_baltic.ipynb",
+        output_img="results/images/nipah_phylogeny.pdf"
+    params:
+        yaml=lambda _, input, output: yaml.round_trip_dump(
+            {
+                "input_phylo": input.input_phylo,
+                "output_img": output.output_img,
+                
+            }
+        ),
+    log:
+        log="results/logs/make_phylo.txt",
+    conda:
+        "environment.yml",
+    shell:
+        "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
+
+
 docs["Additional files and charts"] = {
     "Cell Entry": {
         "Cell Entry Analysis Notebook": rules.analyze_nipah_RBP_entry.output.nb,
@@ -811,5 +835,6 @@ docs["Additional files and charts"] = {
         "Nipah polymorphic sites binding plot": rules.henipavirus_entropy.output.binding_scores_niv_poly,
         "Antibody Info Table": rules.get_tables.output.antibody_info_table,
         "Library Stats Table": rules.get_tables.output.library_stats_table,
+        "Notebook for making phylogeny": rules.make_phylogeny.output.nb,
     },
 }
