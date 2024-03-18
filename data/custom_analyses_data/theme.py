@@ -3,7 +3,7 @@ import altair as alt
 def brendan_theme():
     # Typography
     font = "Helvetica"
-    labelFont = "Helvetica"
+    labelFont = "Helvetica Light"
     sourceFont = "Helvetica"
     
     # Colors
@@ -20,12 +20,12 @@ def brendan_theme():
         "config": {
             "background": "transparent",
             "title": {
-                "fontSize": 18,
+                "fontSize": 20,
                 "font": font,
                 "anchor": "start",
                 "color": "#000000",
                 "orient": 'top',
-                "offset": 0,
+                "offset": 10,
             },
             "axisX": {
                 "domain": True,
@@ -38,7 +38,7 @@ def brendan_theme():
                 "labelFontSize": 12,
                 "labelAngle": 0,
                 "tickColor": axisColor,
-                "tickSize": 5,
+                "tickSize": 4,
                 "titleFont": font,
                 "tickCount": 3,
                 "tickWidth": 1,
@@ -56,7 +56,7 @@ def brendan_theme():
                 "labelFontSize": 12,
                 "labelAngle": 0,
                 "tickColor": axisColor,
-                "tickSize": 5,
+                "tickSize": 4,
                 "tickCount": 3,
                 "tickWidth": 1,
                 "titleFont": font,
@@ -69,7 +69,7 @@ def brendan_theme():
                 "labelFontSize": 12,
                 "symbolSize": 100,
                 "titleFont": font,
-                "titleFontSize": 12,
+                "titleFontSize": 14,
                 "padding": 5,
                 "titleLimit": 200,
                 "gradientLength": 100,
