@@ -15,8 +15,8 @@ def brendan_theme():
     gridColor = "#DEDDDD"
     
     return {
-        "width": 200,
-        "height": 200,
+        #"width": 400,
+        #"height": 400,
         "config": {
             "background": "transparent",
             "title": {
@@ -30,7 +30,7 @@ def brendan_theme():
             "axisX": {
                 "domain": True,
                 "domainColor": axisColor,
-                "domainWidth": 0.75,
+                "domainWidth": 1,
                 "grid": False,
                 "gridColor": gridColor,
                 "gridWidth": 0.5,
@@ -38,16 +38,17 @@ def brendan_theme():
                 "labelFontSize": 12,
                 "labelAngle": 0,
                 "tickColor": axisColor,
-                "tickSize": 4,
+                "tickSize": 5,
                 "titleFont": font,
                 "tickCount": 3,
-                "titleFontSize": 12,
-                "titlePadding": 10,
+                "tickWidth": 1,
+                "titleFontSize": 14,
+                "titlePadding": 5,
             },
             "axisY": {
                 "domain": True,
                 "domainColor": axisColor,
-                "domainWidth": 0.75,
+                "domainWidth": 1,
                 "grid": False,
                 "gridColor": gridColor,
                 "gridWidth": 0.5,
@@ -55,11 +56,12 @@ def brendan_theme():
                 "labelFontSize": 12,
                 "labelAngle": 0,
                 "tickColor": axisColor,
-                "tickSize": 4,
+                "tickSize": 5,
                 "tickCount": 3,
+                "tickWidth": 1,
                 "titleFont": font,
-                "titleFontSize":12,
-                "titlePadding": 10,
+                "titleFontSize":14,
+                "titlePadding": 5,
                 "titleAngle": 270,
             },
             "legend": {
@@ -79,16 +81,16 @@ def brendan_theme():
             "view": {
                 "stroke": "transparent", # Remove the border around the visualization
             },
-            "point": {
-            	"filled": True,
-            	"size": 25,
-            	"opacity": 1,
-            	"color": "black"
-            },
-            "boxplot": {
-            	"extent": "min-max",
-            	
-            }
+            #"point": {
+            	#"filled": True,
+            	#"size": 25,
+            	#"opacity": 1,
+            	#"color": "black"
+            #},
+            #"boxplot": {
+            	#"extent": "min-max",
+            #	
+            #}
         }
     }
 

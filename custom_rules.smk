@@ -711,6 +711,54 @@ rule make_phylogeny:
     shell:
         "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
+rule interactive_figures:
+    """Make pretty large interactive figures"""
+    input:
+        nb="notebooks/interactive_figures.ipynb",
+        altair_config="data/custom_analyses_data/interactive_theme.py",
+        nipah_config="nipah_config.yaml",
+        func_scores_E2_file="results/filtered_data/entry/e2_entry_filtered.csv",
+        binding_E2_file="results/filtered_data/binding/e2_binding_filtered.csv",
+        func_scores_E3_file="results/filtered_data/entry/e3_entry_filtered.csv",
+        binding_E3_file="results/filtered_data/binding/e3_binding_filtered.csv",
+        merged_df_file="results/filtered_data/entry/e2_e3_entry_filter_merged.csv",
+        concat_df_file="results/filtered_data/entry/e2_e3_entry_filter_concat.csv"
+    output:
+        nb="results/notebooks/interactive_figures.ipynb",
+        output_corr="results/images/corr_heatmap.html",
+        entry_binding_corr_plot_E2_output="results/images/entry_binding_corr_plot_E2.html",
+        entry_binding_corr_plot_E3_output="results/images/entry_binding_corr_plot_E3.html",
+        corr_entry_binding_large_output="results/images/corr_entry_binding_large.html",
+        combined_binding_output="results/images/combined_binding.html",
+        entry_by_site_plot_e2_output="results/images/entry_by_site_plot_e2.html",
+        entry_by_site_plot_e3_output="results/images/entry_by_site_plot_e3.html",
+    params:
+        yaml=lambda _, input, output: yaml.round_trip_dump(
+            {
+                "altair_config": input.altair_config,
+                "nipah_config": input.nipah_config,
+                "func_scores_E2_file": input.func_scores_E2_file,
+                "binding_E2_file": input.binding_E2_file,
+                "func_scores_E3_file": input.func_scores_E3_file,
+                "binding_E3_file": input.binding_E3_file,
+                "merged_df_file": input.merged_df_file,
+                "concat_df_file": input.concat_df_file,
+                "output_corr": output.output_corr,
+                "entry_binding_corr_plot_E2_output": output.entry_binding_corr_plot_E2_output,
+                "entry_binding_corr_plot_E3_output": output.entry_binding_corr_plot_E3_output,
+                "corr_entry_binding_large_output": output.corr_entry_binding_large_output,
+                "combined_binding_output": output.combined_binding_output,
+                "entry_by_site_plot_e2_output": output.entry_by_site_plot_e2_output,
+                "entry_by_site_plot_e3_output": output.entry_by_site_plot_e3_output,
+                
+            }
+        ),
+    log:
+        log="results/logs/interactive.txt",
+    conda:
+        "environment.yml",
+    shell:
+        "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
 docs["Additional files and charts"] = {
     "Cell Entry": {
@@ -837,4 +885,15 @@ docs["Additional files and charts"] = {
         "Library Stats Table": rules.get_tables.output.library_stats_table,
         "Notebook for making phylogeny": rules.make_phylogeny.output.nb,
     },
+    "Large web friendly interactive figures": {
+        "Interactive figures notebook": rules.interactive_figures.output.nb,
+        "Entry correlations": rules.interactive_figures.output.output_corr,
+        "E2 entry binding correlations": rules.interactive_figures.output.entry_binding_corr_plot_E2_output,
+        "E3 entry binding correlations": rules.interactive_figures.output.entry_binding_corr_plot_E3_output,
+        "Correlation entry binding large": rules.interactive_figures.output.corr_entry_binding_large_output,
+        "Combined binding plots": rules.interactive_figures.output.combined_binding_output,
+        "E2 entry by site": rules.interactive_figures.output.entry_by_site_plot_e2_output,
+        "E3 entry by site": rules.interactive_figures.output.entry_by_site_plot_e3_output,
+
+    }
 }
