@@ -25,6 +25,7 @@ rule analyze_nipah_RBP_entry:
         E2_E3_entry_all_muts_plot="results/images/E2_E3_entry_all_muts_plot.html",
         combined_E2_E3_correlation_plots="results/images/combined_E2_E3_correlation_plots.html",
         entry_region_boxplot_plot="results/images/entry_region_boxplot_plot.html",
+        combined_region_barplot_output="results/images/combined_region_barplot_output.html",
 
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -43,6 +44,7 @@ rule analyze_nipah_RBP_entry:
                 #"entropy_file": input.entropy_file,
                 "entry_region_boxplot_plot": output.entry_region_boxplot_plot,
                 "surface": input.surface,
+                "combined_region_barplot_output": output.combined_region_barplot_output,
             }
         ),
     log:
@@ -764,6 +766,7 @@ docs["Additional files and charts"] = {
     "Cell Entry": {
         "Cell Entry Analysis Notebook": rules.analyze_nipah_RBP_entry.output.nb,
         "Interactive Plot of Entry Scores for Contact Sites": rules.analyze_nipah_RBP_entry.output.contact_type_plot,
+        "Ranked bar plots by region": rules.analyze_nipah_RBP_entry.output.combined_region_barplot_output,
         "Entry Heatmaps": {
             "EFNB2 Entry Heatmap": rules.make_heatmaps.output.E2_entry_heatmap,
             "EFNB3 Entry Heatmap": rules.make_heatmaps.output.E3_entry_heatmap,
@@ -831,7 +834,6 @@ docs["Additional files and charts"] = {
         },
     },
     "Antibody Escape": {
-        "Antibody Escape Filtering and Logo Plot Notebook": rules.filter_data.output.nb,
         "Antibody Escape Analysis Notebook": rules.analyze_escape_data.output.nb,
         "Neutralization Curves For All Six mAbs Notebook": rules.analyze_mab_neuts.output.nb,
         "Neutralization Curves Plot": rules.analyze_mab_neuts.output.mab_neuts_plot,
@@ -865,6 +867,7 @@ docs["Additional files and charts"] = {
         "Functional Score Distributions": rules.lib_lib_correlations.output.func_scores_plot,
     },
     "Miscellaneous": {
+        "Data filtering notebook": rules.filter_data.output.nb,
         "Bat and Human Ephrin alignment notebook": rules.ephrin_alignment.output.nb,
         "Henipavirus RBP alignment notebook": rules.make_RBP_alignment.output.nb,
         "Henipavirus entropy notebook": rules.henipavirus_entropy.output.nb,
