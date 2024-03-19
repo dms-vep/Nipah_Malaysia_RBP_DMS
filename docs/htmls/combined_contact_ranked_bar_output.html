@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"background": "transparent", "title": {"fontSize": 20, "fontWeight": "bold", "font": "Helvetica Light", "anchor": "start", "color": "#000000", "orient": "top", "offset": 5, "subtitleColor": "gray", "subtitleFont": "Helvetica Light", "subtitleFontWeight": "normal", "subtitleFontSize": 18, "subtitlePadding": 2}, "axis": {"domain": true, "domainColor": "#000000", "domainWidth": 1, "grid": false, "gridColor": "#DEDDDD", "gridWidth": 0.5, "labelFont": "Helvetica Light", "labelFontSize": 14, "labelFlush": false, "labelFontWeight": "normal", "labelPadding": 2, "tickColor": "#000000", "tickSize": 4, "tickWidth": 1, "titleFont": "Helvetica Light", "titleAlign": "center", "titleFontWeight": "bold", "titleFontSize": 14, "titlePadding": 5}, "legend": {"labelFont": "Helvetica Light", "labelFontSize": 14, "symbolSize": 100, "titleFont": "Helvetica Light", "titleFontSize": 14, "titleFontWeight": "bold", "padding": 5, "titleLimit": 200, "gradientLength": 100}, "range": {"category": ["#1f4e79", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"], "diverging": ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]}, "view": {"stroke": "transparent", "strokeWidth": 0}, "text": {"font": "Helvetica Light", "fontSize": 14}}, "hconcat": [{"data": {"name": "data-e801d6cf050b8178edb087a88c600421"}, "mark": {"type": "bar", "stroke": "black"}, "encoding": {"color": {"condition": {"param": "param_8", "value": "orange", "empty": false}, "value": "black"}, "strokeWidth": {"condition": {"param": "param_8", "value": 2, "empty": false}, "value": 0}, "x": {"aggregate": "max", "field": "binding_mean", "title": "Max binding mutant at site", "type": "quantitative"}, "y": {"field": "site", "scale": {"domain": [580, 241, 559, 305, 458, 507, 530, 401, 388, 492, 402, 555, 583, 239, 558, 242, 488, 389, 491, 490, 501, 579, 588, 532, 581, 531, 504, 505, 533, 557]}, "title": "Site", "type": "nominal"}}, "height": {"step": 12}, "name": "view_11", "title": "bEFNB2", "width": 200}, {"data": {"name": "data-faca9c90c0b1e887de7044e66541dd18"}, "mark": {"type": "bar", "stroke": "black"}, "encoding": {"color": {"condition": {"param": "param_9", "value": "orange", "empty": false}, "value": "black"}, "strokeWidth": {"condition": {"param": "param_9", "value": 2, "empty": false}, "value": 0}, "x": {"aggregate": "max", "field": "binding_mean", "title": "Max binding mutant at site", "type": "quantitative"}, "y": {"field": "site", "scale": {"domain": [580, 492, 588, 458, 305, 491, 241, 555, 530, 402, 559, 388, 239, 507, 583, 242, 401, 490, 558, 532, 488, 389, 501, 531, 505]}, "title": "Site", "type": "nominal"}}, "height": {"step": 12}, "name": "view_12", "title": "bEFNB3", "width": 200}], "params": [{"name": "param_8", "select": {"type": "point", "fields": ["site"], "nearest": true, "on": "mouseover"}, "views": ["view_11"]}, {"name": "param_9", "select": {"type": "point", "fields": ["site"], "nearest": true, "on": "mouseover"}, "views": ["view_12"]}], "title": "Binding at receptor contact sites", "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-e801d6cf050b8178edb087a88c600421": [{"site": 580, "binding_mean": 2.152}, {"site": 241, "binding_mean": 1.533}, {"site": 559, "binding_mean": 1.195}, {"site": 305, "binding_mean": 1.181}, {"site": 458, "binding_mean": 1.075}, {"site": 507, "binding_mean": 0.6781}, {"site": 530, "binding_mean": 0.6491}, {"site": 401, "binding_mean": 0.6137}, {"site": 388, "binding_mean": 0.5997}, {"site": 492, "binding_mean": 0.448}, {"site": 402, "binding_mean": 0.18}, {"site": 555, "binding_mean": 0.07313}, {"site": 583, "binding_mean": 0.04802}, {"site": 239, "binding_mean": -0.1208}, {"site": 558, "binding_mean": -0.1392}, {"site": 242, "binding_mean": -0.6453}, {"site": 488, "binding_mean": -0.834}, {"site": 389, "binding_mean": -0.8973}, {"site": 491, "binding_mean": -0.9317}, {"site": 490, "binding_mean": -1.038}, {"site": 501, "binding_mean": -1.2}, {"site": 579, "binding_mean": -1.434}, {"site": 588, "binding_mean": -1.823}, {"site": 532, "binding_mean": -2.218}, {"site": 581, "binding_mean": -2.565}, {"site": 531, "binding_mean": -2.624}, {"site": 504, "binding_mean": -3.074}, {"site": 505, "binding_mean": -3.127}, {"site": 533, "binding_mean": -3.467}, {"site": 557, "binding_mean": -3.636}], "data-faca9c90c0b1e887de7044e66541dd18": [{"site": 580, "binding_mean": 1.337}, {"site": 492, "binding_mean": 1.261}, {"site": 588, "binding_mean": 1.183}, {"site": 458, "binding_mean": 0.7416}, {"site": 305, "binding_mean": 0.6792}, {"site": 491, "binding_mean": 0.6451}, {"site": 241, "binding_mean": 0.5241}, {"site": 555, "binding_mean": 0.4567}, {"site": 530, "binding_mean": 0.4054}, {"site": 402, "binding_mean": 0.3579}, {"site": 559, "binding_mean": 0.2883}, {"site": 388, "binding_mean": 0.2811}, {"site": 239, "binding_mean": 0.2224}, {"site": 507, "binding_mean": 0.1968}, {"site": 583, "binding_mean": 0.1289}, {"site": 242, "binding_mean": 0.1263}, {"site": 401, "binding_mean": 0.1176}, {"site": 490, "binding_mean": 0.1117}, {"site": 558, "binding_mean": 0.03584}, {"site": 532, "binding_mean": -0.5282}, {"site": 488, "binding_mean": -0.5452}, {"site": 389, "binding_mean": -0.6259}, {"site": 501, "binding_mean": -0.6476}, {"site": 531, "binding_mean": -0.6663}, {"site": 505, "binding_mean": -0.7709}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

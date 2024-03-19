@@ -41,7 +41,6 @@ rule analyze_nipah_RBP_entry:
                 "combined_E2_E3_correlation_plots": output.combined_E2_E3_correlation_plots,
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
-                #"entropy_file": input.entropy_file,
                 "entry_region_boxplot_plot": output.entry_region_boxplot_plot,
                 "surface": input.surface,
                 "combined_region_barplot_output": output.combined_region_barplot_output,
@@ -57,19 +56,13 @@ rule analyze_nipah_RBP_entry:
 rule analyze_nipah_RBP_binding:
     """Analyze EFNB2 and EFNB3 binding"""
     input:
-        #func_scores_E2_file="results/func_effects/averages/CHO_EFNB2_low_func_effects.csv",
-        binding_E2_file="results/filtered_data/binding/E2_binding_filtered.csv",
-        #func_scores_E3_file="results/func_effects/averages/CHO_EFNB3_low_func_effects.csv",
-        binding_E3_file="results/filtered_data/binding/E3_binding_filtered.csv",
+        binding_E2_file="results/filtered_data/binding/e2_binding_filtered.csv",
+        binding_E3_file="results/filtered_data/binding/e3_binding_filtered.csv",
         nb="notebooks/ephrin_binding.ipynb",
         nipah_config="nipah_config.yaml",
         altair_config="data/custom_analyses_data/theme.py",
     output:
         nb="results/notebooks/ephrin_binding.ipynb",
-        #filtered_E2_binding_data="results/filtered_data/E2_binding_filtered.csv",
-        #filtered_E3_binding_data="results/filtered_data/E3_binding_filtered.csv",
-        #filtered_E2_binding_low_effect="results/filtered_data/E2_binding_low_effect_filter.csv",
-        #filtered_E3_binding_low_effect="results/filtered_data/E3_binding_low_effect_filter.csv",
         entry_binding_combined_corr_plot="results/images/entry_binding_combined_corr_plot.html",
         entry_binding_combined_corr_plot_agg="results/images/entry_binding_combined_corr_plot_agg.html",
         E2_E3_correlation="results/images/E2_E3_correlation.html",
@@ -82,21 +75,14 @@ rule analyze_nipah_RBP_binding:
         binding_region_bubble_plot="results/images/binding_region_bubble_plot.html",
         max_binding_in_contact="results/images/max_binding_in_contact.html",
         max_binding_in_stalk="results/images/max_binding_in_stalk.html",
+        combined_contact_ranked_bar_output='results/images/combined_contact_ranked_bar_output.html',
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
-                "entropy_file": input.entropy_file,
-                #"func_scores_E2_file": input.func_scores_E2_file,
                 "binding_E2_file": input.binding_E2_file,
-                #"func_scores_E3_file": input.func_scores_E3_file,
                 "binding_E3_file": input.binding_E3_file,
-                
-                #"filtered_E2_binding_data": output.filtered_E2_binding_data,
-                #"filtered_E3_binding_data": output.filtered_E3_binding_data,
-                #"filtered_E2_binding_low_effect": output.filtered_E2_binding_low_effect,
-                #"filtered_E3_binding_low_effect": output.filtered_E3_binding_low_effect,
                 "entry_binding_combined_corr_plot": output.entry_binding_combined_corr_plot,
                 "entry_binding_combined_corr_plot_agg": output.entry_binding_combined_corr_plot_agg,
                 "E2_E3_correlation": output.E2_E3_correlation,
@@ -109,6 +95,7 @@ rule analyze_nipah_RBP_binding:
                 "binding_region_bubble_plot": output.binding_region_bubble_plot,
                 "max_binding_in_contact": output.max_binding_in_contact,
                 "max_binding_in_stalk": output.max_binding_in_stalk,
+                "combined_contact_ranked_bar_output": output.combined_contact_ranked_bar_output,
             }
         ),
     log:
@@ -521,7 +508,7 @@ rule filter_data:
         m102_filtered_path="results/filtered_data/escape/m102_escape_filtered.csv",
         HENV32_filtered_path="results/filtered_data/escape/HENV32_escape_filtered.csv",
         nAH1_filtered_path="results/filtered_data/escape/nAH1_escape_filtered.csv",
-        #e2_low_mab_effect_filter = 'results/filtered_data/escape/e2_low_mab_effect_filter.csv',
+        mab_filter_concat_file = 'results/filtered_data/escape/mab_filter_concat.csv',
         e3_low_mab_effect_filter = 'results/filtered_data/escape/e3_low_mab_effect_filter.csv'
 
     params:
@@ -552,8 +539,8 @@ rule filter_data:
                 "HENV32_filtered_path": output.HENV32_filtered_path,
                 "m102_filtered_path": output.m102_filtered_path,
                 "nAH1_filtered_path": output.nAH1_filtered_path,
-                #"e2_low_mab_effect_filter": output.e2_low_mab_effect_filter,
                 "e3_low_mab_effect_filter": output.e3_low_mab_effect_filter,
+                "mab_filter_concat_file": output.mab_filter_concat_file,
             }
         ),
     log:
@@ -629,7 +616,7 @@ rule make_heatmaps:
     input:
         nb="notebooks/plot_heatmaps.ipynb",
         nipah_config="nipah_config.yaml",
-        altair_config="data/custom_analyses_data/theme.py",
+        altair_config="data/custom_analyses_data/heatmap_theme.py",
         entropy_file="results/entropy/entropy.csv",
         func_scores_E2_file="results/filtered_data/entry/e2_entry_filtered.csv",
         func_scores_E3_file="results/filtered_data/entry/e3_entry_filtered.csv",
@@ -817,6 +804,7 @@ docs["Additional files and charts"] = {
         "Bubbleplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_bubble_plot,
         "Max Binding Scores in Contact Site": rules.analyze_nipah_RBP_binding.output.max_binding_in_contact,
         "Max Binding Scores in Stalk": rules.analyze_nipah_RBP_binding.output.max_binding_in_stalk,
+        "Contact ranked sites": rules.analyze_nipah_RBP_binding.output.combined_contact_ranked_bar_output,
         "Ephrin neutralization notebook": rules.ephrin_neuts.output.nb,
         "Ephrin neutralization curve plot": rules.ephrin_neuts.output.ephrin_curve_plot,
         "Ephrin Binding Validation Neut Curves Plots": {
