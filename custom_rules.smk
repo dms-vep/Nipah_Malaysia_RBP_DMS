@@ -5,25 +5,22 @@ This file is included by the pipeline ``Snakefile``.
 """
 
 rule analyze_nipah_RBP_entry:
-    """Analyze EFNB2 and EFNB3 entry"""
+    """Analyze CHO-bEFNB2 and CHO-bEFNB3 entry"""
     input:
+        nb="notebooks/nipah_RBP_entry_analysis.ipynb",
+        altair_config="data/custom_analyses_data/theme.py",
+        nipah_config="nipah_config.yaml",
+
         func_scores_E2_file="results/filtered_data/entry/e2_entry_filtered.csv",
         func_scores_E3_file="results/filtered_data/entry/e3_entry_filtered.csv",
-        nb="notebooks/nipah_RBP_entry_analysis.ipynb",
-        nipah_config="nipah_config.yaml",
-        altair_config="data/custom_analyses_data/theme.py",
         concat_df_file="results/filtered_data/entry/e2_e3_entry_filter_concat.csv",
         merged_df_file="results/filtered_data/entry/e2_e3_entry_filter_merged.csv",
         e2_distances_file="results/distances/2vsm_distances.csv",
         surface="data/custom_analyses_data/surface_exposure.csv",
     output:
         nb="results/notebooks/nipah_RBP_entry_analysis.ipynb",
-        #filtered_E2_data="results/filtered_data/E2_entry_filtered.csv",
-        #filtered_E3_data="results/filtered_data/E3_entry_filtered.csv",
-        contact_type_plot='results/images/contact_type_plot.html',
         E2_E3_entry_corr_plot="results/images/E2_E3_entry_corr_plot.html",
         E2_E3_entry_all_muts_plot="results/images/E2_E3_entry_all_muts_plot.html",
-        combined_E2_E3_correlation_plots="results/images/combined_E2_E3_correlation_plots.html",
         entry_region_boxplot_plot="results/images/entry_region_boxplot_plot.html",
         combined_region_barplot_output="results/images/combined_region_barplot_output.html",
 
@@ -33,12 +30,10 @@ rule analyze_nipah_RBP_entry:
                 "func_scores_E2_file": input.func_scores_E2_file,
                 "func_scores_E3_file": input.func_scores_E3_file,
                 "e2_distances_file": input.e2_distances_file,
-                "contact_type_plot": output.contact_type_plot,
                 "merged_df_file": input.merged_df_file,
                 "concat_df_file": input.concat_df_file,
                 "E2_E3_entry_corr_plot": output.E2_E3_entry_corr_plot,
                 "E2_E3_entry_all_muts_plot": output.E2_E3_entry_all_muts_plot,
-                "combined_E2_E3_correlation_plots": output.combined_E2_E3_correlation_plots,
                 "nipah_config": input.nipah_config,
                 "altair_config": input.altair_config,
                 "entry_region_boxplot_plot": output.entry_region_boxplot_plot,
@@ -67,14 +62,10 @@ rule analyze_nipah_RBP_binding:
         entry_binding_combined_corr_plot_agg="results/images/entry_binding_combined_corr_plot_agg.html",
         E2_E3_correlation="results/images/E2_E3_correlation.html",
         E2_E3_correlation_site="results/images/E2_E3_correlation_site.html",
-        combined_E2_E3_site_corr="results/images/combined_E2_E3_site_corr.html",
         binding_by_site_plot="results/images/binding_by_site_plot.html",
         entry_binding_corr_heatmap="results/images/entry_binding_corr_heatmap.html",
         binding_corr_heatmap="results/images/binding_corr_heatmap.html",
-        binding_region_boxplot_plot="results/images/binding_region_boxplot_plot.html",
         binding_region_bubble_plot="results/images/binding_region_bubble_plot.html",
-        max_binding_in_contact="results/images/max_binding_in_contact.html",
-        max_binding_in_stalk="results/images/max_binding_in_stalk.html",
         combined_contact_ranked_bar_output='results/images/combined_contact_ranked_bar_output.html',
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -87,14 +78,10 @@ rule analyze_nipah_RBP_binding:
                 "entry_binding_combined_corr_plot_agg": output.entry_binding_combined_corr_plot_agg,
                 "E2_E3_correlation": output.E2_E3_correlation,
                 "E2_E3_correlation_site": output.E2_E3_correlation_site,
-                "combined_E2_E3_site_corr": output.combined_E2_E3_site_corr,
                 "binding_by_site_plot": output.binding_by_site_plot,
                 "entry_binding_corr_heatmap": output.entry_binding_corr_heatmap,
                 "binding_corr_heatmap": output.binding_corr_heatmap,
-                "binding_region_boxplot_plot": output.binding_region_boxplot_plot,
                 "binding_region_bubble_plot": output.binding_region_bubble_plot,
-                "max_binding_in_contact": output.max_binding_in_contact,
-                "max_binding_in_stalk": output.max_binding_in_stalk,
                 "combined_contact_ranked_bar_output": output.combined_contact_ranked_bar_output,
             }
         ),
@@ -236,7 +223,6 @@ rule lib_lib_correlations:
         CHO_EFNB2_indiv_plot_save="results/images/CHO_EFNB2_all_corrs.html",
         CHO_EFNB3_indiv_plot_save="results/images/CHO_EFNB3_all_corrs.html",
         histogram_plot="results/images/variants_histogram.html",
-        func_scores_plot="results/images/func_scores_distribution.html",
         uniq_barcodes_per_lib_df="results/tables/uniq_barcodes_per_lib_df.csv",
 
     params:
@@ -249,7 +235,6 @@ rule lib_lib_correlations:
                 "CHO_EFNB2_indiv_plot_save": output.CHO_EFNB2_indiv_plot_save,
                 "CHO_EFNB3_indiv_plot_save": output.CHO_EFNB3_indiv_plot_save,
                 "histogram_plot": output.histogram_plot,
-                "func_scores_plot": output.func_scores_plot,
                 "uniq_barcodes_per_lib_df": output.uniq_barcodes_per_lib_df,
             }
         ),
@@ -288,30 +273,16 @@ rule henipavirus_entropy:
     input:
         nb="notebooks/henipavirus_conservation.ipynb",
         nipah_config="nipah_config.yaml",
-        altair_config="data/custom_analyses_data/theme.py",
-        e2_binding="results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv",
-        e2_entry="results/func_effects/averages/CHO_EFNB2_low_func_effects.csv",
-        e3_binding="results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv",
-        e3_entry="results/func_effects/averages/CHO_EFNB3_low_func_effects.csv",
         nipah_alignment="data/custom_analyses_data/alignments/Nipah_RBP_AA_align.fasta",
     output:
         nb="results/notebooks/henipavirus_conservation.ipynb",
         entropy_output="results/entropy/entropy.csv",
-        entry_scores_niv_poly="results/images/niv_polymorphic_entry.html",
-        binding_scores_niv_poly="results/images/niv_polymorphic_binding.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
                 "nipah_config": input.nipah_config,
-                "altair_config": input.altair_config,
-                "e2_binding": input.e2_binding,
-                "e2_entry": input.e2_entry,
-                "e3_binding": input.e3_binding,
-                "e3_entry": input.e3_entry,
                 "nipah_alignment": input.nipah_alignment,
                 "entropy_output": output.entropy_output,
-                "entry_scores_niv_poly": output.entry_scores_niv_poly,
-                "binding_scores_niv_poly": output.binding_scores_niv_poly,
             }
         ),
     log:
@@ -752,7 +723,6 @@ rule interactive_figures:
 docs["Additional files and charts"] = {
     "Cell Entry": {
         "Cell Entry Analysis Notebook": rules.analyze_nipah_RBP_entry.output.nb,
-        "Interactive Plot of Entry Scores for Contact Sites": rules.analyze_nipah_RBP_entry.output.contact_type_plot,
         "Ranked bar plots by region": rules.analyze_nipah_RBP_entry.output.combined_region_barplot_output,
         "Entry Heatmaps": {
             "EFNB2 Entry Heatmap": rules.make_heatmaps.output.E2_entry_heatmap,
@@ -760,10 +730,9 @@ docs["Additional files and charts"] = {
             "EFNB2 and EFNB3 Entry Heatmaps for Contact Sites": rules.make_heatmaps.output.combined_entry_contact_heatmaps,
         },
         "Plots of Entry Scores by RBP Region": rules.analyze_nipah_RBP_entry.output.entry_region_boxplot_plot,
-        "Interactive Plots of Entry Score Correlations": {
+        "Entry Correlations for CHO-bEFNB2 and CHO-bEFNB3": {
             "Aggregate CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_corr_plot,
             "All Mutant CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_all_muts_plot,
-            "Combined Aggregate and Mutant EFNB2/EFNB3 entry correlations": rules.analyze_nipah_RBP_entry.output.combined_E2_E3_correlation_plots,
         },
         #"Filtered Entry CSVs": {
             #"EFNB2 entry filtered csv": rules.analyze_nipah_RBP_entry.output.filtered_E2_data,
@@ -788,22 +757,14 @@ docs["Additional files and charts"] = {
             "EFNB3 Binding Heatmap": rules.make_heatmaps.output.E3_binding_heatmap,
             "Contact Sites Binding Heatmap": rules.make_heatmaps.output.combined_contact_binding_plot,
         },
-        #"Filtered Binding CSVs": {
-            #"Filtered EFNB2 Binding CSV": rules.analyze_nipah_RBP_binding.output.filtered_E2_binding_data,
-            #"Filtered EFNB3 Binding CSV": rules.analyze_nipah_RBP_binding.output.filtered_E3_binding_data,
-        #},
         "EFNB2 and EFNB3 Binding Correlations" : {
             "Interactive Plot of EFNB2 and EFNB3 Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation,
             "Interactive Plot of EFNB2 and EFNB3 Site Level Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation_site,
-            "Combined plot of EFNB2 and EFNB3 binding correlations": rules.analyze_nipah_RBP_binding.output.combined_E2_E3_site_corr,
             "E2 and E3 binding correlations heatmap": rules.analyze_nipah_RBP_binding.output.binding_corr_heatmap,
         },
         
         "Interactive Plot of Median Binding by Site": rules.analyze_nipah_RBP_binding.output.binding_by_site_plot,
-        "Boxplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_boxplot_plot,
         "Bubbleplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_bubble_plot,
-        "Max Binding Scores in Contact Site": rules.analyze_nipah_RBP_binding.output.max_binding_in_contact,
-        "Max Binding Scores in Stalk": rules.analyze_nipah_RBP_binding.output.max_binding_in_stalk,
         "Contact ranked sites": rules.analyze_nipah_RBP_binding.output.combined_contact_ranked_bar_output,
         "Ephrin neutralization notebook": rules.ephrin_neuts.output.nb,
         "Ephrin neutralization curve plot": rules.ephrin_neuts.output.ephrin_curve_plot,
@@ -852,14 +813,12 @@ docs["Additional files and charts"] = {
             "Indiv. CHO-EFNB3 cell entry selections": rules.lib_lib_correlations.output.CHO_EFNB3_indiv_plot_save,
         },
         "Variants histogram": rules.lib_lib_correlations.output.histogram_plot,
-        "Functional Score Distributions": rules.lib_lib_correlations.output.func_scores_plot,
     },
     "Miscellaneous": {
         "Data filtering notebook": rules.filter_data.output.nb,
         "Bat and Human Ephrin alignment notebook": rules.ephrin_alignment.output.nb,
         "Henipavirus RBP alignment notebook": rules.make_RBP_alignment.output.nb,
-        "Henipavirus entropy notebook": rules.henipavirus_entropy.output.nb,
-        "Henipavirus entropy CSV": rules.henipavirus_entropy.output.entropy_output,
+        "Henipavirus and Nipah RBP entropy notebook": rules.henipavirus_entropy.output.nb,
         "Receptor Distances Notebook": rules.receptor_distances.output.nb,
         "Amino Acid Distances CSVs": {
             "Ephrin-B2 residues within 4 csv": rules.receptor_distances.output.ephrin_b2_close_residues,
@@ -870,8 +829,6 @@ docs["Additional files and charts"] = {
         },
         "Notebook for mapping filtered scores onto crystal structures": rules.make_files_for_mapping_structure.output.nb,
         "Notebook for making heatmaps": rules.make_heatmaps.output.nb,
-        "Nipah polymorphic sites cell entry plot": rules.henipavirus_entropy.output.entry_scores_niv_poly,
-        "Nipah polymorphic sites binding plot": rules.henipavirus_entropy.output.binding_scores_niv_poly,
         "Antibody Info Table": rules.get_tables.output.antibody_info_table,
         "Library Stats Table": rules.get_tables.output.library_stats_table,
         "Notebook for making phylogeny": rules.make_phylogeny.output.nb,
