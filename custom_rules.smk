@@ -220,6 +220,7 @@ rule lib_lib_correlations:
     output:
         nb="results/notebooks/library_correlations.ipynb",
         CHO_corr_plot_save="results/images/CHO_corr_plot_save.html",
+        entry_binding_corr_heatmap_plot="results/images/entry_binding_corr_heatmap_plot.html",
         CHO_EFNB2_indiv_plot_save="results/images/CHO_EFNB2_all_corrs.html",
         CHO_EFNB3_indiv_plot_save="results/images/CHO_EFNB3_all_corrs.html",
         histogram_plot="results/images/variants_histogram.html",
@@ -232,6 +233,7 @@ rule lib_lib_correlations:
                 "altair_config": input.altair_config,
                 "codon_variants_file": input.codon_variants_file,
                 "CHO_corr_plot_save": output.CHO_corr_plot_save,
+                "entry_binding_corr_heatmap_plot": output.entry_binding_corr_heatmap_plot,
                 "CHO_EFNB2_indiv_plot_save": output.CHO_EFNB2_indiv_plot_save,
                 "CHO_EFNB3_indiv_plot_save": output.CHO_EFNB3_indiv_plot_save,
                 "histogram_plot": output.histogram_plot,
@@ -808,6 +810,7 @@ docs["Additional files and charts"] = {
     "Library Correlations and Stats": {
         "Library Correlations Notebook": rules.lib_lib_correlations.output.nb,
         "Interactive Plot of Library Correlations": rules.lib_lib_correlations.output.CHO_corr_plot_save,
+        "Heatmap Plot of Library Correlations": rules.lib_lib_correlations.output.entry_binding_corr_heatmap_plot,
         "Plots of all cell entry score correlations": {
             "Indiv. CHO-EFNB2 cell entry selections": rules.lib_lib_correlations.output.CHO_EFNB2_indiv_plot_save,
             "Indiv. CHO-EFNB3 cell entry selections": rules.lib_lib_correlations.output.CHO_EFNB3_indiv_plot_save,
