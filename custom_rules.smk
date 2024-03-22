@@ -692,6 +692,7 @@ rule interactive_figures:
         combined_binding_output="results/images/combined_binding.html",
         entry_by_site_plot_e2_output="results/images/entry_by_site_plot_e2.html",
         entry_by_site_plot_e3_output="results/images/entry_by_site_plot_e3.html",
+        entry_by_site_plot_e2_bar_plot="results/images/entry_by_site_plot_e2_bar_plot.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -710,6 +711,7 @@ rule interactive_figures:
                 "combined_binding_output": output.combined_binding_output,
                 "entry_by_site_plot_e2_output": output.entry_by_site_plot_e2_output,
                 "entry_by_site_plot_e3_output": output.entry_by_site_plot_e3_output,
+                "entry_by_site_plot_e2_bar_plot": output.entry_by_site_plot_e2_bar_plot,
                 
             }
         ),
@@ -842,6 +844,7 @@ docs["Additional files and charts"] = {
         "Combined binding plots": rules.interactive_figures.output.combined_binding_output,
         "E2 entry by site": rules.interactive_figures.output.entry_by_site_plot_e2_output,
         "E3 entry by site": rules.interactive_figures.output.entry_by_site_plot_e3_output,
+        "E2 entry by site barplot": rules.interactive_figures.output.entry_by_site_plot_e2_bar_plot,
 
     }
 }
