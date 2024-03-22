@@ -604,8 +604,7 @@ rule make_heatmaps:
         E3_binding_heatmap="results/images/E3_binding_heatmap.html",
         E2_entry_heatmap="results/images/E2_entry_heatmap.html",
         E3_entry_heatmap="results/images/E3_entry_heatmap.html",
-        combined_entry_contact_heatmaps="results/images/combined_entry_contact_heatmaps.html",
-        combined_contact_binding_plot="results/images/combined_contact_binding_plot.html",
+        combined_entry_binding_contact="results/images/combined_entry_binding_contact_heatmaps.html",
         
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -623,8 +622,7 @@ rule make_heatmaps:
                 "E3_binding_heatmap": output.E3_binding_heatmap,
                 "E2_entry_heatmap": output.E2_entry_heatmap,
                 "E3_entry_heatmap": output.E3_entry_heatmap,
-                "combined_entry_contact_heatmaps": output.combined_entry_contact_heatmaps,
-                "combined_contact_binding_plot": output.combined_contact_binding_plot,
+                "combined_entry_binding_contact": output.combined_entry_binding_contact,
                 
             }
         ),
@@ -729,7 +727,6 @@ docs["Additional files and charts"] = {
         "Entry Heatmaps": {
             "EFNB2 Entry Heatmap": rules.make_heatmaps.output.E2_entry_heatmap,
             "EFNB3 Entry Heatmap": rules.make_heatmaps.output.E3_entry_heatmap,
-            "EFNB2 and EFNB3 Entry Heatmaps for Contact Sites": rules.make_heatmaps.output.combined_entry_contact_heatmaps,
         },
         "Plots of Entry Scores by RBP Region": rules.analyze_nipah_RBP_entry.output.entry_region_boxplot_plot,
         "Entry Correlations for CHO-bEFNB2 and CHO-bEFNB3": {
@@ -757,7 +754,6 @@ docs["Additional files and charts"] = {
         "Ephrin Binding Heatmaps": {
             "EFNB2 Binding Heatmap": rules.make_heatmaps.output.E2_binding_heatmap,
             "EFNB3 Binding Heatmap": rules.make_heatmaps.output.E3_binding_heatmap,
-            "Contact Sites Binding Heatmap": rules.make_heatmaps.output.combined_contact_binding_plot,
         },
         "EFNB2 and EFNB3 Binding Correlations" : {
             "Interactive Plot of EFNB2 and EFNB3 Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation,
@@ -835,6 +831,7 @@ docs["Additional files and charts"] = {
         "Antibody Info Table": rules.get_tables.output.antibody_info_table,
         "Library Stats Table": rules.get_tables.output.library_stats_table,
         "Notebook for making phylogeny": rules.make_phylogeny.output.nb,
+        "Combined Entry and Binding Heatmaps at Contact Sites": rules.make_heatmaps.output.combined_entry_binding_contact,
     },
     "Large web friendly interactive figures": {
         "Interactive figures notebook": rules.interactive_figures.output.nb,

@@ -7513,7 +7513,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=657efd52">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=e162ce8c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7876,6 +7876,18 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_min_distances</span><span class="p">(</span><span class="n">pdb_path</span><span class="p">,</span> <span class="n">source_chain_id</span><span class="p">,</span> <span class="n">target_chain_ids</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Calculate the minimum distance between residues in a source chain and residues in target chains.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pdb_path (str): Path to the PDB file.</span>
+<span class="sd">        source_chain_id (str): ID of the source chain.</span>
+<span class="sd">        target_chain_ids (list): List of IDs for the target chains.</span>
+<span class="sd">        name (str): A custom name for the data source.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pandas.DataFrame: A DataFrame containing the minimum distances and related information.</span>
+<span class="sd">    """</span>
     <span class="c1"># Initialize the PDB parser and load the structure from the given pdb_path</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">PDB</span><span class="o">.</span><span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">structure</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">"structure_id"</span><span class="p">,</span> <span class="n">pdb_path</span><span class="p">)</span>
@@ -8200,20 +8212,6 @@ The number of overlapping residues is: 33
 
 [171, 205, 208, 258]
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=be481d85-8c5a-4a32-9b2a-dbbdae9470b6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
 </div>
 </div>
 </div>
