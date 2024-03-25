@@ -7524,7 +7524,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=f1dc028f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=4f24066b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7960,6 +7960,52 @@ Copied results/parsed_mapping_data/HENV32_escape_mean.csv to results/parsed_mapp
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fc8f76b3-c097-43df-a895-63b106c02f7a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">replace_b_factor</span><span class="p">(</span><span class="n">pdb_input</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+    <span class="n">pd_file</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd_file</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'effect'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="c1"># Convert DataFrame to dictionary for faster lookups</span>
+    <span class="n">site_to_effect</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'effect'</span><span class="p">]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+    <span class="c1"># Read the PDB file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pdb_input</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+    <span class="n">modified_lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"ATOM"</span><span class="p">):</span>
+            <span class="c1"># Extract relevant information</span>
+            <span class="n">residue_number</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">22</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">residue_number</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">(</span><span class="n">residue_number</span><span class="p">)</span>            <span class="c1"># Check if the site is in the DataFrame</span>
+            <span class="k">if</span> <span class="n">residue_number</span> <span class="ow">in</span> <span class="n">site_to_effect</span><span class="p">:</span>
+                <span class="c1"># Get the new beta factor value</span>
+                <span class="n">new_beta</span> <span class="o">=</span> <span class="n">site_to_effect</span><span class="p">[</span><span class="n">residue_number</span><span class="p">]</span>
+                <span class="c1"># Replace the beta factor in the line</span>
+                <span class="n">new_line</span> <span class="o">=</span> <span class="n">line</span><span class="p">[:</span><span class="mi">60</span><span class="p">]</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">new_beta</span><span class="si">:</span><span class="s2">6.2f</span><span class="si">}</span><span class="s2">"</span> <span class="o">+</span> <span class="n">line</span><span class="p">[</span><span class="mi">66</span><span class="p">:]</span>
+                <span class="n">modified_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_line</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_line</span> <span class="o">=</span> <span class="n">line</span><span class="p">[:</span><span class="mi">60</span><span class="p">]</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="mi">0</span><span class="si">:</span><span class="s1">6.2f</span><span class="si">}</span><span class="s1">'</span> <span class="o">+</span> <span class="n">line</span><span class="p">[</span><span class="mi">66</span><span class="p">:]</span>
+                <span class="n">modified_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_line</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">modified_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+    <span class="c1"># Write to a new PDB file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'modified_7txz_func.pdb'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">modified_lines</span><span class="p">)</span>
+
+<span class="n">pdb_file_path</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/crystal_structures/7txz.pdb'</span>
+<span class="c1">#replace_b_factor(pdb_file_path,E2_func_infile)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7a6082bb-b81b-4f3d-8ecd-ff4cb78e354d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
