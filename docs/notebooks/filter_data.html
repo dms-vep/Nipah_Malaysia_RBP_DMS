@@ -7482,9 +7482,20 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="filter_data.ipynb">filter_data.ipynb<a class="anchor-link" href="#filter_data.ipynb">¶</a></h1><h3 id="This-script-will-filter-entry,-binding,-and-escape-DMS-data-for-analysis">This script will filter entry, binding, and escape DMS data for analysis<a class="anchor-link" href="#This-script-will-filter-entry,-binding,-and-escape-DMS-data-for-analysis">¶</a></h3><ul>
+<h1 id="filter_data.ipynb">filter_data.ipynb<a class="anchor-link" href="#filter_data.ipynb">¶</a></h1><h3 id="This-script-will-filter-entry,-binding,-and-escape-DMS-data-for-analysis-based-on-parameters-set-in-nipah_config.yaml">This script will filter entry, binding, and escape DMS data for analysis based on parameters set in nipah_config.yaml<a class="anchor-link" href="#This-script-will-filter-entry,-binding,-and-escape-DMS-data-for-analysis-based-on-parameters-set-in-nipah_config.yaml">¶</a></h3><ul>
 <li>Written by Brendan Larsen</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0f7a071-f488-46f3-9116-022702f1347f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Papermill parameters</p>
 </div>
 </div>
 </div>
@@ -7538,7 +7549,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=2eafe0ef">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=b0e2486e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7605,13 +7616,8 @@ a.anchor-link {
 
 <span class="kn">import</span> <span class="nn">Bio.SeqIO</span>
 <span class="kn">import</span> <span class="nn">yaml</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'svg.fonttype'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'none'</span>
 
 <span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">PDB</span>
-<span class="kn">import</span> <span class="nn">dmslogo</span>
-<span class="kn">from</span> <span class="nn">dmslogo.colorschemes</span> <span class="kn">import</span> <span class="n">CBPALETTE</span>
-<span class="kn">from</span> <span class="nn">dmslogo.colorschemes</span> <span class="kn">import</span> <span class="n">ValueToColorMap</span>
 </pre></div>
 </div>
 </div>
@@ -7804,7 +7810,7 @@ a.anchor-link {
         <span class="s2">"E"</span><span class="p">:</span> <span class="s2">"negative"</span><span class="p">,</span> <span class="s2">"D"</span><span class="p">:</span> <span class="s2">"negative"</span><span class="p">,</span>
         <span class="s2">"S"</span><span class="p">:</span> <span class="s2">"hydrophilic"</span><span class="p">,</span> <span class="s2">"T"</span><span class="p">:</span> <span class="s2">"hydrophilic"</span><span class="p">,</span> <span class="s2">"N"</span><span class="p">:</span> <span class="s2">"hydrophilic"</span><span class="p">,</span> <span class="s2">"Q"</span><span class="p">:</span> <span class="s2">"hydrophilic"</span><span class="p">,</span>
         <span class="s2">"G"</span><span class="p">:</span> <span class="s2">"special"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">:</span> <span class="s2">"special"</span><span class="p">,</span> <span class="s2">"P"</span><span class="p">:</span> <span class="s2">"special"</span><span class="p">,</span>
-    <span class="p">}</span>
+<span class="p">}</span>
 
 <span class="n">codon_table</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"ATA"</span><span class="p">:</span> <span class="s2">"I"</span><span class="p">,</span>
@@ -8281,6 +8287,9 @@ nAH1.3
             <span class="s2">"Ephrin binding_median"</span><span class="p">:</span> <span class="s2">"binding_median"</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">)</span>
+    <span class="c1">#assign amino acid type to mutants</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'mutant_type'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'mutant'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">aa_property_mapping</span><span class="p">)</span>
+
     <span class="c1"># Select and reorder a subset of columns for the final DataFrame.</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
         <span class="p">[</span>
@@ -8294,6 +8303,7 @@ nAH1.3
             <span class="s2">"effect_std"</span><span class="p">,</span>
             <span class="s2">"times_seen_cell_entry"</span><span class="p">,</span>
             <span class="s2">"frac_models"</span><span class="p">,</span>
+            <span class="s1">'mutant_type'</span>
         <span class="p">]</span>
     <span class="p">]</span>
     <span class="c1"># Define a function to filter the DataFrame based on several criteria.</span>
