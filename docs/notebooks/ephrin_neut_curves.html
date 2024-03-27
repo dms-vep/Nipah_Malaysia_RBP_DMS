@@ -7482,7 +7482,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="ephrin_neut_curves">ephrin_neut_curves<a class="anchor-link" href="#ephrin_neut_curves">¶</a></h1><p>This notebook analyzes ephrin neutralization of Nipah pseudovirus</p>
+<h1 id="ephrin_neut_curves.ipynb">ephrin_neut_curves.ipynb<a class="anchor-link" href="#ephrin_neut_curves.ipynb">¶</a></h1><p>This notebook analyzes ephrin neutralization of Nipah pseudovirus</p>
 <ul>
 <li>Written by Brendan Larsen</li>
 </ul>
@@ -7522,7 +7522,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=9728cc4a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=782ab9e9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7558,6 +7558,17 @@ a.anchor-link {
 <span class="n">all_ephrin_neut_plots</span> <span class="o">=</span> <span class="s2">"results/images/all_ephrin_neut_plots.html"</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bc01338a-d5e6-49bf-bec9-12f77299988c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Import-packages">Import packages<a class="anchor-link" href="#Import-packages">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7608,6 +7619,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d81cf91a-06fd-4528-be01-5286f9ede8ef">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Setup-path">Setup path<a class="anchor-link" href="#Setup-path">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d9ca5661-c389-4145-85aa-413001de1dab">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7655,7 +7677,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="For-running-interactively">For running interactively<a class="anchor-link" href="#For-running-interactively">¶</a></h3>
+<h3 id="For-running-notebook-interactively">For running notebook interactively<a class="anchor-link" href="#For-running-notebook-interactively">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7739,7 +7761,7 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># First, load in the neut data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ephrin_binding_neuts_file</span><span class="p">)</span>
-
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 
 <span class="c1"># In this particular case I want to fix the names</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"virus"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
@@ -7761,6 +7783,80 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>serum</th>
+<th>virus</th>
+<th>replicate</th>
+<th>concentration</th>
+<th>fraction infectivity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>CHO-EFNB3</td>
+<td>E2-dimeric</td>
+<td>1</td>
+<td>0.098039</td>
+<td>0.00001</td>
+</tr>
+<tr>
+<th>1</th>
+<td>CHO-EFNB3</td>
+<td>E2-dimeric</td>
+<td>1</td>
+<td>0.032680</td>
+<td>0.00001</td>
+</tr>
+<tr>
+<th>2</th>
+<td>CHO-EFNB3</td>
+<td>E2-dimeric</td>
+<td>1</td>
+<td>0.010893</td>
+<td>0.00000</td>
+</tr>
+<tr>
+<th>3</th>
+<td>CHO-EFNB3</td>
+<td>E2-dimeric</td>
+<td>1</td>
+<td>0.003631</td>
+<td>0.00001</td>
+</tr>
+<tr>
+<th>4</th>
+<td>CHO-EFNB3</td>
+<td>E2-dimeric</td>
+<td>1</td>
+<td>0.001210</td>
+<td>0.00001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
@@ -7956,23 +8052,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-b3b2691efabf4e3ea9d8d8dc783116bd.vega-embed {
+  #altair-viz-4f54da468d67407491f65de49712f4ce.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-b3b2691efabf4e3ea9d8d8dc783116bd.vega-embed details,
-  #altair-viz-b3b2691efabf4e3ea9d8d8dc783116bd.vega-embed details summary {
+  #altair-viz-4f54da468d67407491f65de49712f4ce.vega-embed details,
+  #altair-viz-4f54da468d67407491f65de49712f4ce.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-b3b2691efabf4e3ea9d8d8dc783116bd"></div>
+<div id="altair-viz-4f54da468d67407491f65de49712f4ce"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b3b2691efabf4e3ea9d8d8dc783116bd") {
-      outputDiv = document.getElementById("altair-viz-b3b2691efabf4e3ea9d8d8dc783116bd");
+    if (outputDiv.id !== "altair-viz-4f54da468d67407491f65de49712f4ce") {
+      outputDiv = document.getElementById("altair-viz-4f54da468d67407491f65de49712f4ce");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8277,23 +8373,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-47a9d52ae13b4031bbf7a8709aafbe88.vega-embed {
+  #altair-viz-ad97b58c213d42b298c45aac00bc1e3d.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-47a9d52ae13b4031bbf7a8709aafbe88.vega-embed details,
-  #altair-viz-47a9d52ae13b4031bbf7a8709aafbe88.vega-embed details summary {
+  #altair-viz-ad97b58c213d42b298c45aac00bc1e3d.vega-embed details,
+  #altair-viz-ad97b58c213d42b298c45aac00bc1e3d.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-47a9d52ae13b4031bbf7a8709aafbe88"></div>
+<div id="altair-viz-ad97b58c213d42b298c45aac00bc1e3d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-47a9d52ae13b4031bbf7a8709aafbe88") {
-      outputDiv = document.getElementById("altair-viz-47a9d52ae13b4031bbf7a8709aafbe88");
+    if (outputDiv.id !== "altair-viz-ad97b58c213d42b298c45aac00bc1e3d") {
+      outputDiv = document.getElementById("altair-viz-ad97b58c213d42b298c45aac00bc1e3d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8347,23 +8443,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-70109821bad74392b82c34898056065e.vega-embed {
+  #altair-viz-77fdbf2ac423480da4be7f5d985188d0.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-70109821bad74392b82c34898056065e.vega-embed details,
-  #altair-viz-70109821bad74392b82c34898056065e.vega-embed details summary {
+  #altair-viz-77fdbf2ac423480da4be7f5d985188d0.vega-embed details,
+  #altair-viz-77fdbf2ac423480da4be7f5d985188d0.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-70109821bad74392b82c34898056065e"></div>
+<div id="altair-viz-77fdbf2ac423480da4be7f5d985188d0"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-70109821bad74392b82c34898056065e") {
-      outputDiv = document.getElementById("altair-viz-70109821bad74392b82c34898056065e");
+    if (outputDiv.id !== "altair-viz-77fdbf2ac423480da4be7f5d985188d0") {
+      outputDiv = document.getElementById("altair-viz-77fdbf2ac423480da4be7f5d985188d0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8761,23 +8857,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-bbbdb1d965454e1e946b960af81b88b2.vega-embed {
+  #altair-viz-fb0ea22442ee4152923baad25b26eb90.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-bbbdb1d965454e1e946b960af81b88b2.vega-embed details,
-  #altair-viz-bbbdb1d965454e1e946b960af81b88b2.vega-embed details summary {
+  #altair-viz-fb0ea22442ee4152923baad25b26eb90.vega-embed details,
+  #altair-viz-fb0ea22442ee4152923baad25b26eb90.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-bbbdb1d965454e1e946b960af81b88b2"></div>
+<div id="altair-viz-fb0ea22442ee4152923baad25b26eb90"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-bbbdb1d965454e1e946b960af81b88b2") {
-      outputDiv = document.getElementById("altair-viz-bbbdb1d965454e1e946b960af81b88b2");
+    if (outputDiv.id !== "altair-viz-fb0ea22442ee4152923baad25b26eb90") {
+      outputDiv = document.getElementById("altair-viz-fb0ea22442ee4152923baad25b26eb90");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8838,23 +8934,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-2d049f38c3e94dda9d4da0e998e45018.vega-embed {
+  #altair-viz-15ac51b25f8a4af8a2cbbb51e8662894.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-2d049f38c3e94dda9d4da0e998e45018.vega-embed details,
-  #altair-viz-2d049f38c3e94dda9d4da0e998e45018.vega-embed details summary {
+  #altair-viz-15ac51b25f8a4af8a2cbbb51e8662894.vega-embed details,
+  #altair-viz-15ac51b25f8a4af8a2cbbb51e8662894.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-2d049f38c3e94dda9d4da0e998e45018"></div>
+<div id="altair-viz-15ac51b25f8a4af8a2cbbb51e8662894"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2d049f38c3e94dda9d4da0e998e45018") {
-      outputDiv = document.getElementById("altair-viz-2d049f38c3e94dda9d4da0e998e45018");
+    if (outputDiv.id !== "altair-viz-15ac51b25f8a4af8a2cbbb51e8662894") {
+      outputDiv = document.getElementById("altair-viz-15ac51b25f8a4af8a2cbbb51e8662894");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8908,23 +9004,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-76e139c919514784bb9e479f4ecd4b86.vega-embed {
+  #altair-viz-63c7fcd46de44463a3b9ac1ad958c7cf.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-76e139c919514784bb9e479f4ecd4b86.vega-embed details,
-  #altair-viz-76e139c919514784bb9e479f4ecd4b86.vega-embed details summary {
+  #altair-viz-63c7fcd46de44463a3b9ac1ad958c7cf.vega-embed details,
+  #altair-viz-63c7fcd46de44463a3b9ac1ad958c7cf.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-76e139c919514784bb9e479f4ecd4b86"></div>
+<div id="altair-viz-63c7fcd46de44463a3b9ac1ad958c7cf"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-76e139c919514784bb9e479f4ecd4b86") {
-      outputDiv = document.getElementById("altair-viz-76e139c919514784bb9e479f4ecd4b86");
+    if (outputDiv.id !== "altair-viz-63c7fcd46de44463a3b9ac1ad958c7cf") {
+      outputDiv = document.getElementById("altair-viz-63c7fcd46de44463a3b9ac1ad958c7cf");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

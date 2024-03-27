@@ -44,4 +44,5 @@ The format is explained within the file.
 The format is explained within the file.
 
 ## Input data for custom analyses
-This directory contains input data for custom jupyter notebooks used in the analyses of nipah RBP DMS data.
+[./custom_analyses_data](custom_analyses_data)
+This directory contains input data for custom jupyter notebooks used in the analyses of nipah RBP DMS data and supplemental data for paper. See README in that directory for more information.
