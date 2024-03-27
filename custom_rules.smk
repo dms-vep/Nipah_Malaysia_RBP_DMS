@@ -129,8 +129,8 @@ rule cell_entry_validations:
     input:
         validation_file_E2="data/custom_analyses_data/experimental_data/functional_validations_EFNB2.csv",
         validation_file_E3="data/custom_analyses_data/experimental_data/functional_validations_EFNB3.csv",
-        func_scores_E2_file="results/func_effects/averages/CHO_EFNB2_low_func_effects.csv",
-        func_scores_E3_file="results/func_effects/averages/CHO_EFNB3_low_func_effects.csv",
+        func_scores_E2_file="results/func_effects/averages/CHO_bEFNB2_func_effects.csv",
+        func_scores_E3_file="results/func_effects/averages/CHO_bEFNB3_func_effects.csv",
         nb="notebooks/cell_entry_validations.ipynb",
         nipah_config="nipah_config.yaml",
         altair_config="data/custom_analyses_data/theme.py",
@@ -166,8 +166,8 @@ rule ephrin_neuts:
         ephrin_binding_neuts_file="data/custom_analyses_data/experimental_data/bat_ephrin_neuts.csv",
         ephrin_validation_curves="data/custom_analyses_data/experimental_data/binding_single_mutant_validations.csv",
         validation_ic50s_file="data/custom_analyses_data/experimental_data/receptor_IC_validations.csv",
-        e2_monomeric_binding_file="results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv",
-        e3_dimeric_binding_file="results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv",
+        e2_monomeric_binding_file="results/receptor_affinity/averages/bEFNB2_monomeric_mut_effect.csv",
+        e3_dimeric_binding_file="results/receptor_affinity/averages/bEFNB3_dimeric_mut_effect.csv",
         nb="notebooks/ephrin_neut_curves.ipynb",
         nipah_config="nipah_config.yaml",
         altair_config="data/custom_analyses_data/theme.py",
@@ -457,11 +457,11 @@ rule filter_data:
         m102_file="results/antibody_escape/averages/m102.4_mut_effect.csv",
         nAH1_file="results/antibody_escape/averages/nAH1.3_mut_effect.csv",
         
-        e2_entry_file = 'results/func_effects/averages/CHO_EFNB2_low_func_effects.csv',
-        e3_entry_file = 'results/func_effects/averages/CHO_EFNB3_low_func_effects.csv',
+        e2_entry_file = 'results/func_effects/averages/CHO_bEFNB2_func_effects.csv',
+        e3_entry_file = 'results/func_effects/averages/CHO_bEFNB3_func_effects.csv',
 
-        e2_binding_file = 'results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv',
-        e3_binding_file = 'results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv'
+        e2_binding_file = 'results/receptor_affinity/averages/bEFNB2_monomeric_mut_effect.csv',
+        e3_binding_file = 'results/receptor_affinity/averages/bEFNB3_dimeric_mut_effect.csv'
     output:
         nb="results/notebooks/filter_data.ipynb",
 
@@ -541,13 +541,11 @@ rule analyze_escape_data:
     output:
         nb="results/notebooks/analyze_escape_data.ipynb",
         escape_bubble_plot="results/images/escape_bubble_plot.html",
-        #bubble_1_mut_plot="results/images/escape_bubble_1_mut_plot.html",
         overlap_escape_plot="results/images/overlap_escape_plot.html",
         mab_line_escape_plot="results/images/mab_line_escape_plot.html",
         mab_plot_top="results/images/mab_plot_top.html",
         mab_plot_all="results/images/mab_plot_all.html",
         aggregate_mab_and_binding="results/images/aggregate_mab_and_binding.html",
-        #binding_vs_escape='results/images/binding_vs_escape.html',
         combined_evol_sites_escape="results/images/combined_evol_sites_escape.html",
         aggregate_mab_and_niv_polymorphism='results/images/aggregate_mab_and_niv_polymorphism.html'
     params:

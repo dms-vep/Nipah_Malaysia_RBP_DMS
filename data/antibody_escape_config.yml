@@ -93,11 +93,9 @@ polyclonal_params_default: &polyclonal_params_default
 escape_plot_kwargs_default: &escape_plot_kwargs_default
   alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
   addtl_slider_stats:
-    times_seen: 3.5
+    times_seen: 2
   addtl_tooltip_stats:
     - sequential_site
-  #heatmap_min_fixed: -2
-  #heatmap_max_fixed: 2
   heatmap_max_at_least: 1
   heatmap_min_at_least: -1
   init_floor_at_zero: false
@@ -112,11 +110,11 @@ escape_plot_kwargs_default: &escape_plot_kwargs_default
 #   - `init`: initial value of slider
 plot_hide_stats_default: &plot_hide_stats_default
   functional effect:
-    csv: results/func_effects/averages/CHO_EFNB3_low_func_effects.csv
+    csv: results/func_effects/averages/CHO_bEFNB3_func_effects.csv
     csv_col: effect
     init: -2
     min_filters:
-      times_seen: 3
+      times_seen: 2
 
 # define the antibody selections
 antibody_selections:
@@ -463,82 +461,7 @@ antibody_selections:
       concentration: 1.0
       use_in_fit: false
   # ---------------------------------------------------------------------------------
-  # minibinder
-  LibB-230815-minibinder:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230815-CHO-C6-nac
-    antibody_samples:
-     LibB-230815-CHO-C6-minibinder-0.6: #IC 50
-      concentration: 0.6
-      use_in_fit: true
-     LibB-230815-CHO-C6-minibinder-1.0: #IC 55
-      concentration: 1
-      use_in_fit: true
 
-  LibA-230812-minibinder:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-230818-CHO-C6-nac
-    antibody_samples:
-     LibA-230818-CHO-C6-minibinder-2.5: #IC 75
-      concentration: 2.5
-      use_in_fit: true
-     LibA-230818-CHO-C6-minibinder-10.0: #IC 99.9 but variant counts looks good
-      concentration: 10
-      use_in_fit: true
-      
-  LibB-230907-minibinder:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibB-230907-CHO-C6-nac
-    antibody_samples:
-     LibB-230907-CHO-C6-minibinder-0.5: 
-      concentration: 0.5
-      use_in_fit: true
-     LibB-230907-CHO-C6-minibinder-2.0: 
-      concentration: 2.0
-      use_in_fit: true
-     LibB-230907-CHO-C6-minibinder-4.0: 
-      concentration: 4.0
-      use_in_fit: true
-     LibB-230907-CHO-C6-minibinder-8.0: 
-      concentration: 8.0
-      use_in_fit: true
-##########################
-#Sera Selections
-  LibA-231019-Sera72:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: LibA-231019-CHO-C6-nac
-    antibody_samples:
-     LibA-231019-CHO-EFNB3-C6-Sera72-50: 
-      concentration: 0.0121
-      use_in_fit: false
-     LibA-231019-CHO-EFNB3-C6-Sera72-10: 
-      concentration: 0.0025
-      use_in_fit: false
-     LibA-231019-CHO-EFNB3-C6-Sera72-5: 
-      concentration: 0.00125
-      use_in_fit: true
-     LibA-231019-CHO-EFNB3-C6-Sera72-1: 
-      concentration: 0.00025
-      use_in_fit: true
-     LibA-231019-CHO-EFNB3-C6-Sera72-05: 
-      concentration: 0.00012
-      use_in_fit: true
 
 # Note that for soluble receptor affinity selections, you define selection experiments
 # exactly analogously to `antibody_selections` in `receptor_selections`, using `antibody`
@@ -559,25 +482,25 @@ receptor_polyclonal_params_default: &receptor_polyclonal_params_default
 # default stats to hide cells on plot of receptor affinity
 receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
   functional effect:
-    csv: results/func_effects/averages/CHO_EFNB3_low_func_effects.csv
+    csv: results/func_effects/averages/CHO_bEFNB3_func_effects.csv
     csv_col: effect
     init: -1.5
     min_filters:
-      times_seen: 3
+      times_seen: 2
       
 # default stats to hide cells on plot of receptor affinity
 receptor_plot_hide_stats_default_E2: &receptor_plot_hide_stats_default_E2
   functional effect:
-    csv: results/func_effects/averages/CHO_EFNB2_low_func_effects.csv
+    csv: results/func_effects/averages/CHO_bEFNB2_func_effects.csv
     csv_col: effect
     init: -1.5
     min_filters:
-      times_seen: 3
+      times_seen: 2
 
 # Define the receptor selections
 receptor_selections:
   # ---------------------------------------------------------------------------------
-  # dimeric bat E2
+  #bEFNB2 selections
   LibA-230509-293T-E2-BatE2-dimeric:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
@@ -823,7 +746,7 @@ receptor_selections:
 
 
   # ---------------------------------------------------------------------------------
-  # bat E3
+  # bEFNB3 selections
   LibA-230818-EFNB3-dimeric:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
@@ -938,8 +861,8 @@ receptor_selections:
 avg_escape_plot_kwargs_default: &avg_escape_plot_kwargs_default
   alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C']
   addtl_slider_stats:
-    times_seen: 3
-    escape_std: 2
+    times_seen: 2
+    escape_std: 3
   addtl_tooltip_stats:
     - sequential_site
   heatmap_max_at_least: 1
@@ -961,8 +884,8 @@ avg_antibody_escape_default: &avg_antibody_escape_default
     <<: *avg_escape_plot_kwargs_default
     avg_type: mean
     addtl_slider_stats:
-      times_seen: 3
-      escape_std: 2
+      times_seen: 2
+      escape_std: 3
     addtl_slider_stats_as_max: [escape_std]
     per_model_tooltip: true
   plot_hide_stats: *plot_hide_stats_default
@@ -985,7 +908,6 @@ avg_antibody_escape:
     selections:
       - LibB-230720-m102.4
       - LibA-230725-m102.4
-      #- LibA-231116-m102.4
 
   nAH1.3:
     <<: *avg_antibody_escape_default
@@ -1000,7 +922,6 @@ avg_antibody_escape:
     title: Escape map for antibody HENV26
     selections:
       - LibA-231024-HENV26
-      #- LibB-230815-HENV26 
       - LibB-230818-HENV26
       - LibB-230907-HENV26
 
@@ -1029,14 +950,6 @@ avg_antibody_escape:
       - LibB-230818-HENV117
       - LibB-230907-HENV117
 
-#  minibinder:
-#    <<: *avg_antibody_escape_default
-#    title: Escape map for minibinder from David Baker lab
-#    selections:
-#      #- LibB-230815-minibinder
-#      - LibA-230812-minibinder
-#      - LibB-230907-minibinder
-
 # ------------------------------------------------------------------------------
 # Define the receptor affinity experiments to average
 avg_receptor_affinity_default: &avg_receptor_affinity_default
@@ -1045,49 +958,39 @@ avg_receptor_affinity_default: &avg_receptor_affinity_default
 
 
 avg_receptor_affinity:
-  EFNB2_monomeric:
+  bEFNB2_monomeric:
     <<: *avg_receptor_affinity_default
-    title: Affinity for monomeric EFNB2
+    title: Effects of RBP mutations on binding to monomeric bEFNB2
     plot_hide_stats: *receptor_plot_hide_stats_default_E2
     selections:
       - LibA-231112-EFNB2-monomeric
       - LibB-231108-EFNB2-monomeric
-      #- LibA-231207-EFNB2-monomeric
       - LibB-231222-BA6-CHO-EFNB2-monomeric
       - LibA-231222-BA6-CHO-EFNB2-monomeric
 
-  EFNB2_dimeric:
-    <<: *avg_receptor_affinity_default
-    title: Affinity for dimeric EFNB2
-    plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    selections:
-      #- LibA-230916-EFNB2-dimeric
-      #- LibB-230907-EFNB2-dimeric
-      - LibB-230731-EFNB2-dimeric
-      #- LibA-231024-EFNB2-dimeric
-      - LibB-231105-EFNB2-dimeric
-
-  EFNB2_all:
-    <<: *avg_receptor_affinity_default
-    title: Affinity for all EFNB2
-    plot_hide_stats: *receptor_plot_hide_stats_default_E2
-    selections:
-      #- LibA-230509-293T-E2-BatE2-dimeric
-      #- LibA-230916-EFNB2-dimeric
-      - LibA-231112-EFNB2-monomeric
-      #- LibB-230907-EFNB2-dimeric
-      #- LibB-230731-EFNB2-dimeric
-      #- LibA-231024-EFNB2-dimeric
-      - LibB-231105-EFNB2-dimeric
-      - LibB-231108-EFNB2-monomeric
-      #- LibA-231207-EFNB2-monomeric
-      - LibB-231222-BA6-CHO-EFNB2-monomeric
-      - LibA-231222-BA6-CHO-EFNB2-monomeric
+#  bEFNB2_dimeric:
+#    <<: *avg_receptor_affinity_default
+#    title: Affinity for dimeric EFNB2
+#    plot_hide_stats: *receptor_plot_hide_stats_default_E2
+#    selections:
+#      - LibB-230731-EFNB2-dimeric
+#      - LibB-231105-EFNB2-dimeric
+#
+#  bEFNB2_all:
+#    <<: *avg_receptor_affinity_default
+#    title: Affinity for all EFNB2
+#    plot_hide_stats: *receptor_plot_hide_stats_default_E2
+#    selections:
+#      - LibA-231112-EFNB2-monomeric
+#      - LibB-231105-EFNB2-dimeric
+#      - LibB-231108-EFNB2-monomeric
+#      - LibB-231222-BA6-CHO-EFNB2-monomeric
+#      - LibA-231222-BA6-CHO-EFNB2-monomeric
 
 
-  EFNB3_dimeric:
+  bEFNB3_dimeric:
     <<: *avg_receptor_affinity_default
-    title: Affinity for dimeric EFNB3
+    title: Effects of RBP mutations on binding to dimeric bEFNB3
     plot_hide_stats: *receptor_plot_hide_stats_default
     selections:
       - LibA-230825-EFNB3-dimeric

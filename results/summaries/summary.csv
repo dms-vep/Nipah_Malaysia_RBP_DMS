@@ -1,4 +1,4 @@
-site,wildtype,mutant,antibodies escape,E2_entry,E3_entry,EphrinB2 binding,EphrinB3 binding,sequential_site,region
+site,wildtype,mutant,antibodies escape,CHO_bEFNB2_entry,CHO_bEFNB3_entry,EphrinB2 binding,EphrinB3 binding,sequential_site,region
 71,Q,C,0.04833,-1.75,-0.7227,,-0.1332,1,Stalk
 71,Q,D,-0.04058,-1.164,-0.3884,-0.08074,-0.2937,1,Stalk
 71,Q,E,-0.0374,-1.255,-0.2482,0.3017,-0.3527,1,Stalk

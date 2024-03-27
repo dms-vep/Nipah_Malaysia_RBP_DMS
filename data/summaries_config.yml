@@ -27,8 +27,8 @@ summary:
         nAH1.3: nAH1_3
 
   func_effects:  # effects of mutations on function
-    E2_entry:  # name of functional selection
-      condition: CHO_EFNB2_low  # condition specified in `avg_func_effects`
+    CHO_bEFNB2_entry:  # name of functional selection
+      condition: CHO_bEFNB2  # condition specified in `avg_func_effects`
       effect_type: func_effects  # "func_effects" or "latent_effects"
       positive_color: "#BDE4DE"  
       negative_color: "#704108"  
@@ -36,8 +36,8 @@ summary:
       min_at_least: -2
       init_min_value: -3  # initial min value in slider
       
-    E3_entry:  # name of functional selection
-      condition: CHO_EFNB3_low  # condition specified in `avg_func_effects`
+    CHO_bEFNB3_entry:  # name of functional selection
+      condition: CHO_bEFNB3  # condition specified in `avg_func_effects`
       effect_type: func_effects  # "func_effects" or "latent_effects"
       positive_color: "#BDE4DE"  
       negative_color: "#704108"  
@@ -48,7 +48,7 @@ summary:
   other_assays:  # other assays that we show, empty dict if no assays being shown
     receptor_affinity:  # assay type
       EphrinB2 binding:  # name of particular assay condition
-        condition: EFNB2_monomeric  # condition specified in `avg_escape`
+        condition: bEFNB2_monomeric  # condition specified in `avg_escape`
         stat: Ephrin binding_median  # statisti used for mutation effects
         positive_color: "#0072B2"  # dark blue
         negative_color: "#D55E00"  # red
@@ -57,7 +57,7 @@ summary:
         init_min_value: -10  # initial min value in slider
 
       EphrinB3 binding:  # name of particular assay condition
-        condition: EFNB3_dimeric  # condition specified in `avg_escape`
+        condition: bEFNB3_dimeric  # condition specified in `avg_escape`
         stat: Ephrin binding_median  # statisti used for mutation effects
         positive_color: "#0072B2"  # dark blue
         negative_color: "#D55E00"  # red
