@@ -7482,7 +7482,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="mapping_site_level.ipynb">mapping_site_level.ipynb<a class="anchor-link" href="#mapping_site_level.ipynb">¶</a></h1><h3 id="This-notebook-takes-filtered-data-from-filter_data.ipynb,-and-parses-it-to-make-input-files-for-mapping-in-ChimeraX">This notebook takes filtered data from filter_data.ipynb, and parses it to make input files for mapping in ChimeraX<a class="anchor-link" href="#This-notebook-takes-filtered-data-from-filter_data.ipynb,-and-parses-it-to-make-input-files-for-mapping-in-ChimeraX">¶</a></h3><ul>
+<h1 id="mapping_site_level.ipynb">mapping_site_level.ipynb<a class="anchor-link" href="#mapping_site_level.ipynb">¶</a></h1><h3 id="This-notebook-takes-filtered-data-from-filter_data.ipynb,-and-parses-it-to-make-.defattr-input-files-for-mapping-in-ChimeraX">This notebook takes filtered data from filter_data.ipynb, and parses it to make .defattr input files for mapping in ChimeraX<a class="anchor-link" href="#This-notebook-takes-filtered-data-from-filter_data.ipynb,-and-parses-it-to-make-.defattr-input-files-for-mapping-in-ChimeraX">¶</a></h3><ul>
 <li>Written by Brendan Larsen</li>
 </ul>
 </div>
@@ -7524,7 +7524,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=2c0464a3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=53e47d42">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7558,6 +7558,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f26fab97-aefb-42d4-916e-5552655fd5d0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Import-packages">Import packages<a class="anchor-link" href="#Import-packages">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5eb65438-99d7-4a24-8d1c-be84c3938362">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7584,6 +7595,17 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">subprocess</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ce5ee49a-7e19-4a74-bac2-c8b3fb783edd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Set-workiing-directory">Set workiing directory<a class="anchor-link" href="#Set-workiing-directory">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7695,13 +7717,13 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">aggregate_entry_mean</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">outfile</span><span class="p">):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
-    <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'effect'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-    <span class="c1">#test_df = test_df.round(2)</span>
+    <span class="n">tmp_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'effect'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
     
-    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'effect'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'effect'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'effect'</span><span class="p">]</span>
+    
+    <span class="c1"># Modify the dataframe to prepend a tab character and format as strings</span>
+    <span class="n">tmp_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">tmp_df</span><span class="p">[</span><span class="s1">'effect'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_df</span><span class="p">[</span><span class="s1">'effect'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">tmp_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">tmp_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">tmp_df</span><span class="p">[</span><span class="s1">'effect'</span><span class="p">]</span>
     
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="c1"># Write header lines</span>
@@ -7709,10 +7731,11 @@ a.anchor-link {
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
-    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
-    <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
+    <span class="c1"># Append the tab separated dataframe to the file without quotes and with an escape character</span>
+    <span class="n">tmp_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
+<span class="c1"># Call function above</span>
 <span class="n">aggregate_entry_mean</span><span class="p">(</span><span class="n">E2_func_infile</span><span class="p">,</span><span class="s1">'E2_entry_mean'</span><span class="p">,</span><span class="n">E2_func_output</span><span class="p">)</span>
 <span class="n">aggregate_entry_mean</span><span class="p">(</span><span class="n">E3_func_infile</span><span class="p">,</span><span class="s1">'E3_entry_mean'</span><span class="p">,</span><span class="n">E3_func_output</span><span class="p">)</span>
 </pre></div>
@@ -7743,7 +7766,7 @@ a.anchor-link {
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
     <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'binding_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
+    <span class="c1"># Modify the dataframe to prepend a tab character and format as strings</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_mean'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'binding_mean'</span><span class="p">]</span>
@@ -7754,10 +7777,11 @@ a.anchor-link {
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
-    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
+    <span class="c1"># Append the tab separated dataframe to the file without quotes and with an escape character</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
+<span class="c1"># Call function above</span>
 <span class="n">aggregate_binding</span><span class="p">(</span><span class="n">E2_binding_infile</span><span class="p">,</span><span class="s1">'E2_binding_mean'</span><span class="p">,</span><span class="n">E2_binding_output</span><span class="p">)</span>
 <span class="n">aggregate_binding</span><span class="p">(</span><span class="n">E3_binding_infile</span><span class="p">,</span><span class="s1">'E3_binding_mean'</span><span class="p">,</span><span class="n">E3_binding_output</span><span class="p">)</span>
 </pre></div>
@@ -7789,7 +7813,7 @@ a.anchor-link {
     <span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
     <span class="n">test_df</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     
-    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
+    <span class="c1"># Modify the dataframe to prepend a tab character and format as strings</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span>
@@ -7800,10 +7824,11 @@ a.anchor-link {
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
-    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
+    <span class="c1"># Append the tab separated dataframe to the file without quotes and with an escape character</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
+<span class="c1"># Call function above</span>
 <span class="n">aggregate_escape</span><span class="p">(</span><span class="n">HENV26_infile</span><span class="p">,</span><span class="s1">'HENV26_escape_mean'</span><span class="p">,</span><span class="n">HENV26_output</span><span class="p">)</span>
 <span class="n">aggregate_escape</span><span class="p">(</span><span class="n">HENV32_infile</span><span class="p">,</span><span class="s1">'HENV32_escape_mean'</span><span class="p">,</span><span class="n">HENV32_output</span><span class="p">)</span>
 <span class="n">aggregate_escape</span><span class="p">(</span><span class="n">HENV117_infile</span><span class="p">,</span><span class="s1">'HENV117_escape_mean'</span><span class="p">,</span><span class="n">HENV117_output</span><span class="p">)</span>
@@ -7842,7 +7867,7 @@ a.anchor-link {
     <span class="n">tot_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">df3</span><span class="p">])</span>
     <span class="n">test_df</span> <span class="o">=</span> <span class="n">tot_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
+    <span class="c1"># Modify the dataframe to prepend a tab character and format as strings</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span>
@@ -7853,7 +7878,7 @@ a.anchor-link {
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
-    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
+    <span class="c1"># Append the tab separated dataframe to the file without quotes and with an escape character</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -7868,7 +7893,7 @@ a.anchor-link {
     <span class="n">tot_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">])</span>
     <span class="n">test_df</span> <span class="o">=</span> <span class="n">tot_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'site'</span><span class="p">)[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-    <span class="c1"># Step 1: Modify the dataframe to prepend a tab character and format as strings</span>
+    <span class="c1"># Modify the dataframe to prepend a tab character and format as strings</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="s1">':'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'site'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\t</span><span class="s1">'</span> <span class="o">+</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">'escape_mean'</span><span class="p">]</span>
@@ -7879,7 +7904,7 @@ a.anchor-link {
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'match mode: any</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'recipient: residues</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
-    <span class="c1"># Step 4: Append the tab separated dataframe to the file without quotes and with an escape character</span>
+    <span class="c1"># Append the tab separated dataframe to the file without quotes and with an escape character</span>
     <span class="n">test_df</span><span class="p">[</span><span class="s1">'formatted'</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sed'</span><span class="p">,</span> <span class="s1">'-i'</span><span class="p">,</span> <span class="s1">'s/"//g'</span><span class="p">,</span> <span class="n">outfile</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -7926,10 +7951,6 @@ a.anchor-link {
         <span class="c1"># Copy the content of the .csv file to the new .defattr file</span>
         <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">src_file</span><span class="p">,</span> <span class="n">dest_file</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Copied </span><span class="si">{</span><span class="n">src_file</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">dest_file</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        
-        <span class="c1"># Remove the original .csv file</span>
-        <span class="c1">#os.remove(src_file)</span>
-        <span class="c1">#print(f"Removed {src_file}")</span>
 </pre></div>
 </div>
 </div>
@@ -7959,6 +7980,17 @@ Copied results/parsed_mapping_data/HENV32_escape_mean.csv to results/parsed_mapp
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9c1e2d0f-aebd-49ee-ac79-879ce771156a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Code-below-is-not-currently-used,-it-replaces-the-b-factor-in-pdb-files-for-mapping-if-that-is-desired">Code below is not currently used, it replaces the b factor in pdb files for mapping if that is desired<a class="anchor-link" href="#Code-below-is-not-currently-used,-it-replaces-the-b-factor-in-pdb-files-for-mapping-if-that-is-desired">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fc8f76b3-c097-43df-a895-63b106c02f7a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7981,7 +8013,7 @@ Copied results/parsed_mapping_data/HENV32_escape_mean.csv to results/parsed_mapp
         <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"ATOM"</span><span class="p">):</span>
             <span class="c1"># Extract relevant information</span>
             <span class="n">residue_number</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">22</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="n">residue_number</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">(</span><span class="n">residue_number</span><span class="p">)</span>            <span class="c1"># Check if the site is in the DataFrame</span>
+            <span class="n">residue_number</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">(</span><span class="n">residue_number</span><span class="p">)</span>            
             <span class="k">if</span> <span class="n">residue_number</span> <span class="ow">in</span> <span class="n">site_to_effect</span><span class="p">:</span>
                 <span class="c1"># Get the new beta factor value</span>
                 <span class="n">new_beta</span> <span class="o">=</span> <span class="n">site_to_effect</span><span class="p">[</span><span class="n">residue_number</span><span class="p">]</span>

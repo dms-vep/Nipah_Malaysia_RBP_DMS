@@ -21,8 +21,8 @@ func_std_cutoff: 1
 percent_selections: 0.5 #mutants must be present in at least 50% of selections
 
 ### Binding filtering parameters
-min_times_seen_binding: 2
-max_binding_std: 3
+min_times_seen_binding: 2.5 #2
+max_binding_std: 2 #3
 min_func_effect_for_binding: -1.5
 
 ### Antibody escape filtering parameters

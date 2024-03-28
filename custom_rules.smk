@@ -59,12 +59,12 @@ rule analyze_nipah_RBP_binding:
     output:
         nb="results/notebooks/ephrin_binding.ipynb",
         entry_binding_combined_corr_plot="results/images/entry_binding_combined_corr_plot.html",
-        entry_binding_combined_corr_plot_agg="results/images/entry_binding_combined_corr_plot_agg.html",
+        #entry_binding_combined_corr_plot_agg="results/images/entry_binding_combined_corr_plot_agg.html",
         E2_E3_correlation="results/images/E2_E3_correlation.html",
         E2_E3_correlation_site="results/images/E2_E3_correlation_site.html",
         binding_by_site_plot="results/images/binding_by_site_plot.html",
         entry_binding_corr_heatmap="results/images/entry_binding_corr_heatmap.html",
-        binding_corr_heatmap="results/images/binding_corr_heatmap.html",
+        #binding_corr_heatmap="results/images/binding_corr_heatmap.html",
         binding_region_bubble_plot="results/images/binding_region_bubble_plot.html",
         combined_contact_ranked_bar_output='results/images/combined_contact_ranked_bar_output.html',
     params:
@@ -75,12 +75,12 @@ rule analyze_nipah_RBP_binding:
                 "binding_E2_file": input.binding_E2_file,
                 "binding_E3_file": input.binding_E3_file,
                 "entry_binding_combined_corr_plot": output.entry_binding_combined_corr_plot,
-                "entry_binding_combined_corr_plot_agg": output.entry_binding_combined_corr_plot_agg,
+                #"entry_binding_combined_corr_plot_agg": output.entry_binding_combined_corr_plot_agg,
                 "E2_E3_correlation": output.E2_E3_correlation,
                 "E2_E3_correlation_site": output.E2_E3_correlation_site,
                 "binding_by_site_plot": output.binding_by_site_plot,
                 "entry_binding_corr_heatmap": output.entry_binding_corr_heatmap,
-                "binding_corr_heatmap": output.binding_corr_heatmap,
+                #"binding_corr_heatmap": output.binding_corr_heatmap,
                 "binding_region_bubble_plot": output.binding_region_bubble_plot,
                 "combined_contact_ranked_bar_output": output.combined_contact_ranked_bar_output,
             }
@@ -691,6 +691,7 @@ rule interactive_figures:
         entry_by_site_plot_e2_output="results/images/entry_by_site_plot_e2.html",
         entry_by_site_plot_e3_output="results/images/entry_by_site_plot_e3.html",
         entry_by_site_plot_e2_bar_plot="results/images/entry_by_site_plot_e2_bar_plot.html",
+        binding_letter_plot="results/images/binding_letter_plot.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -710,6 +711,7 @@ rule interactive_figures:
                 "entry_by_site_plot_e2_output": output.entry_by_site_plot_e2_output,
                 "entry_by_site_plot_e3_output": output.entry_by_site_plot_e3_output,
                 "entry_by_site_plot_e2_bar_plot": output.entry_by_site_plot_e2_bar_plot,
+                "binding_letter_plot": output.binding_letter_plot,
                 
             }
         ),
@@ -723,77 +725,61 @@ rule interactive_figures:
 docs["Additional files and charts"] = {
     "Cell Entry": {
         "Cell Entry Analysis Notebook": rules.analyze_nipah_RBP_entry.output.nb,
-        "Ranked bar plots by region": rules.analyze_nipah_RBP_entry.output.combined_region_barplot_output,
+        "Cell Entry by RBP Region": rules.analyze_nipah_RBP_entry.output.entry_region_boxplot_plot,
+        "Ranked mean entry by region": rules.analyze_nipah_RBP_entry.output.combined_region_barplot_output,
         "Entry Heatmaps": {
-            "EFNB2 Entry Heatmap": rules.make_heatmaps.output.E2_entry_heatmap,
-            "EFNB3 Entry Heatmap": rules.make_heatmaps.output.E3_entry_heatmap,
+            "CHO-bEFNB2 Entry Heatmap": rules.make_heatmaps.output.E2_entry_heatmap,
+            "CHO-bEFNB3 Entry Heatmap": rules.make_heatmaps.output.E3_entry_heatmap,
         },
-        "Plots of Entry Scores by RBP Region": rules.analyze_nipah_RBP_entry.output.entry_region_boxplot_plot,
-        "Entry Correlations for CHO-bEFNB2 and CHO-bEFNB3": {
+        "Entry Correlations between CHO-bEFNB2 and CHO-bEFNB3": {
             "Aggregate CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_corr_plot,
             "All Mutant CHO-EFNB2/EFNB3 entry correlation": rules.analyze_nipah_RBP_entry.output.E2_E3_entry_all_muts_plot,
         },
-        #"Filtered Entry CSVs": {
-            #"EFNB2 entry filtered csv": rules.analyze_nipah_RBP_entry.output.filtered_E2_data,
-            #"EFNB3 entry filtered csv": rules.analyze_nipah_RBP_entry.output.filtered_E3_data,
-        #},
-        "Cell Entry Validation Notebook": rules.cell_entry_validations.output.nb,
-        "Cell Entry Validation Plots": {
-            "Cell entry validation in CHO-EFNB2 cells": rules.cell_entry_validations.output.func_score_E2_plot,
-            "Cell entry validation in CHO-EFNB3 cells": rules.cell_entry_validations.output.func_score_E3_plot,
+        "Cell Entry Validations": {
+            "Cell Entry Validation Notebook": rules.cell_entry_validations.output.nb,
+            "Cell entry validation in CHO-bEFNB2 cells": rules.cell_entry_validations.output.func_score_E2_plot,
+            "Cell entry validation in CHO-bEFNB3 cells": rules.cell_entry_validations.output.func_score_E3_plot,
             "Combined cell entry validation plots": rules.cell_entry_validations.output.corr_plots_combined,
         },
     },
     "Ephrin Binding": {
-        "EFNB2 and EFNB3 binding notebook": rules.analyze_nipah_RBP_binding.output.nb,
-        "Binding vs Entry Plots": {
+        "Binding Analysis Notebook": rules.analyze_nipah_RBP_binding.output.nb,
+        "Contact ranked sites": rules.analyze_nipah_RBP_binding.output.combined_contact_ranked_bar_output,
+        "Interactive Plot of Mean Binding by Site": rules.analyze_nipah_RBP_binding.output.binding_by_site_plot,
+        "Bubbleplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_bubble_plot,
+        "Ephrin neutralization curve plot": rules.ephrin_neuts.output.ephrin_curve_plot,
+        "Binding vs Entry": {
             "Binding vs Entry for all mutants": rules.analyze_nipah_RBP_binding.output.entry_binding_combined_corr_plot,
-            "Aggregated Binding vs Entry": rules.analyze_nipah_RBP_binding.output.entry_binding_combined_corr_plot_agg,
-            "Binding vs Entry Heatmap": rules.analyze_nipah_RBP_binding.output.entry_binding_corr_heatmap,
+            "Binding vs Entry for site-averaged effects Heatmap": rules.analyze_nipah_RBP_binding.output.entry_binding_corr_heatmap,
         },
         "Ephrin Binding Heatmaps": {
-            "EFNB2 Binding Heatmap": rules.make_heatmaps.output.E2_binding_heatmap,
-            "EFNB3 Binding Heatmap": rules.make_heatmaps.output.E3_binding_heatmap,
+            "bEFNB2 Binding Heatmap": rules.make_heatmaps.output.E2_binding_heatmap,
+            "bEFNB3 Binding Heatmap": rules.make_heatmaps.output.E3_binding_heatmap,
         },
-        "EFNB2 and EFNB3 Binding Correlations" : {
-            "Interactive Plot of EFNB2 and EFNB3 Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation,
-            "Interactive Plot of EFNB2 and EFNB3 Site Level Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation_site,
-            "E2 and E3 binding correlations heatmap": rules.analyze_nipah_RBP_binding.output.binding_corr_heatmap,
+        "bEFNB2 and bEFNB3 Binding Correlations" : {
+            "Interactive Plot of bEFNB2 and bEFNB3 Binding Correlations with outlier mutations highlighted": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation,
+            "Interactive Plot of bEFNB2 and bEFNB3 Mean Site Level Binding Correlations": rules.analyze_nipah_RBP_binding.output.E2_E3_correlation_site,
         },
-        
-        "Interactive Plot of Median Binding by Site": rules.analyze_nipah_RBP_binding.output.binding_by_site_plot,
-        "Bubbleplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_bubble_plot,
-        "Contact ranked sites": rules.analyze_nipah_RBP_binding.output.combined_contact_ranked_bar_output,
-        "Ephrin neutralization notebook": rules.ephrin_neuts.output.nb,
-        "Ephrin neutralization curve plot": rules.ephrin_neuts.output.ephrin_curve_plot,
-        "Ephrin Binding Validation Neut Curves Plots": {
-            "EphrinB2-monomeric single mutant neuts": rules.ephrin_neuts.output.e2_curve_plot,
-            "EphrinB3-dimeric single mutant neuts": rules.ephrin_neuts.output.e3_curve_plot,
-        },
-        "Ephrin Binding Validation Correlation Plots": {
-            "EphrinB2-monomeric neutralization correlation plot": rules.ephrin_neuts.output.e2_corr_plot,
-            "EphrinB3-dimeric neutralization correlation plot": rules.ephrin_neuts.output.e3_corr_plot,
-        },
-        "Combined Neut and Correlation Neut Curves": {
-            "EFNB2_neut_corr": rules.ephrin_neuts.output.EFNB2_neut_corr,
-            "EFNB3_neut_corr": rules.ephrin_neuts.output.EFNB3_neut_corr,
-            "Everything combined": rules.ephrin_neuts.output.all_ephrin_neut_plots,
+        "Ephrin Binding Validations": {
+            "Binding validations notebook": rules.ephrin_neuts.output.nb,
+            "bEFNB2-monomeric single mutant neuts": rules.ephrin_neuts.output.e2_curve_plot,
+            "bEFNB2-monomeric neutralization correlation plot": rules.ephrin_neuts.output.e2_corr_plot,
+            "bEFNB2 neut correlations combined": rules.ephrin_neuts.output.EFNB2_neut_corr,
+            "bEFNB3-dimeric single mutant neuts": rules.ephrin_neuts.output.e3_curve_plot,
+            "bEFNB3-dimeric neutralization correlation plot": rules.ephrin_neuts.output.e3_corr_plot,
+            "bEFNB3 neut correlations combined": rules.ephrin_neuts.output.EFNB3_neut_corr,
+            "bEFNB2 and bEFNB3 binding validations combined": rules.ephrin_neuts.output.all_ephrin_neut_plots,
         },
     },
     "Antibody Escape": {
         "Antibody Escape Analysis Notebook": rules.analyze_escape_data.output.nb,
         "Neutralization Curves For All Six mAbs Notebook": rules.analyze_mab_neuts.output.nb,
         "Neutralization Curves Plot": rules.analyze_mab_neuts.output.mab_neuts_plot,
-        "Antibody Validations": {
-            "Antibody validation notebook": rules.analyze_mab_validation_data.output.nb,
-            "Antibody validation neut curves": rules.analyze_mab_validation_data.output.nah1_validation_neut_curves,
-            "Antibody validation correlation plot (IC50 vs DMS)": rules.analyze_mab_validation_data.output.IC50_validation_plot,
-            "Combined Neut Curve and IC50": rules.analyze_mab_validation_data.output.combined_ic50_neut_curve_plot,
-        },
+        "Escape at Nipah and Hendra polymorphisms and differences": rules.analyze_escape_data.output.combined_evol_sites_escape,
         "Interactive Plots of Escape Data": {
             "Top Escape Mutants Versus Entry": rules.analyze_escape_data.output.escape_bubble_plot,
             "Shared Escape Mutations Between Antibodies": rules.analyze_escape_data.output.overlap_escape_plot,
-            "Summed Escape by Site": rules.analyze_escape_data.output.mab_line_escape_plot,
+            "Escape by Site": rules.analyze_escape_data.output.mab_line_escape_plot,
         },
         "Interactive Heatmaps of Escape Data": {
             "Top Escape Sites": rules.analyze_escape_data.output.mab_plot_top,
@@ -801,7 +787,12 @@ docs["Additional files and charts"] = {
             "Aggregate Escape and Ephrin-B2 Binding": rules.analyze_escape_data.output.aggregate_mab_and_binding,
             "Aggregate Escape and NiV Polymorphisms": rules.analyze_escape_data.output.aggregate_mab_and_niv_polymorphism,
         },
-        "Escape at Nipah and Hendra polymorphisms and differences": rules.analyze_escape_data.output.combined_evol_sites_escape,
+        "Antibody Validations": {
+            "Antibody validation notebook": rules.analyze_mab_validation_data.output.nb,
+            "Antibody validation neut curves": rules.analyze_mab_validation_data.output.nah1_validation_neut_curves,
+            "Antibody validation correlation plot (IC50 vs DMS)": rules.analyze_mab_validation_data.output.IC50_validation_plot,
+            "Combined Neut Curve and IC50": rules.analyze_mab_validation_data.output.combined_ic50_neut_curve_plot,
+        },
     },
     "Library Correlations and Stats": {
         "Library Correlations Notebook": rules.lib_lib_correlations.output.nb,
@@ -843,6 +834,7 @@ docs["Additional files and charts"] = {
         "E2 entry by site": rules.interactive_figures.output.entry_by_site_plot_e2_output,
         "E3 entry by site": rules.interactive_figures.output.entry_by_site_plot_e3_output,
         "E2 entry by site barplot": rules.interactive_figures.output.entry_by_site_plot_e2_bar_plot,
+        "binding_letter_plot": rules.interactive_figures.output.binding_letter_plot,
 
     }
 }

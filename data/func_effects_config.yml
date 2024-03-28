@@ -43,229 +43,122 @@ global_epistasis_params: &global_epistasis_params
 
 func_scores:
   #Library A, in date order
-  LibA-221115-293T-1:
-    post_selection_sample: LibA-221115-293T-1
-    pre_selection_sample: LibA-221115-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-221115-293T-2:
-    post_selection_sample: LibA-221115-293T-2
-    pre_selection_sample: LibA-221115-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230331-293T:
-    post_selection_sample: LibA-230331-293T
-    pre_selection_sample: LibA-230331-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230405-293T:
-    post_selection_sample: LibA-230405-293T
-    pre_selection_sample: LibA-230405-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230418-CHO-A2-E2:
-    post_selection_sample: LibA-230418-CHO-A2-E2
-    pre_selection_sample: LibA-230418-CHO-A2-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230418-CHO-F3-E3:
-    post_selection_sample: LibA-230418-CHO-F3-E3
-    pre_selection_sample: LibA-230418-CHO-A2-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230509-293T-E2_high_nac:
-    post_selection_sample: LibA-230509-293T-nac
-    pre_selection_sample: LibA-230509-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230509-CHO-A2-E2:
-    post_selection_sample: LibA-230509-CHO-A2-E2
-    pre_selection_sample: LibA-230509-CHO-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230509-CHO-F3-E3:
-    post_selection_sample: LibA-230509-CHO-F3-E3
-    pre_selection_sample: LibA-230509-CHO-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-230725-CHO-EFNB3-C6-nac-diffVSV:
+  LibA-230725-CHO-bEFNB3:
     post_selection_sample: LibA-230725-CHO-C6-nac
     pre_selection_sample: LibA-230509-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230815-CHO-EFNB3-C6-nac:
+  LibA-230815-CHO-bEFNB3:
     post_selection_sample: LibA-230815-CHO-C6-nac
     pre_selection_sample: LibA-230815-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230818-CHO-EFNB3-C6-nac:
+  LibA-230818-CHO-bEFNB3:
     post_selection_sample: LibA-230818-CHO-C6-nac
     pre_selection_sample: LibA-230818-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230825-CHO-EFNB3-C6-nac:
+  LibA-230825-CHO-bEFNB3:
     post_selection_sample: LibA-230825-CHO-C6-nac
     pre_selection_sample: LibA-230825-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-230916-CHO-EFNB2-BA6-nac_diffVSV:
+  LibA-230916-CHO-bEFNB3:
     post_selection_sample: LibA-230916-CHO-BA6-nac
     pre_selection_sample: LibA-230825-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231006-CHO-EFNB3-C6-nac-diffVSV: 
+  LibA-231006-CHO-bEFNB3: 
     post_selection_sample: LibA-231019-CHO-C6-nac
     pre_selection_sample: LibA-230918-CHO-BA6-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231019-CHO-EFNB3-C6-nac-BB2VSV: 
+  LibA-231019-CHO-bEFNB3_1: 
     post_selection_sample: LibA-231019-CHO-C6-nac
     pre_selection_sample: LibA-231019-CHO-BB2-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
-  LibA-231019-CHO-EFNB3-C6-nac-BA6VSV: 
+  LibA-231019-CHO-bEFNB3_2: 
     post_selection_sample: LibA-231019-CHO-C6-nac
     pre_selection_sample: LibA-231019-CHO-BA6-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231019-CHO-EFNB2-BA4-BB2VSV-1: 
+  LibA-231019-CHO-bEFNB2_1: 
     post_selection_sample: LibA-231019-CHO-BA4-1
     pre_selection_sample: LibA-231019-CHO-BB2-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
     
-  LibA-231019-CHO-EFNB2-BA4-BA6VSV-2: 
-    post_selection_sample: LibA-231019-CHO-BA4-2
-    pre_selection_sample: LibA-231019-CHO-BA6-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
 
-  LibA-231024-CHO-EFNB3-C6-nac: 
+  LibA-231024-CHO-bEFNB3: 
     post_selection_sample: LibA-231024-CHO-C6-nac
     pre_selection_sample: LibA-231024-CHO-BA6-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231024-CHO-EFNB2-BA6-nac: 
+  LibA-231024-CHO-bEFNB2: 
     post_selection_sample: LibA-231024-CHO-BA6-nac
     pre_selection_sample: LibA-231024-CHO-BA6-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231112-CHO-EFNB3-C6-1: 
+  LibA-231112-CHO-bEFNB3_1: 
     post_selection_sample: LibA-231112-C6-1
     pre_selection_sample: LibA-231112-CHO-BA6-VSV-1
     func_score_params: *func_scores_params_default 
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231112-CHO-EFNB3-C6-2: 
+  LibA-231112-CHO-bEFNB3_2: 
     post_selection_sample: LibA-231112-C6-2
     pre_selection_sample: LibA-231112-CHO-BA6-VSV-1
     func_score_params: *func_scores_params_default 
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231112-CHO-EFNB2-BA6-1: 
-    post_selection_sample: LibA-231112-BA6-1
-    pre_selection_sample: LibA-231112-CHO-BA6-VSV-1
-    func_score_params: *func_scores_params_default 
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231112-CHO-EFNB2-BA6-2: 
-    post_selection_sample: LibA-231112-BA6-2
-    pre_selection_sample: LibA-231112-CHO-BA6-VSV-2
-    func_score_params: *func_scores_params_default 
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231112-CHO-EFNB2-BA6-nac: 
+  LibA-231112-CHO-bEFNB2: 
     post_selection_sample: LibA-231112-CHO-BA6-nac
     pre_selection_sample: LibA-231112-CHO-BA6-VSV-2
     func_score_params: *func_scores_params_default 
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231116-CHO-EFNB2-BA6-nac_diffVSV: 
-    post_selection_sample: LibA-231116-CHO-BA6-nac
-    pre_selection_sample: LibA-231112-CHO-BA6-VSV-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231116-CHO-EFNB2-BA6-PREV-POOL: 
-    post_selection_sample: LibA-231116-BA6-prev-pool
-    pre_selection_sample: LibA-231116-VSV-prev-pool
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231116-CHO-EFNB3-C6-PREV-POOL: 
-    post_selection_sample: LibA-231116-C6-prev-pool
-    pre_selection_sample: LibA-231116-VSV-prev-pool
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231116-CHO-EFNB2-BA6-1: 
-    post_selection_sample: LibA-231116-CHO-BA6-1
-    pre_selection_sample: LibA-231116-VSV-prev-pool
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231116-CHO-EFNB2-BA6-2: 
-    post_selection_sample: LibA-231116-CHO-BA6-2
-    pre_selection_sample: LibA-230509-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231207-293T-nac: 
-    post_selection_sample: LibA-231207-293T-nac
-    pre_selection_sample: LibA-231207-CHO-VSV-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibA-231207-CHO-EFNB2-BA6-1: 
+  LibA-231207-CHO-bEFNB2_1: 
     post_selection_sample: LibA-231207-CHO-BA6-1
     pre_selection_sample: LibA-231207-CHO-VSV-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231207-CHO-EFNB2-BA6-2: 
+  LibA-231207-CHO-bEFNB2_2: 
     post_selection_sample: LibA-231207-CHO-BA6-2
     pre_selection_sample: LibA-230509-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231207-CHO-EFNB2-BA6-3: 
+  LibA-231207-CHO-bEFNB2_3: 
     post_selection_sample: LibA-231207-CHO-BA6-3
     pre_selection_sample: LibA-231207-CHO-VSV-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231207-CHO-EFNB2-BA6-4: 
+  LibA-231207-CHO-bEFNB2_4: 
     post_selection_sample: LibA-231207-CHO-BA6-4
     pre_selection_sample: LibA-230815-CHO-VSV
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231207-CHO-EFNB2-BA6-pool: 
+  LibA-231207-CHO-bEFNB2_5: 
     post_selection_sample: LibA-231207-CHO-BA6-EFNB2-POOL
     pre_selection_sample: LibA-231207-CHO-VSV-POOL
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibA-231222-CHO-EFNB2-BA6-nac_diffVSV: 
+  LibA-231222-CHO-bEFNB2: 
     post_selection_sample: LibA-231222-CHO-BA6-nac
     pre_selection_sample: LibA-221115-293T-VSV
     func_score_params: *func_scores_params_default
@@ -273,69 +166,15 @@ func_scores:
 
 
   #Library B, in date order ############################################################
-  LibB-221115-293T-1:
-    post_selection_sample: LibB-221115-293T-1
-    pre_selection_sample: LibB-221115-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibB-221115-293T-2:
-    post_selection_sample: LibB-221115-293T-2
-    pre_selection_sample: LibB-221115-293T-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibB-230621-CHO-EFNB3-C6:
-    post_selection_sample: LibB-230621-CHO-EFNB3-C6 
-    pre_selection_sample: LibB-230621-CHO-A2-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibB-230621-CHO-EFNB2-A2:
-    post_selection_sample: LibB-230621-CHO-EFNB2-A2 
-    pre_selection_sample: LibB-230621-CHO-A2-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibB-230621-CHO-EFNB3-F3:
-    post_selection_sample: LibB-230621-CHO-EFNB3-F3
-    pre_selection_sample: LibB-230621-CHO-A2-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibB-230621-CHO-EFNB2-G6:
-    post_selection_sample: LibB-230621-CHO-EFNB2-G6
-    pre_selection_sample: LibB-230621-CHO-A2-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibB-230621-CHO-EFNB2-H1:
-    post_selection_sample: LibB-230621-CHO-EFNB2-H1
-    pre_selection_sample: LibB-230621-CHO-A2-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibB-230630-293T:
-    post_selection_sample: LibB-230630-293T 
-    pre_selection_sample: LibB-230630-CHO-VSV 
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
   LibB-230630-CHO-C6-nac:
     post_selection_sample: LibB-230630-CHO-C6-nac
     pre_selection_sample: LibB-230630-CHO-VSV 
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibB-230720-CHO-C6-nac-VSV:
+  LibB-230720-CHO-bEFNB3:
     post_selection_sample: LibB-230720-CHO-C6-nac
     pre_selection_sample: LibB-230720-CHO-VSV
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
-  LibB-230720-CHO-C6-nac-lowVSV:
-    post_selection_sample: LibB-230720-CHO-C6-nac
-    pre_selection_sample: LibB-230720-CHO-VSV-low
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
@@ -345,13 +184,13 @@ func_scores:
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibB-230815-CHO-C6-nac: 
+  LibB-230815-CHO-bEFNB3: 
     post_selection_sample: LibB-230815-CHO-C6-nac
     pre_selection_sample: LibB-230815-CHO-VSV 
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibB-230818-CHO-C6-nac: 
+  LibB-230818-CHO-bEFNB3: 
     post_selection_sample: LibB-230818-CHO-C6-nac
     pre_selection_sample: LibB-230928-CHO-BA6-VSV
     func_score_params: *func_scores_params_default
@@ -387,7 +226,7 @@ func_scores:
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibB-231112-CHO-EFNB2-BA6-nac_diff_VSV: 
+  LibB-231112-CHO-bEFNB2: 
     post_selection_sample: LibA-231112-CHO-BA6-nac
     pre_selection_sample: LibA-230405-293T-VSV
     func_score_params: *func_scores_params_default
@@ -417,13 +256,13 @@ func_scores:
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibB-231116-CHO-C6_PREV_POOL: 
+  LibB-231116-CHO-bEFNB3: 
     post_selection_sample: LibB-231116-C6-prev-pool
     pre_selection_sample: LibB-231112-VSV-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
 
-  LibB-231116-CHO-BA6_PREV_POOL: 
+  LibB-231116-CHO-bEFNB2: 
     post_selection_sample: LibB-231116-BA6-prev-pool
     pre_selection_sample: LibB-231116-VSV-prev-pool
     func_score_params: *func_scores_params_default
@@ -509,18 +348,18 @@ avg_func_effects_default: &avg_func_effects_default
 avg_func_effects:
   CHO_bEFNB2:
     <<: *avg_func_effects_default
-    title: Median mutation effects on entry into CHO cells expressing bat EFNB2
+    title: Mean mutation effects on entry into CHO cells expressing bat EFNB2
     selections:
     #LibraryA
-      - LibA-231112-CHO-EFNB2-BA6-nac
-      - LibA-231207-CHO-EFNB2-BA6-1
-      - LibA-231207-CHO-EFNB2-BA6-2
-      - LibA-231207-CHO-EFNB2-BA6-3
-      - LibA-231207-CHO-EFNB2-BA6-pool
-      - LibA-231222-CHO-EFNB2-BA6-nac_diffVSV
+      - LibA-231112-CHO-bEFNB2
+      - LibA-231207-CHO-bEFNB2_1
+      - LibA-231207-CHO-bEFNB2_2
+      - LibA-231207-CHO-bEFNB2_3
+      - LibA-231207-CHO-bEFNB2_4
+      - LibA-231222-CHO-bEFNB2
     #LibraryB
-      - LibB-231112-CHO-EFNB2-BA6-nac_diff_VSV
-      - LibB-231116-CHO-BA6_PREV_POOL
+      - LibB-231112-CHO-bEFNB2
+      - LibB-231116-CHO-bEFNB2
 
 
   CHO_bEFNB3:
@@ -528,12 +367,12 @@ avg_func_effects:
     title: Mean mutation effects on entry into CHO cells expressing bat EFNB3
     selections:
     #LibraryA
-      - LibA-230725-CHO-EFNB3-C6-nac-diffVSV 
-      - LibA-230916-CHO-EFNB2-BA6-nac_diffVSV
-      - LibA-231024-CHO-EFNB3-C6-nac 
+      - LibA-230725-CHO-bEFNB3
+      - LibA-230916-CHO-bEFNB3
+      - LibA-231024-CHO-bEFNB3
     #LibraryB
-      - LibB-230720-CHO-C6-nac-VSV 
-      - LibB-230815-CHO-C6-nac 
-      - LibB-230818-CHO-C6-nac
-      - LibB-231116-CHO-C6_PREV_POOL
+      - LibB-230720-CHO-bEFNB3
+      - LibB-230815-CHO-bEFNB3
+      - LibB-230818-CHO-bEFNB3
+      - LibB-231116-CHO-bEFNB3
 
