@@ -25,6 +25,8 @@ notebooks/*
 !notebooks/README.md
 !notebooks/make_nipah_phylogeny_baltic.ipynb
 
+!results/dms_viz/
+
 !results/gene_sequence
 results/gene_sequence/*
 !results/gene_sequence/codon.fasta
