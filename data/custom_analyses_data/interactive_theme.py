@@ -2,46 +2,42 @@ import altair as alt
 
 def interactive_theme():
     # Typography
-    font = "Helvetica Light"
-    labelFont = "Helvetica Light"
-    sourceFont = "Helvetica Light"
+    font = "Helvetica"
+    
     
     # Colors
-    main_palette = ["#5778a4", "#e49444", "#d1615d", "#85b6b2", "#6a9f58", "#e7ca60", "#a87c9f", "#f1a2a9", "#967662", "#b8b0ac"]
+    main_palette = ["#4e79a7","#f28e2c","#e15759","#76b7b2","#59a14f","#edc949","#af7aa1","#ff9da7","#9c755f","#bab0ab"]
     prism_palette = ['#5F4690','#1D6996','#38A6A5','#0F8554','#73AF48','#EDAD08','#E17C05','#CC503E','#94346E','#6F4070','#994E95','#666666']
-    dark2_palette = ['#1b9e77','#d95f02','#7570b3','#e7298a','#66a61e','#e6ab02']
-    
-    sequential_palette = ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]
-    sunset_dark = ['#fcde9c', '#faa476', '#f0746e', '#e34f6f', '#dc3977', '#b9257a', '#7c1d6f']
+
     # Axes
-    axisColor = "#000000"
+    axisColor = "#A7A9AC"
     gridColor = "#DEDDDD"
+    bigfontcolor = 'black'
+    smallfontcolor = 'black'
     
     return {
-        #"width": 400,
-        #"height": 400,
         "config": {
             "background": "transparent",
             "title": {
                 "fontSize": 22,
                 "font": font,
-                "fontWeight": 'bold',
+                "fontWeight": 'normal',
                 "anchor": "start",
-                "color": "#000000",
+                "color": bigfontcolor,
                 "orient": 'top',
                 "offset": 20,
                 "subtitleColor": 'gray',
                 "subtitleFont": font,
                 "subtitleFontWeight": 'normal',
                 "subtitleFontSize": 18,
-                "subtitlePadding": 2,
+                "subtitlePadding": 3,
             },
             "axis": {
                 #domain
                 "domain": True,
-                "domainCap": 'butt', #butt, round, square
+                "domainCap": 'round', #butt, round, square
                 "domainColor": axisColor,
-                "domainWidth": 1,
+                "domainWidth": 1.5,
                 
                 #grid
                 "grid": False,
@@ -54,24 +50,24 @@ def interactive_theme():
                 "labelFont": font,
                 "labelFlush": False,
                 "labelFontWeight": 'normal', #normal or bold
-                "labelFontSize": 18,
+                "labelFontSize": 16,
                 "labelAngle": 0,
-                "labelPadding": 2,
+                "labelPadding": 3,
                 
                 #ticks
                 "ticks": True,
-                "tickCap": 'butt', #butt, round, square
+                "tickCap": 'round', #butt, round, square
                 "tickColor": axisColor,
-                "tickSize": 5,
+                "tickSize": 4,
                 #"titleFont": font,
                 #"tickCount": 3,
-                "tickWidth": 2,
+                "tickWidth": 1,
                 
                 #titles
                 "titleFont": font,
                 "titleAlign": 'center',
                 "titleFontSize": 18,
-                "titleFontWeight": 'bold',
+                "titleFontWeight": 'normal',
                 "titlePadding": 10,
             },
             "legend": {
@@ -80,7 +76,7 @@ def interactive_theme():
                 "symbolSize": 150,
                 "titleFont": font,
                 "titleFontSize": 18,
-                "titleFontWeight": 'bold',
+                "titleFontWeight": 'normal',
                 "titleLimit": 200,
 				#"fillColor": 'light gray',
 				#"orient": 'top-left',
@@ -92,7 +88,6 @@ def interactive_theme():
             },
             "range": {
                 "category": main_palette,
-                "diverging": sunset_dark,
             },
             "view": {
                 "stroke": "transparent", # Remove the border around the visualization

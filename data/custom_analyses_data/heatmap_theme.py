@@ -10,7 +10,7 @@ def heatmap_theme():
     sequential_palette = ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]
 
     # Axes
-    axisColor = "#000000"
+    axisColor = "#A7A9AC"
     gridColor = "#DEDDDD"
     
     return {
@@ -20,7 +20,7 @@ def heatmap_theme():
             "background": "transparent",
             "title": {
                 "fontSize": 20,
-                "fontWeight": 'bold',
+                "fontWeight": 'normal',
                 "font": font,
                 "anchor": "start",
                 "color": "#000000",
@@ -57,7 +57,7 @@ def heatmap_theme():
                 #title
                 "titleFont": font,
                 "titleAlign": 'center',
-                "titleFontWeight": 'bold',
+                "titleFontWeight": 'normal',
                 "titleFontSize": 14,
                 "titlePadding": 5,
             },

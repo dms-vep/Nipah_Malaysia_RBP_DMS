@@ -59,12 +59,10 @@ rule analyze_nipah_RBP_binding:
     output:
         nb="results/notebooks/ephrin_binding.ipynb",
         entry_binding_combined_corr_plot="results/images/entry_binding_combined_corr_plot.html",
-        #entry_binding_combined_corr_plot_agg="results/images/entry_binding_combined_corr_plot_agg.html",
         E2_E3_correlation="results/images/E2_E3_correlation.html",
         E2_E3_correlation_site="results/images/E2_E3_correlation_site.html",
         binding_by_site_plot="results/images/binding_by_site_plot.html",
         entry_binding_corr_heatmap="results/images/entry_binding_corr_heatmap.html",
-        #binding_corr_heatmap="results/images/binding_corr_heatmap.html",
         binding_region_bubble_plot="results/images/binding_region_bubble_plot.html",
         combined_contact_ranked_bar_output='results/images/combined_contact_ranked_bar_output.html',
     params:
@@ -75,12 +73,10 @@ rule analyze_nipah_RBP_binding:
                 "binding_E2_file": input.binding_E2_file,
                 "binding_E3_file": input.binding_E3_file,
                 "entry_binding_combined_corr_plot": output.entry_binding_combined_corr_plot,
-                #"entry_binding_combined_corr_plot_agg": output.entry_binding_combined_corr_plot_agg,
                 "E2_E3_correlation": output.E2_E3_correlation,
                 "E2_E3_correlation_site": output.E2_E3_correlation_site,
                 "binding_by_site_plot": output.binding_by_site_plot,
                 "entry_binding_corr_heatmap": output.entry_binding_corr_heatmap,
-                #"binding_corr_heatmap": output.binding_corr_heatmap,
                 "binding_region_bubble_plot": output.binding_region_bubble_plot,
                 "combined_contact_ranked_bar_output": output.combined_contact_ranked_bar_output,
             }
@@ -692,6 +688,7 @@ rule interactive_figures:
         entry_by_site_plot_e3_output="results/images/entry_by_site_plot_e3.html",
         entry_by_site_plot_e2_bar_plot="results/images/entry_by_site_plot_e2_bar_plot.html",
         binding_letter_plot="results/images/binding_letter_plot.html",
+        entry_letter_plot="results/images/entry_letter_plot.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -712,6 +709,7 @@ rule interactive_figures:
                 "entry_by_site_plot_e3_output": output.entry_by_site_plot_e3_output,
                 "entry_by_site_plot_e2_bar_plot": output.entry_by_site_plot_e2_bar_plot,
                 "binding_letter_plot": output.binding_letter_plot,
+                "entry_letter_plot": output.entry_letter_plot,
                 
             }
         ),
@@ -834,7 +832,9 @@ docs["Additional files and charts"] = {
         "E2 entry by site": rules.interactive_figures.output.entry_by_site_plot_e2_output,
         "E3 entry by site": rules.interactive_figures.output.entry_by_site_plot_e3_output,
         "E2 entry by site barplot": rules.interactive_figures.output.entry_by_site_plot_e2_bar_plot,
-        "binding_letter_plot": rules.interactive_figures.output.binding_letter_plot,
+        "Correlation for binding mutations": rules.interactive_figures.output.binding_letter_plot,
+        "Correlation for entry mutations": rules.interactive_figures.output.entry_letter_plot,
+
 
     }
 }
