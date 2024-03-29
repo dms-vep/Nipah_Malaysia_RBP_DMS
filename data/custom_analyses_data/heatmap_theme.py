@@ -2,11 +2,10 @@ import altair as alt
 
 def heatmap_theme():
     # Typography
-    font = "Helvetica Light"
-    #labelFont = "Helvetica Light"
+    font = "Helvetica"
     
     # Colors
-    main_palette = ["#1f4e79", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"]
+    main_palette = ["#4e79a7","#f28e2c","#e15759","#76b7b2","#59a14f","#edc949","#af7aa1","#ff9da7","#9c755f","#bab0ab"]
     sequential_palette = ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]
 
     # Axes
@@ -14,8 +13,6 @@ def heatmap_theme():
     gridColor = "#DEDDDD"
     
     return {
-        #"width": 400,
-        #"height": 400,
         "config": {
             "background": "transparent",
             "title": {
@@ -57,13 +54,13 @@ def heatmap_theme():
                 #title
                 "titleFont": font,
                 "titleAlign": 'center',
-                "titleFontWeight": 'normal',
+                "titleFontWeight": 'bold',
                 "titleFontSize": 14,
                 "titlePadding": 5,
             },
             "legend": {
                 "labelFont": font,
-                "labelFontSize": 14,
+                "labelFontSize": 12,
                 "symbolSize": 100,
                 "titleFont": font,
                 "titleFontSize": 14,
