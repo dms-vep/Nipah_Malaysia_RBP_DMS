@@ -36,7 +36,7 @@ def interactive_theme():
                 "domain": True,
                 "domainCap": 'round', #butt, round, square
                 "domainColor": axisColor,
-                "domainWidth": 1,
+                "domainWidth": 0.5,
                 
                 #grid
                 "grid": False,
@@ -69,24 +69,24 @@ def interactive_theme():
                 "titleAlign": 'center',
                 "titleFontSize": 16,
                 "titleFontWeight": 'normal',
-                "titlePadding": 5,
+                "titlePadding": 10,
             },
             "legend": {
                 "labelFont": font,
                 "labelFontSize": 16,
                 "labelColor": axisColor,
-                "symbolSize": 150,
+                "symbolSize": 100,
                 "titleFont": font,
                 "titleColor": axisColor,
-                "titleFontSize": 18,
+                "titleFontSize": 16,
                 "titleFontWeight": 'normal',
                 "titleLimit": 200,
 				#"fillColor": 'light gray',
 				#"orient": 'top-left',
                 "cornerRadius": 5,
-                "rowPadding": 5,
+                "rowPadding": 3,
                 "symbolType": 'circle',
-                "padding": 2,
+                "padding": 1,
                 "gradientLength": 100,
             },
             "range": {
