@@ -689,6 +689,7 @@ rule interactive_figures:
         entry_by_site_plot_e2_bar_plot="results/images/entry_by_site_plot_e2_bar_plot.html",
         binding_letter_plot="results/images/binding_letter_plot.html",
         entry_letter_plot="results/images/entry_letter_plot.html",
+        entry_letter_plot_slider="results/images/entry_letter_plot_slider.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -710,6 +711,7 @@ rule interactive_figures:
                 "entry_by_site_plot_e2_bar_plot": output.entry_by_site_plot_e2_bar_plot,
                 "binding_letter_plot": output.binding_letter_plot,
                 "entry_letter_plot": output.entry_letter_plot,
+                "entry_letter_plot_slider": output.entry_letter_plot_slider,
                 
             }
         ),
@@ -834,6 +836,7 @@ docs["Additional files and charts"] = {
         "E2 entry by site barplot": rules.interactive_figures.output.entry_by_site_plot_e2_bar_plot,
         "Correlation for binding mutations": rules.interactive_figures.output.binding_letter_plot,
         "Correlation for entry mutations": rules.interactive_figures.output.entry_letter_plot,
+        "Correlation for entry effects with slider": rules.interactive_figures.output.entry_letter_plot_slider,
 
 
     }

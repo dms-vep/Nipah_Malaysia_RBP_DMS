@@ -2,33 +2,33 @@ import altair as alt
 
 def interactive_theme():
     # Typography
-    font = "Helvetica"
+    font = "Helvetica Light"
     
     # Colors
     main_palette = ["#4e79a7","#f28e2c","#e15759","#76b7b2","#59a14f","#edc949","#af7aa1","#ff9da7","#9c755f","#bab0ab"]
     prism_palette = ['#5F4690','#1D6996','#38A6A5','#0F8554','#73AF48','#EDAD08','#E17C05','#CC503E','#94346E','#6F4070','#994E95','#666666']
 
     # Axes
-    axisColor = "#A7A9AC"
+    axisColor = "#000000"
     gridColor = "#DEDDDD"
     bigfontcolor = 'black'
-    smallfontcolor = 'black'
+    smallfontcolor = "#A7A9AC"
     
     return {
         "config": {
             "background": "transparent",
             "title": {
-                "fontSize": 22,
+                "fontSize": 24,
                 "font": font,
                 "fontWeight": 'normal',
                 "anchor": "start",
                 "color": bigfontcolor,
                 "orient": 'top',
-                "offset": 20,
+                "offset": 10,
                 "subtitleColor": 'gray',
                 "subtitleFont": font,
                 "subtitleFontWeight": 'normal',
-                "subtitleFontSize": 18,
+                "subtitleFontSize": 16,
                 "subtitlePadding": 3,
             },
             "axis": {
@@ -36,7 +36,7 @@ def interactive_theme():
                 "domain": True,
                 "domainCap": 'round', #butt, round, square
                 "domainColor": axisColor,
-                "domainWidth": 1.5,
+                "domainWidth": 1,
                 
                 #grid
                 "grid": False,
@@ -52,28 +52,32 @@ def interactive_theme():
                 "labelFontSize": 16,
                 "labelAngle": 0,
                 "labelPadding": 3,
+                "labelColor": axisColor,
                 
                 #ticks
                 "ticks": True,
                 "tickCap": 'round', #butt, round, square
                 "tickColor": axisColor,
-                "tickSize": 4,
+                "tickSize": 3,
                 #"titleFont": font,
                 #"tickCount": 3,
                 "tickWidth": 1,
                 
                 #titles
                 "titleFont": font,
+                "titleColor": axisColor,
                 "titleAlign": 'center',
-                "titleFontSize": 18,
+                "titleFontSize": 16,
                 "titleFontWeight": 'normal',
-                "titlePadding": 10,
+                "titlePadding": 5,
             },
             "legend": {
                 "labelFont": font,
                 "labelFontSize": 16,
+                "labelColor": axisColor,
                 "symbolSize": 150,
                 "titleFont": font,
+                "titleColor": axisColor,
                 "titleFontSize": 18,
                 "titleFontWeight": 'normal',
                 "titleLimit": 200,
@@ -87,6 +91,10 @@ def interactive_theme():
             },
             "range": {
                 "category": main_palette,
+            },
+            "text": {
+                "font": 'Helvetica Light',
+                #"fontSize": 14,
             },
             "view": {
                 "stroke": "transparent", # Remove the border around the visualization
