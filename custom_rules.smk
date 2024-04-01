@@ -690,6 +690,7 @@ rule interactive_figures:
         binding_letter_plot="results/images/binding_letter_plot.html",
         entry_letter_plot="results/images/entry_letter_plot.html",
         entry_letter_plot_slider="results/images/entry_letter_plot_slider.html",
+        binding_letter_plot_slider="results/images/binding_letter_plot_slider.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -712,6 +713,7 @@ rule interactive_figures:
                 "binding_letter_plot": output.binding_letter_plot,
                 "entry_letter_plot": output.entry_letter_plot,
                 "entry_letter_plot_slider": output.entry_letter_plot_slider,
+                "binding_letter_plot_slider": output.binding_letter_plot_slider,
                 
             }
         ),
@@ -837,6 +839,8 @@ docs["Additional files and charts"] = {
         "Correlation for binding mutations": rules.interactive_figures.output.binding_letter_plot,
         "Correlation for entry mutations": rules.interactive_figures.output.entry_letter_plot,
         "Correlation for entry effects with slider": rules.interactive_figures.output.entry_letter_plot_slider,
+        "Correlation for binding effect slider": rules.interactive_figures.output.binding_letter_plot_slider,
+                
 
 
     }
