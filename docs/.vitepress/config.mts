@@ -8,7 +8,7 @@ export default defineConfig({
   lang: "en-US",
   title: "Nipah RBP DMS",
   description: "Information about Nipah RBP DMS experiments",
-  base: '/docs/',
+  base: '/Nipah_Malaysia_RBP_DMS/',
 
   
   themeConfig: {
