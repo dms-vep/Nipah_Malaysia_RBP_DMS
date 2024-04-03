@@ -10,6 +10,7 @@ dependencies:
   - altair_saver
   - biopython=1.81
   - biotite
+  - beautifulsoup4
   - black-jupyter
   - bs4=4.12
   - entrez-direct=16.2

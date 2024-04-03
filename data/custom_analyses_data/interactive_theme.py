@@ -22,14 +22,14 @@ def interactive_theme():
                 "font": font,
                 "fontWeight": 'normal',
                 "anchor": "start",
-                "color": bigfontcolor,
+                "color": axisColor,
                 "orient": 'top',
-                "offset": 10,
+                "offset": 20,
                 "subtitleColor": 'gray',
                 "subtitleFont": font,
                 "subtitleFontWeight": 'normal',
                 "subtitleFontSize": 16,
-                "subtitlePadding": 3,
+                "subtitlePadding": 4,
             },
             "axis": {
                 #domain
@@ -51,7 +51,7 @@ def interactive_theme():
                 "labelFontWeight": 'normal', #normal or bold
                 "labelFontSize": 16,
                 "labelAngle": 0,
-                "labelPadding": 3,
+                "labelPadding": 2,
                 "labelColor": axisColor,
                 
                 #ticks
@@ -75,7 +75,7 @@ def interactive_theme():
                 "labelFont": font,
                 "labelFontSize": 16,
                 "labelColor": axisColor,
-                "symbolSize": 100,
+                "symbolSize": 90,
                 "titleFont": font,
                 "titleColor": axisColor,
                 "titleFontSize": 16,
@@ -84,10 +84,10 @@ def interactive_theme():
 				#"fillColor": 'light gray',
 				#"orient": 'top-left',
                 "cornerRadius": 5,
-                "rowPadding": 3,
+                "rowPadding": 2,
                 "symbolType": 'circle',
                 "padding": 1,
-                "gradientLength": 100,
+                "gradientLength": 75,
             },
             "range": {
                 "category": main_palette,

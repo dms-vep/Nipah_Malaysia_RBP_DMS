@@ -16,11 +16,11 @@ def heatmap_theme():
         "config": {
             "background": "transparent",
             "title": {
-                "fontSize": 22,
+                "fontSize": 24,
                 "fontWeight": 'normal',
                 "font": font,
                 "anchor": "start",
-                "color": "#000000",
+                "color": axisColor,
                 "orient": 'top',
                 "offset": 5,
                 "subtitleColor": 'gray',
@@ -64,10 +64,11 @@ def heatmap_theme():
                 "symbolSize": 100,
                 "titleFont": font,
                 "titleFontSize": 14,
-                "titleFontWeight": 'bold',
-                "padding": 5,
+                "titleFontWeight": 'normal',
+                "titlePadding": 3,
+                "padding": 2,
                 "titleLimit": 200,
-                "gradientLength": 100,
+                "gradientLength": 75,
             },
             "range": {
                 "category": main_palette,
@@ -78,7 +79,7 @@ def heatmap_theme():
             	"strokeWidth": 0,
             },
         	"text": {
-            	"font": 'Helvetica Light',
+            	"font": font,
             	"fontSize": 14,
         	}
         }

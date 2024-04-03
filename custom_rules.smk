@@ -599,6 +599,16 @@ rule make_heatmaps:
         E2_entry_heatmap="results/images/E2_entry_heatmap.html",
         E3_entry_heatmap="results/images/E3_entry_heatmap.html",
         combined_entry_binding_contact="results/images/combined_entry_binding_contact_heatmaps.html",
+        E3_entry_AA_prop_heatmap="results/images/E3_entry_AA_prop_heatmap.html",
+        E2_entry_AA_prop_heatmap="results/images/E2_entry_AA_prop_heatmap.html",
+        glycan_sites_img_heatmap="results/images/glycan_sites_img_heatmap.html",
+        nipah_poly_sites_img_heatmap="results/images/nipah_poly_sites_img_heatmap.html",
+        HENV103_heatmap_plot="results/images/HENV103_heatmap_plot.html",
+        nAH1_heatmap_plot="results/images/nAH1_heatmap_plot.html",
+        HENV117_heatmap_plot="results/images/HENV117_heatmap_plot.html",
+        HENV32_heatmap_plot="results/images/HENV32_heatmap_plot.html",
+        HENV26_heatmap_plot="results/images/HENV26_heatmap_plot.html",
+        m102_heatmap_plot="results/images/m102_heatmap_plot.html",
         
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -617,7 +627,16 @@ rule make_heatmaps:
                 "E2_entry_heatmap": output.E2_entry_heatmap,
                 "E3_entry_heatmap": output.E3_entry_heatmap,
                 "combined_entry_binding_contact": output.combined_entry_binding_contact,
-                
+                "E3_entry_AA_prop_heatmap": output.E3_entry_AA_prop_heatmap,
+                "E2_entry_AA_prop_heatmap": output.E2_entry_AA_prop_heatmap,
+                "glycan_sites_img_heatmap": output.glycan_sites_img_heatmap,
+                "nipah_poly_sites_img_heatmap": output.nipah_poly_sites_img_heatmap,
+                "HENV103_heatmap_plot": output.HENV103_heatmap_plot,
+                "nAH1_heatmap_plot": output.nAH1_heatmap_plot,
+                "HENV117_heatmap_plot": output.HENV117_heatmap_plot,
+                "HENV32_heatmap_plot": output.HENV32_heatmap_plot,
+                "HENV26_heatmap_plot": output.HENV26_heatmap_plot,
+                "m102_heatmap_plot": output.m102_heatmap_plot,
             }
         ),
     log:
@@ -691,6 +710,7 @@ rule interactive_figures:
         entry_letter_plot="results/images/entry_letter_plot.html",
         entry_letter_plot_slider="results/images/entry_letter_plot_slider.html",
         binding_letter_plot_slider="results/images/binding_letter_plot_slider.html",
+        entry_by_site_plot_e3_bar_plot="results/images/entry_by_site_plot_e3_bar_plot.html",
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
@@ -714,6 +734,7 @@ rule interactive_figures:
                 "entry_letter_plot": output.entry_letter_plot,
                 "entry_letter_plot_slider": output.entry_letter_plot_slider,
                 "binding_letter_plot_slider": output.binding_letter_plot_slider,
+                "entry_by_site_plot_e3_bar_plot": output.entry_by_site_plot_e3_bar_plot,
                 
             }
         ),
@@ -836,10 +857,21 @@ docs["Additional files and charts"] = {
         "E2 entry by site": rules.interactive_figures.output.entry_by_site_plot_e2_output,
         "E3 entry by site": rules.interactive_figures.output.entry_by_site_plot_e3_output,
         "E2 entry by site barplot": rules.interactive_figures.output.entry_by_site_plot_e2_bar_plot,
+        "E3 entry by site barplot": rules.interactive_figures.output.entry_by_site_plot_e3_bar_plot,
         "Correlation for binding mutations": rules.interactive_figures.output.binding_letter_plot,
         "Correlation for entry mutations": rules.interactive_figures.output.entry_letter_plot,
         "Correlation for entry effects with slider": rules.interactive_figures.output.entry_letter_plot_slider,
         "Correlation for binding effect slider": rules.interactive_figures.output.binding_letter_plot_slider,
+        "E3_entry_AA_prop_heatmap": rules.make_heatmaps.output.E3_entry_AA_prop_heatmap,
+        "E2_entry_AA_prop_heatmap": rules.make_heatmaps.output.E2_entry_AA_prop_heatmap,
+        "glycan_sites_img_heatmap": rules.make_heatmaps.output.glycan_sites_img_heatmap,
+        "nipah_poly_sites_img_heatmap": rules.make_heatmaps.output.nipah_poly_sites_img_heatmap,
+        "HENV103_heatmap_plot": rules.make_heatmaps.output.HENV103_heatmap_plot,
+        "nAH1_heatmap_plot": rules.make_heatmaps.output.nAH1_heatmap_plot,
+        "HENV117_heatmap_plot": rules.make_heatmaps.output.HENV117_heatmap_plot,
+        "HENV32_heatmap_plot": rules.make_heatmaps.output.HENV32_heatmap_plot,
+        "HENV26_heatmap_plot": rules.make_heatmaps.output.HENV26_heatmap_plot,
+        "m102_heatmap_plot": rules.make_heatmaps.output.m102_heatmap_plot,
                 
 
 

@@ -19,7 +19,7 @@ github_repo_url: https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS
 # GitHub blob path to where results files are stored. Typically "{repo}/blob/{branch}",
 # the "test_example" below is specific to this test example being within the pipeline
 # and should not be needed for other pipelines.
-github_blob_url: https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/test_example
+github_blob_url: https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/main
 # Some descriptions and metadata about the analysis.
 description: Deep mutational scanning of the Nipah Malaysian strain Receptor Binding Protein using a barcoded lentiviral vector
 year: 2023
