@@ -6,7 +6,7 @@ _*
 !.gitignore
 !.gitmodules
 
-docs/node_modules/*
+node_modules/*
 
 results/*
 
