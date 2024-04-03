@@ -6,6 +6,8 @@ _*
 !.gitignore
 !.gitmodules
 
+docs/node_modules/*
+
 results/*
 
 notebooks/*
