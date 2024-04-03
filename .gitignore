@@ -8,6 +8,7 @@ _*
 
 node_modules/*
 
+!docs/.vitepress
 results/*
 
 notebooks/*
