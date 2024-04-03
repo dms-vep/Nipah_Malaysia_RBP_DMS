@@ -1,43 +1,49 @@
 {
-  "hash": "d310d355",
-  "configHash": "7603aac6",
-  "lockfileHash": "51d498ea",
-  "browserHash": "52b4ba73",
+  "hash": "ed326298",
+  "configHash": "4d2745d6",
+  "lockfileHash": "52cbcaa8",
+  "browserHash": "29480a34",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "4754a5fb",
+      "fileHash": "8a5b0cab",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "8b22deff",
+      "fileHash": "614e5832",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "05e8d71e",
+      "fileHash": "774f57c4",
+      "needsInterop": false
+    },
+    "vue-select": {
+      "src": "../../../../node_modules/vue-select/dist/vue-select.es.js",
+      "file": "vue-select.js",
+      "fileHash": "f8198fba",
       "needsInterop": false
     },
     "vega": {
       "src": "../../../../node_modules/vega/build/vega.module.js",
       "file": "vega.js",
-      "fileHash": "079db1a0",
+      "fileHash": "a85254c4",
       "needsInterop": false
     },
     "vega-lite": {
       "src": "../../../../node_modules/vega-lite/build/src/index.js",
       "file": "vega-lite.js",
-      "fileHash": "c1470f72",
+      "fileHash": "8e2b9f1a",
       "needsInterop": false
     },
     "vega-embed": {
       "src": "../../../../node_modules/vega-embed/build/vega-embed.module.js",
       "file": "vega-embed.js",
-      "fileHash": "8cd4ca9c",
+      "fileHash": "b93abd12",
       "needsInterop": false
     }
   },
