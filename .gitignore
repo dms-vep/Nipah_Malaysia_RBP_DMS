@@ -9,6 +9,7 @@ _*
 node_modules/*
 
 !docs/.vitepress/*
+!docs/public*
 
 results/*
 
