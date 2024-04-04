@@ -5,10 +5,10 @@ Explore Nipah virus RBP deep mutational scanning data with interactive charts.
 To explore heatmaps, click [here](/heatmaps)
 
 ## 
-<Altair :showShadow="false" :spec-url="'/htmls/corr_entry_binding_large.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/corr_entry_binding_large.html'"></Altair>
 
 ## 
-<Altair :showShadow="false" :spec-url="'/htmls/entry_by_site_plot_e2_bar_plot.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/entry_by_site_plot_e2_bar_plot.html'"></Altair>
 
 <Altair :showShadow="false" :spec-url="'/htmls/entry_by_site_plot_e3_bar_plot.html'"></Altair>
 
