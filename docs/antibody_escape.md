@@ -63,10 +63,9 @@ We determined the effects of mutations on neutralization by different anti-RBP a
 
 
 ## Neutralization Curves
-
 <a href="notebooks/mab_neut_ic50.html" target="_self">Neutralization curves notebook</a>
 
-Neutralization of unmutated Nipah RBP/F pseudovirus 
+Neutralization of unmutated Nipah RBP/F pseudovirus by different anti-RBP antibodies.
 <Altair :showShadow="false" :spec-url="'htmls/mab_neuts_plot.html'"></Altair>
 
 
@@ -74,17 +73,17 @@ Neutralization of unmutated Nipah RBP/F pseudovirus
 
 <a href="notebooks/mab_validation.html" target="_self">Antibody validation notebook</a>
 
-Single mutant validation of mutational effects on neutralization from antibody nAH1.3
+To validate the DMS for escape measurements, we generated single RBP mutant pseudoviruses and tested their neutralization by antibody nAH1.3.
 <Altair :showShadow="false" :spec-url="'htmls/combined_ic50_neut_curve_plot.html'"></Altair>
 
 ## Miscellaneous Figures
 Escape at Nipah and Hendra polymorphisms and differences
 <Altair :showShadow="false" :spec-url="'htmls/combined_evol_sites_escape.html'"></Altair>
 
-Top antibody escape mutants and cell entry
+### Functional Effect of Antibody Escape Mutations
 <Altair :showShadow="false" :spec-url="'htmls/escape_bubble_plot.html'"></Altair>
 
-Escape by site
+### Escape by Site
 <Altair :showShadow="true" :spec-url="'htmls/mab_line_escape_plot.html'"></Altair>
 
 

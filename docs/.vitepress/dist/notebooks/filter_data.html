@@ -7534,7 +7534,6 @@ a.anchor-link {
 
 <span class="n">e2_entry_filtered</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">e3_entry_filtered</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="c1">#entry_filter_merged = None</span>
 <span class="n">entry_filter_concat</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="n">e2_binding_filtered</span> <span class="o">=</span> <span class="kc">None</span>
@@ -7549,7 +7548,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=3bc9d876">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=5053073d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7682,7 +7681,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Hard-paths-if-running-interactively">Hard paths if running interactively<a class="anchor-link" href="#Hard-paths-if-running-interactively">¶</a></h3>
+<h3 id="Hard-paths-if-running-notebook-interactively-instead-of-with-snakemake/papermill">Hard paths if running notebook interactively instead of with snakemake/papermill<a class="anchor-link" href="#Hard-paths-if-running-notebook-interactively-instead-of-with-snakemake/papermill">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8322,7 +8321,7 @@ nAH1.3
             <span class="s1">'mutant_type'</span>
         <span class="p">]</span>
     <span class="p">]</span>
-    <span class="c1"># Define a function to filter the DataFrame based on several criteria.</span>
+    <span class="c1"># Define a function to filter the DataFrame based on several criteria defined in Nipah_config.yaml.</span>
     <span class="k">def</span> <span class="nf">filter_binding_data</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
         <span class="c1"># Apply multiple conditions to filter the data for relevant entries.</span>
         <span class="c1"># First, filter by binding parameters</span>
@@ -8349,10 +8348,10 @@ nAH1.3
         <span class="k">return</span> <span class="n">df_filter_second</span><span class="p">,</span> <span class="n">df_filter_bad</span>
     
     
-    <span class="c1"># Filter the DataFrame using the defined function.</span>
+    <span class="c1"># filter the DataFrame using the defined function.</span>
     <span class="n">df_filter</span><span class="p">,</span> <span class="n">df_bad_entry</span> <span class="o">=</span> <span class="n">filter_binding_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-    <span class="c1"># Save the filtered data to CSV files, differentiating between EFNB2 and others.</span>
+    <span class="c1"># Save the filtered data to CSV files</span>
     <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"EFNB2"</span><span class="p">:</span>
         <span class="n">df_filter</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">e2_binding_filtered</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="n">df_bad_entry</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">e2_low_binding_effect_filter</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>

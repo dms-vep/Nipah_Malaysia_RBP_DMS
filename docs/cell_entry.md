@@ -1,6 +1,6 @@
 # Cell Entry
 
-To measure the effects of mutations on RBP-mediated cell entry, we performed 'functional selections' where the frequencies of barcodes were compared between Nipah RBP/F and VSV-G. Notebooks below contain information about each step.
+To measure the effects of mutations on RBP-mediated cell entry, we performed 'functional selections' where the frequencies of barcodes were compared between particles pseudotyped with either Nipah RBP/F or VSV-G. Notebooks below contain information about each step.
 
 
 ## Global Epistasis Fitting
@@ -114,7 +114,8 @@ Cell entry of different RBP regions
 
 <Altair :showShadow="false" :spec-url="'htmls/entry_region_boxplot_plot.html'"></Altair>
 
-Site-averaged effects of mutations on cell entry in RBP neck and contact sites
+### Site-averaged Effects of Mutations on Cell Entry
+Sites in RBP neck and contact sites (ranked from least constrained to most)
 
 <Altair :showShadow="false" :spec-url="'htmls/combined_region_barplot_output.html'"></Altair>
 
@@ -130,5 +131,5 @@ Correlation between effects of all mutations on cell entry
 
 <a href="notebooks/cell_entry_validations.html" target="_self">Cell entry validation notebook</a>
 
-Cell entry validation correlations
+We validated the DMS cell entry measurements by making individual RBP mutants, expressing them on pseudovirus particles, and measuring luciferase following infection.
 <Altair :showShadow="false" :spec-url="'htmls/corr_plots_combined.html'"></Altair>

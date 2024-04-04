@@ -37,20 +37,21 @@ If protein structure is available, distance in angstroms to the closest antibody
 <a href="htmls/nAH1_heatmap_plot.html" target="_self">nAH1.3 Antibody Escape</a>
 
 
-## Specific Heatmaps
+## Heatmaps of Specific RBP Regions
 ::: tip
 Click arrow in upper right to view full-sized plots
 :::
 Effects of mutations on cell entry and binding at receptor contact sites
 <Altair :showShadow="true" :spec-url="'htmls/combined_entry_binding_contact_heatmaps.html'"></Altair>
 
-Effects of mutations on cell entry and binding at glycosylation sites
+### Effects of mutations on cell entry and binding at glycosylation sites
 <Altair :showShadow="false" :spec-url="'htmls/glycan_sites_img_heatmap.html'"></Altair>
 
-Effects of mutations on cell entry and binding at polymorphic Nipah sites
+### Effects of mutations on cell entry and binding at polymorphic Nipah sites
 <Altair :showShadow="true" :spec-url="'htmls/nipah_poly_sites_img_heatmap.html'"></Altair>
 
-Effects of mutations on cell entry, organized by type of the unmutated amino acid residue 
+### Effects of mutations on cell entry, organized by type of the unmutated amino acid residue 
+The effects of mutations organized by the unmutated amino acid type. Strong preference for certain amino acids can be seen in certain regions. For example, portions of the stalk only tolerate hydrophobic residues (see sites 101-160 below).
 <Altair :showShadow="true" :spec-url="'htmls/E3_entry_AA_prop_heatmap.html'"></Altair>
 
 ## Notebooks

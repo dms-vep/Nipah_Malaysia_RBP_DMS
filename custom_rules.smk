@@ -684,6 +684,32 @@ rule make_phylogeny:
     shell:
         "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
 
+rule BLI_correlations:
+    """Calculate correlations between BLI data and DMS"""
+    input:
+        nb="notebooks/plot_BLI_data.ipynb",
+        altair_config="data/custom_analyses_data/theme.py",
+        binding_E2_file="results/filtered_data/binding/e2_binding_filtered.csv",
+        binding_E3_file="results/filtered_data/binding/e3_binding_filtered.csv",
+    output:
+        nb="results/notebooks/plot_BLI_data.ipynb",
+        BLI_corr_plot="results/images/binding_BLI_corr.html",
+    params:
+        yaml=lambda _, input, output: yaml.round_trip_dump(
+            {
+                "altair_config": input.altair_config,
+                "binding_E2_file": input.binding_E2_file,
+                "binding_E3_file": input.binding_E3_file,
+                "BLI_corr_plot": output.BLI_corr_plot,
+            }
+        ),
+    log:
+        log="results/logs/make_BLI_corr.txt",
+    conda:
+        "environment.yml",
+    shell:
+        "papermill {input.nb} {output.nb} -y '{params.yaml}' &> {log}"
+
 rule interactive_figures:
     """Make pretty large interactive figures"""
     input:
@@ -829,6 +855,8 @@ docs["Additional files and charts"] = {
     },
     "Miscellaneous": {
         "Data filtering notebook": rules.filter_data.output.nb,
+        "BLI_correlations": rules.BLI_correlations.output.BLI_corr_plot,
+        "BLI_correlations_notebook": rules.BLI_correlations.output.nb,
         "Bat and Human Ephrin alignment notebook": rules.ephrin_alignment.output.nb,
         "Henipavirus RBP alignment notebook": rules.make_RBP_alignment.output.nb,
         "Henipavirus and Nipah RBP entropy notebook": rules.henipavirus_entropy.output.nb,

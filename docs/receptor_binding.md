@@ -32,26 +32,30 @@ Notebooks averaging affects of mutations on receptor binding across libraries an
 <a href="notebooks/avg_escape_receptor_affinity_bEFNB3_dimeric.html" target="_self">bEFNB3_dimeric</a>
 
 ## Neutralization of Nipah pseudoviruses
-Ephrin neutralization curve plot
+Ephrin neutralization of pseudoviruses expressing unmutated Nipah RBP/F
 <Altair :showShadow="false" :spec-url="'htmls/ephrin_neut_curve.html'"></Altair>
 
 
 ## Correlations Between Entry and Binding
-Effect of mutations on binding and entry for all mutants
+Effects of mutations on binding and entry
 <Altair :showShadow="false" :spec-url="'htmls/entry_binding_combined_corr_plot.html'"></Altair>
 
 ## Binding Correlations
-Binding to bEFNB2 and bEFNB3 with specific mutations highlighted
+Binding to bEFNB2 and bEFNB3 with mutations of interest highlighted
 <Altair :showShadow="false" :spec-url="'htmls/E2_E3_correlation.html'"></Altair>
 
 Interactive plot of bEFNB2 and bEFNB3 site-averaged binding correlations
 <Altair :showShadow="false" :spec-url="'htmls/E2_E3_correlation_site.html'"></Altair>
 
 ## Binding Validations
-<a href="notebooks/ephrin_neut_curves.html" target="_self">Binding validations notebook</a>
+### Binding Validation by BLI
+<a href="notebooks/plot_BLI_data.html" target="_self">BLI validations notebook</a>
+<Altair :showShadow="false" :spec-url="'htmls/binding_BLI_corr.html'"></Altair>
 
-bEFNB2 and bEFNB3 binding validations plots
+### Binding Validation by Neutralization
+<a href="notebooks/ephrin_neut_curves.html" target="_self">Binding validations notebook</a>
 <Altair :showShadow="false" :spec-url="'htmls/all_ephrin_neut_plots.html'"></Altair>
+
 
 ## Analysis Notebooks
 <a href="notebooks/ephrin_binding.html" target="_self">Binding analysis notebook</a>

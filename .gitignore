@@ -29,6 +29,7 @@ notebooks/*
 !notebooks/mab_neut_ic50.ipynb
 !notebooks/README.md
 !notebooks/make_nipah_phylogeny_baltic.ipynb
+!notebooks/plot_BLI_data.ipynb
 
 !results/dms_viz/
 
