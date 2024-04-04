@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Nipah RBP DMS"
   tagline: "Collection of data, figures, and information for the Nipah virus receptor binding protein deep mutational scanning project"
-  image: /images/Nipah_RBP_blender.png
+  image: /images/entry_tetramer.png
 
 
 features:
@@ -36,7 +36,7 @@ features:
 
 ### About
 
-This website contains links and information for the Nipah virus receptor binding protein deep mutational scanning project. Look through Jupyter notebooks used in analyses, or explore interactive charts. To view more information on the code, click on the GitHub logo in upper right. Interactive charts made with [Altair](https://altair-viz.github.io){target="_self"}. Embedding of Altair plots was done with custom javascript code from [dms-vep](https://github.com/dms-vep/dms-vep.github.io){target="_self"}. All work done in [Bloom Lab](https://research.fredhutch.org/bloom/en.html){target="_self"}, part of [Fred Hutch Cancer Center](https://www.fredhutch.org/en.html){target="_self"}.
+This website contains links and information for the Nipah virus receptor binding protein deep mutational scanning project. Look through Jupyter notebooks used in analyses, or explore interactive charts. To view more information on the code, click on the GitHub logo in upper right. Interactive charts made with [Altair](https://altair-viz.github.io){target="_self"}. Embedding of Altair plots was done with custom javascript code from [dms-vep](https://github.com/dms-vep/dms-vep.github.io){target="_self"}. Work done in [Bloom Lab](https://research.fredhutch.org/bloom/en.html){target="_self"}, part of [Fred Hutch Cancer Center](https://www.fredhutch.org/en.html){target="_self"}.
 
 All experiments were performed with non-replicative lentiviral-based pseudoviruses. Ephrin-B2 and Ephrin-B3 orthologs from the bat species *Pteropus alecto* were used for cell entry and receptor binding assays.
 

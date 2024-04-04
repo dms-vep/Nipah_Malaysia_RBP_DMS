@@ -1,6 +1,6 @@
 # Cell Entry
 
-To measure the effects of mutations on RBP-mediated cell entry, we performed 'functional selections' where the relative frequency of barcodes are compared between two conditions. The two conditions were Nipah RBP/F and VSV-G. Notebooks below contain information about each step.
+To measure the effects of mutations on RBP-mediated cell entry, we performed 'functional selections' where the frequencies of barcodes were compared between Nipah RBP/F and VSV-G. Notebooks below contain information about each step.
 
 
 ## Global Epistasis Fitting
@@ -89,7 +89,7 @@ Individual cell entry selections were fit with [multidms](https://github.com/mat
 :::
 
 ## Averaging Cell Entry
-Individual functional selections are averaged between libraries and replicates below.
+Individual functional selections were averaged between libraries and replicates below.
 
 <a href="notebooks/avg_func_effects_CHO_bEFNB2.html" target="_self">CHO_bEFNB2</a>
 
@@ -112,23 +112,23 @@ Click arrow box to view altair plots in separate page.
 :::
 Cell entry of different RBP regions
 
-<Altair :showShadow="true" :spec-url="'/htmls/entry_region_boxplot_plot.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/entry_region_boxplot_plot.html'"></Altair>
 
 Site-averaged effects of mutations on cell entry in RBP neck and contact sites
 
-<Altair :showShadow="true" :spec-url="'/htmls/combined_region_barplot_output.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/combined_region_barplot_output.html'"></Altair>
 
-### Correlations in Entry
+### Cell Entry Correlations
 Correlation between site-averaged effects of mutations on cell entry
 
-<Altair :showShadow="true" :spec-url="'/htmls/E2_E3_entry_corr_plot.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/E2_E3_entry_corr_plot.html'"></Altair>
 
 Correlation between effects of all mutations on cell entry
-<Altair :showShadow="true" :spec-url="'/htmls/E2_E3_entry_all_muts_plot.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/E2_E3_entry_all_muts_plot.html'"></Altair>
 
 ### Cell Entry Validations
 
 <a href="notebooks/cell_entry_validations.html" target="_self">Cell entry validation notebook</a>
 
 Cell entry validation correlations
-<Altair :showShadow="true" :spec-url="'/htmls/corr_plots_combined.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/corr_plots_combined.html'"></Altair>

@@ -21,7 +21,7 @@
   :root {
     --vp-home-hero-name-color: transparent;
     --vp-home-hero-name-background: -webkit-linear-gradient(
-        55deg,
+        320deg,
         hsl(355deg 64% 41%) 0%,
         hsl(0deg 46% 54%) 15%,
         hsl(3deg 50% 64%) 25%,
@@ -37,30 +37,31 @@
       );
   
     --vp-home-hero-image-background-image: linear-gradient(
-        115deg,
-        hsl(355deg 64% 41%) 0%,
-        hsl(350deg 67% 40%) 6%,
-        hsl(346deg 69% 39%) 11%,
-        hsl(342deg 69% 39%) 16%,
-        hsl(338deg 68% 38%) 20%,
-        hsl(335deg 66% 38%) 25%,
-        hsl(331deg 64% 37%) 29%,
-        hsl(327deg 60% 37%) 34%,
-        hsl(323deg 56% 37%) 38%,
-        hsl(318deg 52% 36%) 42%,
-        hsl(312deg 47% 36%) 46%,
-        hsl(305deg 42% 35%) 50%,
-        hsl(295deg 38% 35%) 53%,
-        hsl(285deg 37% 37%) 57%,
-        hsl(275deg 36% 38%) 61%,
-        hsl(265deg 35% 39%) 65%,
-        hsl(254deg 34% 39%) 69%,
-        hsl(243deg 33% 40%) 73%,
-        hsl(233deg 37% 39%) 78%,
-        hsl(224deg 46% 36%) 83%,
-        hsl(217deg 57% 34%) 89%,
-        hsl(211deg 75% 30%) 100%
-      );
+      145deg,
+      hsl(355deg 64% 41%) 0%,
+      hsl(358deg 49% 48%) 5%,
+      hsl(0deg 46% 54%) 9%,
+      hsl(2deg 48% 59%) 14%,
+      hsl(3deg 50% 64%) 18%,
+      hsl(3deg 53% 69%) 23%,
+      hsl(4deg 55% 75%) 27%,
+      hsl(4deg 57% 80%) 32%,
+      hsl(4deg 60% 85%) 36%,
+      hsl(5deg 62% 90%) 41%,
+      hsl(5deg 65% 95%) 45%,
+      hsl(0deg 0% 100%) 50%,
+      hsl(225deg 28% 94%) 55%,
+      hsl(225deg 28% 88%) 59%,
+      hsl(224deg 28% 82%) 64%,
+      hsl(223deg 28% 76%) 68%,
+      hsl(223deg 28% 69%) 73%,
+      hsl(222deg 28% 63%) 77%,
+      hsl(221deg 28% 57%) 82%,
+      hsl(220deg 28% 51%) 86%,
+      hsl(218deg 35% 45%) 91%,
+      hsl(215deg 47% 38%) 95%,
+      hsl(211deg 75% 30%) 100%
+    );
 
     --vp-home-hero-image-filter: blur(44px);
   }
@@ -336,7 +337,7 @@
 
   /* Brendan custom CSS */
   .VPImage {    
-    width: 45%; 
+    width: 85%; 
     border-radius: 15px; 
     
   }

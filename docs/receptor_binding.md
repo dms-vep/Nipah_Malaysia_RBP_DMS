@@ -1,6 +1,6 @@
 # Receptor Binding
 
-Receptor binding affinity can be measured by performing selections with soluble receptor. Neutralization of pseudovirus variants will depend on how well a specific variant is bound by receptor. Receptor binding selections were fit with [polyclonal](https://github.com/jbloomlab/polyclonal){target="_self"}.
+To understand how mutations affect binding to soluble receptor, we performed selections on our pseudovirus libraries with soluble receptor. Neutralization of pseudovirus variants serves as a proxy for receptor binding. Receptor binding selections were fit with [polyclonal](https://github.com/jbloomlab/polyclonal){target="_self"}.
 
 
 ## Individual Receptor Binding Selections
@@ -33,28 +33,25 @@ Notebooks averaging affects of mutations on receptor binding across libraries an
 
 ## Neutralization of Nipah pseudoviruses
 Ephrin neutralization curve plot
-<Altair :showShadow="true" :spec-url="'htmls/ephrin_neut_curve.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/ephrin_neut_curve.html'"></Altair>
 
-## Effect of Mutations on Binding
-Bubbleplot of binding scores by region
-<Altair :showShadow="true" :spec-url="'htmls/binding_region_bubble_plot.html'"></Altair>
 
 ## Correlations Between Entry and Binding
 Effect of mutations on binding and entry for all mutants
-<Altair :showShadow="true" :spec-url="'htmls/entry_binding_combined_corr_plot.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/entry_binding_combined_corr_plot.html'"></Altair>
 
 ## Binding Correlations
 Binding to bEFNB2 and bEFNB3 with specific mutations highlighted
-<Altair :showShadow="true" :spec-url="'htmls/E2_E3_correlation.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/E2_E3_correlation.html'"></Altair>
 
 Interactive plot of bEFNB2 and bEFNB3 site-averaged binding correlations
-<Altair :showShadow="true" :spec-url="'/htmls/E2_E3_correlation_site.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/E2_E3_correlation_site.html'"></Altair>
 
 ## Binding Validations
 <a href="notebooks/ephrin_neut_curves.html" target="_self">Binding validations notebook</a>
 
 bEFNB2 and bEFNB3 binding validations plots
-<Altair :showShadow="true" :spec-url="'htmls/all_ephrin_neut_plots.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/all_ephrin_neut_plots.html'"></Altair>
 
 ## Analysis Notebooks
 <a href="notebooks/ephrin_binding.html" target="_self">Binding analysis notebook</a>

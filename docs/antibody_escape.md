@@ -67,7 +67,7 @@ We determined the effects of mutations on neutralization by different anti-RBP a
 <a href="notebooks/mab_neut_ic50.html" target="_self">Neutralization curves notebook</a>
 
 Neutralization of unmutated Nipah RBP/F pseudovirus 
-<Altair :showShadow="true" :spec-url="'/htmls/mab_neuts_plot.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/mab_neuts_plot.html'"></Altair>
 
 
 ## Antibody Escape Validations
@@ -75,17 +75,17 @@ Neutralization of unmutated Nipah RBP/F pseudovirus
 <a href="notebooks/mab_validation.html" target="_self">Antibody validation notebook</a>
 
 Single mutant validation of mutational effects on neutralization from antibody nAH1.3
-<Altair :showShadow="true" :spec-url="'/htmls/combined_ic50_neut_curve_plot.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/combined_ic50_neut_curve_plot.html'"></Altair>
 
 ## Miscellaneous Figures
 Escape at Nipah and Hendra polymorphisms and differences
-<Altair :showShadow="true" :spec-url="'/htmls/combined_evol_sites_escape.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/combined_evol_sites_escape.html'"></Altair>
 
 Top antibody escape mutants and cell entry
-<Altair :showShadow="true" :spec-url="'/htmls/escape_bubble_plot.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/escape_bubble_plot.html'"></Altair>
 
 Escape by site
-<Altair :showShadow="true" :spec-url="'/htmls/mab_line_escape_plot.html'"></Altair>
+<Altair :showShadow="true" :spec-url="'htmls/mab_line_escape_plot.html'"></Altair>
 
 
 ## Antibody Escape Analysis Notebook
