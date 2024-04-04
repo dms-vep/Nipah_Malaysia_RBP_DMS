@@ -42,16 +42,16 @@ If protein structure is available, distance in angstroms to the closest antibody
 Click arrow in upper right to view full-sized plots
 :::
 Effects of mutations on cell entry and binding at receptor contact sites
-<Altair :showShadow="true" :spec-url="'/htmls/combined_entry_binding_contact_heatmaps.html'"></Altair>
+<Altair :showShadow="true" :spec-url="'htmls/combined_entry_binding_contact_heatmaps.html'"></Altair>
 
 Effects of mutations on cell entry and binding at glycosylation sites
-<Altair :showShadow="true" :spec-url="'/htmls/glycan_sites_img_heatmap.html'"></Altair>
+<Altair :showShadow="true" :spec-url="'htmls/glycan_sites_img_heatmap.html'"></Altair>
 
 Effects of mutations on cell entry and binding at polymorphic Nipah sites
-<Altair :showShadow="true" :spec-url="'/htmls/nipah_poly_sites_img_heatmap.html'"></Altair>
+<Altair :showShadow="true" :spec-url="'htmls/nipah_poly_sites_img_heatmap.html'"></Altair>
 
 Effects of mutations on cell entry, organized by type of the unmutated amino acid residue 
-<Altair :showShadow="true" :spec-url="'/htmls/E3_entry_AA_prop_heatmap.html'"></Altair>
+<Altair :showShadow="true" :spec-url="'htmls/E3_entry_AA_prop_heatmap.html'"></Altair>
 
 ## Notebooks
 

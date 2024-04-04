@@ -10,12 +10,12 @@ To explore heatmaps, click [here](/heatmaps)
 ## 
 <Altair :showShadow="false" :spec-url="'htmls/entry_by_site_plot_e2_bar_plot.html'"></Altair>
 
-<Altair :showShadow="false" :spec-url="'/htmls/entry_by_site_plot_e3_bar_plot.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/entry_by_site_plot_e3_bar_plot.html'"></Altair>
 
 ## 
-<Altair :showShadow="false" :spec-url="'/htmls/entry_letter_plot_slider.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/entry_letter_plot_slider.html'"></Altair>
 
-<Altair :showShadow="false" :spec-url="'/htmls/binding_letter_plot_slider.html'"></Altair>
+<Altair :showShadow="false" :spec-url="'htmls/binding_letter_plot_slider.html'"></Altair>
 
 
 ## 

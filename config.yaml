@@ -8,7 +8,7 @@
 # and `./`, but in this example they are upstream from this subdirectory.
 # ----------------------------------------------------------------------------
 pipeline_path: dms-vep-pipeline-3  # typically will be `dms-vep-pipeline` for real pipelines
-docs: docs  # typically will be `docs` for real pipelines
+docs: docs/public/  # typically will be `docs` for real pipelines
 
 # ----------------------------------------------------------------------------
 # Details on repo, used for docs. Change this to details for your project.
