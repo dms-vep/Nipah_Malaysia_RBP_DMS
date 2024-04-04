@@ -342,21 +342,15 @@
     
   }
 
-  .vega-chart-container.expanded.no-box-shadow {
-    padding: 0px;
-    font-size: 12px;
-    font-family: "Helvetica Light";
-    align-content: normal;
-  }
-
   #vg-tooltip-element {
     font-family: "Helvetica Light";
-    background-color: #fffffff8;
+    background-color: #000000f8;
     font-size: 12px;
-    color: #000000;
+    color: #ffffff;
     border-color: #898989;
     border-width: 0.5px;
     border-radius: 10px;
+    line-height: 10px;
   }
   .vega-bind input[type="range"] {
     cursor: pointer;
