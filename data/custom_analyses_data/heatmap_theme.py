@@ -86,7 +86,7 @@ def heatmap_theme():
     }
 
 # Register the custom theme under a chosen name
-alt.themes.register('heatmap_theme', heatmap_theme)
+#alt.themes.register('heatmap_theme', heatmap_theme)
 
 # Enable the newly registered theme
-alt.themes.enable('heatmap_theme')
+#alt.themes.enable('heatmap_theme')

@@ -104,7 +104,7 @@ def interactive_theme():
     }
 
 # Register the custom theme under a chosen name
-alt.themes.register('interactive_theme', interactive_theme)
+#alt.themes.register('interactive_theme', interactive_theme)
 
 # Enable the newly registered theme
-alt.themes.enable('interactive_theme')
+#alt.themes.enable('interactive_theme')

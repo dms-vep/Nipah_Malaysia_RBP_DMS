@@ -73,7 +73,7 @@ Neutralization of unmutated Nipah RBP/F pseudovirus by different anti-RBP antibo
 
 <a href="notebooks/mab_validation.html" target="_self">Antibody validation notebook</a>
 
-To validate the DMS for escape measurements, we generated single RBP mutant pseudoviruses and tested their neutralization by antibody nAH1.3.
+To validate the escape measurements from DMS, we generated single RBP mutant pseudoviruses and tested their neutralization by antibody nAH1.3.
 <Altair :showShadow="false" :spec-url="'htmls/combined_ic50_neut_curve_plot.html'"></Altair>
 
 ## Miscellaneous Figures

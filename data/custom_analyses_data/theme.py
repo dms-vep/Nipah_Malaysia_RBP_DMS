@@ -1,6 +1,6 @@
 import altair as alt
 
-def brendan_theme():
+def main_theme():
     # Define Typography
     font = "Helvetica"
 
@@ -11,7 +11,7 @@ def brendan_theme():
     # Axes
     axisColor = "black"
     gridColor = "#DEDDDD"
-    
+
     return {
         "config": {
             "background": "transparent",
@@ -85,7 +85,7 @@ def brendan_theme():
     }
 
 # Register the custom theme under a chosen name
-alt.themes.register('brendan_theme', brendan_theme)
+#alt.themes.register('brendan_theme', brendan_theme)
 
 # Enable the newly registered theme
-alt.themes.enable('brendan_theme')
+#alt.themes.enable('brendan_theme')

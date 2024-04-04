@@ -7508,7 +7508,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=2daa4dc9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=bb4293b4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7526,7 +7526,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=71b71ea3-b3a6-4825-8344-22d84eb26dbe">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=71b71ea3-b3a6-4825-8344-22d84eb26dbe">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7542,33 +7542,24 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span>
 <span class="kn">import</span> <span class="nn">yaml</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3ef9418e-4f61-4794-b135-48e40185400a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># allow more rows for Altair</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># allow more rows for Altair</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">disable_max_rows</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="p">(</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    <span class="o">==</span> <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
-<span class="p">):</span>
+<span class="c1"># setup working directory</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span><span class="p">:</span>
     <span class="k">pass</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Already in correct directory"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span>
-        <span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span>
-    <span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">"/fh/fast/bloom_j/computational_notebooks/blarsen/2023/Nipah_Malaysia_RBP_DMS/"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Setup in correct directory"</span><span class="p">)</span>
+
+<span class="c1">#import altair themes from /data/custom_analyses_data/theme.py and enable</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'data/custom_analyses_data/'</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">theme</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">'main_theme'</span><span class="p">,</span> <span class="n">theme</span><span class="o">.</span><span class="n">main_theme</span><span class="p">)</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">'main_theme'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7585,6 +7576,12 @@ a.anchor-link {
 </pre>
 </div>
 </div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>ThemeRegistry.enable('main_theme')</pre>
+</div>
+</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=118f7b4c-6c80-4e86-8eb9-a4698f2cba78">
@@ -7592,13 +7589,13 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">##hard paths in case don't want to run with snakemake</span>
 <span class="k">if</span> <span class="n">BLI_corr_plot</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"loading hard paths"</span><span class="p">)</span>
-    <span class="n">altair_config</span> <span class="o">=</span> <span class="s2">"data/custom_analyses_data/theme.py"</span>
+    <span class="c1">#altair_config = "data/custom_analyses_data/theme.py"</span>
     <span class="n">nipah_config</span> <span class="o">=</span> <span class="s2">"nipah_config.yaml"</span>
     
     <span class="c1"># input files</span>
@@ -7609,31 +7606,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=df555b6d-a674-4435-9de6-40691671c645">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">altair_config</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">altair_config</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">exec</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-
-<span class="c1">#with open(nipah_config) as f:</span>
-<span class="c1">#    config = yaml.safe_load(f)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6f550e64-f2b8-4f6e-8282-fa4c2c81f58d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># import binding data</span>
@@ -7821,7 +7799,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">### load BLI data and merge with binding from DMS</span>
@@ -7994,7 +7972,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'B2_mean'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'B2_1'</span><span class="p">,</span> <span class="s1">'B2_2'</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -8247,7 +8225,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">##### calculate R value:</span>
@@ -8286,7 +8264,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Sorting function to put 'WT' on top of the legend, followed by numerical order</span>
@@ -8384,26 +8362,26 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-513c3e6ada1349acb6c70b365a277254.vega-embed {
+  #altair-viz-af667457108c4988aa7a7ba1ac1e1a6c.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-513c3e6ada1349acb6c70b365a277254.vega-embed details,
-  #altair-viz-513c3e6ada1349acb6c70b365a277254.vega-embed details summary {
+  #altair-viz-af667457108c4988aa7a7ba1ac1e1a6c.vega-embed details,
+  #altair-viz-af667457108c4988aa7a7ba1ac1e1a6c.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-513c3e6ada1349acb6c70b365a277254"></div>
+<div id="altair-viz-af667457108c4988aa7a7ba1ac1e1a6c"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-513c3e6ada1349acb6c70b365a277254") {
-      outputDiv = document.getElementById("altair-viz-513c3e6ada1349acb6c70b365a277254");
+    if (outputDiv.id !== "altair-viz-af667457108c4988aa7a7ba1ac1e1a6c") {
+      outputDiv = document.getElementById("altair-viz-af667457108c4988aa7a7ba1ac1e1a6c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8460,7 +8438,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create the Altair chart</span>
@@ -8536,26 +8514,26 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-266cca1a532a4d609f45c84776c6c4bb.vega-embed {
+  #altair-viz-dc3ea20c4916490eb8e6e67b7634cdbb.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-266cca1a532a4d609f45c84776c6c4bb.vega-embed details,
-  #altair-viz-266cca1a532a4d609f45c84776c6c4bb.vega-embed details summary {
+  #altair-viz-dc3ea20c4916490eb8e6e67b7634cdbb.vega-embed details,
+  #altair-viz-dc3ea20c4916490eb8e6e67b7634cdbb.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-266cca1a532a4d609f45c84776c6c4bb"></div>
+<div id="altair-viz-dc3ea20c4916490eb8e6e67b7634cdbb"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-266cca1a532a4d609f45c84776c6c4bb") {
-      outputDiv = document.getElementById("altair-viz-266cca1a532a4d609f45c84776c6c4bb");
+    if (outputDiv.id !== "altair-viz-dc3ea20c4916490eb8e6e67b7634cdbb") {
+      outputDiv = document.getElementById("altair-viz-dc3ea20c4916490eb8e6e67b7634cdbb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8612,7 +8590,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">combined</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">hconcat</span><span class="p">(</span><span class="n">final_chart_E2</span><span class="p">,</span> <span class="n">final_chart_E3</span><span class="p">)</span>
@@ -8631,23 +8609,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-474ee82b271c4e7c81583adcc0c364a1.vega-embed {
+  #altair-viz-b8863346438e40a2844f310c72cb38ab.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-474ee82b271c4e7c81583adcc0c364a1.vega-embed details,
-  #altair-viz-474ee82b271c4e7c81583adcc0c364a1.vega-embed details summary {
+  #altair-viz-b8863346438e40a2844f310c72cb38ab.vega-embed details,
+  #altair-viz-b8863346438e40a2844f310c72cb38ab.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-474ee82b271c4e7c81583adcc0c364a1"></div>
+<div id="altair-viz-b8863346438e40a2844f310c72cb38ab"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-474ee82b271c4e7c81583adcc0c364a1") {
-      outputDiv = document.getElementById("altair-viz-474ee82b271c4e7c81583adcc0c364a1");
+    if (outputDiv.id !== "altair-viz-b8863346438e40a2844f310c72cb38ab") {
+      outputDiv = document.getElementById("altair-viz-b8863346438e40a2844f310c72cb38ab");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

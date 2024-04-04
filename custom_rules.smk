@@ -51,34 +51,24 @@ rule analyze_nipah_RBP_entry:
 rule analyze_nipah_RBP_binding:
     """Analyze EFNB2 and EFNB3 binding"""
     input:
-        binding_E2_file="results/filtered_data/binding/e2_binding_filtered.csv",
-        binding_E3_file="results/filtered_data/binding/e3_binding_filtered.csv",
         nb="notebooks/ephrin_binding.ipynb",
         nipah_config="nipah_config.yaml",
-        altair_config="data/custom_analyses_data/theme.py",
+        binding_E2_file="results/filtered_data/binding/e2_binding_filtered.csv",
+        binding_E3_file="results/filtered_data/binding/e3_binding_filtered.csv",
     output:
         nb="results/notebooks/ephrin_binding.ipynb",
         entry_binding_combined_corr_plot="results/images/entry_binding_combined_corr_plot.html",
         E2_E3_correlation="results/images/E2_E3_correlation.html",
         E2_E3_correlation_site="results/images/E2_E3_correlation_site.html",
-        binding_by_site_plot="results/images/binding_by_site_plot.html",
-        entry_binding_corr_heatmap="results/images/entry_binding_corr_heatmap.html",
-        binding_region_bubble_plot="results/images/binding_region_bubble_plot.html",
-        combined_contact_ranked_bar_output='results/images/combined_contact_ranked_bar_output.html',
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
             {
                 "nipah_config": input.nipah_config,
-                "altair_config": input.altair_config,
                 "binding_E2_file": input.binding_E2_file,
                 "binding_E3_file": input.binding_E3_file,
                 "entry_binding_combined_corr_plot": output.entry_binding_combined_corr_plot,
                 "E2_E3_correlation": output.E2_E3_correlation,
                 "E2_E3_correlation_site": output.E2_E3_correlation_site,
-                "binding_by_site_plot": output.binding_by_site_plot,
-                "entry_binding_corr_heatmap": output.entry_binding_corr_heatmap,
-                "binding_region_bubble_plot": output.binding_region_bubble_plot,
-                "combined_contact_ranked_bar_output": output.combined_contact_ranked_bar_output,
             }
         ),
     log:
@@ -793,13 +783,9 @@ docs["Additional files and charts"] = {
     },
     "Ephrin Binding": {
         "Binding Analysis Notebook": rules.analyze_nipah_RBP_binding.output.nb,
-        "Contact ranked sites": rules.analyze_nipah_RBP_binding.output.combined_contact_ranked_bar_output,
-        "Interactive Plot of Mean Binding by Site": rules.analyze_nipah_RBP_binding.output.binding_by_site_plot,
-        "Bubbleplot of binding scores by region": rules.analyze_nipah_RBP_binding.output.binding_region_bubble_plot,
         "Ephrin neutralization curve plot": rules.ephrin_neuts.output.ephrin_curve_plot,
         "Binding vs Entry": {
             "Binding vs Entry for all mutants": rules.analyze_nipah_RBP_binding.output.entry_binding_combined_corr_plot,
-            "Binding vs Entry for site-averaged effects Heatmap": rules.analyze_nipah_RBP_binding.output.entry_binding_corr_heatmap,
         },
         "Ephrin Binding Heatmaps": {
             "bEFNB2 Binding Heatmap": rules.make_heatmaps.output.E2_binding_heatmap,
