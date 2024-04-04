@@ -1,21 +1,21 @@
 # Heatmaps
 
-Heatmaps represent one of the best ways to explore deep mutational scanning data. This page has links to heatmaps showing the effects of mutations on three different phenotypes: cell entry, receptor binding, and antibody escape. 
+Heatmaps represent one of the best ways to explore deep mutational scanning data. This page contains links to heatmaps which show the effects of mutations on three different phenotypes: cell entry, receptor binding, and antibody escape. 
 
 ::: tip
-Hover over cells in the heatmaps to see more information about each mutation
+Hover over the heatmaps to see more information about each mutation
 :::
 
 ## Entry Heatmaps
-<a href="htmls/E2_entry_heatmap.html" target="_self">Cell Entry in CHO-bEFNB2</a>
+<a href="htmls/E2_entry_heatmap.html" target="_self">Cell Entry in CHO-bEFNB2 Cells</a>
 
-<a href="htmls/E3_entry_heatmap.html" target="_self">Cell Entry in CHO-bEFNB3</a>
+<a href="htmls/E3_entry_heatmap.html" target="_self">Cell Entry in CHO-bEFNB3 Cells</a>
 
 ## Binding Heatmaps
 ::: info
 Mutations with low cell entry scores are masked in dark gray.
 :::
-<a href="htmls/E2_binding_heatmap.html" target="_self">bEFNB2 Binding Heatmap</a>
+<a href="htmls/E2_binding_heatmap.html" target="_self">bEFNB2 binding Heatmap</a>
 
 <a href="htmls/E3_binding_heatmap.html" target="_self">bEFNB3 Binding Heatmap</a>
 

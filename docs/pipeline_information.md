@@ -1,36 +1,36 @@
 # Pipeline Information
 
-To link barcodes to specific variants present in each RBP sequence, we did Pacbio sequencing on RBP variant libraries. Full-length RBP consensus sequences were made to determine which mutations were present in each library. DMS data was analyzed with [dms-vep-pipeline-3](https://github.com/dms-vep/dms-vep-pipeline-3){target="_self"}. This pipeline utilizes the [alignparse](https://jbloomlab.github.io/alignparse/){target="_self"} python package. The general steps are listed below. 
+To link barcodes to specific variants present in each RBP sequence, we performed Pacbio sequencing on RBP variant libraries. Full-length RBP consensus sequences were made to determine which mutations were present in each library. DMS data were analyzed with [dms-vep-pipeline-3](https://github.com/dms-vep/dms-vep-pipeline-3){target="_self"}. This pipeline utilizes the [alignparse](https://jbloomlab.github.io/alignparse/){target="_self"} python package. The general steps are listed below. 
 
 ## Build Pacbio Sequences 
 
-<a href="notebooks/build_pacbio_consensus.html" target="_self">Build PacBio consensus sequences notebook</a>
+<a href="notebooks/build_pacbio_consensus.html" target="_self">PacBio consensus sequences notebook</a>
 
-Builds the pacbio consensus sequence. Paramaters used are:
+Builds the Pacbio consensus sequence. Paramaters used are:
 ```
 max_minor_sub_frac=0.2
 max_minor_indel_frac=0.2
 min_support=3
 ```
 
-These parameters filter consensus sequences made from pacbio CCS sequencing. If a consensus RBP sequence has a mutation or indel at greater than 20% frequency of the reads, it will be discarded. Consensus sequences must have at least three reads to be included.
+These parameters filter consensus sequences generated from Pacbio CCS sequencing and assembly. If a consensus RBP sequence has a mutation or indel in greater than 20% frequency of the reads, it will be discarded. Consensus sequences must have at least three reads to be included as variants.
 
 
 ## Analyze PacBio CCS Reads
 <a href="notebooks/analyze_pacbio_ccs.html" target="_self">Analyze Pacbio CCS reads notebook</a>
 
-Reports stats on how many CCS reads were filtered out or aligned to the unmutated reference sequence. 
+Reports information about CCS read filtering.
 
 
 ## Build Codon Variants Notebook
 
 <a href="notebooks/build_codon_variants.html" target="_self">Build codon variants notebook</a>
 
-Builds the codon-variant table that links barcodes and mutations. 
+Builds the codon-variant table from PacBio consensus sequences that links barcodes and mutations. 
 
 
 ## Illumina Variant Counts
-Once the barcodes are linked to mutations in the codon-variant table, all sequencing data is generated with Illumina to get the relative frequencies of barcodes in each experiment.  
+Once the barcodes are linked to mutations in the codon-variant table, all sequencing data is generated with Illumina to obtain the relative frequencies of barcodes in each selection experiment.  
 
 <a href="notebooks/analyze_variant_counts.html" target="_self">Analysis of variant counts notebook</a>
 

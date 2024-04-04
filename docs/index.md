@@ -10,7 +10,7 @@ hero:
 
 features:
   - title: Pipeline information and data processing
-    details: Analysis of pacbio and illumina sequencing data produced from deep mutational scanning experiments
+    details: Analysis of Pacbio and Illumina sequencing data produced from deep mutational scanning experiments
     link: /pipeline_information
     
   - title: Cell entry
@@ -18,11 +18,11 @@ features:
     link: /cell_entry
     
   - title: Receptor binding
-    details: Analysis of soluble receptor selections for measuring how mutations affect binding to ephrin-B2 and ephrin-B3
+    details: Analysis of soluble receptor selections for measuring how mutations affect binding to host receptors
     link: /receptor_binding
 
   - title: Antibody escape
-    details: Analysis of antibody neutralization selections for finding sites of escape in RBP
+    details: Analysis of antibody neutralization data for finding sites of escape in RBP
     link: /antibody_escape
 
   - title: Heatmaps
@@ -36,7 +36,7 @@ features:
 
 ### About
 
-This website contains links and information for the Nipah virus receptor binding protein deep mutational scanning project. Look through jupyter notebooks used in analyses, or explore interactive charts. To view more information, click on GitHub logo in upper right. Interactive charts made with [Altair](https://altair-viz.github.io){target="_self"}. Embedding of Altair plots was done by custom javascript code from [dms-vep](https://github.com/dms-vep/dms-vep.github.io){target="_self"}. All work done in [Bloom Lab](https://research.fredhutch.org/bloom/en.html){target="_self"}, part of [Fred Hutch Cancer Center](https://www.fredhutch.org/en.html){target="_self"}.
+This website contains links and information for the Nipah virus receptor binding protein deep mutational scanning project. Look through Jupyter notebooks used in analyses, or explore interactive charts. To view more information on the code, click on the GitHub logo in upper right. Interactive charts made with [Altair](https://altair-viz.github.io){target="_self"}. Embedding of Altair plots was done with custom javascript code from [dms-vep](https://github.com/dms-vep/dms-vep.github.io){target="_self"}. All work done in [Bloom Lab](https://research.fredhutch.org/bloom/en.html){target="_self"}, part of [Fred Hutch Cancer Center](https://www.fredhutch.org/en.html){target="_self"}.
 
-All experiments were performed with non-replicative HIV-based pseudoviruses. Ephrin-B2 and Ephrin-B3 orthologs from *Pteropus alecto* were used for cell entry and receptor binding assays.
+All experiments were performed with non-replicative lentiviral-based pseudoviruses. Ephrin-B2 and Ephrin-B3 orthologs from the bat species *Pteropus alecto* were used for cell entry and receptor binding assays.
 
