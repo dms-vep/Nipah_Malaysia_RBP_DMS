@@ -2,7 +2,7 @@ import { h } from "vue";
 import DefaultTheme from "vitepress/theme";
 import Altair from "./Altair.vue";
 import Figure from "./Figure.vue";
-/*import "bootstrap-icons/font/bootstrap-icons.css";*/
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./style.css";
 
 export default {
