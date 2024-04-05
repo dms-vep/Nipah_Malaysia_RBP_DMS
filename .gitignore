@@ -7,7 +7,6 @@ _*
 !.gitmodules
 
 node_modules/*
-
 !docs/.vitepress/*
 !docs/public*
 
@@ -76,5 +75,22 @@ results/antibody_escape/by_selection/*.pickle
 results/antibody_escape/by_selection/*.csv
 !results/antibody_escape/averages
 results/antibody_escape/averages/*
-!results/antibody_escape/averages/*_mut_escape.csv
+!results/antibody_escape/averages/*_mut_effect.csv
 !results/antibody_escape/averages/*_mut_icXX.csv
+
+!results/distances/*.csv
+!results/filtered_data/binding/*.csv
+!results/filtered_data/entry/*.csv
+!results/filtered_data/escape/*.csv
+
+!results/receptor_affinity
+results/receptor_affinity/*
+!results/receptor_affinity/by_selection
+results/receptor_affinity/by_selection/*.pickle
+results/receptor_affinity/by_selection/*.csv
+!results/receptor_affinity/averages
+results/receptor_affinity/averages/*
+!results/receptor_affinity/averages/*_mut_effect.csv
+!results/receptor_affinity/averages/*_mut_icXX.csv
+
+!results/summaries/*.csv
