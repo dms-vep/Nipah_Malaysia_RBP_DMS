@@ -46,4 +46,4 @@ The [website](https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/) hosting the not
         - Note: ```working-directory: docs``` must be added in two spots in script to make sure the correct directory is built.
     - Modified ```config.yaml``` to save all html files to ```docs/public/``` that are built by snakemake pipeline.
 
-To serve the website, run ```npm run docs:build``` in root (make sure you have ```nodejs``` running in conda environment). Then simply add and push changes to remote repo.
+To serve the website, run ```npm run docs:build``` in root (make sure you have ```nodejs``` running in conda environment). Check everything built correctly by running ```npm run docs:preview```.Then simply add and push changes to remote repo.

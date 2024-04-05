@@ -81,26 +81,36 @@ More in-depth heatmaps that allow additional control over filtering parameters
 ## Neutralization Curves
 <a href="notebooks/mab_neut_ic50.html" target="_self">Neutralization curves notebook</a>
 
-Neutralization of unmutated Nipah RBP/F pseudovirus by different anti-RBP antibodies.
-<Altair :showShadow="false" :spec-url="'htmls/mab_neuts_plot.html'"></Altair>
+<Figure caption="Neutralization of unmutated Nipah RBP/F pseudovirus by different anti-RBP antibodies.">
+    <Altair :showShadow="true" :spec-url="'htmls/mab_neuts_plot.html'"></Altair>
+</Figure>
 
 
 ## Antibody Escape Validations
 
 <a href="notebooks/mab_validation.html" target="_self">Antibody validation notebook</a>
 
-To validate the escape measurements from DMS, we generated single RBP mutant pseudoviruses and tested their neutralization by antibody nAH1.3.
-<Altair :showShadow="false" :spec-url="'htmls/combined_ic50_neut_curve_plot.html'"></Altair>
+<Figure caption="To validate the escape measurements from DMS, we generated single RBP mutant pseudoviruses and tested their neutralization by antibody nAH1.3.">
+    <Altair :showShadow="true" :spec-url="'htmls/combined_ic50_neut_curve_plot.html'"></Altair>
+</Figure>
 
 ## Miscellaneous Figures
-Escape at Nipah and Hendra polymorphisms and differences
-<Altair :showShadow="false" :spec-url="'htmls/combined_evol_sites_escape.html'"></Altair>
+
+<Figure caption="Escape at Nipah and Hendra polymorphisms and differences">
+    <Altair :showShadow="true" :spec-url="'htmls/combined_evol_sites_escape.html'"></Altair>
+</Figure>
 
 ### Functional Effect of Antibody Escape Mutations
-<Altair :showShadow="false" :spec-url="'htmls/escape_bubble_plot.html'"></Altair>
+
+<Figure caption="Effects of mutations on cell entry and antibody neutralization">
+    <Altair :showShadow="true" :spec-url="'htmls/escape_bubble_plot.html'"></Altair>
+</Figure>
 
 ### Escape by Site
-<Altair :showShadow="true" :spec-url="'htmls/mab_line_escape_plot.html'"></Altair>
+
+<Figure caption="Line plot of average antibody escape at each site">
+    <Altair :showShadow="true" :spec-url="'htmls/mab_line_escape_plot.html'"></Altair>
+</Figure>
 
 ## Antibody Escape Analysis Notebook
 <a href="notebooks/analyze_escape_data.html" target="_self">Antibody analysis notebook</a>

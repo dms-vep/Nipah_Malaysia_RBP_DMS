@@ -28,11 +28,15 @@ Reports information about CCS read filtering.
 
 Builds the codon-variant table from PacBio consensus sequences that links barcodes and mutations. 
 
+[Link to codon-variant table .csv file](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/variants/codon_variants.csv){target="_self"}
+
 
 ## Illumina Variant Counts
 Once the barcodes are linked to mutations in the codon-variant table, all sequencing data is generated with Illumina to obtain the relative frequencies of barcodes in each selection experiment.  
 
 <a href="notebooks/analyze_variant_counts.html" target="_self">Analysis of variant counts notebook</a>
+
+[Link to raw barcode count .csv files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/barcode_counts){target="_self"}
 
 ## Filtering Selection Data
 
@@ -43,15 +47,36 @@ The final averaged data were filtered based on the following parameters that are
 ## Raw Filtered Data
 ::: tip These data have been filtered. For pre-filtered raw .csv files, go to individual pages to view and download.
 ### Cell Entry
-[Individual cell entry .csv files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/func_effects/by_selection){target="_self"}
 
-[Average entry in CHO-bEFNB2 cells .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB2_func_effects.csv){target="_self"}
+[CHO-bEFNB2 entry filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/entry/e2_entry_filtered.csv){target="_self"}
 
-[Average entry in CHO-bEFNB3 cells .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB3_func_effects.csv){target="_self"}
+[CHO-bEFNB3 entry filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/entry/e3_entry_filtered.csv){target="_self"}
+
+### Receptor Binding
+
+[bEFNB2 monomeric binding filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/binding/e2_binding_filtered.csv){target="_self"}
+
+[bEFNB3 dimeric binding filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/binding/e3_binding_filtered.csv){target="_self"}
+
+### Antibody Escape
+
+[m102.4 escape filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/escape/m102_escape_filtered.csv){target="_self"}
+
+[HENV-117 escape filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/escape/HENV117_escape_filtered.csv){target="_self"}
+
+[HENV-26 escape filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/escape/HENV26_escape_filtered.csv){target="_self"}
+
+[HENV-32 escape filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/escape/HENV32_escape_filtered.csv){target="_self"}
+
+[HENV-103 escape filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/escape/HENV103_escape_filtered.csv){target="_self"}
+
+[nAH1.3 escape filtered .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/filtered_data/escape/nAH1_escape_filtered.csv){target="_self"}
 :::
 
 
 ## Miscellaneous Notebooks
+
+<a href="notebooks/library_correlations.html" target="_self">Correlations between libraries and variant histogram notebook</a>
 
 <a href="notebooks/make_nipah_phylogeny_baltic.html" target="_self">Notebook for making a Nipah phylogeny</a>
 
@@ -60,3 +85,4 @@ The final averaged data were filtered based on the following parameters that are
 <a href="notebooks/receptor_distance.html" target="_self">Calculate atomic distances between residues in a PDB file notebook</a>
 
 <a href="notebooks/henipavirus_conservation.html" target="_self">Find variable sites in Nipah or Henipavirus alignments notebook</a>
+

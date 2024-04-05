@@ -118,30 +118,37 @@ Notebook analyzing cell entry from filtered data.
 Plots below are interactive. Hover over points to see more information.
 Click arrow box to view altair plots in separate page.
 :::
-Cell entry of different RBP regions
 
-<Altair :showShadow="false" :spec-url="'htmls/entry_region_boxplot_plot.html'"></Altair>
+
+<Figure caption="Cell entry of different RBP regions">
+    <Altair :showShadow="true" :spec-url="'htmls/entry_region_boxplot_plot.html'"></Altair>
+</Figure>
 
 ### Site-averaged Effects of Mutations on Cell Entry
-Sites in RBP neck and contact sites (ranked from least constrained to most)
 
-<Altair :showShadow="false" :spec-url="'htmls/combined_region_barplot_output.html'"></Altair>
+<Figure caption="Sites in RBP neck and contact sites (ranked from least constrained to most)">
+    <Altair :showShadow="true" :spec-url="'htmls/combined_region_barplot_output.html'"></Altair>
+</Figure>
 
 ### Cell Entry Correlations
-Correlation between site-averaged effects of mutations on cell entry
 
-<Altair :showShadow="false" :spec-url="'htmls/E2_E3_entry_corr_plot.html'"></Altair>
+<Figure caption="Correlation between site-averaged effects of mutations on cell entry">
+    <Altair :showShadow="true" :spec-url="'htmls/E2_E3_entry_corr_plot.html'"></Altair>
+</Figure>
 
-Correlation between effects of all mutations on cell entry
-<Altair :showShadow="false" :spec-url="'htmls/E2_E3_entry_all_muts_plot.html'"></Altair>
+
+<Figure caption="Correlation between effects of all mutations on cell entry">
+    <Altair :showShadow="true" :spec-url="'htmls/E2_E3_entry_all_muts_plot.html'"></Altair>
+</Figure>
 
 ### Cell Entry Validations
 
 <a href="notebooks/cell_entry_validations.html" target="_self">Cell entry validation notebook</a>
 
-We validated the DMS cell entry measurements by making individual RBP mutants, expressing them on pseudovirus particles, and measuring luciferase following infection.
-<Altair :showShadow="false" :spec-url="'htmls/corr_plots_combined.html'"></Altair>
 
+<Figure caption="We validated the DMS cell entry measurements by making individual RBP mutants, expressing them on pseudovirus particles, and measuring luciferase following infection.">
+    <Altair :showShadow="true" :spec-url="'htmls/corr_plots_combined.html'"></Altair>
+</Figure>
 
 ## Raw Data
 ::: warning These data have not been filtered. For filtered .csv files, go to [Analysis Pipeline](/pipeline_information)

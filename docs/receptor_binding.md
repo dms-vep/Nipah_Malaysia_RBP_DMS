@@ -41,29 +41,42 @@ Additional control over filtering parameters
 
 
 ## Neutralization of Nipah pseudoviruses
-Ephrin neutralization of pseudoviruses expressing unmutated Nipah RBP/F
-<Altair :showShadow="false" :spec-url="'htmls/ephrin_neut_curve.html'"></Altair>
+
+<Figure caption="Ephrin neutralization of pseudoviruses expressing unmutated Nipah RBP/F">
+    <Altair :showShadow="true" :spec-url="'htmls/ephrin_neut_curve.html'"></Altair>
+</Figure>
 
 
 ## Correlations Between Entry and Binding
-Effects of mutations on binding and entry
-<Altair :showShadow="false" :spec-url="'htmls/entry_binding_combined_corr_plot.html'"></Altair>
+
+<Figure caption="Effects of mutations on binding and entry">
+    <Altair :showShadow="true" :spec-url="'htmls/entry_binding_combined_corr_plot.html'"></Altair>
+</Figure>
 
 ## Binding Correlations
-Binding to bEFNB2 and bEFNB3 with mutations of interest highlighted
-<Altair :showShadow="false" :spec-url="'htmls/E2_E3_correlation.html'"></Altair>
 
-Interactive plot of bEFNB2 and bEFNB3 site-averaged binding correlations
-<Altair :showShadow="false" :spec-url="'htmls/E2_E3_correlation_site.html'"></Altair>
+<Figure caption="Effects of mutations on binding to bEFNB2 and bEFNB3, with mutations of interest highlighted">
+    <Altair :showShadow="true" :spec-url="'htmls/E2_E3_correlation.html'"></Altair>
+</Figure>
+
+<Figure caption="Interactive plot of bEFNB2 and bEFNB3 site-averaged binding correlations">
+    <Altair :showShadow="true" :spec-url="'htmls/E2_E3_correlation_site.html'"></Altair>
+</Figure>
 
 ## Binding Validations
 ### Binding Validation by BLI
 <a href="notebooks/plot_BLI_data.html" target="_self">BLI validations notebook</a>
-<Altair :showShadow="false" :spec-url="'htmls/binding_BLI_corr.html'"></Altair>
+
+<Figure caption="Correlation of biolayer interferometry affinity measurements with DMS">
+    <Altair :showShadow="true" :spec-url="'htmls/binding_BLI_corr.html'"></Altair>
+</Figure>
 
 ### Binding Validation by Neutralization
 <a href="notebooks/ephrin_neut_curves.html" target="_self">Binding validations notebook</a>
-<Altair :showShadow="false" :spec-url="'htmls/all_ephrin_neut_plots.html'"></Altair>
+
+<Figure caption="Neutralization of single RBP mutant pseudoviruses and correlation with DMS">
+    <Altair :showShadow="true" :spec-url="'htmls/all_ephrin_neut_plots.html'"></Altair>
+</Figure>
 
 
 ## Analysis Notebooks
