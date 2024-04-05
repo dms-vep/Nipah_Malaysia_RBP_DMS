@@ -45,7 +45,8 @@ We determined the effects of mutations on neutralization by different anti-RBP a
 <a href="notebooks/fit_escape_antibody_escape_LibB-230907-HENV117.html" target="_self">LibB-230907-HENV117</a>
 :::
 
-## Averaging Antibody Escape
+## Average Antibody Escape
+Averaging antibody escape across libraries and replicate selections.
 ::: details Average antibody escape notebooks
 <a href="notebooks/avg_escape_antibody_escape_m102.4.html" target="_self">m102.4</a>
 
@@ -59,6 +60,21 @@ We determined the effects of mutations on neutralization by different anti-RBP a
 
 <a href="notebooks/avg_escape_antibody_escape_HENV117.html" target="_self">HENV-117</a>
 :::
+
+## Antibody Escape Comprehensive Heatmaps
+More in-depth heatmaps that allow additional control over filtering parameters
+
+<a href="htmls/m102.4_mut_effect.html" target="_self">m102.4</a>
+
+<a href="htmls/HENV117_mut_effect.html" target="_self">HENV-117</a>
+
+<a href="htmls/HENV26_mut_effect.html" target="_self">HENV-26</a>
+
+<a href="htmls/HENV32_mut_effect.html" target="_self">HENV-32</a>
+
+<a href="htmls/HENV103_mut_effect.html" target="_self">HENV-103</a>
+
+<a href="htmls/nAH1.3_mut_effect.html" target="_self">nAH1.3</a>
 
 
 
@@ -86,7 +102,24 @@ Escape at Nipah and Hendra polymorphisms and differences
 ### Escape by Site
 <Altair :showShadow="true" :spec-url="'htmls/mab_line_escape_plot.html'"></Altair>
 
-
 ## Antibody Escape Analysis Notebook
-
 <a href="notebooks/analyze_escape_data.html" target="_self">Antibody analysis notebook</a>
+
+## Raw Data
+::: warning These data have not been filtered. For filtered .csv files, go to [Analysis Pipeline](/pipeline_information)
+[Individual antibody escape selection .csv files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/antibody_escape/by_selection){target="_self"}
+
+[Average m102.4 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/m102.4_mut_effect.csv){target="_self"}
+
+[Average HENV-117 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV117_mut_effect.csv){target="_self"}
+
+[Average HENV-26 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV26_mut_effect.csv){target="_self"}
+
+[Average HENV-32 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV32_mut_effect.csv){target="_self"}
+
+[Average HENV-103 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV103_mut_effect.csv){target="_self"}
+
+[Average nAH1.3 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/nAH1.3_mut_effect.csv){target="_self"}
+:::
+
+

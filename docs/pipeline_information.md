@@ -40,6 +40,15 @@ Once the barcodes are linked to mutations in the codon-variant table, all sequen
 
 The final averaged data were filtered based on the following parameters that are contained within the [nipah_config.yaml](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/nipah_config.yaml){target="_self"} file. More information about these parameters are listed in the notebook.
 
+## Raw Filtered Data
+::: tip These data have been filtered. For pre-filtered raw .csv files, go to individual pages to view and download.
+### Cell Entry
+[Individual cell entry .csv files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/func_effects/by_selection){target="_self"}
+
+[Average entry in CHO-bEFNB2 cells .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB2_func_effects.csv){target="_self"}
+
+[Average entry in CHO-bEFNB3 cells .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB3_func_effects.csv){target="_self"}
+:::
 
 
 ## Miscellaneous Notebooks

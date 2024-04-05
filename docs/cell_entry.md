@@ -95,6 +95,14 @@ Individual functional selections were averaged between libraries and replicates 
 
 <a href="notebooks/avg_func_effects_CHO_bEFNB3.html" target="_self">CHO_bEFNB3</a>
 
+## Comprehensive Cell Entry Heatmaps
+Additional control over filtering parameters
+
+<a href="htmls/CHO_bEFNB2_func_effects.html" target="_self">CHO-bEFNB2 cell entry heatmap</a>
+
+<a href="htmls/CHO_bEFNB3_func_effects.html" target="_self">CHO-bEFNB3 cell entry heatmap</a>
+
+
 ## Functional Scores
 Notebook analyzing the distribution of functional scores for all individual selections.
 
@@ -133,3 +141,16 @@ Correlation between effects of all mutations on cell entry
 
 We validated the DMS cell entry measurements by making individual RBP mutants, expressing them on pseudovirus particles, and measuring luciferase following infection.
 <Altair :showShadow="false" :spec-url="'htmls/corr_plots_combined.html'"></Altair>
+
+
+## Raw Data
+::: warning These data have not been filtered. For filtered .csv files, go to [Analysis Pipeline](/pipeline_information)
+[Individual cell entry .csv files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/func_effects/by_selection){target="_self"}
+
+[Average entry in CHO-bEFNB2 cells .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB2_func_effects.csv){target="_self"}
+
+[Average entry in CHO-bEFNB3 cells .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB3_func_effects.csv){target="_self"}
+:::
+
+
+
