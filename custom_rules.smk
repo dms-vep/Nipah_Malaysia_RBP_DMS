@@ -455,11 +455,16 @@ rule filter_data:
         e3_entry_filtered = 'results/filtered_data/entry/e3_entry_filtered.csv',
         entry_filter_merged = 'results/filtered_data/entry/e2_e3_entry_filter_merged.csv',
         entry_filter_concat = 'results/filtered_data/entry/e2_e3_entry_filter_concat.csv',
+        RBP_mutation_effects_cell_entry_E2 = 'results/filtered_data/public_filtered/RBP_mutation_effects_cell_entry_CHO-bEFNB2.csv',
+        RBP_mutation_effects_cell_entry_E3 = 'results/filtered_data/public_filtered/RBP_mutation_effects_cell_entry_CHO-bEFNB3.csv',
+
 
         e2_binding_filtered = 'results/filtered_data/binding/e2_binding_filtered.csv',
         e3_binding_filtered = 'results/filtered_data/binding/e3_binding_filtered.csv',
         e2_low_binding_effect_filter = 'results/filtered_data/binding/e2_low_binding_effect_filter.csv',
         e3_low_binding_effect_filter = 'results/filtered_data/binding/e3_low_binding_effect_filter.csv',
+        RBP_mutation_effects_bEFNB2_binding = 'results/filtered_data/public_filtered/RBP_mutation_effects_bEFNB2_binding.csv',
+        RBP_mutation_effects_bEFNB3_binding = 'results/filtered_data/public_filtered/RBP_mutation_effects_bEFNB3_binding.csv',
             
         HENV103_filtered_path="results/filtered_data/escape/HENV103_escape_filtered.csv",
         HENV117_filtered_path="results/filtered_data/escape/HENV117_escape_filtered.csv",
@@ -468,7 +473,8 @@ rule filter_data:
         HENV32_filtered_path="results/filtered_data/escape/HENV32_escape_filtered.csv",
         nAH1_filtered_path="results/filtered_data/escape/nAH1_escape_filtered.csv",
         mab_filter_concat_file = 'results/filtered_data/escape/mab_filter_concat.csv',
-        e3_low_mab_effect_filter = 'results/filtered_data/escape/e3_low_mab_effect_filter.csv'
+        e3_low_mab_effect_filter = 'results/filtered_data/escape/e3_low_mab_effect_filter.csv',
+        RBP_mutation_effects_antibody_escape='results/filtered_data/public_filtered/RBP_mutation_effects_antibody_escape.csv',
 
     params:
         yaml=lambda _, input, output: yaml.round_trip_dump(
@@ -488,8 +494,12 @@ rule filter_data:
                 "e3_entry_filtered": output.e3_entry_filtered,
                 "entry_filter_merged": output.entry_filter_merged,
                 "entry_filter_concat": output.entry_filter_concat,
+                "RBP_mutation_effects_cell_entry_E2": output.RBP_mutation_effects_cell_entry_E2,
+                "RBP_mutation_effects_cell_entry_E3": output.RBP_mutation_effects_cell_entry_E3,
                 "e2_binding_filtered": output.e2_binding_filtered,
                 "e3_binding_filtered": output.e3_binding_filtered,
+                "RBP_mutation_effects_bEFNB2_binding": output.RBP_mutation_effects_bEFNB2_binding,
+                "RBP_mutation_effects_bEFNB3_binding": output.RBP_mutation_effects_bEFNB3_binding,
                 "e2_low_binding_effect_filter": output.e2_low_binding_effect_filter,
                 "e3_low_binding_effect_filter": output.e3_low_binding_effect_filter,
                 "HENV103_filtered_path": output.HENV103_filtered_path,
@@ -500,6 +510,7 @@ rule filter_data:
                 "nAH1_filtered_path": output.nAH1_filtered_path,
                 "e3_low_mab_effect_filter": output.e3_low_mab_effect_filter,
                 "mab_filter_concat_file": output.mab_filter_concat_file,
+                "RBP_mutation_effects_antibody_escape": output.RBP_mutation_effects_antibody_escape,
             }
         ),
     log:
