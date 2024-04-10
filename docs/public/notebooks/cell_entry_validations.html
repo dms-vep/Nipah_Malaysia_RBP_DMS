@@ -7489,6 +7489,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1820b59f-3abf-4e52-833f-3080315effeb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Papermill-parameters">Papermill parameters<a class="anchor-link" href="#Papermill-parameters">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_parameters" id="cell-id=b8e3249c-2c91-41e9-bda2-354ca01b4b16">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7514,7 +7525,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=ce118c14">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=8b39180a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7538,6 +7549,17 @@ a.anchor-link {
 <span class="n">corr_plots_combined</span> <span class="o">=</span> <span class="s2">"results/images/corr_plots_combined.html"</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3daa1c5b-f4bb-4e84-87fa-29440ccd2742">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Import-packages,-set-working-directory,-import-altair-theme">Import packages, set working directory, import altair theme<a class="anchor-link" href="#Import-packages,-set-working-directory,-import-altair-theme">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7599,6 +7621,17 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=91be4d95-c60c-4e32-96e5-c638be20076f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Read-config-file">Read config file<a class="anchor-link" href="#Read-config-file">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1d2e7dbd-7b5b-48ef-ad05-da00c36588c6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7634,7 +7667,6 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">corr_plots_combined</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="c1">#altair_config = "data/custom_analyses_data/theme.py"</span>
     <span class="n">nipah_config</span> <span class="o">=</span> <span class="s2">"nipah_config.yaml"</span>
     <span class="n">validation_file_E2</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s2">"data/custom_analyses_data/experimental_data/functional_validations_EFNB2.csv"</span>
@@ -7668,11 +7700,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">altair_config</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">altair_config</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">exec</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nipah_config</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nipah_config</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8030,7 +8058,7 @@ a.anchor-link {
             <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
             <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span>
                 <span class="nb">format</span><span class="o">=</span><span class="s2">".0e"</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">4</span>
-            <span class="p">),</span>  <span class="c1"># Display in scientific notation</span>
+            <span class="p">),</span>  
         <span class="p">),</span>
         <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
             <span class="s2">"mutation"</span><span class="p">,</span>
@@ -8063,8 +8091,8 @@ a.anchor-link {
     <span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
         <span class="n">align</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span>
         <span class="n">baseline</span><span class="o">=</span><span class="s2">"top"</span><span class="p">,</span>
-        <span class="n">dx</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span>  <span class="c1"># Adjust this for position</span>
-        <span class="n">dy</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span>  <span class="c1"># Adjust this for position</span>
+        <span class="n">dx</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span>  
+        <span class="n">dy</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span>  
         
     <span class="p">)</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">"x:Q"</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"y:Q"</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">"text:N"</span><span class="p">)</span>
@@ -8090,23 +8118,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-5bdda3f538394a68a7b99866403b510a.vega-embed {
+  #altair-viz-bfdd04db7659438cb4000aeaa7291cf3.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-5bdda3f538394a68a7b99866403b510a.vega-embed details,
-  #altair-viz-5bdda3f538394a68a7b99866403b510a.vega-embed details summary {
+  #altair-viz-bfdd04db7659438cb4000aeaa7291cf3.vega-embed details,
+  #altair-viz-bfdd04db7659438cb4000aeaa7291cf3.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-5bdda3f538394a68a7b99866403b510a"></div>
+<div id="altair-viz-bfdd04db7659438cb4000aeaa7291cf3"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5bdda3f538394a68a7b99866403b510a") {
-      outputDiv = document.getElementById("altair-viz-5bdda3f538394a68a7b99866403b510a");
+    if (outputDiv.id !== "altair-viz-bfdd04db7659438cb4000aeaa7291cf3") {
+      outputDiv = document.getElementById("altair-viz-bfdd04db7659438cb4000aeaa7291cf3");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8186,7 +8214,7 @@ a.anchor-link {
 
 <span class="c1"># Sorting function to put 'WT' on top of the legend, followed by numerical order</span>
 <span class="k">def</span> <span class="nf">custom_sort_order</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
-    <span class="c1"># Sort based on the numerical part in mutation strings, e.g., '530' in 'Q530F'</span>
+    <span class="c1"># Sort based on the numerical part in mutation strings</span>
     <span class="k">def</span> <span class="nf">extract_number</span><span class="p">(</span><span class="n">mutation</span><span class="p">):</span>
         <span class="n">num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\d+"</span><span class="p">,</span> <span class="n">mutation</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">group</span><span class="p">())</span> <span class="k">if</span> <span class="n">num</span> <span class="k">else</span> <span class="mi">0</span>
@@ -8258,7 +8286,7 @@ a.anchor-link {
     <span class="p">)</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">"x:Q"</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"y:Q"</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">"text:N"</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="c1"># text</span>
+
 <span class="n">final_chart</span> <span class="o">=</span> <span class="p">(</span><span class="n">corr_chart</span> <span class="o">+</span> <span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">resolve_scale</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="s1">'independent'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'independent'</span><span class="p">)</span>
 <span class="n">final_chart</span> <span class="o">=</span> <span class="n">final_chart</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 <span class="n">func_score_E3_chart</span> <span class="o">=</span> <span class="n">final_chart</span>
@@ -8278,23 +8306,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-9e32e3590eaf4116884d80c3f19e7181.vega-embed {
+  #altair-viz-8279a5e093c149358f51e40daf51e490.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-9e32e3590eaf4116884d80c3f19e7181.vega-embed details,
-  #altair-viz-9e32e3590eaf4116884d80c3f19e7181.vega-embed details summary {
+  #altair-viz-8279a5e093c149358f51e40daf51e490.vega-embed details,
+  #altair-viz-8279a5e093c149358f51e40daf51e490.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-9e32e3590eaf4116884d80c3f19e7181"></div>
+<div id="altair-viz-8279a5e093c149358f51e40daf51e490"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9e32e3590eaf4116884d80c3f19e7181") {
-      outputDiv = document.getElementById("altair-viz-9e32e3590eaf4116884d80c3f19e7181");
+    if (outputDiv.id !== "altair-viz-8279a5e093c149358f51e40daf51e490") {
+      outputDiv = document.getElementById("altair-viz-8279a5e093c149358f51e40daf51e490");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8371,23 +8399,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-761f4e15cf994c1e9c330a64159d41ab.vega-embed {
+  #altair-viz-938069d077564bc2b7018abbf9688172.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-761f4e15cf994c1e9c330a64159d41ab.vega-embed details,
-  #altair-viz-761f4e15cf994c1e9c330a64159d41ab.vega-embed details summary {
+  #altair-viz-938069d077564bc2b7018abbf9688172.vega-embed details,
+  #altair-viz-938069d077564bc2b7018abbf9688172.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-761f4e15cf994c1e9c330a64159d41ab"></div>
+<div id="altair-viz-938069d077564bc2b7018abbf9688172"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-761f4e15cf994c1e9c330a64159d41ab") {
-      outputDiv = document.getElementById("altair-viz-761f4e15cf994c1e9c330a64159d41ab");
+    if (outputDiv.id !== "altair-viz-938069d077564bc2b7018abbf9688172") {
+      outputDiv = document.getElementById("altair-viz-938069d077564bc2b7018abbf9688172");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -8434,167 +8462,6 @@ a.anchor-link {
         .then(() => displayChart(vegaEmbed));
     }
   })({"config": {"background": "transparent", "title": {"fontSize": 20, "fontWeight": "normal", "font": "Helvetica", "anchor": "start", "color": "#000000", "orient": "top", "offset": 5, "subtitleColor": "gray", "subtitleFont": "Helvetica", "subtitleFontWeight": "normal", "subtitleFontSize": 18, "subtitlePadding": 2}, "axis": {"domain": true, "domainColor": "black", "domainWidth": 1, "grid": false, "gridColor": "#DEDDDD", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 14, "labelFlush": false, "labelFontWeight": "normal", "labelPadding": 2, "tickColor": "black", "tickSize": 4, "tickWidth": 1, "titleFont": "Helvetica", "titleAlign": "center", "titleFontWeight": "bold", "titleFontSize": 14, "titlePadding": 5}, "legend": {"labelFont": "Helvetica", "labelFontSize": 14, "symbolSize": 100, "titleFont": "Helvetica", "titleFontSize": 14, "titleFontWeight": "bold", "padding": 5, "titleLimit": 200, "gradientLength": 100}, "range": {"category": ["#4e79a7", "#f28e2c", "#e15759", "#76b7b2", "#59a14f", "#edc949", "#af7aa1", "#ff9da7", "#9c755f", "#bab0ab"], "diverging": ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]}, "view": {"stroke": "transparent", "strokeWidth": 0}, "text": {"font": "Helvetica Light", "fontSize": 14}}, "hconcat": [{"layer": [{"data": {"name": "data-4a0264a7dbb4ff12a503f52a964c8cac"}, "mark": {"type": "point", "filled": true, "opacity": 0.5, "size": 125}, "encoding": {"color": {"field": "mutation", "scale": {"domain": ["Unmutated", "C162L", "F168A", "Y389T", "P488S", "Q492L", "Q530F", "Q530E", "Q530L"], "range": ["black", "#4e79a7", "#f28e2c", "#e15759", "#76b7b2", "#59a14f", "#edc949", "#af7aa1", "#ff9da7"]}, "title": "Virus", "type": "nominal"}, "shape": {"field": "mutation", "scale": {"domain": ["Unmutated", "C162L", "F168A", "Y389T", "P488S", "Q492L", "Q530F", "Q530E", "Q530L"]}, "type": "nominal"}, "tooltip": [{"field": "mutation", "type": "nominal"}, {"field": "effect_E2", "type": "quantitative"}, {"field": "mean_luciferase_E2", "type": "quantitative"}], "x": {"axis": {"tickCount": 6, "values": [-4, -3, -2, -1, 0, 1]}, "field": "effect_E2", "scale": {"domain": [-4, 1]}, "title": "Cell entry in DMS", "type": "quantitative"}, "y": {"axis": {"format": ".0e", "tickCount": 4}, "field": "mean_luciferase_E2", "scale": {"base": 10, "type": "log"}, "title": "RLU/\u03bcL in validation asasy", "type": "quantitative"}}, "title": {"text": "CHO-bEFNB2"}}, {"data": {"name": "data-64263428e980138f08309e1e4688e4cc"}, "mark": {"type": "text", "align": "left", "baseline": "top", "dx": -30, "dy": -30}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}], "height": 200, "resolve": {"scale": {"color": "independent", "shape": "independent"}}, "width": 200}, {"layer": [{"data": {"name": "data-4a0264a7dbb4ff12a503f52a964c8cac"}, "mark": {"type": "point", "filled": true, "opacity": 0.5, "size": 125}, "encoding": {"color": {"field": "mutation", "scale": {"domain": ["Unmutated", "C162L", "F168A", "Y389T", "P488S", "Q492L", "Q530F", "Q530E", "Q530L"], "range": ["black", "#4e79a7", "#f28e2c", "#e15759", "#76b7b2", "#59a14f", "#edc949", "#af7aa1", "#ff9da7"]}, "title": "Virus", "type": "nominal"}, "shape": {"field": "mutation", "scale": {"domain": ["Unmutated", "C162L", "F168A", "Y389T", "P488S", "Q492L", "Q530F", "Q530E", "Q530L"]}, "type": "nominal"}, "tooltip": [{"field": "mutation", "type": "nominal"}, {"field": "effect_E3", "type": "quantitative"}, {"field": "mean_luciferase_E3", "type": "quantitative"}], "x": {"axis": {"tickCount": 6, "values": [-4, -3, -2, -1, 0, 1]}, "field": "effect_E3", "scale": {"domain": [-4, 1]}, "title": "Cell entry in DMS", "type": "quantitative"}, "y": {"axis": {"format": ".0e", "tickCount": 4}, "field": "mean_luciferase_E3", "scale": {"base": 10, "type": "log"}, "title": "RLU/\u03bcL in validation asasy", "type": "quantitative"}}, "title": {"text": "CHO-bEFNB3"}}, {"data": {"name": "data-a528e7a5a4a9cfadee01ab86b04807f1"}, "mark": {"type": "text", "align": "left", "baseline": "top", "dx": -30, "dy": -15}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}], "height": 200, "resolve": {"scale": {"color": "independent", "shape": "independent"}}, "width": 200}], "resolve": {"scale": {"color": "shared"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-4a0264a7dbb4ff12a503f52a964c8cac": [{"mutation": "Q530F", "mean_luciferase_E2": 13839, "mean_luciferase_E3": 39157, "site_E2": 530.0, "wildtype_E2": "Q", "mutant_E2": "F", "effect_E2": 0.4674, "effect_std_E2": 0.2023, "times_seen_E2": 5.375, "n_selections_E2": 8.0, "site_E3": 530.0, "wildtype_E3": "Q", "mutant_E3": "F", "effect_E3": 0.3592, "effect_std_E3": 0.2738, "times_seen_E3": 6.286, "n_selections_E3": 7.0}, {"mutation": "Q530F", "mean_luciferase_E2": 11669, "mean_luciferase_E3": 38929, "site_E2": 530.0, "wildtype_E2": "Q", "mutant_E2": "F", "effect_E2": 0.4674, "effect_std_E2": 0.2023, "times_seen_E2": 5.375, "n_selections_E2": 8.0, "site_E3": 530.0, "wildtype_E3": "Q", "mutant_E3": "F", "effect_E3": 0.3592, "effect_std_E3": 0.2738, "times_seen_E3": 6.286, "n_selections_E3": 7.0}, {"mutation": "Q530F", "mean_luciferase_E2": 12583, "mean_luciferase_E3": 32625, "site_E2": 530.0, "wildtype_E2": "Q", "mutant_E2": "F", "effect_E2": 0.4674, "effect_std_E2": 0.2023, "times_seen_E2": 5.375, "n_selections_E2": 8.0, "site_E3": 530.0, "wildtype_E3": "Q", "mutant_E3": "F", "effect_E3": 0.3592, "effect_std_E3": 0.2738, "times_seen_E3": 6.286, "n_selections_E3": 7.0}, {"mutation": "Y389T", "mean_luciferase_E2": 9223, "mean_luciferase_E3": 18, "site_E2": 389.0, "wildtype_E2": "Y", "mutant_E2": "T", "effect_E2": -0.3556, "effect_std_E2": 0.6964, "times_seen_E2": 4.125, "n_selections_E2": 8.0, "site_E3": 389.0, "wildtype_E3": "Y", "mutant_E3": "T", "effect_E3": -3.4, "effect_std_E3": 0.0, "times_seen_E3": 5.857, "n_selections_E3": 7.0}, {"mutation": "Y389T", "mean_luciferase_E2": 9564, "mean_luciferase_E3": 21, "site_E2": 389.0, "wildtype_E2": "Y", "mutant_E2": "T", "effect_E2": -0.3556, "effect_std_E2": 0.6964, "times_seen_E2": 4.125, "n_selections_E2": 8.0, "site_E3": 389.0, "wildtype_E3": "Y", "mutant_E3": "T", "effect_E3": -3.4, "effect_std_E3": 0.0, "times_seen_E3": 5.857, "n_selections_E3": 7.0}, {"mutation": "Y389T", "mean_luciferase_E2": 6327, "mean_luciferase_E3": 30, "site_E2": 389.0, "wildtype_E2": "Y", "mutant_E2": "T", "effect_E2": -0.3556, "effect_std_E2": 0.6964, "times_seen_E2": 4.125, "n_selections_E2": 8.0, "site_E3": 389.0, "wildtype_E3": "Y", "mutant_E3": "T", "effect_E3": -3.4, "effect_std_E3": 0.0, "times_seen_E3": 5.857, "n_selections_E3": 7.0}, {"mutation": "Q530E", "mean_luciferase_E2": 8952, "mean_luciferase_E3": 3, "site_E2": 530.0, "wildtype_E2": "Q", "mutant_E2": "E", "effect_E2": -1.517, "effect_std_E2": 0.62, "times_seen_E2": 7.5, "n_selections_E2": 8.0, "site_E3": 530.0, "wildtype_E3": "Q", "mutant_E3": "E", "effect_E3": -3.123, "effect_std_E3": 0.2925, "times_seen_E3": 5.0, "n_selections_E3": 7.0}, {"mutation": "Q530E", "mean_luciferase_E2": 4825, "mean_luciferase_E3": 2, "site_E2": 530.0, "wildtype_E2": "Q", "mutant_E2": "E", "effect_E2": -1.517, "effect_std_E2": 0.62, "times_seen_E2": 7.5, "n_selections_E2": 8.0, "site_E3": 530.0, "wildtype_E3": "Q", "mutant_E3": "E", "effect_E3": -3.123, "effect_std_E3": 0.2925, "times_seen_E3": 5.0, "n_selections_E3": 7.0}, {"mutation": "Q530E", "mean_luciferase_E2": 7865, "mean_luciferase_E3": 1, "site_E2": 530.0, "wildtype_E2": "Q", "mutant_E2": "E", "effect_E2": -1.517, "effect_std_E2": 0.62, "times_seen_E2": 7.5, "n_selections_E2": 8.0, "site_E3": 530.0, "wildtype_E3": "Q", "mutant_E3": "E", "effect_E3": -3.123, "effect_std_E3": 0.2925, "times_seen_E3": 5.0, "n_selections_E3": 7.0}, {"mutation": "P488S", "mean_luciferase_E2": 12841, "mean_luciferase_E3": 2012, "site_E2": 488.0, "wildtype_E2": "P", "mutant_E2": "S", "effect_E2": -0.02385, "effect_std_E2": 0.2636, "times_seen_E2": 12.5, "n_selections_E2": 8.0, "site_E3": 488.0, "wildtype_E3": "P", "mutant_E3": "S", "effect_E3": -1.728, "effect_std_E3": 0.3135, "times_seen_E3": 12.71, "n_selections_E3": 7.0}, {"mutation": "P488S", "mean_luciferase_E2": 1023, "mean_luciferase_E3": 155, "site_E2": 488.0, "wildtype_E2": "P", "mutant_E2": "S", "effect_E2": -0.02385, "effect_std_E2": 0.2636, "times_seen_E2": 12.5, "n_selections_E2": 8.0, "site_E3": 488.0, "wildtype_E3": "P", "mutant_E3": "S", "effect_E3": -1.728, "effect_std_E3": 0.3135, "times_seen_E3": 12.71, "n_selections_E3": 7.0}, {"mutation": "P488S", "mean_luciferase_E2": 9621, "mean_luciferase_E3": 1672, "site_E2": 488.0, "wildtype_E2": "P", "mutant_E2": "S", "effect_E2": -0.02385, "effect_std_E2": 0.2636, "times_seen_E2": 12.5, "n_selections_E2": 8.0, "site_E3": 488.0, "wildtype_E3": "P", "mutant_E3": "S", "effect_E3": -1.728, "effect_std_E3": 0.3135, "times_seen_E3": 12.71, "n_selections_E3": 7.0}, {"mutation": "Q530L", "mean_luciferase_E2": 13695, "mean_luciferase_E3": 5601, "site_E2": 530.0, "wildtype_E2": "Q", "mutant_E2": "L", "effect_E2": 0.5562, "effect_std_E2": 0.1078, "times_seen_E2": 7.625, "n_selections_E2": 8.0, "site_E3": 530.0, "wildtype_E3": "Q", "mutant_E3": "L", "effect_E3": -1.019, "effect_std_E3": 0.8623, "times_seen_E3": 5.857, "n_selections_E3": 7.0}, {"mutation": "Q530L", "mean_luciferase_E2": 13589, "mean_luciferase_E3": 5730, "site_E2": 530.0, "wildtype_E2": "Q", "mutant_E2": "L", "effect_E2": 0.5562, "effect_std_E2": 0.1078, "times_seen_E2": 7.625, "n_selections_E2": 8.0, "site_E3": 530.0, "wildtype_E3": "Q", "mutant_E3": "L", "effect_E3": -1.019, "effect_std_E3": 0.8623, "times_seen_E3": 5.857, "n_selections_E3": 7.0}, {"mutation": "Q530L", "mean_luciferase_E2": 11817, "mean_luciferase_E3": 5136, "site_E2": 530.0, "wildtype_E2": "Q", "mutant_E2": "L", "effect_E2": 0.5562, "effect_std_E2": 0.1078, "times_seen_E2": 7.625, "n_selections_E2": 8.0, "site_E3": 530.0, "wildtype_E3": "Q", "mutant_E3": "L", "effect_E3": -1.019, "effect_std_E3": 0.8623, "times_seen_E3": 5.857, "n_selections_E3": 7.0}, {"mutation": "C162L", "mean_luciferase_E2": 1, "mean_luciferase_E3": 30, "site_E2": 162.0, "wildtype_E2": "C", "mutant_E2": "L", "effect_E2": -3.454, "effect_std_E2": 0.0, "times_seen_E2": 10.88, "n_selections_E2": 8.0, "site_E3": 162.0, "wildtype_E3": "C", "mutant_E3": "L", "effect_E3": -3.362, "effect_std_E3": 0.0, "times_seen_E3": 7.571, "n_selections_E3": 7.0}, {"mutation": "C162L", "mean_luciferase_E2": 4, "mean_luciferase_E3": 9, "site_E2": 162.0, "wildtype_E2": "C", "mutant_E2": "L", "effect_E2": -3.454, "effect_std_E2": 0.0, "times_seen_E2": 10.88, "n_selections_E2": 8.0, "site_E3": 162.0, "wildtype_E3": "C", "mutant_E3": "L", "effect_E3": -3.362, "effect_std_E3": 0.0, "times_seen_E3": 7.571, "n_selections_E3": 7.0}, {"mutation": "C162L", "mean_luciferase_E2": 1, "mean_luciferase_E3": 20, "site_E2": 162.0, "wildtype_E2": "C", "mutant_E2": "L", "effect_E2": -3.454, "effect_std_E2": 0.0, "times_seen_E2": 10.88, "n_selections_E2": 8.0, "site_E3": 162.0, "wildtype_E3": "C", "mutant_E3": "L", "effect_E3": -3.362, "effect_std_E3": 0.0, "times_seen_E3": 7.571, "n_selections_E3": 7.0}, {"mutation": "F168A", "mean_luciferase_E2": 7771, "mean_luciferase_E3": 24956, "site_E2": 168.0, "wildtype_E2": "F", "mutant_E2": "A", "effect_E2": 0.1173, "effect_std_E2": 0.2932, "times_seen_E2": 5.125, "n_selections_E2": 8.0, "site_E3": 168.0, "wildtype_E3": "F", "mutant_E3": "A", "effect_E3": 0.544, "effect_std_E3": 0.08005, "times_seen_E3": 5.143, "n_selections_E3": 7.0}, {"mutation": "F168A", "mean_luciferase_E2": 9860, "mean_luciferase_E3": 29080, "site_E2": 168.0, "wildtype_E2": "F", "mutant_E2": "A", "effect_E2": 0.1173, "effect_std_E2": 0.2932, "times_seen_E2": 5.125, "n_selections_E2": 8.0, "site_E3": 168.0, "wildtype_E3": "F", "mutant_E3": "A", "effect_E3": 0.544, "effect_std_E3": 0.08005, "times_seen_E3": 5.143, "n_selections_E3": 7.0}, {"mutation": "F168A", "mean_luciferase_E2": 6493, "mean_luciferase_E3": 23138, "site_E2": 168.0, "wildtype_E2": "F", "mutant_E2": "A", "effect_E2": 0.1173, "effect_std_E2": 0.2932, "times_seen_E2": 5.125, "n_selections_E2": 8.0, "site_E3": 168.0, "wildtype_E3": "F", "mutant_E3": "A", "effect_E3": 0.544, "effect_std_E3": 0.08005, "times_seen_E3": 5.143, "n_selections_E3": 7.0}, {"mutation": "Unmutated", "mean_luciferase_E2": 8775, "mean_luciferase_E3": 24502, "site_E2": null, "wildtype_E2": null, "mutant_E2": null, "effect_E2": 1e-07, "effect_std_E2": null, "times_seen_E2": null, "n_selections_E2": null, "site_E3": null, "wildtype_E3": null, "mutant_E3": null, "effect_E3": 1e-07, "effect_std_E3": null, "times_seen_E3": null, "n_selections_E3": null}, {"mutation": "Unmutated", "mean_luciferase_E2": 9407, "mean_luciferase_E3": 23416, "site_E2": null, "wildtype_E2": null, "mutant_E2": null, "effect_E2": 1e-07, "effect_std_E2": null, "times_seen_E2": null, "n_selections_E2": null, "site_E3": null, "wildtype_E3": null, "mutant_E3": null, "effect_E3": 1e-07, "effect_std_E3": null, "times_seen_E3": null, "n_selections_E3": null}, {"mutation": "Unmutated", "mean_luciferase_E2": 9936, "mean_luciferase_E3": 32370, "site_E2": null, "wildtype_E2": null, "mutant_E2": null, "effect_E2": 1e-07, "effect_std_E2": null, "times_seen_E2": null, "n_selections_E2": null, "site_E3": null, "wildtype_E3": null, "mutant_E3": null, "effect_E3": 1e-07, "effect_std_E3": null, "times_seen_E3": null, "n_selections_E3": null}, {"mutation": "Q492L", "mean_luciferase_E2": 19403, "mean_luciferase_E3": 42769, "site_E2": 492.0, "wildtype_E2": "Q", "mutant_E2": "L", "effect_E2": 0.4326, "effect_std_E2": 0.2934, "times_seen_E2": 4.5, "n_selections_E2": 8.0, "site_E3": 492.0, "wildtype_E3": "Q", "mutant_E3": "L", "effect_E3": 0.4833, "effect_std_E3": 0.1827, "times_seen_E3": 5.143, "n_selections_E3": 7.0}, {"mutation": "Q492L", "mean_luciferase_E2": 10533, "mean_luciferase_E3": 36135, "site_E2": 492.0, "wildtype_E2": "Q", "mutant_E2": "L", "effect_E2": 0.4326, "effect_std_E2": 0.2934, "times_seen_E2": 4.5, "n_selections_E2": 8.0, "site_E3": 492.0, "wildtype_E3": "Q", "mutant_E3": "L", "effect_E3": 0.4833, "effect_std_E3": 0.1827, "times_seen_E3": 5.143, "n_selections_E3": 7.0}, {"mutation": "Q492L", "mean_luciferase_E2": 11757, "mean_luciferase_E3": 46212, "site_E2": 492.0, "wildtype_E2": "Q", "mutant_E2": "L", "effect_E2": 0.4326, "effect_std_E2": 0.2934, "times_seen_E2": 4.5, "n_selections_E2": 8.0, "site_E3": 492.0, "wildtype_E3": "Q", "mutant_E3": "L", "effect_E3": 0.4833, "effect_std_E3": 0.1827, "times_seen_E3": 5.143, "n_selections_E3": 7.0}], "data-64263428e980138f08309e1e4688e4cc": [{"x": -3, "y": 19403, "text": "r = 0.79"}], "data-a528e7a5a4a9cfadee01ab86b04807f1": [{"x": -3, "y": 46212, "text": "r = 0.89"}]}}, {"mode": "vega-lite"});
-</script>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0675a100-8a6b-4dd9-ad1a-d25787fc05e9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Now-calculate-entry-of-each-mutant-relative-to-WT">Now calculate entry of each mutant relative to WT<a class="anchor-link" href="#Now-calculate-entry-of-each-mutant-relative-to-WT">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=78e0025e-959e-4499-8661-9c1cca8c6b96">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">mean_luc_E2</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">merged</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'mutation == "Unmutated"'</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"mutation"</span><span class="p">)[</span><span class="s2">"mean_luciferase_E2"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="p">)</span>
-<span class="n">mean_luc_E3</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">merged</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'mutation == "Unmutated"'</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"mutation"</span><span class="p">)[</span><span class="s2">"mean_luciferase_E3"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="p">)</span>
-<span class="n">merged</span><span class="p">[</span><span class="s2">"E2_relative"</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"mean_luciferase_E2"</span><span class="p">]</span> <span class="o">/</span> <span class="n">mean_luc_E2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">merged</span><span class="p">[</span><span class="s2">"E3_relative"</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s2">"mean_luciferase_E3"</span><span class="p">]</span> <span class="o">/</span> <span class="n">mean_luc_E3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="n">merged_wt_drop</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="p">[</span><span class="s2">"mutation"</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">"Unmutated"</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6871a4ed-dad2-40e8-b13f-c75baeaef5c9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_functional_validations</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">df_melted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-        <span class="n">id_vars</span><span class="o">=</span><span class="s2">"mutation"</span><span class="p">,</span>
-        <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">"E2_relative"</span><span class="p">,</span> <span class="s2">"E3_relative"</span><span class="p">],</span>
-        <span class="n">var_name</span><span class="o">=</span><span class="s2">"type"</span><span class="p">,</span>
-        <span class="n">value_name</span><span class="o">=</span><span class="s2">"effect"</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">chart</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_melted</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-            <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
-                <span class="s2">"type:N"</span><span class="p">,</span>
-                <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="p">),</span>
-            <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span>
-                <span class="s2">"effect"</span><span class="p">,</span>
-                <span class="n">title</span><span class="o">=</span><span class="s2">"Cell Entry of RBP Mutants Relative to WT"</span><span class="p">,</span>
-                <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
-                <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tickCount</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span>
-            <span class="p">),</span>  <span class="c1"># Display in scientific notation</span>
-            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Receptor"</span><span class="p">),</span>
-            <span class="n">column</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span>
-                <span class="s2">"mutation:N"</span><span class="p">,</span>
-                <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                <span class="n">header</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Header</span><span class="p">(</span>
-                    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">labelFont</span><span class="o">=</span><span class="s2">"Helvetica Light"</span><span class="p">,</span> <span class="n">labelOrient</span><span class="o">=</span><span class="s2">"bottom"</span>
-                <span class="p">),</span>
-            <span class="p">),</span>
-        <span class="p">)</span>
-        <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-    <span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">chart</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
-
-
-<span class="n">plot_functional_validations</span><span class="p">(</span><span class="n">merged_wt_drop</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<style>
-  #altair-viz-75149f7997354a3a906dc0cc3327a44b.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-75149f7997354a3a906dc0cc3327a44b.vega-embed details,
-  #altair-viz-75149f7997354a3a906dc0cc3327a44b.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-75149f7997354a3a906dc0cc3327a44b"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-75149f7997354a3a906dc0cc3327a44b") {
-      outputDiv = document.getElementById("altair-viz-75149f7997354a3a906dc0cc3327a44b");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.15.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.15.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"background": "transparent", "title": {"fontSize": 20, "fontWeight": "normal", "font": "Helvetica", "anchor": "start", "color": "#000000", "orient": "top", "offset": 5, "subtitleColor": "gray", "subtitleFont": "Helvetica", "subtitleFontWeight": "normal", "subtitleFontSize": 18, "subtitlePadding": 2}, "axis": {"domain": true, "domainColor": "black", "domainWidth": 1, "grid": false, "gridColor": "#DEDDDD", "gridWidth": 0.5, "labelFont": "Helvetica", "labelFontSize": 14, "labelFlush": false, "labelFontWeight": "normal", "labelPadding": 2, "tickColor": "black", "tickSize": 4, "tickWidth": 1, "titleFont": "Helvetica", "titleAlign": "center", "titleFontWeight": "bold", "titleFontSize": 14, "titlePadding": 5}, "legend": {"labelFont": "Helvetica", "labelFontSize": 14, "symbolSize": 100, "titleFont": "Helvetica", "titleFontSize": 14, "titleFontWeight": "bold", "padding": 5, "titleLimit": 200, "gradientLength": 100}, "range": {"category": ["#4e79a7", "#f28e2c", "#e15759", "#76b7b2", "#59a14f", "#edc949", "#af7aa1", "#ff9da7", "#9c755f", "#bab0ab"], "diverging": ["#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#253494"]}, "view": {"stroke": "transparent", "strokeWidth": 0}, "text": {"font": "Helvetica Light", "fontSize": 14}}, "data": {"name": "data-7956cc99dde33e976bb897de1db65def"}, "mark": {"type": "circle", "size": 75}, "encoding": {"color": {"field": "type", "title": "Receptor", "type": "nominal"}, "column": {"field": "mutation", "header": {"labelFont": "Helvetica Light", "labelFontSize": 16, "labelOrient": "bottom"}, "title": null, "type": "nominal"}, "x": {"axis": {"domain": true, "labels": false, "ticks": false}, "field": "type", "title": null, "type": "nominal"}, "y": {"axis": {"grid": true, "tickCount": 6}, "field": "effect", "scale": {"base": 10, "type": "log"}, "title": "Cell Entry of RBP Mutants Relative to WT", "type": "quantitative"}}, "height": 100, "width": 50, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-7956cc99dde33e976bb897de1db65def": [{"mutation": "Q530F", "type": "E2_relative", "effect": 1.4765274912867203}, {"mutation": "Q530F", "type": "E2_relative", "effect": 1.2450032007966427}, {"mutation": "Q530F", "type": "E2_relative", "effect": 1.3425208051781778}, {"mutation": "Y389T", "type": "E2_relative", "effect": 0.9840315811935416}, {"mutation": "Y389T", "type": "E2_relative", "effect": 1.0204139696991252}, {"mutation": "Y389T", "type": "E2_relative", "effect": 0.6750480119496408}, {"mutation": "Q530E", "type": "E2_relative", "effect": 0.9551177181876379}, {"mutation": "Q530E", "type": "E2_relative", "effect": 0.5147947933707946}, {"mutation": "Q530E", "type": "E2_relative", "effect": 0.8391421864997511}, {"mutation": "P488S", "type": "E2_relative", "effect": 1.3700476563055695}, {"mutation": "P488S", "type": "E2_relative", "effect": 0.10914716551675084}, {"mutation": "P488S", "type": "E2_relative", "effect": 1.026495483320293}, {"mutation": "Q530L", "type": "E2_relative", "effect": 1.4611636674016646}, {"mutation": "Q530L", "type": "E2_relative", "effect": 1.4498541859307206}, {"mutation": "Q530L", "type": "E2_relative", "effect": 1.2607937975673946}, {"mutation": "C162L", "type": "E2_relative", "effect": 0.00010669322142399886}, {"mutation": "C162L", "type": "E2_relative", "effect": 0.00042677288569599545}, {"mutation": "C162L", "type": "E2_relative", "effect": 0.00010669322142399886}, {"mutation": "F168A", "type": "E2_relative", "effect": 0.8291130236858952}, {"mutation": "F168A", "type": "E2_relative", "effect": 1.0519951632406288}, {"mutation": "F168A", "type": "E2_relative", "effect": 0.6927590867060247}, {"mutation": "Q492L", "type": "E2_relative", "effect": 2.07016857528985}, {"mutation": "Q492L", "type": "E2_relative", "effect": 1.12379970125898}, {"mutation": "Q492L", "type": "E2_relative", "effect": 1.2543922042819546}, {"mutation": "Q530F", "type": "E3_relative", "effect": 1.4631202670386607}, {"mutation": "Q530F", "type": "E3_relative", "effect": 1.4546009366281387}, {"mutation": "Q530F", "type": "E3_relative", "effect": 1.2190489238740534}, {"mutation": "Y389T", "type": "E3_relative", "effect": 0.0006725787166201674}, {"mutation": "Y389T", "type": "E3_relative", "effect": 0.0007846751693901952}, {"mutation": "Y389T", "type": "E3_relative", "effect": 0.001120964527700279}, {"mutation": "Q530E", "type": "E3_relative", "effect": 0.0001120964527700279}, {"mutation": "Q530E", "type": "E3_relative", "effect": 7.473096851335193e-05}, {"mutation": "Q530E", "type": "E3_relative", "effect": 3.736548425667596e-05}, {"mutation": "P488S", "type": "E3_relative", "effect": 0.07517935432443204}, {"mutation": "P488S", "type": "E3_relative", "effect": 0.005791650059784775}, {"mutation": "P488S", "type": "E3_relative", "effect": 0.06247508967716221}, {"mutation": "Q530L", "type": "E3_relative", "effect": 0.2092840773216421}, {"mutation": "Q530L", "type": "E3_relative", "effect": 0.21410422479075328}, {"mutation": "Q530L", "type": "E3_relative", "effect": 0.19190912714228775}, {"mutation": "C162L", "type": "E3_relative", "effect": 0.001120964527700279}, {"mutation": "C162L", "type": "E3_relative", "effect": 0.0003362893583100837}, {"mutation": "C162L", "type": "E3_relative", "effect": 0.0007473096851335193}, {"mutation": "F168A", "type": "E3_relative", "effect": 0.9324930251096054}, {"mutation": "F168A", "type": "E3_relative", "effect": 1.086588282184137}, {"mutation": "F168A", "type": "E3_relative", "effect": 0.8645625747309684}, {"mutation": "Q492L", "type": "E3_relative", "effect": 1.5980843961737743}, {"mutation": "Q492L", "type": "E3_relative", "effect": 1.350201773614986}, {"mutation": "Q492L", "type": "E3_relative", "effect": 1.7267337584695097}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>

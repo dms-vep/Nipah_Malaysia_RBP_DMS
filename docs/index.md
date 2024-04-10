@@ -40,4 +40,4 @@ This website contains links and information for the Nipah virus receptor binding
 
 All experiments were performed with non-replicative lentiviral-based pseudoviruses. Ephrin-B2 and Ephrin-B3 orthologs from the bat species *Pteropus alecto* were used for cell entry and receptor binding assays.
 
-
+![An image](/images/henipavirus_hydro.png)

@@ -7482,7 +7482,10 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="This-notebook-analyzes-features-of-henipavirus-and-nipah-sequence-conservation-and-compares-to-DMS-data">This notebook analyzes features of henipavirus and nipah sequence conservation and compares to DMS data<a class="anchor-link" href="#This-notebook-analyzes-features-of-henipavirus-and-nipah-sequence-conservation-and-compares-to-DMS-data">¶</a></h1>
+<h1 id="henipavirus_conservation.ipynb">henipavirus_conservation.ipynb<a class="anchor-link" href="#henipavirus_conservation.ipynb">¶</a></h1><p>This notebook analyzes features of henipavirus and nipah sequence conservation</p>
+<ul>
+<li>Written by Brendan Larsen</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7503,7 +7506,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=435ad9be">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=41d38e59">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7611,16 +7614,9 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">nipah_alignment</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">altair_config</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/theme.py'</span>
     <span class="n">nipah_config</span> <span class="o">=</span> <span class="s1">'nipah_config.yaml'</span>
-    <span class="c1">#e2_binding = 'results/receptor_affinity/averages/EFNB2_monomeric_mut_effect.csv'</span>
-    <span class="c1">#e2_entry = 'results/func_effects/averages/CHO_EFNB2_low_func_effects.csv'</span>
-    <span class="c1">#e3_binding = 'results/receptor_affinity/averages/EFNB3_dimeric_mut_effect.csv'</span>
-    <span class="c1">#e3_entry = 'results/func_effects/averages/CHO_EFNB3_low_func_effects.csv'</span>
     <span class="n">nipah_alignment</span> <span class="o">=</span> <span class="s1">'data/custom_analyses_data/alignments/Nipah_RBP_AA_align.fasta'</span>
     <span class="n">entropy_output</span> <span class="o">=</span> <span class="s1">'results/entropy/entropy.csv'</span>
-    <span class="c1">#entry_scores_niv_poly = 'results/images/niv_polymorphic_entry.html'</span>
-    <span class="c1">#binding_scores_niv_poly = 'results/images/niv_polymorphic_binding.html'</span>
 </pre></div>
 </div>
 </div>
@@ -7702,8 +7698,8 @@ a.anchor-link {
         <span class="n">handle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
     <span class="c1"># Define file paths</span>
-    <span class="n">temp_sequences_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s2">"temp_sequences.fasta"</span><span class="p">)</span>
-    <span class="n">aligned_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s2">"aligned.fasta"</span><span class="p">)</span>
+    <span class="n">temp_sequences_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s2">"henipavirus_RBP_sequences.fasta"</span><span class="p">)</span>
+    <span class="n">aligned_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s2">"henipavirus_RBP_sequences_aligned.fasta"</span><span class="p">)</span>
 
     <span class="c1"># Write sequences to a temporary fasta file</span>
     <span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">temp_sequences_path</span><span class="p">,</span> <span class="s2">"fasta"</span><span class="p">)</span>
@@ -7763,11 +7759,11 @@ Input: 8 seqs, avg length 611, max 632
 
 WARNING: Max OMP threads 1
 
-00:01 18Mb    100.0% Calc posteriors
-00:01 20Mb    100.0% Consistency (1/2)
-00:01 20Mb    100.0% Consistency (2/2)
-00:01 20Mb    100.0% UPGMA5
-00:01 21Mb    100.0% Refining
+00:02 18Mb    100.0% Calc posteriors
+00:02 20Mb    100.0% Consistency (1/2)
+00:02 20Mb    100.0% Consistency (2/2)
+00:02 20Mb    100.0% UPGMA5
+00:02 21Mb    100.0% Refining
 </pre>
 </div>
 </div>
@@ -7844,6 +7840,17 @@ WARNING: Max OMP threads 1
 </table>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=01ee934f-581d-4156-b036-4dc4dd633d10">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Now we have an alignment of representative henipaviruses in a pandas dataframe format.</p>
 </div>
 </div>
 </div>
@@ -8291,11 +8298,12 @@ WARNING: Max OMP threads 1
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sites_with_mutants</span> <span class="o">=</span> <span class="n">df_final</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_final</span><span class="p">[</span><span class="s1">'mutant'</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">(),</span> <span class="s1">'site'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">polymorphisms</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sites_with_mutants</span><span class="p">)</span>
 <span class="n">data_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">polymorphisms</span><span class="p">)</span>
+
 <span class="c1"># filter out sites that are outside mutagenized region</span>
 <span class="n">filtered_series</span> <span class="o">=</span> <span class="n">data_series</span><span class="p">[</span><span class="n">data_series</span> <span class="o">&gt;</span> <span class="mi">71</span><span class="p">]</span>
 <span class="n">polymorphisms</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered_series</span><span class="p">)</span>
 <span class="n">polymorphism_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">polymorphisms</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'There are </span><span class="si">{</span><span class="n">polymorphism_length</span><span class="si">}</span><span class="s1"> polymorphic sites in NiV RBP sequences: </span><span class="si">{</span><span class="n">polymorphisms</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'There are </span><span class="si">{</span><span class="n">polymorphism_length</span><span class="si">}</span><span class="s1"> polymorphic sites in NiV RBP sequences (in the mutagenized ectodomain): </span><span class="si">{</span><span class="n">polymorphisms</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8308,7 +8316,7 @@ WARNING: Max OMP threads 1
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>There are 32 polymorphic sites in NiV RBP sequences: [82, 89, 135, 172, 228, 236, 274, 288, 299, 325, 328, 329, 335, 339, 344, 376, 381, 384, 385, 386, 404, 421, 423, 424, 426, 427, 470, 478, 481, 498, 502, 545]
+<pre>There are 32 polymorphic sites in NiV RBP sequences (in the mutagenized ectodomain): [82, 89, 135, 172, 228, 236, 274, 288, 299, 325, 328, 329, 335, 339, 344, 376, 381, 384, 385, 386, 404, 421, 423, 424, 426, 427, 470, 478, 481, 498, 502, 545]
 </pre>
 </div>
 </div>

@@ -411,7 +411,7 @@ rule make_RBP_alignment:
     """Make alignment of henipavirus RBPs"""
     input:
         nb="notebooks/henipavirus_RBP_alignment.ipynb",
-        fasta_input_file="results/alignments/temp_sequences.fasta",
+        fasta_input_file="results/alignments/henipavirus_RBP_sequences.fasta",
     output:
         nb="results/notebooks/henipavirus_RBP_alignment.ipynb",
         henipavirus_alignment="results/images/henipavirus_RBP_alignment.png",
