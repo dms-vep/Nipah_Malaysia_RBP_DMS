@@ -3,43 +3,43 @@
 <head>
   <style>
 
-  #vg-tooltip-element {
-      font-family: "Helvetica Light";
-      background-color: #000000f8;
-      font-size: 12px;
-      color: #ffffff;
-      border-color: #898989;
-      border-width: 0.5px;
-      border-radius: 10px;
-      line-height: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-    #vis.vega-embed {
-      width: 100%;
-      display: flex;
-      display: flex; /* Enables Flexbox for this element */
-      justify-content: center; /* Centers children horizontally */
-      align-items: center; /* Centers children vertically */
-      flex-direction: column; /* Organizes children in a column */
-      font-size:30px;
-      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-      animation: fadeIn 3s ease-out;
+    #vg-tooltip-element {
+        font-family: "Helvetica Light";
+        background-color: #000000f8;
+        font-size: 12px;
+        color: #ffffff;
+        border-color: #898989;
+        border-width: 0.5px;
+        border-radius: 10px;
+        line-height: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    
-    #vis.vega-embed details,
-    #vis.vega-embed details summary {
-      cursor: pointer; 
-      font-weight: bold; 
-      color: #333; 
-      border-radius: 5px; 
-      margin-bottom: 5px; 
-    } 
-
-  </style>
+      #vis.vega-embed {
+        width: 100%;
+        display: flex;
+        display: flex; /* Enables Flexbox for this element */
+        justify-content: center; /* Centers children horizontally */
+        align-items: center; /* Centers children vertically */
+        flex-direction: column; /* Organizes children in a column */
+        font-size:30px;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        animation: fadeIn 2s ease-out;
+      }
+      @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
+      
+      #vis.vega-embed details,
+      #vis.vega-embed details summary {
+        cursor: pointer; 
+        font-weight: bold; 
+        color: #333; 
+        border-radius: 5px; 
+        margin-bottom: 5px; 
+      } 
+  
+    </style>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.1"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
