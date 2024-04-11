@@ -3,6 +3,7 @@
 To measure the effects of mutations on RBP-mediated cell entry, we performed 'functional selections' where the frequencies of barcodes were compared between particles pseudotyped with either Nipah RBP/F or VSV-G. Notebooks below contain information about each step.
 
 
+
 ## Global Epistasis Fitting
 Individual cell entry selections were fit with [multidms](https://github.com/matsengrp/multidms){target="_self"} to decompose the effects of individual mutations.
 
@@ -152,11 +153,11 @@ Click arrow box to view altair plots in separate page.
 
 ## Raw Data
 ::: warning These data have not been filtered. For filtered .csv files, go to [Analysis Pipeline](/pipeline_information)
-[Individual cell entry .csv files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/func_effects/by_selection){target="_self"}
+[Individual cell entry (.csv) files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/func_effects/by_selection){target="_self"}
 
-[Average entry in CHO-bEFNB2 cells .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB2_func_effects.csv){target="_self"}
+[Average entry in CHO-bEFNB2 cells (.csv)](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB2_func_effects.csv){target="_self"}
 
-[Average entry in CHO-bEFNB3 cells .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB3_func_effects.csv){target="_self"}
+[Average entry in CHO-bEFNB3 cells (.csv)](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB3_func_effects.csv){target="_self"}
 :::
 
 

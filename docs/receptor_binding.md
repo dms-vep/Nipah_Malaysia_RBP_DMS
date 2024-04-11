@@ -84,11 +84,11 @@ Additional control over filtering parameters
 
 ## Raw Data
 ::: warning These data have not been filtered. For filtered .csv files, go to [Analysis Pipeline](/pipeline_information)
-[Individual antibody escape selection .csv files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/receptor_affinity/by_selection){target="_self"}
+[Individual antibody escape selection (.csv) files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/receptor_affinity/by_selection){target="_self"}
 
-[Average bEFNB2 monomeric binding .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/receptor_affinity/averages/bEFNB2_monomeric_mut_effect.csv){target="_self"}
+[Average bEFNB2 monomeric binding (.csv)](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/receptor_affinity/averages/bEFNB2_monomeric_mut_effect.csv){target="_self"}
 
-[Average bEFNB3 dimeric binding .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/receptor_affinity/averages/bEFNB3_dimeric_mut_effect.csv){target="_self"}
+[Average bEFNB3 dimeric binding (.csv)](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/receptor_affinity/averages/bEFNB3_dimeric_mut_effect.csv){target="_self"}
 :::
 
 
