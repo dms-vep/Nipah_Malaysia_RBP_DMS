@@ -13,7 +13,7 @@ max_minor_indel_frac=0.2
 min_support=3
 ```
 
-These parameters filter consensus sequences generated from Pacbio CCS sequencing and assembly. If a consensus RBP sequence has a mutation or indel in more than 20% of the reads, it will be discarded. Consensus sequences must have at least three reads to be included as variants.
+These parameters filter consensus sequences generated from Pacbio CCS sequencing and assembly. If an assembled RBP sequence has a mutation or indel in more than 20% of the reads, it will be discarded. Consensus sequences must have at least three reads to be included as variants.
 
 
 ## Analyze PacBio CCS Reads
@@ -26,13 +26,13 @@ Reports information about CCS read filtering.
 
 <a href="notebooks/build_codon_variants.html" target="_self">Build codon variants notebook</a>
 
-Builds the codon-variant table from PacBio consensus sequences that links barcodes and mutations. 
+Builds the codon-variant table from PacBio consensus sequences that links barcodes and RBP mutations. 
 
 [Link to codon-variant table .csv file](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/variants/codon_variants.csv){target="_self"}
 
 
 ## Illumina Variant Counts
-Once the barcodes are linked to mutations in the codon-variant table, all sequencing data is generated with Illumina to obtain the relative frequencies of barcodes in each selection experiment.  
+Once the barcodes are linked to mutations in the codon-variant table, all sequencing data is generated with Illumina on a small sequence fragment to obtain the relative frequencies of barcodes in each selection experiment.  
 
 <a href="notebooks/analyze_variant_counts.html" target="_self">Analysis of variant counts notebook</a>
 
@@ -42,7 +42,7 @@ Once the barcodes are linked to mutations in the codon-variant table, all sequen
 
 <a href="notebooks/filter_data.html" target="_self">Filtering notebook</a>
 
-The final averaged data were filtered based on the following parameters that are contained within the [nipah_config.yaml](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/nipah_config.yaml){target="_self"} file. More information about these parameters are listed in the notebook.
+The final averaged data were filtered based on parameters that are contained within the [nipah_config.yaml](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/nipah_config.yaml){target="_self"} file. More information about these parameters are listed in the notebook.
 
 ## Raw Filtered Data
 ::: tip These data have been filtered. For pre-filtered raw .csv files, go to individual pages to view and download.

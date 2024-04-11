@@ -1,6 +1,6 @@
 # Receptor Binding
 
-To understand how mutations affect binding to soluble receptor, we performed selections on our pseudovirus libraries with soluble receptor. Neutralization of pseudovirus variants serves as a proxy for receptor binding. Receptor binding selections were fit with [polyclonal](https://github.com/jbloomlab/polyclonal){target="_self"}.
+To understand how mutations affect binding to soluble receptor, we performed selections on our pseudovirus libraries with soluble receptor. Neutralization of pseudovirus variants serves as a proxy for receptor binding. Neutralization curves were fit with [polyclonal](https://github.com/jbloomlab/polyclonal){target="_self"}.
 
 
 ## Individual Receptor Binding Selections
@@ -21,11 +21,10 @@ To understand how mutations affect binding to soluble receptor, we performed sel
 
 <a href="notebooks/fit_escape_receptor_affinity_LibB-230907-bEFNB3-dimeric.html" target="_self">LibB-230907-bEFNB3-dimeric</a>
 
-<a href="notebooks/fit_escape_receptor_affinity_LibB-231108-EFNB3-monomeric.html" target="_self">LibB-231108-EFNB3-monomeric</a>
 :::
 
 ## Average Receptor Binding
-Averaging receptor binding across libraries and replicate selections.
+These notebooks average effects of mutations on receptor binding across libraries and replicate selections.
 
 <a href="notebooks/avg_escape_receptor_affinity_bEFNB2_monomeric.html" target="_self">bEFNB2_monomeric</a>
 

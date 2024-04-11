@@ -41,13 +41,15 @@ If protein structure is available, distance in angstroms to the closest antibody
 ::: tip
 Click arrow in upper right to view full-sized plots
 :::
-Effects of mutations on cell entry and binding at receptor contact sites
+Effects of mutations on cell entry and binding at receptor contact sites. Receptor contact sites are less constrained for entry in CHO-bEFNB2 cells than CHO-bEFNB3 cells, likely due to ~25-fold higher receptor affinity.
 <Altair :showShadow="true" :spec-url="'htmls/combined_entry_binding_contact_heatmaps.html'"></Altair>
 
 ### Effects of mutations on cell entry and binding at glycosylation sites
+Nipah RBP has six sites that are glycosylated. One in the neck (site 159) and five in the head. Here are the effects of mutations on entry and binding.
 <Altair :showShadow="false" :spec-url="'htmls/glycan_sites_img_heatmap.html'"></Altair>
 
 ### Effects of mutations on cell entry and binding at polymorphic Nipah sites
+These sites are polymorphic in Nipah sequences. Most of these sites tolerate multiple mutations. 
 <Altair :showShadow="true" :spec-url="'htmls/nipah_poly_sites_img_heatmap.html'"></Altair>
 
 ### Effects of mutations on cell entry, organized by type of the unmutated amino acid residue 
