@@ -1,11 +1,11 @@
 # Cell Entry
 
-To measure the effects of mutations on RBP-mediated cell entry, we performed 'functional selections' where the frequencies of barcodes were compared between particles pseudotyped with either Nipah RBP/F or VSV-G. Notebooks below contain information about each step.
+To measure the effects of mutations on RBP-mediated cell entry, we performed 'functional selections' where the frequencies of barcodes were compared between pseudoviruses expressing either Nipah RBP/F or VSV-G. Notebooks below contain information about each step.
 
 
 
 ## Global Epistasis Fitting
-Individual cell entry selections were fit with [multidms](https://github.com/matsengrp/multidms){target="_self"} to decompose the effects of individual mutations.
+Individual cell entry selections were fit with [`multidms`](https://github.com/matsengrp/multidms){target="_self"} to decompose the effects of individual mutations using a global epistasis model.
 
 ::: details Individual functional selection global epistasis model fitting notebooks
 <a href="notebooks/func_effects_global_epistasis_LibA-230725-CHO-bEFNB3.html" target="_self">LibA-230725-CHO-bEFNB3</a>
@@ -92,12 +92,12 @@ Individual cell entry selections were fit with [multidms](https://github.com/mat
 ## Averaging Cell Entry
 Individual functional selections were averaged between libraries and replicates below.
 
-<a href="notebooks/avg_func_effects_CHO_bEFNB2.html" target="_self">CHO_bEFNB2</a>
+<a href="notebooks/avg_func_effects_CHO_bEFNB2.html" target="_self">Notebook averaging the effects of cell entry in CHO-bEFNB2 cells</a>
 
-<a href="notebooks/avg_func_effects_CHO_bEFNB3.html" target="_self">CHO_bEFNB3</a>
+<a href="notebooks/avg_func_effects_CHO_bEFNB3.html" target="_self">Notebook averaging the effects of cell entry in CHO-bEFNB3 cells</a>
 
 ## Comprehensive Cell Entry Heatmaps
-Additional control over filtering parameters
+Additional control over filtering parameters. Users can adjust different parameters to filter the heatmap data. These provide more information and control compared to the final filtered heatmaps provided on the [heatmaps](/heatmaps) page.
 
 <a href="htmls/CHO_bEFNB2_func_effects.html" target="_self">CHO-bEFNB2 cell entry heatmap</a>
 
@@ -107,10 +107,10 @@ Additional control over filtering parameters
 ## Functional Scores
 Notebook analyzing the distribution of functional scores for all individual selections.
 
-<a href="notebooks/analyze_func_scores.html" target="_self">Link to functional scores notebook</a>
+<a href="notebooks/analyze_func_scores.html" target="_self">Functional scores notebook</a>
 
 ## Analyze Data
-Notebook analyzing cell entry from filtered data.
+Notebook analyzing cell entry from filtered data. Make figures for manuscript using python and altair.
 
 <a href="notebooks/nipah_RBP_entry_analysis.html" target="_self">Cell entry analysis notebook</a>
 
@@ -152,12 +152,12 @@ Click arrow box to view altair plots in separate page.
 </Figure>
 
 ## Raw Data
-::: warning These data have not been filtered. For filtered .csv files, go to [Analysis Pipeline](/pipeline_information)
-[Individual cell entry (.csv) files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/func_effects/by_selection){target="_self"}
+::: warning These data have not been filtered. They are the raw output from `dms-vep-pipeline-3`. For filtered `.csv` files, [click here](/pipeline_information#filtered-data)
+[Individual cell entry files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/func_effects/by_selection){target="_self"}
 
-[Average entry in CHO-bEFNB2 cells (.csv)](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB2_func_effects.csv){target="_self"}
+[Averaged effects of RBP mutations on entry in CHO-bEFNB2 cells across replicates](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB2_func_effects.csv){target="_self"}
 
-[Average entry in CHO-bEFNB3 cells (.csv)](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB3_func_effects.csv){target="_self"}
+[Averaged effects of RBP mutations on entry in CHO-bEFNB3 cells across replicates](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/func_effects/averages/CHO_bEFNB3_func_effects.csv){target="_self"}
 :::
 
 

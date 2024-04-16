@@ -1,6 +1,6 @@
 # Receptor Binding
 
-To understand how mutations affect binding to soluble receptor, we performed selections on our pseudovirus libraries with soluble receptor. Neutralization of pseudovirus variants serves as a proxy for receptor binding. Neutralization curves were fit with [polyclonal](https://github.com/jbloomlab/polyclonal){target="_self"}.
+To understand how mutations affect binding to ephrin receptors, we performed selections on our pseudovirus libraries with soluble bat EFNB2 and EFNB3. Neutralization of pseudovirus variants serves as a proxy for receptor binding. Neutralization curves were fit with [`polyclonal`](https://github.com/jbloomlab/polyclonal){target="_self"}.
 
 
 ## Individual Receptor Binding Selections
@@ -26,31 +26,26 @@ To understand how mutations affect binding to soluble receptor, we performed sel
 ## Average Receptor Binding
 These notebooks average effects of mutations on receptor binding across libraries and replicate selections.
 
-<a href="notebooks/avg_escape_receptor_affinity_bEFNB2_monomeric.html" target="_self">bEFNB2_monomeric</a>
+<a href="notebooks/avg_escape_receptor_affinity_bEFNB2_monomeric.html" target="_self">bEFNB2-monomeric</a>
 
-<a href="notebooks/avg_escape_receptor_affinity_bEFNB3_dimeric.html" target="_self">bEFNB3_dimeric</a>
+<a href="notebooks/avg_escape_receptor_affinity_bEFNB3_dimeric.html" target="_self">bEFNB3-dimeric</a>
 
 ## Comprehensive Receptor Binding Heatmaps
-Additional control over filtering parameters
+Additional control over filtering parameters. Users can adjust different parameters to filter the heatmap data. These provide more information and control compared to the final filtered heatmaps provided on the [heatmaps](/heatmaps) page.
 
-<a href="htmls/bEFNB2_monomeric_mut_effect.html" target="_self">bEFNB2 monomeric heatmap</a>
+<a href="htmls/bEFNB2_monomeric_mut_effect.html" target="_self">bEFNB2-monomeric heatmap</a>
 
-<a href="htmls/bEFNB3_dimeric_mut_effect.html" target="_self">bEFNB3 dimeric heatmap</a>
+<a href="htmls/bEFNB3_dimeric_mut_effect.html" target="_self">bEFNB3-dimeric heatmap</a>
 
 
 
 ## Neutralization of Nipah pseudoviruses
+Pseudoviruses expressing Nipah virus RBP/F are neutralized by soluble bat ephrins.
 
 <Figure caption="Ephrin neutralization of pseudoviruses expressing unmutated Nipah RBP/F">
     <Altair :showShadow="true" :spec-url="'htmls/ephrin_neut_curve.html'"></Altair>
 </Figure>
 
-
-## Correlations Between Entry and Binding
-
-<Figure caption="Effects of mutations on binding and entry">
-    <Altair :showShadow="true" :spec-url="'htmls/entry_binding_combined_corr_plot.html'"></Altair>
-</Figure>
 
 ## Binding Correlations
 
@@ -79,15 +74,17 @@ Additional control over filtering parameters
 
 
 ## Analysis Notebooks
+Notebook analyzing receptor binding from filtered data. Make figures for manuscript using python and altair.
+
 <a href="notebooks/ephrin_binding.html" target="_self">Binding analysis notebook</a>
 
 ## Raw Data
-::: warning These data have not been filtered. For filtered .csv files, go to [Analysis Pipeline](/pipeline_information)
-[Individual antibody escape selection (.csv) files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/receptor_affinity/by_selection){target="_self"}
+::: warning These data have not been filtered. They are the raw output from `dms-vep-pipeline-3`. For filtered `.csv` files, [click here](/pipeline_information#filtered-data)
+[Individual receptor binding selection files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/receptor_affinity/by_selection){target="_self"}
 
-[Average bEFNB2 monomeric binding (.csv)](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/receptor_affinity/averages/bEFNB2_monomeric_mut_effect.csv){target="_self"}
+[Averaged effects of RBP mutations on bEFNB2 binding across replicates](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/receptor_affinity/averages/bEFNB2_monomeric_mut_effect.csv){target="_self"}
 
-[Average bEFNB3 dimeric binding (.csv)](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/receptor_affinity/averages/bEFNB3_dimeric_mut_effect.csv){target="_self"}
+[Averaged effects of RBP mutations on bEFNB3 binding across replicates](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/receptor_affinity/averages/bEFNB3_dimeric_mut_effect.csv){target="_self"}
 :::
 
 

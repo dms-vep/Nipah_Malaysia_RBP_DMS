@@ -97,3 +97,9 @@ results/receptor_affinity/averages/*
 
 !results/summaries
 !results/summaries/*.csv
+
+!results/parsed_mapping_data
+!results/parsed_mapping_data/*.csv
+
+!results/dms_viz
+!results/dms_viz/*.json

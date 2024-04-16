@@ -22,6 +22,7 @@ export default defineConfig({
       { text: 'Antibody Escape', link: '/antibody_escape' },
       { text: 'Heatmaps', link:'/heatmaps' },
       { text: 'Interactive Figures', link: '/interactive' },
+      // { text: 'Appendix', link: '/index', target: '_self' }, // include if you want to include the original docs
     ],
 
     socialLinks: [

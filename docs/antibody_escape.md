@@ -1,6 +1,6 @@
 # Antibody Escape
 
-We determined the effects of mutations on neutralization by different anti-RBP antibodies. Antibody selections were performed by incubating pseudovirus libraries with different concentrations of antibody, followed by infection of CHO-bEFNB3 cells to recover barcodes. Neutralization curves were fit on the DMS data with [polyclonal](https://github.com/jbloomlab/polyclonal){target="_self"}.
+We determined the effects of RBP mutations on neutralization by different RBP-directed antibodies. Antibody selections were performed by incubating pseudovirus libraries with different concentrations of antibody, followed by infection of CHO-bEFNB3 cells to recover barcodes. Neutralization curves were fit on the DMS data with [`polyclonal`](https://github.com/jbloomlab/polyclonal){target="_self"}.
 
 ## Individual Antibody Selections
 ::: details Individual antibody selection model fitting notebooks
@@ -62,7 +62,7 @@ Averaging antibody escape across libraries and replicate selections.
 :::
 
 ## Antibody Escape Comprehensive Heatmaps
-More in-depth heatmaps that allow additional control over filtering parameters
+Additional control over filtering parameters. Users can adjust different parameters to filter the heatmap data. These provide more information and control compared to the final filtered heatmaps provided on the [heatmaps](/heatmaps) page.
 
 <a href="htmls/m102.4_mut_effect.html" target="_self">m102.4</a>
 
@@ -116,20 +116,22 @@ More in-depth heatmaps that allow additional control over filtering parameters
 <a href="notebooks/analyze_escape_data.html" target="_self">Antibody analysis notebook</a>
 
 ## Raw Data
-::: warning These data have not been filtered. For filtered .csv files, go to [Analysis Pipeline](/pipeline_information)
-[Individual antibody escape selection .csv files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/antibody_escape/by_selection){target="_self"}
+::: warning These data have not been filtered. They are the raw output from `dms-vep-pipeline-3`. For filtered `.csv` files, [click here](/pipeline_information#filtered-data).
+[Individual antibody escape selection files](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/tree/master/results/antibody_escape/by_selection){target="_self"}
 
-[Average m102.4 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/m102.4_mut_effect.csv){target="_self"}
+**Averaged effects of RBP mutations on neutralization across replicate selections**
 
-[Average HENV-117 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV117_mut_effect.csv){target="_self"}
+[antibody m102.4](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/m102.4_mut_effect.csv){target="_self"}
 
-[Average HENV-26 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV26_mut_effect.csv){target="_self"}
+[antibody HENV-117](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV117_mut_effect.csv){target="_self"}
 
-[Average HENV-32 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV32_mut_effect.csv){target="_self"}
+[antibody HENV-26](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV26_mut_effect.csv){target="_self"}
 
-[Average HENV-103 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV103_mut_effect.csv){target="_self"}
+[antibody HENV-32](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV32_mut_effect.csv){target="_self"}
 
-[Average nAH1.3 escape .csv](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/nAH1.3_mut_effect.csv){target="_self"}
+[antibody HENV-103](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/HENV103_mut_effect.csv){target="_self"}
+
+[antibody nAH1.3](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/results/antibody_escape/averages/nAH1.3_mut_effect.csv){target="_self"}
 :::
 
 
