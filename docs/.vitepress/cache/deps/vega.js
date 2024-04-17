@@ -151,7 +151,6 @@ import {
   parse,
   parse2,
   parser,
-  path,
   pathEqual,
   pathRender,
   peek,
@@ -231,7 +230,10 @@ import {
   zoomPow,
   zoomSymlog,
   zorder
-} from "./chunk-PV3VD5LM.js";
+} from "./chunk-XJDZ4BQV.js";
+import {
+  path
+} from "./chunk-AVDKQJKK.js";
 import "./chunk-ZS7NZCD4.js";
 export {
   Bounds,

@@ -4,6 +4,11 @@ Explore Nipah virus RBP deep mutational scanning data with interactive charts.
 
 To explore heatmaps, click [here](/heatmaps)
 
+
+# D3 Test
+<BarChart />
+
+
 ::: tip
 Click white square in the upper right of each plot to view full-sized versions.
 :::

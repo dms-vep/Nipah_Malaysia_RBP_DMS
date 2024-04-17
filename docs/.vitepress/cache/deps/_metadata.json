@@ -1,55 +1,64 @@
 {
-  "hash": "d310d355",
+  "hash": "979ff06c",
   "configHash": "7603aac6",
-  "lockfileHash": "51d498ea",
-  "browserHash": "52b4ba73",
+  "lockfileHash": "fbba1450",
+  "browserHash": "ae6146b0",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "d995cf56",
+      "fileHash": "9bdfb407",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "f6a0cb75",
+      "fileHash": "a0dac3a4",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "f0220a3b",
+      "fileHash": "e17c22a3",
       "needsInterop": false
     },
     "vega": {
       "src": "../../../../node_modules/vega/build/vega.module.js",
       "file": "vega.js",
-      "fileHash": "76ef23a9",
+      "fileHash": "84987861",
       "needsInterop": false
     },
     "vega-lite": {
       "src": "../../../../node_modules/vega-lite/build/src/index.js",
       "file": "vega-lite.js",
-      "fileHash": "cafe58c2",
+      "fileHash": "6c16410e",
       "needsInterop": false
     },
     "vega-embed": {
       "src": "../../../../node_modules/vega-embed/build/vega-embed.module.js",
       "file": "vega-embed.js",
-      "fileHash": "7d72409d",
+      "fileHash": "efb3eedf",
+      "needsInterop": false
+    },
+    "d3": {
+      "src": "../../../../node_modules/d3/src/index.js",
+      "file": "d3.js",
+      "fileHash": "dbd669e4",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-YJPYEGSP": {
+      "file": "chunk-YJPYEGSP.js"
+    },
+    "chunk-XJDZ4BQV": {
+      "file": "chunk-XJDZ4BQV.js"
+    },
+    "chunk-AVDKQJKK": {
+      "file": "chunk-AVDKQJKK.js"
+    },
     "chunk-CKQ4TNQ3": {
       "file": "chunk-CKQ4TNQ3.js"
-    },
-    "chunk-SFN6VF4I": {
-      "file": "chunk-SFN6VF4I.js"
-    },
-    "chunk-PV3VD5LM": {
-      "file": "chunk-PV3VD5LM.js"
     },
     "chunk-ZS7NZCD4": {
       "file": "chunk-ZS7NZCD4.js"
