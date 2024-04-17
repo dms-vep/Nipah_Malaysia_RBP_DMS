@@ -1,6 +1,6 @@
-# Antibody Escape
+# Antibody Escape 
 
-We determined the effects of RBP mutations on neutralization by different RBP-directed antibodies. Antibody selections were performed by incubating pseudovirus libraries with different concentrations of antibody, followed by infection of CHO-bEFNB3 cells to recover barcodes. Neutralization curves were fit on the DMS data with [`polyclonal`](https://github.com/jbloomlab/polyclonal){target="_self"}.
+We determined the effects of RBP mutations on neutralization by different RBP-directed antibodies. Antibody selections were performed by incubating pseudovirus libraries with different concentrations of antibody, followed by infection of CHO-bEFNB3 cells to recover barcodes. Neutralization curves were fit on the DMS data with [`polyclonal`](https://github.com/jbloomlab/polyclonal){target="_self"}. 
 
 ## Individual Antibody Selections
 ::: details Individual antibody selection model fitting notebooks
