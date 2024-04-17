@@ -1,12 +1,10 @@
 ---
 layout: home
 
-
 hero:
   name: "Nipah virus deep mutational scanning"
   tagline: "Collection of data, figures, and information for the Nipah virus receptor binding protein deep mutational scanning project"
   image: /images/entry_tetramer.png
-
 
 features:
   - title: Pipeline information and data processing
@@ -36,26 +34,27 @@ features:
 
 ### About
 
-This website contains links and information for the Nipah virus receptor binding protein deep mutational scanning project. Look through Jupyter notebooks used in analyses, explore [interactive charts](/interactive), or download raw [data](/pipeline_information#filtered-data). To view more information on the code used to analyze these data and generate the website, click on the GitHub logo in upper right. Interactive charts made with [Altair](https://altair-viz.github.io){target="_self"}. Embedding of Altair plots was done with custom javascript code from [dms-vep](https://github.com/dms-vep/dms-vep.github.io){target="_self"}. All work was done in the [Bloom Lab](https://research.fredhutch.org/bloom/en.html){target="_self"}, part of [Fred Hutch Cancer Center](https://www.fredhutch.org/en.html){target="_self"}. To access the old version of the homepage built by `dms-vep-pipeline-3`, click [here](/index){target='_self'}. 
+This website contains links and information for the Nipah virus receptor binding protein deep mutational scanning project. Look through Jupyter notebooks used in analyses, explore [interactive charts](/interactive), or download raw [data](/pipeline_information#filtered-data). To view more information on the code used to analyze these data and generate the website, check out our [GitHub repo](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS){target="_self"}. Interactive charts made with [Altair](https://altair-viz.github.io){target="_self"}. Embedding of Altair plots was done with custom javascript code from [dms-vep](https://github.com/dms-vep/dms-vep.github.io){target="_self"}. All work was done in the [Bloom Lab](https://research.fredhutch.org/bloom/en.html){target="_self"}, part of [Fred Hutch Cancer Center](https://www.fredhutch.org/en.html){target="_self"}. To access the old version of the homepage built by `dms-vep-pipeline-3`, click [here](/index){target='_self'}. 
 
 ### Scientific Details
 
-Deep mutational scanning experiments were performed on the Nipah virus receptor binding protein to measure the effects of mutations on three different phenotypes: cell entry, receptor binding, and antibody escape. We utilized a [recently developed lentivirus-based platform](https://pubmed.ncbi.nlm.nih.gov/36868218/){target='_self'} to measure the effects of all possible mutations. We used a combination of selections on variant libraries and deep sequencing to measure these effects.
-
-The Nipah virus receptor binding protein is responsible for binding to host cell receptors (ephrin-B2 and -B3) and mediating cell entry. Following receptor binding, RBP triggers a different viral protein, the Fusion (F) protein. Once triggered by RBP, F undergoes irreversible conformational changes to fuse the host and viral membranes. Here are the molecular structures of the RBP and F proteins: 
+Nipah virus is a bat-borne paramyxovirus that occassionally spills over into humans in SE Asia, causing fatal infections. The Nipah virus receptor binding protein is responsible for binding to host receptors (ephrin-B2 and -B3) on the cell surface. Following receptor binding, RBP triggers the fusion (F) protein, which undergoes irreversible conformational changes to fuse the host and viral membranes. Here are the molecular structures of the receptor binding and fusion proteins: 
 
 <div style="display: flex; justify-content: center;">
-  <video width="640" height="480" controls autoplay>
+  <video width="640" height="480" controls autoplay loop>
     <source src="/images/nipah_RBP_F_spinning.m4v?url" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
 
-<div style="text-align: center; color: grey;">Nipah virus receptor binding protein on left, fusion protein on right. Colors are individual monomers. </div>
+<div style="text-align: center; color: grey;">Nipah virus receptor binding protein on left, fusion protein on right. Colors show individual monomers. </div>
+
+Given the spillover risk posed by Nipah, we sought to understand how mutations affect different phenotypes of the receptor binding protein. Specifically, we measured the effects of mutations on three different phenotypes: cell entry, receptor binding, and antibody escape. We utilized a [recently developed lentivirus-based platform](https://pubmed.ncbi.nlm.nih.gov/36868218/){target='_self'} to perform the deep mutational scanning experiments. By applying different selection conditions on pseudovirus libraries, followed by deep sequencing to recover barcode frequencies, we were able to map the effects of thousands of mutations on the Nipah virus receptor binding protein. These data will help us understand functional constraints, and the possibility of escape from neutralizing antibodies.
+
+
 
 ### Biosafety
 
-All experiments were performed with non-replicative lentiviral-based pseudoviruses in a biosafety-level 2 laboratory by trained personel. Rescue of lentiviruses from cells requires co-transfection with multiple different plasmids, limiting the risk of recombination. Ephrin-B2 and ephrin-B3 orthologs from the bat species *Pteropus alecto* were used for cell entry and receptor binding assays to limit information hazards of identifying human-specific adaptive mutations. 
-
+All experiments were performed with non-replicative lentiviral-based pseudoviruses in a biosafety-level 2 laboratory by trained personnel. Pseudotyping is a method where viral entry proteins are expressed in combination with a viral vector from a different virus. By only expressing the Nipah receptor binding and fusion proteins on the surface of lentiviral particles, we can safely perform deep mutational scanning experiments without modifying authentic virus. Essential lentiviral genes, such as gag/pol, rev, and tat, are not encoded by the lentiviral vector. These genes are instead introduced by transfecting cells with three separate plasmids. This ensures the pseudotyped lentiviruses cannot replicate outside of a cell culture system where these plasmids are co-transfected. Finally, to limit the information hazards associated with identifying human-specific adaptive mutations, we used ephrin-B2 and ephrin-B3 orthologs from the bat species *Pteropus alecto* for all assays.
 
 
