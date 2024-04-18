@@ -34,10 +34,10 @@ features:
 
 ### About
 <div style="clear: right; float: right; margin-left: 1em; ">
-  <a href="/images/metal_efnb3_sheen_atoms.png" target="_base">
-    <img src="/images/metal_efnb3_sheen_atoms.png" alt="Nipah virus receptor binding protein" width="100%" style="max-width: 300px;">
+  <a href="/images/metal_efnb3_sheen_atoms.png" target="_self">
+    <img src="/images/metal_efnb3_sheen_atoms.png" alt="Nipah virus receptor binding protein" width="100%" style="max-width: 250px;">
   </a>
-  <p style="text-align: center; color: grey; font-size: smaller;">Receptor binding protein bound to ephrin-B2.</p>
+  <p style="text-align: center; color: grey; font-size: smaller;">Receptor binding protein (spheres) and ephrin-B2.</p>
 </div>
 
 This website contains links and information for the Nipah virus receptor binding protein deep mutational scanning project. Look through Jupyter notebooks used in analyses, explore [interactive charts](/interactive), or download raw [data](/pipeline_information#filtered-data). To view more information on the code used to analyze these data and generate the website, check out our [GitHub repo](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS){target="_self"}. Interactive charts made with [Altair](https://altair-viz.github.io){target="_self"}. Embedding of Altair plots was done with custom javascript code from [dms-vep](https://github.com/dms-vep/dms-vep.github.io){target="_self"}. All work was done in the [Bloom Lab](https://research.fredhutch.org/bloom/en.html){target="_self"}, part of [Fred Hutch Cancer Center](https://www.fredhutch.org/en.html){target="_self"}. To access the old version of the homepage built by `dms-vep-pipeline-3`, click [here](/index){target='_self'}. 
