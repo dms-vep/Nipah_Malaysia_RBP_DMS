@@ -1,6 +1,11 @@
 # Antibody Escape 
 
-We determined the effects of RBP mutations on neutralization by different RBP-directed antibodies. Antibody selections were performed by incubating pseudovirus libraries with different concentrations of antibody, followed by infection of CHO-bEFNB3 cells to recover barcodes. Neutralization curves were fit on the DMS data with [`polyclonal`](https://github.com/jbloomlab/polyclonal){target="_self"}. 
+We determined the effects of receptor binding protein mutations on antibody neutralization. Antibody selections were performed by incubating pseudovirus libraries with different concentrations of antibody, followed by infection of CHO cells expressing bat ephrin-B3. Neutralization curves were fit on the DMS data with [`polyclonal`](https://github.com/jbloomlab/polyclonal){target="_self"}. 
+
+![image](./public/images/antibody_selection_schematic.png)
+
+<div style="text-align: center; color: grey;">Schematic of antibody selections.</div>
+
 
 ## Individual Antibody Selections
 ::: details Individual antibody selection model fitting notebooks
@@ -82,11 +87,12 @@ Additional control over filtering parameters. Users can adjust different paramet
 <a href="notebooks/mab_neut_ic50.html" target="_self">Neutralization curves notebook</a>
 
 <Figure caption="Neutralization of unmutated Nipah RBP/F pseudovirus by different anti-RBP antibodies.">
-    <Altair :showShadow="true" :spec-url="'htmls/mab_neuts_plot.html'"></Altair>
+    <Altair :showShadow="false" :spec-url="'htmls/mab_neuts_plot.html'"></Altair>
 </Figure>
 
 
 ## Antibody Escape Validations
+To validate our deep mutational scanning measurements, we generated pseudoviruses expressing different receptor binding protein mutations. We tested whether neutralization by the antibody nAH1.3 correlated with our deep mutational scanning data.
 
 <a href="notebooks/mab_validation.html" target="_self">Antibody validation notebook</a>
 
@@ -103,7 +109,7 @@ Additional control over filtering parameters. Users can adjust different paramet
 ### Functional Effect of Antibody Escape Mutations
 
 <Figure caption="Effects of mutations on cell entry and antibody neutralization">
-    <Altair :showShadow="true" :spec-url="'htmls/escape_bubble_plot.html'"></Altair>
+    <Altair :showShadow="false" :spec-url="'htmls/escape_bubble_plot.html'"></Altair>
 </Figure>
 
 ### Escape by Site

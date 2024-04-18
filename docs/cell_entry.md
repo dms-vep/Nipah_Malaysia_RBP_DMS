@@ -1,11 +1,14 @@
 # Cell Entry
 
-To measure the effects of mutations on RBP-mediated cell entry, we performed 'functional selections' where the frequencies of barcodes were compared between pseudoviruses expressing either Nipah RBP/F or VSV-G. Notebooks below contain information about each step.
+To measure the effects of mutations on cell entry mediated by the receptor binding protein, we conducted 'functional selections'. In these selections, we compared the frequencies of specific barcodes between two groups of pseudoviruses: those expressing Nipah RBP/F and those expressing VSV-G. Notebooks below contain information about each step.
 
+![image](./public/images/functional_selection_schematic.png)
+
+<div style="text-align: center; color: grey;">Schematic of functional selections using VSV-G entry as a control for library composition. </div>
 
 
 ## Global Epistasis Fitting
-Individual cell entry selections were fit with [`multidms`](https://github.com/matsengrp/multidms){target="_self"} to decompose the effects of individual mutations using a global epistasis model.
+Individual cell entry selections were fit with [`multidms`](https://github.com/matsengrp/multidms){target="_self"} to decompose the effects of individual mutations using a [global epistasis model](https://pubmed.ncbi.nlm.nih.gov/30037990/){target="_self"}.
 
 ::: details Individual functional selection global epistasis model fitting notebooks
 <a href="notebooks/func_effects_global_epistasis_LibA-230725-CHO-bEFNB3.html" target="_self">LibA-230725-CHO-bEFNB3</a>
@@ -122,28 +125,28 @@ Click arrow box to view altair plots in separate page.
 
 
 <Figure caption="Cell entry of different RBP regions">
-    <Altair :showShadow="true" :spec-url="'htmls/entry_region_boxplot_plot.html'"></Altair>
+    <Altair :showShadow="false" :spec-url="'htmls/entry_region_boxplot_plot.html'"></Altair>
 </Figure>
 
 ### Site-averaged Effects of Mutations on Cell Entry
 
 <Figure caption="Sites in RBP neck and contact sites (ranked from least constrained to most)">
-    <Altair :showShadow="true" :spec-url="'htmls/combined_region_barplot_output.html'"></Altair>
+    <Altair :showShadow="false" :spec-url="'htmls/combined_region_barplot_output.html'"></Altair>
 </Figure>
 
 ### Cell Entry Correlations
-
+Comparison of average effects of mutations on entry in cells expressing bat ephrin-B2 or bat ephrin-B3. Some mutations are much more tolerated for cell entry in bat ephrin-B2 cells, especially at sites near the receptor-binding interface.
 <Figure caption="Correlation between site-averaged effects of mutations on cell entry">
-    <Altair :showShadow="true" :spec-url="'htmls/E2_E3_entry_corr_plot.html'"></Altair>
+    <Altair :showShadow="false" :spec-url="'htmls/E2_E3_entry_corr_plot.html'"></Altair>
 </Figure>
 
 
 <Figure caption="Correlation between effects of all mutations on cell entry">
-    <Altair :showShadow="true" :spec-url="'htmls/E2_E3_entry_all_muts_plot.html'"></Altair>
+    <Altair :showShadow="false" :spec-url="'htmls/E2_E3_entry_all_muts_plot.html'"></Altair>
 </Figure>
 
 ### Cell Entry Validations
-
+To validate our deep mutational scanning measurements, we produced lentiviruses with individual mutations that spanned a range of effects.
 <a href="notebooks/cell_entry_validations.html" target="_self">Cell entry validation notebook</a>
 
 

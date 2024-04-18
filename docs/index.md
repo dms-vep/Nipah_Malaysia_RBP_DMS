@@ -12,7 +12,7 @@ features:
     link: /pipeline_information
 
   - title: Cell entry
-    details: Analysis of functional selections for assessing how RBP mutations impact cell entry 
+    details: Analysis of functional selections for assessing how mutations to the receptor binding protein impact cell entry 
     link: /cell_entry
     
   - title: Receptor binding
@@ -20,7 +20,7 @@ features:
     link: /receptor_binding
 
   - title: Antibody escape
-    details: Analysis of antibody neutralization data for finding sites of escape in the RBP 
+    details: Analysis of antibody neutralization data for finding sites of escape in the receptor binding protein. 
     link: /antibody_escape
 
   - title: Heatmaps
@@ -28,26 +28,32 @@ features:
     link: /heatmaps
 
   - title: Interactive figures
-    details: Explore DMS data on Nipah RBP with interactive figures 
+    details: Explore deep mutational scanning data on the Nipah virus receptor binding protein with interactive figures 
     link: /interactive
 ---
 
 ### About
+<div style="clear: right; float: right; margin-left: 1em; ">
+  <img src="/images/metal_efnb3_sheen_atoms.png" alt="Nipah virus receptor binding protein" width="325">
+  <p style="text-align: center; color: grey; font-size: smaller;">Receptor binding protein bound to ephrin-B2.</p>
+</div>
 
 This website contains links and information for the Nipah virus receptor binding protein deep mutational scanning project. Look through Jupyter notebooks used in analyses, explore [interactive charts](/interactive), or download raw [data](/pipeline_information#filtered-data). To view more information on the code used to analyze these data and generate the website, check out our [GitHub repo](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS){target="_self"}. Interactive charts made with [Altair](https://altair-viz.github.io){target="_self"}. Embedding of Altair plots was done with custom javascript code from [dms-vep](https://github.com/dms-vep/dms-vep.github.io){target="_self"}. All work was done in the [Bloom Lab](https://research.fredhutch.org/bloom/en.html){target="_self"}, part of [Fred Hutch Cancer Center](https://www.fredhutch.org/en.html){target="_self"}. To access the old version of the homepage built by `dms-vep-pipeline-3`, click [here](/index){target='_self'}. 
 
+
+
 ### Scientific Details
 
-Nipah virus is a bat-borne paramyxovirus that occassionally spills over into humans in SE Asia, causing fatal infections. The Nipah virus receptor binding protein is responsible for binding to host receptors (ephrin-B2 and -B3) on the cell surface. Following receptor binding, RBP triggers the fusion (F) protein, which undergoes irreversible conformational changes to fuse the host and viral membranes. Here are the molecular structures of the receptor binding and fusion proteins: 
+Nipah virus is a bat-borne paramyxovirus that occassionally spills over into humans in SE Asia, causing fatal infections. Nipah virus relies on the coordination of two different viral entry proteins to enter cells: the receptor binding and fusion protein. The Nipah virus receptor binding protein is responsible for binding to host receptors (ephrin-B2 and -B3) on the cell surface. Following receptor binding, the receptor binding protein triggers the fusion protein, which undergoes irreversible conformational changes to fuse the host and viral membranes. Here are the molecular structures of the receptor binding and fusion proteins: 
 
 <div style="display: flex; justify-content: center;">
-  <video width="640" height="480" controls autoplay loop>
+  <video width="640" height="480" controls autoplay loop playsinline>
     <source src="/images/nipah_RBP_F_spinning.m4v?url" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
 
-<div style="text-align: center; color: grey;">Nipah virus receptor binding protein on left, fusion protein on right. Colors show individual monomers. </div>
+<div style="text-align: center; color: grey; font-size: smaller">Nipah virus receptor binding protein on left, fusion protein on right. Colors show individual monomers. </div>
 
 Given the spillover risk posed by Nipah, we sought to understand how mutations affect different phenotypes of the receptor binding protein. Specifically, we measured the effects of mutations on three different phenotypes: cell entry, receptor binding, and antibody escape. We utilized a [recently developed lentivirus-based platform](https://pubmed.ncbi.nlm.nih.gov/36868218/){target='_self'} to perform the deep mutational scanning experiments. By applying different selection conditions on pseudovirus libraries, followed by deep sequencing to recover barcode frequencies, we were able to map the effects of thousands of mutations on the Nipah virus receptor binding protein. These data will help us understand functional constraints, and the possibility of escape from neutralizing antibodies.
 

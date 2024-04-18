@@ -1,6 +1,12 @@
 # Receptor Binding
 
-To understand how mutations affect binding to ephrin receptors, we performed selections on our pseudovirus libraries with soluble bat EFNB2 and EFNB3. Neutralization of pseudovirus variants serves as a proxy for receptor binding. Neutralization curves were fit with [`polyclonal`](https://github.com/jbloomlab/polyclonal){target="_self"}.
+To understand how mutations affect binding to ephrin receptors, we performed selections on our pseudovirus libraries with soluble bat ephrin-B2 and ephrin-B3. Neutralization of pseudovirus variants serves as a proxy for receptor binding. Neutralization curves were fit with [`polyclonal`](https://github.com/jbloomlab/polyclonal){target="_self"}.
+
+Pseudoviruses expressing Nipah virus receptor binding and fusion proteins are neutralized by soluble bat ephrins.
+
+<Figure caption="Ephrin neutralization of pseudoviruses expressing unmutated Nipah receptor binding and fusion proteins.">
+    <Altair :showShadow="false" :spec-url="'htmls/ephrin_neut_curve.html'"></Altair>
+</Figure>
 
 
 ## Individual Receptor Binding Selections
@@ -39,36 +45,31 @@ Additional control over filtering parameters. Users can adjust different paramet
 
 
 
-## Neutralization of Nipah pseudoviruses
-Pseudoviruses expressing Nipah virus RBP/F are neutralized by soluble bat ephrins.
 
-<Figure caption="Ephrin neutralization of pseudoviruses expressing unmutated Nipah RBP/F">
-    <Altair :showShadow="true" :spec-url="'htmls/ephrin_neut_curve.html'"></Altair>
-</Figure>
 
 
 ## Binding Correlations
 
-<Figure caption="Effects of mutations on binding to bEFNB2 and bEFNB3, with mutations of interest highlighted">
-    <Altair :showShadow="true" :spec-url="'htmls/E2_E3_correlation.html'"></Altair>
+<Figure caption="Effects of mutations on binding to bat ephrin-B2 and bat ephrin-B3, with mutations of interest highlighted">
+    <Altair :showShadow="false" :spec-url="'htmls/E2_E3_correlation.html'"></Altair>
 </Figure>
 
-<Figure caption="Interactive plot of bEFNB2 and bEFNB3 site-averaged binding correlations">
-    <Altair :showShadow="true" :spec-url="'htmls/E2_E3_correlation_site.html'"></Altair>
-</Figure>
+
 
 ## Binding Validations
-### Binding Validation by BLI
-<a href="notebooks/plot_BLI_data.html" target="_self">BLI validations notebook</a>
+### Binding Validation by Biolayer Interferometry
+To validate our DMS binding measurements, we tested binding affinity by biolayer interferometry. 
+<a href="notebooks/plot_BLI_data.html" target="_self">Notebook analyzing biolayer interferometry data and plotting correlations.</a>
 
-<Figure caption="Correlation of biolayer interferometry affinity measurements with DMS">
-    <Altair :showShadow="true" :spec-url="'htmls/binding_BLI_corr.html'"></Altair>
+<Figure caption="Correlation of biolayer interferometry affinity measurements with deep mutational scanning measurements">
+    <Altair :showShadow="false" :spec-url="'htmls/binding_BLI_corr.html'"></Altair>
 </Figure>
 
 ### Binding Validation by Neutralization
+We also tested neutralization of individual mutations expressed on pseudoviruses with soluble bat ephrin-B2 (monomeric) or bat ephrin-B3 (dimeric). Individual mutations affect neutralizing potency by soluble receptor.
 <a href="notebooks/ephrin_neut_curves.html" target="_self">Binding validations notebook</a>
 
-<Figure caption="Neutralization of single RBP mutant pseudoviruses and correlation with DMS">
+<Figure caption="Neutralization of receptor binding protein mutant pseudoviruses and correlation with deep mutational scanning.">
     <Altair :showShadow="true" :spec-url="'htmls/all_ephrin_neut_plots.html'"></Altair>
 </Figure>
 
