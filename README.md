@@ -1,7 +1,7 @@
 # Deep mutational scanning of the Nipah virus receptor binding protein (RBP) using a barcoded lentiviral vector
 Study by Brendan Larsen, Teagan McMahon and Jesse Bloom.
 
-For Jupyter notebooks used in analyses and interactive Altair plots, see [https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/](https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/).
+For a landing page that contains additional information about the project, see [https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/](https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/).
 
 
 This repo contains data and analyses from deep mutational scanning experiments on the Nipah virus RBP. All experiments were performed on the reference Nipah genome sequenced during the original outbreak in Malaysia [NC_002728.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_002728.1). Thirty two amino acids were removed from the cytoplasmic tail to improve lentivirus titers, and all residues between RBP reference sites 71 and 602 contain every possible single missense mutation. Stop codons were designed to occur at every other position from positions 71 to 234.
