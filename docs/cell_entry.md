@@ -1,10 +1,10 @@
 # Cell Entry
 
-To measure the effects of mutations on cell entry mediated by the receptor binding protein, we conducted 'functional selections'. In these selections, we compared the frequencies of specific barcodes between two groups of pseudoviruses: those expressing Nipah RBP/F and those expressing VSV-G. Notebooks below contain information about each step.
+To measure the effects of mutations on cell entry mediated by the receptor binding protein, we conducted 'functional selections'. In these selections, we compared the frequencies of specific barcodes between two groups of pseudoviruses: those expressing the Nipah virus receptor binding (mutated) and fusion proteins (unmutated), and those expressing VSV-G. Notebooks below contain information about each step.
 
 ![image](./public/images/functional_selection_schematic.png)
 
-<div style="text-align: center; color: grey;">Schematic of functional selections using VSV-G entry as a control for library composition. </div>
+<div style="text-align: center; color: grey; font-size:smaller">Schematic of functional selections using VSV-G entry as a control for library composition. </div>
 
 
 ## Global Epistasis Fitting

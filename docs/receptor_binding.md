@@ -2,7 +2,7 @@
 
 To understand how mutations affect binding to ephrin receptors, we performed selections on our pseudovirus libraries with soluble bat ephrin-B2 and ephrin-B3. Neutralization of pseudovirus variants serves as a proxy for receptor binding. Neutralization curves were fit with [`polyclonal`](https://github.com/jbloomlab/polyclonal){target="_self"}.
 
-Pseudoviruses expressing Nipah virus receptor binding and fusion proteins are neutralized by soluble bat ephrins.
+Pseudoviruses expressing unmutated Nipah virus receptor binding and fusion proteins were neutralized by soluble bat ephrin receptors.
 
 <Figure caption="Ephrin neutralization of pseudoviruses expressing unmutated Nipah receptor binding and fusion proteins.">
     <Altair :showShadow="false" :spec-url="'htmls/ephrin_neut_curve.html'"></Altair>

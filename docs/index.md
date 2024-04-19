@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "Nipah virus deep mutational scanning"
   tagline: "Collection of data, figures, and information for the Nipah virus receptor binding protein deep mutational scanning project"
-  image: /images/entry_tetramer.png
+  image: /images/entry_tetramer_better.png
 
 features:
   - title: Pipeline information and data processing
@@ -34,8 +34,8 @@ features:
 
 ### About
 <div style="clear: right; float: right; margin-left: 1em; ">
-  <a href="/images/metal_efnb3_sheen_atoms.png" target="_self">
-    <img src="/images/metal_efnb3_sheen_atoms.png" alt="Nipah virus receptor binding protein" width="100%" style="max-width: 250px;">
+  <a href="./public/images/metal_efnb3_sheen_atoms.png" target="_self">
+    <img src="/images/metal_efnb3_sheen_atoms.png" alt="Nipah virus receptor binding protein" width="100%" style="max-width: 225px;">
   </a>
   <p style="text-align: center; color: grey; font-size: smaller;">Receptor binding protein (spheres) and ephrin-B2.</p>
 </div>
@@ -46,7 +46,7 @@ This website contains links and information for the Nipah virus receptor binding
 
 ### Scientific Details
 
-Nipah virus is a bat-borne paramyxovirus that occassionally spills over into humans in SE Asia, causing fatal infections. Nipah virus relies on the coordination of two different viral entry proteins to enter cells: the receptor binding and fusion protein. The Nipah virus receptor binding protein is responsible for binding to host receptors (ephrin-B2 and -B3) on the cell surface. Following receptor binding, the receptor binding protein triggers the fusion protein, which undergoes irreversible conformational changes to fuse the host and viral membranes. Here are the molecular structures of the receptor binding and fusion proteins: 
+Nipah virus is a bat-borne paramyxovirus that occassionally spills over into humans in SE Asia, causing fatal infections. Nipah virus relies on the coordination of two different viral entry proteins to enter cells: the receptor binding and fusion protein. The Nipah virus receptor binding protein is responsible for binding to host receptors (ephrin-B2 and ephrin-B3) on the cell surface. Following receptor binding, the receptor binding protein triggers the fusion protein, which undergoes irreversible conformational changes to fuse the host and viral membranes. Here are the molecular structures of the receptor binding and fusion proteins: 
 
 <div style="display: flex; justify-content: center;">
   <video width="640" height="480" controls autoplay loop playsinline>
@@ -63,6 +63,6 @@ Given the spillover risk posed by Nipah, we sought to understand how mutations a
 
 ### Biosafety
 
-All experiments were performed with non-replicative lentiviral-based pseudoviruses in a biosafety-level 2 laboratory by trained personnel. Pseudotyping is a method where viral entry proteins are expressed in combination with a viral vector from a different virus. By only expressing the Nipah receptor binding and fusion proteins on the surface of lentiviral particles, we can safely perform deep mutational scanning experiments without modifying authentic virus. Essential lentiviral genes, such as gag/pol, rev, and tat, are not encoded by the lentiviral vector. These genes are instead introduced by transfecting cells with three separate plasmids. This ensures the pseudotyped lentiviruses cannot replicate outside of a cell culture system where these plasmids are co-transfected. Finally, to limit the information hazards associated with identifying human-specific adaptive mutations, we used ephrin-B2 and ephrin-B3 orthologs from the bat species *Pteropus alecto* for all assays.
+All experiments were performed with non-replicative lentiviral-based pseudoviruses in a biosafety-level 2 laboratory by trained personnel. Pseudotyping is a method where viral entry proteins are expressed in combination with a viral vector from a different virus. By only expressing the Nipah receptor binding and fusion proteins on the surface of lentiviral particles, we can safely perform deep mutational scanning experiments without modifying authentic virus. Essential lentiviral genes, such as gag/pol, rev, and tat, are not encoded by the lentiviral vector. These genes are instead introduced by transfecting cells with three separate plasmids. This ensures the pseudotyped lentiviruses cannot replicate outside of a cell culture system where these plasmids are co-transfected. Finally, to limit the information hazards associated with identifying human-specific adaptive mutations, we used ephrin-B2 and ephrin-B3 orthologs from the bat species [*Pteropus alecto*](https://en.wikipedia.org/wiki/Black_flying_fox){target='_self'}, [a natural host of henipaviruses](https://pubmed.ncbi.nlm.nih.gov/26469523){target='_self'}, for all assays.
 
 

@@ -1,6 +1,6 @@
 # Pipeline Information
 
-The lentivirus-based deep mutational scanning platform relies on obtaining relative frequencies of different protein variants that enter cells after applying selection to the libraries. By comparing mutation frequencies before and after selections, we can determine the effects of mutations on different phenotypes.
+The lentivirus-based deep mutational scanning platform relies on obtaining relative frequencies of different receptor binding protein variants that enter cells after applying selection to the libraries. By comparing mutation frequencies before and after selections, we can determine the effects of mutations on different phenotypes.
 
 Calculating the relative frequencies of thousands of variants is not trivial. We rely on two different sequencing technologies to obtain the necessary data.
 - PacBio long-read sequencing to link barcodes to specific mutations in the receptor binding protein.
@@ -8,9 +8,9 @@ Calculating the relative frequencies of thousands of variants is not trivial. We
 
 ![image](./public/images/library_schematic.png)
 
-<div style="text-align: center; color: grey;">Schematic of lentivirus vector used in deep mutational scanning experiments (top), along with sequencing strategy (bottom). </div>
+<div style="text-align: center; color: grey; font-size: smaller;">Schematic of lentivirus vector used in deep mutational scanning experiments (top), along with sequencing strategy (bottom). </div>
 
-Because PacBio sequencing is expensive and lower throughput, we only sequence the variant libraries with this technology once. Full-length consensus sequences of the receptor binding protein and associated barcodes are assembled, while discarding low-quality reads. From these assembled consensus sequences we build a codon-variant lookup table, enabling us to match barcodes to specific mutations in the receptor binding protein. All subsequent Illumina sequencing of selection experiments use this lookup table to estimate mutational effects from barcode sequencing data alone. Our generated pseudovirus libraries consist of 60,000 to 80,000 unique variants. Each unique variant is sequenced hundreds of times with Illumina to get accurate frequency measurements. 
+Because PacBio sequencing is expensive and lower throughput, we only sequenced the variant libraries with this technology once. Full-length consensus sequences of the receptor binding protein and associated barcodes are assembled, while discarding low-quality reads. From these assembled consensus sequences we build a codon-variant lookup table, enabling us to match barcodes to specific mutations in the receptor binding protein. All subsequent Illumina sequencing of selection experiments use this lookup table to estimate mutational effects from barcode sequencing data alone. Our generated pseudovirus libraries consist of 60,000 to 80,000 unique variants. Each unique variant is sequenced hundreds of times with Illumina to get accurate frequency measurements. 
 
 Most of these computationally intensive steps were analyzed with [`dms-vep-pipeline-3`](https://github.com/dms-vep/dms-vep-pipeline-3){target="_self"}. This pipeline utilizes the [`alignparse`](https://jbloomlab.github.io/alignparse/){target="_self"} package. Each step, along with the associated jupyter notebooks are listed below. 
 
@@ -58,7 +58,7 @@ Once the barcodes are linked to mutations in the codon-variant table, all sequen
 
 <a href="notebooks/filter_data.html" target="_self">Filtering notebook</a>
 
-Once the effects of mutations on different phenotypes have been calculated, we perform a data filtering step to remove low confidence measurements. The filtering parameters are contained within the [nipah_config.yaml](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/nipah_config.yaml){target="_self"} file. More information about these parameters are listed in the notebook. In brief, we require mutations to be present in at least two barcodes, and have a low variance between independent library measurements.
+Once the effects of mutations on different phenotypes have been calculated, we perform a data filtering step to remove low confidence measurements. The filtering parameters are contained within the [nipah_config.yaml](https://github.com/dms-vep/Nipah_Malaysia_RBP_DMS/blob/master/nipah_config.yaml){target="_self"} file. More information about these parameters are listed in the notebook. In brief, we require mutations to be present in at least two barcodes, and have low variance between selection replicates.
 
 ## Filtered Data
 ::: warning These data have been filtered and are the best choice for anyone interested in analyzing the data themselves. For unfiltered raw `.csv` files of mutational effects on different phenotypes, go to individual pages to view and download.

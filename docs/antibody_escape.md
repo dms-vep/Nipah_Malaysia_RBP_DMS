@@ -4,8 +4,19 @@ We determined the effects of receptor binding protein mutations on antibody neut
 
 ![image](./public/images/antibody_selection_schematic.png)
 
-<div style="text-align: center; color: grey;">Schematic of antibody selections.</div>
+<div style="text-align: center; color: grey; font-size: smaller">Schematic of antibody selections.</div>
 
+
+In total, we [measured](notebooks/mab_neut_ic50.html){target='_self'} the effects of receptor binding protein mutations for six different antibodies that target three different epitopes.
+
+<Figure caption="Neutralization of unmutated Nipah RBP/F pseudovirus by different anti-RBP antibodies.">
+    <Altair :showShadow="false" :spec-url="'htmls/mab_neuts_plot.html'"></Altair>
+</Figure>
+<br></br>
+
+![image](./public/images/antibodies_superimposed.png)
+
+<div style="text-align: center; color: grey; font-size: smaller">Location on RBP where antibodies bind (if structures are known). </div>
 
 ## Individual Antibody Selections
 ::: details Individual antibody selection model fitting notebooks
@@ -80,15 +91,6 @@ Additional control over filtering parameters. Users can adjust different paramet
 <a href="htmls/HENV103_mut_effect.html" target="_self">HENV-103</a>
 
 <a href="htmls/nAH1.3_mut_effect.html" target="_self">nAH1.3</a>
-
-
-
-## Neutralization Curves
-<a href="notebooks/mab_neut_ic50.html" target="_self">Neutralization curves notebook</a>
-
-<Figure caption="Neutralization of unmutated Nipah RBP/F pseudovirus by different anti-RBP antibodies.">
-    <Altair :showShadow="false" :spec-url="'htmls/mab_neuts_plot.html'"></Altair>
-</Figure>
 
 
 ## Antibody Escape Validations

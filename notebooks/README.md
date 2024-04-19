@@ -1,6 +1,6 @@
 # Analysis Notebooks:
 
-This folder contains jupyter notebooks written by Brendan Larsen to filter and analyze Nipah RBP deep mutational scanning data and produce figures for interactivity and publication. All are automatically run via the 'custom_rules.smk' file with snakemake and parameterized by papermill. Outputs are stored in results/.
+This folder contains jupyter notebooks written by Brendan Larsen to filter and analyze Nipah RBP deep mutational scanning data and produce figures for interactivity and publication. All are automatically run via the [custom_rules.smk](../custom_rules.smk) file with snakemake and parameterized by papermill. Outputs from scripts are stored in [./results](../results).
 
 ## Information about specific notebooks
 
