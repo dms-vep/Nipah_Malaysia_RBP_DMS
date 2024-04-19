@@ -34,7 +34,7 @@ features:
 
 ### About
 <div style="clear: right; float: right; margin-left: 1em; ">
-  <a href="./public/images/metal_efnb3_sheen_atoms.png" target="_self">
+  <a href="/Nipah_Malaysia_RBP_DMS/images/metal_efnb3_sheen_atoms.png" target="_self">
     <img src="/images/metal_efnb3_sheen_atoms.png" alt="Nipah virus receptor binding protein" width="100%" style="max-width: 225px;">
   </a>
   <p style="text-align: center; color: grey; font-size: smaller;">Receptor binding protein (spheres) and ephrin-B2.</p>
