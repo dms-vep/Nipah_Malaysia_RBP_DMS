@@ -9,7 +9,20 @@ export default defineConfig({
   title: "Nipah RBP DMS",
   description: "Information about Nipah RBP DMS experiments",
   base: '/Nipah_Malaysia_RBP_DMS/',
-
+  head: [
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-K1YW76KQ9L' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K1YW76KQ9L');`
+    ]
+  ],
   
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
