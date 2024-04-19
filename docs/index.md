@@ -34,7 +34,7 @@ features:
 
 ### About
 <div style="clear: right; float: right; margin-left: 1em; ">
-  <a href="/images/metal_efnb3_sheen_atoms.png" target="_self">
+  <a href="/Nipah_Malaysia_RBP_DMS/images/metal_efnb3_sheen_atoms.png" target="_self">
     <img src="/images/metal_efnb3_sheen_atoms.png" alt="Nipah virus receptor binding protein" width="100%" style="max-width: 225px;">
   </a>
   <p style="text-align: center; color: grey; font-size: smaller;">Receptor binding protein (spheres) and ephrin-B2.</p>
@@ -66,3 +66,10 @@ Given the spillover risk posed by Nipah, we sought to understand how mutations a
 All experiments were performed with non-replicative lentiviral-based pseudoviruses in a biosafety-level 2 laboratory by trained personnel. Pseudotyping is a method where viral entry proteins are expressed in combination with a viral vector from a different virus. By only expressing the Nipah receptor binding and fusion proteins on the surface of lentiviral particles, we can safely perform deep mutational scanning experiments without modifying authentic virus. Essential lentiviral genes, such as gag/pol, rev, and tat, are not encoded by the lentiviral vector. These genes are instead introduced by transfecting cells with three separate plasmids. This ensures the pseudotyped lentiviruses cannot replicate outside of a cell culture system where these plasmids are co-transfected. Finally, to limit the information hazards associated with identifying human-specific adaptive mutations, we used ephrin-B2 and ephrin-B3 orthologs from the bat species [*Pteropus alecto*](https://en.wikipedia.org/wiki/Black_flying_fox){target='_self'}, [a natural host of henipaviruses](https://pubmed.ncbi.nlm.nih.gov/26469523){target='_self'}, for all assays.
 
 
+<script setup>
+import ChoB3Entry from "./components/ChoB3Entry.vue";
+</script>
+
+
+
+<ChoB3Entry/>

@@ -8,6 +8,9 @@ Click here to explore interactive [heatmaps](/heatmaps) instead.
 Click white square in the upper right of each plot to view full-sized versions.
 :::
 
+
+
+
 ### Correlations by Site
 <Altair :showShadow="false" :spec-url="'htmls/entry_letter_plot_slider.html'"></Altair>
 <br></br>
