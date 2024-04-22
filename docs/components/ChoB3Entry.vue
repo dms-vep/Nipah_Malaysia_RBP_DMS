@@ -50,7 +50,7 @@ export default {
     const colorScale = d3.scaleSequential()
         .domain([-4, 4])
         .interpolator(d3.interpolateRdBu);
-        //.range(["indianred", "white", "cornflowerblue"]);
+        
 
     // Create the SVG container.
     const svg = d3.create("svg")
@@ -62,29 +62,29 @@ export default {
     svg.selectAll("rect")
         .data(filteredData)
         .join(
-        enter => enter.append("rect") // When a new element is added...
-            .attr("x", (d) => x(d.mutant)) // Set the initial x position.
-            .attr("y", y(0)) // Set the initial y position to 0.
-            .attr("height", 0) // Set the initial height to 0.
-            .attr("width", x.bandwidth()) // Set the initial width.
-            .attr("fill", d => colorScale(d.entry_CHO_bEFNB3)) // Set the initial color.
-            .attr("stroke", "black") // Set the initial stroke color.
-            .attr("stroke-width", 0.25) // Set the initial stroke width.
-            .call(enter => enter.transition() // Start a transition.
+        enter => enter.append("rect") 
+            .attr("x", (d) => x(d.mutant)) 
+            .attr("y", y(0)) 
+            .attr("height", 0) 
+            .attr("width", x.bandwidth()) 
+            .attr("fill", d => colorScale(d.entry_CHO_bEFNB3)) 
+            .attr("stroke", "black") // 
+            .attr("stroke-width", 0.25) 
+            .call(enter => enter.transition() 
             .duration(1000) // Set the duration of the transition to 1000 milliseconds.
-            .attr("y", (d) => d.entry_CHO_bEFNB3 >= 0 ? y(d.entry_CHO_bEFNB3) : y(0)) // Gradually update the y position.
-            .attr("height", (d) => Math.abs(y(0) - y(d.entry_CHO_bEFNB3)))), // Gradually update the height.
-        update => update // When an existing element is updated...
-            .call(update => update.transition() // Start a transition.
-            .duration(1000) // Set the duration of the transition to 1000 milliseconds.
-            .attr("x", (d) => x(d.mutant)) // Gradually update the x position.
-            .attr("y", (d) => d.entry_CHO_bEFNB3 >= 0 ? y(d.entry_CHO_bEFNB3) : y(0)) // Gradually update the y position.
-            .attr("height", (d) => Math.abs(y(0) - y(d.entry_CHO_bEFNB3))) // Gradually update the height.
-            .attr("width", x.bandwidth()) // Gradually update the width.
-            .attr("fill", d => colorScale(d.entry_CHO_bEFNB3)) // Gradually update the color.
-            .attr("stroke", "black") // Gradually update the stroke color.
-            .attr("stroke-width", 0.25)), // Gradually update the stroke width.
-        exit => exit.remove() // When an element is removed...
+            .attr("y", (d) => d.entry_CHO_bEFNB3 >= 0 ? y(d.entry_CHO_bEFNB3) : y(0)) 
+            .attr("height", (d) => Math.abs(y(0) - y(d.entry_CHO_bEFNB3)))), 
+        update => update 
+            .call(update => update.transition() 
+            .duration(1000) 
+            .attr("x", (d) => x(d.mutant)) 
+            .attr("y", (d) => d.entry_CHO_bEFNB3 >= 0 ? y(d.entry_CHO_bEFNB3) : y(0)) 
+            .attr("height", (d) => Math.abs(y(0) - y(d.entry_CHO_bEFNB3))) 
+            .attr("width", x.bandwidth()) 
+            .attr("fill", d => colorScale(d.entry_CHO_bEFNB3)) 
+            .attr("stroke", "black") 
+            .attr("stroke-width", 0.25)), 
+        exit => exit.remove() 
     );
 
      
@@ -131,8 +131,6 @@ export default {
   }
 }
 
-
-
 </script>
 
 <template>
@@ -152,8 +150,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 75vh; /* Adjust as needed */
-  width: 75vw; /* Adjust as needed */
-  margin: auto; /* Center the div */
+  height: 75vh; 
+  width: 75vw; 
+  margin: auto; 
 }
 </style>
