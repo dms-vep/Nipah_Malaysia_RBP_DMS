@@ -14,7 +14,7 @@ def main_theme():
 
     return {
         "config": {
-            "background": "transparent",
+            "background": "white",
             "title": {
                 "fontSize": 20,
                 "fontWeight": 'normal',
