@@ -2,7 +2,7 @@
 
 <img src="./docs/public/images/entry_tetramer_better.png" width="256" height="256">
 
-[Link to preprint.](https://www.biorxiv.org/content/10.1101/2024.04.17.589977v1)
+[Link to paper.](https://www.cell.com/cell/fulltext/S0092-8674(25)00257-0)
 Study by Brendan Larsen, Teagan McMahon, Jack T. Brown, Zhaoqiang Wang, Caelan E. Radford, James E Crowe Jr., David Veesler, and Jesse Bloom.
 
 For a website that contains additional information about the project, including links to raw data and interactive data visualizations, see [https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/](https://dms-vep.github.io/Nipah_Malaysia_RBP_DMS/).
